@@ -5561,12 +5561,43 @@ SWIGINTERN PyObject *SpectrumSampling_swigregister(PyObject *SWIGUNUSEDPARM(self
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"delete_SpectrumSampling", _wrap_delete_SpectrumSampling, METH_VARARGS, NULL},
+	 { (char *)"delete_SpectrumSampling", _wrap_delete_SpectrumSampling, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::SpectrumSampling::~SpectrumSampling()\n"
+		"\n"
+		""},
 	 { (char *)"SpectrumSampling___str__", _wrap_SpectrumSampling___str__, METH_VARARGS, NULL},
-	 { (char *)"SpectrumSampling__v_number_spectrometer", _wrap_SpectrumSampling__v_number_spectrometer, METH_VARARGS, NULL},
-	 { (char *)"SpectrumSampling_spectral_domain", _wrap_SpectrumSampling_spectral_domain, METH_VARARGS, NULL},
-	 { (char *)"SpectrumSampling_spectral_domain_interpolated", _wrap_SpectrumSampling_spectral_domain_interpolated, METH_VARARGS, NULL},
-	 { (char *)"SpectrumSampling_need_interpolation", _wrap_SpectrumSampling_need_interpolation, METH_VARARGS, NULL},
+	 { (char *)"SpectrumSampling__v_number_spectrometer", _wrap_SpectrumSampling__v_number_spectrometer, METH_VARARGS, (char *)"\n"
+		"\n"
+		"int FullPhysics::SpectrumSampling::number_spectrometer() const\n"
+		"Number of spectrometers we have. \n"
+		""},
+	 { (char *)"SpectrumSampling_spectral_domain", _wrap_SpectrumSampling_spectral_domain, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual SpectralDomain FullPhysics::SpectrumSampling::spectral_domain(int spec_index, const SpectralDomain &Lowres_grid, const\n"
+		"DoubleWithUnit &Ils_half_width) const =0\n"
+		"Wavenumbers/Wavelengths to use for the given spectrometer.\n"
+		"\n"
+		"We pass in the low resolution grid that we are going to generate after\n"
+		"the ILS convolution, along with the ILS half width so we can generate\n"
+		"the high resolution points needed to supply the ILS. \n"
+		""},
+	 { (char *)"SpectrumSampling_spectral_domain_interpolated", _wrap_SpectrumSampling_spectral_domain_interpolated, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual SpectralDomain FullPhysics::SpectrumSampling::spectral_domain_interpolated(int Spec_index, const SpectralDomain &Lowres_grid, const\n"
+		"DoubleWithUnit &Ils_half_width) const\n"
+		"The interpolated spectral domain.\n"
+		"\n"
+		"The default is that this is just the same as spectral_domain, but\n"
+		"derived classes can supply a different implementation if it is doing\n"
+		"nonuniform sampling. \n"
+		""},
+	 { (char *)"SpectrumSampling_need_interpolation", _wrap_SpectrumSampling_need_interpolation, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual bool FullPhysics::SpectrumSampling::need_interpolation(int Spec_index) const\n"
+		"Indicate if spectral_domain and spectral_domain_interpolated are\n"
+		"different at all. \n"
+		""},
 	 { (char *)"SpectrumSampling_swigregister", SpectrumSampling_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };

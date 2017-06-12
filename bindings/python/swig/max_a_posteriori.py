@@ -125,6 +125,17 @@ import full_physics_swig.model_state
 import full_physics_swig.problem_state
 import full_physics_swig.generic_object
 class MaxAPosteriori(full_physics_swig.model_measure.ModelMeasure):
+    """
+
+    The base class for maximum a posteriori estimation.
+
+    This class is the base class for all classes that use maximum a
+    posteriori estimation method to implement the problem of estimating
+    the parameters of a statistical model.
+
+    C++ includes: max_a_posteriori.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.model_measure.ModelMeasure]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -141,7 +152,15 @@ class MaxAPosteriori(full_physics_swig.model_measure.ModelMeasure):
     __del__ = lambda self: None
 
     def _v_a_priori_params(self):
+        """
+
+        virtual blitz::Array<double, 1> FullPhysics::MaxAPosteriori::a_priori_params() const
+        Returns the a priori values (knowledge) of the parameters.
+
+        The a priori values (knowledge) of the parameters 
+        """
         return _max_a_posteriori.MaxAPosteriori__v_a_priori_params(self)
+
 
     @property
     def a_priori_params(self):
@@ -149,7 +168,15 @@ class MaxAPosteriori(full_physics_swig.model_measure.ModelMeasure):
 
 
     def _v_a_priori_cov(self):
+        """
+
+        virtual blitz::Array<double, 2> FullPhysics::MaxAPosteriori::a_priori_cov() const
+        Returns the a priori covariance matrix.
+
+        The a priori covariance matrix 
+        """
         return _max_a_posteriori.MaxAPosteriori__v_a_priori_cov(self)
+
 
     @property
     def a_priori_cov(self):
@@ -157,7 +184,19 @@ class MaxAPosteriori(full_physics_swig.model_measure.ModelMeasure):
 
 
     def _v_param_a_priori_uncertainty(self):
+        """
+
+        virtual blitz::Array<double, 1> FullPhysics::MaxAPosteriori::param_a_priori_uncertainty() const
+        Returns the square root of the diagonal of the a-priori covariance
+        matrix.
+
+        A-priori covariance matrix is returned by a_priori_cov() method, and
+        this method returns the square root of the diagonal of the matrix.
+
+        The square root of the diagonal of the a-priori covariance matrix 
+        """
         return _max_a_posteriori.MaxAPosteriori__v_param_a_priori_uncertainty(self)
+
 
     @property
     def param_a_priori_uncertainty(self):
@@ -165,7 +204,27 @@ class MaxAPosteriori(full_physics_swig.model_measure.ModelMeasure):
 
 
     def _v_parameter_a_priori_diff(self):
+        """
+
+        virtual blitz::Array<double, 1> FullPhysics::MaxAPosteriori::parameter_a_priori_diff() const
+        Returns the current parameters value and their a priori value
+        difference (current param - a priori param)
+
+        This method is for convenience. It returns the difference of the
+        current parameters value and their a priori value.
+
+        Let the following be the current parameters value (a vector) and the
+        parameters a prior value (another vector) respectively X
+
+        Xa
+
+        Then this method returns \\[ X - X_a \\]
+
+        The current parameters values and their a-priori value difference
+        (current param - a priori param) 
+        """
         return _max_a_posteriori.MaxAPosteriori__v_parameter_a_priori_diff(self)
+
 
     @property
     def parameter_a_priori_diff(self):
@@ -173,7 +232,39 @@ class MaxAPosteriori(full_physics_swig.model_measure.ModelMeasure):
 
 
     def _v_cov_weighted_parameter_a_priori_diff(self):
+        """
+
+        virtual blitz::Array<double, 1> FullPhysics::MaxAPosteriori::cov_weighted_parameter_a_priori_diff() const
+        Returns the current parameters value and their a priori value
+        difference (current param - a priori param) weighted by the inverse of
+        the Cholesky decomposition of the a priori covariance matrix.
+
+        This method is for convenience. It returns the current parameters
+        value and their a priori value difference weighted by the inverse of
+        the Cholesky decomposition of the a priori covariance matrix.
+
+        This method does not have a good name. The "cov_weighted" portion of
+        its name suggests that the difference is weighted by the a priori
+        covariance matrix, but it is weighted by the inverse of the Cholesky
+        decomposition of the covariance matrix.
+
+        Let the following be the current parameters value, the parameters a
+        priori value, and the a priori covariance matrix respectively: X
+
+        Xa
+
+        Sa
+
+        Then the Cholesky decomposition of the a priori covariance matrix is
+        \\[ S_a = C_a C_a^T \\] and this method returns \\[
+        C_a^{-1}(X-X_a) \\]
+
+        The current parameters value and their a priori value difference
+        (current param - a priori param) weighted by the inverse of the
+        Cholesky decomposition of the a priori covariance matrix 
+        """
         return _max_a_posteriori.MaxAPosteriori__v_cov_weighted_parameter_a_priori_diff(self)
+
 
     @property
     def cov_weighted_parameter_a_priori_diff(self):
@@ -181,7 +272,28 @@ class MaxAPosteriori(full_physics_swig.model_measure.ModelMeasure):
 
 
     def _v_a_priori_cov_chol_inv(self):
+        """
+
+        virtual blitz::Array<double, 2> FullPhysics::MaxAPosteriori::a_priori_cov_chol_inv() const
+        Returns the inverse of the Cholesky decomposition of the a priori
+        covariance matrix.
+
+        Let the following be the a priori covariance matrix: Sa
+
+        Then the Cholesky decomposition of the a priori covariance matrix is
+        \\[ S_a = C_a C_a^T \\] and this method returns \\[ C_a^{-1}
+        \\]
+
+        The method cov_weighted_parameter_a_priori_diff() is the
+        implementation of a function of the parameters and the method
+        a_priori_cov_chol_inv() is the Jacobian of
+        cov_weighted_parameter_a_priori_diff().
+
+        The inverse of the Cholesky decomposition of the a priori covariance
+        matrix 
+        """
         return _max_a_posteriori.MaxAPosteriori__v_a_priori_cov_chol_inv(self)
+
 
     @property
     def a_priori_cov_chol_inv(self):
@@ -189,7 +301,45 @@ class MaxAPosteriori(full_physics_swig.model_measure.ModelMeasure):
 
 
     def _v_weighted_model_measure_diff_aug(self):
+        """
+
+        virtual blitz::Array<double, 1> FullPhysics::MaxAPosteriori::weighted_model_measure_diff_aug()
+        Returns the vector returned by uncert_weighted_model_measure_diff()
+        augmented at the bottom by the vector returned by
+        cov_weighted_parameter_a_priori_diff()
+
+        This method is for convenience. It returns an augmented vector. The
+        vectors returned by the following methods appear at the top and at the
+        bottom of the augmented vector respectively:
+        uncert_weighted_model_measure_diff()
+
+        cov_weighted_parameter_a_priori_diff()
+
+        Assume the following: M (computed model)
+
+        S (measurement data)
+
+        Se (measurement error covariance matrix)
+
+        X (current parameters value)
+
+        Xa (parameters a priori value)
+
+        Sa (a priori covariance matrix)
+
+        The Cholesky decomposition of the error covariance matrix is \\[ S_e
+        = C_e C_e^T \\] and the Cholesky decomposition of the a priori
+        covariance matrix is \\[ S_a = C_a C_a^T \\]
+
+        Then this method returns \\[ \\left[ \\begin{array}{c}
+        C_e^{-1}(M-S) ------ C_a^{-1}(X-X_a) \\end{array} \\right] \\]
+
+        The vector returned by uncert_weighted_model_measure_diff() augmented
+        at the bottom by the vector returned by
+        cov_weighted_parameter_a_priori_diff() 
+        """
         return _max_a_posteriori.MaxAPosteriori__v_weighted_model_measure_diff_aug(self)
+
 
     @property
     def weighted_model_measure_diff_aug(self):
@@ -197,7 +347,47 @@ class MaxAPosteriori(full_physics_swig.model_measure.ModelMeasure):
 
 
     def _v_a_posteriori_covariance(self):
+        """
+
+        virtual blitz::Array<double, 2> FullPhysics::MaxAPosteriori::a_posteriori_covariance()
+        Returns a-posteriori covariance matrix.
+
+        After the parameters of the model are retrieved such that the model is
+        fitted to the measurement data, then a call to this method returns the
+        a-posteriori covariance matrix.
+
+        Assume the following: K (computed model Jacobian)
+
+        Se (measurement error covariance matrix)
+
+        Sa (a priori covariance matrix)
+
+        J (the matrix returned by weighted_jacobian_aug())
+
+        Then this method returns \\[ (J^TJ)^{-1} = \\left( K^T S_e^{-1} K
+        + S_a^{-1} \\right)^{-1}. \\]
+
+        In the context of the Non-Linear Least Squares (NLLS) problem, where J
+        is the Jacobian of the NLLS problem, \\[ (J^TJ)^{-1} \\] is known
+        as the best fit covariance.
+
+        I am not sure where the best location to implement this method is.
+        Maybe it is better to rename it best_fit_covariance() and add to the
+        class NLLSProblem as a method. Or, maybe there are two different
+        perspectives of the same thing: a-posteriori covariance
+
+        best fit covariance
+
+        If two perspectives, then perhaps it is best to keep
+        a_posteriori_covariance() method here, and also implement
+        best_fit_covariance() as a member of NLLSProblem class. If we decide
+        to implement both methods, there will not be a lot of duplicate code
+        because the body of a_posteriori_covariance() is just a function call.
+
+        A-posteriori covariance matrix 
+        """
         return _max_a_posteriori.MaxAPosteriori__v_a_posteriori_covariance(self)
+
 
     @property
     def a_posteriori_covariance(self):
@@ -205,7 +395,20 @@ class MaxAPosteriori(full_physics_swig.model_measure.ModelMeasure):
 
 
     def _v_a_priori_cov_chol(self):
+        """
+
+        virtual blitz::Array<double, 2> FullPhysics::MaxAPosteriori::a_priori_cov_chol() const
+        Returns the Cholesky decomposition of the a-priori covariance matrix.
+
+        Assume Sa (a priori covariance matrix)
+
+        Then the Cholesky decomposition of the a priori covariance matrix is
+        \\[ S_a = C_a C_a^T \\] and this method returns \\[ C_a \\]
+
+        The Cholesky decomposition of the a-priori covariance matrix 
+        """
         return _max_a_posteriori.MaxAPosteriori__v_a_priori_cov_chol(self)
+
 
     @property
     def a_priori_cov_chol(self):
@@ -213,7 +416,24 @@ class MaxAPosteriori(full_physics_swig.model_measure.ModelMeasure):
 
 
     def _v_param_a_posteriori_uncertainty(self):
+        """
+
+        virtual blitz::Array<double, 1> FullPhysics::MaxAPosteriori::param_a_posteriori_uncertainty()
+        Returns the square root of the diagonal of the a-posteriori covariance
+        matrix.
+
+        A-posteriori covariance matrix is returned by
+        a_posteriori_covariance() method, and this method returns the square
+        root of the diagonal of the matrix.
+
+        I am not sure where the best location for implementing this method is;
+        however, it should be where a_posteriori_covariance() method is.
+
+        The square root of the diagonal of the a-posteriori covariance matrix
+
+        """
         return _max_a_posteriori.MaxAPosteriori__v_param_a_posteriori_uncertainty(self)
+
 
     @property
     def param_a_posteriori_uncertainty(self):

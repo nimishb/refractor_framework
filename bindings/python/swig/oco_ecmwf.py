@@ -123,6 +123,13 @@ def _new_from_set(cls, version, *args):
 import full_physics_swig.ecmwf
 import full_physics_swig.generic_object
 class OcoEcmwf(full_physics_swig.ecmwf.Ecmwf):
+    """
+
+    This class implements the OCO specific ECMWF reading functionality.
+
+    C++ includes: oco_ecmwf.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.ecmwf.Ecmwf]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -136,6 +143,12 @@ class OcoEcmwf(full_physics_swig.ecmwf.Ecmwf):
     __del__ = lambda self: None
 
     def __init__(self, Fname, Hdf_sounding_id):
+        """
+
+        FullPhysics::OcoEcmwf::OcoEcmwf(const std::string &Fname, const boost::shared_ptr< HdfSoundingId >
+        &Hdf_sounding_id)
+
+        """
         this = _oco_ecmwf.new_OcoEcmwf(Fname, Hdf_sounding_id)
         try:
             self.this.append(this)

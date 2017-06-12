@@ -127,6 +127,12 @@ import full_physics_swig.state_vector
 import full_physics_swig.array_with_unit
 import full_physics_swig.double_with_unit
 class GroundBrdfVeg(full_physics_swig.ground.Ground):
+    """
+
+    C++ includes: ground_brdf.h
+
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.ground.Ground]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -138,6 +144,13 @@ class GroundBrdfVeg(full_physics_swig.ground.Ground):
     __repr__ = _swig_repr
 
     def __init__(self, Coeffs, Flag, Ref_points, Desc_band_names):
+        """
+
+        FullPhysics::GroundBrdfVeg::GroundBrdfVeg(const blitz::Array< double, 2 > &Coeffs, const blitz::Array< bool, 2
+        > &Flag, const ArrayWithUnit< double, 1 > &Ref_points, const
+        std::vector< std::string > &Desc_band_names)
+
+        """
         this = _ground_brdf.new_GroundBrdfVeg(Coeffs, Flag, Ref_points, Desc_band_names)
         try:
             self.this.append(this)
@@ -145,70 +158,200 @@ class GroundBrdfVeg(full_physics_swig.ground.Ground):
             self.this = this
 
     def surface_parameter(self, wn, spec_index):
+        """
+
+        virtual ArrayAd<double, 1> FullPhysics::GroundBrdf::surface_parameter(const double wn, const int spec_index) const
+
+        """
         return _ground_brdf.GroundBrdfVeg_surface_parameter(self, wn, spec_index)
 
+
     def number_spectrometer(self):
+        """
+
+        virtual const int FullPhysics::GroundBrdf::number_spectrometer() const
+
+        """
         return _ground_brdf.GroundBrdfVeg_number_spectrometer(self)
 
+
     def weight(self, wn, spec_index):
+        """
+
+        virtual const AutoDerivative<double> FullPhysics::GroundBrdf::weight(const double wn, const int spec_index) const
+
+        """
         return _ground_brdf.GroundBrdfVeg_weight(self, wn, spec_index)
 
+
     def weight_intercept(self, *args):
+        """
+
+        virtual void FullPhysics::GroundBrdf::weight_intercept(const int spec_index, const AutoDerivative< double > &val)
+
+        """
         return _ground_brdf.GroundBrdfVeg_weight_intercept(self, *args)
 
+
     def weight_slope(self, *args):
+        """
+
+        virtual void FullPhysics::GroundBrdf::weight_slope(const int spec_index, const AutoDerivative< double > &val)
+
+        """
         return _ground_brdf.GroundBrdfVeg_weight_slope(self, *args)
 
+
     def rahman_factor(self, *args):
+        """
+
+        virtual void FullPhysics::GroundBrdf::rahman_factor(const int spec_index, const AutoDerivative< double > &val)
+
+        """
         return _ground_brdf.GroundBrdfVeg_rahman_factor(self, *args)
 
+
     def overall_amplitude(self, *args):
+        """
+
+        virtual void FullPhysics::GroundBrdf::overall_amplitude(const int spec_index, const AutoDerivative< double > &val)
+
+        """
         return _ground_brdf.GroundBrdfVeg_overall_amplitude(self, *args)
 
+
     def asymmetry_parameter(self, *args):
+        """
+
+        virtual void FullPhysics::GroundBrdf::asymmetry_parameter(const int spec_index, const AutoDerivative< double > &val)
+
+        """
         return _ground_brdf.GroundBrdfVeg_asymmetry_parameter(self, *args)
 
+
     def geometric_factor(self, *args):
+        """
+
+        virtual void FullPhysics::GroundBrdf::geometric_factor(const int spec_index, const AutoDerivative< double > &val)
+
+        """
         return _ground_brdf.GroundBrdfVeg_geometric_factor(self, *args)
 
+
     def breon_factor(self, *args):
+        """
+
+        virtual void FullPhysics::GroundBrdf::breon_factor(const int spec_index, const AutoDerivative< double > &val)
+
+        """
         return _ground_brdf.GroundBrdfVeg_breon_factor(self, *args)
 
+
     def brdf_covariance(self, spec_index):
+        """
+
+        const blitz::Array<double, 2> FullPhysics::GroundBrdf::brdf_covariance(const int spec_index) const
+
+        """
         return _ground_brdf.GroundBrdfVeg_brdf_covariance(self, spec_index)
 
+
     def refractive_index(self, Spec_idx):
+        """
+
+        virtual const double FullPhysics::GroundBrdf::refractive_index(const int Spec_idx) const
+        Returns hard coded value of 1.5 since that is the value hardcoded into
+        LIDORT. 
+        """
         return _ground_brdf.GroundBrdfVeg_refractive_index(self, Spec_idx)
 
+
     def black_sky_albedo(self, Spec_index, Sza):
+        """
+
+        virtual const double FullPhysics::GroundBrdfVeg::black_sky_albedo(const int Spec_index, const double Sza)
+
+        """
         return _ground_brdf.GroundBrdfVeg_black_sky_albedo(self, Spec_index, Sza)
 
+
     def albedo(self, Spec_index, Sza, Vza, Azm, Stokes_coef):
+        """
+
+        virtual const double FullPhysics::GroundBrdfVeg::albedo(const int Spec_index, const double Sza, const double Vza, const
+        double Azm, const blitz::Array< double, 1 > &Stokes_coef)
+
+        """
         return _ground_brdf.GroundBrdfVeg_albedo(self, Spec_index, Sza, Vza, Azm, Stokes_coef)
 
+
     def breon_type(self):
+        """
+
+        virtual const std::string FullPhysics::GroundBrdfVeg::breon_type() const
+        String describing which type of Breon surface type, also makes this
+        class abstract. 
+        """
         return _ground_brdf.GroundBrdfVeg_breon_type(self)
 
+
     def reference_point(self, spec_index):
+        """
+
+        virtual const DoubleWithUnit FullPhysics::GroundBrdf::reference_point(const int spec_index) const
+        Center wavelength that spectrally dependent parameter is referenced
+        to. 
+        """
         return _ground_brdf.GroundBrdfVeg_reference_point(self, spec_index)
 
+
     def clone(self):
+        """
+
+        virtual boost::shared_ptr<Ground> FullPhysics::GroundBrdfVeg::clone() const
+
+        """
         return _ground_brdf.GroundBrdfVeg_clone(self)
 
+
     def state_vector_name_i(self, i):
+        """
+
+        virtual std::string FullPhysics::GroundBrdf::state_vector_name_i(int i) const
+
+        """
         return _ground_brdf.GroundBrdfVeg_state_vector_name_i(self, i)
 
+
     def print_desc(self, Os):
+        """
+
+        virtual void FullPhysics::GroundBrdf::print(std::ostream &Os) const
+
+        """
         return _ground_brdf.GroundBrdfVeg_print_desc(self, Os)
 
+
     def desc(self):
+        """
+
+        virtual std::string FullPhysics::GroundBrdf::desc() const
+
+        """
         return _ground_brdf.GroundBrdfVeg_desc(self)
+
     __swig_destroy__ = _ground_brdf.delete_GroundBrdfVeg
     __del__ = lambda self: None
 GroundBrdfVeg_swigregister = _ground_brdf.GroundBrdfVeg_swigregister
 GroundBrdfVeg_swigregister(GroundBrdfVeg)
 
 class GroundBrdfSoil(full_physics_swig.ground.Ground):
+    """
+
+    C++ includes: ground_brdf.h
+
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.ground.Ground]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -220,6 +363,13 @@ class GroundBrdfSoil(full_physics_swig.ground.Ground):
     __repr__ = _swig_repr
 
     def __init__(self, Coeffs, Flag, Ref_points, Desc_band_names):
+        """
+
+        FullPhysics::GroundBrdfSoil::GroundBrdfSoil(const blitz::Array< double, 2 > &Coeffs, const blitz::Array< bool, 2
+        > &Flag, const ArrayWithUnit< double, 1 > &Ref_points, const
+        std::vector< std::string > &Desc_band_names)
+
+        """
         this = _ground_brdf.new_GroundBrdfSoil(Coeffs, Flag, Ref_points, Desc_band_names)
         try:
             self.this.append(this)
@@ -227,64 +377,188 @@ class GroundBrdfSoil(full_physics_swig.ground.Ground):
             self.this = this
 
     def surface_parameter(self, wn, spec_index):
+        """
+
+        virtual ArrayAd<double, 1> FullPhysics::GroundBrdf::surface_parameter(const double wn, const int spec_index) const
+
+        """
         return _ground_brdf.GroundBrdfSoil_surface_parameter(self, wn, spec_index)
 
+
     def number_spectrometer(self):
+        """
+
+        virtual const int FullPhysics::GroundBrdf::number_spectrometer() const
+
+        """
         return _ground_brdf.GroundBrdfSoil_number_spectrometer(self)
 
+
     def weight(self, wn, spec_index):
+        """
+
+        virtual const AutoDerivative<double> FullPhysics::GroundBrdf::weight(const double wn, const int spec_index) const
+
+        """
         return _ground_brdf.GroundBrdfSoil_weight(self, wn, spec_index)
 
+
     def weight_intercept(self, *args):
+        """
+
+        virtual void FullPhysics::GroundBrdf::weight_intercept(const int spec_index, const AutoDerivative< double > &val)
+
+        """
         return _ground_brdf.GroundBrdfSoil_weight_intercept(self, *args)
 
+
     def weight_slope(self, *args):
+        """
+
+        virtual void FullPhysics::GroundBrdf::weight_slope(const int spec_index, const AutoDerivative< double > &val)
+
+        """
         return _ground_brdf.GroundBrdfSoil_weight_slope(self, *args)
 
+
     def rahman_factor(self, *args):
+        """
+
+        virtual void FullPhysics::GroundBrdf::rahman_factor(const int spec_index, const AutoDerivative< double > &val)
+
+        """
         return _ground_brdf.GroundBrdfSoil_rahman_factor(self, *args)
 
+
     def overall_amplitude(self, *args):
+        """
+
+        virtual void FullPhysics::GroundBrdf::overall_amplitude(const int spec_index, const AutoDerivative< double > &val)
+
+        """
         return _ground_brdf.GroundBrdfSoil_overall_amplitude(self, *args)
 
+
     def asymmetry_parameter(self, *args):
+        """
+
+        virtual void FullPhysics::GroundBrdf::asymmetry_parameter(const int spec_index, const AutoDerivative< double > &val)
+
+        """
         return _ground_brdf.GroundBrdfSoil_asymmetry_parameter(self, *args)
 
+
     def geometric_factor(self, *args):
+        """
+
+        virtual void FullPhysics::GroundBrdf::geometric_factor(const int spec_index, const AutoDerivative< double > &val)
+
+        """
         return _ground_brdf.GroundBrdfSoil_geometric_factor(self, *args)
 
+
     def breon_factor(self, *args):
+        """
+
+        virtual void FullPhysics::GroundBrdf::breon_factor(const int spec_index, const AutoDerivative< double > &val)
+
+        """
         return _ground_brdf.GroundBrdfSoil_breon_factor(self, *args)
 
+
     def brdf_covariance(self, spec_index):
+        """
+
+        const blitz::Array<double, 2> FullPhysics::GroundBrdf::brdf_covariance(const int spec_index) const
+
+        """
         return _ground_brdf.GroundBrdfSoil_brdf_covariance(self, spec_index)
 
+
     def refractive_index(self, Spec_idx):
+        """
+
+        virtual const double FullPhysics::GroundBrdf::refractive_index(const int Spec_idx) const
+        Returns hard coded value of 1.5 since that is the value hardcoded into
+        LIDORT. 
+        """
         return _ground_brdf.GroundBrdfSoil_refractive_index(self, Spec_idx)
 
+
     def black_sky_albedo(self, Spec_index, Sza):
+        """
+
+        virtual const double FullPhysics::GroundBrdfSoil::black_sky_albedo(const int Spec_index, const double Sza)
+
+        """
         return _ground_brdf.GroundBrdfSoil_black_sky_albedo(self, Spec_index, Sza)
 
+
     def albedo(self, Spec_index, Sza, Vza, Azm, Stokes_coef):
+        """
+
+        virtual const double FullPhysics::GroundBrdfSoil::albedo(const int Spec_index, const double Sza, const double Vza, const
+        double Azm, const blitz::Array< double, 1 > &Stokes_coef)
+
+        """
         return _ground_brdf.GroundBrdfSoil_albedo(self, Spec_index, Sza, Vza, Azm, Stokes_coef)
 
+
     def breon_type(self):
+        """
+
+        virtual const std::string FullPhysics::GroundBrdfSoil::breon_type() const
+        String describing which type of Breon surface type, also makes this
+        class abstract. 
+        """
         return _ground_brdf.GroundBrdfSoil_breon_type(self)
 
+
     def reference_point(self, spec_index):
+        """
+
+        virtual const DoubleWithUnit FullPhysics::GroundBrdf::reference_point(const int spec_index) const
+        Center wavelength that spectrally dependent parameter is referenced
+        to. 
+        """
         return _ground_brdf.GroundBrdfSoil_reference_point(self, spec_index)
 
+
     def clone(self):
+        """
+
+        virtual boost::shared_ptr<Ground> FullPhysics::GroundBrdfSoil::clone() const
+
+        """
         return _ground_brdf.GroundBrdfSoil_clone(self)
 
+
     def state_vector_name_i(self, i):
+        """
+
+        virtual std::string FullPhysics::GroundBrdf::state_vector_name_i(int i) const
+
+        """
         return _ground_brdf.GroundBrdfSoil_state_vector_name_i(self, i)
 
+
     def print_desc(self, Os):
+        """
+
+        virtual void FullPhysics::GroundBrdf::print(std::ostream &Os) const
+
+        """
         return _ground_brdf.GroundBrdfSoil_print_desc(self, Os)
 
+
     def desc(self):
+        """
+
+        virtual std::string FullPhysics::GroundBrdf::desc() const
+
+        """
         return _ground_brdf.GroundBrdfSoil_desc(self)
+
     __swig_destroy__ = _ground_brdf.delete_GroundBrdfSoil
     __del__ = lambda self: None
 GroundBrdfSoil_swigregister = _ground_brdf.GroundBrdfSoil_swigregister

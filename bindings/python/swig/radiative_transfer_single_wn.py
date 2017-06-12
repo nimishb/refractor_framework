@@ -127,6 +127,23 @@ import full_physics_swig.observer
 import full_physics_swig.named_spectrum
 import full_physics_swig.state_vector
 class RadiativeTransferSingleWn(full_physics_swig.radiative_transfer_fixed_stokes_coefficient.RadiativeTransferFixedStokesCoefficient):
+    """
+
+    This is a RadiativeTransfer that supplies an interface that can be
+    called for a single wavenumber.
+
+    This class mixes in some of the common functionality needed by LRadRt
+    and LidortDriver. We may want to pull some of this out into separate
+    classes. But right now we only have a few examples of a
+    RadiativeTransfer and it isn't at all clear what a useful hierarchy
+    would be. Rather than try to predict what we might need in the future,
+    we really just have two categories: "The LSI" and "LRad and
+    LIDORT". This class is really the later, and I guess we could have
+    called it StuffThatIsInCommonWithLRadAndLidort.
+
+    C++ includes: radiative_transfer_single_wn.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.radiative_transfer_fixed_stokes_coefficient.RadiativeTransferFixedStokesCoefficient]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -141,7 +158,18 @@ class RadiativeTransferSingleWn(full_physics_swig.radiative_transfer_fixed_stoke
     __repr__ = _swig_repr
 
     def _v_number_stream(self):
+        """
+
+        virtual int FullPhysics::RadiativeTransferSingleWn::number_stream() const =0
+        Number of streams to use in processing.
+
+        Note that Lidort 3.0 used a less common "full streams" that was
+        twice the more commonly used "half streams". This function returns
+        the later. This is the same as what is used in Lidort 3.5 and LRad.
+        The "full streams" used in Lidort 3.0 would be twice this. 
+        """
         return _radiative_transfer_single_wn.RadiativeTransferSingleWn__v_number_stream(self)
+
 
     @property
     def number_stream(self):
@@ -149,7 +177,13 @@ class RadiativeTransferSingleWn(full_physics_swig.radiative_transfer_fixed_stoke
 
 
     def _v_atmosphere(self):
+        """
+
+        const boost::shared_ptr<RtAtmosphere>& FullPhysics::RadiativeTransferSingleWn::atmosphere() const
+
+        """
         return _radiative_transfer_single_wn.RadiativeTransferSingleWn__v_atmosphere(self)
+
 
     @property
     def atmosphere(self):
@@ -157,16 +191,72 @@ class RadiativeTransferSingleWn(full_physics_swig.radiative_transfer_fixed_stoke
 
 
     def stokes(self, Spec_domain, Spec_index):
+        """
+
+        virtual blitz::Array<double, 2> FullPhysics::RadiativeTransferSingleWn::stokes(const SpectralDomain &Spec_domain, int Spec_index) const
+
+        """
         return _radiative_transfer_single_wn.RadiativeTransferSingleWn_stokes(self, Spec_domain, Spec_index)
 
+
     def stokes_and_jacobian(self, Spec_domain, Spec_index):
+        """
+
+        virtual ArrayAd<double, 2> FullPhysics::RadiativeTransferSingleWn::stokes_and_jacobian(const SpectralDomain &Spec_domain, int Spec_index) const
+
+        """
         return _radiative_transfer_single_wn.RadiativeTransferSingleWn_stokes_and_jacobian(self, Spec_domain, Spec_index)
 
+
     def stokes_single_wn(self, Wn, Spec_index, Iv):
+        """
+
+        virtual blitz::Array<double, 1> FullPhysics::RadiativeTransferSingleWn::stokes_single_wn(double Wn, int Spec_index, const ArrayAd< double, 2 > &Iv=ArrayAd<
+        double, 2 >()) const =0
+        Calculate stokes vector for the given wavenumber.
+
+        You can optionally supply a set of intermediate atmosphere variables
+        (e.g., taug, taur, taua_i) to use instead of with atmosphere_ptr() to
+        calculate this.
+
+        Parameters:
+        -----------
+
+        Wn:  Wavenumber to calculate for. This should be in cm^-1
+
+        Spec_index:  The Spectral index
+
+        Iv:  Optional intermediate variables to use, rather than calculating.
+
+        The set of stokes coefficients. This is number_stokes() in size. 
+        """
         return _radiative_transfer_single_wn.RadiativeTransferSingleWn_stokes_single_wn(self, Wn, Spec_index, Iv)
 
+
     def stokes_and_jacobian_single_wn(self, Wn, Spec_index, Iv):
+        """
+
+        virtual ArrayAd<double, 1> FullPhysics::RadiativeTransferSingleWn::stokes_and_jacobian_single_wn(double Wn, int Spec_index, const ArrayAd< double, 2 > &Iv=ArrayAd<
+        double, 2 >()) const =0
+        Calculate stokes vector and Jacobian for the given wavenumber.
+
+        You can optionally supply a set of intermediate atmosphere variables
+        (e.g., taug, taur, taua_i) to use instead of with atmosphere_ptr() to
+        calculate this.
+
+        Parameters:
+        -----------
+
+        Wn:  Wavenumber to calculate for. This should be in cm^-1
+
+        Spec_index:  The Spectral index
+
+        Iv:  Optional intermediate variables to use, rather than calculating.
+
+        The set of stokes coefficients. This is number_stokes() in size. 
+        """
         return _radiative_transfer_single_wn.RadiativeTransferSingleWn_stokes_and_jacobian_single_wn(self, Wn, Spec_index, Iv)
+
     __swig_destroy__ = _radiative_transfer_single_wn.delete_RadiativeTransferSingleWn
     __del__ = lambda self: None
 RadiativeTransferSingleWn_swigregister = _radiative_transfer_single_wn.RadiativeTransferSingleWn_swigregister

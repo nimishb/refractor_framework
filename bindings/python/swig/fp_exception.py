@@ -122,6 +122,16 @@ def _new_from_set(cls, version, *args):
 
 import full_physics_swig.generic_object
 class Exception(full_physics_swig.generic_object.GenericObject):
+    """
+
+    This is the base of the exception hierarchy for Full Physics code.
+
+    This can be written to like a stream to contain information about the
+    exception. This is derived from the standard library std::exception
+
+    C++ includes: fp_exception.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.generic_object.GenericObject]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -133,6 +143,11 @@ class Exception(full_physics_swig.generic_object.GenericObject):
     __repr__ = _swig_repr
 
     def __init__(self, W):
+        """
+
+        FullPhysics::Exception::Exception(const Exception &E)
+        Copy constructor. 
+        """
         this = _fp_exception.new_Exception(W)
         try:
             self.this.append(this)
@@ -143,7 +158,15 @@ class Exception(full_physics_swig.generic_object.GenericObject):
         return _fp_exception.Exception___str__(self)
 
     def what(self):
+        """
+
+        virtual const char* FullPhysics::Exception::what() const
+         throw ()
+        Description of what the error is.
+
+        """
         return _fp_exception.Exception_what(self)
+
     __swig_destroy__ = _fp_exception.delete_Exception
     __del__ = lambda self: None
 Exception_swigregister = _fp_exception.Exception_swigregister
@@ -151,8 +174,12 @@ Exception_swigregister(Exception)
 
 
 def no_gsl_abort():
+    """
+
+    void FullPhysics::no_gsl_abort()
+    Turn off gsl errors abort. 
+    """
     return _fp_exception.no_gsl_abort()
-no_gsl_abort = _fp_exception.no_gsl_abort
 # This file is compatible with both classic and new-style classes.
 
 

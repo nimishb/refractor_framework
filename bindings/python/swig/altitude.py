@@ -245,6 +245,19 @@ ObserverAltitude_swigregister = _altitude.ObserverAltitude_swigregister
 ObserverAltitude_swigregister(ObserverAltitude)
 
 class Altitude(ObservableAltitude):
+    """
+
+    The class handles the calculation of the altitude and gravity
+    constants.
+
+    Other objects may depend on the altitude, and should be updated when
+    the altitude is updated. To facilitate that, this class in an
+    Oberverable, and objects can add themselves as Observers to be
+    notified when the temperature is updated.
+
+    C++ includes: altitude.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [ObservableAltitude]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -261,22 +274,64 @@ class Altitude(ObservableAltitude):
         return _altitude.Altitude___str__(self)
 
     def print_desc(self, Os):
+        """
+
+        virtual void FullPhysics::Altitude::print(std::ostream &Os) const
+
+        """
         return _altitude.Altitude_print_desc(self, Os)
 
+
     def add_observer(self, Obs):
+        """
+
+        virtual void FullPhysics::Altitude::add_observer(Observer< Altitude > &Obs)
+
+        """
         return _altitude.Altitude_add_observer(self, Obs)
 
+
     def remove_observer(self, Obs):
+        """
+
+        virtual void FullPhysics::Altitude::remove_observer(Observer< Altitude > &Obs)
+
+        """
         return _altitude.Altitude_remove_observer(self, Obs)
 
+
     def altitude(self, P):
+        """
+
+        virtual AutoDerivativeWithUnit<double> FullPhysics::Altitude::altitude(const AutoDerivativeWithUnit< double > &P) const =0
+        Return altitude grid for the given pressure. 
+        """
         return _altitude.Altitude_altitude(self, P)
 
+
     def gravity(self, P):
+        """
+
+        virtual AutoDerivativeWithUnit<double> FullPhysics::Altitude::gravity(const AutoDerivativeWithUnit< double > &P) const =0
+        Return gravity constant for the given pressure. 
+        """
         return _altitude.Altitude_gravity(self, P)
 
+
     def clone(self, *args):
+        """
+
+        virtual boost::shared_ptr<Altitude> FullPhysics::Altitude::clone(const boost::shared_ptr< Pressure > &Press, const boost::shared_ptr<
+        Temperature > &Temp) const =0
+        This version of clone takes a pressure and temperature to use.
+
+        The intent is that the pressure and temperature has been cloned from
+        the original pressure and temperature (although this class has no way
+        to verify this). This allows sets of objects to be cloned using a
+        common Pressure and Temperature clone, e.g. Atmosphere. 
+        """
         return _altitude.Altitude_clone(self, *args)
+
 
     def __init__(self):
         if self.__class__ == Altitude:

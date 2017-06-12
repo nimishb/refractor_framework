@@ -186,6 +186,14 @@ def _new_from_set(cls, version, *args):
 
 import full_physics_swig.generic_object
 class GasAbsorption(full_physics_swig.generic_object.GenericObject):
+    """
+
+    This class determine the gaseous absorption coefficient for a given
+    wave number, temperature and pressure.
+
+    C++ includes: gas_absorption.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.generic_object.GenericObject]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -205,10 +213,27 @@ class GasAbsorption(full_physics_swig.generic_object.GenericObject):
         return _gas_absorption.GasAbsorption___str__(self)
 
     def have_data(self, wn):
+        """
+
+        virtual bool FullPhysics::GasAbsorption::have_data(double wn) const =0
+        Return true if we have data for the given wave number.
+
+        A particular gas might not have absorption coefficients for all
+        spectral bands, e.g., ABSCO tables. 
+        """
         return _gas_absorption.GasAbsorption_have_data(self, wn)
 
+
     def _v_broadener_name(self):
+        """
+
+        virtual std::string FullPhysics::GasAbsorption::broadener_name() const =0
+        For some tables, we might have a broadener (e.g., "h2o").
+
+        This returns the name of the broadener, if any. 
+        """
         return _gas_absorption.GasAbsorption__v_broadener_name(self)
+
 
     @property
     def broadener_name(self):
@@ -216,7 +241,30 @@ class GasAbsorption(full_physics_swig.generic_object.GenericObject):
 
 
     def absorption_cross_section(self, *args):
+        """
+
+        virtual AutoDerivativeWithUnit<double> FullPhysics::GasAbsorption::absorption_cross_section(double Wn, const DoubleWithUnit &Press, const AutoDerivativeWithUnit<
+        double > &Temp, const AutoDerivativeWithUnit< double > &Broadener_vmr)
+        const =0
+        This interpolates the ABSCO data to give absorption cross section for
+        a given pressure, temperature, and broadener VMR.
+
+        Parameters:
+        -----------
+
+        Wn:  wave number
+
+        Press:  Pressure
+
+        Temp:  Temperature
+
+        Broadener_vmr:  Broadner VMR (e.g., H2O VMR). Not all tables will make
+        use of this information.
+
+        Absorption cross section in cm^2 / molecule 
+        """
         return _gas_absorption.GasAbsorption_absorption_cross_section(self, *args)
+
 GasAbsorption_swigregister = _gas_absorption.GasAbsorption_swigregister
 GasAbsorption_swigregister(GasAbsorption)
 

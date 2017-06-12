@@ -5614,16 +5614,82 @@ SWIGINTERN PyObject *NLLSProblemScaled_swigregister(PyObject *SWIGUNUSEDPARM(sel
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"new_NLLSProblemScaled", _wrap_new_NLLSProblemScaled, METH_VARARGS, NULL},
-	 { (char *)"delete_NLLSProblemScaled", _wrap_delete_NLLSProblemScaled, METH_VARARGS, NULL},
-	 { (char *)"NLLSProblemScaled__v_residual", _wrap_NLLSProblemScaled__v_residual, METH_VARARGS, NULL},
-	 { (char *)"NLLSProblemScaled__v_jacobian", _wrap_NLLSProblemScaled__v_jacobian, METH_VARARGS, NULL},
-	 { (char *)"NLLSProblemScaled__v_residual_size", _wrap_NLLSProblemScaled__v_residual_size, METH_VARARGS, NULL},
-	 { (char *)"NLLSProblemScaled__v_expected_parameter_size", _wrap_NLLSProblemScaled__v_expected_parameter_size, METH_VARARGS, NULL},
-	 { (char *)"NLLSProblemScaled__v_parameters", _wrap_NLLSProblemScaled__v_parameters, METH_VARARGS, NULL},
-	 { (char *)"NLLSProblemScaled__v_nlls_problem", _wrap_NLLSProblemScaled__v_nlls_problem, METH_VARARGS, NULL},
-	 { (char *)"NLLSProblemScaled_scale_parameters", _wrap_NLLSProblemScaled_scale_parameters, METH_VARARGS, NULL},
-	 { (char *)"NLLSProblemScaled_unscale_parameters", _wrap_NLLSProblemScaled_unscale_parameters, METH_VARARGS, NULL},
+	 { (char *)"new_NLLSProblemScaled", _wrap_new_NLLSProblemScaled, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::NLLSProblemScaled::NLLSProblemScaled(const blitz::Array< double, 1 > &s, const boost::shared_ptr<\n"
+		"NLLSProblem > &p)\n"
+		"Default Constructor. \n"
+		""},
+	 { (char *)"delete_NLLSProblemScaled", _wrap_delete_NLLSProblemScaled, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::NLLSProblemScaled::~NLLSProblemScaled()\n"
+		"\n"
+		""},
+	 { (char *)"NLLSProblemScaled__v_residual", _wrap_NLLSProblemScaled__v_residual, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual blitz::Array<double, 1> FullPhysics::NLLSProblemScaled::residual()\n"
+		"Return the residual of the scaled NLLS problem at the current set\n"
+		"point.\n"
+		"\n"
+		"Residual \n"
+		""},
+	 { (char *)"NLLSProblemScaled__v_jacobian", _wrap_NLLSProblemScaled__v_jacobian, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual blitz::Array<double, 2> FullPhysics::NLLSProblemScaled::jacobian()\n"
+		"Return the Jacobian of the residual of the scaled NLLS problem at the\n"
+		"current set point.\n"
+		"\n"
+		"The Jacobian of the residual function. \n"
+		""},
+	 { (char *)"NLLSProblemScaled__v_residual_size", _wrap_NLLSProblemScaled__v_residual_size, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual int FullPhysics::NLLSProblemScaled::residual_size() const\n"
+		"\n"
+		""},
+	 { (char *)"NLLSProblemScaled__v_expected_parameter_size", _wrap_NLLSProblemScaled__v_expected_parameter_size, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual int FullPhysics::NLLSProblemScaled::expected_parameter_size() const\n"
+		"Return the size of the parameter X. \n"
+		""},
+	 { (char *)"NLLSProblemScaled__v_parameters", _wrap_NLLSProblemScaled__v_parameters, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual blitz::Array<double, 1> FullPhysics::NLLSProblemScaled::parameters() const\n"
+		"Just returns the current values of parameters.\n"
+		"\n"
+		"This method is redefined here (see the root base class) because of a\n"
+		"compiler bug; otherwise, there should be no need for its redefinition.\n"
+		"\n"
+		"Current parameter values \n"
+		""},
+	 { (char *)"NLLSProblemScaled__v_nlls_problem", _wrap_NLLSProblemScaled__v_nlls_problem, METH_VARARGS, (char *)"\n"
+		"\n"
+		"boost::shared_ptr<NLLSProblem> FullPhysics::NLLSProblemScaled::nlls_problem()\n"
+		"\n"
+		""},
+	 { (char *)"NLLSProblemScaled_scale_parameters", _wrap_NLLSProblemScaled_scale_parameters, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual blitz::Array<double, 1> FullPhysics::NLLSProblemScaled::scale_parameters(const blitz::Array< double, 1 > &x) const\n"
+		"If x is the input to the NLLS problem that this class is trying to\n"
+		"scale, then this method scales the input to be used by this class,\n"
+		"i.e.\n"
+		"\n"
+		"this->parameters(x). The reason for scaling x outside of\n"
+		"this->parameters(x) is that we can also scale an already scaled NLLS\n"
+		"problem.\n"
+		"\n"
+		"In summary, the input x is a correct input directly to the NLLS\n"
+		"problem being scaled. The returned value is correctly scaled to be\n"
+		"used as input to this scaled NLLS problem. \n"
+		""},
+	 { (char *)"NLLSProblemScaled_unscale_parameters", _wrap_NLLSProblemScaled_unscale_parameters, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual blitz::Array<double, 1> FullPhysics::NLLSProblemScaled::unscale_parameters(const blitz::Array< double, 1 > &x) const\n"
+		"The input is correctly scaled to be used as input to this scaled NLLS\n"
+		"problem.\n"
+		"\n"
+		"The returned value is a correct direct input to the NLLS problem being\n"
+		"scaled. \n"
+		""},
 	 { (char *)"NLLSProblemScaled_swigregister", NLLSProblemScaled_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };

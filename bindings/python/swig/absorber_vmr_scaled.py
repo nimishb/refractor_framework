@@ -126,6 +126,16 @@ import full_physics_swig.generic_object
 import full_physics_swig.sub_state_vector_array
 import full_physics_swig.absorber_vmr
 class AbsorberVmrScaled(full_physics_swig.absorber_vmr_imp_base.AbsorberVmrImpBase):
+    """
+
+    This class maps the state vector to the absorber VMR on each level.
+
+    This interface encapsulates the usage of a vmr profile along along
+    with a scale factor which is retrieved.
+
+    C++ includes: absorber_vmr_scaled.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.absorber_vmr_imp_base.AbsorberVmrImpBase]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -140,13 +150,31 @@ class AbsorberVmrScaled(full_physics_swig.absorber_vmr_imp_base.AbsorberVmrImpBa
     __repr__ = _swig_repr
 
     def clone(self, *args):
+        """
+
+        virtual boost::shared_ptr<AbsorberVmr> FullPhysics::AbsorberVmrScaled::clone(const boost::shared_ptr< Pressure > &Press) const =0
+
+        """
         return _absorber_vmr_scaled.AbsorberVmrScaled_clone(self, *args)
 
+
     def state_vector_name_i(self, i):
+        """
+
+        virtual std::string FullPhysics::AbsorberVmrScaled::state_vector_name_i(int i) const
+
+        """
         return _absorber_vmr_scaled.AbsorberVmrScaled_state_vector_name_i(self, i)
 
+
     def _v_scale_factor(self):
+        """
+
+        double FullPhysics::AbsorberVmrScaled::scale_factor() const
+        Scale factor. 
+        """
         return _absorber_vmr_scaled.AbsorberVmrScaled__v_scale_factor(self)
+
 
     @property
     def scale_factor(self):
@@ -154,7 +182,13 @@ class AbsorberVmrScaled(full_physics_swig.absorber_vmr_imp_base.AbsorberVmrImpBa
 
 
     def _v_scale_uncertainty(self):
+        """
+
+        double FullPhysics::AbsorberVmrScaled::scale_uncertainty() const
+        Uncertainty of scale factor. 
+        """
         return _absorber_vmr_scaled.AbsorberVmrScaled__v_scale_uncertainty(self)
+
 
     @property
     def scale_uncertainty(self):

@@ -122,6 +122,30 @@ def _new_from_set(cls, version, *args):
 
 import full_physics_swig.generic_object
 class SpurrBrdfDriver(_object):
+    """
+
+    Abstracts away set up of BRDF kernel interfaces.
+
+    The arrays needing setting for the initialization steps are done
+    through methods because it is often the case that boolean arrays
+    passed to Fortran will need to be copied and can not be set directly
+    into the memory read by Fortran. Since this step is only done once
+    this is probably acceptable.
+
+    For the setup of the values for the surface to be calculated, three
+    double arrays are exposed so that this interface might copy values
+    into the memory used by Fortran once instead of twice if method calls
+    were used to do the setting.
+
+    The public inteface only exposes the two main initialization and setup
+    routines. However, most of the protected interface needs to be
+    implemented by implementing classes. These are mostly methods to link
+    a parameter to the location it is stored by the specific incarnation
+    of Spurr BRDF code.
+
+    C++ includes: spurr_driver.h 
+    """
+
     __swig_setmethods__ = {}
     __setattr__ = lambda self, name, value: _swig_setattr(self, SpurrBrdfDriver, name, value)
     __swig_getmethods__ = {}
@@ -132,19 +156,51 @@ class SpurrBrdfDriver(_object):
     __repr__ = _swig_repr
 
     def initialize_brdf_inputs(self, surface_type):
+        """
+
+        virtual void FullPhysics::SpurrBrdfDriver::initialize_brdf_inputs(int surface_type)
+
+        """
         return _spurr_driver.SpurrBrdfDriver_initialize_brdf_inputs(self, surface_type)
 
+
     def setup_geometry(self, sza, azm, zen):
+        """
+
+        virtual void FullPhysics::SpurrBrdfDriver::setup_geometry(double sza, double azm, double zen) const =0
+
+        """
         return _spurr_driver.SpurrBrdfDriver_setup_geometry(self, sza, azm, zen)
 
+
     def setup_brdf_inputs(self, surface_type, surface_parameters):
+        """
+
+        virtual ArrayAd<double, 1> FullPhysics::SpurrBrdfDriver::setup_brdf_inputs(int surface_type, const ArrayAd< double, 1 > &surface_parameters)
+        const
+
+        """
         return _spurr_driver.SpurrBrdfDriver_setup_brdf_inputs(self, surface_type, surface_parameters)
 
+
     def set_lambertian_albedo(self, albedo_array):
+        """
+
+        void FullPhysics::SpurrBrdfDriver::set_lambertian_albedo(const blitz::Array< double, 1 > &albedo_array)
+        Initialize lambertian albedo from array that might be external to the
+        BrdfDriver. 
+        """
         return _spurr_driver.SpurrBrdfDriver_set_lambertian_albedo(self, albedo_array)
 
+
     def _v_n_brdf_kernels(self):
+        """
+
+        virtual int FullPhysics::SpurrBrdfDriver::n_brdf_kernels() const =0
+
+        """
         return _spurr_driver.SpurrBrdfDriver__v_n_brdf_kernels(self)
+
 
     @property
     def n_brdf_kernels(self):
@@ -152,7 +208,13 @@ class SpurrBrdfDriver(_object):
 
 
     def _v_n_kernel_factor_wfs(self):
+        """
+
+        virtual int FullPhysics::SpurrBrdfDriver::n_kernel_factor_wfs() const =0
+
+        """
         return _spurr_driver.SpurrBrdfDriver__v_n_kernel_factor_wfs(self)
+
 
     @property
     def n_kernel_factor_wfs(self):
@@ -160,7 +222,13 @@ class SpurrBrdfDriver(_object):
 
 
     def _v_n_kernel_params_wfs(self):
+        """
+
+        virtual int FullPhysics::SpurrBrdfDriver::n_kernel_params_wfs() const =0
+
+        """
         return _spurr_driver.SpurrBrdfDriver__v_n_kernel_params_wfs(self)
+
 
     @property
     def n_kernel_params_wfs(self):
@@ -168,7 +236,13 @@ class SpurrBrdfDriver(_object):
 
 
     def _v_n_surface_wfs(self):
+        """
+
+        virtual int FullPhysics::SpurrBrdfDriver::n_surface_wfs() const =0
+
+        """
         return _spurr_driver.SpurrBrdfDriver__v_n_surface_wfs(self)
+
 
     @property
     def n_surface_wfs(self):
@@ -176,7 +250,13 @@ class SpurrBrdfDriver(_object):
 
 
     def _v_do_shadow_effect(self):
+        """
+
+        virtual bool FullPhysics::SpurrBrdfDriver::do_shadow_effect() const =0
+
+        """
         return _spurr_driver.SpurrBrdfDriver__v_do_shadow_effect(self)
+
 
     @property
     def do_shadow_effect(self):
@@ -188,6 +268,17 @@ SpurrBrdfDriver_swigregister = _spurr_driver.SpurrBrdfDriver_swigregister
 SpurrBrdfDriver_swigregister(SpurrBrdfDriver)
 
 class SpurrRtDriver(_object):
+    """
+
+    Abstracts away set up of Radiative Transfer software from Rob Spurr
+    into a simpler common inteface used by the L2 software.
+
+    This interface should be independent of the L2 Atmosphere class to
+    make unit testing easier.
+
+    C++ includes: spurr_driver.h 
+    """
+
     __swig_setmethods__ = {}
     __setattr__ = lambda self, name, value: _swig_setattr(self, SpurrRtDriver, name, value)
     __swig_getmethods__ = {}
@@ -198,13 +289,39 @@ class SpurrRtDriver(_object):
     __repr__ = _swig_repr
 
     def reflectance_calculate(self, height_grid, sza, azm, zen, surface_type, surface_parameters, od, ssa, pf):
+        """
+
+        virtual double FullPhysics::SpurrRtDriver::reflectance_calculate(const blitz::Array< double, 1 > &height_grid, double sza, double azm,
+        double zen, int surface_type, const blitz::Array< double, 1 >
+        &surface_parameters, const blitz::Array< double, 1 > &od, const
+        blitz::Array< double, 1 > &ssa, const blitz::Array< double, 2 > &pf)
+        Computes reflectance without jacobians. 
+        """
         return _spurr_driver.SpurrRtDriver_reflectance_calculate(self, height_grid, sza, azm, zen, surface_type, surface_parameters, od, ssa, pf)
 
+
     def reflectance_and_jacobian_calculate(self, height_grid, sza, azm, zen, surface_type, surface_parameters, od, ssa, pf, reflectance, jac_atm, jac_surf):
+        """
+
+        virtual void FullPhysics::SpurrRtDriver::reflectance_and_jacobian_calculate(const blitz::Array< double, 1 > &height_grid, double sza, double azm,
+        double zen, int surface_type, ArrayAd< double, 1 >
+        &surface_parameters, const ArrayAd< double, 1 > &od, const ArrayAd<
+        double, 1 > &ssa, const ArrayAd< double, 2 > &pf, double &reflectance,
+        blitz::Array< double, 2 > &jac_atm, blitz::Array< double, 1 >
+        &jac_surf)
+
+        """
         return _spurr_driver.SpurrRtDriver_reflectance_and_jacobian_calculate(self, height_grid, sza, azm, zen, surface_type, surface_parameters, od, ssa, pf, reflectance, jac_atm, jac_surf)
 
+
     def _v_brdf_driver(self):
+        """
+
+        const boost::shared_ptr<SpurrBrdfDriver> FullPhysics::SpurrRtDriver::brdf_driver() const
+        Access to BRDF driver. 
+        """
         return _spurr_driver.SpurrRtDriver__v_brdf_driver(self)
+
 
     @property
     def brdf_driver(self):
@@ -212,28 +329,84 @@ class SpurrRtDriver(_object):
 
 
     def setup_height_grid(self, height_grid):
+        """
+
+        virtual void FullPhysics::SpurrRtDriver::setup_height_grid(const blitz::Array< double, 1 > &height_grid) const =0
+        Setup height grid, should only be called once per instance or if the
+        height grid changes. 
+        """
         return _spurr_driver.SpurrRtDriver_setup_height_grid(self, height_grid)
 
+
     def setup_geometry(self, sza, azm, zen):
+        """
+
+        virtual void FullPhysics::SpurrRtDriver::setup_geometry(double sza, double azm, double zen) const =0
+        Setup viewing geometry, should only be called once per instance or if
+        the viewing geometry changes. 
+        """
         return _spurr_driver.SpurrRtDriver_setup_geometry(self, sza, azm, zen)
 
+
     def setup_optical_inputs(self, od, ssa, pf):
+        """
+
+        virtual void FullPhysics::SpurrRtDriver::setup_optical_inputs(const blitz::Array< double, 1 > &od, const blitz::Array< double, 1 >
+        &ssa, const blitz::Array< double, 2 > &pf) const =0
+        Set up optical depth, single scattering albedo and phase function
+        Should be called per spectral point. 
+        """
         return _spurr_driver.SpurrRtDriver_setup_optical_inputs(self, od, ssa, pf)
 
+
     def clear_linear_inputs(self):
+        """
+
+        virtual void FullPhysics::SpurrRtDriver::clear_linear_inputs() const =0
+        Mark that we are not retrieving weighting functions. 
+        """
         return _spurr_driver.SpurrRtDriver_clear_linear_inputs(self)
 
+
     def setup_linear_inputs(self, od, ssa, pf, do_surface_linearization):
+        """
+
+        virtual void FullPhysics::SpurrRtDriver::setup_linear_inputs(const ArrayAd< double, 1 > &od, const ArrayAd< double, 1 > &ssa,
+        const ArrayAd< double, 2 > &pf, bool do_surface_linearization) const
+        =0
+        Set up linearization, weighting functions. 
+        """
         return _spurr_driver.SpurrRtDriver_setup_linear_inputs(self, od, ssa, pf, do_surface_linearization)
 
+
     def calculate_rt(self):
+        """
+
+        virtual void FullPhysics::SpurrRtDriver::calculate_rt() const =0
+        Perform radiative transfer calculation with the values setup by
+        setup_optical_inputs and setup_linear_inputs. 
+        """
         return _spurr_driver.SpurrRtDriver_calculate_rt(self)
 
+
     def get_intensity(self):
+        """
+
+        virtual double FullPhysics::SpurrRtDriver::get_intensity() const =0
+        Retrieve the intensity value calculated. 
+        """
         return _spurr_driver.SpurrRtDriver_get_intensity(self)
 
+
     def copy_jacobians(self, jac_atm, jac_surf):
+        """
+
+        virtual void FullPhysics::SpurrRtDriver::copy_jacobians(blitz::Array< double, 2 > &jac_atm, blitz::Array< double, 1 >
+        &jac_surf) const =0
+        Copy jacobians out of internal xdata structures. 
+        """
         return _spurr_driver.SpurrRtDriver_copy_jacobians(self, jac_atm, jac_surf)
+
     __swig_destroy__ = _spurr_driver.delete_SpurrRtDriver
     __del__ = lambda self: None
 SpurrRtDriver_swigregister = _spurr_driver.SpurrRtDriver_swigregister

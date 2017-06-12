@@ -122,6 +122,24 @@ def _new_from_set(cls, version, *args):
 
 import full_physics_swig.generic_object
 class RadiativeTransfer(full_physics_swig.generic_object.GenericObject):
+    """
+
+    This runs a Radiative Transfer code to determine the reflectance for a
+    given set of wavelengths.
+
+    We support both vector and scalar calculations. Because of the large
+    size of the arrays returned, we often use only a subset of the stokes
+    parameters given by number_stokes(). This can be up to 4, in which
+    case we return I, Q, U and V (in that order). For Gosat, we commonly
+    return 3 parameters: I, Q and U.
+
+    If the Radiative Transfer code is scalar, then you can either set the
+    number_stokes() to 1 and return I, or just set the terms other than I
+    to 0.
+
+    C++ includes: radiative_transfer.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.generic_object.GenericObject]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -141,7 +159,14 @@ class RadiativeTransfer(full_physics_swig.generic_object.GenericObject):
         return _radiative_transfer.RadiativeTransfer___str__(self)
 
     def _v_number_stokes(self):
+        """
+
+        virtual int FullPhysics::RadiativeTransfer::number_stokes() const =0
+        Number of stokes parameters we will return in stokes and
+        stokes_and_jacobian. 
+        """
         return _radiative_transfer.RadiativeTransfer__v_number_stokes(self)
+
 
     @property
     def number_stokes(self):
@@ -149,7 +174,13 @@ class RadiativeTransfer(full_physics_swig.generic_object.GenericObject):
 
 
     def _v_number_spectrometer(self):
+        """
+
+        virtual int FullPhysics::RadiativeTransfer::number_spectrometer() const =0
+        Number of spectrometer we have. 
+        """
         return _radiative_transfer.RadiativeTransfer__v_number_spectrometer(self)
+
 
     @property
     def number_spectrometer(self):
@@ -157,13 +188,68 @@ class RadiativeTransfer(full_physics_swig.generic_object.GenericObject):
 
 
     def reflectance(self, Spec_domain, Spec_index, Skip_jacobian=False):
+        """
+
+        virtual Spectrum FullPhysics::RadiativeTransfer::reflectance(const SpectralDomain &Spec_domain, int Spec_index, bool
+        Skip_jacobian=false) const =0
+        Calculate reflectance for the given set of wavenumbers/wavelengths.
+
+        Parameters:
+        -----------
+
+        Spec_domain:  List of wavenumber/wavelength to calculate for.
+
+        Spec_index:  The Spectral index
+
+        Skip_jacobian:  If true, don't do the Jacobian calculation. Often this
+        is significantly faster to calculate.
+
+        The set of reflectance values. 
+        """
         return _radiative_transfer.RadiativeTransfer_reflectance(self, Spec_domain, Spec_index, Skip_jacobian)
 
+
     def stokes(self, Spec_domain, Spec_index):
+        """
+
+        virtual blitz::Array<double, 2> FullPhysics::RadiativeTransfer::stokes(const SpectralDomain &Spec_domain, int Spec_index) const =0
+        Calculate stokes vector for the given set of wavenumbers/wavelengths.
+
+        Parameters:
+        -----------
+
+        Spec_domain:  List of wavenumber/wavelength to calculate for.
+
+        Spec_index:  The Spectral index
+
+        The set of stokes coefficients. This is Spec_domain.data().rows() x
+        number_stokes() in size. 
+        """
         return _radiative_transfer.RadiativeTransfer_stokes(self, Spec_domain, Spec_index)
 
+
     def stokes_and_jacobian(self, Spec_domain, Spec_index):
+        """
+
+        virtual ArrayAd<double, 2> FullPhysics::RadiativeTransfer::stokes_and_jacobian(const SpectralDomain &Spec_domain, int Spec_index) const =0
+        Calculate stokes vector for the given set of wavenumbers/wavelengths.
+
+        This also calculates the Jacobian of the stokes with respect to the
+        state vector elements.
+
+        Parameters:
+        -----------
+
+        Spec_domain:  List of wavenumber/wavelength to calculate for.
+
+        Spec_index:  The Spectral index
+
+        The set of stokes coefficients, along with derivatives with respect to
+        the state vector elements. This is Spec_domain.data().rows() x
+        number_stokes() in size. 
+        """
         return _radiative_transfer.RadiativeTransfer_stokes_and_jacobian(self, Spec_domain, Spec_index)
+
 RadiativeTransfer_swigregister = _radiative_transfer.RadiativeTransfer_swigregister
 RadiativeTransfer_swigregister(RadiativeTransfer)
 

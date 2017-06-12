@@ -187,6 +187,17 @@ def _new_from_set(cls, version, *args):
 import full_physics_swig.generic_object
 import full_physics_swig.state_vector
 class RelativeHumidity(_object):
+    """
+
+    This calculates the relative humidity.
+
+    This is a straight forward calculation from the H2O AbsorberVmr,
+    Temperature, and Pressure. There is no existing class that this
+    obviously goes to, so we just pull this out into its own class.
+
+    C++ includes: relative_humidity.h 
+    """
+
     __swig_setmethods__ = {}
     __setattr__ = lambda self, name, value: _swig_setattr(self, RelativeHumidity, name, value)
     __swig_getmethods__ = {}
@@ -194,6 +205,12 @@ class RelativeHumidity(_object):
     __repr__ = _swig_repr
 
     def __init__(self, Abs, Temp, Press):
+        """
+
+        FullPhysics::RelativeHumidity::RelativeHumidity(const boost::shared_ptr< Absorber > &Abs, const boost::shared_ptr<
+        Temperature > &Temp, const boost::shared_ptr< Pressure > &Press)
+
+        """
         this = _relative_humidity.new_RelativeHumidity(Abs, Temp, Press)
         try:
             self.this.append(this)
@@ -201,16 +218,41 @@ class RelativeHumidity(_object):
             self.this = this
 
     def clone(self, *args):
+        """
+
+        virtual boost::shared_ptr<RelativeHumidity> FullPhysics::RelativeHumidity::clone(const boost::shared_ptr< Absorber > &Abs, const boost::shared_ptr<
+        Temperature > &Temp, const boost::shared_ptr< Pressure > &Press) const
+
+        """
         return _relative_humidity.RelativeHumidity_clone(self, *args)
 
+
     def relative_humidity_grid(self):
+        """
+
+        ArrayAd<double, 1> FullPhysics::RelativeHumidity::relative_humidity_grid() const
+
+        """
         return _relative_humidity.RelativeHumidity_relative_humidity_grid(self)
 
+
     def relative_humidity_layer(self):
+        """
+
+        ArrayAd<double, 1> FullPhysics::RelativeHumidity::relative_humidity_layer() const
+
+        """
         return _relative_humidity.RelativeHumidity_relative_humidity_layer(self)
 
+
     def specific_humidity_grid(self):
+        """
+
+        ArrayAd<double, 1> FullPhysics::RelativeHumidity::specific_humidity_grid() const
+
+        """
         return _relative_humidity.RelativeHumidity_specific_humidity_grid(self)
+
 
     def __str__(self):
         return _relative_humidity.RelativeHumidity___str__(self)

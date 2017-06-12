@@ -122,6 +122,32 @@ def _new_from_set(cls, version, *args):
 
 import full_physics_swig.generic_object
 class SpectralDomain(full_physics_swig.generic_object.GenericObject):
+    """
+
+    For different instruments, it is more natural to either work with
+    wavenumbers (e.g., GOSAT) or wavelength (e.g., OCO).
+
+    Most of our code doesn't care if we are using wavenumber or
+    wavelength, so we have this one class that can be either. For code
+    that needs one or the other, we supply conversion routines to present
+    the data as either wavenumber or wavelength.
+
+    As far as I can determine, there isn't any commonly used name that
+    means "either wavelength or wavenumber". We've named this
+    "SpectralDomain", where "Domain" is used like "Domain and Range"
+    of a function, i.e., this is the X-axis of a spectral plot. Perhaps a
+    better name will arise and we can rename this class.
+
+    This class is essentially just a blitz::array with units, and the
+    additional functionality to convert to wavenumber or wavelength.
+
+    Note that there are a few closely related classes, with similar
+    sounding names. See spectrum_doxygen for a description of each of
+    these.
+
+    C++ includes: spectral_domain.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.generic_object.GenericObject]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -135,6 +161,11 @@ class SpectralDomain(full_physics_swig.generic_object.GenericObject):
     PREFER_WAVELENGTH = _spectral_domain.SpectralDomain_PREFER_WAVELENGTH
 
     def __init__(self, *args):
+        """
+
+        FullPhysics::SpectralDomain::SpectralDomain()
+        Default constructor needed for SWIG. 
+        """
         this = _spectral_domain.new_SpectralDomain(*args)
         try:
             self.this.append(this)
@@ -142,7 +173,20 @@ class SpectralDomain(full_physics_swig.generic_object.GenericObject):
             self.this = this
 
     def _v_data(self):
+        """
+
+        const blitz::Array<double, 1>& FullPhysics::SpectralDomain::data() const
+        Return data.
+
+        This is either wavenumber or wavelength. This member function is
+        intended for classes that don't care which one we are using. If you do
+        care, then you should call either wavenumber or wavelength.
+
+        Note that this is a reference to the actual data, so if you intend on
+        modifying this you should make a deep copy. 
+        """
         return _spectral_domain.SpectralDomain__v_data(self)
+
 
     @property
     def data(self):
@@ -150,7 +194,20 @@ class SpectralDomain(full_physics_swig.generic_object.GenericObject):
 
 
     def _v_sample_index(self):
+        """
+
+        const blitz::Array<int, 1>& FullPhysics::SpectralDomain::sample_index() const
+        Return sample index.
+
+        This may be empty if we aren't dealing with the lower resolution grid
+        that maps to a sample index. If present, this gives the sample index
+        for each of the data() points.
+
+        Note that by convention the sample index is 1 based, so the first
+        sample index is 1 rather than zero. 
+        """
         return _spectral_domain.SpectralDomain__v_sample_index(self)
+
 
     @property
     def sample_index(self):
@@ -158,7 +215,13 @@ class SpectralDomain(full_physics_swig.generic_object.GenericObject):
 
 
     def _v_units(self):
+        """
+
+        const Unit FullPhysics::SpectralDomain::units() const
+        Units that go with data() 
+        """
         return _spectral_domain.SpectralDomain__v_units(self)
+
 
     @property
     def units(self):
@@ -166,7 +229,15 @@ class SpectralDomain(full_physics_swig.generic_object.GenericObject):
 
 
     def _v_type_preference(self):
+        """
+
+        TypePreference FullPhysics::SpectralDomain::type_preference() const
+        Indicate if this class prefers wavelength or wavenumber.
+
+        This is what data() is. 
+        """
         return _spectral_domain.SpectralDomain__v_type_preference(self)
+
 
     @property
     def type_preference(self):
@@ -174,16 +245,40 @@ class SpectralDomain(full_physics_swig.generic_object.GenericObject):
 
 
     def convert_wave(self, *args):
+        """
+
+        blitz::Array<double, 1> FullPhysics::SpectralDomain::convert_wave(const Unit &Units) const
+
+        """
         return _spectral_domain.SpectralDomain_convert_wave(self, *args)
 
+
     def wavenumber(self, *args):
+        """
+
+        blitz::Array<double, 1> FullPhysics::SpectralDomain::wavenumber(const Unit &Units=units::inv_cm) const
+
+        """
         return _spectral_domain.SpectralDomain_wavenumber(self, *args)
 
+
     def wavelength(self, *args):
+        """
+
+        blitz::Array<double, 1> FullPhysics::SpectralDomain::wavelength(const Unit &Units=units::micron) const
+
+        """
         return _spectral_domain.SpectralDomain_wavelength(self, *args)
 
+
     def photon_to_radiance_factor(self):
+        """
+
+        ArrayWithUnit<double, 1> FullPhysics::SpectralDomain::photon_to_radiance_factor() const
+
+        """
         return _spectral_domain.SpectralDomain_photon_to_radiance_factor(self)
+
 
     def __str__(self):
         return _spectral_domain.SpectralDomain___str__(self)

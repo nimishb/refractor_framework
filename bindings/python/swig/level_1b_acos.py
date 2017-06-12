@@ -124,6 +124,13 @@ import full_physics_swig.level_1b_hdf
 import full_physics_swig.level_1b
 import full_physics_swig.generic_object
 class Level1bAcos(full_physics_swig.level_1b_hdf.Level1bHdf):
+    """
+
+    This reads a Level 1B file that is in the HDF format.
+
+    C++ includes: level_1b_acos.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.level_1b_hdf.Level1bHdf]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -135,6 +142,12 @@ class Level1bAcos(full_physics_swig.level_1b_hdf.Level1bHdf):
     __repr__ = _swig_repr
 
     def __init__(self, *args):
+        """
+
+        FullPhysics::Level1bAcos::Level1bAcos(const boost::shared_ptr< HdfFile > &Hfile, const boost::shared_ptr<
+        HdfSoundingId > &Sounding_id)
+
+        """
         this = _level_1b_acos.new_Level1bAcos(*args)
         try:
             self.this.append(this)
@@ -145,13 +158,31 @@ class Level1bAcos(full_physics_swig.level_1b_hdf.Level1bHdf):
         return _level_1b_acos.Level1bAcos_radiance(self, Spec_index)
 
     def land_fraction(self, spec_index):
+        """
+
+        double FullPhysics::Level1bAcos::land_fraction(int spec_index) const
+        Percentage of land in sounding Field of View. 
+        """
         return _level_1b_acos.Level1bAcos_land_fraction(self, spec_index)
 
+
     def is_h_gain(self):
+        """
+
+        bool FullPhysics::Level1bAcos::is_h_gain() const
+        True if this is H gain. 
+        """
         return _level_1b_acos.Level1bAcos_is_h_gain(self)
 
+
     def is_m_gain(self):
+        """
+
+        bool FullPhysics::Level1bAcos::is_m_gain() const
+        True if this is M gain. 
+        """
         return _level_1b_acos.Level1bAcos_is_m_gain(self)
+
     __swig_destroy__ = _level_1b_acos.delete_Level1bAcos
     __del__ = lambda self: None
 Level1bAcos_swigregister = _level_1b_acos.Level1bAcos_swigregister

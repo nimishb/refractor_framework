@@ -158,6 +158,11 @@ class ArrayAd_double_1(_object):
     __repr__ = _swig_repr
 
     def __init__(self, *args):
+        """
+
+        FullPhysics::ArrayAd< T, D >::ArrayAd(const blitz::TinyVector< int, D > &Shape, int nvar)
+
+        """
         this = _array_ad.new_ArrayAd_double_1(*args)
         try:
             self.this.append(this)
@@ -165,13 +170,31 @@ class ArrayAd_double_1(_object):
             self.this = this
 
     def resize_number_variable(self, nvar):
+        """
+
+        void FullPhysics::ArrayAd< T, D >::resize_number_variable(int nvar)
+
+        """
         return _array_ad.ArrayAd_double_1_resize_number_variable(self, nvar)
 
+
     def resize(self, *args):
+        """
+
+        void FullPhysics::ArrayAd< T, D >::resize(int n1, int n2, int n3, int n4, int n5, int nvar)
+
+        """
         return _array_ad.ArrayAd_double_1_resize(self, *args)
 
+
     def _v_value(self):
+        """
+
+        blitz::Array<T, D>& FullPhysics::ArrayAd< T, D >::value()
+
+        """
         return _array_ad.ArrayAd_double_1__v_value(self)
+
 
     @property
     def value(self):
@@ -179,7 +202,13 @@ class ArrayAd_double_1(_object):
 
 
     def _v_jacobian(self):
+        """
+
+        blitz::Array<T, D+1>& FullPhysics::ArrayAd< T, D >::jacobian()
+
+        """
         return _array_ad.ArrayAd_double_1__v_jacobian(self)
+
 
     @property
     def jacobian(self):
@@ -187,7 +216,13 @@ class ArrayAd_double_1(_object):
 
 
     def _v_rows(self):
+        """
+
+        int FullPhysics::ArrayAd< T, D >::rows() const
+
+        """
         return _array_ad.ArrayAd_double_1__v_rows(self)
+
 
     @property
     def rows(self):
@@ -195,7 +230,13 @@ class ArrayAd_double_1(_object):
 
 
     def _v_cols(self):
+        """
+
+        int FullPhysics::ArrayAd< T, D >::cols() const
+
+        """
         return _array_ad.ArrayAd_double_1__v_cols(self)
+
 
     @property
     def cols(self):
@@ -203,7 +244,13 @@ class ArrayAd_double_1(_object):
 
 
     def _v_depth(self):
+        """
+
+        int FullPhysics::ArrayAd< T, D >::depth() const
+
+        """
         return _array_ad.ArrayAd_double_1__v_depth(self)
+
 
     @property
     def depth(self):
@@ -211,7 +258,13 @@ class ArrayAd_double_1(_object):
 
 
     def _v_is_constant(self):
+        """
+
+        bool FullPhysics::ArrayAd< T, D >::is_constant() const
+
+        """
         return _array_ad.ArrayAd_double_1__v_is_constant(self)
+
 
     @property
     def is_constant(self):
@@ -219,7 +272,13 @@ class ArrayAd_double_1(_object):
 
 
     def _v_number_variable(self):
+        """
+
+        int FullPhysics::ArrayAd< T, D >::number_variable() const
+
+        """
         return _array_ad.ArrayAd_double_1__v_number_variable(self)
+
 
     @property
     def number_variable(self):
@@ -227,10 +286,22 @@ class ArrayAd_double_1(_object):
 
 
     def reference(self, V):
+        """
+
+        void FullPhysics::ArrayAd< T, D >::reference(const ArrayAd< T, D > &V)
+
+        """
         return _array_ad.ArrayAd_double_1_reference(self, V)
 
+
     def copy(self):
+        """
+
+        ArrayAd<T, D> FullPhysics::ArrayAd< T, D >::copy() const
+
+        """
         return _array_ad.ArrayAd_double_1_copy(self)
+
 
     def __array__(self):
         if(1 == 1):
@@ -314,6 +385,11 @@ class ArrayAd_double_2(_object):
     __repr__ = _swig_repr
 
     def __init__(self, *args):
+        """
+
+        FullPhysics::ArrayAd< T, D >::ArrayAd(const blitz::TinyVector< int, D > &Shape, int nvar)
+
+        """
         this = _array_ad.new_ArrayAd_double_2(*args)
         try:
             self.this.append(this)
@@ -321,13 +397,31 @@ class ArrayAd_double_2(_object):
             self.this = this
 
     def resize_number_variable(self, nvar):
+        """
+
+        void FullPhysics::ArrayAd< T, D >::resize_number_variable(int nvar)
+
+        """
         return _array_ad.ArrayAd_double_2_resize_number_variable(self, nvar)
 
+
     def resize(self, *args):
+        """
+
+        void FullPhysics::ArrayAd< T, D >::resize(int n1, int n2, int n3, int n4, int n5, int nvar)
+
+        """
         return _array_ad.ArrayAd_double_2_resize(self, *args)
 
+
     def _v_value(self):
+        """
+
+        blitz::Array<T, D>& FullPhysics::ArrayAd< T, D >::value()
+
+        """
         return _array_ad.ArrayAd_double_2__v_value(self)
+
 
     @property
     def value(self):
@@ -335,7 +429,13 @@ class ArrayAd_double_2(_object):
 
 
     def _v_jacobian(self):
+        """
+
+        blitz::Array<T, D+1>& FullPhysics::ArrayAd< T, D >::jacobian()
+
+        """
         return _array_ad.ArrayAd_double_2__v_jacobian(self)
+
 
     @property
     def jacobian(self):
@@ -343,7 +443,13 @@ class ArrayAd_double_2(_object):
 
 
     def _v_rows(self):
+        """
+
+        int FullPhysics::ArrayAd< T, D >::rows() const
+
+        """
         return _array_ad.ArrayAd_double_2__v_rows(self)
+
 
     @property
     def rows(self):
@@ -351,7 +457,13 @@ class ArrayAd_double_2(_object):
 
 
     def _v_cols(self):
+        """
+
+        int FullPhysics::ArrayAd< T, D >::cols() const
+
+        """
         return _array_ad.ArrayAd_double_2__v_cols(self)
+
 
     @property
     def cols(self):
@@ -359,7 +471,13 @@ class ArrayAd_double_2(_object):
 
 
     def _v_depth(self):
+        """
+
+        int FullPhysics::ArrayAd< T, D >::depth() const
+
+        """
         return _array_ad.ArrayAd_double_2__v_depth(self)
+
 
     @property
     def depth(self):
@@ -367,7 +485,13 @@ class ArrayAd_double_2(_object):
 
 
     def _v_is_constant(self):
+        """
+
+        bool FullPhysics::ArrayAd< T, D >::is_constant() const
+
+        """
         return _array_ad.ArrayAd_double_2__v_is_constant(self)
+
 
     @property
     def is_constant(self):
@@ -375,7 +499,13 @@ class ArrayAd_double_2(_object):
 
 
     def _v_number_variable(self):
+        """
+
+        int FullPhysics::ArrayAd< T, D >::number_variable() const
+
+        """
         return _array_ad.ArrayAd_double_2__v_number_variable(self)
+
 
     @property
     def number_variable(self):
@@ -383,10 +513,22 @@ class ArrayAd_double_2(_object):
 
 
     def reference(self, V):
+        """
+
+        void FullPhysics::ArrayAd< T, D >::reference(const ArrayAd< T, D > &V)
+
+        """
         return _array_ad.ArrayAd_double_2_reference(self, V)
 
+
     def copy(self):
+        """
+
+        ArrayAd<T, D> FullPhysics::ArrayAd< T, D >::copy() const
+
+        """
         return _array_ad.ArrayAd_double_2_copy(self)
+
 
     def __array__(self):
         if(2 == 1):
@@ -470,6 +612,11 @@ class ArrayAd_double_3(_object):
     __repr__ = _swig_repr
 
     def __init__(self, *args):
+        """
+
+        FullPhysics::ArrayAd< T, D >::ArrayAd(const blitz::TinyVector< int, D > &Shape, int nvar)
+
+        """
         this = _array_ad.new_ArrayAd_double_3(*args)
         try:
             self.this.append(this)
@@ -477,13 +624,31 @@ class ArrayAd_double_3(_object):
             self.this = this
 
     def resize_number_variable(self, nvar):
+        """
+
+        void FullPhysics::ArrayAd< T, D >::resize_number_variable(int nvar)
+
+        """
         return _array_ad.ArrayAd_double_3_resize_number_variable(self, nvar)
 
+
     def resize(self, *args):
+        """
+
+        void FullPhysics::ArrayAd< T, D >::resize(int n1, int n2, int n3, int n4, int n5, int nvar)
+
+        """
         return _array_ad.ArrayAd_double_3_resize(self, *args)
 
+
     def _v_value(self):
+        """
+
+        blitz::Array<T, D>& FullPhysics::ArrayAd< T, D >::value()
+
+        """
         return _array_ad.ArrayAd_double_3__v_value(self)
+
 
     @property
     def value(self):
@@ -491,7 +656,13 @@ class ArrayAd_double_3(_object):
 
 
     def _v_jacobian(self):
+        """
+
+        blitz::Array<T, D+1>& FullPhysics::ArrayAd< T, D >::jacobian()
+
+        """
         return _array_ad.ArrayAd_double_3__v_jacobian(self)
+
 
     @property
     def jacobian(self):
@@ -499,7 +670,13 @@ class ArrayAd_double_3(_object):
 
 
     def _v_rows(self):
+        """
+
+        int FullPhysics::ArrayAd< T, D >::rows() const
+
+        """
         return _array_ad.ArrayAd_double_3__v_rows(self)
+
 
     @property
     def rows(self):
@@ -507,7 +684,13 @@ class ArrayAd_double_3(_object):
 
 
     def _v_cols(self):
+        """
+
+        int FullPhysics::ArrayAd< T, D >::cols() const
+
+        """
         return _array_ad.ArrayAd_double_3__v_cols(self)
+
 
     @property
     def cols(self):
@@ -515,7 +698,13 @@ class ArrayAd_double_3(_object):
 
 
     def _v_depth(self):
+        """
+
+        int FullPhysics::ArrayAd< T, D >::depth() const
+
+        """
         return _array_ad.ArrayAd_double_3__v_depth(self)
+
 
     @property
     def depth(self):
@@ -523,7 +712,13 @@ class ArrayAd_double_3(_object):
 
 
     def _v_is_constant(self):
+        """
+
+        bool FullPhysics::ArrayAd< T, D >::is_constant() const
+
+        """
         return _array_ad.ArrayAd_double_3__v_is_constant(self)
+
 
     @property
     def is_constant(self):
@@ -531,7 +726,13 @@ class ArrayAd_double_3(_object):
 
 
     def _v_number_variable(self):
+        """
+
+        int FullPhysics::ArrayAd< T, D >::number_variable() const
+
+        """
         return _array_ad.ArrayAd_double_3__v_number_variable(self)
+
 
     @property
     def number_variable(self):
@@ -539,10 +740,22 @@ class ArrayAd_double_3(_object):
 
 
     def reference(self, V):
+        """
+
+        void FullPhysics::ArrayAd< T, D >::reference(const ArrayAd< T, D > &V)
+
+        """
         return _array_ad.ArrayAd_double_3_reference(self, V)
 
+
     def copy(self):
+        """
+
+        ArrayAd<T, D> FullPhysics::ArrayAd< T, D >::copy() const
+
+        """
         return _array_ad.ArrayAd_double_3_copy(self)
+
 
     def __array__(self):
         if(3 == 1):
@@ -626,6 +839,11 @@ class ArrayAd_double_4(_object):
     __repr__ = _swig_repr
 
     def __init__(self, *args):
+        """
+
+        FullPhysics::ArrayAd< T, D >::ArrayAd(const blitz::TinyVector< int, D > &Shape, int nvar)
+
+        """
         this = _array_ad.new_ArrayAd_double_4(*args)
         try:
             self.this.append(this)
@@ -633,13 +851,31 @@ class ArrayAd_double_4(_object):
             self.this = this
 
     def resize_number_variable(self, nvar):
+        """
+
+        void FullPhysics::ArrayAd< T, D >::resize_number_variable(int nvar)
+
+        """
         return _array_ad.ArrayAd_double_4_resize_number_variable(self, nvar)
 
+
     def resize(self, *args):
+        """
+
+        void FullPhysics::ArrayAd< T, D >::resize(int n1, int n2, int n3, int n4, int n5, int nvar)
+
+        """
         return _array_ad.ArrayAd_double_4_resize(self, *args)
 
+
     def _v_value(self):
+        """
+
+        blitz::Array<T, D>& FullPhysics::ArrayAd< T, D >::value()
+
+        """
         return _array_ad.ArrayAd_double_4__v_value(self)
+
 
     @property
     def value(self):
@@ -647,7 +883,13 @@ class ArrayAd_double_4(_object):
 
 
     def _v_jacobian(self):
+        """
+
+        blitz::Array<T, D+1>& FullPhysics::ArrayAd< T, D >::jacobian()
+
+        """
         return _array_ad.ArrayAd_double_4__v_jacobian(self)
+
 
     @property
     def jacobian(self):
@@ -655,7 +897,13 @@ class ArrayAd_double_4(_object):
 
 
     def _v_rows(self):
+        """
+
+        int FullPhysics::ArrayAd< T, D >::rows() const
+
+        """
         return _array_ad.ArrayAd_double_4__v_rows(self)
+
 
     @property
     def rows(self):
@@ -663,7 +911,13 @@ class ArrayAd_double_4(_object):
 
 
     def _v_cols(self):
+        """
+
+        int FullPhysics::ArrayAd< T, D >::cols() const
+
+        """
         return _array_ad.ArrayAd_double_4__v_cols(self)
+
 
     @property
     def cols(self):
@@ -671,7 +925,13 @@ class ArrayAd_double_4(_object):
 
 
     def _v_depth(self):
+        """
+
+        int FullPhysics::ArrayAd< T, D >::depth() const
+
+        """
         return _array_ad.ArrayAd_double_4__v_depth(self)
+
 
     @property
     def depth(self):
@@ -679,7 +939,13 @@ class ArrayAd_double_4(_object):
 
 
     def _v_is_constant(self):
+        """
+
+        bool FullPhysics::ArrayAd< T, D >::is_constant() const
+
+        """
         return _array_ad.ArrayAd_double_4__v_is_constant(self)
+
 
     @property
     def is_constant(self):
@@ -687,7 +953,13 @@ class ArrayAd_double_4(_object):
 
 
     def _v_number_variable(self):
+        """
+
+        int FullPhysics::ArrayAd< T, D >::number_variable() const
+
+        """
         return _array_ad.ArrayAd_double_4__v_number_variable(self)
+
 
     @property
     def number_variable(self):
@@ -695,10 +967,22 @@ class ArrayAd_double_4(_object):
 
 
     def reference(self, V):
+        """
+
+        void FullPhysics::ArrayAd< T, D >::reference(const ArrayAd< T, D > &V)
+
+        """
         return _array_ad.ArrayAd_double_4_reference(self, V)
 
+
     def copy(self):
+        """
+
+        ArrayAd<T, D> FullPhysics::ArrayAd< T, D >::copy() const
+
+        """
         return _array_ad.ArrayAd_double_4_copy(self)
+
 
     def __array__(self):
         if(4 == 1):

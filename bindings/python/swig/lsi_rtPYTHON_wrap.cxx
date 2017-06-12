@@ -5594,13 +5594,41 @@ SWIGINTERN PyObject *LsiRt_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"LsiRt__v_number_stokes", _wrap_LsiRt__v_number_stokes, METH_VARARGS, NULL},
-	 { (char *)"LsiRt_stokes", _wrap_LsiRt_stokes, METH_VARARGS, NULL},
-	 { (char *)"LsiRt_stokes_and_jacobian", _wrap_LsiRt_stokes_and_jacobian, METH_VARARGS, NULL},
-	 { (char *)"LsiRt_correction_only", _wrap_LsiRt_correction_only, METH_VARARGS, NULL},
-	 { (char *)"LsiRt__v_low_stream_radiative_transfer", _wrap_LsiRt__v_low_stream_radiative_transfer, METH_VARARGS, NULL},
-	 { (char *)"LsiRt__v_high_stream_radiative_transfer", _wrap_LsiRt__v_high_stream_radiative_transfer, METH_VARARGS, NULL},
-	 { (char *)"delete_LsiRt", _wrap_delete_LsiRt, METH_VARARGS, NULL},
+	 { (char *)"LsiRt__v_number_stokes", _wrap_LsiRt__v_number_stokes, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual int FullPhysics::LsiRt::number_stokes() const\n"
+		"\n"
+		""},
+	 { (char *)"LsiRt_stokes", _wrap_LsiRt_stokes, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual blitz::Array<double, 2> FullPhysics::LsiRt::stokes(const SpectralDomain &Spec_domain, int Spec_index) const\n"
+		"\n"
+		""},
+	 { (char *)"LsiRt_stokes_and_jacobian", _wrap_LsiRt_stokes_and_jacobian, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual ArrayAd<double, 2> FullPhysics::LsiRt::stokes_and_jacobian(const SpectralDomain &Spec_domain, int Spec_index) const\n"
+		"\n"
+		""},
+	 { (char *)"LsiRt_correction_only", _wrap_LsiRt_correction_only, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual ArrayAd<double, 2> FullPhysics::LsiRt::correction_only(const SpectralDomain &Spec_domain, int Spec_index) const\n"
+		"\n"
+		""},
+	 { (char *)"LsiRt__v_low_stream_radiative_transfer", _wrap_LsiRt__v_low_stream_radiative_transfer, METH_VARARGS, (char *)"\n"
+		"\n"
+		"boost::shared_ptr<RadiativeTransfer> FullPhysics::LsiRt::low_stream_radiative_transfer() const\n"
+		"\n"
+		""},
+	 { (char *)"LsiRt__v_high_stream_radiative_transfer", _wrap_LsiRt__v_high_stream_radiative_transfer, METH_VARARGS, (char *)"\n"
+		"\n"
+		"boost::shared_ptr<RadiativeTransfer> FullPhysics::LsiRt::high_stream_radiative_transfer() const\n"
+		"\n"
+		""},
+	 { (char *)"delete_LsiRt", _wrap_delete_LsiRt, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::LsiRt::~LsiRt()\n"
+		"\n"
+		""},
 	 { (char *)"LsiRt_swigregister", LsiRt_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };

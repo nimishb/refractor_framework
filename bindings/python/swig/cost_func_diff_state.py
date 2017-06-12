@@ -124,6 +124,20 @@ import full_physics_swig.cost_func_state
 import full_physics_swig.problem_state
 import full_physics_swig.generic_object
 class CostFuncDiffState(full_physics_swig.cost_func_state.CostFuncState):
+    """
+
+    The state for a problem with implemented cost function and its
+    gradient.
+
+    CostFuncDiffState is used for the problems that their cost functions
+    and their gradients are implemented. With this class one can store the
+    current point in the parameter space (the state), the value of the
+    cost function at that point, and the gradient of the cost function at
+    the same point.
+
+    C++ includes: cost_func_diff_state.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.cost_func_state.CostFuncState]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -140,10 +154,34 @@ class CostFuncDiffState(full_physics_swig.cost_func_state.CostFuncState):
     __del__ = lambda self: None
 
     def set(self, s):
+        """
+
+        virtual void FullPhysics::CostFuncDiffState::set(const CostFuncDiffState &s)
+        Makes self a copy of the input state.
+
+        This method makes the object, for which it is called, a copy of the
+        input state.
+
+        Parameters:
+        -----------
+
+        s:  another CostFuncDiffState 
+        """
         return _cost_func_diff_state.CostFuncDiffState_set(self, s)
 
+
     def clear(self):
+        """
+
+        virtual void FullPhysics::CostFuncDiffState::clear()
+        Deletes data contents.
+
+        This method deletes state. If needed, it must be reimplemented by
+        other classes derived from this class to delete other saved components
+        associated with the state as well. 
+        """
         return _cost_func_diff_state.CostFuncDiffState_clear(self)
+
 CostFuncDiffState_swigregister = _cost_func_diff_state.CostFuncDiffState_swigregister
 CostFuncDiffState_swigregister(CostFuncDiffState)
 

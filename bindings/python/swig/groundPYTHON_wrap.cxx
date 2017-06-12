@@ -7186,12 +7186,42 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"ObserverGround_notify_add", _wrap_ObserverGround_notify_add, METH_VARARGS, NULL},
 	 { (char *)"ObserverGround_notify_remove", _wrap_ObserverGround_notify_remove, METH_VARARGS, NULL},
 	 { (char *)"ObserverGround_swigregister", ObserverGround_swigregister, METH_VARARGS, NULL},
-	 { (char *)"delete_Ground", _wrap_delete_Ground, METH_VARARGS, NULL},
-	 { (char *)"Ground_add_observer", _wrap_Ground_add_observer, METH_VARARGS, NULL},
-	 { (char *)"Ground_remove_observer", _wrap_Ground_remove_observer, METH_VARARGS, NULL},
+	 { (char *)"delete_Ground", _wrap_delete_Ground, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::Ground::~Ground()\n"
+		"\n"
+		""},
+	 { (char *)"Ground_add_observer", _wrap_Ground_add_observer, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::Ground::add_observer(Observer< Ground > &Obs)\n"
+		"\n"
+		""},
+	 { (char *)"Ground_remove_observer", _wrap_Ground_remove_observer, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::Ground::remove_observer(Observer< Ground > &Obs)\n"
+		"\n"
+		""},
 	 { (char *)"Ground___str__", _wrap_Ground___str__, METH_VARARGS, NULL},
-	 { (char *)"Ground_surface_parameter", _wrap_Ground_surface_parameter, METH_VARARGS, NULL},
-	 { (char *)"Ground_clone", _wrap_Ground_clone, METH_VARARGS, NULL},
+	 { (char *)"Ground_surface_parameter", _wrap_Ground_surface_parameter, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual ArrayAd<double, 1> FullPhysics::Ground::surface_parameter(const double wn, const int spec_index) const =0\n"
+		"Surface parmeters.\n"
+		"\n"
+		"What exactly these parameters mean is determined by the surface type,\n"
+		"see the discussion in the comments before the Ground class. \n"
+		""},
+	 { (char *)"Ground_clone", _wrap_Ground_clone, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual boost::shared_ptr<Ground> FullPhysics::Ground::clone() const =0\n"
+		"Clone a Ground object.\n"
+		"\n"
+		"Note that the cloned version will not be attached to a StateVector,\n"
+		"although you can of course attach them after receiving the cloned\n"
+		"object.\n"
+		"\n"
+		"Because this isn't attached to the StateVector, one use of the clone\n"
+		"operator is to create a \"frozen\" Ground object. \n"
+		""},
 	 { (char *)"Ground_print_desc", _wrap_Ground_print_desc, METH_VARARGS, NULL},
 	 { (char *)"Ground_swigregister", Ground_swigregister, METH_VARARGS, NULL},
 	 { (char *)"SubStateVectorArrayGround_init", _wrap_SubStateVectorArrayGround_init, METH_VARARGS, NULL},

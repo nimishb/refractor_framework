@@ -5155,9 +5155,29 @@ SWIGINTERN PyObject *SolarAbsorptionSpectrum_swigregister(PyObject *SWIGUNUSEDPA
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"delete_SolarAbsorptionSpectrum", _wrap_delete_SolarAbsorptionSpectrum, METH_VARARGS, NULL},
+	 { (char *)"delete_SolarAbsorptionSpectrum", _wrap_delete_SolarAbsorptionSpectrum, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::SolarAbsorptionSpectrum::~SolarAbsorptionSpectrum()\n"
+		"\n"
+		""},
 	 { (char *)"SolarAbsorptionSpectrum___str__", _wrap_SolarAbsorptionSpectrum___str__, METH_VARARGS, NULL},
-	 { (char *)"SolarAbsorptionSpectrum_solar_absorption_spectrum", _wrap_SolarAbsorptionSpectrum_solar_absorption_spectrum, METH_VARARGS, NULL},
+	 { (char *)"SolarAbsorptionSpectrum_solar_absorption_spectrum", _wrap_SolarAbsorptionSpectrum_solar_absorption_spectrum, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual Spectrum FullPhysics::SolarAbsorptionSpectrum::solar_absorption_spectrum(const SpectralDomain &Spec_domain) const =0\n"
+		"This calculates the solar absorption spectrum.\n"
+		"\n"
+		"Parameters:\n"
+		"-----------\n"
+		"\n"
+		"Spec_domain:  Wavenumber/Wavelength to return solar absorption\n"
+		"spectrum for.\n"
+		"\n"
+		"The solar absorption spectrum. This is unit less, it is a scaled value\n"
+		"with 1.0 being no absorption.  Note that the spectral domain here is\n"
+		"in the solar rest frame, not the earth rest frame used in most other\n"
+		"places. The class SolarAbsorptionAndContinuum handles this conversion\n"
+		"internally. \n"
+		""},
 	 { (char *)"SolarAbsorptionSpectrum_swigregister", SolarAbsorptionSpectrum_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };

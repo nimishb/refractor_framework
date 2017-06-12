@@ -5031,8 +5031,21 @@ SWIGINTERN PyObject *NLLSSolver_swigregister(PyObject *SWIGUNUSEDPARM(self), PyO
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"delete_NLLSSolver", _wrap_delete_NLLSSolver, METH_VARARGS, NULL},
-	 { (char *)"NLLSSolver__v_nlls_problem", _wrap_NLLSSolver__v_nlls_problem, METH_VARARGS, NULL},
+	 { (char *)"delete_NLLSSolver", _wrap_delete_NLLSSolver, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::NLLSSolver::~NLLSSolver()\n"
+		"\n"
+		""},
+	 { (char *)"NLLSSolver__v_nlls_problem", _wrap_NLLSSolver__v_nlls_problem, METH_VARARGS, (char *)"\n"
+		"\n"
+		"const boost::shared_ptr<NLLSProblem>& FullPhysics::NLLSSolver::nlls_problem() const\n"
+		"Returns the Nonlinear Least Squares problem.\n"
+		"\n"
+		"This method returns the Nonlinear Least Squares problem that is passed\n"
+		"to the constructor of the solver.\n"
+		"\n"
+		"Nonlinear least squares problem \n"
+		""},
 	 { (char *)"NLLSSolver_swigregister", NLLSSolver_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };

@@ -5236,11 +5236,27 @@ SWIGINTERN PyObject *InitialGuess_swigregister(PyObject *SWIGUNUSEDPARM(self), P
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"delete_InitialGuess", _wrap_delete_InitialGuess, METH_VARARGS, NULL},
+	 { (char *)"delete_InitialGuess", _wrap_delete_InitialGuess, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::InitialGuess::~InitialGuess()\n"
+		"\n"
+		""},
 	 { (char *)"InitialGuess___str__", _wrap_InitialGuess___str__, METH_VARARGS, NULL},
-	 { (char *)"InitialGuess__v_initial_guess", _wrap_InitialGuess__v_initial_guess, METH_VARARGS, NULL},
-	 { (char *)"InitialGuess__v_apriori", _wrap_InitialGuess__v_apriori, METH_VARARGS, NULL},
-	 { (char *)"InitialGuess__v_apriori_covariance", _wrap_InitialGuess__v_apriori_covariance, METH_VARARGS, NULL},
+	 { (char *)"InitialGuess__v_initial_guess", _wrap_InitialGuess__v_initial_guess, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual blitz::Array<double, 1> FullPhysics::InitialGuess::initial_guess() const =0\n"
+		"Return the initial state vector to use. \n"
+		""},
+	 { (char *)"InitialGuess__v_apriori", _wrap_InitialGuess__v_apriori, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual blitz::Array<double, 1> FullPhysics::InitialGuess::apriori() const =0\n"
+		"Return the apriori state vector to use. \n"
+		""},
+	 { (char *)"InitialGuess__v_apriori_covariance", _wrap_InitialGuess__v_apriori_covariance, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual blitz::Array<double, 2> FullPhysics::InitialGuess::apriori_covariance() const =0\n"
+		"Return the apriori state vector covariance to use. \n"
+		""},
 	 { (char *)"InitialGuess_swigregister", InitialGuess_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };

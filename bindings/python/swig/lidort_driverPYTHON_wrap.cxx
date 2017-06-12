@@ -8148,38 +8148,168 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"SpurrRtDriver_copy_jacobians", _wrap_SpurrRtDriver_copy_jacobians, METH_VARARGS, NULL},
 	 { (char *)"delete_SpurrRtDriver", _wrap_delete_SpurrRtDriver, METH_VARARGS, NULL},
 	 { (char *)"SpurrRtDriver_swigregister", SpurrRtDriver_swigregister, METH_VARARGS, NULL},
-	 { (char *)"new_LidortBrdfDriver", _wrap_new_LidortBrdfDriver, METH_VARARGS, NULL},
-	 { (char *)"delete_LidortBrdfDriver", _wrap_delete_LidortBrdfDriver, METH_VARARGS, NULL},
-	 { (char *)"LidortBrdfDriver__v_brdf_interface", _wrap_LidortBrdfDriver__v_brdf_interface, METH_VARARGS, NULL},
-	 { (char *)"LidortBrdfDriver_setup_geometry", _wrap_LidortBrdfDriver_setup_geometry, METH_VARARGS, NULL},
-	 { (char *)"LidortBrdfDriver__v_n_brdf_kernels", _wrap_LidortBrdfDriver__v_n_brdf_kernels, METH_VARARGS, NULL},
-	 { (char *)"LidortBrdfDriver__v_n_kernel_factor_wfs", _wrap_LidortBrdfDriver__v_n_kernel_factor_wfs, METH_VARARGS, NULL},
-	 { (char *)"LidortBrdfDriver__v_n_kernel_params_wfs", _wrap_LidortBrdfDriver__v_n_kernel_params_wfs, METH_VARARGS, NULL},
-	 { (char *)"LidortBrdfDriver__v_n_surface_wfs", _wrap_LidortBrdfDriver__v_n_surface_wfs, METH_VARARGS, NULL},
-	 { (char *)"LidortBrdfDriver__v_do_shadow_effect", _wrap_LidortBrdfDriver__v_do_shadow_effect, METH_VARARGS, NULL},
-	 { (char *)"LidortBrdfDriver_do_kparams_derivs", _wrap_LidortBrdfDriver_do_kparams_derivs, METH_VARARGS, NULL},
+	 { (char *)"new_LidortBrdfDriver", _wrap_new_LidortBrdfDriver, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::LidortBrdfDriver::LidortBrdfDriver(int nstream, int nmoment)\n"
+		"\n"
+		""},
+	 { (char *)"delete_LidortBrdfDriver", _wrap_delete_LidortBrdfDriver, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::LidortBrdfDriver::~LidortBrdfDriver()\n"
+		"\n"
+		""},
+	 { (char *)"LidortBrdfDriver__v_brdf_interface", _wrap_LidortBrdfDriver__v_brdf_interface, METH_VARARGS, (char *)"\n"
+		"\n"
+		"const boost::shared_ptr<Brdf_Linsup_Masters> FullPhysics::LidortBrdfDriver::brdf_interface() const\n"
+		"Interface to BRDF interface to allow changing configuration to values.\n"
+		"\n"
+		""},
+	 { (char *)"LidortBrdfDriver_setup_geometry", _wrap_LidortBrdfDriver_setup_geometry, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::LidortBrdfDriver::setup_geometry(double sza, double azm, double zen) const\n"
+		"\n"
+		""},
+	 { (char *)"LidortBrdfDriver__v_n_brdf_kernels", _wrap_LidortBrdfDriver__v_n_brdf_kernels, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual int FullPhysics::LidortBrdfDriver::n_brdf_kernels() const\n"
+		"\n"
+		""},
+	 { (char *)"LidortBrdfDriver__v_n_kernel_factor_wfs", _wrap_LidortBrdfDriver__v_n_kernel_factor_wfs, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual int FullPhysics::LidortBrdfDriver::n_kernel_factor_wfs() const\n"
+		"\n"
+		""},
+	 { (char *)"LidortBrdfDriver__v_n_kernel_params_wfs", _wrap_LidortBrdfDriver__v_n_kernel_params_wfs, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual int FullPhysics::LidortBrdfDriver::n_kernel_params_wfs() const\n"
+		"\n"
+		""},
+	 { (char *)"LidortBrdfDriver__v_n_surface_wfs", _wrap_LidortBrdfDriver__v_n_surface_wfs, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual int FullPhysics::LidortBrdfDriver::n_surface_wfs() const\n"
+		"\n"
+		""},
+	 { (char *)"LidortBrdfDriver__v_do_shadow_effect", _wrap_LidortBrdfDriver__v_do_shadow_effect, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual bool FullPhysics::LidortBrdfDriver::do_shadow_effect() const\n"
+		"\n"
+		""},
+	 { (char *)"LidortBrdfDriver_do_kparams_derivs", _wrap_LidortBrdfDriver_do_kparams_derivs, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual bool FullPhysics::LidortBrdfDriver::do_kparams_derivs(const int kernel_index) const\n"
+		"\n"
+		""},
 	 { (char *)"LidortBrdfDriver_swigregister", LidortBrdfDriver_swigregister, METH_VARARGS, NULL},
-	 { (char *)"new_LidortRtDriver", _wrap_new_LidortRtDriver, METH_VARARGS, NULL},
-	 { (char *)"LidortRtDriver__v_number_moment", _wrap_LidortRtDriver__v_number_moment, METH_VARARGS, NULL},
-	 { (char *)"LidortRtDriver__v_number_stream", _wrap_LidortRtDriver__v_number_stream, METH_VARARGS, NULL},
-	 { (char *)"LidortRtDriver_setup_sphericity", _wrap_LidortRtDriver_setup_sphericity, METH_VARARGS, NULL},
-	 { (char *)"LidortRtDriver_set_plane_parallel", _wrap_LidortRtDriver_set_plane_parallel, METH_VARARGS, NULL},
-	 { (char *)"LidortRtDriver_set_pseudo_spherical", _wrap_LidortRtDriver_set_pseudo_spherical, METH_VARARGS, NULL},
-	 { (char *)"LidortRtDriver_set_plane_parallel_plus_ss_correction", _wrap_LidortRtDriver_set_plane_parallel_plus_ss_correction, METH_VARARGS, NULL},
-	 { (char *)"LidortRtDriver_set_line_of_sight", _wrap_LidortRtDriver_set_line_of_sight, METH_VARARGS, NULL},
-	 { (char *)"LidortRtDriver__v_do_multi_scatt_only", _wrap_LidortRtDriver__v_do_multi_scatt_only, METH_VARARGS, NULL},
-	 { (char *)"LidortRtDriver__v_pure_nadir", _wrap_LidortRtDriver__v_pure_nadir, METH_VARARGS, NULL},
-	 { (char *)"LidortRtDriver__v_lidort_brdf_driver", _wrap_LidortRtDriver__v_lidort_brdf_driver, METH_VARARGS, NULL},
-	 { (char *)"LidortRtDriver__v_brdf_interface", _wrap_LidortRtDriver__v_brdf_interface, METH_VARARGS, NULL},
-	 { (char *)"LidortRtDriver__v_lidort_interface", _wrap_LidortRtDriver__v_lidort_interface, METH_VARARGS, NULL},
-	 { (char *)"LidortRtDriver_setup_height_grid", _wrap_LidortRtDriver_setup_height_grid, METH_VARARGS, NULL},
-	 { (char *)"LidortRtDriver_setup_geometry", _wrap_LidortRtDriver_setup_geometry, METH_VARARGS, NULL},
-	 { (char *)"LidortRtDriver_setup_optical_inputs", _wrap_LidortRtDriver_setup_optical_inputs, METH_VARARGS, NULL},
-	 { (char *)"LidortRtDriver_clear_linear_inputs", _wrap_LidortRtDriver_clear_linear_inputs, METH_VARARGS, NULL},
-	 { (char *)"LidortRtDriver_setup_linear_inputs", _wrap_LidortRtDriver_setup_linear_inputs, METH_VARARGS, NULL},
-	 { (char *)"LidortRtDriver_calculate_rt", _wrap_LidortRtDriver_calculate_rt, METH_VARARGS, NULL},
-	 { (char *)"LidortRtDriver_get_intensity", _wrap_LidortRtDriver_get_intensity, METH_VARARGS, NULL},
-	 { (char *)"LidortRtDriver_copy_jacobians", _wrap_LidortRtDriver_copy_jacobians, METH_VARARGS, NULL},
+	 { (char *)"new_LidortRtDriver", _wrap_new_LidortRtDriver, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::LidortRtDriver::LidortRtDriver(int nstream, int nmoment, bool do_multi_scatt_only, int surface_type,\n"
+		"const blitz::Array< double, 1 > &zen, bool pure_nadir)\n"
+		"\n"
+		""},
+	 { (char *)"LidortRtDriver__v_number_moment", _wrap_LidortRtDriver__v_number_moment, METH_VARARGS, (char *)"\n"
+		"\n"
+		"int FullPhysics::LidortRtDriver::number_moment() const\n"
+		"\n"
+		""},
+	 { (char *)"LidortRtDriver__v_number_stream", _wrap_LidortRtDriver__v_number_stream, METH_VARARGS, (char *)"\n"
+		"\n"
+		"int FullPhysics::LidortRtDriver::number_stream() const\n"
+		"\n"
+		""},
+	 { (char *)"LidortRtDriver_setup_sphericity", _wrap_LidortRtDriver_setup_sphericity, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::LidortRtDriver::setup_sphericity(double zen) const\n"
+		"\n"
+		""},
+	 { (char *)"LidortRtDriver_set_plane_parallel", _wrap_LidortRtDriver_set_plane_parallel, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::LidortRtDriver::set_plane_parallel() const\n"
+		"\n"
+		""},
+	 { (char *)"LidortRtDriver_set_pseudo_spherical", _wrap_LidortRtDriver_set_pseudo_spherical, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::LidortRtDriver::set_pseudo_spherical() const\n"
+		"\n"
+		""},
+	 { (char *)"LidortRtDriver_set_plane_parallel_plus_ss_correction", _wrap_LidortRtDriver_set_plane_parallel_plus_ss_correction, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::LidortRtDriver::set_plane_parallel_plus_ss_correction() const\n"
+		"\n"
+		""},
+	 { (char *)"LidortRtDriver_set_line_of_sight", _wrap_LidortRtDriver_set_line_of_sight, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::LidortRtDriver::set_line_of_sight() const\n"
+		"\n"
+		""},
+	 { (char *)"LidortRtDriver__v_do_multi_scatt_only", _wrap_LidortRtDriver__v_do_multi_scatt_only, METH_VARARGS, (char *)"\n"
+		"\n"
+		"bool FullPhysics::LidortRtDriver::do_multi_scatt_only() const\n"
+		"\n"
+		""},
+	 { (char *)"LidortRtDriver__v_pure_nadir", _wrap_LidortRtDriver__v_pure_nadir, METH_VARARGS, (char *)"\n"
+		"\n"
+		"bool FullPhysics::LidortRtDriver::pure_nadir() const\n"
+		"\n"
+		""},
+	 { (char *)"LidortRtDriver__v_lidort_brdf_driver", _wrap_LidortRtDriver__v_lidort_brdf_driver, METH_VARARGS, (char *)"\n"
+		"\n"
+		"const boost::shared_ptr<LidortBrdfDriver> FullPhysics::LidortRtDriver::lidort_brdf_driver() const\n"
+		"Access to BRDF driver. \n"
+		""},
+	 { (char *)"LidortRtDriver__v_brdf_interface", _wrap_LidortRtDriver__v_brdf_interface, METH_VARARGS, (char *)"\n"
+		"\n"
+		"const boost::shared_ptr<Brdf_Linsup_Masters> FullPhysics::LidortRtDriver::brdf_interface() const\n"
+		"\n"
+		""},
+	 { (char *)"LidortRtDriver__v_lidort_interface", _wrap_LidortRtDriver__v_lidort_interface, METH_VARARGS, (char *)"\n"
+		"\n"
+		"const boost::shared_ptr<Lidort_Lps_Masters> FullPhysics::LidortRtDriver::lidort_interface() const\n"
+		"Interface to LIDORT RT software inputs to allow changing LIDORT\n"
+		"configuration to values other than default. \n"
+		""},
+	 { (char *)"LidortRtDriver_setup_height_grid", _wrap_LidortRtDriver_setup_height_grid, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::LidortRtDriver::setup_height_grid(const blitz::Array< double, 1 > &height_grid) const\n"
+		"\n"
+		""},
+	 { (char *)"LidortRtDriver_setup_geometry", _wrap_LidortRtDriver_setup_geometry, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::LidortRtDriver::setup_geometry(double sza, double azm, double zen) const\n"
+		"\n"
+		""},
+	 { (char *)"LidortRtDriver_setup_optical_inputs", _wrap_LidortRtDriver_setup_optical_inputs, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::LidortRtDriver::setup_optical_inputs(const blitz::Array< double, 1 > &od, const blitz::Array< double, 1 >\n"
+		"&ssa, const blitz::Array< double, 2 > &pf) const\n"
+		"\n"
+		""},
+	 { (char *)"LidortRtDriver_clear_linear_inputs", _wrap_LidortRtDriver_clear_linear_inputs, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::LidortRtDriver::clear_linear_inputs() const\n"
+		"\n"
+		""},
+	 { (char *)"LidortRtDriver_setup_linear_inputs", _wrap_LidortRtDriver_setup_linear_inputs, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::LidortRtDriver::setup_linear_inputs(const ArrayAd< double, 1 > &od, const ArrayAd< double, 1 > &ssa,\n"
+		"const ArrayAd< double, 2 > &pf, bool do_surface_linearization) const\n"
+		"\n"
+		""},
+	 { (char *)"LidortRtDriver_calculate_rt", _wrap_LidortRtDriver_calculate_rt, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::LidortRtDriver::calculate_rt() const\n"
+		"\n"
+		""},
+	 { (char *)"LidortRtDriver_get_intensity", _wrap_LidortRtDriver_get_intensity, METH_VARARGS, (char *)"\n"
+		"\n"
+		"double FullPhysics::LidortRtDriver::get_intensity() const\n"
+		"\n"
+		""},
+	 { (char *)"LidortRtDriver_copy_jacobians", _wrap_LidortRtDriver_copy_jacobians, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::LidortRtDriver::copy_jacobians(blitz::Array< double, 2 > &jac_atm, blitz::Array< double, 1 >\n"
+		"&jac_surf) const\n"
+		"\n"
+		""},
 	 { (char *)"delete_LidortRtDriver", _wrap_delete_LidortRtDriver, METH_VARARGS, NULL},
 	 { (char *)"LidortRtDriver_swigregister", LidortRtDriver_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }

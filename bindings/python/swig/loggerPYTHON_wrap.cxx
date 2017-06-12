@@ -5471,11 +5471,30 @@ SWIGINTERN PyObject *Logger_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObjec
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"delete_LogImp", _wrap_delete_LogImp, METH_VARARGS, NULL},
-	 { (char *)"LogImp_write", _wrap_LogImp_write, METH_VARARGS, NULL},
-	 { (char *)"LogImp_flush", _wrap_LogImp_flush, METH_VARARGS, NULL},
+	 { (char *)"delete_LogImp", _wrap_delete_LogImp, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::LogImp::~LogImp()\n"
+		"\n"
+		""},
+	 { (char *)"LogImp_write", _wrap_LogImp_write, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::LogImp::write(log_level l, const char *v)\n"
+		"\n"
+		""},
+	 { (char *)"LogImp_flush", _wrap_LogImp_flush, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::LogImp::flush(log_level l)=0\n"
+		"Flush data to the log, at the given level. \n"
+		""},
 	 { (char *)"LogImp_swigregister", LogImp_swigregister, METH_VARARGS, NULL},
-	 { (char *)"Logger_set_implementation", _wrap_Logger_set_implementation, METH_VARARGS, NULL},
+	 { (char *)"Logger_set_implementation", _wrap_Logger_set_implementation, METH_VARARGS, (char *)"\n"
+		"\n"
+		"static void FullPhysics::Logger::set_implementation(LogImp *imp)\n"
+		"Set the implementation.\n"
+		"\n"
+		"It is perfectly legal for this to be a null pointer, in that case we\n"
+		"just don't send log messages anywhere. \n"
+		""},
 	 { (char *)"delete_Logger", _wrap_delete_Logger, METH_VARARGS, NULL},
 	 { (char *)"Logger_swigregister", Logger_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }

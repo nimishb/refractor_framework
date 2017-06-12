@@ -5584,12 +5584,42 @@ SWIGINTERN PyObject *SolarDopplerShiftL1b_swigregister(PyObject *SWIGUNUSEDPARM(
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"new_SolarDopplerShiftL1b", _wrap_new_SolarDopplerShiftL1b, METH_VARARGS, NULL},
-	 { (char *)"SolarDopplerShiftL1b__v_doppler_shift", _wrap_SolarDopplerShiftL1b__v_doppler_shift, METH_VARARGS, NULL},
-	 { (char *)"SolarDopplerShiftL1b__v_solar_relative_velocity", _wrap_SolarDopplerShiftL1b__v_solar_relative_velocity, METH_VARARGS, NULL},
-	 { (char *)"SolarDopplerShiftL1b__v_solar_distance", _wrap_SolarDopplerShiftL1b__v_solar_distance, METH_VARARGS, NULL},
-	 { (char *)"SolarDopplerShiftL1b_doppler_stretch", _wrap_SolarDopplerShiftL1b_doppler_stretch, METH_VARARGS, NULL},
-	 { (char *)"delete_SolarDopplerShiftL1b", _wrap_delete_SolarDopplerShiftL1b, METH_VARARGS, NULL},
+	 { (char *)"new_SolarDopplerShiftL1b", _wrap_new_SolarDopplerShiftL1b, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::SolarDopplerShiftL1b::SolarDopplerShiftL1b(const DoubleWithUnit &Solar_distance, const DoubleWithUnit\n"
+		"&Solar_relative_velocity, bool Apply_doppler_shift=true)\n"
+		"\n"
+		""},
+	 { (char *)"SolarDopplerShiftL1b__v_doppler_shift", _wrap_SolarDopplerShiftL1b__v_doppler_shift, METH_VARARGS, (char *)"\n"
+		"\n"
+		"double FullPhysics::SolarDopplerShiftL1b::doppler_shift() const\n"
+		"\n"
+		""},
+	 { (char *)"SolarDopplerShiftL1b__v_solar_relative_velocity", _wrap_SolarDopplerShiftL1b__v_solar_relative_velocity, METH_VARARGS, (char *)"\n"
+		"\n"
+		"DoubleWithUnit FullPhysics::SolarDopplerShiftL1b::solar_relative_velocity() const\n"
+		"Velocity of the sounding to the center of the sun.\n"
+		"\n"
+		"Positive means they are getting farther apart. This does include the\n"
+		"rotation of the earth (cf solar_velocity in\n"
+		"SolarDopplerShiftPolynomial which does not include rotation of earth)\n"
+		"\n"
+		""},
+	 { (char *)"SolarDopplerShiftL1b__v_solar_distance", _wrap_SolarDopplerShiftL1b__v_solar_distance, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual DoubleWithUnit FullPhysics::SolarDopplerShiftL1b::solar_distance() const\n"
+		"\n"
+		""},
+	 { (char *)"SolarDopplerShiftL1b_doppler_stretch", _wrap_SolarDopplerShiftL1b_doppler_stretch, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual SpectralDomain FullPhysics::SolarDopplerShiftL1b::doppler_stretch(const SpectralDomain &Spec_domain) const\n"
+		"\n"
+		""},
+	 { (char *)"delete_SolarDopplerShiftL1b", _wrap_delete_SolarDopplerShiftL1b, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::SolarDopplerShiftL1b::~SolarDopplerShiftL1b()\n"
+		"\n"
+		""},
 	 { (char *)"SolarDopplerShiftL1b_swigregister", SolarDopplerShiftL1b_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };

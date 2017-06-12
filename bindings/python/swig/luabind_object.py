@@ -227,6 +227,16 @@ class LuaCallbackWrap(LuaCallback):
 import inspect
 
 class LuabindIterator(_object):
+    """
+
+    This is a light wrapper around the luabind::iterator.
+
+    This adds a few convenience routines to make usage in Python much
+    easier.
+
+    C++ includes: luabind_object.h 
+    """
+
     __swig_setmethods__ = {}
     __setattr__ = lambda self, name, value: _swig_setattr(self, LuabindIterator, name, value)
     __swig_getmethods__ = {}
@@ -234,6 +244,11 @@ class LuabindIterator(_object):
     __repr__ = _swig_repr
 
     def __init__(self, Lbo, Ls):
+        """
+
+        FullPhysics::LuabindIterator::LuabindIterator(const LuabindObject &Lbo, const boost::shared_ptr< LuaState > &Ls)
+        Constructor. 
+        """
         this = _luabind_object.new_LuabindIterator(Lbo, Ls)
         try:
             self.this.append(this)
@@ -241,19 +256,46 @@ class LuabindIterator(_object):
             self.this = this
 
     def at_end(self):
+        """
+
+        bool FullPhysics::LuabindIterator::at_end() const
+
+        """
         return _luabind_object.LuabindIterator_at_end(self)
 
+
     def key(self):
+        """
+
+        LuabindObject FullPhysics::LuabindIterator::key() const
+
+        """
         return _luabind_object.LuabindIterator_key(self)
 
+
     def next(self):
+        """
+
+        LuabindObject FullPhysics::LuabindIterator::next()
+
+        """
         return _luabind_object.LuabindIterator_next(self)
+
     __swig_destroy__ = _luabind_object.delete_LuabindIterator
     __del__ = lambda self: None
 LuabindIterator_swigregister = _luabind_object.LuabindIterator_swigregister
 LuabindIterator_swigregister(LuabindIterator)
 
 class LuabindObject(_object):
+    """
+
+    This is a light wrapper around the luabind::object.
+
+    This adds a few convenience routines.
+
+    C++ includes: luabind_object.h 
+    """
+
     __swig_setmethods__ = {}
     __setattr__ = lambda self, name, value: _swig_setattr(self, LuabindObject, name, value)
     __swig_getmethods__ = {}
@@ -264,43 +306,129 @@ class LuabindObject(_object):
         return _luabind_object.LuabindObject___str__(self)
 
     def is_nil(self):
+        """
+
+        bool FullPhysics::LuabindObject::is_nil() const
+        Test type of an object. 
+        """
         return _luabind_object.LuabindObject_is_nil(self)
 
+
     def is_boolean(self):
+        """
+
+        bool FullPhysics::LuabindObject::is_boolean() const
+
+        """
         return _luabind_object.LuabindObject_is_boolean(self)
 
+
     def is_number(self):
+        """
+
+        bool FullPhysics::LuabindObject::is_number() const
+
+        """
         return _luabind_object.LuabindObject_is_number(self)
 
+
     def is_string(self):
+        """
+
+        bool FullPhysics::LuabindObject::is_string() const
+
+        """
         return _luabind_object.LuabindObject_is_string(self)
 
+
     def is_table(self):
+        """
+
+        bool FullPhysics::LuabindObject::is_table() const
+
+        """
         return _luabind_object.LuabindObject_is_table(self)
 
+
     def is_function(self):
+        """
+
+        bool FullPhysics::LuabindObject::is_function() const
+
+        """
         return _luabind_object.LuabindObject_is_function(self)
 
+
     def length(self, index=0):
+        """
+
+        int FullPhysics::LuabindObject::length(int index=0) const
+        Return the "length" of the value at the given index using the Lua
+        interpreter method that evaluates as the length operator. 
+        """
         return _luabind_object.LuabindObject_length(self, index)
 
+
     def call(self, *args):
+        """
+
+        LuabindObject FullPhysics::LuabindObject::call(const T1 &Arg1, const T2 &Arg2, const T3 &Arg3, const T4 &Arg4, const
+        T5 &Arg5, const T6 &Arg6, const T7 &Arg7, const T8 &Arg8)
+
+        """
         return _luabind_object.LuabindObject_call(self, *args)
 
+
     def lua_state(self):
+        """
+
+        const boost::shared_ptr<LuaState>& FullPhysics::LuabindObject::lua_state() const
+        Lua state pointer.
+
+        You can use this to do things with luabind (or directly with Lua) that
+        this class doesn't already support. 
+        """
         return _luabind_object.LuabindObject_lua_state(self)
 
+
     def object(self):
+        """
+
+        const luabind::object& FullPhysics::LuabindObject::object() const
+
+        """
         return _luabind_object.LuabindObject_object(self)
 
+
     def new_table(self):
+        """
+
+        LuabindObject FullPhysics::LuabindObject::new_table()
+        Creates a new table object. 
+        """
         return _luabind_object.LuabindObject_new_table(self)
-    __swig_getmethods__["nil"] = lambda x: _luabind_object.LuabindObject_nil
+
+
+    def nil(Ls):
+        """
+
+        static LuabindObject FullPhysics::LuabindObject::nil(const boost::shared_ptr< LuaState > &Ls)
+        Return a nil value. 
+        """
+        return _luabind_object.LuabindObject_nil(Ls)
+
     if _newclass:
-        nil = staticmethod(_luabind_object.LuabindObject_nil)
+        nil = staticmethod(nil)
+    __swig_getmethods__["nil"] = lambda x: nil
 
     def value_generic_object(self):
+        """
+
+        boost::shared_ptr<GenericObject> FullPhysics::LuabindObject::value_generic_object() const
+
+        """
         return _luabind_object.LuabindObject_value_generic_object(self)
+
 
     def isvector_altitude(self):
         return _luabind_object.LuabindObject_isvector_altitude(self)
@@ -327,12 +455,29 @@ class LuabindObject(_object):
         return _luabind_object.LuabindObject_getblitzarray1d_bool(self)
 
     def set_value(self, *args):
+        """
+
+        void FullPhysics::LuabindObject::set_value(const std::string &Vname, const LuabindObject &V)
+
+        """
         return _luabind_object.LuabindObject_set_value(self, *args)
 
+
     def set_index(self, *args):
+        """
+
+        void FullPhysics::LuabindObject::set_index(int Vidx, const LuabindObject &V)
+
+        """
         return _luabind_object.LuabindObject_set_index(self, *args)
 
+
     def __init__(self, *args):
+        """
+
+        FullPhysics::LuabindObject::LuabindObject(const boost::shared_ptr< LuaState > &Ls, const LuabindObject &V)
+
+        """
         this = _luabind_object.new_LuabindObject(*args)
         try:
             self.this.append(this)
@@ -349,7 +494,13 @@ class LuabindObject(_object):
         return _luabind_object.LuabindObject_get_string(self, Vname)
 
     def get_index(self, Vidx):
+        """
+
+        LuabindObject FullPhysics::LuabindObject::get_index(int Vidx) const
+
+        """
         return _luabind_object.LuabindObject_get_index(self, Vidx)
+
 
     def getbool(self):
         return _luabind_object.LuabindObject_getbool(self)
@@ -496,8 +647,12 @@ LuabindObject_swigregister = _luabind_object.LuabindObject_swigregister
 LuabindObject_swigregister(LuabindObject)
 
 def LuabindObject_nil(Ls):
+    """
+
+    static LuabindObject FullPhysics::LuabindObject::nil(const boost::shared_ptr< LuaState > &Ls)
+    Return a nil value. 
+    """
     return _luabind_object.LuabindObject_nil(Ls)
-LuabindObject_nil = _luabind_object.LuabindObject_nil
 
 # This file is compatible with both classic and new-style classes.
 

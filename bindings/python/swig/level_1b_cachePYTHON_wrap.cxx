@@ -7213,34 +7213,148 @@ SWIGINTERN PyObject *Level1bCache_swigregister(PyObject *SWIGUNUSEDPARM(self), P
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"new_Level1bCache", _wrap_new_Level1bCache, METH_VARARGS, NULL},
-	 { (char *)"Level1bCache_latitude", _wrap_Level1bCache_latitude, METH_VARARGS, NULL},
-	 { (char *)"Level1bCache_set_latitude", _wrap_Level1bCache_set_latitude, METH_VARARGS, NULL},
-	 { (char *)"Level1bCache_longitude", _wrap_Level1bCache_longitude, METH_VARARGS, NULL},
-	 { (char *)"Level1bCache_set_longitude", _wrap_Level1bCache_set_longitude, METH_VARARGS, NULL},
-	 { (char *)"Level1bCache_sounding_zenith", _wrap_Level1bCache_sounding_zenith, METH_VARARGS, NULL},
-	 { (char *)"Level1bCache_set_sounding_zenith", _wrap_Level1bCache_set_sounding_zenith, METH_VARARGS, NULL},
-	 { (char *)"Level1bCache_sounding_azimuth", _wrap_Level1bCache_sounding_azimuth, METH_VARARGS, NULL},
-	 { (char *)"Level1bCache_set_sounding_azimuth", _wrap_Level1bCache_set_sounding_azimuth, METH_VARARGS, NULL},
-	 { (char *)"Level1bCache_stokes_coefficient", _wrap_Level1bCache_stokes_coefficient, METH_VARARGS, NULL},
-	 { (char *)"Level1bCache_set_stokes_coefficient", _wrap_Level1bCache_set_stokes_coefficient, METH_VARARGS, NULL},
-	 { (char *)"Level1bCache_solar_zenith", _wrap_Level1bCache_solar_zenith, METH_VARARGS, NULL},
-	 { (char *)"Level1bCache_set_solar_zenith", _wrap_Level1bCache_set_solar_zenith, METH_VARARGS, NULL},
-	 { (char *)"Level1bCache_solar_azimuth", _wrap_Level1bCache_solar_azimuth, METH_VARARGS, NULL},
-	 { (char *)"Level1bCache_set_solar_azimuth", _wrap_Level1bCache_set_solar_azimuth, METH_VARARGS, NULL},
-	 { (char *)"Level1bCache_altitude", _wrap_Level1bCache_altitude, METH_VARARGS, NULL},
-	 { (char *)"Level1bCache_set_altitude", _wrap_Level1bCache_set_altitude, METH_VARARGS, NULL},
-	 { (char *)"Level1bCache_relative_velocity", _wrap_Level1bCache_relative_velocity, METH_VARARGS, NULL},
-	 { (char *)"Level1bCache_set_relative_velocity", _wrap_Level1bCache_set_relative_velocity, METH_VARARGS, NULL},
-	 { (char *)"Level1bCache_spectral_coefficient", _wrap_Level1bCache_spectral_coefficient, METH_VARARGS, NULL},
-	 { (char *)"Level1bCache_set_spectral_coefficient", _wrap_Level1bCache_set_spectral_coefficient, METH_VARARGS, NULL},
-	 { (char *)"Level1bCache_time", _wrap_Level1bCache_time, METH_VARARGS, NULL},
-	 { (char *)"Level1bCache_set_time", _wrap_Level1bCache_set_time, METH_VARARGS, NULL},
-	 { (char *)"Level1bCache_radiance", _wrap_Level1bCache_radiance, METH_VARARGS, NULL},
-	 { (char *)"Level1bCache_set_radiance", _wrap_Level1bCache_set_radiance, METH_VARARGS, NULL},
-	 { (char *)"Level1bCache_set_sounding_id", _wrap_Level1bCache_set_sounding_id, METH_VARARGS, NULL},
-	 { (char *)"Level1bCache_set_exposure_index", _wrap_Level1bCache_set_exposure_index, METH_VARARGS, NULL},
-	 { (char *)"delete_Level1bCache", _wrap_delete_Level1bCache, METH_VARARGS, NULL},
+	 { (char *)"new_Level1bCache", _wrap_new_Level1bCache, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::Level1bCache::Level1bCache(const Level1b &L1_in)\n"
+		"\n"
+		""},
+	 { (char *)"Level1bCache_latitude", _wrap_Level1bCache_latitude, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual DoubleWithUnit FullPhysics::Level1bCache::latitude(int i) const\n"
+		"\n"
+		""},
+	 { (char *)"Level1bCache_set_latitude", _wrap_Level1bCache_set_latitude, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Level1bCache::set_latitude(int i, const DoubleWithUnit &V)\n"
+		"Change value. \n"
+		""},
+	 { (char *)"Level1bCache_longitude", _wrap_Level1bCache_longitude, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual DoubleWithUnit FullPhysics::Level1bCache::longitude(int i) const\n"
+		"\n"
+		""},
+	 { (char *)"Level1bCache_set_longitude", _wrap_Level1bCache_set_longitude, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Level1bCache::set_longitude(int i, const DoubleWithUnit &V)\n"
+		"Change value. \n"
+		""},
+	 { (char *)"Level1bCache_sounding_zenith", _wrap_Level1bCache_sounding_zenith, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual DoubleWithUnit FullPhysics::Level1bCache::sounding_zenith(int i) const\n"
+		"\n"
+		""},
+	 { (char *)"Level1bCache_set_sounding_zenith", _wrap_Level1bCache_set_sounding_zenith, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Level1bCache::set_sounding_zenith(int i, const DoubleWithUnit &V)\n"
+		"Change value. \n"
+		""},
+	 { (char *)"Level1bCache_sounding_azimuth", _wrap_Level1bCache_sounding_azimuth, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual DoubleWithUnit FullPhysics::Level1bCache::sounding_azimuth(int i) const\n"
+		"\n"
+		""},
+	 { (char *)"Level1bCache_set_sounding_azimuth", _wrap_Level1bCache_set_sounding_azimuth, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Level1bCache::set_sounding_azimuth(int i, const DoubleWithUnit &V)\n"
+		"Change value. \n"
+		""},
+	 { (char *)"Level1bCache_stokes_coefficient", _wrap_Level1bCache_stokes_coefficient, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual blitz::Array<double, 1> FullPhysics::Level1bCache::stokes_coefficient(int i) const\n"
+		"\n"
+		""},
+	 { (char *)"Level1bCache_set_stokes_coefficient", _wrap_Level1bCache_set_stokes_coefficient, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Level1bCache::set_stokes_coefficient(int i, const blitz::Array< double, 1 > &V)\n"
+		"Change value. \n"
+		""},
+	 { (char *)"Level1bCache_solar_zenith", _wrap_Level1bCache_solar_zenith, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual DoubleWithUnit FullPhysics::Level1bCache::solar_zenith(int i) const\n"
+		"\n"
+		""},
+	 { (char *)"Level1bCache_set_solar_zenith", _wrap_Level1bCache_set_solar_zenith, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Level1bCache::set_solar_zenith(int i, const DoubleWithUnit &V)\n"
+		"Change value. \n"
+		""},
+	 { (char *)"Level1bCache_solar_azimuth", _wrap_Level1bCache_solar_azimuth, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual DoubleWithUnit FullPhysics::Level1bCache::solar_azimuth(int i) const\n"
+		"\n"
+		""},
+	 { (char *)"Level1bCache_set_solar_azimuth", _wrap_Level1bCache_set_solar_azimuth, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Level1bCache::set_solar_azimuth(int i, const DoubleWithUnit &V)\n"
+		"Change value. \n"
+		""},
+	 { (char *)"Level1bCache_altitude", _wrap_Level1bCache_altitude, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual DoubleWithUnit FullPhysics::Level1bCache::altitude(int i) const\n"
+		"\n"
+		""},
+	 { (char *)"Level1bCache_set_altitude", _wrap_Level1bCache_set_altitude, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Level1bCache::set_altitude(int i, const DoubleWithUnit &V)\n"
+		"Change value. \n"
+		""},
+	 { (char *)"Level1bCache_relative_velocity", _wrap_Level1bCache_relative_velocity, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual DoubleWithUnit FullPhysics::Level1bCache::relative_velocity(int i) const\n"
+		"\n"
+		""},
+	 { (char *)"Level1bCache_set_relative_velocity", _wrap_Level1bCache_set_relative_velocity, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Level1bCache::set_relative_velocity(int i, const DoubleWithUnit &V)\n"
+		"Change value. \n"
+		""},
+	 { (char *)"Level1bCache_spectral_coefficient", _wrap_Level1bCache_spectral_coefficient, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual ArrayWithUnit<double, 1> FullPhysics::Level1bCache::spectral_coefficient(int i) const\n"
+		"\n"
+		""},
+	 { (char *)"Level1bCache_set_spectral_coefficient", _wrap_Level1bCache_set_spectral_coefficient, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Level1bCache::set_spectral_coefficient(int i, const ArrayWithUnit< double, 1 > &V)\n"
+		"Change value. \n"
+		""},
+	 { (char *)"Level1bCache_time", _wrap_Level1bCache_time, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual Time FullPhysics::Level1bCache::time(int i) const\n"
+		"\n"
+		""},
+	 { (char *)"Level1bCache_set_time", _wrap_Level1bCache_set_time, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Level1bCache::set_time(int i, const Time &V)\n"
+		"Change value. \n"
+		""},
+	 { (char *)"Level1bCache_radiance", _wrap_Level1bCache_radiance, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual SpectralRange FullPhysics::Level1bCache::radiance(int i) const\n"
+		"\n"
+		""},
+	 { (char *)"Level1bCache_set_radiance", _wrap_Level1bCache_set_radiance, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Level1bCache::set_radiance(int i, const SpectralRange &V, const std::vector< int > &Plist)\n"
+		"Change value, but only for a subset of pixels.\n"
+		"\n"
+		"This might come from the ForwardModelSpectralGrid for example. \n"
+		""},
+	 { (char *)"Level1bCache_set_sounding_id", _wrap_Level1bCache_set_sounding_id, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Level1bCache::set_sounding_id(int64_t V)\n"
+		"Change value. \n"
+		""},
+	 { (char *)"Level1bCache_set_exposure_index", _wrap_Level1bCache_set_exposure_index, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Level1bCache::set_exposure_index(int V)\n"
+		"Change value. \n"
+		""},
+	 { (char *)"delete_Level1bCache", _wrap_delete_Level1bCache, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::Level1bCache::~Level1bCache()\n"
+		"\n"
+		""},
 	 { (char *)"Level1bCache_swigregister", Level1bCache_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };

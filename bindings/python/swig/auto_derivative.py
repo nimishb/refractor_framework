@@ -186,6 +186,42 @@ def _new_from_set(cls, version, *args):
 
 import full_physics_swig.generic_object
 class AutoDerivativeDouble(full_physics_swig.generic_object.GenericObject):
+    """
+
+    There are a number of tools that can be used to do "Automatic
+    Differentiation" (see for
+    examplehttp://www.autodiff.org/?module=Tools).
+
+    We examined several of the tools, and while these packages have a
+    number of advantages (in particular, the ability to run the
+    calculation either forward or backwards) for our particular needs a
+    simpler forward only calculation was selected. This uses a number of
+    type T, along with the first order gradient with respect to a set of
+    independent variables. We then overload the standard operations such
+    as "+" and "*" to apply the chain rule, to propagate the
+    derivatives forward.
+
+    This is a newer field, so there doesn't seem to be standard
+    terminology. In "Scientific and Engineering C++" by John Barton and
+    Lee Nackman, this is call "Rall numbers" after a paper by L.B. Rall.
+    On wikipedia athttp://en.wikipedia.org/wiki/Automatic_differentiation
+    this is called "Automatic differentiation using dual numbers".
+
+    As the existing automatic differentiation packages mature, we may want
+    to revisit this choice and replace this class with a fuller library.
+
+    This class is not as efficient as hand coding derivative calculation,
+    although it is much easier to use. If profiling shows a particular
+    bottle neck, you might want to hand code derivatives for that specific
+    location, which can then be placed into a AutoDerivative for use
+    elsewhere (see the Absco class for an example of doing this).
+
+    See also ArrayAd which work with this class for Arrays of
+    AutoDerivative.
+
+    C++ includes: auto_derivative.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.generic_object.GenericObject]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -197,6 +233,11 @@ class AutoDerivativeDouble(full_physics_swig.generic_object.GenericObject):
     __repr__ = _swig_repr
 
     def __init__(self, *args):
+        """
+
+        FullPhysics::AutoDerivative< T >::AutoDerivative(const AutoDerivative< T > &D)
+        Copy constructor. This does a deep copy. 
+        """
         this = _auto_derivative.new_AutoDerivativeDouble(*args)
         try:
             self.this.append(this)
@@ -204,7 +245,13 @@ class AutoDerivativeDouble(full_physics_swig.generic_object.GenericObject):
             self.this = this
 
     def _v_number_variable(self):
+        """
+
+        int FullPhysics::AutoDerivative< T >::number_variable() const
+        Number of variables in gradient. 
+        """
         return _auto_derivative.AutoDerivativeDouble__v_number_variable(self)
+
 
     @property
     def number_variable(self):
@@ -212,7 +259,13 @@ class AutoDerivativeDouble(full_physics_swig.generic_object.GenericObject):
 
 
     def _v_is_constant(self):
+        """
+
+        bool FullPhysics::AutoDerivative< T >::is_constant() const
+        Is this object a constant (with a gradient() all zeros)? 
+        """
         return _auto_derivative.AutoDerivativeDouble__v_is_constant(self)
+
 
     @property
     def is_constant(self):
@@ -307,6 +360,14 @@ AutoDerivativeDouble_swigregister = _auto_derivative.AutoDerivativeDouble_swigre
 AutoDerivativeDouble_swigregister(AutoDerivativeDouble)
 
 class AutoDerivativeRefDouble(full_physics_swig.generic_object.GenericObject):
+    """
+
+    Helper class that gives us a reference that we can assign a
+    AutoDerivative to and write into the correct space in a ArrayAd.
+
+    C++ includes: auto_derivative.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.generic_object.GenericObject]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -318,6 +379,11 @@ class AutoDerivativeRefDouble(full_physics_swig.generic_object.GenericObject):
     __repr__ = _swig_repr
 
     def __init__(self, V, FORCE_COPY):
+        """
+
+        FullPhysics::AutoDerivativeRef< T >::AutoDerivativeRef(T &V)
+
+        """
         this = _auto_derivative.new_AutoDerivativeRefDouble(V, FORCE_COPY)
         try:
             self.this.append(this)
@@ -325,7 +391,13 @@ class AutoDerivativeRefDouble(full_physics_swig.generic_object.GenericObject):
             self.this = this
 
     def _v_value(self):
+        """
+
+        T FullPhysics::AutoDerivativeRef< T >::value() const
+
+        """
         return _auto_derivative.AutoDerivativeRefDouble__v_value(self)
+
 
     @property
     def value(self):
@@ -333,7 +405,13 @@ class AutoDerivativeRefDouble(full_physics_swig.generic_object.GenericObject):
 
 
     def _v_gradient(self):
+        """
+
+        const blitz::Array<T, 1>& FullPhysics::AutoDerivativeRef< T >::gradient() const
+
+        """
         return _auto_derivative.AutoDerivativeRefDouble__v_gradient(self)
+
 
     @property
     def gradient(self):
@@ -394,44 +472,84 @@ ArrayAutoDerivative_double_1_swigregister(ArrayAutoDerivative_double_1)
 
 
 def sqrt(x):
+    """
+
+    FullPhysics::AutoDerivative< double > std::sqrt(const FullPhysics::AutoDerivative< double > &x)
+
+    """
     return _auto_derivative.sqrt(x)
-sqrt = _auto_derivative.sqrt
 
 def log(x):
+    """
+
+    FullPhysics::AutoDerivative< double > std::log(const FullPhysics::AutoDerivative< double > &x)
+
+    """
     return _auto_derivative.log(x)
-log = _auto_derivative.log
 
 def log10(x):
+    """
+
+    FullPhysics::AutoDerivative< double > std::log10(const FullPhysics::AutoDerivative< double > &x)
+
+    """
     return _auto_derivative.log10(x)
-log10 = _auto_derivative.log10
 
 def exp(x):
+    """
+
+    FullPhysics::AutoDerivative< double > std::exp(const FullPhysics::AutoDerivative< double > &x)
+
+    """
     return _auto_derivative.exp(x)
-exp = _auto_derivative.exp
 
 def sin(x):
+    """
+
+    FullPhysics::AutoDerivative< double > std::sin(const FullPhysics::AutoDerivative< double > &x)
+
+    """
     return _auto_derivative.sin(x)
-sin = _auto_derivative.sin
 
 def asin(x):
+    """
+
+    FullPhysics::AutoDerivative< double > std::asin(const FullPhysics::AutoDerivative< double > &x)
+
+    """
     return _auto_derivative.asin(x)
-asin = _auto_derivative.asin
 
 def cos(x):
+    """
+
+    FullPhysics::AutoDerivative< double > std::cos(const FullPhysics::AutoDerivative< double > &x)
+
+    """
     return _auto_derivative.cos(x)
-cos = _auto_derivative.cos
 
 def acos(x):
+    """
+
+    FullPhysics::AutoDerivative< double > std::acos(const FullPhysics::AutoDerivative< double > &x)
+
+    """
     return _auto_derivative.acos(x)
-acos = _auto_derivative.acos
 
 def tan(x):
+    """
+
+    FullPhysics::AutoDerivative< double > std::tan(const FullPhysics::AutoDerivative< double > &x)
+
+    """
     return _auto_derivative.tan(x)
-tan = _auto_derivative.tan
 
 def atan(x):
+    """
+
+    FullPhysics::AutoDerivative< double > std::atan(const FullPhysics::AutoDerivative< double > &x)
+
+    """
     return _auto_derivative.atan(x)
-atan = _auto_derivative.atan
 class vector_auto_derivative(_object):
     __swig_setmethods__ = {}
     __setattr__ = lambda self, name, value: _swig_setattr(self, vector_auto_derivative, name, value)

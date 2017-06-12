@@ -130,6 +130,14 @@ import full_physics_swig.radiative_transfer_fixed_stokes_coefficient
 import full_physics_swig.radiative_transfer
 import full_physics_swig.named_spectrum
 class TwostreamRt(full_physics_swig.spurr_rt.SpurrRt):
+    """
+
+    Uses the Spurr interfaces to construct a radiative transfer class
+    connecting L2 FP and TwoStream.
+
+    C++ includes: twostream_rt.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.spurr_rt.SpurrRt]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -144,7 +152,13 @@ class TwostreamRt(full_physics_swig.spurr_rt.SpurrRt):
     __repr__ = _swig_repr
 
     def _v_number_stream(self):
+        """
+
+        virtual int FullPhysics::TwostreamRt::number_stream() const
+        Number of quadtature streams in the cosine half space. 
+        """
         return _twostream_rt.TwostreamRt__v_number_stream(self)
+
 
     @property
     def number_stream(self):
@@ -152,7 +166,15 @@ class TwostreamRt(full_physics_swig.spurr_rt.SpurrRt):
 
 
     def _v_number_moment(self):
+        """
+
+        int FullPhysics::TwostreamRt::number_moment() const
+        Number of moments for scattering matrix.
+
+        2stream natuarally uses up to 3 moments 
+        """
         return _twostream_rt.TwostreamRt__v_number_moment(self)
+
 
     @property
     def number_moment(self):
@@ -160,7 +182,13 @@ class TwostreamRt(full_physics_swig.spurr_rt.SpurrRt):
 
 
     def _v_brdf_driver(self):
+        """
+
+        const boost::shared_ptr<TwostreamBrdfDriver> FullPhysics::TwostreamRt::brdf_driver() const
+        Convenience routine to get brdf driver object. 
+        """
         return _twostream_rt.TwostreamRt__v_brdf_driver(self)
+
 
     @property
     def brdf_driver(self):
@@ -168,7 +196,13 @@ class TwostreamRt(full_physics_swig.spurr_rt.SpurrRt):
 
 
     def _v_rt_driver(self):
+        """
+
+        const boost::shared_ptr<TwostreamRtDriver> FullPhysics::TwostreamRt::rt_driver() const
+        Convenience routine to get rt driver object. 
+        """
         return _twostream_rt.TwostreamRt__v_rt_driver(self)
+
 
     @property
     def rt_driver(self):
@@ -176,7 +210,13 @@ class TwostreamRt(full_physics_swig.spurr_rt.SpurrRt):
 
 
     def print_desc(self, Os, Short_form=False):
+        """
+
+        virtual void FullPhysics::TwostreamRt::print(std::ostream &Os, bool Short_form=false) const
+
+        """
         return _twostream_rt.TwostreamRt_print_desc(self, Os, Short_form)
+
     __swig_destroy__ = _twostream_rt.delete_TwostreamRt
     __del__ = lambda self: None
 TwostreamRt_swigregister = _twostream_rt.TwostreamRt_swigregister

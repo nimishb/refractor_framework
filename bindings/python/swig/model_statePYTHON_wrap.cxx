@@ -5089,9 +5089,33 @@ SWIGINTERN PyObject *ModelState_swigregister(PyObject *SWIGUNUSEDPARM(self), PyO
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"delete_ModelState", _wrap_delete_ModelState, METH_VARARGS, NULL},
-	 { (char *)"ModelState_set", _wrap_ModelState_set, METH_VARARGS, NULL},
-	 { (char *)"ModelState_clear", _wrap_ModelState_clear, METH_VARARGS, NULL},
+	 { (char *)"delete_ModelState", _wrap_delete_ModelState, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::ModelState::~ModelState()\n"
+		"\n"
+		""},
+	 { (char *)"ModelState_set", _wrap_ModelState_set, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::ModelState::set(const ModelState &s)\n"
+		"Makes self a copy of the input state.\n"
+		"\n"
+		"This method makes the object, for which it is called, a copy of the\n"
+		"input state.\n"
+		"\n"
+		"Parameters:\n"
+		"-----------\n"
+		"\n"
+		"s:  another ModelState \n"
+		""},
+	 { (char *)"ModelState_clear", _wrap_ModelState_clear, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::ModelState::clear()\n"
+		"Deletes data contents.\n"
+		"\n"
+		"This method deletes state. If needed, it must be reimplemented by\n"
+		"other classes derived from this class to delete other saved components\n"
+		"associated with the state as well. \n"
+		""},
 	 { (char *)"ModelState_swigregister", ModelState_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };

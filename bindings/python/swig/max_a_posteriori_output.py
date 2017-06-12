@@ -126,6 +126,17 @@ import full_physics_swig.model_measure
 import full_physics_swig.model_state
 import full_physics_swig.problem_state
 class MaxAPosterioriOutput(full_physics_swig.register_output_base.RegisterOutputBase):
+    """
+
+    This registers the portions of the MaxAPosteriori class that should be
+    written as output.
+
+    See the discussion in RegisterOutputBase why this isn't just part of
+    the ConnnorSolver class.
+
+    C++ includes: max_a_posteriori_output.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.register_output_base.RegisterOutputBase]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -142,7 +153,13 @@ class MaxAPosterioriOutput(full_physics_swig.register_output_base.RegisterOutput
     __del__ = lambda self: None
 
     def register_output(self, out):
+        """
+
+        virtual void FullPhysics::MaxAPosterioriOutput::register_output(const boost::shared_ptr< Output > &out) const
+
+        """
         return _max_a_posteriori_output.MaxAPosterioriOutput_register_output(self, out)
+
 MaxAPosterioriOutput_swigregister = _max_a_posteriori_output.MaxAPosterioriOutput_swigregister
 MaxAPosterioriOutput_swigregister(MaxAPosterioriOutput)
 

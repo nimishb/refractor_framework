@@ -129,6 +129,27 @@ import full_physics_swig.rt_atmosphere
 import full_physics_swig.state_vector
 import full_physics_swig.aerosol
 class ErrorAnalysis(full_physics_swig.generic_object.GenericObject):
+    """
+
+    This calculates a variety of values to help with the error analysis of
+    a Level 2 Full Physics Run.
+
+    We currently support both a ConnorSolver or the more general
+    MaxAPosteriori. The error analysis is almost identical, we just get
+    parameters from one or the other source.
+
+    Note that the current implementation of this class repeatedly
+    calculates certain values (e.g., hmat is calculated each time it is
+    used). We could cache values if needed, with code handling the
+    clearing of the cache when absorber or solver changes. But right now
+    the error analysis is only done a hand full of times (in a normal run,
+    just at the end. With iteration output, at each iteration).
+    Performance is perfectly acceptable, even with duplicate calculations.
+    We can revisit this if performance ever becomes an issue.
+
+    C++ includes: error_analysis.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.generic_object.GenericObject]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -140,6 +161,13 @@ class ErrorAnalysis(full_physics_swig.generic_object.GenericObject):
     __repr__ = _swig_repr
 
     def __init__(self, *args):
+        """
+
+        FullPhysics::ErrorAnalysis::ErrorAnalysis(const boost::shared_ptr< MaxAPosteriori > &Max_a_posteriori, const
+        boost::shared_ptr< RtAtmosphere > &Atm, const boost::shared_ptr<
+        ForwardModel > &Fm)
+
+        """
         this = _error_analysis.new_ErrorAnalysis(*args)
         try:
             self.this.append(this)
@@ -147,28 +175,77 @@ class ErrorAnalysis(full_physics_swig.generic_object.GenericObject):
             self.this = this
 
     def residual_sum_sq(self, Band):
+        """
+
+        double FullPhysics::ErrorAnalysis::residual_sum_sq(int Band) const
+        Return the sum of the squares of the residual for the given band. 
+        """
         return _error_analysis.ErrorAnalysis_residual_sum_sq(self, Band)
 
+
     def residual_mean_sq(self, Band):
+        """
+
+        double FullPhysics::ErrorAnalysis::residual_mean_sq(int Band) const
+        Return the residual mean square for the O2 band. 
+        """
         return _error_analysis.ErrorAnalysis_residual_mean_sq(self, Band)
 
+
     def reduced_chisq(self, Band):
+        """
+
+        double FullPhysics::ErrorAnalysis::reduced_chisq(int Band) const
+        Return the reduced chisq for band. 
+        """
         return _error_analysis.ErrorAnalysis_reduced_chisq(self, Band)
 
+
     def relative_residual_mean_sq(self, Band):
+        """
+
+        double FullPhysics::ErrorAnalysis::relative_residual_mean_sq(int Band) const
+        Return the relative residual mean square for the given band. 
+        """
         return _error_analysis.ErrorAnalysis_relative_residual_mean_sq(self, Band)
 
+
     def signal(self, band):
+        """
+
+        double FullPhysics::ErrorAnalysis::signal(int band) const
+
+        """
         return _error_analysis.ErrorAnalysis_signal(self, band)
 
+
     def noise(self, band):
+        """
+
+        double FullPhysics::ErrorAnalysis::noise(int band) const
+
+        """
         return _error_analysis.ErrorAnalysis_noise(self, band)
 
+
     def chisq_measure_norm(self, Residual, Residual_cov_diag):
+        """
+
+        double FullPhysics::ErrorAnalysis::chisq_measure_norm(const blitz::Array< double, 1 > &Residual, const blitz::Array<
+        double, 1 > &Residual_cov_diag) const
+        return chisq_measure_norm for the given data. 
+        """
         return _error_analysis.ErrorAnalysis_chisq_measure_norm(self, Residual, Residual_cov_diag)
 
+
     def _v_xco2_measurement_error(self):
+        """
+
+        double FullPhysics::ErrorAnalysis::xco2_measurement_error() const
+
+        """
         return _error_analysis.ErrorAnalysis__v_xco2_measurement_error(self)
+
 
     @property
     def xco2_measurement_error(self):
@@ -176,7 +253,13 @@ class ErrorAnalysis(full_physics_swig.generic_object.GenericObject):
 
 
     def _v_xco2_smoothing_error(self):
+        """
+
+        double FullPhysics::ErrorAnalysis::xco2_smoothing_error() const
+
+        """
         return _error_analysis.ErrorAnalysis__v_xco2_smoothing_error(self)
+
 
     @property
     def xco2_smoothing_error(self):
@@ -184,7 +267,13 @@ class ErrorAnalysis(full_physics_swig.generic_object.GenericObject):
 
 
     def _v_xco2_uncertainty(self):
+        """
+
+        double FullPhysics::ErrorAnalysis::xco2_uncertainty() const
+
+        """
         return _error_analysis.ErrorAnalysis__v_xco2_uncertainty(self)
+
 
     @property
     def xco2_uncertainty(self):
@@ -192,7 +281,13 @@ class ErrorAnalysis(full_physics_swig.generic_object.GenericObject):
 
 
     def _v_xco2_interference_error(self):
+        """
+
+        double FullPhysics::ErrorAnalysis::xco2_interference_error() const
+
+        """
         return _error_analysis.ErrorAnalysis__v_xco2_interference_error(self)
+
 
     @property
     def xco2_interference_error(self):
@@ -200,7 +295,13 @@ class ErrorAnalysis(full_physics_swig.generic_object.GenericObject):
 
 
     def _v_xco2_gain_vector(self):
+        """
+
+        blitz::Array<double, 1> FullPhysics::ErrorAnalysis::xco2_gain_vector() const
+
+        """
         return _error_analysis.ErrorAnalysis__v_xco2_gain_vector(self)
+
 
     @property
     def xco2_gain_vector(self):
@@ -208,7 +309,13 @@ class ErrorAnalysis(full_physics_swig.generic_object.GenericObject):
 
 
     def _v_xco2_uncert_noise(self):
+        """
+
+        double FullPhysics::ErrorAnalysis::xco2_uncert_noise() const
+        Calculate xco2_uncert_noise. 
+        """
         return _error_analysis.ErrorAnalysis__v_xco2_uncert_noise(self)
+
 
     @property
     def xco2_uncert_noise(self):
@@ -216,7 +323,13 @@ class ErrorAnalysis(full_physics_swig.generic_object.GenericObject):
 
 
     def _v_xco2_uncert_smooth(self):
+        """
+
+        double FullPhysics::ErrorAnalysis::xco2_uncert_smooth() const
+        Calculate xco2_uncert_smooth. 
+        """
         return _error_analysis.ErrorAnalysis__v_xco2_uncert_smooth(self)
+
 
     @property
     def xco2_uncert_smooth(self):
@@ -224,7 +337,13 @@ class ErrorAnalysis(full_physics_swig.generic_object.GenericObject):
 
 
     def _v_xco2_uncert_interf(self):
+        """
+
+        double FullPhysics::ErrorAnalysis::xco2_uncert_interf() const
+        Calculate xco2_uncert_interf. 
+        """
         return _error_analysis.ErrorAnalysis__v_xco2_uncert_interf(self)
+
 
     @property
     def xco2_uncert_interf(self):
@@ -232,7 +351,15 @@ class ErrorAnalysis(full_physics_swig.generic_object.GenericObject):
 
 
     def _v_degrees_of_freedom_full_vector(self):
+        """
+
+        double FullPhysics::ErrorAnalysis::degrees_of_freedom_full_vector() const
+        Calculate the degrees of freedom for the full state vector.
+
+        This is just the trace of the averaging kernel. 
+        """
         return _error_analysis.ErrorAnalysis__v_degrees_of_freedom_full_vector(self)
+
 
     @property
     def degrees_of_freedom_full_vector(self):
@@ -240,7 +367,14 @@ class ErrorAnalysis(full_physics_swig.generic_object.GenericObject):
 
 
     def _v_degrees_of_freedom_xco2(self):
+        """
+
+        double FullPhysics::ErrorAnalysis::degrees_of_freedom_xco2() const
+        Calculate the degrees of freedom for the portion of the state vector
+        used to determine xco2. 
+        """
         return _error_analysis.ErrorAnalysis__v_degrees_of_freedom_xco2(self)
+
 
     @property
     def degrees_of_freedom_xco2(self):
@@ -248,7 +382,13 @@ class ErrorAnalysis(full_physics_swig.generic_object.GenericObject):
 
 
     def _v_xco2_avg_kernel(self):
+        """
+
+        blitz::Array<double, 1> FullPhysics::ErrorAnalysis::xco2_avg_kernel() const
+
+        """
         return _error_analysis.ErrorAnalysis__v_xco2_avg_kernel(self)
+
 
     @property
     def xco2_avg_kernel(self):
@@ -256,7 +396,13 @@ class ErrorAnalysis(full_physics_swig.generic_object.GenericObject):
 
 
     def _v_co2_averaging_kernel(self):
+        """
+
+        blitz::Array<double, 2> FullPhysics::ErrorAnalysis::co2_averaging_kernel() const
+
+        """
         return _error_analysis.ErrorAnalysis__v_co2_averaging_kernel(self)
+
 
     @property
     def co2_averaging_kernel(self):
@@ -264,7 +410,13 @@ class ErrorAnalysis(full_physics_swig.generic_object.GenericObject):
 
 
     def _v_xco2_avg_kernel_full(self):
+        """
+
+        blitz::Array<double, 1> FullPhysics::ErrorAnalysis::xco2_avg_kernel_full() const
+
+        """
         return _error_analysis.ErrorAnalysis__v_xco2_avg_kernel_full(self)
+
 
     @property
     def xco2_avg_kernel_full(self):
@@ -272,7 +424,13 @@ class ErrorAnalysis(full_physics_swig.generic_object.GenericObject):
 
 
     def _v_xco2_avg_kernel_norm(self):
+        """
+
+        blitz::Array<double, 1> FullPhysics::ErrorAnalysis::xco2_avg_kernel_norm() const
+
+        """
         return _error_analysis.ErrorAnalysis__v_xco2_avg_kernel_norm(self)
+
 
     @property
     def xco2_avg_kernel_norm(self):
@@ -280,7 +438,13 @@ class ErrorAnalysis(full_physics_swig.generic_object.GenericObject):
 
 
     def _v_xco2_correlation_interf(self):
+        """
+
+        blitz::Array<double, 1> FullPhysics::ErrorAnalysis::xco2_correlation_interf() const
+
+        """
         return _error_analysis.ErrorAnalysis__v_xco2_correlation_interf(self)
+
 
     @property
     def xco2_correlation_interf(self):
@@ -288,7 +452,13 @@ class ErrorAnalysis(full_physics_swig.generic_object.GenericObject):
 
 
     def _v_interference_smoothing_uncertainty(self):
+        """
+
+        blitz::Array<double, 1> FullPhysics::ErrorAnalysis::interference_smoothing_uncertainty() const
+
+        """
         return _error_analysis.ErrorAnalysis__v_interference_smoothing_uncertainty(self)
+
 
     @property
     def interference_smoothing_uncertainty(self):

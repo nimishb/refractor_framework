@@ -126,6 +126,16 @@ import full_physics_swig.generic_object
 import full_physics_swig.sub_state_vector_array
 import full_physics_swig.absorber_vmr
 class AbsorberVmrFixedLevelScaled(full_physics_swig.absorber_vmr_imp_base.AbsorberVmrImpBase):
+    """
+
+    This class maps the state vector to the absorber VMR on each level.
+
+    This implementation has the VMR passed to the constructor, and applies
+    a scale factor from the state vector.
+
+    C++ includes: absorber_vmr_fixed_level_scaled.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.absorber_vmr_imp_base.AbsorberVmrImpBase]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -137,6 +147,13 @@ class AbsorberVmrFixedLevelScaled(full_physics_swig.absorber_vmr_imp_base.Absorb
     __repr__ = _swig_repr
 
     def __init__(self, Press, Press_level, Vmr, Used_flag, Scale, Gas_name):
+        """
+
+        FullPhysics::AbsorberVmrFixedLevelScaled::AbsorberVmrFixedLevelScaled(const boost::shared_ptr< Pressure > &Press, const boost::shared_ptr<
+        PressureLevelInput > &Press_level, const blitz::Array< double, 1 >
+        &Vmr, bool Used_flag, double Scale, const std::string &Gas_name)
+
+        """
         this = _absorber_vmr_fixed_level_scaled.new_AbsorberVmrFixedLevelScaled(Press, Press_level, Vmr, Used_flag, Scale, Gas_name)
         try:
             self.this.append(this)
@@ -144,13 +161,31 @@ class AbsorberVmrFixedLevelScaled(full_physics_swig.absorber_vmr_imp_base.Absorb
             self.this = this
 
     def state_vector_name_i(self, i):
+        """
+
+        virtual std::string FullPhysics::AbsorberVmrFixedLevelScaled::state_vector_name_i(int i) const
+
+        """
         return _absorber_vmr_fixed_level_scaled.AbsorberVmrFixedLevelScaled_state_vector_name_i(self, i)
 
+
     def clone(self, *args):
+        """
+
+        virtual boost::shared_ptr<AbsorberVmr> FullPhysics::AbsorberVmrFixedLevelScaled::clone(const boost::shared_ptr< Pressure > &Press) const
+
+        """
         return _absorber_vmr_fixed_level_scaled.AbsorberVmrFixedLevelScaled_clone(self, *args)
 
+
     def _v_scale_factor(self):
+        """
+
+        double FullPhysics::AbsorberVmrFixedLevelScaled::scale_factor() const
+        Scale factor. 
+        """
         return _absorber_vmr_fixed_level_scaled.AbsorberVmrFixedLevelScaled__v_scale_factor(self)
+
 
     @property
     def scale_factor(self):
@@ -158,7 +193,13 @@ class AbsorberVmrFixedLevelScaled(full_physics_swig.absorber_vmr_imp_base.Absorb
 
 
     def _v_scale_uncertainty(self):
+        """
+
+        double FullPhysics::AbsorberVmrFixedLevelScaled::scale_uncertainty() const
+        Uncertainty of scale factor. 
+        """
         return _absorber_vmr_fixed_level_scaled.AbsorberVmrFixedLevelScaled__v_scale_uncertainty(self)
+
 
     @property
     def scale_uncertainty(self):

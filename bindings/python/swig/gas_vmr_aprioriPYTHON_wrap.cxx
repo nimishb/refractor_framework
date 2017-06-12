@@ -5921,11 +5921,34 @@ SWIGINTERN PyObject *GasVmrApriori_swigregister(PyObject *SWIGUNUSEDPARM(self), 
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"new_GasVmrApriori", _wrap_new_GasVmrApriori, METH_VARARGS, NULL},
-	 { (char *)"GasVmrApriori__v_apriori_vmr", _wrap_GasVmrApriori__v_apriori_vmr, METH_VARARGS, NULL},
-	 { (char *)"GasVmrApriori__v_reference", _wrap_GasVmrApriori__v_reference, METH_VARARGS, NULL},
-	 { (char *)"GasVmrApriori__v_tropopause_altitude", _wrap_GasVmrApriori__v_tropopause_altitude, METH_VARARGS, NULL},
-	 { (char *)"GasVmrApriori__v_tropopause_pressure", _wrap_GasVmrApriori__v_tropopause_pressure, METH_VARARGS, NULL},
+	 { (char *)"new_GasVmrApriori", _wrap_new_GasVmrApriori, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::GasVmrApriori::GasVmrApriori(const boost::shared_ptr< Ecmwf > &Ecmwf_file, const\n"
+		"boost::shared_ptr< Level1b > &L1b_file, const boost::shared_ptr<\n"
+		"Altitude > &Alt, const HdfFile &Hdf_static_input, const std::string\n"
+		"&Hdf_group, const std::string &Gas_name, const int temp_avg_window=11)\n"
+		"\n"
+		""},
+	 { (char *)"GasVmrApriori__v_apriori_vmr", _wrap_GasVmrApriori__v_apriori_vmr, METH_VARARGS, (char *)"\n"
+		"\n"
+		"const blitz::Array<double, 1> FullPhysics::GasVmrApriori::apriori_vmr(const Pressure &pressure) const\n"
+		"\n"
+		""},
+	 { (char *)"GasVmrApriori__v_reference", _wrap_GasVmrApriori__v_reference, METH_VARARGS, (char *)"\n"
+		"\n"
+		"const boost::shared_ptr<ReferenceVmrApriori> FullPhysics::GasVmrApriori::reference() const\n"
+		"\n"
+		""},
+	 { (char *)"GasVmrApriori__v_tropopause_altitude", _wrap_GasVmrApriori__v_tropopause_altitude, METH_VARARGS, (char *)"\n"
+		"\n"
+		"const double FullPhysics::GasVmrApriori::tropopause_altitude() const\n"
+		"\n"
+		""},
+	 { (char *)"GasVmrApriori__v_tropopause_pressure", _wrap_GasVmrApriori__v_tropopause_pressure, METH_VARARGS, (char *)"\n"
+		"\n"
+		"const double FullPhysics::GasVmrApriori::tropopause_pressure() const\n"
+		"\n"
+		""},
 	 { (char *)"GasVmrApriori___str__", _wrap_GasVmrApriori___str__, METH_VARARGS, NULL},
 	 { (char *)"delete_GasVmrApriori", _wrap_delete_GasVmrApriori, METH_VARARGS, NULL},
 	 { (char *)"GasVmrApriori_swigregister", GasVmrApriori_swigregister, METH_VARARGS, NULL},

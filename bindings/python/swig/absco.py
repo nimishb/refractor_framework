@@ -187,6 +187,13 @@ def _new_from_set(cls, version, *args):
 import full_physics_swig.gas_absorption
 import full_physics_swig.generic_object
 class Absco(full_physics_swig.gas_absorption.GasAbsorption):
+    """
+
+    This class is used to read the absco tables.
+
+    C++ includes: absco.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.gas_absorption.GasAbsorption]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -201,7 +208,15 @@ class Absco(full_physics_swig.gas_absorption.GasAbsorption):
     __repr__ = _swig_repr
 
     def _v_number_broadener_vmr(self):
+        """
+
+        virtual int FullPhysics::Absco::number_broadener_vmr() const
+        Number of broadener VMR values in absco file.
+
+        This may be 0, if we don't have any broadening. 
+        """
         return _absco.Absco__v_number_broadener_vmr(self)
+
 
     @property
     def number_broadener_vmr(self):
@@ -209,7 +224,13 @@ class Absco(full_physics_swig.gas_absorption.GasAbsorption):
 
 
     def _v_number_layer(self):
+        """
+
+        virtual int FullPhysics::Absco::number_layer() const
+        Number of pressure layers in absco file. 
+        """
         return _absco.Absco__v_number_layer(self)
+
 
     @property
     def number_layer(self):
@@ -217,7 +238,13 @@ class Absco(full_physics_swig.gas_absorption.GasAbsorption):
 
 
     def _v_number_temperature(self):
+        """
+
+        virtual int FullPhysics::Absco::number_temperature() const
+        Number of temperature values in absco file. 
+        """
         return _absco.Absco__v_number_temperature(self)
+
 
     @property
     def number_temperature(self):
@@ -225,7 +252,17 @@ class Absco(full_physics_swig.gas_absorption.GasAbsorption):
 
 
     def _v_broadener_vmr_grid(self):
+        """
+
+        virtual blitz::Array<double, 1> FullPhysics::Absco::broadener_vmr_grid() const =0
+        Return the broadener VMR grid used for this Absco file.
+
+        This is number_broadener_vmr() in size, which may be size 0.
+
+        This is dimensionless. 
+        """
         return _absco.Absco__v_broadener_vmr_grid(self)
+
 
     @property
     def broadener_vmr_grid(self):
@@ -233,7 +270,17 @@ class Absco(full_physics_swig.gas_absorption.GasAbsorption):
 
 
     def _v_pressure_grid(self):
+        """
+
+        virtual blitz::Array<double, 1> FullPhysics::Absco::pressure_grid() const =0
+        Return the pressure grid used for this Absco file.
+
+        This is number_layer() in size.
+
+        This is in Pascals. 
+        """
         return _absco.Absco__v_pressure_grid(self)
+
 
     @property
     def pressure_grid(self):
@@ -241,7 +288,17 @@ class Absco(full_physics_swig.gas_absorption.GasAbsorption):
 
 
     def _v_temperature_grid(self):
+        """
+
+        virtual blitz::Array<double, 2> FullPhysics::Absco::temperature_grid() const =0
+        Return the temperature grid for this Absco file.
+
+        This is number_layer() x number_temperature() in size.
+
+        This is in Kelvin. 
+        """
         return _absco.Absco__v_temperature_grid(self)
+
 
     @property
     def temperature_grid(self):
@@ -249,7 +306,13 @@ class Absco(full_physics_swig.gas_absorption.GasAbsorption):
 
 
     def _v_broadener_name(self):
+        """
+
+        virtual std::string FullPhysics::Absco::broadener_name() const =0
+
+        """
         return _absco.Absco__v_broadener_name(self)
+
 
     @property
     def broadener_name(self):
@@ -257,10 +320,30 @@ class Absco(full_physics_swig.gas_absorption.GasAbsorption):
 
 
     def table_scale(self, wn):
+        """
+
+        virtual double FullPhysics::Absco::table_scale(double wn) const =0
+        Scale to apply to underlying ABSCO data to get the
+        absorption_cross_section.
+
+        This allows empirical corrections to be applied the ABSCO tables
+        (e.g., O2 scaling). Note that as a user you don't need to apply this
+        correction, it is already applied in absorption_cross_section() and
+        AbscoInterpolator. 
+        """
         return _absco.Absco_table_scale(self, wn)
 
+
     def absorption_cross_section(self, *args):
+        """
+
+        virtual AutoDerivativeWithUnit<double> FullPhysics::Absco::absorption_cross_section(double wn, const DoubleWithUnit &press, const AutoDerivativeWithUnit<
+        double > &temp, const AutoDerivativeWithUnit< double > &broadener_vmr)
+        const
+
+        """
         return _absco.Absco_absorption_cross_section(self, *args)
+
 
     def read_double(self, wn):
         return _absco.Absco_read_double(self, wn)

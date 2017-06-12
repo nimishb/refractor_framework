@@ -5920,8 +5920,16 @@ SWIGINTERN PyObject *AutoDerivativeWithUnitDouble_swigregister(PyObject *SWIGUNU
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"new_AutoDerivativeWithUnitDouble", _wrap_new_AutoDerivativeWithUnitDouble, METH_VARARGS, NULL},
-	 { (char *)"AutoDerivativeWithUnitDouble_convert", _wrap_AutoDerivativeWithUnitDouble_convert, METH_VARARGS, NULL},
+	 { (char *)"new_AutoDerivativeWithUnitDouble", _wrap_new_AutoDerivativeWithUnitDouble, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::AutoDerivativeWithUnit< T >::AutoDerivativeWithUnit(const DoubleWithUnit &V)\n"
+		"\n"
+		""},
+	 { (char *)"AutoDerivativeWithUnitDouble_convert", _wrap_AutoDerivativeWithUnitDouble_convert, METH_VARARGS, (char *)"\n"
+		"\n"
+		"AutoDerivativeWithUnit<T> FullPhysics::AutoDerivativeWithUnit< T >::convert(const Unit &R) const\n"
+		"Convert to the given units. \n"
+		""},
 	 { (char *)"AutoDerivativeWithUnitDouble___str__", _wrap_AutoDerivativeWithUnitDouble___str__, METH_VARARGS, NULL},
 	 { (char *)"AutoDerivativeWithUnitDouble__value", _wrap_AutoDerivativeWithUnitDouble__value, METH_VARARGS, NULL},
 	 { (char *)"AutoDerivativeWithUnitDouble__value_set", _wrap_AutoDerivativeWithUnitDouble__value_set, METH_VARARGS, NULL},

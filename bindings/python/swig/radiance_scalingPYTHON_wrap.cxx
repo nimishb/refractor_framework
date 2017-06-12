@@ -5335,12 +5335,37 @@ SWIGINTERN PyObject *RadianceScaling_swigregister(PyObject *SWIGUNUSEDPARM(self)
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"delete_RadianceScaling", _wrap_delete_RadianceScaling, METH_VARARGS, NULL},
-	 { (char *)"RadianceScaling_print_desc", _wrap_RadianceScaling_print_desc, METH_VARARGS, NULL},
-	 { (char *)"RadianceScaling_apply_scaling", _wrap_RadianceScaling_apply_scaling, METH_VARARGS, NULL},
-	 { (char *)"RadianceScaling__v_radiance_scaling_coeff", _wrap_RadianceScaling__v_radiance_scaling_coeff, METH_VARARGS, NULL},
-	 { (char *)"RadianceScaling__v_radiance_scaling_coeff_uncertainty", _wrap_RadianceScaling__v_radiance_scaling_coeff_uncertainty, METH_VARARGS, NULL},
-	 { (char *)"RadianceScaling__v_radiance_offset", _wrap_RadianceScaling__v_radiance_offset, METH_VARARGS, NULL},
+	 { (char *)"delete_RadianceScaling", _wrap_delete_RadianceScaling, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::RadianceScaling::~RadianceScaling()\n"
+		"\n"
+		""},
+	 { (char *)"RadianceScaling_print_desc", _wrap_RadianceScaling_print_desc, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::RadianceScaling::print(std::ostream &Os) const\n"
+		"\n"
+		""},
+	 { (char *)"RadianceScaling_apply_scaling", _wrap_RadianceScaling_apply_scaling, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::RadianceScaling::apply_scaling(const SpectralDomain &Grid, SpectralRange &Radiance) const\n"
+		"Apply scaling and offset coefficients to Radiance. \n"
+		""},
+	 { (char *)"RadianceScaling__v_radiance_scaling_coeff", _wrap_RadianceScaling__v_radiance_scaling_coeff, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual blitz::Array<double, 1> FullPhysics::RadianceScaling::radiance_scaling_coeff() const\n"
+		"Return radiance scaling coefficients for the output file. \n"
+		""},
+	 { (char *)"RadianceScaling__v_radiance_scaling_coeff_uncertainty", _wrap_RadianceScaling__v_radiance_scaling_coeff_uncertainty, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual blitz::Array<double, 1> FullPhysics::RadianceScaling::radiance_scaling_coeff_uncertainty() const =0\n"
+		"Return radiance scaling coefficients uncertainty for the output file.\n"
+		"\n"
+		""},
+	 { (char *)"RadianceScaling__v_radiance_offset", _wrap_RadianceScaling__v_radiance_offset, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual double FullPhysics::RadianceScaling::radiance_offset() const\n"
+		"Return radiance scaling offset for the output file. \n"
+		""},
 	 { (char *)"RadianceScaling_swigregister", RadianceScaling_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };

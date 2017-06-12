@@ -5366,10 +5366,27 @@ SWIGINTERN PyObject *SolarAbsorptionGfitFile_swigregister(PyObject *SWIGUNUSEDPA
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"new_SolarAbsorptionGfitFile", _wrap_new_SolarAbsorptionGfitFile, METH_VARARGS, NULL},
-	 { (char *)"SolarAbsorptionGfitFile_solar_absorption_spectrum", _wrap_SolarAbsorptionGfitFile_solar_absorption_spectrum, METH_VARARGS, NULL},
-	 { (char *)"SolarAbsorptionGfitFile__v_fraction_solar_diameter", _wrap_SolarAbsorptionGfitFile__v_fraction_solar_diameter, METH_VARARGS, NULL},
-	 { (char *)"delete_SolarAbsorptionGfitFile", _wrap_delete_SolarAbsorptionGfitFile, METH_VARARGS, NULL},
+	 { (char *)"new_SolarAbsorptionGfitFile", _wrap_new_SolarAbsorptionGfitFile, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::SolarAbsorptionGfitFile::SolarAbsorptionGfitFile(const std::string &Line_list_file, double\n"
+		"Fraction_solar_diameter=1.0)\n"
+		"\n"
+		""},
+	 { (char *)"SolarAbsorptionGfitFile_solar_absorption_spectrum", _wrap_SolarAbsorptionGfitFile_solar_absorption_spectrum, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual Spectrum FullPhysics::SolarAbsorptionGfitFile::solar_absorption_spectrum(const SpectralDomain &spec_domain) const\n"
+		"\n"
+		""},
+	 { (char *)"SolarAbsorptionGfitFile__v_fraction_solar_diameter", _wrap_SolarAbsorptionGfitFile__v_fraction_solar_diameter, METH_VARARGS, (char *)"\n"
+		"\n"
+		"double FullPhysics::SolarAbsorptionGfitFile::fraction_solar_diameter() const\n"
+		"Fraction of solar diameter that we view. \n"
+		""},
+	 { (char *)"delete_SolarAbsorptionGfitFile", _wrap_delete_SolarAbsorptionGfitFile, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::SolarAbsorptionGfitFile::~SolarAbsorptionGfitFile()\n"
+		"\n"
+		""},
 	 { (char *)"SolarAbsorptionGfitFile_swigregister", SolarAbsorptionGfitFile_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };

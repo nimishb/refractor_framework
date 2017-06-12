@@ -5880,11 +5880,46 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"ObserverStokesCoefficient_notify_add", _wrap_ObserverStokesCoefficient_notify_add, METH_VARARGS, NULL},
 	 { (char *)"ObserverStokesCoefficient_notify_remove", _wrap_ObserverStokesCoefficient_notify_remove, METH_VARARGS, NULL},
 	 { (char *)"ObserverStokesCoefficient_swigregister", ObserverStokesCoefficient_swigregister, METH_VARARGS, NULL},
-	 { (char *)"delete_StokesCoefficient", _wrap_delete_StokesCoefficient, METH_VARARGS, NULL},
-	 { (char *)"StokesCoefficient_add_observer", _wrap_StokesCoefficient_add_observer, METH_VARARGS, NULL},
-	 { (char *)"StokesCoefficient_remove_observer", _wrap_StokesCoefficient_remove_observer, METH_VARARGS, NULL},
-	 { (char *)"StokesCoefficient__v_stokes_coefficient", _wrap_StokesCoefficient__v_stokes_coefficient, METH_VARARGS, NULL},
-	 { (char *)"StokesCoefficient_clone", _wrap_StokesCoefficient_clone, METH_VARARGS, NULL},
+	 { (char *)"delete_StokesCoefficient", _wrap_delete_StokesCoefficient, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::StokesCoefficient::~StokesCoefficient()\n"
+		"\n"
+		""},
+	 { (char *)"StokesCoefficient_add_observer", _wrap_StokesCoefficient_add_observer, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::StokesCoefficient::add_observer(Observer< StokesCoefficient > &Obs)\n"
+		"\n"
+		""},
+	 { (char *)"StokesCoefficient_remove_observer", _wrap_StokesCoefficient_remove_observer, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::StokesCoefficient::remove_observer(Observer< StokesCoefficient > &Obs)\n"
+		"\n"
+		""},
+	 { (char *)"StokesCoefficient__v_stokes_coefficient", _wrap_StokesCoefficient__v_stokes_coefficient, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual ArrayAd<double, 2> FullPhysics::StokesCoefficient::stokes_coefficient() const =0\n"
+		"Return Stokes coefficients used to go from Stokes vector to scalar\n"
+		"reflectance.\n"
+		"\n"
+		"This is number_spectrometer() x 4, and is unit less.\n"
+		"\n"
+		"Note that is simple a matter of convenience that we have \"4\" rather\n"
+		"than just number_stokes(). This happens to be how the stokes\n"
+		"coefficients are given the Level 1 file. We only actually use the\n"
+		"first number_stokes() coefficients. \n"
+		""},
+	 { (char *)"StokesCoefficient_clone", _wrap_StokesCoefficient_clone, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual boost::shared_ptr<StokesCoefficient> FullPhysics::StokesCoefficient::clone() const =0\n"
+		"Clone a StokesCoefficient object.\n"
+		"\n"
+		"Note that the cloned version will not be attached to a StateVector or\n"
+		"Observer<StokesCoefficient>, although you can of course attach them\n"
+		"after receiving the cloned object.\n"
+		"\n"
+		"Because this isn't attached to the StateVector, one use of the clone\n"
+		"operator is to create a \"frozen\" StokesCoefficient object. \n"
+		""},
 	 { (char *)"StokesCoefficient___str__", _wrap_StokesCoefficient___str__, METH_VARARGS, NULL},
 	 { (char *)"StokesCoefficient_swigregister", StokesCoefficient_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }

@@ -5712,12 +5712,42 @@ SWIGINTERN PyObject *AltitudeHydrostatic_swigregister(PyObject *SWIGUNUSEDPARM(s
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"new_AltitudeHydrostatic", _wrap_new_AltitudeHydrostatic, METH_VARARGS, NULL},
-	 { (char *)"AltitudeHydrostatic_altitude", _wrap_AltitudeHydrostatic_altitude, METH_VARARGS, NULL},
-	 { (char *)"AltitudeHydrostatic_gravity", _wrap_AltitudeHydrostatic_gravity, METH_VARARGS, NULL},
-	 { (char *)"AltitudeHydrostatic_notify_update", _wrap_AltitudeHydrostatic_notify_update, METH_VARARGS, NULL},
-	 { (char *)"AltitudeHydrostatic_clone", _wrap_AltitudeHydrostatic_clone, METH_VARARGS, NULL},
-	 { (char *)"delete_AltitudeHydrostatic", _wrap_delete_AltitudeHydrostatic, METH_VARARGS, NULL},
+	 { (char *)"new_AltitudeHydrostatic", _wrap_new_AltitudeHydrostatic, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::AltitudeHydrostatic::AltitudeHydrostatic(const boost::shared_ptr< Pressure > &P, const boost::shared_ptr<\n"
+		"Temperature > &T, const DoubleWithUnit &Latitude, const DoubleWithUnit\n"
+		"&Surface_height, const int Num_sublayer=10)\n"
+		"\n"
+		""},
+	 { (char *)"AltitudeHydrostatic_altitude", _wrap_AltitudeHydrostatic_altitude, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual AutoDerivativeWithUnit<double> FullPhysics::AltitudeHydrostatic::altitude(const AutoDerivativeWithUnit< double > &P) const\n"
+		"\n"
+		""},
+	 { (char *)"AltitudeHydrostatic_gravity", _wrap_AltitudeHydrostatic_gravity, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual AutoDerivativeWithUnit<double> FullPhysics::AltitudeHydrostatic::gravity(const AutoDerivativeWithUnit< double > &P) const\n"
+		"\n"
+		""},
+	 { (char *)"AltitudeHydrostatic_notify_update", _wrap_AltitudeHydrostatic_notify_update, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::AltitudeHydrostatic::notify_update(const Temperature &T)\n"
+		"For performance, we cache some data as we calculate it.\n"
+		"\n"
+		"This becomes stale when the temperature is changed, so we observe\n"
+		"temperature and mark the cache when it changes. \n"
+		""},
+	 { (char *)"AltitudeHydrostatic_clone", _wrap_AltitudeHydrostatic_clone, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual boost::shared_ptr<Altitude> FullPhysics::AltitudeHydrostatic::clone(const boost::shared_ptr< Pressure > &Press, const boost::shared_ptr<\n"
+		"Temperature > &Temp) const\n"
+		"\n"
+		""},
+	 { (char *)"delete_AltitudeHydrostatic", _wrap_delete_AltitudeHydrostatic, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::AltitudeHydrostatic::~AltitudeHydrostatic()\n"
+		"\n"
+		""},
 	 { (char *)"AltitudeHydrostatic_swigregister", AltitudeHydrostatic_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };

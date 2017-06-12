@@ -125,6 +125,13 @@ import full_physics_swig.observer
 import full_physics_swig.generic_object
 import full_physics_swig.state_vector
 class GroundCoxmunk(full_physics_swig.ground.SubStateVectorArrayGround):
+    """
+
+    This class implements a Coxmunk ground type.
+
+    C++ includes: ground_coxmunk.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.ground.SubStateVectorArrayGround]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -136,6 +143,12 @@ class GroundCoxmunk(full_physics_swig.ground.SubStateVectorArrayGround):
     __repr__ = _swig_repr
 
     def __init__(self, Windspeed, Ws_flag, Refr_index):
+        """
+
+        FullPhysics::GroundCoxmunk::GroundCoxmunk(const double Windspeed, const bool &Ws_flag, const blitz::Array<
+        double, 1 > &Refr_index)
+
+        """
         this = _ground_coxmunk.new_GroundCoxmunk(Windspeed, Ws_flag, Refr_index)
         try:
             self.this.append(this)
@@ -143,25 +156,67 @@ class GroundCoxmunk(full_physics_swig.ground.SubStateVectorArrayGround):
             self.this = this
 
     def surface_parameter(self, wn, spec_index):
+        """
+
+        virtual ArrayAd<double, 1> FullPhysics::GroundCoxmunk::surface_parameter(const double wn, const int spec_index) const
+
+        """
         return _ground_coxmunk.GroundCoxmunk_surface_parameter(self, wn, spec_index)
 
+
     def windspeed(self):
+        """
+
+        virtual const AutoDerivative<double> FullPhysics::GroundCoxmunk::windspeed() const
+
+        """
         return _ground_coxmunk.GroundCoxmunk_windspeed(self)
 
+
     def refractive_index(self, Spec_idx):
+        """
+
+        virtual const double FullPhysics::GroundCoxmunk::refractive_index(const int Spec_idx) const
+
+        """
         return _ground_coxmunk.GroundCoxmunk_refractive_index(self, Spec_idx)
 
+
     def clone(self):
+        """
+
+        virtual boost::shared_ptr<Ground> FullPhysics::GroundCoxmunk::clone() const
+
+        """
         return _ground_coxmunk.GroundCoxmunk_clone(self)
 
+
     def state_vector_name_i(self, i):
+        """
+
+        virtual std::string FullPhysics::GroundCoxmunk::state_vector_name_i(int i) const
+
+        """
         return _ground_coxmunk.GroundCoxmunk_state_vector_name_i(self, i)
 
+
     def print_desc(self, Os):
+        """
+
+        virtual void FullPhysics::GroundCoxmunk::print(std::ostream &Os) const
+
+        """
         return _ground_coxmunk.GroundCoxmunk_print_desc(self, Os)
 
+
     def update_sub_state_hook(self):
+        """
+
+        virtual void FullPhysics::GroundCoxmunk::update_sub_state_hook()
+
+        """
         return _ground_coxmunk.GroundCoxmunk_update_sub_state_hook(self)
+
     __swig_destroy__ = _ground_coxmunk.delete_GroundCoxmunk
     __del__ = lambda self: None
 GroundCoxmunk_swigregister = _ground_coxmunk.GroundCoxmunk_swigregister

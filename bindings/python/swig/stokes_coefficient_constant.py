@@ -125,6 +125,16 @@ import full_physics_swig.stokes_coefficient
 import full_physics_swig.state_vector
 import full_physics_swig.generic_object
 class StokesCoefficientConstant(full_physics_swig.stokes_coefficient_imp_base.StokesCoefficientImpBase):
+    """
+
+    This class maintains the stokes coefficient portion of the state.
+
+    This particular implementation just uses constant values, i.e. the
+    state vector has no effect on the stokes coefficients.
+
+    C++ includes: stokes_coefficient_constant.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.stokes_coefficient_imp_base.StokesCoefficientImpBase]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -139,10 +149,22 @@ class StokesCoefficientConstant(full_physics_swig.stokes_coefficient_imp_base.St
     __repr__ = _swig_repr
 
     def clone(self):
+        """
+
+        virtual boost::shared_ptr<StokesCoefficient> FullPhysics::StokesCoefficientConstant::clone() const
+
+        """
         return _stokes_coefficient_constant.StokesCoefficientConstant_clone(self)
 
+
     def set_stokes_coefficient(self, Stokes_coeff):
+        """
+
+        void FullPhysics::StokesCoefficientConstant::set_stokes_coefficient(const blitz::Array< double, 2 > Stokes_coeff)
+
+        """
         return _stokes_coefficient_constant.StokesCoefficientConstant_set_stokes_coefficient(self, Stokes_coeff)
+
     __swig_destroy__ = _stokes_coefficient_constant.delete_StokesCoefficientConstant
     __del__ = lambda self: None
 StokesCoefficientConstant_swigregister = _stokes_coefficient_constant.StokesCoefficientConstant_swigregister

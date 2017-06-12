@@ -123,6 +123,17 @@ def _new_from_set(cls, version, *args):
 import full_physics_swig.register_output_base
 import full_physics_swig.generic_object
 class ForwardModelOutput(full_physics_swig.register_output_base.RegisterOutputBase):
+    """
+
+    This registers the portions of the ForwardModel class that should be
+    written as output.
+
+    See the discussion in RegisterOutputBase why this isn't just part of
+    the ForwardModel class.
+
+    C++ includes: forward_model_output.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.register_output_base.RegisterOutputBase]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -137,7 +148,13 @@ class ForwardModelOutput(full_physics_swig.register_output_base.RegisterOutputBa
     __repr__ = _swig_repr
 
     def register_output(self, out):
+        """
+
+        virtual void FullPhysics::ForwardModelOutput::register_output(const boost::shared_ptr< Output > &out) const
+
+        """
         return _forward_model_output.ForwardModelOutput_register_output(self, out)
+
     __swig_destroy__ = _forward_model_output.delete_ForwardModelOutput
     __del__ = lambda self: None
 ForwardModelOutput_swigregister = _forward_model_output.ForwardModelOutput_swigregister

@@ -5018,7 +5018,11 @@ SWIGINTERN PyObject *RayleighGreekMoment_swigregister(PyObject *SWIGUNUSEDPARM(s
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"RayleighGreekMoment_array", _wrap_RayleighGreekMoment_array, METH_VARARGS, NULL},
+	 { (char *)"RayleighGreekMoment_array", _wrap_RayleighGreekMoment_array, METH_VARARGS, (char *)"\n"
+		"\n"
+		"static const blitz::Array<double, 2>& FullPhysics::RayleighGreekMoment::array(double depolar_fact=0.02790)\n"
+		"\n"
+		""},
 	 { (char *)"new_RayleighGreekMoment", _wrap_new_RayleighGreekMoment, METH_VARARGS, NULL},
 	 { (char *)"delete_RayleighGreekMoment", _wrap_delete_RayleighGreekMoment, METH_VARARGS, NULL},
 	 { (char *)"RayleighGreekMoment_swigregister", RayleighGreekMoment_swigregister, METH_VARARGS, NULL},

@@ -5654,11 +5654,35 @@ SWIGINTERN PyObject *ConnorConvergence_swigregister(PyObject *SWIGUNUSEDPARM(sel
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"new_ConnorConvergence", _wrap_new_ConnorConvergence, METH_VARARGS, NULL},
-	 { (char *)"ConnorConvergence_convergence_check", _wrap_ConnorConvergence_convergence_check, METH_VARARGS, NULL},
-	 { (char *)"ConnorConvergence_evaluate_quality", _wrap_ConnorConvergence_evaluate_quality, METH_VARARGS, NULL},
-	 { (char *)"ConnorConvergence__v_maximum_number_iteration", _wrap_ConnorConvergence__v_maximum_number_iteration, METH_VARARGS, NULL},
-	 { (char *)"delete_ConnorConvergence", _wrap_delete_ConnorConvergence, METH_VARARGS, NULL},
+	 { (char *)"new_ConnorConvergence", _wrap_new_ConnorConvergence, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::ConnorConvergence::ConnorConvergence(const boost::shared_ptr< ForwardModel > &Fm, double Threshold, int\n"
+		"Max_iteration, int Max_divergence, double Max_chisq)\n"
+		"\n"
+		""},
+	 { (char *)"ConnorConvergence_convergence_check", _wrap_ConnorConvergence_convergence_check, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::ConnorConvergence::convergence_check(const FitStatistic &fit_stat_last, FitStatistic &fit_stat, bool\n"
+		"&has_converged, bool &convergence_failed, double &gamma, bool\n"
+		"&step_diverged)\n"
+		"\n"
+		""},
+	 { (char *)"ConnorConvergence_evaluate_quality", _wrap_ConnorConvergence_evaluate_quality, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::ConnorConvergence::evaluate_quality(FitStatistic &fit_stat, const blitz::Array< double, 1 > &Residual,\n"
+		"const blitz::Array< double, 1 > &Residual_cov_diag)\n"
+		"\n"
+		""},
+	 { (char *)"ConnorConvergence__v_maximum_number_iteration", _wrap_ConnorConvergence__v_maximum_number_iteration, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::ConnorConvergence::maximum_number_iteration(int Max_iter)\n"
+		"\n"
+		""},
+	 { (char *)"delete_ConnorConvergence", _wrap_delete_ConnorConvergence, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::ConnorConvergence::~ConnorConvergence()\n"
+		"\n"
+		""},
 	 { (char *)"ConnorConvergence_swigregister", ConnorConvergence_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };

@@ -8483,35 +8483,157 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"ObserverAtmosphereOco_notify_add", _wrap_ObserverAtmosphereOco_notify_add, METH_VARARGS, NULL},
 	 { (char *)"ObserverAtmosphereOco_notify_remove", _wrap_ObserverAtmosphereOco_notify_remove, METH_VARARGS, NULL},
 	 { (char *)"ObserverAtmosphereOco_swigregister", ObserverAtmosphereOco_swigregister, METH_VARARGS, NULL},
-	 { (char *)"new_AtmosphereOco", _wrap_new_AtmosphereOco, METH_VARARGS, NULL},
-	 { (char *)"AtmosphereOco_notify_add", _wrap_AtmosphereOco_notify_add, METH_VARARGS, NULL},
-	 { (char *)"AtmosphereOco_notify_remove", _wrap_AtmosphereOco_notify_remove, METH_VARARGS, NULL},
-	 { (char *)"AtmosphereOco_altitude", _wrap_AtmosphereOco_altitude, METH_VARARGS, NULL},
-	 { (char *)"AtmosphereOco__v_number_spectrometer", _wrap_AtmosphereOco__v_number_spectrometer, METH_VARARGS, NULL},
-	 { (char *)"AtmosphereOco__v_number_layer", _wrap_AtmosphereOco__v_number_layer, METH_VARARGS, NULL},
-	 { (char *)"AtmosphereOco_column_optical_depth", _wrap_AtmosphereOco_column_optical_depth, METH_VARARGS, NULL},
-	 { (char *)"AtmosphereOco_optical_depth_wrt_iv", _wrap_AtmosphereOco_optical_depth_wrt_iv, METH_VARARGS, NULL},
-	 { (char *)"AtmosphereOco_single_scattering_albedo_wrt_iv", _wrap_AtmosphereOco_single_scattering_albedo_wrt_iv, METH_VARARGS, NULL},
-	 { (char *)"AtmosphereOco_scattering_moment_wrt_iv", _wrap_AtmosphereOco_scattering_moment_wrt_iv, METH_VARARGS, NULL},
-	 { (char *)"AtmosphereOco_intermediate_variable", _wrap_AtmosphereOco_intermediate_variable, METH_VARARGS, NULL},
-	 { (char *)"AtmosphereOco__v_ground", _wrap_AtmosphereOco__v_ground, METH_VARARGS, NULL},
-	 { (char *)"AtmosphereOco__v_uplooking", _wrap_AtmosphereOco__v_uplooking, METH_VARARGS, NULL},
-	 { (char *)"AtmosphereOco_notify_update", _wrap_AtmosphereOco_notify_update, METH_VARARGS, NULL},
-	 { (char *)"AtmosphereOco_reset_timer", _wrap_AtmosphereOco_reset_timer, METH_VARARGS, NULL},
-	 { (char *)"AtmosphereOco__v_timer_info", _wrap_AtmosphereOco__v_timer_info, METH_VARARGS, NULL},
-	 { (char *)"AtmosphereOco__v_pressure", _wrap_AtmosphereOco__v_pressure, METH_VARARGS, NULL},
-	 { (char *)"AtmosphereOco__v_absorber", _wrap_AtmosphereOco__v_absorber, METH_VARARGS, NULL},
-	 { (char *)"AtmosphereOco__v_aerosol", _wrap_AtmosphereOco__v_aerosol, METH_VARARGS, NULL},
-	 { (char *)"AtmosphereOco_set_aerosol", _wrap_AtmosphereOco_set_aerosol, METH_VARARGS, NULL},
-	 { (char *)"AtmosphereOco__v_temperature", _wrap_AtmosphereOco__v_temperature, METH_VARARGS, NULL},
-	 { (char *)"AtmosphereOco__v_relative_humidity", _wrap_AtmosphereOco__v_relative_humidity, METH_VARARGS, NULL},
-	 { (char *)"AtmosphereOco__v_constant", _wrap_AtmosphereOco__v_constant, METH_VARARGS, NULL},
-	 { (char *)"AtmosphereOco__v_rayleigh", _wrap_AtmosphereOco__v_rayleigh, METH_VARARGS, NULL},
-	 { (char *)"AtmosphereOco__v_altitude_obj", _wrap_AtmosphereOco__v_altitude_obj, METH_VARARGS, NULL},
-	 { (char *)"AtmosphereOco_clone", _wrap_AtmosphereOco_clone, METH_VARARGS, NULL},
-	 { (char *)"AtmosphereOco__v_rayleigh_only_atmosphere", _wrap_AtmosphereOco__v_rayleigh_only_atmosphere, METH_VARARGS, NULL},
-	 { (char *)"AtmosphereOco_set_surface_pressure_for_testing", _wrap_AtmosphereOco_set_surface_pressure_for_testing, METH_VARARGS, NULL},
-	 { (char *)"delete_AtmosphereOco", _wrap_delete_AtmosphereOco, METH_VARARGS, NULL},
+	 { (char *)"new_AtmosphereOco", _wrap_new_AtmosphereOco, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::AtmosphereOco::AtmosphereOco(const boost::shared_ptr< Absorber > &absorberv, const\n"
+		"boost::shared_ptr< Pressure > &pressurev, const boost::shared_ptr<\n"
+		"Temperature > &temperaturev, const boost::shared_ptr< RelativeHumidity\n"
+		"> &Rh, const std::vector< boost::shared_ptr< Altitude > > &altv, const\n"
+		"boost::shared_ptr< Constant > &C)\n"
+		"\n"
+		""},
+	 { (char *)"AtmosphereOco_notify_add", _wrap_AtmosphereOco_notify_add, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::AtmosphereOco::notify_add(StateVector &Sv)\n"
+		"\n"
+		""},
+	 { (char *)"AtmosphereOco_notify_remove", _wrap_AtmosphereOco_notify_remove, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::AtmosphereOco::notify_remove(StateVector &Sv)\n"
+		"\n"
+		""},
+	 { (char *)"AtmosphereOco_altitude", _wrap_AtmosphereOco_altitude, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual ArrayAdWithUnit<double, 1> FullPhysics::AtmosphereOco::altitude(int spec_index) const\n"
+		"\n"
+		""},
+	 { (char *)"AtmosphereOco__v_number_spectrometer", _wrap_AtmosphereOco__v_number_spectrometer, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual int FullPhysics::AtmosphereOco::number_spectrometer() const\n"
+		"\n"
+		""},
+	 { (char *)"AtmosphereOco__v_number_layer", _wrap_AtmosphereOco__v_number_layer, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual int FullPhysics::AtmosphereOco::number_layer() const\n"
+		"\n"
+		""},
+	 { (char *)"AtmosphereOco_column_optical_depth", _wrap_AtmosphereOco_column_optical_depth, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual AutoDerivative<double> FullPhysics::AtmosphereOco::column_optical_depth(double wn, int spec_index, const std::string &Gas_name) const\n"
+		"\n"
+		""},
+	 { (char *)"AtmosphereOco_optical_depth_wrt_iv", _wrap_AtmosphereOco_optical_depth_wrt_iv, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual ArrayAd<double, 1> FullPhysics::AtmosphereOco::optical_depth_wrt_iv(double wn, int spec_index, const ArrayAd< double, 2 > &iv) const\n"
+		"\n"
+		""},
+	 { (char *)"AtmosphereOco_single_scattering_albedo_wrt_iv", _wrap_AtmosphereOco_single_scattering_albedo_wrt_iv, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual ArrayAd<double, 1> FullPhysics::AtmosphereOco::single_scattering_albedo_wrt_iv(double wn, int spec_index, const ArrayAd< double, 2 > &iv) const\n"
+		"\n"
+		""},
+	 { (char *)"AtmosphereOco_scattering_moment_wrt_iv", _wrap_AtmosphereOco_scattering_moment_wrt_iv, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual ArrayAd<double, 3> FullPhysics::AtmosphereOco::scattering_moment_wrt_iv(double wn, int spec_index, const ArrayAd< double, 2 > &iv, int\n"
+		"nummom=-1, int numscat=-1) const\n"
+		"\n"
+		""},
+	 { (char *)"AtmosphereOco_intermediate_variable", _wrap_AtmosphereOco_intermediate_variable, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual ArrayAd<double, 2> FullPhysics::AtmosphereOco::intermediate_variable(double wn, int spec_index) const\n"
+		"\n"
+		""},
+	 { (char *)"AtmosphereOco__v_ground", _wrap_AtmosphereOco__v_ground, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual const boost::shared_ptr<Ground> FullPhysics::AtmosphereOco::ground() const\n"
+		"\n"
+		""},
+	 { (char *)"AtmosphereOco__v_uplooking", _wrap_AtmosphereOco__v_uplooking, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual bool FullPhysics::AtmosphereOco::uplooking() const\n"
+		"\n"
+		""},
+	 { (char *)"AtmosphereOco_notify_update", _wrap_AtmosphereOco_notify_update, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::AtmosphereOco::notify_update(const Pressure &P)\n"
+		"\n"
+		""},
+	 { (char *)"AtmosphereOco_reset_timer", _wrap_AtmosphereOco_reset_timer, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::AtmosphereOco::reset_timer()\n"
+		"\n"
+		""},
+	 { (char *)"AtmosphereOco__v_timer_info", _wrap_AtmosphereOco__v_timer_info, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual std::string FullPhysics::AtmosphereOco::timer_info() const\n"
+		"\n"
+		""},
+	 { (char *)"AtmosphereOco__v_pressure", _wrap_AtmosphereOco__v_pressure, METH_VARARGS, (char *)"\n"
+		"\n"
+		"const boost::shared_ptr<Pressure>& FullPhysics::AtmosphereOco::pressure_ptr() const\n"
+		"\n"
+		""},
+	 { (char *)"AtmosphereOco__v_absorber", _wrap_AtmosphereOco__v_absorber, METH_VARARGS, (char *)"\n"
+		"\n"
+		"const boost::shared_ptr<Absorber>& FullPhysics::AtmosphereOco::absorber_ptr() const\n"
+		"\n"
+		""},
+	 { (char *)"AtmosphereOco__v_aerosol", _wrap_AtmosphereOco__v_aerosol, METH_VARARGS, (char *)"\n"
+		"\n"
+		"const boost::shared_ptr<Aerosol>& FullPhysics::AtmosphereOco::aerosol_ptr() const\n"
+		"\n"
+		""},
+	 { (char *)"AtmosphereOco_set_aerosol", _wrap_AtmosphereOco_set_aerosol, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::AtmosphereOco::set_aerosol(boost::shared_ptr< Aerosol > &new_aerosol, StateVector &Sv)\n"
+		"\n"
+		""},
+	 { (char *)"AtmosphereOco__v_temperature", _wrap_AtmosphereOco__v_temperature, METH_VARARGS, (char *)"\n"
+		"\n"
+		"const boost::shared_ptr<Temperature>& FullPhysics::AtmosphereOco::temperature_ptr() const\n"
+		"\n"
+		""},
+	 { (char *)"AtmosphereOco__v_relative_humidity", _wrap_AtmosphereOco__v_relative_humidity, METH_VARARGS, (char *)"\n"
+		"\n"
+		"const boost::shared_ptr<RelativeHumidity>& FullPhysics::AtmosphereOco::relative_humidity_ptr() const\n"
+		"\n"
+		""},
+	 { (char *)"AtmosphereOco__v_constant", _wrap_AtmosphereOco__v_constant, METH_VARARGS, (char *)"\n"
+		"\n"
+		"const boost::shared_ptr<Constant>& FullPhysics::AtmosphereOco::constant_ptr() const\n"
+		"\n"
+		""},
+	 { (char *)"AtmosphereOco__v_rayleigh", _wrap_AtmosphereOco__v_rayleigh, METH_VARARGS, (char *)"\n"
+		"\n"
+		"const boost::shared_ptr<Rayleigh>& FullPhysics::AtmosphereOco::rayleigh_ptr() const\n"
+		"\n"
+		""},
+	 { (char *)"AtmosphereOco__v_altitude_obj", _wrap_AtmosphereOco__v_altitude_obj, METH_VARARGS, (char *)"\n"
+		"\n"
+		"const boost::shared_ptr<Altitude>& FullPhysics::AtmosphereOco::altitude_ptr(int Spec_index) const\n"
+		"\n"
+		""},
+	 { (char *)"AtmosphereOco_clone", _wrap_AtmosphereOco_clone, METH_VARARGS, (char *)"\n"
+		"\n"
+		"boost::shared_ptr<AtmosphereOco> FullPhysics::AtmosphereOco::clone() const\n"
+		"\n"
+		""},
+	 { (char *)"AtmosphereOco__v_rayleigh_only_atmosphere", _wrap_AtmosphereOco__v_rayleigh_only_atmosphere, METH_VARARGS, (char *)"\n"
+		"\n"
+		"bool FullPhysics::AtmosphereOco::rayleigh_only_atmosphere() const\n"
+		"Indicate we have rayleigh only atmosphere, i.e., we don't have any\n"
+		"aerosol content. \n"
+		""},
+	 { (char *)"AtmosphereOco_set_surface_pressure_for_testing", _wrap_AtmosphereOco_set_surface_pressure_for_testing, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::AtmosphereOco::set_surface_pressure_for_testing(double x)\n"
+		"\n"
+		""},
+	 { (char *)"delete_AtmosphereOco", _wrap_delete_AtmosphereOco, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::AtmosphereOco::~AtmosphereOco()\n"
+		"\n"
+		""},
 	 { (char *)"AtmosphereOco_swigregister", AtmosphereOco_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };

@@ -5708,14 +5708,56 @@ SWIGINTERN PyObject *NLLSMaxLikelihood_swigregister(PyObject *SWIGUNUSEDPARM(sel
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"new_NLLSMaxLikelihood", _wrap_new_NLLSMaxLikelihood, METH_VARARGS, NULL},
-	 { (char *)"delete_NLLSMaxLikelihood", _wrap_delete_NLLSMaxLikelihood, METH_VARARGS, NULL},
-	 { (char *)"NLLSMaxLikelihood__v_residual", _wrap_NLLSMaxLikelihood__v_residual, METH_VARARGS, NULL},
-	 { (char *)"NLLSMaxLikelihood__v_jacobian", _wrap_NLLSMaxLikelihood__v_jacobian, METH_VARARGS, NULL},
-	 { (char *)"NLLSMaxLikelihood__v_residual_size", _wrap_NLLSMaxLikelihood__v_residual_size, METH_VARARGS, NULL},
-	 { (char *)"NLLSMaxLikelihood__v_expected_parameter_size", _wrap_NLLSMaxLikelihood__v_expected_parameter_size, METH_VARARGS, NULL},
-	 { (char *)"NLLSMaxLikelihood__v_parameters", _wrap_NLLSMaxLikelihood__v_parameters, METH_VARARGS, NULL},
-	 { (char *)"NLLSMaxLikelihood__v_max_likelihood", _wrap_NLLSMaxLikelihood__v_max_likelihood, METH_VARARGS, NULL},
+	 { (char *)"new_NLLSMaxLikelihood", _wrap_new_NLLSMaxLikelihood, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::NLLSMaxLikelihood::NLLSMaxLikelihood(const boost::shared_ptr< MaxLikelihood > &ml, bool together=false)\n"
+		"Constructor. \n"
+		""},
+	 { (char *)"delete_NLLSMaxLikelihood", _wrap_delete_NLLSMaxLikelihood, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::NLLSMaxLikelihood::~NLLSMaxLikelihood()\n"
+		"\n"
+		""},
+	 { (char *)"NLLSMaxLikelihood__v_residual", _wrap_NLLSMaxLikelihood__v_residual, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual blitz::Array<double, 1> FullPhysics::NLLSMaxLikelihood::residual()\n"
+		"Return the residual of the NLLS problem at the current set point.\n"
+		"\n"
+		"Residual \n"
+		""},
+	 { (char *)"NLLSMaxLikelihood__v_jacobian", _wrap_NLLSMaxLikelihood__v_jacobian, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual blitz::Array<double, 2> FullPhysics::NLLSMaxLikelihood::jacobian()\n"
+		"Return the Jacobian of the residual of the NLLS problem at the current\n"
+		"set point.\n"
+		"\n"
+		"The Jacobian of the cost function. \n"
+		""},
+	 { (char *)"NLLSMaxLikelihood__v_residual_size", _wrap_NLLSMaxLikelihood__v_residual_size, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual int FullPhysics::NLLSMaxLikelihood::residual_size() const\n"
+		"Return the size of the residual that will be returned by residual() \n"
+		""},
+	 { (char *)"NLLSMaxLikelihood__v_expected_parameter_size", _wrap_NLLSMaxLikelihood__v_expected_parameter_size, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual int FullPhysics::NLLSMaxLikelihood::expected_parameter_size() const\n"
+		"Return the size of the parameter X. \n"
+		""},
+	 { (char *)"NLLSMaxLikelihood__v_parameters", _wrap_NLLSMaxLikelihood__v_parameters, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual blitz::Array<double, 1> FullPhysics::NLLSMaxLikelihood::parameters() const\n"
+		"Just returns the current values of parameters.\n"
+		"\n"
+		"This method is redefined here (see the root base class) because of a\n"
+		"compiler bug; otherwise, there should be no need for its redefinition.\n"
+		"\n"
+		"Current parameter values \n"
+		""},
+	 { (char *)"NLLSMaxLikelihood__v_max_likelihood", _wrap_NLLSMaxLikelihood__v_max_likelihood, METH_VARARGS, (char *)"\n"
+		"\n"
+		"boost::shared_ptr<MaxLikelihood> FullPhysics::NLLSMaxLikelihood::max_likelihood()\n"
+		"\n"
+		""},
 	 { (char *)"NLLSMaxLikelihood_swigregister", NLLSMaxLikelihood_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };

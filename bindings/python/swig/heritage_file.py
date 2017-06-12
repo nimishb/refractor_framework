@@ -122,6 +122,67 @@ def _new_from_set(cls, version, *args):
 
 import full_physics_swig.generic_object
 class HeritageFile(full_physics_swig.generic_object.GenericObject):
+    """
+
+    This class reads the heritage file formats.
+
+    We read both the configuration file and the matrix files (there are
+    similar enough in format that it makes sense to combine these two).
+
+    For the configuration files, we provide the values using a "keyword
+    path". By convention, this is just the keywords separated by a "/".
+    For example, "CONTROL/input_file". Note that the keyword path is
+    case insensitive, so "CONTROL/input_file" and "control/INPUT_FILE"
+    are the same.
+
+    Some blocks are special in that there can be more than one of them.
+    This includes "GAS", "INSTRUMENT", "AEROSOL" and "WINDOW". For
+    blocks that we encounter more than one of, we access the data use a
+    "index" number, which must be between 0 and the
+    number_block(keyword). You can also view this data by adding the name
+    to the keyword, so to find the moment file for the aerosol "IC" you
+    can look at "PARAMETER_DEFINITION/AEROSOL/IC/moment_file". The two
+    interfaces give the same data, use whichever is more convenient.
+
+    For the various "HEADER" format (i.e., the matrix file), we just use
+    the keyword with no path, for example "Number_rows".
+
+    We have an blitz Array "double". This is empty unless the file we
+    read happens to contain matrix data.
+
+    We support conversion of the values read to a variety of formats. This
+    is done by the "value" function. Currently supported conversions:
+
+    Any type that boost::lexical_cast<T> can convert a string to. In
+    particular, double and int
+
+    A string. This includes stripping the quotes that may appear around
+    the value
+
+    A boolean type. We translate the string "true" to true and "false"
+    to false.
+
+    A std::vector<double>, which converts a list of doubles.
+
+    A std::vector<int>, which converts to a list of ints. This supports
+    ranges in the entry, e.g. "1:4 7" which is returned as the list 1,
+    2, 3, 4, 7.
+
+    A std::vector<std::string>, which converts a set of strings where each
+    is quoted.
+
+    A Time for a time stamp.
+
+    Some of the values may be file names. The file and directory names are
+    relative to the location of the heritage file. The routine file_value
+    handles adding any necessary paths to the values found in the file.
+
+    In addition, file_value will expand out environment variables like
+    "$(abscodir)".
+
+    C++ includes: heritage_file.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.generic_object.GenericObject]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -133,6 +194,11 @@ class HeritageFile(full_physics_swig.generic_object.GenericObject):
     __repr__ = _swig_repr
 
     def __init__(self, Fname):
+        """
+
+        FullPhysics::HeritageFile::HeritageFile(const std::string &Fname)
+
+        """
         this = _heritage_file.new_HeritageFile(Fname)
         try:
             self.this.append(this)
@@ -143,7 +209,13 @@ class HeritageFile(full_physics_swig.generic_object.GenericObject):
         return _heritage_file.HeritageFile___str__(self)
 
     def parse_file(self, Fname):
+        """
+
+        void FullPhysics::HeritageFile::parse_file(const std::string &Fname)
+
+        """
         return _heritage_file.HeritageFile_parse_file(self, Fname)
+
 
     @property
     def data(self):
@@ -151,13 +223,31 @@ class HeritageFile(full_physics_swig.generic_object.GenericObject):
 
 
     def column_index(self, Col_name):
+        """
+
+        int FullPhysics::HeritageFile::column_index(const std::string &Col_name) const
+
+        """
         return _heritage_file.HeritageFile_column_index(self, Col_name)
 
+
     def _v_data(self, *args):
+        """
+
+        blitz::Array<double, 1> FullPhysics::HeritageFile::data(const std::string &Col_name) const
+
+        """
         return _heritage_file.HeritageFile__v_data(self, *args)
 
+
     def has_value(self, Keyword):
+        """
+
+        bool FullPhysics::HeritageFile::has_value(const std::string &Keyword) const
+        Return true if we found a value for the given Keyword path. 
+        """
         return _heritage_file.HeritageFile_has_value(self, Keyword)
+
 
     def value_int(self, Keyword):
         return _heritage_file.HeritageFile_value_int(self, Keyword)

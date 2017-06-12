@@ -122,6 +122,13 @@ def _new_from_set(cls, version, *args):
 
 import full_physics_swig.generic_object
 class CostFunction(full_physics_swig.generic_object.GenericObject):
+    """
+
+    This class calculates a cost function, along with a jacobian.
+
+    C++ includes: cost_function.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.generic_object.GenericObject]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -141,7 +148,30 @@ class CostFunction(full_physics_swig.generic_object.GenericObject):
         return _cost_function.CostFunction___str__(self)
 
     def cost_function(self, X):
+        """
+
+        virtual void FullPhysics::CostFunction::cost_function(const blitz::Array< double, 1 > &X, blitz::Array< double, 1 >
+        &Residual, blitz::Array< double, 1 > &Se, blitz::Array< double, 2 >
+        &Jacobian) const =0
+        For the given value of X, calculate the residuals and jacobians.
+
+        The residual is defined as F(x) - y, so the Jacobian of the residuals
+        is the same as the Jacobian of F(x).
+
+        Parameters:
+        -----------
+
+        X:  Input value
+
+        Residual:  On exit, set to the residual of the cost function
+
+        Se:  On exit, the covariance of the residual. We assume the covariance
+        is a diagonal matrix, and just return the diagonal elements
+
+        Jacobian:  On exit, the Jacobian of the cost function. 
+        """
         return _cost_function.CostFunction_cost_function(self, X)
+
 CostFunction_swigregister = _cost_function.CostFunction_swigregister
 CostFunction_swigregister(CostFunction)
 

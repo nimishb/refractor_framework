@@ -6280,12 +6280,40 @@ SWIGINTERN PyObject *SpectralRange_swigregister(PyObject *SWIGUNUSEDPARM(self), 
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"new_SpectralRange", _wrap_new_SpectralRange, METH_VARARGS, NULL},
-	 { (char *)"SpectralRange__v_data", _wrap_SpectralRange__v_data, METH_VARARGS, NULL},
-	 { (char *)"SpectralRange__v_uncertainty", _wrap_SpectralRange__v_uncertainty, METH_VARARGS, NULL},
-	 { (char *)"SpectralRange__v_units", _wrap_SpectralRange__v_units, METH_VARARGS, NULL},
-	 { (char *)"SpectralRange__v_data_ad", _wrap_SpectralRange__v_data_ad, METH_VARARGS, NULL},
-	 { (char *)"SpectralRange_convert", _wrap_SpectralRange_convert, METH_VARARGS, NULL},
+	 { (char *)"new_SpectralRange", _wrap_new_SpectralRange, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::SpectralRange::SpectralRange()\n"
+		"Default constructor needed for SWIG. \n"
+		""},
+	 { (char *)"SpectralRange__v_data", _wrap_SpectralRange__v_data, METH_VARARGS, (char *)"\n"
+		"\n"
+		"blitz::Array<double, 1>& FullPhysics::SpectralRange::data()\n"
+		"Underlying data. \n"
+		""},
+	 { (char *)"SpectralRange__v_uncertainty", _wrap_SpectralRange__v_uncertainty, METH_VARARGS, (char *)"\n"
+		"\n"
+		"const blitz::Array<double, 1>& FullPhysics::SpectralRange::uncertainty() const\n"
+		"Uncertainty.\n"
+		"\n"
+		"May be size 0 if we don't have an associated uncertainty. \n"
+		""},
+	 { (char *)"SpectralRange__v_units", _wrap_SpectralRange__v_units, METH_VARARGS, (char *)"\n"
+		"\n"
+		"const Unit& FullPhysics::SpectralRange::units() const\n"
+		"Units of data. \n"
+		""},
+	 { (char *)"SpectralRange__v_data_ad", _wrap_SpectralRange__v_data_ad, METH_VARARGS, (char *)"\n"
+		"\n"
+		"ArrayAd<double, 1>& FullPhysics::SpectralRange::data_ad()\n"
+		"Underlying data, possibly with a Jacobian.\n"
+		"\n"
+		"The jacobian may have size 0. \n"
+		""},
+	 { (char *)"SpectralRange_convert", _wrap_SpectralRange_convert, METH_VARARGS, (char *)"\n"
+		"\n"
+		"SpectralRange FullPhysics::SpectralRange::convert(const Unit &R) const\n"
+		"\n"
+		""},
 	 { (char *)"SpectralRange___str__", _wrap_SpectralRange___str__, METH_VARARGS, NULL},
 	 { (char *)"delete_SpectralRange", _wrap_delete_SpectralRange, METH_VARARGS, NULL},
 	 { (char *)"SpectralRange_swigregister", SpectralRange_swigregister, METH_VARARGS, NULL},

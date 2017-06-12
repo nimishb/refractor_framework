@@ -6399,15 +6399,54 @@ SWIGINTERN PyObject *IlsConvolution_swigregister(PyObject *SWIGUNUSEDPARM(self),
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"new_IlsConvolution", _wrap_new_IlsConvolution, METH_VARARGS, NULL},
-	 { (char *)"IlsConvolution_notify_add", _wrap_IlsConvolution_notify_add, METH_VARARGS, NULL},
-	 { (char *)"IlsConvolution_notify_remove", _wrap_IlsConvolution_notify_remove, METH_VARARGS, NULL},
-	 { (char *)"IlsConvolution_notify_update", _wrap_IlsConvolution_notify_update, METH_VARARGS, NULL},
-	 { (char *)"IlsConvolution_apply_ils", _wrap_IlsConvolution_apply_ils, METH_VARARGS, NULL},
-	 { (char *)"IlsConvolution_clone", _wrap_IlsConvolution_clone, METH_VARARGS, NULL},
-	 { (char *)"IlsConvolution__v_ils_function", _wrap_IlsConvolution__v_ils_function, METH_VARARGS, NULL},
-	 { (char *)"IlsConvolution__v_dispersion", _wrap_IlsConvolution__v_dispersion, METH_VARARGS, NULL},
-	 { (char *)"delete_IlsConvolution", _wrap_delete_IlsConvolution, METH_VARARGS, NULL},
+	 { (char *)"new_IlsConvolution", _wrap_new_IlsConvolution, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::IlsConvolution::IlsConvolution(const boost::shared_ptr< Dispersion > &Disp, const boost::shared_ptr<\n"
+		"IlsFunction > &Ils_func, double Ils_half_width)\n"
+		"Constructor. \n"
+		""},
+	 { (char *)"IlsConvolution_notify_add", _wrap_IlsConvolution_notify_add, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::IlsConvolution::notify_add(StateVector &Sv)\n"
+		"\n"
+		""},
+	 { (char *)"IlsConvolution_notify_remove", _wrap_IlsConvolution_notify_remove, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::IlsConvolution::notify_remove(StateVector &Sv)\n"
+		"\n"
+		""},
+	 { (char *)"IlsConvolution_notify_update", _wrap_IlsConvolution_notify_update, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::IlsConvolution::notify_update(const Dispersion &D)\n"
+		"\n"
+		""},
+	 { (char *)"IlsConvolution_apply_ils", _wrap_IlsConvolution_apply_ils, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual ArrayAd<double, 1> FullPhysics::IlsConvolution::apply_ils(const blitz::Array< double, 1 > &High_resolution_wave_number, const\n"
+		"ArrayAd< double, 1 > &High_resolution_radiance, const std::vector< int\n"
+		"> &Pixel_list) const\n"
+		"\n"
+		""},
+	 { (char *)"IlsConvolution_clone", _wrap_IlsConvolution_clone, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual boost::shared_ptr<Ils> FullPhysics::IlsConvolution::clone() const\n"
+		"\n"
+		""},
+	 { (char *)"IlsConvolution__v_ils_function", _wrap_IlsConvolution__v_ils_function, METH_VARARGS, (char *)"\n"
+		"\n"
+		"boost::shared_ptr<IlsFunction> FullPhysics::IlsConvolution::ils_function() const\n"
+		"Underlying IlsFunction. \n"
+		""},
+	 { (char *)"IlsConvolution__v_dispersion", _wrap_IlsConvolution__v_dispersion, METH_VARARGS, (char *)"\n"
+		"\n"
+		"boost::shared_ptr<Dispersion> FullPhysics::IlsConvolution::dispersion() const\n"
+		"Underlying dispersion. \n"
+		""},
+	 { (char *)"delete_IlsConvolution", _wrap_delete_IlsConvolution, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::IlsConvolution::~IlsConvolution()\n"
+		"\n"
+		""},
 	 { (char *)"IlsConvolution_swigregister", IlsConvolution_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };

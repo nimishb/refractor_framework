@@ -125,6 +125,18 @@ import full_physics_swig.pressure
 import full_physics_swig.state_vector
 import full_physics_swig.generic_object
 class PressureFixedLevel(full_physics_swig.pressure_imp_base.PressureImpBase):
+    """
+
+    This class maintains the pressure portion of the state.
+
+    This particular implementation has a fixed set of pressure levels,
+    with only the surface pressure changing. As the surface pressure
+    changes, it may pass a pressure level, changing the number of levels
+    that lie above the surface.
+
+    C++ includes: pressure_fixed_level.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.pressure_imp_base.PressureImpBase]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -136,6 +148,12 @@ class PressureFixedLevel(full_physics_swig.pressure_imp_base.PressureImpBase):
     __repr__ = _swig_repr
 
     def __init__(self, Pressure_flag, Press_level, Surface_pressure):
+        """
+
+        FullPhysics::PressureFixedLevel::PressureFixedLevel(bool Pressure_flag, const boost::shared_ptr< PressureLevelInput >
+        &Press_level, double Surface_pressure)
+
+        """
         this = _pressure_fixed_level.new_PressureFixedLevel(Pressure_flag, Press_level, Surface_pressure)
         try:
             self.this.append(this)
@@ -143,7 +161,14 @@ class PressureFixedLevel(full_physics_swig.pressure_imp_base.PressureImpBase):
             self.this = this
 
     def _v_surface_pressure_uncertainty(self):
+        """
+
+        double FullPhysics::PressureFixedLevel::surface_pressure_uncertainty() const
+        Return the current surface pressure uncertainty. This is in Pascals.
+
+        """
         return _pressure_fixed_level.PressureFixedLevel__v_surface_pressure_uncertainty(self)
+
 
     @property
     def surface_pressure_uncertainty(self):
@@ -151,10 +176,23 @@ class PressureFixedLevel(full_physics_swig.pressure_imp_base.PressureImpBase):
 
 
     def set_surface_pressure(self, Surface_pressure):
+        """
+
+        void FullPhysics::PressureFixedLevel::set_surface_pressure(const AutoDerivative< double > &Surface_pressure)
+        Set the surface pressure. This is in Pascals. 
+        """
         return _pressure_fixed_level.PressureFixedLevel_set_surface_pressure(self, Surface_pressure)
 
+
     def _v_number_active_level(self):
+        """
+
+        int FullPhysics::PressureFixedLevel::number_active_level() const
+        Number of active levels, this is just the size of pressure_grid for
+        the current surface pressure. 
+        """
         return _pressure_fixed_level.PressureFixedLevel__v_number_active_level(self)
+
 
     @property
     def number_active_level(self):
@@ -162,7 +200,16 @@ class PressureFixedLevel(full_physics_swig.pressure_imp_base.PressureImpBase):
 
 
     def _v_number_active_layer(self):
+        """
+
+        int FullPhysics::PressureFixedLevel::number_active_layer() const
+        Number of active layers.
+
+        This is 1 less than the number of levels, since the levels give the
+        top an bottom of a layer. 
+        """
         return _pressure_fixed_level.PressureFixedLevel__v_number_active_layer(self)
+
 
     @property
     def number_active_layer(self):
@@ -170,7 +217,13 @@ class PressureFixedLevel(full_physics_swig.pressure_imp_base.PressureImpBase):
 
 
     def _v_max_number_level(self):
+        """
+
+        int FullPhysics::PressureFixedLevel::max_number_level() const
+        Maximum number of levels that we can have. 
+        """
         return _pressure_fixed_level.PressureFixedLevel__v_max_number_level(self)
+
 
     @property
     def max_number_level(self):
@@ -178,7 +231,18 @@ class PressureFixedLevel(full_physics_swig.pressure_imp_base.PressureImpBase):
 
 
     def _v_pressure_active_levels(self):
+        """
+
+        blitz::Array<double, 1> FullPhysics::PressureFixedLevel::pressure_active_levels() const
+        Return the pressure on the fixed levels, but only include the
+        "active" portion.
+
+        This is all the pressure levels above the surface, plus the last one
+        at or below the surface. This is the same size as pressure_grid, but
+        differs in that the bottom level typically lies below the surface 
+        """
         return _pressure_fixed_level.PressureFixedLevel__v_pressure_active_levels(self)
+
 
     @property
     def pressure_active_levels(self):
@@ -186,10 +250,22 @@ class PressureFixedLevel(full_physics_swig.pressure_imp_base.PressureImpBase):
 
 
     def clone(self):
+        """
+
+        virtual boost::shared_ptr<Pressure> FullPhysics::PressureFixedLevel::clone() const
+
+        """
         return _pressure_fixed_level.PressureFixedLevel_clone(self)
 
+
     def state_vector_name_i(self, i):
+        """
+
+        virtual std::string FullPhysics::PressureFixedLevel::state_vector_name_i(int i) const
+
+        """
         return _pressure_fixed_level.PressureFixedLevel_state_vector_name_i(self, i)
+
     __swig_destroy__ = _pressure_fixed_level.delete_PressureFixedLevel
     __del__ = lambda self: None
 PressureFixedLevel_swigregister = _pressure_fixed_level.PressureFixedLevel_swigregister

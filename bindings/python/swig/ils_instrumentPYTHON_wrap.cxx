@@ -6118,16 +6118,57 @@ SWIGINTERN PyObject *IlsInstrument_swigregister(PyObject *SWIGUNUSEDPARM(self), 
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"IlsInstrument_apply_instrument_model", _wrap_IlsInstrument_apply_instrument_model, METH_VARARGS, NULL},
-	 { (char *)"IlsInstrument_band_name", _wrap_IlsInstrument_band_name, METH_VARARGS, NULL},
-	 { (char *)"IlsInstrument_hdf_band_name", _wrap_IlsInstrument_hdf_band_name, METH_VARARGS, NULL},
-	 { (char *)"IlsInstrument_notify_add", _wrap_IlsInstrument_notify_add, METH_VARARGS, NULL},
-	 { (char *)"IlsInstrument_notify_remove", _wrap_IlsInstrument_notify_remove, METH_VARARGS, NULL},
-	 { (char *)"IlsInstrument_notify_update", _wrap_IlsInstrument_notify_update, METH_VARARGS, NULL},
-	 { (char *)"IlsInstrument_clone", _wrap_IlsInstrument_clone, METH_VARARGS, NULL},
-	 { (char *)"IlsInstrument_ils", _wrap_IlsInstrument_ils, METH_VARARGS, NULL},
-	 { (char *)"IlsInstrument_instrument_correction", _wrap_IlsInstrument_instrument_correction, METH_VARARGS, NULL},
-	 { (char *)"delete_IlsInstrument", _wrap_delete_IlsInstrument, METH_VARARGS, NULL},
+	 { (char *)"IlsInstrument_apply_instrument_model", _wrap_IlsInstrument_apply_instrument_model, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual Spectrum FullPhysics::IlsInstrument::apply_instrument_model(const Spectrum &High_resolution_spectrum, const std::vector< int >\n"
+		"&Pixel_list, int Spec_index) const\n"
+		"\n"
+		""},
+	 { (char *)"IlsInstrument_band_name", _wrap_IlsInstrument_band_name, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual std::string FullPhysics::IlsInstrument::band_name(int Spec_index) const\n"
+		"\n"
+		""},
+	 { (char *)"IlsInstrument_hdf_band_name", _wrap_IlsInstrument_hdf_band_name, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual std::string FullPhysics::IlsInstrument::hdf_band_name(int Spec_index) const\n"
+		"\n"
+		""},
+	 { (char *)"IlsInstrument_notify_add", _wrap_IlsInstrument_notify_add, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::IlsInstrument::notify_add(StateVector &Sv)\n"
+		"\n"
+		""},
+	 { (char *)"IlsInstrument_notify_remove", _wrap_IlsInstrument_notify_remove, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::IlsInstrument::notify_remove(StateVector &Sv)\n"
+		"\n"
+		""},
+	 { (char *)"IlsInstrument_notify_update", _wrap_IlsInstrument_notify_update, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::IlsInstrument::notify_update(const InstrumentCorrection &C)\n"
+		"\n"
+		""},
+	 { (char *)"IlsInstrument_clone", _wrap_IlsInstrument_clone, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual boost::shared_ptr<Instrument> FullPhysics::IlsInstrument::clone() const\n"
+		"\n"
+		""},
+	 { (char *)"IlsInstrument_ils", _wrap_IlsInstrument_ils, METH_VARARGS, (char *)"\n"
+		"\n"
+		"boost::shared_ptr<Ils> FullPhysics::IlsInstrument::ils(int Spec_index) const\n"
+		"Underlying Ils. \n"
+		""},
+	 { (char *)"IlsInstrument_instrument_correction", _wrap_IlsInstrument_instrument_correction, METH_VARARGS, (char *)"\n"
+		"\n"
+		"const std::vector<boost::shared_ptr<InstrumentCorrection> >& FullPhysics::IlsInstrument::instrument_correction(int Spec_index) const\n"
+		"Underlying InstrumentCorrection. \n"
+		""},
+	 { (char *)"delete_IlsInstrument", _wrap_delete_IlsInstrument, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::IlsInstrument::~IlsInstrument()\n"
+		"\n"
+		""},
 	 { (char *)"IlsInstrument_swigregister", IlsInstrument_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };

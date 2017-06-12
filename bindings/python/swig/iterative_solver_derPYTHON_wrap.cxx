@@ -5076,9 +5076,49 @@ SWIGINTERN PyObject *IterativeSolverDer_swigregister(PyObject *SWIGUNUSEDPARM(se
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"delete_IterativeSolverDer", _wrap_delete_IterativeSolverDer, METH_VARARGS, NULL},
-	 { (char *)"IterativeSolverDer__v_gradient_at_accepted_points", _wrap_IterativeSolverDer__v_gradient_at_accepted_points, METH_VARARGS, NULL},
-	 { (char *)"IterativeSolverDer_record_gradient_at_accepted_point", _wrap_IterativeSolverDer_record_gradient_at_accepted_point, METH_VARARGS, NULL},
+	 { (char *)"delete_IterativeSolverDer", _wrap_delete_IterativeSolverDer, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::IterativeSolverDer::~IterativeSolverDer()\n"
+		"\n"
+		""},
+	 { (char *)"IterativeSolverDer__v_gradient_at_accepted_points", _wrap_IterativeSolverDer__v_gradient_at_accepted_points, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual std::vector< blitz::Array<double, 1> > FullPhysics::IterativeSolverDer::gradient_at_accepted_points() const\n"
+		"Returns a vector (std) of gradients evaluated at accepted points.\n"
+		"\n"
+		"This method returns a std vector of gradients computed at the accepted\n"
+		"points. In other words, if the accepted points and the computed\n"
+		"gradients at these points are recorded correctly, then\n"
+		"gradient_at_accepted_points()[0] is the gradient of the cost function\n"
+		"evaluated at accepted_points()[0]\n"
+		"\n"
+		"gradient_at_accepted_points()[1] is the gradient of the cost function\n"
+		"evaluated at accepted_points()[1]\n"
+		"\n"
+		"...\n"
+		"\n"
+		"and finally gradient_at_accepted_points()[num_accepted_steps()] is the\n"
+		"gradient of the cost function evaluated at\n"
+		"accepted_points()[num_accepted_steps()] \n"
+		""},
+	 { (char *)"IterativeSolverDer_record_gradient_at_accepted_point", _wrap_IterativeSolverDer_record_gradient_at_accepted_point, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::IterativeSolverDer::record_gradient_at_accepted_point(const blitz::Array< double, 1 > &gradient)\n"
+		"For recording the gradient of the cost function evaluated at an\n"
+		"accepted point.\n"
+		"\n"
+		"This method is called to record the gradient of the cost function\n"
+		"evaluated at an accepted point. It is the responsibility of the\n"
+		"implementer of the solve() method to record the gradients evaluated at\n"
+		"the accepted points. The gradients must be recorded in the same order\n"
+		"that they are evaluated.\n"
+		"\n"
+		"Parameters:\n"
+		"-----------\n"
+		"\n"
+		"gradient:  gradient of the cost function evaluated at an accepted\n"
+		"point in the parameter space \n"
+		""},
 	 { (char *)"IterativeSolverDer_swigregister", IterativeSolverDer_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };

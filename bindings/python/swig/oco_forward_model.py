@@ -124,6 +124,16 @@ import full_physics_swig.forward_model
 import full_physics_swig.generic_object
 import full_physics_swig.named_spectrum
 class OcoForwardModel(full_physics_swig.forward_model.ForwardModel, full_physics_swig.named_spectrum.ObservablePtrNamedSpectrum):
+    """
+
+    This is the forward model used form GOSAT/OCO.
+
+    This is fairly general, we may want to rename this at some point if we
+    use it for other instruments.
+
+    C++ includes: oco_forward_model.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.forward_model.ForwardModel, full_physics_swig.named_spectrum.ObservablePtrNamedSpectrum]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -135,6 +145,17 @@ class OcoForwardModel(full_physics_swig.forward_model.ForwardModel, full_physics
     __repr__ = _swig_repr
 
     def __init__(self, *args):
+        """
+
+        FullPhysics::OcoForwardModel::OcoForwardModel(const boost::shared_ptr< Instrument > &Inst, const boost::shared_ptr<
+        SpectralWindow > &Spectral_window, const boost::shared_ptr< Level1b >
+        &Level_1b, const boost::shared_ptr< RadiativeTransfer > &Rt, const
+        boost::shared_ptr< SpectrumSampling > &Spectrum_sampling, const
+        boost::shared_ptr< StateVector > &Sv, const std::vector< std::vector<
+        boost::shared_ptr< SpectrumEffect > > > &Spectrum_effect=std::vector<
+        std::vector< boost::shared_ptr< SpectrumEffect > > >())
+
+        """
         this = _oco_forward_model.new_OcoForwardModel(*args)
         try:
             self.this.append(this)
@@ -144,7 +165,13 @@ class OcoForwardModel(full_physics_swig.forward_model.ForwardModel, full_physics
     __del__ = lambda self: None
 
     def _v_state_vector(self):
+        """
+
+        virtual boost::shared_ptr<StateVector> FullPhysics::OcoForwardModel::state_vector() const
+
+        """
         return _oco_forward_model.OcoForwardModel__v_state_vector(self)
+
 
     @property
     def state_vector(self):
@@ -152,13 +179,31 @@ class OcoForwardModel(full_physics_swig.forward_model.ForwardModel, full_physics
 
 
     def radiance(self, Spec_index, Skip_jacobian=False):
+        """
+
+        virtual Spectrum FullPhysics::OcoForwardModel::radiance(int Spec_index, bool Skip_jacobian=false) const
+
+        """
         return _oco_forward_model.OcoForwardModel_radiance(self, Spec_index, Skip_jacobian)
 
+
     def measured_radiance(self, Spec_index):
+        """
+
+        virtual Spectrum FullPhysics::OcoForwardModel::measured_radiance(int Spec_index) const
+
+        """
         return _oco_forward_model.OcoForwardModel_measured_radiance(self, Spec_index)
 
+
     def _v_instrument(self, *args):
+        """
+
+        void FullPhysics::OcoForwardModel::instrument(const boost::shared_ptr< Instrument > &V)
+
+        """
         return _oco_forward_model.OcoForwardModel__v_instrument(self, *args)
+
 
     @property
     def instrument(self):
@@ -170,7 +215,13 @@ class OcoForwardModel(full_physics_swig.forward_model.ForwardModel, full_physics
 
 
     def _v_spectral_window(self, *args):
+        """
+
+        void FullPhysics::OcoForwardModel::spectral_window(const boost::shared_ptr< SpectralWindow > &V)
+
+        """
         return _oco_forward_model.OcoForwardModel__v_spectral_window(self, *args)
+
 
     @property
     def spectral_window(self):
@@ -182,7 +233,13 @@ class OcoForwardModel(full_physics_swig.forward_model.ForwardModel, full_physics
 
 
     def _v_level_1b(self, *args):
+        """
+
+        void FullPhysics::OcoForwardModel::level_1b(const boost::shared_ptr< Level1b > &V)
+
+        """
         return _oco_forward_model.OcoForwardModel__v_level_1b(self, *args)
+
 
     @property
     def level_1b(self):
@@ -194,7 +251,13 @@ class OcoForwardModel(full_physics_swig.forward_model.ForwardModel, full_physics
 
 
     def _v_radiative_transfer(self, *args):
+        """
+
+        void FullPhysics::OcoForwardModel::radiative_transfer(const boost::shared_ptr< RadiativeTransfer > &V)
+
+        """
         return _oco_forward_model.OcoForwardModel__v_radiative_transfer(self, *args)
+
 
     @property
     def radiative_transfer(self):
@@ -206,7 +269,13 @@ class OcoForwardModel(full_physics_swig.forward_model.ForwardModel, full_physics
 
 
     def _v_spectrum_sampling(self):
+        """
+
+        void FullPhysics::OcoForwardModel::spectrum_sampling(const boost::shared_ptr< SpectrumSampling > &V)
+
+        """
         return _oco_forward_model.OcoForwardModel__v_spectrum_sampling(self)
+
 
     @property
     def spectrum_sampling(self):
@@ -214,7 +283,13 @@ class OcoForwardModel(full_physics_swig.forward_model.ForwardModel, full_physics
 
 
     def _v_spectral_grid(self):
+        """
+
+        const boost::shared_ptr<ForwardModelSpectralGrid>& FullPhysics::OcoForwardModel::spectral_grid() const
+
+        """
         return _oco_forward_model.OcoForwardModel__v_spectral_grid(self)
+
 
     @property
     def spectral_grid(self):
@@ -222,16 +297,41 @@ class OcoForwardModel(full_physics_swig.forward_model.ForwardModel, full_physics
 
 
     def apply_spectrum_corrections(self, highres_spec, Spec_index):
+        """
+
+        Spectrum FullPhysics::OcoForwardModel::apply_spectrum_corrections(const Spectrum &highres_spec, int Spec_index) const
+
+        """
         return _oco_forward_model.OcoForwardModel_apply_spectrum_corrections(self, highres_spec, Spec_index)
 
+
     def add_observer(self, Obs):
+        """
+
+        virtual void FullPhysics::OcoForwardModel::add_observer(Observer< boost::shared_ptr< NamedSpectrum > > &Obs)
+        Required observable functions. 
+        """
         return _oco_forward_model.OcoForwardModel_add_observer(self, Obs)
 
+
     def remove_observer(self, Obs):
+        """
+
+        virtual void FullPhysics::OcoForwardModel::remove_observer(Observer< boost::shared_ptr< NamedSpectrum > > &Obs)
+
+        """
         return _oco_forward_model.OcoForwardModel_remove_observer(self, Obs)
 
+
     def notify_spectrum_update(self, updated_spec, spec_name, Spec_index):
+        """
+
+        void FullPhysics::OcoForwardModel::notify_spectrum_update(const Spectrum &updated_spec, const std::string &spec_name, int
+        Spec_index) const
+
+        """
         return _oco_forward_model.OcoForwardModel_notify_spectrum_update(self, updated_spec, spec_name, Spec_index)
+
 
     def _speceff_size(self):
         return _oco_forward_model.OcoForwardModel__speceff_size(self)

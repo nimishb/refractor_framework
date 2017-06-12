@@ -125,6 +125,26 @@ import full_physics_swig.spectrum_effect
 import full_physics_swig.generic_object
 import full_physics_swig.state_vector
 class SolarAbsorptionAndContinuum(full_physics_swig.solar_model.SolarModel):
+    """
+
+    This applies a solar model to radiances to model the incoming solar
+    irradiance.
+
+    This implementation is a common division of the solar model into
+
+    A Doppler correction
+
+    A solar absorption spectrum
+
+    A solar continuum spectrum
+
+    This uses 3 objects to do the work, a SolarDopplerShift, a
+    SolarAbsorptionSpectrum, and a SolarContinuumSpectrum object. This
+    class stitches these objects together to create the full spectrum.
+
+    C++ includes: solar_absorption_and_continuum.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.solar_model.SolarModel]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -138,6 +158,15 @@ class SolarAbsorptionAndContinuum(full_physics_swig.solar_model.SolarModel):
     __del__ = lambda self: None
 
     def __init__(self, doppler_shiftv, absorption_spectrumv, continuum_spectrumv):
+        """
+
+        FullPhysics::SolarAbsorptionAndContinuum::SolarAbsorptionAndContinuum(const boost::shared_ptr< SolarDopplerShift > &doppler_shiftv, const
+        boost::shared_ptr< SolarAbsorptionSpectrum > &absorption_spectrumv,
+        const boost::shared_ptr< SolarContinuumSpectrum >
+        &continuum_spectrumv)
+        Create a SolarModel that uses the given doppler shift, absorption
+        spectrum, and continuum spectrum. 
+        """
         this = _solar_absorption_and_continuum.new_SolarAbsorptionAndContinuum(doppler_shiftv, absorption_spectrumv, continuum_spectrumv)
         try:
             self.this.append(this)
@@ -145,10 +174,22 @@ class SolarAbsorptionAndContinuum(full_physics_swig.solar_model.SolarModel):
             self.this = this
 
     def clone(self):
+        """
+
+        virtual boost::shared_ptr<SpectrumEffect> FullPhysics::SolarAbsorptionAndContinuum::clone() const
+        Clone a SolarAbsorptionAndContinuum object. 
+        """
         return _solar_absorption_and_continuum.SolarAbsorptionAndContinuum_clone(self)
 
+
     def _v_doppler_shift(self):
+        """
+
+        const boost::shared_ptr<SolarDopplerShift>& FullPhysics::SolarAbsorptionAndContinuum::doppler_shift_ptr() const
+        The SolarDopplerShift object used by this class, as a ptr. 
+        """
         return _solar_absorption_and_continuum.SolarAbsorptionAndContinuum__v_doppler_shift(self)
+
 
     @property
     def doppler_shift(self):
@@ -156,7 +197,13 @@ class SolarAbsorptionAndContinuum(full_physics_swig.solar_model.SolarModel):
 
 
     def _v_absorption_spectrum(self):
+        """
+
+        const boost::shared_ptr<SolarAbsorptionSpectrum>& FullPhysics::SolarAbsorptionAndContinuum::absorption_spectrum_ptr() const
+        The SolarAbsorptionSpectrum object used by this class, as a ptr. 
+        """
         return _solar_absorption_and_continuum.SolarAbsorptionAndContinuum__v_absorption_spectrum(self)
+
 
     @property
     def absorption_spectrum(self):
@@ -164,7 +211,13 @@ class SolarAbsorptionAndContinuum(full_physics_swig.solar_model.SolarModel):
 
 
     def _v_continuum_spectrum(self):
+        """
+
+        const boost::shared_ptr<SolarContinuumSpectrum>& FullPhysics::SolarAbsorptionAndContinuum::continuum_spectrum_ptr() const
+        The SolarContinuumSpectrum object used by this class, as a ptr. 
+        """
         return _solar_absorption_and_continuum.SolarAbsorptionAndContinuum__v_continuum_spectrum(self)
+
 
     @property
     def continuum_spectrum(self):
@@ -172,7 +225,13 @@ class SolarAbsorptionAndContinuum(full_physics_swig.solar_model.SolarModel):
 
 
     def solar_spectrum(self, Spec_domain):
+        """
+
+        virtual Spectrum FullPhysics::SolarAbsorptionAndContinuum::solar_spectrum(const SpectralDomain &Spec_domain) const
+
+        """
         return _solar_absorption_and_continuum.SolarAbsorptionAndContinuum_solar_spectrum(self, Spec_domain)
+
 SolarAbsorptionAndContinuum_swigregister = _solar_absorption_and_continuum.SolarAbsorptionAndContinuum_swigregister
 SolarAbsorptionAndContinuum_swigregister(SolarAbsorptionAndContinuum)
 

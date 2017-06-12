@@ -246,6 +246,23 @@ ObserverAerosolExtinction_swigregister = _aerosol_extinction.ObserverAerosolExti
 ObserverAerosolExtinction_swigregister(ObserverAerosolExtinction)
 
 class AerosolExtinction(full_physics_swig.state_vector.StateVectorObserver, ObservableAerosolExtinction):
+    """
+
+    This class maps the state vector to the aerosol extinction on each
+    level.
+
+    Other objects may depend on the AerosolExtinction, and should be
+    updated when the AerosolExtinction is updated. To facilitate that,
+    this class in an Oberverable, and objects can add themselves as
+    Observers to be notified when the AerosolExtinction is updated.
+
+    When implementing a new class, you almost always will want to derive
+    from AerosolExtinctionImpBase rather than from this class. See that
+    class for a description.
+
+    C++ includes: aerosol_extinction.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.state_vector.StateVectorObserver, ObservableAerosolExtinction]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -262,19 +279,54 @@ class AerosolExtinction(full_physics_swig.state_vector.StateVectorObserver, Obse
     __del__ = lambda self: None
 
     def add_observer(self, Obs):
+        """
+
+        virtual void FullPhysics::AerosolExtinction::add_observer(Observer< AerosolExtinction > &Obs)
+
+        """
         return _aerosol_extinction.AerosolExtinction_add_observer(self, Obs)
 
+
     def remove_observer(self, Obs):
+        """
+
+        virtual void FullPhysics::AerosolExtinction::remove_observer(Observer< AerosolExtinction > &Obs)
+
+        """
         return _aerosol_extinction.AerosolExtinction_remove_observer(self, Obs)
 
+
     def clone(self, *args):
+        """
+
+        virtual boost::shared_ptr<AerosolExtinction> FullPhysics::AerosolExtinction::clone(const boost::shared_ptr< Pressure > &Press) const =0
+        This version of clone takes a pressure to use.
+
+        The intent is that the pressure has been cloned from the original
+        pressure (although this class has no way to verify this). This allows
+        sets of objects to be cloned using a common Pressure clone, e.g.
+        Atmosphere. 
+        """
         return _aerosol_extinction.AerosolExtinction_clone(self, *args)
 
+
     def extinction_for_layer(self, i):
+        """
+
+        virtual AutoDerivative<double> FullPhysics::AerosolExtinction::extinction_for_layer(int i) const =0
+        Extinction for given layer. 
+        """
         return _aerosol_extinction.AerosolExtinction_extinction_for_layer(self, i)
 
+
     def _v_aerosol_name(self):
+        """
+
+        virtual std::string FullPhysics::AerosolExtinction::aerosol_name() const =0
+        Name of aerosol. 
+        """
         return _aerosol_extinction.AerosolExtinction__v_aerosol_name(self)
+
 
     @property
     def aerosol_name(self):

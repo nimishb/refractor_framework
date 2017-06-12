@@ -182,6 +182,51 @@ ObserverRtAtmosphere_swigregister = _rt_atmosphere.ObserverRtAtmosphere_swigregi
 ObserverRtAtmosphere_swigregister(ObserverRtAtmosphere)
 
 class RtAtmosphere(full_physics_swig.state_vector.StateVectorObserver, ObservableRtAtmosphere):
+    """
+
+    This class is responsible for setting up the atmosphere and ground
+    information needed to run the Radiative transfer code.
+
+    There are many, many properties associated with the atmosphere. This
+    class is not meant to model these properties, it is really the very
+    limited information needed to run the Radiative transfer code.
+
+    Note that this includes both the atmosphere and surface parameters
+    needed by the RT code.
+
+    The calculation of the Jacobians in LIDORT takes a time directly
+    proportional to the number of variables we are taking the Jacobian
+    with respect to, we use an "intermediate" set of variables for some
+    of the reported gradients (e.g., AtmosphereOco uses taur, taug, and
+    tau for each of the aerosol). To support future Atmosphere classes, we
+    are purposely vague on exactly what these intermediate variables are,
+    at least through the RtAtmosphere interface. The
+    "intermediate_variable" function can be used to get the value of
+    these intermediate variables and Jacobian with the state vector
+    variables.
+
+    A description of the intermediate variables can be found in
+    doc/LIDORT_Jacobian.pdf.
+
+    Note that it is assumed by the LSI that averaging these intermediate
+    variables to get average optical properties makes sense. This is true
+    if the variables are taur etc., but might not be true in general. If
+    we add a class derived from RtAtmosphere where this doesn't make
+    sense, we will need to rework this interface.
+
+    Other objects may depend on the RtAtmosphere, and should be updated
+    when the RtAtmosphere is updated. To facilitate that, this class is an
+    Oberverable, and objects can add themselves as Observers to be
+    notified when the RtAtmosphere is updated.
+
+    Because the absorber calculation tends to be a bottle neck, we keep a
+    timer in this class. This class keeps track of the time used in the
+    atmosphere calculations. Other classes can make use of this
+    information for logging if desired.
+
+    C++ includes: rt_atmosphere.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.state_vector.StateVectorObserver, ObservableRtAtmosphere]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -198,13 +243,31 @@ class RtAtmosphere(full_physics_swig.state_vector.StateVectorObserver, Observabl
     __del__ = lambda self: None
 
     def add_observer(self, Obs):
+        """
+
+        virtual void FullPhysics::RtAtmosphere::add_observer(Observer< RtAtmosphere > &Obs)
+
+        """
         return _rt_atmosphere.RtAtmosphere_add_observer(self, Obs)
 
+
     def remove_observer(self, Obs):
+        """
+
+        virtual void FullPhysics::RtAtmosphere::remove_observer(Observer< RtAtmosphere > &Obs)
+
+        """
         return _rt_atmosphere.RtAtmosphere_remove_observer(self, Obs)
 
+
     def _v_timer_info(self):
+        """
+
+        virtual std::string FullPhysics::RtAtmosphere::timer_info() const
+
+        """
         return _rt_atmosphere.RtAtmosphere__v_timer_info(self)
+
 
     @property
     def timer_info(self):
@@ -212,7 +275,13 @@ class RtAtmosphere(full_physics_swig.state_vector.StateVectorObserver, Observabl
 
 
     def _v_number_layer(self):
+        """
+
+        virtual int FullPhysics::RtAtmosphere::number_layer() const =0
+        Number of layers we currently have. 
+        """
         return _rt_atmosphere.RtAtmosphere__v_number_layer(self)
+
 
     @property
     def number_layer(self):
@@ -220,7 +289,13 @@ class RtAtmosphere(full_physics_swig.state_vector.StateVectorObserver, Observabl
 
 
     def _v_number_spectrometer(self):
+        """
+
+        virtual int FullPhysics::RtAtmosphere::number_spectrometer() const =0
+        Number of spectrometers we have. 
+        """
         return _rt_atmosphere.RtAtmosphere__v_number_spectrometer(self)
+
 
     @property
     def number_spectrometer(self):
@@ -228,34 +303,153 @@ class RtAtmosphere(full_physics_swig.state_vector.StateVectorObserver, Observabl
 
 
     def altitude(self, spec_index):
+        """
+
+        virtual ArrayAdWithUnit<double, 1> FullPhysics::RtAtmosphere::altitude(int spec_index) const =0
+        Altitude grid for current pressure grid. 
+        """
         return _rt_atmosphere.RtAtmosphere_altitude(self, spec_index)
 
+
     def column_optical_depth(self, wn, spec_index, Gas_name):
+        """
+
+        virtual AutoDerivative<double> FullPhysics::RtAtmosphere::column_optical_depth(double wn, int spec_index, const std::string &Gas_name) const =0
+        Total column optical depth for the given gas.
+
+        This is 0 if the band isn't one that sees that gas. 
+        """
         return _rt_atmosphere.RtAtmosphere_column_optical_depth(self, wn, spec_index, Gas_name)
 
+
     def optical_depth_wrt_iv(self, *args):
+        """
+
+        virtual ArrayAd<double, 1> FullPhysics::RtAtmosphere::optical_depth_wrt_iv(double wn, int spec_index, const ArrayAd< double, 2 > &iv) const =0
+        This is a variation of optical_depth that takes the supplied value for
+        the intermediate variables rather than calculating it own value.
+
+        This is used by the LSI to get "average optical properties".
+
+        Parameters:
+        -----------
+
+        wn:  The wave number to calculate parameters for.
+
+        spec_index:  The spectrometer index
+
+        iv:  Intermediate variable values to use.
+
+        Optical depth for each layer. This is number_layer() in size 
+        """
         return _rt_atmosphere.RtAtmosphere_optical_depth_wrt_iv(self, *args)
 
+
     def single_scattering_albedo_wrt_iv(self, *args):
+        """
+
+        virtual ArrayAd<double, 1> FullPhysics::RtAtmosphere::single_scattering_albedo_wrt_iv(double wn, int spec_index, const ArrayAd< double, 2 > &iv) const =0
+        This is a variation of single_scattering_albedo that takes the
+        supplied value for the intermediate variables rather than calculating
+        it own value.
+
+        This is used by the LSI to get "average optical properties".
+
+        Parameters:
+        -----------
+
+        wn:  The wave number to calculate parameters for.
+
+        spec_index:  The spectrometer index
+
+        iv:  Intermediate variable values to use.
+
+        Single scattering albedo for each layer. This is number_layer() in
+        size 
+        """
         return _rt_atmosphere.RtAtmosphere_single_scattering_albedo_wrt_iv(self, *args)
 
+
     def scattering_moment_wrt_iv(self, *args):
+        """
+
+        virtual ArrayAd<double, 3> FullPhysics::RtAtmosphere::scattering_moment_wrt_iv(double wn, int spec_index, const ArrayAd< double, 2 > &iv, int
+        nummom=-1, int numscat=-1) const =0
+        This is a variation of scattering_moment that takes the supplied value
+        for the intermediate variables rather than calculating it own value.
+
+        This is used by the LSI to get "average optical properties".
+
+        Parameters:
+        -----------
+
+        wn:  The wave number to calculate parameters for.
+
+        spec_index:  The spectrometer index
+
+        iv:  Intermediate variable values to use.
+
+        nummom:  Number of moments to include in scatt_mom_each_layer, the
+        default it to include all of them.
+
+        numscat:  Number of scattering matrix elements to include in
+        scatt_mom_each_layer, the default it to include all of them.
+
+        Scattering moments for each layer. This is number_moment + 1 x
+        number_layer() x number scattering matrix elements 
+        """
         return _rt_atmosphere.RtAtmosphere_scattering_moment_wrt_iv(self, *args)
 
+
     def optical_depth_wrt_state_vector(self, wn, spec_index):
+        """
+
+        ArrayAd<double, 1> FullPhysics::RtAtmosphere::optical_depth_wrt_state_vector(double wn, int spec_index) const
+
+        """
         return _rt_atmosphere.RtAtmosphere_optical_depth_wrt_state_vector(self, wn, spec_index)
 
+
     def single_scattering_albedo_wrt_state_vector(self, wn, spec_index):
+        """
+
+        ArrayAd<double, 1> FullPhysics::RtAtmosphere::single_scattering_albedo_wrt_state_vector(double wn, int spec_index) const
+
+        """
         return _rt_atmosphere.RtAtmosphere_single_scattering_albedo_wrt_state_vector(self, wn, spec_index)
 
+
     def scattering_moment_wrt_state_vector(self, wn, spec_index, nummom=-1, numscat=-1):
+        """
+
+        ArrayAd<double, 3> FullPhysics::RtAtmosphere::scattering_moment_wrt_state_vector(double wn, int spec_index, int nummom=-1, int numscat=-1) const
+
+        """
         return _rt_atmosphere.RtAtmosphere_scattering_moment_wrt_state_vector(self, wn, spec_index, nummom, numscat)
 
+
     def intermediate_variable(self, wn, spec_index):
+        """
+
+        virtual ArrayAd<double, 2> FullPhysics::RtAtmosphere::intermediate_variable(double wn, int spec_index) const =0
+        This gives the values of the intermediate variables and the Jacobian
+        with respect to the state vector.
+
+        This is number_layer() x number variables 
+        """
         return _rt_atmosphere.RtAtmosphere_intermediate_variable(self, wn, spec_index)
 
+
     def _v_ground(self):
+        """
+
+        virtual const boost::shared_ptr<Ground> FullPhysics::RtAtmosphere::ground() const =0
+        Object that represents the ground surface.
+
+        If null then there is no surface for this atmosphere. 
+        """
         return _rt_atmosphere.RtAtmosphere__v_ground(self)
+
 
     @property
     def ground(self):
@@ -263,7 +457,14 @@ class RtAtmosphere(full_physics_swig.state_vector.StateVectorObserver, Observabl
 
 
     def _v_uplooking(self):
+        """
+
+        virtual bool FullPhysics::RtAtmosphere::uplooking() const =0
+        Return true if we have an atmosphere for uplooking mode, i.e., we
+        don't have a ground defined. 
+        """
         return _rt_atmosphere.RtAtmosphere__v_uplooking(self)
+
 
     @property
     def uplooking(self):
@@ -271,7 +472,13 @@ class RtAtmosphere(full_physics_swig.state_vector.StateVectorObserver, Observabl
 
 
     def reset_timer(self):
+        """
+
+        virtual void FullPhysics::RtAtmosphere::reset_timer()
+        Reset timer. 
+        """
         return _rt_atmosphere.RtAtmosphere_reset_timer(self)
+
 
     def __str__(self):
         return _rt_atmosphere.RtAtmosphere___str__(self)

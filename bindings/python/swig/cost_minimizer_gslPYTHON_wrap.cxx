@@ -5527,9 +5527,40 @@ SWIGINTERN PyObject *CostMinimizerGSL_swigregister(PyObject *SWIGUNUSEDPARM(self
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"new_CostMinimizerGSL", _wrap_new_CostMinimizerGSL, METH_VARARGS, NULL},
-	 { (char *)"delete_CostMinimizerGSL", _wrap_delete_CostMinimizerGSL, METH_VARARGS, NULL},
-	 { (char *)"CostMinimizerGSL_solve", _wrap_CostMinimizerGSL_solve, METH_VARARGS, NULL},
+	 { (char *)"new_CostMinimizerGSL", _wrap_new_CostMinimizerGSL, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::CostMinimizerGSL::CostMinimizerGSL(int max_cost_function_calls, double dx_tol_abs, double dx_tol_rel,\n"
+		"double size_tol, const boost::shared_ptr< CostFunc > &p, const\n"
+		"blitz::Array< double, 1 > &init_step_size, bool vrbs=false)\n"
+		"Initializes the minimizer.\n"
+		"\n"
+		"Parameters:\n"
+		"-----------\n"
+		"\n"
+		"max_cost_function_calls:  Input value\n"
+		"\n"
+		"dx_tol_abs:  Input value\n"
+		"\n"
+		"dx_tol_rel:  Input value\n"
+		"\n"
+		"size_tol:\n"
+		"\n"
+		"p:  Input value\n"
+		"\n"
+		"init_step_size:  The initial step stize\n"
+		"\n"
+		"vrbs:  Input value \n"
+		""},
+	 { (char *)"delete_CostMinimizerGSL", _wrap_delete_CostMinimizerGSL, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::CostMinimizerGSL::~CostMinimizerGSL()\n"
+		"\n"
+		""},
+	 { (char *)"CostMinimizerGSL_solve", _wrap_CostMinimizerGSL_solve, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::CostMinimizerGSL::solve()\n"
+		"\n"
+		""},
 	 { (char *)"CostMinimizerGSL_swigregister", CostMinimizerGSL_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };

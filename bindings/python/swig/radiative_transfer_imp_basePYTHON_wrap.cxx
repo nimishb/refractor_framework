@@ -7859,18 +7859,51 @@ SWIGINTERN PyObject *RadiativeTransferImpBase_swigregister(PyObject *SWIGUNUSEDP
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"delete_RadiativeTransferImpBase", _wrap_delete_RadiativeTransferImpBase, METH_VARARGS, NULL},
-	 { (char *)"RadiativeTransferImpBase_clone", _wrap_RadiativeTransferImpBase_clone, METH_VARARGS, NULL},
+	 { (char *)"delete_RadiativeTransferImpBase", _wrap_delete_RadiativeTransferImpBase, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::RadiativeTransferImpBase::~RadiativeTransferImpBase()\n"
+		"\n"
+		""},
+	 { (char *)"RadiativeTransferImpBase_clone", _wrap_RadiativeTransferImpBase_clone, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual boost::shared_ptr<RadiativeTransferRetrievable> FullPhysics::RadiativeTransferImpBase::clone() const =0\n"
+		"\n"
+		""},
 	 { (char *)"RadiativeTransferImpBase__v_number_stokes", _wrap_RadiativeTransferImpBase__v_number_stokes, METH_VARARGS, NULL},
 	 { (char *)"RadiativeTransferImpBase__v_number_spectrometer", _wrap_RadiativeTransferImpBase__v_number_spectrometer, METH_VARARGS, NULL},
-	 { (char *)"RadiativeTransferImpBase_reflectance", _wrap_RadiativeTransferImpBase_reflectance, METH_VARARGS, NULL},
+	 { (char *)"RadiativeTransferImpBase_reflectance", _wrap_RadiativeTransferImpBase_reflectance, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual boost::shared_ptr<Spectrum> FullPhysics::RadiativeTransferImpBase::reflectance_ptr(const SpectralDomain &Spec_domain, int Spec_index, bool\n"
+		"Skip_jacobian=false) const =0\n"
+		"For the sake of being able to return a Spectrum class from Python The\n"
+		"reflectance_ptr method here serves the purpose that the radiance\n"
+		"method normally would.\n"
+		"\n"
+		"The reflectance method in this implementation simply calls the\n"
+		"reflectance_ptr method for doing the actual work. \n"
+		""},
 	 { (char *)"RadiativeTransferImpBase_stokes", _wrap_RadiativeTransferImpBase_stokes, METH_VARARGS, NULL},
 	 { (char *)"RadiativeTransferImpBase_stokes_and_jacobian", _wrap_RadiativeTransferImpBase_stokes_and_jacobian, METH_VARARGS, NULL},
 	 { (char *)"RadiativeTransferImpBase_add_observer", _wrap_RadiativeTransferImpBase_add_observer, METH_VARARGS, NULL},
 	 { (char *)"RadiativeTransferImpBase_remove_observer", _wrap_RadiativeTransferImpBase_remove_observer, METH_VARARGS, NULL},
 	 { (char *)"RadiativeTransferImpBase_update_sub_state_hook", _wrap_RadiativeTransferImpBase_update_sub_state_hook, METH_VARARGS, NULL},
-	 { (char *)"RadiativeTransferImpBase_print_desc", _wrap_RadiativeTransferImpBase_print_desc, METH_VARARGS, NULL},
-	 { (char *)"RadiativeTransferImpBase__v_desc", _wrap_RadiativeTransferImpBase__v_desc, METH_VARARGS, NULL},
+	 { (char *)"RadiativeTransferImpBase_print_desc", _wrap_RadiativeTransferImpBase_print_desc, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::RadiativeTransferImpBase::print(std::ostream &Os, bool Short_form=false) const\n"
+		"Print to stream.\n"
+		"\n"
+		"The default calls the function \"desc\" that returns a string. This\n"
+		"gives cleaner interface for deriving from this class in python, but\n"
+		"most C++ classes will want to override this function rather than using\n"
+		"desc. \n"
+		""},
+	 { (char *)"RadiativeTransferImpBase__v_desc", _wrap_RadiativeTransferImpBase__v_desc, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual std::string FullPhysics::RadiativeTransferImpBase::desc() const\n"
+		"Description of object, to be printed to stream.\n"
+		"\n"
+		"This gives a cleaner interface for deriving from python. \n"
+		""},
 	 { (char *)"RadiativeTransferImpBase_mark_used", _wrap_RadiativeTransferImpBase_mark_used, METH_VARARGS, NULL},
 	 { (char *)"RadiativeTransferImpBase_state_vector_name", _wrap_RadiativeTransferImpBase_state_vector_name, METH_VARARGS, NULL},
 	 { (char *)"RadiativeTransferImpBase_notify_update", _wrap_RadiativeTransferImpBase_notify_update, METH_VARARGS, NULL},

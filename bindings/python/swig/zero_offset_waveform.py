@@ -124,6 +124,17 @@ import full_physics_swig.sub_state_vector_array
 import full_physics_swig.generic_object
 import full_physics_swig.instrument_correction
 class ZeroOffsetWaveform(full_physics_swig.instrument_correction.SubStateVectorArrayInstrumentCorrection):
+    """
+
+    This class is a zero level offset.
+
+    We use a supplied waveform, multiple by a single scale factor given by
+    the state vector, and add this to the radiance calculated in
+    InstrumentIls.
+
+    C++ includes: zero_offset_waveform.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.instrument_correction.SubStateVectorArrayInstrumentCorrection]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -138,13 +149,32 @@ class ZeroOffsetWaveform(full_physics_swig.instrument_correction.SubStateVectorA
     __repr__ = _swig_repr
 
     def state_vector_name_i(self, i):
+        """
+
+        virtual std::string FullPhysics::ZeroOffsetWaveform::state_vector_name_i(int i) const
+
+        """
         return _zero_offset_waveform.ZeroOffsetWaveform_state_vector_name_i(self, i)
 
+
     def apply_correction(self, Pixel_grid, Pixel_list, Radiance):
+        """
+
+        virtual void FullPhysics::ZeroOffsetWaveform::apply_correction(const SpectralDomain &Pixel_grid, const std::vector< int >
+        &Pixel_list, SpectralRange &Radiance) const
+
+        """
         return _zero_offset_waveform.ZeroOffsetWaveform_apply_correction(self, Pixel_grid, Pixel_list, Radiance)
 
+
     def _v_zero_offset(self):
+        """
+
+        ArrayWithUnit<double, 1> FullPhysics::ZeroOffsetWaveform::zero_offset() const
+        Current value of zero level offset, for each pixel number. 
+        """
         return _zero_offset_waveform.ZeroOffsetWaveform__v_zero_offset(self)
+
 
     @property
     def zero_offset(self):

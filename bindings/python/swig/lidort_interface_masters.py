@@ -121,6 +121,12 @@ def _new_from_set(cls, version, *args):
     return inst
 
 class Brdf_Linsup_Masters(_object):
+    """
+
+    C++ includes: lidort_interface_masters.h
+
+    """
+
     __swig_setmethods__ = {}
     __setattr__ = lambda self, name, value: _swig_setattr(self, Brdf_Linsup_Masters, name, value)
     __swig_getmethods__ = {}
@@ -128,6 +134,11 @@ class Brdf_Linsup_Masters(_object):
     __repr__ = _swig_repr
 
     def __init__(self, thread_in):
+        """
+
+        FullPhysics::Brdf_Linsup_Masters::Brdf_Linsup_Masters(const int &thread_in)
+
+        """
         this = _lidort_interface_masters.new_Brdf_Linsup_Masters(thread_in)
         try:
             self.this.append(this)
@@ -135,7 +146,13 @@ class Brdf_Linsup_Masters(_object):
             self.this = this
 
     def _v_brdf_sup_in(self):
+        """
+
+        const Brdf_Sup_Inputs& FullPhysics::Brdf_Linsup_Masters::brdf_sup_in() const
+
+        """
         return _lidort_interface_masters.Brdf_Linsup_Masters__v_brdf_sup_in(self)
+
 
     @property
     def brdf_sup_in(self):
@@ -143,7 +160,13 @@ class Brdf_Linsup_Masters(_object):
 
 
     def _v_brdf_sup_inputstatus(self):
+        """
+
+        const Brdf_Input_Exception_Handling& FullPhysics::Brdf_Linsup_Masters::brdf_sup_inputstatus() const
+
+        """
         return _lidort_interface_masters.Brdf_Linsup_Masters__v_brdf_sup_inputstatus(self)
+
 
     @property
     def brdf_sup_inputstatus(self):
@@ -151,7 +174,13 @@ class Brdf_Linsup_Masters(_object):
 
 
     def _v_thread(self):
+        """
+
+        const int& FullPhysics::Brdf_Linsup_Masters::thread() const
+
+        """
         return _lidort_interface_masters.Brdf_Linsup_Masters__v_thread(self)
+
 
     @property
     def thread(self):
@@ -159,7 +188,13 @@ class Brdf_Linsup_Masters(_object):
 
 
     def _v_brdf_sup_out(self):
+        """
+
+        const Brdf_Sup_Outputs& FullPhysics::Brdf_Linsup_Masters::brdf_sup_out() const
+
+        """
         return _lidort_interface_masters.Brdf_Linsup_Masters__v_brdf_sup_out(self)
+
 
     @property
     def brdf_sup_out(self):
@@ -167,7 +202,13 @@ class Brdf_Linsup_Masters(_object):
 
 
     def _v_brdf_linsup_out(self):
+        """
+
+        const Brdf_Linsup_Outputs& FullPhysics::Brdf_Linsup_Masters::brdf_linsup_out() const
+
+        """
         return _lidort_interface_masters.Brdf_Linsup_Masters__v_brdf_linsup_out(self)
+
 
     @property
     def brdf_linsup_out(self):
@@ -175,16 +216,34 @@ class Brdf_Linsup_Masters(_object):
 
 
     def read_config(self, filnam_in):
+        """
+
+        void FullPhysics::Brdf_Linsup_Masters::read_config(const std::string &filnam_in)
+
+        """
         return _lidort_interface_masters.Brdf_Linsup_Masters_read_config(self, filnam_in)
 
+
     def run(self, do_debug_restoration_in, nmoments_input_in):
+        """
+
+        void FullPhysics::Brdf_Linsup_Masters::run(const bool &do_debug_restoration_in, const int &nmoments_input_in)
+
+        """
         return _lidort_interface_masters.Brdf_Linsup_Masters_run(self, do_debug_restoration_in, nmoments_input_in)
+
     __swig_destroy__ = _lidort_interface_masters.delete_Brdf_Linsup_Masters
     __del__ = lambda self: None
 Brdf_Linsup_Masters_swigregister = _lidort_interface_masters.Brdf_Linsup_Masters_swigregister
 Brdf_Linsup_Masters_swigregister(Brdf_Linsup_Masters)
 
 class Brdf_Sup_Masters(_object):
+    """
+
+    C++ includes: lidort_interface_masters.h
+
+    """
+
     __swig_setmethods__ = {}
     __setattr__ = lambda self, name, value: _swig_setattr(self, Brdf_Sup_Masters, name, value)
     __swig_getmethods__ = {}
@@ -192,6 +251,11 @@ class Brdf_Sup_Masters(_object):
     __repr__ = _swig_repr
 
     def __init__(self, thread_in):
+        """
+
+        FullPhysics::Brdf_Sup_Masters::Brdf_Sup_Masters(const int &thread_in)
+
+        """
         this = _lidort_interface_masters.new_Brdf_Sup_Masters(thread_in)
         try:
             self.this.append(this)
@@ -199,7 +263,13 @@ class Brdf_Sup_Masters(_object):
             self.this = this
 
     def _v_brdf_sup_in(self):
+        """
+
+        const Brdf_Sup_Inputs& FullPhysics::Brdf_Sup_Masters::brdf_sup_in() const
+
+        """
         return _lidort_interface_masters.Brdf_Sup_Masters__v_brdf_sup_in(self)
+
 
     @property
     def brdf_sup_in(self):
@@ -207,7 +277,13 @@ class Brdf_Sup_Masters(_object):
 
 
     def _v_brdf_sup_inputstatus(self):
+        """
+
+        const Brdf_Input_Exception_Handling& FullPhysics::Brdf_Sup_Masters::brdf_sup_inputstatus() const
+
+        """
         return _lidort_interface_masters.Brdf_Sup_Masters__v_brdf_sup_inputstatus(self)
+
 
     @property
     def brdf_sup_inputstatus(self):
@@ -215,7 +291,13 @@ class Brdf_Sup_Masters(_object):
 
 
     def _v_thread(self):
+        """
+
+        const int& FullPhysics::Brdf_Sup_Masters::thread() const
+
+        """
         return _lidort_interface_masters.Brdf_Sup_Masters__v_thread(self)
+
 
     @property
     def thread(self):
@@ -223,7 +305,13 @@ class Brdf_Sup_Masters(_object):
 
 
     def _v_brdf_sup_out(self):
+        """
+
+        const Brdf_Sup_Outputs& FullPhysics::Brdf_Sup_Masters::brdf_sup_out() const
+
+        """
         return _lidort_interface_masters.Brdf_Sup_Masters__v_brdf_sup_out(self)
+
 
     @property
     def brdf_sup_out(self):
@@ -231,16 +319,34 @@ class Brdf_Sup_Masters(_object):
 
 
     def read_config(self, filnam_in):
+        """
+
+        void FullPhysics::Brdf_Sup_Masters::read_config(const std::string &filnam_in)
+
+        """
         return _lidort_interface_masters.Brdf_Sup_Masters_read_config(self, filnam_in)
 
+
     def run(self, do_debug_restoration_in, nmoments_input_in):
+        """
+
+        void FullPhysics::Brdf_Sup_Masters::run(const bool &do_debug_restoration_in, const int &nmoments_input_in)
+
+        """
         return _lidort_interface_masters.Brdf_Sup_Masters_run(self, do_debug_restoration_in, nmoments_input_in)
+
     __swig_destroy__ = _lidort_interface_masters.delete_Brdf_Sup_Masters
     __del__ = lambda self: None
 Brdf_Sup_Masters_swigregister = _lidort_interface_masters.Brdf_Sup_Masters_swigregister
 Brdf_Sup_Masters_swigregister(Brdf_Sup_Masters)
 
 class Lidort_Lcs_Masters(_object):
+    """
+
+    C++ includes: lidort_interface_masters.h
+
+    """
+
     __swig_setmethods__ = {}
     __setattr__ = lambda self, name, value: _swig_setattr(self, Lidort_Lcs_Masters, name, value)
     __swig_getmethods__ = {}
@@ -248,6 +354,11 @@ class Lidort_Lcs_Masters(_object):
     __repr__ = _swig_repr
 
     def __init__(self, thread_in):
+        """
+
+        FullPhysics::Lidort_Lcs_Masters::Lidort_Lcs_Masters(const int &thread_in)
+
+        """
         this = _lidort_interface_masters.new_Lidort_Lcs_Masters(thread_in)
         try:
             self.this.append(this)
@@ -255,7 +366,13 @@ class Lidort_Lcs_Masters(_object):
             self.this = this
 
     def _v_thread(self):
+        """
+
+        const int& FullPhysics::Lidort_Lcs_Masters::thread() const
+
+        """
         return _lidort_interface_masters.Lidort_Lcs_Masters__v_thread(self)
+
 
     @property
     def thread(self):
@@ -263,7 +380,13 @@ class Lidort_Lcs_Masters(_object):
 
 
     def _v_lidort_fixin(self):
+        """
+
+        void FullPhysics::Lidort_Lcs_Masters::lidort_fixin(Lidort_Fixed_Inputs &lidort_fixin_in)
+
+        """
         return _lidort_interface_masters.Lidort_Lcs_Masters__v_lidort_fixin(self)
+
 
     @property
     def lidort_fixin(self):
@@ -271,7 +394,13 @@ class Lidort_Lcs_Masters(_object):
 
 
     def _v_lidort_modin(self):
+        """
+
+        void FullPhysics::Lidort_Lcs_Masters::lidort_modin(Lidort_Modified_Inputs &lidort_modin_in)
+
+        """
         return _lidort_interface_masters.Lidort_Lcs_Masters__v_lidort_modin(self)
+
 
     @property
     def lidort_modin(self):
@@ -279,7 +408,13 @@ class Lidort_Lcs_Masters(_object):
 
 
     def _v_lidort_sup(self):
+        """
+
+        void FullPhysics::Lidort_Lcs_Masters::lidort_sup(Lidort_Sup_Inout &lidort_sup_in)
+
+        """
         return _lidort_interface_masters.Lidort_Lcs_Masters__v_lidort_sup(self)
+
 
     @property
     def lidort_sup(self):
@@ -287,7 +422,13 @@ class Lidort_Lcs_Masters(_object):
 
 
     def _v_lidort_out(self):
+        """
+
+        void FullPhysics::Lidort_Lcs_Masters::lidort_out(Lidort_Outputs &lidort_out_in)
+
+        """
         return _lidort_interface_masters.Lidort_Lcs_Masters__v_lidort_out(self)
+
 
     @property
     def lidort_out(self):
@@ -295,7 +436,13 @@ class Lidort_Lcs_Masters(_object):
 
 
     def _v_lidort_linfixin(self):
+        """
+
+        void FullPhysics::Lidort_Lcs_Masters::lidort_linfixin(Lidort_Fixed_Lininputs &lidort_linfixin_in)
+
+        """
         return _lidort_interface_masters.Lidort_Lcs_Masters__v_lidort_linfixin(self)
+
 
     @property
     def lidort_linfixin(self):
@@ -303,7 +450,13 @@ class Lidort_Lcs_Masters(_object):
 
 
     def _v_lidort_linmodin(self):
+        """
+
+        void FullPhysics::Lidort_Lcs_Masters::lidort_linmodin(Lidort_Modified_Lininputs &lidort_linmodin_in)
+
+        """
         return _lidort_interface_masters.Lidort_Lcs_Masters__v_lidort_linmodin(self)
+
 
     @property
     def lidort_linmodin(self):
@@ -311,7 +464,13 @@ class Lidort_Lcs_Masters(_object):
 
 
     def _v_lidort_linsup(self):
+        """
+
+        void FullPhysics::Lidort_Lcs_Masters::lidort_linsup(Lidort_Linsup_Inout &lidort_linsup_in)
+
+        """
         return _lidort_interface_masters.Lidort_Lcs_Masters__v_lidort_linsup(self)
+
 
     @property
     def lidort_linsup(self):
@@ -319,7 +478,13 @@ class Lidort_Lcs_Masters(_object):
 
 
     def _v_lidort_linout(self):
+        """
+
+        void FullPhysics::Lidort_Lcs_Masters::lidort_linout(Lidort_Linoutputs &lidort_linout_in)
+
+        """
         return _lidort_interface_masters.Lidort_Lcs_Masters__v_lidort_linout(self)
+
 
     @property
     def lidort_linout(self):
@@ -327,13 +492,25 @@ class Lidort_Lcs_Masters(_object):
 
 
     def run(self):
+        """
+
+        void FullPhysics::Lidort_Lcs_Masters::run()
+
+        """
         return _lidort_interface_masters.Lidort_Lcs_Masters_run(self)
+
     __swig_destroy__ = _lidort_interface_masters.delete_Lidort_Lcs_Masters
     __del__ = lambda self: None
 Lidort_Lcs_Masters_swigregister = _lidort_interface_masters.Lidort_Lcs_Masters_swigregister
 Lidort_Lcs_Masters_swigregister(Lidort_Lcs_Masters)
 
 class Lidort_Lps_Masters(_object):
+    """
+
+    C++ includes: lidort_interface_masters.h
+
+    """
+
     __swig_setmethods__ = {}
     __setattr__ = lambda self, name, value: _swig_setattr(self, Lidort_Lps_Masters, name, value)
     __swig_getmethods__ = {}
@@ -341,6 +518,11 @@ class Lidort_Lps_Masters(_object):
     __repr__ = _swig_repr
 
     def __init__(self, thread_in):
+        """
+
+        FullPhysics::Lidort_Lps_Masters::Lidort_Lps_Masters(const int &thread_in)
+
+        """
         this = _lidort_interface_masters.new_Lidort_Lps_Masters(thread_in)
         try:
             self.this.append(this)
@@ -348,7 +530,13 @@ class Lidort_Lps_Masters(_object):
             self.this = this
 
     def _v_thread(self):
+        """
+
+        const int& FullPhysics::Lidort_Lps_Masters::thread() const
+
+        """
         return _lidort_interface_masters.Lidort_Lps_Masters__v_thread(self)
+
 
     @property
     def thread(self):
@@ -356,7 +544,13 @@ class Lidort_Lps_Masters(_object):
 
 
     def _v_lidort_fixin(self):
+        """
+
+        void FullPhysics::Lidort_Lps_Masters::lidort_fixin(Lidort_Fixed_Inputs &lidort_fixin_in)
+
+        """
         return _lidort_interface_masters.Lidort_Lps_Masters__v_lidort_fixin(self)
+
 
     @property
     def lidort_fixin(self):
@@ -364,7 +558,13 @@ class Lidort_Lps_Masters(_object):
 
 
     def _v_lidort_modin(self):
+        """
+
+        void FullPhysics::Lidort_Lps_Masters::lidort_modin(Lidort_Modified_Inputs &lidort_modin_in)
+
+        """
         return _lidort_interface_masters.Lidort_Lps_Masters__v_lidort_modin(self)
+
 
     @property
     def lidort_modin(self):
@@ -372,7 +572,13 @@ class Lidort_Lps_Masters(_object):
 
 
     def _v_lidort_sup(self):
+        """
+
+        void FullPhysics::Lidort_Lps_Masters::lidort_sup(Lidort_Sup_Inout &lidort_sup_in)
+
+        """
         return _lidort_interface_masters.Lidort_Lps_Masters__v_lidort_sup(self)
+
 
     @property
     def lidort_sup(self):
@@ -380,7 +586,13 @@ class Lidort_Lps_Masters(_object):
 
 
     def _v_lidort_out(self):
+        """
+
+        void FullPhysics::Lidort_Lps_Masters::lidort_out(Lidort_Outputs &lidort_out_in)
+
+        """
         return _lidort_interface_masters.Lidort_Lps_Masters__v_lidort_out(self)
+
 
     @property
     def lidort_out(self):
@@ -388,7 +600,13 @@ class Lidort_Lps_Masters(_object):
 
 
     def _v_lidort_linfixin(self):
+        """
+
+        void FullPhysics::Lidort_Lps_Masters::lidort_linfixin(Lidort_Fixed_Lininputs &lidort_linfixin_in)
+
+        """
         return _lidort_interface_masters.Lidort_Lps_Masters__v_lidort_linfixin(self)
+
 
     @property
     def lidort_linfixin(self):
@@ -396,7 +614,13 @@ class Lidort_Lps_Masters(_object):
 
 
     def _v_lidort_linmodin(self):
+        """
+
+        void FullPhysics::Lidort_Lps_Masters::lidort_linmodin(Lidort_Modified_Lininputs &lidort_linmodin_in)
+
+        """
         return _lidort_interface_masters.Lidort_Lps_Masters__v_lidort_linmodin(self)
+
 
     @property
     def lidort_linmodin(self):
@@ -404,7 +628,13 @@ class Lidort_Lps_Masters(_object):
 
 
     def _v_lidort_linsup(self):
+        """
+
+        void FullPhysics::Lidort_Lps_Masters::lidort_linsup(Lidort_Linsup_Inout &lidort_linsup_in)
+
+        """
         return _lidort_interface_masters.Lidort_Lps_Masters__v_lidort_linsup(self)
+
 
     @property
     def lidort_linsup(self):
@@ -412,7 +642,13 @@ class Lidort_Lps_Masters(_object):
 
 
     def _v_lidort_linout(self):
+        """
+
+        void FullPhysics::Lidort_Lps_Masters::lidort_linout(Lidort_Linoutputs &lidort_linout_in)
+
+        """
         return _lidort_interface_masters.Lidort_Lps_Masters__v_lidort_linout(self)
+
 
     @property
     def lidort_linout(self):
@@ -420,13 +656,25 @@ class Lidort_Lps_Masters(_object):
 
 
     def run(self):
+        """
+
+        void FullPhysics::Lidort_Lps_Masters::run()
+
+        """
         return _lidort_interface_masters.Lidort_Lps_Masters_run(self)
+
     __swig_destroy__ = _lidort_interface_masters.delete_Lidort_Lps_Masters
     __del__ = lambda self: None
 Lidort_Lps_Masters_swigregister = _lidort_interface_masters.Lidort_Lps_Masters_swigregister
 Lidort_Lps_Masters_swigregister(Lidort_Lps_Masters)
 
 class Lidort_Inputs(_object):
+    """
+
+    C++ includes: lidort_interface_masters.h
+
+    """
+
     __swig_setmethods__ = {}
     __setattr__ = lambda self, name, value: _swig_setattr(self, Lidort_Inputs, name, value)
     __swig_getmethods__ = {}
@@ -434,6 +682,11 @@ class Lidort_Inputs(_object):
     __repr__ = _swig_repr
 
     def __init__(self):
+        """
+
+        FullPhysics::Lidort_Inputs::Lidort_Inputs()
+
+        """
         this = _lidort_interface_masters.new_Lidort_Inputs()
         try:
             self.this.append(this)
@@ -441,7 +694,13 @@ class Lidort_Inputs(_object):
             self.this = this
 
     def _v_lidort_fixin(self):
+        """
+
+        const Lidort_Fixed_Inputs& FullPhysics::Lidort_Inputs::lidort_fixin() const
+
+        """
         return _lidort_interface_masters.Lidort_Inputs__v_lidort_fixin(self)
+
 
     @property
     def lidort_fixin(self):
@@ -449,7 +708,13 @@ class Lidort_Inputs(_object):
 
 
     def _v_lidort_modin(self):
+        """
+
+        const Lidort_Modified_Inputs& FullPhysics::Lidort_Inputs::lidort_modin() const
+
+        """
         return _lidort_interface_masters.Lidort_Inputs__v_lidort_modin(self)
+
 
     @property
     def lidort_modin(self):
@@ -457,7 +722,13 @@ class Lidort_Inputs(_object):
 
 
     def _v_lidort_inputstatus(self):
+        """
+
+        const Lidort_Input_Exception_Handling& FullPhysics::Lidort_Inputs::lidort_inputstatus() const
+
+        """
         return _lidort_interface_masters.Lidort_Inputs__v_lidort_inputstatus(self)
+
 
     @property
     def lidort_inputstatus(self):
@@ -465,13 +736,25 @@ class Lidort_Inputs(_object):
 
 
     def read_config(self, filnam_in):
+        """
+
+        void FullPhysics::Lidort_Inputs::read_config(const std::string &filnam_in)
+
+        """
         return _lidort_interface_masters.Lidort_Inputs_read_config(self, filnam_in)
+
     __swig_destroy__ = _lidort_interface_masters.delete_Lidort_Inputs
     __del__ = lambda self: None
 Lidort_Inputs_swigregister = _lidort_interface_masters.Lidort_Inputs_swigregister
 Lidort_Inputs_swigregister(Lidort_Inputs)
 
 class Lidort_Masters(_object):
+    """
+
+    C++ includes: lidort_interface_masters.h
+
+    """
+
     __swig_setmethods__ = {}
     __setattr__ = lambda self, name, value: _swig_setattr(self, Lidort_Masters, name, value)
     __swig_getmethods__ = {}
@@ -479,6 +762,11 @@ class Lidort_Masters(_object):
     __repr__ = _swig_repr
 
     def __init__(self, thread_in):
+        """
+
+        FullPhysics::Lidort_Masters::Lidort_Masters(const int &thread_in)
+
+        """
         this = _lidort_interface_masters.new_Lidort_Masters(thread_in)
         try:
             self.this.append(this)
@@ -486,7 +774,13 @@ class Lidort_Masters(_object):
             self.this = this
 
     def _v_thread(self):
+        """
+
+        const int& FullPhysics::Lidort_Masters::thread() const
+
+        """
         return _lidort_interface_masters.Lidort_Masters__v_thread(self)
+
 
     @property
     def thread(self):
@@ -494,7 +788,13 @@ class Lidort_Masters(_object):
 
 
     def _v_lidort_fixin(self):
+        """
+
+        void FullPhysics::Lidort_Masters::lidort_fixin(Lidort_Fixed_Inputs &lidort_fixin_in)
+
+        """
         return _lidort_interface_masters.Lidort_Masters__v_lidort_fixin(self)
+
 
     @property
     def lidort_fixin(self):
@@ -502,7 +802,13 @@ class Lidort_Masters(_object):
 
 
     def _v_lidort_modin(self):
+        """
+
+        void FullPhysics::Lidort_Masters::lidort_modin(Lidort_Modified_Inputs &lidort_modin_in)
+
+        """
         return _lidort_interface_masters.Lidort_Masters__v_lidort_modin(self)
+
 
     @property
     def lidort_modin(self):
@@ -510,7 +816,13 @@ class Lidort_Masters(_object):
 
 
     def _v_lidort_sup(self):
+        """
+
+        void FullPhysics::Lidort_Masters::lidort_sup(Lidort_Sup_Inout &lidort_sup_in)
+
+        """
         return _lidort_interface_masters.Lidort_Masters__v_lidort_sup(self)
+
 
     @property
     def lidort_sup(self):
@@ -518,7 +830,13 @@ class Lidort_Masters(_object):
 
 
     def _v_lidort_out(self):
+        """
+
+        void FullPhysics::Lidort_Masters::lidort_out(Lidort_Outputs &lidort_out_in)
+
+        """
         return _lidort_interface_masters.Lidort_Masters__v_lidort_out(self)
+
 
     @property
     def lidort_out(self):
@@ -526,13 +844,25 @@ class Lidort_Masters(_object):
 
 
     def run(self):
+        """
+
+        void FullPhysics::Lidort_Masters::run()
+
+        """
         return _lidort_interface_masters.Lidort_Masters_run(self)
+
     __swig_destroy__ = _lidort_interface_masters.delete_Lidort_Masters
     __del__ = lambda self: None
 Lidort_Masters_swigregister = _lidort_interface_masters.Lidort_Masters_swigregister
 Lidort_Masters_swigregister(Lidort_Masters)
 
 class Lidort_Sup_Accessories(_object):
+    """
+
+    C++ includes: lidort_interface_masters.h
+
+    """
+
     __swig_setmethods__ = {}
     __setattr__ = lambda self, name, value: _swig_setattr(self, Lidort_Sup_Accessories, name, value)
     __swig_getmethods__ = {}
@@ -540,6 +870,13 @@ class Lidort_Sup_Accessories(_object):
     __repr__ = _swig_repr
 
     def __init__(self, brdf_sup_in_in, lidort_fixin_in, lidort_modin_in):
+        """
+
+        FullPhysics::Lidort_Sup_Accessories::Lidort_Sup_Accessories(boost::shared_ptr< Brdf_Sup_Inputs > &brdf_sup_in_in,
+        boost::shared_ptr< Lidort_Fixed_Inputs > &lidort_fixin_in,
+        boost::shared_ptr< Lidort_Modified_Inputs > &lidort_modin_in)
+
+        """
         this = _lidort_interface_masters.new_Lidort_Sup_Accessories(brdf_sup_in_in, lidort_fixin_in, lidort_modin_in)
         try:
             self.this.append(this)
@@ -547,7 +884,13 @@ class Lidort_Sup_Accessories(_object):
             self.this = this
 
     def _v_brdf_sup_in(self):
+        """
+
+        const Brdf_Sup_Inputs& FullPhysics::Lidort_Sup_Accessories::brdf_sup_in() const
+
+        """
         return _lidort_interface_masters.Lidort_Sup_Accessories__v_brdf_sup_in(self)
+
 
     @property
     def brdf_sup_in(self):
@@ -555,7 +898,13 @@ class Lidort_Sup_Accessories(_object):
 
 
     def _v_lidort_fixin(self):
+        """
+
+        const Lidort_Fixed_Inputs& FullPhysics::Lidort_Sup_Accessories::lidort_fixin() const
+
+        """
         return _lidort_interface_masters.Lidort_Sup_Accessories__v_lidort_fixin(self)
+
 
     @property
     def lidort_fixin(self):
@@ -563,7 +912,13 @@ class Lidort_Sup_Accessories(_object):
 
 
     def _v_lidort_modin(self):
+        """
+
+        const Lidort_Modified_Inputs& FullPhysics::Lidort_Sup_Accessories::lidort_modin() const
+
+        """
         return _lidort_interface_masters.Lidort_Sup_Accessories__v_lidort_modin(self)
+
 
     @property
     def lidort_modin(self):
@@ -571,7 +926,13 @@ class Lidort_Sup_Accessories(_object):
 
 
     def _v_lidort_brdfcheck_status(self):
+        """
+
+        const Lidort_Exception_Handling& FullPhysics::Lidort_Sup_Accessories::lidort_brdfcheck_status() const
+
+        """
         return _lidort_interface_masters.Lidort_Sup_Accessories__v_lidort_brdfcheck_status(self)
+
 
     @property
     def lidort_brdfcheck_status(self):
@@ -579,7 +940,13 @@ class Lidort_Sup_Accessories(_object):
 
 
     def brdf_input_checker(self):
+        """
+
+        void FullPhysics::Lidort_Sup_Accessories::brdf_input_checker()
+
+        """
         return _lidort_interface_masters.Lidort_Sup_Accessories_brdf_input_checker(self)
+
     __swig_destroy__ = _lidort_interface_masters.delete_Lidort_Sup_Accessories
     __del__ = lambda self: None
 Lidort_Sup_Accessories_swigregister = _lidort_interface_masters.Lidort_Sup_Accessories_swigregister

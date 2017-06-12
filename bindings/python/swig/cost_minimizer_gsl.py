@@ -125,6 +125,12 @@ import full_physics_swig.iterative_solver
 import full_physics_swig.generic_object
 import full_physics_swig.problem_state
 class CostMinimizerGSL(full_physics_swig.cost_minimizer.CostMinimizer):
+    """
+
+    C++ includes: cost_minimizer_gsl.h
+
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.cost_minimizer.CostMinimizer]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -136,6 +142,30 @@ class CostMinimizerGSL(full_physics_swig.cost_minimizer.CostMinimizer):
     __repr__ = _swig_repr
 
     def __init__(self, max_cost_function_calls, dx_tol_abs, dx_tol_rel, size_tol, p, init_step_size, vrbs=False):
+        """
+
+        FullPhysics::CostMinimizerGSL::CostMinimizerGSL(int max_cost_function_calls, double dx_tol_abs, double dx_tol_rel,
+        double size_tol, const boost::shared_ptr< CostFunc > &p, const
+        blitz::Array< double, 1 > &init_step_size, bool vrbs=false)
+        Initializes the minimizer.
+
+        Parameters:
+        -----------
+
+        max_cost_function_calls:  Input value
+
+        dx_tol_abs:  Input value
+
+        dx_tol_rel:  Input value
+
+        size_tol:
+
+        p:  Input value
+
+        init_step_size:  The initial step stize
+
+        vrbs:  Input value 
+        """
         this = _cost_minimizer_gsl.new_CostMinimizerGSL(max_cost_function_calls, dx_tol_abs, dx_tol_rel, size_tol, p, init_step_size, vrbs)
         try:
             self.this.append(this)
@@ -145,7 +175,13 @@ class CostMinimizerGSL(full_physics_swig.cost_minimizer.CostMinimizer):
     __del__ = lambda self: None
 
     def solve(self):
+        """
+
+        virtual void FullPhysics::CostMinimizerGSL::solve()
+
+        """
         return _cost_minimizer_gsl.CostMinimizerGSL_solve(self)
+
 CostMinimizerGSL_swigregister = _cost_minimizer_gsl.CostMinimizerGSL_swigregister
 CostMinimizerGSL_swigregister(CostMinimizerGSL)
 

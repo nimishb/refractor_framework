@@ -127,6 +127,12 @@ import full_physics_swig.problem_state
 import full_physics_swig.generic_object
 import full_physics_swig.model_measure_oco
 class MaxLikelihoodOCO(full_physics_swig.max_likelihood.MaxLikelihood, full_physics_swig.model_measure_oco.ModelMeasureOCO):
+    """
+
+    C++ includes: max_likelihood_oco.h
+
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.max_likelihood.MaxLikelihood, full_physics_swig.model_measure_oco.ModelMeasureOCO]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -138,6 +144,11 @@ class MaxLikelihoodOCO(full_physics_swig.max_likelihood.MaxLikelihood, full_phys
     __repr__ = _swig_repr
 
     def __init__(self, fm):
+        """
+
+        FullPhysics::MaxLikelihoodOCO::MaxLikelihoodOCO(const boost::shared_ptr< ForwardModel > &fm)
+        Constructor. 
+        """
         this = _max_likelihood_oco.new_MaxLikelihoodOCO(fm)
         try:
             self.this.append(this)

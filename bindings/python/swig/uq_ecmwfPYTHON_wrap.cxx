@@ -5179,8 +5179,16 @@ SWIGINTERN PyObject *UqEcmwf_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObje
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"delete_UqEcmwf", _wrap_delete_UqEcmwf, METH_VARARGS, NULL},
-	 { (char *)"new_UqEcmwf", _wrap_new_UqEcmwf, METH_VARARGS, NULL},
+	 { (char *)"delete_UqEcmwf", _wrap_delete_UqEcmwf, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::UqEcmwf::~UqEcmwf()\n"
+		"\n"
+		""},
+	 { (char *)"new_UqEcmwf", _wrap_new_UqEcmwf, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::UqEcmwf::UqEcmwf(const std::string &Fname)\n"
+		"\n"
+		""},
 	 { (char *)"UqEcmwf_swigregister", UqEcmwf_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };

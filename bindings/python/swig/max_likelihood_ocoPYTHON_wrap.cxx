@@ -5083,8 +5083,16 @@ SWIGINTERN PyObject *MaxLikelihoodOCO_swigregister(PyObject *SWIGUNUSEDPARM(self
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"new_MaxLikelihoodOCO", _wrap_new_MaxLikelihoodOCO, METH_VARARGS, NULL},
-	 { (char *)"delete_MaxLikelihoodOCO", _wrap_delete_MaxLikelihoodOCO, METH_VARARGS, NULL},
+	 { (char *)"new_MaxLikelihoodOCO", _wrap_new_MaxLikelihoodOCO, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::MaxLikelihoodOCO::MaxLikelihoodOCO(const boost::shared_ptr< ForwardModel > &fm)\n"
+		"Constructor. \n"
+		""},
+	 { (char *)"delete_MaxLikelihoodOCO", _wrap_delete_MaxLikelihoodOCO, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::MaxLikelihoodOCO::~MaxLikelihoodOCO()\n"
+		"\n"
+		""},
 	 { (char *)"MaxLikelihoodOCO_swigregister", MaxLikelihoodOCO_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };

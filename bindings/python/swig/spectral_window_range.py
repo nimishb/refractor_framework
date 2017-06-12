@@ -123,6 +123,21 @@ def _new_from_set(cls, version, *args):
 import full_physics_swig.spectral_window
 import full_physics_swig.generic_object
 class SpectralWindowRange(full_physics_swig.spectral_window.SpectralWindow):
+    """
+
+    This is an implementation of a SpectralWindow that covers a fixed
+    window.
+
+    The window can be made up of multiple microwindow ranges if desired.
+    It can also include a bad pixel mask.
+
+    Note that there are a few closely related classes, with similar
+    sounding names. See spectrum_doxygen for a description of each of
+    these.
+
+    C++ includes: spectral_window_range.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.spectral_window.SpectralWindow]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -134,6 +149,12 @@ class SpectralWindowRange(full_physics_swig.spectral_window.SpectralWindow):
     __repr__ = _swig_repr
 
     def __init__(self, Microwindow_ranges):
+        """
+
+        FullPhysics::SpectralWindowRange::SpectralWindowRange(const ArrayWithUnit< double, 3 > &Microwindow_ranges, const
+        blitz::Array< T, 2 > &Bad_sample_mask)
+
+        """
         this = _spectral_window_range.new_SpectralWindowRange(Microwindow_ranges)
         try:
             self.this.append(this)
@@ -141,10 +162,22 @@ class SpectralWindowRange(full_physics_swig.spectral_window.SpectralWindow):
             self.this = this
 
     def grid_indexes(self, Grid, Spec_index):
+        """
+
+        virtual std::vector<int> FullPhysics::SpectralWindowRange::grid_indexes(const SpectralDomain &Grid, int Spec_index) const
+
+        """
         return _spectral_window_range.SpectralWindowRange_grid_indexes(self, Grid, Spec_index)
 
+
     def _v_number_spectrometer(self):
+        """
+
+        virtual int FullPhysics::SpectralWindowRange::number_spectrometer() const
+
+        """
         return _spectral_window_range.SpectralWindowRange__v_number_spectrometer(self)
+
 
     @property
     def number_spectrometer(self):
@@ -152,7 +185,13 @@ class SpectralWindowRange(full_physics_swig.spectral_window.SpectralWindow):
 
 
     def _v_range_array(self, *args):
+        """
+
+        void FullPhysics::SpectralWindowRange::range_array(const ArrayWithUnit< double, 3 > &Ran)
+
+        """
         return _spectral_window_range.SpectralWindowRange__v_range_array(self, *args)
+
 
     @property
     def range_array(self):
@@ -164,7 +203,13 @@ class SpectralWindowRange(full_physics_swig.spectral_window.SpectralWindow):
 
 
     def _v_bad_sample_mask(self, *args):
+        """
+
+        void FullPhysics::SpectralWindowRange::bad_sample_mask(const blitz::Array< bool, 2 > &M)
+
+        """
         return _spectral_window_range.SpectralWindowRange__v_bad_sample_mask(self, *args)
+
 
     @property
     def bad_sample_mask(self):

@@ -6744,11 +6744,35 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
 	 { (char *)"Unit___str__", _wrap_Unit___str__, METH_VARARGS, NULL},
 	 { (char *)"Unit_number_base_unit_get", _wrap_Unit_number_base_unit_get, METH_VARARGS, NULL},
-	 { (char *)"new_Unit", _wrap_new_Unit, METH_VARARGS, NULL},
-	 { (char *)"Unit__v_base_unit_powers", _wrap_Unit__v_base_unit_powers, METH_VARARGS, NULL},
-	 { (char *)"Unit__v_conversion_to_si", _wrap_Unit__v_conversion_to_si, METH_VARARGS, NULL},
-	 { (char *)"Unit__v_name", _wrap_Unit__v_name, METH_VARARGS, NULL},
-	 { (char *)"Unit_is_commensurate", _wrap_Unit_is_commensurate, METH_VARARGS, NULL},
+	 { (char *)"new_Unit", _wrap_new_Unit, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::Unit::Unit()\n"
+		"\n"
+		""},
+	 { (char *)"Unit__v_base_unit_powers", _wrap_Unit__v_base_unit_powers, METH_VARARGS, (char *)"\n"
+		"\n"
+		"const boost::array<boost::rational<int>, number_base_unit>& FullPhysics::Unit::base_unit_powers() const\n"
+		"Array of the powers of the base units (so m^2 would return\n"
+		"(1,0,0,0,0,0,0,0)) \n"
+		""},
+	 { (char *)"Unit__v_conversion_to_si", _wrap_Unit__v_conversion_to_si, METH_VARARGS, (char *)"\n"
+		"\n"
+		"double FullPhysics::Unit::conversion_to_si() const\n"
+		"Conversion factor to go to SI units. \n"
+		""},
+	 { (char *)"Unit__v_name", _wrap_Unit__v_name, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Unit::name(const std::string &V)\n"
+		"Set name of unit. \n"
+		""},
+	 { (char *)"Unit_is_commensurate", _wrap_Unit_is_commensurate, METH_VARARGS, (char *)"\n"
+		"\n"
+		"bool FullPhysics::Unit::is_commensurate(const Unit &Units) const\n"
+		"Test if this set of units is commensurate with another set.\n"
+		"\n"
+		"If this return true then conversion() would succeed, otherwise it\n"
+		"would fail. \n"
+		""},
 	 { (char *)"Unit___imul__", _wrap_Unit___imul__, METH_VARARGS, NULL},
 	 { (char *)"Unit___idiv__", _wrap_Unit___idiv__, METH_VARARGS, NULL},
 	 { (char *)"Unit___mul__", _wrap_Unit___mul__, METH_VARARGS, NULL},

@@ -123,6 +123,20 @@ def _new_from_set(cls, version, *args):
 import full_physics_swig.noise_model
 import full_physics_swig.generic_object
 class BadSampleNoiseModel(full_physics_swig.noise_model.NoiseModel):
+    """
+
+    When we have bad samples, we usually pass this to the spectral window
+    to prevent the sample from even being used.
+
+    However, it can be useful to instead include the bad sample but give
+    it a really large noise value (e.g., you want the residual calculated
+    for a ARP investigation, but don't want it to have any weight in the
+    retrieval). This adapter class takes a underlying noise model, but
+    changes the uncertainty for any value that is marked as a bad sample.
+
+    C++ includes: bad_sample_noise_model.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.noise_model.NoiseModel]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -134,6 +148,12 @@ class BadSampleNoiseModel(full_physics_swig.noise_model.NoiseModel):
     __repr__ = _swig_repr
 
     def __init__(self, Underlying_noise_model, Bad_sample_mask, Bad_sample_uncer):
+        """
+
+        FullPhysics::BadSampleNoiseModel::BadSampleNoiseModel(const boost::shared_ptr< NoiseModel > &Underlying_noise_model, const
+        blitz::Array< T, 2 > &Bad_sample_mask, double Bad_sample_uncer)
+
+        """
         this = _bad_sample_noise_model.new_BadSampleNoiseModel(Underlying_noise_model, Bad_sample_mask, Bad_sample_uncer)
         try:
             self.this.append(this)
@@ -141,10 +161,22 @@ class BadSampleNoiseModel(full_physics_swig.noise_model.NoiseModel):
             self.this = this
 
     def uncertainty(self, Spec_index, Radiance):
+        """
+
+        virtual blitz::Array<double, 1> FullPhysics::BadSampleNoiseModel::uncertainty(int Spec_index, const blitz::Array< double, 1 > &Radiance) const
+
+        """
         return _bad_sample_noise_model.BadSampleNoiseModel_uncertainty(self, Spec_index, Radiance)
 
+
     def _v_bad_sample_uncertainty(self):
+        """
+
+        double FullPhysics::BadSampleNoiseModel::bad_sample_uncertainty() const
+
+        """
         return _bad_sample_noise_model.BadSampleNoiseModel__v_bad_sample_uncertainty(self)
+
 
     @property
     def bad_sample_uncertainty(self):
@@ -152,7 +184,13 @@ class BadSampleNoiseModel(full_physics_swig.noise_model.NoiseModel):
 
 
     def _v_underlying_noise_model(self):
+        """
+
+        const boost::shared_ptr<NoiseModel>& FullPhysics::BadSampleNoiseModel::underlying_noise_model() const
+
+        """
         return _bad_sample_noise_model.BadSampleNoiseModel__v_underlying_noise_model(self)
+
 
     @property
     def underlying_noise_model(self):
@@ -160,7 +198,13 @@ class BadSampleNoiseModel(full_physics_swig.noise_model.NoiseModel):
 
 
     def _v_bad_sample_mask(self):
+        """
+
+        const blitz::Array<bool, 2>& FullPhysics::BadSampleNoiseModel::bad_sample_mask() const
+
+        """
         return _bad_sample_noise_model.BadSampleNoiseModel__v_bad_sample_mask(self)
+
 
     @property
     def bad_sample_mask(self):

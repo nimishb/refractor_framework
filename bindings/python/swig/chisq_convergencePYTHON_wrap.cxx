@@ -5813,10 +5813,30 @@ SWIGINTERN PyObject *ChisqConvergence_swigregister(PyObject *SWIGUNUSEDPARM(self
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"new_ChisqConvergence", _wrap_new_ChisqConvergence, METH_VARARGS, NULL},
-	 { (char *)"ChisqConvergence_convergence_check", _wrap_ChisqConvergence_convergence_check, METH_VARARGS, NULL},
-	 { (char *)"ChisqConvergence_evaluate_quality", _wrap_ChisqConvergence_evaluate_quality, METH_VARARGS, NULL},
-	 { (char *)"delete_ChisqConvergence", _wrap_delete_ChisqConvergence, METH_VARARGS, NULL},
+	 { (char *)"new_ChisqConvergence", _wrap_new_ChisqConvergence, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::ChisqConvergence::ChisqConvergence(double stopping_criteria=0.001, double dropf=0.1, double boostf=10,\n"
+		"double min_chisq=0.01, int max_iteration=50)\n"
+		"\n"
+		""},
+	 { (char *)"ChisqConvergence_convergence_check", _wrap_ChisqConvergence_convergence_check, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::ChisqConvergence::convergence_check(const FitStatistic &fit_stat_last, FitStatistic &fit_stat, bool\n"
+		"&has_converged, bool &convergence_failed, double &gamma, bool\n"
+		"&step_diverged)\n"
+		"\n"
+		""},
+	 { (char *)"ChisqConvergence_evaluate_quality", _wrap_ChisqConvergence_evaluate_quality, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::ChisqConvergence::evaluate_quality(FitStatistic &fit_stat, const blitz::Array< double, 1 > &Residual,\n"
+		"const blitz::Array< double, 1 > &Residual_cov_diag)\n"
+		"\n"
+		""},
+	 { (char *)"delete_ChisqConvergence", _wrap_delete_ChisqConvergence, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::ChisqConvergence::~ChisqConvergence()\n"
+		"\n"
+		""},
 	 { (char *)"ChisqConvergence_swigregister", ChisqConvergence_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };

@@ -122,6 +122,36 @@ def _new_from_set(cls, version, *args):
 
 import full_physics_swig.generic_object
 class SpectralRange(full_physics_swig.generic_object.GenericObject):
+    """
+
+    We have a number of different spectrums that appear in different parts
+    of the code.
+
+    The spectrum may represent radiances, solar spectrum, solar absorption
+    spectrum, etc. In addition to different units, the value may have a
+    Jacobian associated with it (e.g., the results for RadiativeTransfer),
+    or an uncertainty (e.g., the Level 1b data). For many purposes, it is
+    convenient to treat these as essentially the same thing.
+
+    This class captures this behavior. The data can be accessed just as
+    data, as data possibly with a Jacobian, and possibly with an
+    associated uncertainty. The data will always be present, but depending
+    on the type of Spectrum the uncertainty or jacobian may be zero size
+    arrays, indicating they aren't present.
+
+    Similar to SpectralDomain, there doesn't seem to be a commonly used
+    name for "stuff that is the Y-axis of a spectral plot". We use the
+    name "SpectralRange" where "Range" is used like "Domain and
+    Range" of a function. Perhaps a better name will arise and we can
+    rename this class.
+
+    Note that there are a few closely related classes, with similar
+    sounding names. See spectrum_doxygen for a description of each of
+    these.
+
+    C++ includes: spectral_range.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.generic_object.GenericObject]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -133,6 +163,11 @@ class SpectralRange(full_physics_swig.generic_object.GenericObject):
     __repr__ = _swig_repr
 
     def __init__(self, *args):
+        """
+
+        FullPhysics::SpectralRange::SpectralRange()
+        Default constructor needed for SWIG. 
+        """
         this = _spectral_range.new_SpectralRange(*args)
         try:
             self.this.append(this)
@@ -140,7 +175,13 @@ class SpectralRange(full_physics_swig.generic_object.GenericObject):
             self.this = this
 
     def _v_data(self):
+        """
+
+        blitz::Array<double, 1>& FullPhysics::SpectralRange::data()
+        Underlying data. 
+        """
         return _spectral_range.SpectralRange__v_data(self)
+
 
     @property
     def data(self):
@@ -148,7 +189,15 @@ class SpectralRange(full_physics_swig.generic_object.GenericObject):
 
 
     def _v_uncertainty(self):
+        """
+
+        const blitz::Array<double, 1>& FullPhysics::SpectralRange::uncertainty() const
+        Uncertainty.
+
+        May be size 0 if we don't have an associated uncertainty. 
+        """
         return _spectral_range.SpectralRange__v_uncertainty(self)
+
 
     @property
     def uncertainty(self):
@@ -156,7 +205,13 @@ class SpectralRange(full_physics_swig.generic_object.GenericObject):
 
 
     def _v_units(self):
+        """
+
+        const Unit& FullPhysics::SpectralRange::units() const
+        Units of data. 
+        """
         return _spectral_range.SpectralRange__v_units(self)
+
 
     @property
     def units(self):
@@ -164,7 +219,15 @@ class SpectralRange(full_physics_swig.generic_object.GenericObject):
 
 
     def _v_data_ad(self):
+        """
+
+        ArrayAd<double, 1>& FullPhysics::SpectralRange::data_ad()
+        Underlying data, possibly with a Jacobian.
+
+        The jacobian may have size 0. 
+        """
         return _spectral_range.SpectralRange__v_data_ad(self)
+
 
     @property
     def data_ad(self):
@@ -172,7 +235,13 @@ class SpectralRange(full_physics_swig.generic_object.GenericObject):
 
 
     def convert(self, *args):
+        """
+
+        SpectralRange FullPhysics::SpectralRange::convert(const Unit &R) const
+
+        """
         return _spectral_range.SpectralRange_convert(self, *args)
+
 
     def __str__(self):
         return _spectral_range.SpectralRange___str__(self)

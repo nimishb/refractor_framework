@@ -5256,9 +5256,17 @@ SWIGINTERN PyObject *ErrorAnalysisOutput_swigregister(PyObject *SWIGUNUSEDPARM(s
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"ErrorAnalysisOutput_register_output", _wrap_ErrorAnalysisOutput_register_output, METH_VARARGS, NULL},
+	 { (char *)"ErrorAnalysisOutput_register_output", _wrap_ErrorAnalysisOutput_register_output, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::ErrorAnalysisOutput::register_output(const boost::shared_ptr< Output > &out) const\n"
+		"\n"
+		""},
 	 { (char *)"ErrorAnalysisOutput_register_output_apriori", _wrap_ErrorAnalysisOutput_register_output_apriori, METH_VARARGS, NULL},
-	 { (char *)"delete_ErrorAnalysisOutput", _wrap_delete_ErrorAnalysisOutput, METH_VARARGS, NULL},
+	 { (char *)"delete_ErrorAnalysisOutput", _wrap_delete_ErrorAnalysisOutput, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::ErrorAnalysisOutput::~ErrorAnalysisOutput()\n"
+		"\n"
+		""},
 	 { (char *)"ErrorAnalysisOutput_swigregister", ErrorAnalysisOutput_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };

@@ -5510,11 +5510,31 @@ SWIGINTERN PyObject *TemperatureOffset_swigregister(PyObject *SWIGUNUSEDPARM(sel
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"TemperatureOffset_clone", _wrap_TemperatureOffset_clone, METH_VARARGS, NULL},
-	 { (char *)"TemperatureOffset_state_vector_name_i", _wrap_TemperatureOffset_state_vector_name_i, METH_VARARGS, NULL},
-	 { (char *)"TemperatureOffset__v_temperature_offset", _wrap_TemperatureOffset__v_temperature_offset, METH_VARARGS, NULL},
-	 { (char *)"TemperatureOffset__v_temperature_offset_uncertainty", _wrap_TemperatureOffset__v_temperature_offset_uncertainty, METH_VARARGS, NULL},
-	 { (char *)"delete_TemperatureOffset", _wrap_delete_TemperatureOffset, METH_VARARGS, NULL},
+	 { (char *)"TemperatureOffset_clone", _wrap_TemperatureOffset_clone, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual boost::shared_ptr<Temperature> FullPhysics::TemperatureOffset::clone(const boost::shared_ptr< Pressure > &Press) const =0\n"
+		"\n"
+		""},
+	 { (char *)"TemperatureOffset_state_vector_name_i", _wrap_TemperatureOffset_state_vector_name_i, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual std::string FullPhysics::TemperatureOffset::state_vector_name_i(int i) const\n"
+		"\n"
+		""},
+	 { (char *)"TemperatureOffset__v_temperature_offset", _wrap_TemperatureOffset__v_temperature_offset, METH_VARARGS, (char *)"\n"
+		"\n"
+		"double FullPhysics::TemperatureOffset::temperature_offset() const\n"
+		"Temperature offset. \n"
+		""},
+	 { (char *)"TemperatureOffset__v_temperature_offset_uncertainty", _wrap_TemperatureOffset__v_temperature_offset_uncertainty, METH_VARARGS, (char *)"\n"
+		"\n"
+		"double FullPhysics::TemperatureOffset::temperature_offset_uncertainty() const\n"
+		"\n"
+		""},
+	 { (char *)"delete_TemperatureOffset", _wrap_delete_TemperatureOffset, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::TemperatureOffset::~TemperatureOffset()\n"
+		"\n"
+		""},
 	 { (char *)"TemperatureOffset_swigregister", TemperatureOffset_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };

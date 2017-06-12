@@ -5314,12 +5314,32 @@ fail:
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"new_Exception", _wrap_new_Exception, METH_VARARGS, NULL},
+	 { (char *)"new_Exception", _wrap_new_Exception, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::Exception::Exception(const Exception &E)\n"
+		"Copy constructor. \n"
+		""},
 	 { (char *)"Exception___str__", _wrap_Exception___str__, METH_VARARGS, NULL},
-	 { (char *)"Exception_what", _wrap_Exception_what, METH_VARARGS, NULL},
-	 { (char *)"delete_Exception", _wrap_delete_Exception, METH_VARARGS, NULL},
+	 { (char *)"Exception_what", _wrap_Exception_what, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual const char* FullPhysics::Exception::what() const\n"
+		" throw ()\n"
+		"Description of what the error is.\n"
+		"\n"
+		""},
+	 { (char *)"delete_Exception", _wrap_delete_Exception, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::Exception::~Exception()\n"
+		" throw ()\n"
+		"Destructor.\n"
+		"\n"
+		""},
 	 { (char *)"Exception_swigregister", Exception_swigregister, METH_VARARGS, NULL},
-	 { (char *)"no_gsl_abort", _wrap_no_gsl_abort, METH_VARARGS, NULL},
+	 { (char *)"no_gsl_abort", _wrap_no_gsl_abort, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::no_gsl_abort()\n"
+		"Turn off gsl errors abort. \n"
+		""},
 	 { NULL, NULL, 0, NULL }
 };
 

@@ -5504,11 +5504,31 @@ SWIGINTERN PyObject *AbsorberVmrScaled_swigregister(PyObject *SWIGUNUSEDPARM(sel
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"AbsorberVmrScaled_clone", _wrap_AbsorberVmrScaled_clone, METH_VARARGS, NULL},
-	 { (char *)"AbsorberVmrScaled_state_vector_name_i", _wrap_AbsorberVmrScaled_state_vector_name_i, METH_VARARGS, NULL},
-	 { (char *)"AbsorberVmrScaled__v_scale_factor", _wrap_AbsorberVmrScaled__v_scale_factor, METH_VARARGS, NULL},
-	 { (char *)"AbsorberVmrScaled__v_scale_uncertainty", _wrap_AbsorberVmrScaled__v_scale_uncertainty, METH_VARARGS, NULL},
-	 { (char *)"delete_AbsorberVmrScaled", _wrap_delete_AbsorberVmrScaled, METH_VARARGS, NULL},
+	 { (char *)"AbsorberVmrScaled_clone", _wrap_AbsorberVmrScaled_clone, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual boost::shared_ptr<AbsorberVmr> FullPhysics::AbsorberVmrScaled::clone(const boost::shared_ptr< Pressure > &Press) const =0\n"
+		"\n"
+		""},
+	 { (char *)"AbsorberVmrScaled_state_vector_name_i", _wrap_AbsorberVmrScaled_state_vector_name_i, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual std::string FullPhysics::AbsorberVmrScaled::state_vector_name_i(int i) const\n"
+		"\n"
+		""},
+	 { (char *)"AbsorberVmrScaled__v_scale_factor", _wrap_AbsorberVmrScaled__v_scale_factor, METH_VARARGS, (char *)"\n"
+		"\n"
+		"double FullPhysics::AbsorberVmrScaled::scale_factor() const\n"
+		"Scale factor. \n"
+		""},
+	 { (char *)"AbsorberVmrScaled__v_scale_uncertainty", _wrap_AbsorberVmrScaled__v_scale_uncertainty, METH_VARARGS, (char *)"\n"
+		"\n"
+		"double FullPhysics::AbsorberVmrScaled::scale_uncertainty() const\n"
+		"Uncertainty of scale factor. \n"
+		""},
+	 { (char *)"delete_AbsorberVmrScaled", _wrap_delete_AbsorberVmrScaled, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::AbsorberVmrScaled::~AbsorberVmrScaled()\n"
+		"\n"
+		""},
 	 { (char *)"AbsorberVmrScaled_swigregister", AbsorberVmrScaled_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };

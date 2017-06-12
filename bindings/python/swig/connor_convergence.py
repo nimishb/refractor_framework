@@ -123,6 +123,15 @@ def _new_from_set(cls, version, *args):
 import full_physics_swig.convergence_check
 import full_physics_swig.generic_object
 class ConnorConvergence(full_physics_swig.convergence_check.ConvergenceCheck):
+    """
+
+    This class tests for convergence of a Levenberg-Marquardt solver.
+
+    This is the convergence criteria developed by Brian Connor.
+
+    C++ includes: connor_convergence.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.convergence_check.ConvergenceCheck]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -134,6 +143,12 @@ class ConnorConvergence(full_physics_swig.convergence_check.ConvergenceCheck):
     __repr__ = _swig_repr
 
     def __init__(self, Fm, Threshold, Max_iteration, Max_divergence, Max_chisq):
+        """
+
+        FullPhysics::ConnorConvergence::ConnorConvergence(const boost::shared_ptr< ForwardModel > &Fm, double Threshold, int
+        Max_iteration, int Max_divergence, double Max_chisq)
+
+        """
         this = _connor_convergence.new_ConnorConvergence(Fm, Threshold, Max_iteration, Max_divergence, Max_chisq)
         try:
             self.this.append(this)
@@ -141,13 +156,34 @@ class ConnorConvergence(full_physics_swig.convergence_check.ConvergenceCheck):
             self.this = this
 
     def convergence_check(self, fit_stat_last, fit_stat, has_converged, convergence_failed, gamma, step_diverged):
+        """
+
+        virtual void FullPhysics::ConnorConvergence::convergence_check(const FitStatistic &fit_stat_last, FitStatistic &fit_stat, bool
+        &has_converged, bool &convergence_failed, double &gamma, bool
+        &step_diverged)
+
+        """
         return _connor_convergence.ConnorConvergence_convergence_check(self, fit_stat_last, fit_stat, has_converged, convergence_failed, gamma, step_diverged)
 
+
     def evaluate_quality(self, fit_stat, Residual, Residual_cov_diag):
+        """
+
+        virtual void FullPhysics::ConnorConvergence::evaluate_quality(FitStatistic &fit_stat, const blitz::Array< double, 1 > &Residual,
+        const blitz::Array< double, 1 > &Residual_cov_diag)
+
+        """
         return _connor_convergence.ConnorConvergence_evaluate_quality(self, fit_stat, Residual, Residual_cov_diag)
 
+
     def _v_maximum_number_iteration(self, *args):
+        """
+
+        void FullPhysics::ConnorConvergence::maximum_number_iteration(int Max_iter)
+
+        """
         return _connor_convergence.ConnorConvergence__v_maximum_number_iteration(self, *args)
+
 
     @property
     def maximum_number_iteration(self):

@@ -125,6 +125,16 @@ import full_physics_swig.stokes_coefficient
 import full_physics_swig.state_vector
 import full_physics_swig.generic_object
 class StokesCoefficientFraction(full_physics_swig.stokes_coefficient_imp_base.StokesCoefficientImpBase):
+    """
+
+    This class maintains the stokes coefficient portion of the state.
+
+    This particular implementation uses constant values, combined with
+    fitting for the parallel polarization fraction.
+
+    C++ includes: stokes_coefficient_fraction.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.stokes_coefficient_imp_base.StokesCoefficientImpBase]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -139,7 +149,13 @@ class StokesCoefficientFraction(full_physics_swig.stokes_coefficient_imp_base.St
     __repr__ = _swig_repr
 
     def clone(self):
+        """
+
+        virtual boost::shared_ptr<StokesCoefficient> FullPhysics::StokesCoefficientFraction::clone() const
+
+        """
         return _stokes_coefficient_fraction.StokesCoefficientFraction_clone(self)
+
     __swig_destroy__ = _stokes_coefficient_fraction.delete_StokesCoefficientFraction
     __del__ = lambda self: None
 StokesCoefficientFraction_swigregister = _stokes_coefficient_fraction.StokesCoefficientFraction_swigregister

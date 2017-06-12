@@ -126,6 +126,12 @@ import full_physics_swig.cost_func
 import full_physics_swig.problem_state
 import full_physics_swig.generic_object
 class NLLSProblemScaled(full_physics_swig.nlls_problem.NLLSProblem):
+    """
+
+    C++ includes: nlls_problem_scaled.h
+
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.nlls_problem.NLLSProblem]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -137,6 +143,12 @@ class NLLSProblemScaled(full_physics_swig.nlls_problem.NLLSProblem):
     __repr__ = _swig_repr
 
     def __init__(self, s, p):
+        """
+
+        FullPhysics::NLLSProblemScaled::NLLSProblemScaled(const blitz::Array< double, 1 > &s, const boost::shared_ptr<
+        NLLSProblem > &p)
+        Default Constructor. 
+        """
         this = _nlls_problem_scaled.new_NLLSProblemScaled(s, p)
         try:
             self.this.append(this)
@@ -146,7 +158,16 @@ class NLLSProblemScaled(full_physics_swig.nlls_problem.NLLSProblem):
     __del__ = lambda self: None
 
     def _v_residual(self):
+        """
+
+        virtual blitz::Array<double, 1> FullPhysics::NLLSProblemScaled::residual()
+        Return the residual of the scaled NLLS problem at the current set
+        point.
+
+        Residual 
+        """
         return _nlls_problem_scaled.NLLSProblemScaled__v_residual(self)
+
 
     @property
     def residual(self):
@@ -154,7 +175,16 @@ class NLLSProblemScaled(full_physics_swig.nlls_problem.NLLSProblem):
 
 
     def _v_jacobian(self):
+        """
+
+        virtual blitz::Array<double, 2> FullPhysics::NLLSProblemScaled::jacobian()
+        Return the Jacobian of the residual of the scaled NLLS problem at the
+        current set point.
+
+        The Jacobian of the residual function. 
+        """
         return _nlls_problem_scaled.NLLSProblemScaled__v_jacobian(self)
+
 
     @property
     def jacobian(self):
@@ -162,7 +192,13 @@ class NLLSProblemScaled(full_physics_swig.nlls_problem.NLLSProblem):
 
 
     def _v_residual_size(self):
+        """
+
+        virtual int FullPhysics::NLLSProblemScaled::residual_size() const
+
+        """
         return _nlls_problem_scaled.NLLSProblemScaled__v_residual_size(self)
+
 
     @property
     def residual_size(self):
@@ -170,7 +206,13 @@ class NLLSProblemScaled(full_physics_swig.nlls_problem.NLLSProblem):
 
 
     def _v_expected_parameter_size(self):
+        """
+
+        virtual int FullPhysics::NLLSProblemScaled::expected_parameter_size() const
+        Return the size of the parameter X. 
+        """
         return _nlls_problem_scaled.NLLSProblemScaled__v_expected_parameter_size(self)
+
 
     @property
     def expected_parameter_size(self):
@@ -178,7 +220,18 @@ class NLLSProblemScaled(full_physics_swig.nlls_problem.NLLSProblem):
 
 
     def _v_parameters(self, *args):
+        """
+
+        virtual blitz::Array<double, 1> FullPhysics::NLLSProblemScaled::parameters() const
+        Just returns the current values of parameters.
+
+        This method is redefined here (see the root base class) because of a
+        compiler bug; otherwise, there should be no need for its redefinition.
+
+        Current parameter values 
+        """
         return _nlls_problem_scaled.NLLSProblemScaled__v_parameters(self, *args)
+
 
     @property
     def parameters(self):
@@ -190,7 +243,13 @@ class NLLSProblemScaled(full_physics_swig.nlls_problem.NLLSProblem):
 
 
     def _v_nlls_problem(self):
+        """
+
+        boost::shared_ptr<NLLSProblem> FullPhysics::NLLSProblemScaled::nlls_problem()
+
+        """
         return _nlls_problem_scaled.NLLSProblemScaled__v_nlls_problem(self)
+
 
     @property
     def nlls_problem(self):
@@ -198,10 +257,36 @@ class NLLSProblemScaled(full_physics_swig.nlls_problem.NLLSProblem):
 
 
     def scale_parameters(self, x):
+        """
+
+        virtual blitz::Array<double, 1> FullPhysics::NLLSProblemScaled::scale_parameters(const blitz::Array< double, 1 > &x) const
+        If x is the input to the NLLS problem that this class is trying to
+        scale, then this method scales the input to be used by this class,
+        i.e.
+
+        this->parameters(x). The reason for scaling x outside of
+        this->parameters(x) is that we can also scale an already scaled NLLS
+        problem.
+
+        In summary, the input x is a correct input directly to the NLLS
+        problem being scaled. The returned value is correctly scaled to be
+        used as input to this scaled NLLS problem. 
+        """
         return _nlls_problem_scaled.NLLSProblemScaled_scale_parameters(self, x)
 
+
     def unscale_parameters(self, x):
+        """
+
+        virtual blitz::Array<double, 1> FullPhysics::NLLSProblemScaled::unscale_parameters(const blitz::Array< double, 1 > &x) const
+        The input is correctly scaled to be used as input to this scaled NLLS
+        problem.
+
+        The returned value is a correct direct input to the NLLS problem being
+        scaled. 
+        """
         return _nlls_problem_scaled.NLLSProblemScaled_unscale_parameters(self, x)
+
 NLLSProblemScaled_swigregister = _nlls_problem_scaled.NLLSProblemScaled_swigregister
 NLLSProblemScaled_swigregister(NLLSProblemScaled)
 

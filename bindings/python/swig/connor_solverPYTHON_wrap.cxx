@@ -9067,54 +9067,258 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"ObservableConnor_add_observer", _wrap_ObservableConnor_add_observer, METH_VARARGS, NULL},
 	 { (char *)"ObservableConnor_remove_observer", _wrap_ObservableConnor_remove_observer, METH_VARARGS, NULL},
 	 { (char *)"ObservableConnor_swigregister", ObservableConnor_swigregister, METH_VARARGS, NULL},
-	 { (char *)"new_ConnorSolver", _wrap_new_ConnorSolver, METH_VARARGS, NULL},
-	 { (char *)"ConnorSolver_add_observer", _wrap_ConnorSolver_add_observer, METH_VARARGS, NULL},
-	 { (char *)"ConnorSolver_remove_observer", _wrap_ConnorSolver_remove_observer, METH_VARARGS, NULL},
-	 { (char *)"ConnorSolver_save_test_data", _wrap_ConnorSolver_save_test_data, METH_VARARGS, NULL},
-	 { (char *)"ConnorSolver_test_do_inversion", _wrap_ConnorSolver_test_do_inversion, METH_VARARGS, NULL},
-	 { (char *)"ConnorSolver_solve", _wrap_ConnorSolver_solve, METH_VARARGS, NULL},
-	 { (char *)"ConnorSolver__v_state", _wrap_ConnorSolver__v_state, METH_VARARGS, NULL},
-	 { (char *)"ConnorSolver__v_aposteriori_covariance_scaled", _wrap_ConnorSolver__v_aposteriori_covariance_scaled, METH_VARARGS, NULL},
-	 { (char *)"ConnorSolver__v_aposteriori_covariance", _wrap_ConnorSolver__v_aposteriori_covariance, METH_VARARGS, NULL},
-	 { (char *)"ConnorSolver__v_x_solution_uncertainty", _wrap_ConnorSolver__v_x_solution_uncertainty, METH_VARARGS, NULL},
-	 { (char *)"ConnorSolver__v_averaging_kernel", _wrap_ConnorSolver__v_averaging_kernel, METH_VARARGS, NULL},
-	 { (char *)"ConnorSolver__v_gamma_last_step", _wrap_ConnorSolver__v_gamma_last_step, METH_VARARGS, NULL},
-	 { (char *)"ConnorSolver__v_number_iteration", _wrap_ConnorSolver__v_number_iteration, METH_VARARGS, NULL},
-	 { (char *)"ConnorSolver__v_number_divergent", _wrap_ConnorSolver__v_number_divergent, METH_VARARGS, NULL},
-	 { (char *)"ConnorSolver__v_outcome_flag", _wrap_ConnorSolver__v_outcome_flag, METH_VARARGS, NULL},
-	 { (char *)"ConnorSolver__v_x_apriori", _wrap_ConnorSolver__v_x_apriori, METH_VARARGS, NULL},
-	 { (char *)"ConnorSolver__v_x_apriori_uncertainty", _wrap_ConnorSolver__v_x_apriori_uncertainty, METH_VARARGS, NULL},
-	 { (char *)"ConnorSolver__v_x_solution", _wrap_ConnorSolver__v_x_solution, METH_VARARGS, NULL},
-	 { (char *)"ConnorSolver__v_x_solution_zero_unused", _wrap_ConnorSolver__v_x_solution_zero_unused, METH_VARARGS, NULL},
-	 { (char *)"ConnorSolver__v_apriori_covariance", _wrap_ConnorSolver__v_apriori_covariance, METH_VARARGS, NULL},
-	 { (char *)"ConnorSolver__v_jacobian", _wrap_ConnorSolver__v_jacobian, METH_VARARGS, NULL},
-	 { (char *)"ConnorSolver__v_fit_statistic", _wrap_ConnorSolver__v_fit_statistic, METH_VARARGS, NULL},
-	 { (char *)"ConnorSolver__v_residual", _wrap_ConnorSolver__v_residual, METH_VARARGS, NULL},
-	 { (char *)"ConnorSolver__v_residual_covariance_diagonal", _wrap_ConnorSolver__v_residual_covariance_diagonal, METH_VARARGS, NULL},
-	 { (char *)"ConnorSolver__v_apriori_covariance_inv_norm", _wrap_ConnorSolver__v_apriori_covariance_inv_norm, METH_VARARGS, NULL},
-	 { (char *)"ConnorSolver__v_cost_function", _wrap_ConnorSolver__v_cost_function, METH_VARARGS, NULL},
-	 { (char *)"ConnorSolver__v_convergence_check", _wrap_ConnorSolver__v_convergence_check, METH_VARARGS, NULL},
+	 { (char *)"new_ConnorSolver", _wrap_new_ConnorSolver, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::ConnorSolver::ConnorSolver(const boost::shared_ptr< CostFunction > &Cf, const boost::shared_ptr<\n"
+		"ConvergenceCheck > &Conv, double Gamma_initial=0.0, const std::string\n"
+		"&Save_test_data=\"\")\n"
+		"Constructor.\n"
+		"\n"
+		"This takes a CostFunction that we will minimize, a ConvergenceCheck to\n"
+		"check for convergence, and optionally the initial value for gamma.\n"
+		"\n"
+		"See the comments above this class for the \"save_test_data\" argument.\n"
+		"\n"
+		""},
+	 { (char *)"ConnorSolver_add_observer", _wrap_ConnorSolver_add_observer, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::ConnorSolver::add_observer(Observer< ConnorSolver > &Obs)\n"
+		"\n"
+		""},
+	 { (char *)"ConnorSolver_remove_observer", _wrap_ConnorSolver_remove_observer, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::ConnorSolver::remove_observer(Observer< ConnorSolver > &Obs)\n"
+		"\n"
+		""},
+	 { (char *)"ConnorSolver_save_test_data", _wrap_ConnorSolver_save_test_data, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::ConnorSolver::save_test_data(const std::string &Fname)\n"
+		"Set save_test_data argument, see explanation before class for this. \n"
+		""},
+	 { (char *)"ConnorSolver_test_do_inversion", _wrap_ConnorSolver_test_do_inversion, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::ConnorSolver::test_do_inversion(const std::string &Fname, blitz::Array< double, 1 > &Dx,\n"
+		"blitz::Array< double, 2 > &Kt_se_m1_k)\n"
+		"\n"
+		""},
+	 { (char *)"ConnorSolver_solve", _wrap_ConnorSolver_solve, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual bool FullPhysics::ConnorSolver::solve(const blitz::Array< double, 1 > &Initial_guess, const blitz::Array<\n"
+		"double, 1 > &Apriori, const blitz::Array< double, 2 > &Apriori_cov)\n"
+		"\n"
+		""},
+	 { (char *)"ConnorSolver__v_state", _wrap_ConnorSolver__v_state, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::ConnorSolver::state(const ConnorSolverState &S)\n"
+		"\n"
+		""},
+	 { (char *)"ConnorSolver__v_aposteriori_covariance_scaled", _wrap_ConnorSolver__v_aposteriori_covariance_scaled, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual blitz::Array<double, 2> FullPhysics::ConnorSolver::aposteriori_covariance_scaled() const\n"
+		"\n"
+		""},
+	 { (char *)"ConnorSolver__v_aposteriori_covariance", _wrap_ConnorSolver__v_aposteriori_covariance, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual blitz::Array<double, 2> FullPhysics::ConnorSolver::aposteriori_covariance() const\n"
+		"\n"
+		""},
+	 { (char *)"ConnorSolver__v_x_solution_uncertainty", _wrap_ConnorSolver__v_x_solution_uncertainty, METH_VARARGS, (char *)"\n"
+		"\n"
+		"blitz::Array<double, 1> FullPhysics::ConnorSolver::x_solution_uncertainty() const\n"
+		"\n"
+		""},
+	 { (char *)"ConnorSolver__v_averaging_kernel", _wrap_ConnorSolver__v_averaging_kernel, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual blitz::Array<double, 2> FullPhysics::ConnorSolver::averaging_kernel() const\n"
+		"\n"
+		""},
+	 { (char *)"ConnorSolver__v_gamma_last_step", _wrap_ConnorSolver__v_gamma_last_step, METH_VARARGS, (char *)"\n"
+		"\n"
+		"double FullPhysics::ConnorSolver::gamma_last_step() const\n"
+		"Levenberg-Marquardt parameter for last step we processed. \n"
+		""},
+	 { (char *)"ConnorSolver__v_number_iteration", _wrap_ConnorSolver__v_number_iteration, METH_VARARGS, (char *)"\n"
+		"\n"
+		"int FullPhysics::ConnorSolver::number_iteration() const\n"
+		"Number of iterations for the last problem solved. \n"
+		""},
+	 { (char *)"ConnorSolver__v_number_divergent", _wrap_ConnorSolver__v_number_divergent, METH_VARARGS, (char *)"\n"
+		"\n"
+		"int FullPhysics::ConnorSolver::number_divergent() const\n"
+		"Number of divergent steps for the last problem solved. \n"
+		""},
+	 { (char *)"ConnorSolver__v_outcome_flag", _wrap_ConnorSolver__v_outcome_flag, METH_VARARGS, (char *)"\n"
+		"\n"
+		"int FullPhysics::ConnorSolver::outcome_flag() const\n"
+		"Outcome flag. This is an integer version of FitStatistic::OUTCOME. \n"
+		""},
+	 { (char *)"ConnorSolver__v_x_apriori", _wrap_ConnorSolver__v_x_apriori, METH_VARARGS, (char *)"\n"
+		"\n"
+		"blitz::Array<double, 1> FullPhysics::ConnorSolver::x_apriori() const\n"
+		"Return the a priori of the last problem solved. \n"
+		""},
+	 { (char *)"ConnorSolver__v_x_apriori_uncertainty", _wrap_ConnorSolver__v_x_apriori_uncertainty, METH_VARARGS, (char *)"\n"
+		"\n"
+		"blitz::Array<double, 1> FullPhysics::ConnorSolver::x_apriori_uncertainty() const\n"
+		"Return the uncertainty of the apriori of the last problem solved.\n"
+		"\n"
+		"This is the sqrt of the diagonal of the a priori covariance matrix. \n"
+		""},
+	 { (char *)"ConnorSolver__v_x_solution", _wrap_ConnorSolver__v_x_solution, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual blitz::Array<double, 1> FullPhysics::ConnorSolver::x_solution() const\n"
+		"\n"
+		""},
+	 { (char *)"ConnorSolver__v_x_solution_zero_unused", _wrap_ConnorSolver__v_x_solution_zero_unused, METH_VARARGS, (char *)"\n"
+		"\n"
+		"blitz::Array<double, 1> FullPhysics::ConnorSolver::x_solution_zero_unused() const\n"
+		"\n"
+		""},
+	 { (char *)"ConnorSolver__v_apriori_covariance", _wrap_ConnorSolver__v_apriori_covariance, METH_VARARGS, (char *)"\n"
+		"\n"
+		"blitz::Array<double, 2> FullPhysics::ConnorSolver::apriori_covariance() const\n"
+		"\n"
+		""},
+	 { (char *)"ConnorSolver__v_jacobian", _wrap_ConnorSolver__v_jacobian, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual blitz::Array<double, 2> FullPhysics::ConnorSolver::jacobian() const\n"
+		"Return the last jacobian calculated.\n"
+		"\n"
+		"Note that this is not the jacobian calculated at the final solution\n"
+		"x_sol, but rather is the for the iteration right before x_sol. Never\n"
+		"the less this can be used as an approximation to the final Jacobian.\n"
+		"\n"
+		"We currently don't calculate the final Jacobian because each iteration\n"
+		"of the CostFunction can be rather expensive to calculate. We can\n"
+		"revisit this if necessary in the future. \n"
+		""},
+	 { (char *)"ConnorSolver__v_fit_statistic", _wrap_ConnorSolver__v_fit_statistic, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FitStatistic FullPhysics::ConnorSolver::fit_statistic() const\n"
+		"Return fit results for solution to last problem solved. \n"
+		""},
+	 { (char *)"ConnorSolver__v_residual", _wrap_ConnorSolver__v_residual, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual blitz::Array<double, 1> FullPhysics::ConnorSolver::residual() const\n"
+		"Return residual for solution to last problem solved. \n"
+		""},
+	 { (char *)"ConnorSolver__v_residual_covariance_diagonal", _wrap_ConnorSolver__v_residual_covariance_diagonal, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual blitz::Array<double, 1> FullPhysics::ConnorSolver::residual_covariance_diagonal() const\n"
+		"Return diagonal of covariance matrix of residual for solution to last\n"
+		"problem solved. \n"
+		""},
+	 { (char *)"ConnorSolver__v_apriori_covariance_inv_norm", _wrap_ConnorSolver__v_apriori_covariance_inv_norm, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual blitz::Array<double, 2> FullPhysics::ConnorSolver::apriori_covariance_inv_norm() const\n"
+		"Return normalized apriori covariance inverse matrix. \n"
+		""},
+	 { (char *)"ConnorSolver__v_cost_function", _wrap_ConnorSolver__v_cost_function, METH_VARARGS, (char *)"\n"
+		"\n"
+		"boost::shared_ptr<CostFunction> FullPhysics::ConnorSolver::cost_function() const\n"
+		"Cost function. \n"
+		""},
+	 { (char *)"ConnorSolver__v_convergence_check", _wrap_ConnorSolver__v_convergence_check, METH_VARARGS, (char *)"\n"
+		"\n"
+		"boost::shared_ptr<ConvergenceCheck> FullPhysics::ConnorSolver::convergence_check() const\n"
+		"The convergence check object. \n"
+		""},
 	 { (char *)"ConnorSolver_save_state", _wrap_ConnorSolver_save_state, METH_VARARGS, NULL},
 	 { (char *)"ConnorSolver_load_state", _wrap_ConnorSolver_load_state, METH_VARARGS, NULL},
-	 { (char *)"delete_ConnorSolver", _wrap_delete_ConnorSolver, METH_VARARGS, NULL},
+	 { (char *)"delete_ConnorSolver", _wrap_delete_ConnorSolver, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::ConnorSolver::~ConnorSolver()\n"
+		"\n"
+		""},
 	 { (char *)"ConnorSolver_swigregister", ConnorSolver_swigregister, METH_VARARGS, NULL},
-	 { (char *)"new_ConnorSolverState", _wrap_new_ConnorSolverState, METH_VARARGS, NULL},
+	 { (char *)"new_ConnorSolverState", _wrap_new_ConnorSolverState, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::ConnorSolverState::ConnorSolverState(const blitz::Array< double, 1 > &X_i, const blitz::Array< double, 1 >\n"
+		"&X_a, const blitz::Array< double, 2 > &Apriori_cov_scaled, const\n"
+		"blitz::Array< double, 2 > &Sa_m1_scaled, const blitz::Array< double, 1\n"
+		"> &Sigma_ap, double Gamma, double Gamma_last_step, double\n"
+		"Gamma_intial, const blitz::Array< double, 1 > &Residual, const\n"
+		"blitz::Array< double, 1 > &Se, const blitz::Array< double, 2 > &K,\n"
+		"const blitz::Array< double, 2 > &Kt_se_m1_k, const blitz::Array<\n"
+		"double, 1 > &Dx, const FitStatistic &Fstat)\n"
+		"\n"
+		""},
 	 { (char *)"ConnorSolverState___str__", _wrap_ConnorSolverState___str__, METH_VARARGS, NULL},
-	 { (char *)"ConnorSolverState__v_x_i", _wrap_ConnorSolverState__v_x_i, METH_VARARGS, NULL},
-	 { (char *)"ConnorSolverState__v_x_a", _wrap_ConnorSolverState__v_x_a, METH_VARARGS, NULL},
-	 { (char *)"ConnorSolverState__v_apriori_cov_scaled", _wrap_ConnorSolverState__v_apriori_cov_scaled, METH_VARARGS, NULL},
-	 { (char *)"ConnorSolverState__v_sa_m1_scaled", _wrap_ConnorSolverState__v_sa_m1_scaled, METH_VARARGS, NULL},
-	 { (char *)"ConnorSolverState__v_sigma_ap", _wrap_ConnorSolverState__v_sigma_ap, METH_VARARGS, NULL},
-	 { (char *)"ConnorSolverState__v_gamma", _wrap_ConnorSolverState__v_gamma, METH_VARARGS, NULL},
-	 { (char *)"ConnorSolverState__v_gamma_last_step", _wrap_ConnorSolverState__v_gamma_last_step, METH_VARARGS, NULL},
-	 { (char *)"ConnorSolverState__v_gamma_initial", _wrap_ConnorSolverState__v_gamma_initial, METH_VARARGS, NULL},
-	 { (char *)"ConnorSolverState__v_residual", _wrap_ConnorSolverState__v_residual, METH_VARARGS, NULL},
-	 { (char *)"ConnorSolverState__v_k", _wrap_ConnorSolverState__v_k, METH_VARARGS, NULL},
-	 { (char *)"ConnorSolverState__v_kt_se_m1_k", _wrap_ConnorSolverState__v_kt_se_m1_k, METH_VARARGS, NULL},
-	 { (char *)"ConnorSolverState__v_se", _wrap_ConnorSolverState__v_se, METH_VARARGS, NULL},
-	 { (char *)"ConnorSolverState__v_dx", _wrap_ConnorSolverState__v_dx, METH_VARARGS, NULL},
-	 { (char *)"ConnorSolverState__v_fstat", _wrap_ConnorSolverState__v_fstat, METH_VARARGS, NULL},
-	 { (char *)"delete_ConnorSolverState", _wrap_delete_ConnorSolverState, METH_VARARGS, NULL},
+	 { (char *)"ConnorSolverState__v_x_i", _wrap_ConnorSolverState__v_x_i, METH_VARARGS, (char *)"\n"
+		"\n"
+		"const blitz::Array<double, 1>& FullPhysics::ConnorSolverState::x_i() const\n"
+		"\n"
+		""},
+	 { (char *)"ConnorSolverState__v_x_a", _wrap_ConnorSolverState__v_x_a, METH_VARARGS, (char *)"\n"
+		"\n"
+		"const blitz::Array<double, 1>& FullPhysics::ConnorSolverState::x_a() const\n"
+		"\n"
+		""},
+	 { (char *)"ConnorSolverState__v_apriori_cov_scaled", _wrap_ConnorSolverState__v_apriori_cov_scaled, METH_VARARGS, (char *)"\n"
+		"\n"
+		"const blitz::Array<double, 2>& FullPhysics::ConnorSolverState::apriori_cov_scaled() const\n"
+		"\n"
+		""},
+	 { (char *)"ConnorSolverState__v_sa_m1_scaled", _wrap_ConnorSolverState__v_sa_m1_scaled, METH_VARARGS, (char *)"\n"
+		"\n"
+		"const blitz::Array<double, 2>& FullPhysics::ConnorSolverState::sa_m1_scaled() const\n"
+		"\n"
+		""},
+	 { (char *)"ConnorSolverState__v_sigma_ap", _wrap_ConnorSolverState__v_sigma_ap, METH_VARARGS, (char *)"\n"
+		"\n"
+		"const blitz::Array<double, 1>& FullPhysics::ConnorSolverState::sigma_ap() const\n"
+		"\n"
+		""},
+	 { (char *)"ConnorSolverState__v_gamma", _wrap_ConnorSolverState__v_gamma, METH_VARARGS, (char *)"\n"
+		"\n"
+		"double FullPhysics::ConnorSolverState::gamma() const\n"
+		"\n"
+		""},
+	 { (char *)"ConnorSolverState__v_gamma_last_step", _wrap_ConnorSolverState__v_gamma_last_step, METH_VARARGS, (char *)"\n"
+		"\n"
+		"double FullPhysics::ConnorSolverState::gamma_last_step() const\n"
+		"\n"
+		""},
+	 { (char *)"ConnorSolverState__v_gamma_initial", _wrap_ConnorSolverState__v_gamma_initial, METH_VARARGS, (char *)"\n"
+		"\n"
+		"double FullPhysics::ConnorSolverState::gamma_initial() const\n"
+		"\n"
+		""},
+	 { (char *)"ConnorSolverState__v_residual", _wrap_ConnorSolverState__v_residual, METH_VARARGS, (char *)"\n"
+		"\n"
+		"const blitz::Array<double, 1>& FullPhysics::ConnorSolverState::residual() const\n"
+		"\n"
+		""},
+	 { (char *)"ConnorSolverState__v_k", _wrap_ConnorSolverState__v_k, METH_VARARGS, (char *)"\n"
+		"\n"
+		"const blitz::Array<double, 2>& FullPhysics::ConnorSolverState::k() const\n"
+		"\n"
+		""},
+	 { (char *)"ConnorSolverState__v_kt_se_m1_k", _wrap_ConnorSolverState__v_kt_se_m1_k, METH_VARARGS, (char *)"\n"
+		"\n"
+		"const blitz::Array<double, 2>& FullPhysics::ConnorSolverState::kt_se_m1_k() const\n"
+		"\n"
+		""},
+	 { (char *)"ConnorSolverState__v_se", _wrap_ConnorSolverState__v_se, METH_VARARGS, (char *)"\n"
+		"\n"
+		"const blitz::Array<double, 1>& FullPhysics::ConnorSolverState::se() const\n"
+		"\n"
+		""},
+	 { (char *)"ConnorSolverState__v_dx", _wrap_ConnorSolverState__v_dx, METH_VARARGS, (char *)"\n"
+		"\n"
+		"const blitz::Array<double, 1>& FullPhysics::ConnorSolverState::dx() const\n"
+		"\n"
+		""},
+	 { (char *)"ConnorSolverState__v_fstat", _wrap_ConnorSolverState__v_fstat, METH_VARARGS, (char *)"\n"
+		"\n"
+		"const FitStatistic& FullPhysics::ConnorSolverState::fstat() const\n"
+		"\n"
+		""},
+	 { (char *)"delete_ConnorSolverState", _wrap_delete_ConnorSolverState, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::ConnorSolverState::~ConnorSolverState()\n"
+		"\n"
+		""},
 	 { (char *)"ConnorSolverState_swigregister", ConnorSolverState_swigregister, METH_VARARGS, NULL},
 	 { (char *)"ObserverConnorSolver_notify_add", _wrap_ObserverConnorSolver_notify_add, METH_VARARGS, NULL},
 	 { (char *)"ObserverConnorSolver_notify_remove", _wrap_ObserverConnorSolver_notify_remove, METH_VARARGS, NULL},

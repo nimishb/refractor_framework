@@ -5489,11 +5489,27 @@ SWIGINTERN PyObject *OcoSimApriori_swigregister(PyObject *SWIGUNUSEDPARM(self), 
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"new_OcoSimApriori", _wrap_new_OcoSimApriori, METH_VARARGS, NULL},
-	 { (char *)"OcoSimApriori_co2_vmr", _wrap_OcoSimApriori_co2_vmr, METH_VARARGS, NULL},
-	 { (char *)"OcoSimApriori_co2_vmr_grid", _wrap_OcoSimApriori_co2_vmr_grid, METH_VARARGS, NULL},
+	 { (char *)"new_OcoSimApriori", _wrap_new_OcoSimApriori, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::OcoSimApriori::OcoSimApriori(const std::string &Oco_sim_scene, const HdfSoundingId &Sid)\n"
+		"\n"
+		""},
+	 { (char *)"OcoSimApriori_co2_vmr", _wrap_OcoSimApriori_co2_vmr, METH_VARARGS, (char *)"\n"
+		"\n"
+		"double FullPhysics::OcoSimApriori::co2_vmr(double P) const\n"
+		"\n"
+		""},
+	 { (char *)"OcoSimApriori_co2_vmr_grid", _wrap_OcoSimApriori_co2_vmr_grid, METH_VARARGS, (char *)"\n"
+		"\n"
+		"blitz::Array<double, 1> FullPhysics::OcoSimApriori::co2_vmr_grid(const Pressure &P) const\n"
+		"\n"
+		""},
 	 { (char *)"OcoSimApriori___str__", _wrap_OcoSimApriori___str__, METH_VARARGS, NULL},
-	 { (char *)"delete_OcoSimApriori", _wrap_delete_OcoSimApriori, METH_VARARGS, NULL},
+	 { (char *)"delete_OcoSimApriori", _wrap_delete_OcoSimApriori, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::OcoSimApriori::~OcoSimApriori()\n"
+		"\n"
+		""},
 	 { (char *)"OcoSimApriori_swigregister", OcoSimApriori_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };

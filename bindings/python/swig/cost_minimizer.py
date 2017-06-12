@@ -124,6 +124,24 @@ import full_physics_swig.iterative_solver
 import full_physics_swig.generic_object
 import full_physics_swig.problem_state
 class CostMinimizer(full_physics_swig.iterative_solver.IterativeSolver):
+    """
+
+    The base class for all iterative cost minimizers that do not require
+    derivatives of any order.
+
+    This is the base class for methods that iteratively minimize a scalar
+    cost function. In other words, this is a base class for methods that
+    find a point in the parameter space where the cost function is at
+    least locally minimum.
+
+    This class is associated with a problem (CostFunc) because the problem
+    interface is determined: provide a point in the parameter space
+
+    evaluate the cost function (a scalar function) at the point
+
+    C++ includes: cost_minimizer.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.iterative_solver.IterativeSolver]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -140,7 +158,18 @@ class CostMinimizer(full_physics_swig.iterative_solver.IterativeSolver):
     __del__ = lambda self: None
 
     def _v_cost_min_problem(self):
+        """
+
+        const boost::shared_ptr<CostFunc>& FullPhysics::CostMinimizer::cost_min_problem() const
+        Returns the cost minimization problem.
+
+        This method returns the cost minimization problem that is passed to
+        the constructor of the solver.
+
+        Cost-function problem 
+        """
         return _cost_minimizer.CostMinimizer__v_cost_min_problem(self)
+
 
     @property
     def cost_min_problem(self):

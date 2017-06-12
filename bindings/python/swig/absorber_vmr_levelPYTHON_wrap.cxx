@@ -5835,13 +5835,45 @@ SWIGINTERN PyObject *AbsorberVmrLevel_swigregister(PyObject *SWIGUNUSEDPARM(self
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"new_AbsorberVmrLevel", _wrap_new_AbsorberVmrLevel, METH_VARARGS, NULL},
-	 { (char *)"AbsorberVmrLevel_clone", _wrap_AbsorberVmrLevel_clone, METH_VARARGS, NULL},
-	 { (char *)"AbsorberVmrLevel_state_vector_name_i", _wrap_AbsorberVmrLevel_state_vector_name_i, METH_VARARGS, NULL},
-	 { (char *)"AbsorberVmrLevel__v_vmr_profile", _wrap_AbsorberVmrLevel__v_vmr_profile, METH_VARARGS, NULL},
-	 { (char *)"AbsorberVmrLevel__v_vmr_covariance", _wrap_AbsorberVmrLevel__v_vmr_covariance, METH_VARARGS, NULL},
-	 { (char *)"AbsorberVmrLevel__v_vmr_uncertainty", _wrap_AbsorberVmrLevel__v_vmr_uncertainty, METH_VARARGS, NULL},
-	 { (char *)"delete_AbsorberVmrLevel", _wrap_delete_AbsorberVmrLevel, METH_VARARGS, NULL},
+	 { (char *)"new_AbsorberVmrLevel", _wrap_new_AbsorberVmrLevel, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::AbsorberVmrLevel::AbsorberVmrLevel(const boost::shared_ptr< Pressure > &Press, const blitz::Array<\n"
+		"double, 1 > &Vmr, const blitz::Array< bool, 1 > &Vmr_flag, const\n"
+		"std::string &Gas_name)\n"
+		"\n"
+		""},
+	 { (char *)"AbsorberVmrLevel_clone", _wrap_AbsorberVmrLevel_clone, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual boost::shared_ptr<AbsorberVmr> FullPhysics::AbsorberVmrLevel::clone(const boost::shared_ptr< Pressure > &Press) const\n"
+		"\n"
+		""},
+	 { (char *)"AbsorberVmrLevel_state_vector_name_i", _wrap_AbsorberVmrLevel_state_vector_name_i, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual std::string FullPhysics::AbsorberVmrLevel::state_vector_name_i(int i) const\n"
+		"\n"
+		""},
+	 { (char *)"AbsorberVmrLevel__v_vmr_profile", _wrap_AbsorberVmrLevel__v_vmr_profile, METH_VARARGS, (char *)"\n"
+		"\n"
+		"blitz::Array<double, 1> FullPhysics::AbsorberVmrLevel::vmr_profile() const\n"
+		"VMR on the pressure grid.\n"
+		"\n"
+		"This is just coeff.value, but this is useful for generating output. \n"
+		""},
+	 { (char *)"AbsorberVmrLevel__v_vmr_covariance", _wrap_AbsorberVmrLevel__v_vmr_covariance, METH_VARARGS, (char *)"\n"
+		"\n"
+		"blitz::Array<double, 2> FullPhysics::AbsorberVmrLevel::vmr_covariance() const\n"
+		"Covariance of vmr profile. \n"
+		""},
+	 { (char *)"AbsorberVmrLevel__v_vmr_uncertainty", _wrap_AbsorberVmrLevel__v_vmr_uncertainty, METH_VARARGS, (char *)"\n"
+		"\n"
+		"blitz::Array<double, 1> FullPhysics::AbsorberVmrLevel::vmr_uncertainty() const\n"
+		"Uncertainty of VMR. \n"
+		""},
+	 { (char *)"delete_AbsorberVmrLevel", _wrap_delete_AbsorberVmrLevel, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::AbsorberVmrLevel::~AbsorberVmrLevel()\n"
+		"\n"
+		""},
 	 { (char *)"AbsorberVmrLevel_swigregister", AbsorberVmrLevel_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };

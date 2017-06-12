@@ -5165,9 +5165,21 @@ SWIGINTERN PyObject *StokesCoefficientFractionOutput_swigregister(PyObject *SWIG
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"StokesCoefficientFractionOutput_register_output", _wrap_StokesCoefficientFractionOutput_register_output, METH_VARARGS, NULL},
-	 { (char *)"StokesCoefficientFractionOutput_register_output_apriori", _wrap_StokesCoefficientFractionOutput_register_output_apriori, METH_VARARGS, NULL},
-	 { (char *)"delete_StokesCoefficientFractionOutput", _wrap_delete_StokesCoefficientFractionOutput, METH_VARARGS, NULL},
+	 { (char *)"StokesCoefficientFractionOutput_register_output", _wrap_StokesCoefficientFractionOutput_register_output, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::StokesCoefficientFractionOutput::register_output(const boost::shared_ptr< Output > &out) const\n"
+		"\n"
+		""},
+	 { (char *)"StokesCoefficientFractionOutput_register_output_apriori", _wrap_StokesCoefficientFractionOutput_register_output_apriori, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::StokesCoefficientFractionOutput::register_output_apriori(const boost::shared_ptr< Output > &out) const\n"
+		"\n"
+		""},
+	 { (char *)"delete_StokesCoefficientFractionOutput", _wrap_delete_StokesCoefficientFractionOutput, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::StokesCoefficientFractionOutput::~StokesCoefficientFractionOutput()\n"
+		"\n"
+		""},
 	 { (char *)"StokesCoefficientFractionOutput_swigregister", StokesCoefficientFractionOutput_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };

@@ -8119,21 +8119,89 @@ SWIGINTERN PyObject *AerosolOptical_swigregister(PyObject *SWIGUNUSEDPARM(self),
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"new_AerosolOptical", _wrap_new_AerosolOptical, METH_VARARGS, NULL},
-	 { (char *)"AerosolOptical_optical_depth_each_layer", _wrap_AerosolOptical_optical_depth_each_layer, METH_VARARGS, NULL},
-	 { (char *)"AerosolOptical_ssa_each_layer", _wrap_AerosolOptical_ssa_each_layer, METH_VARARGS, NULL},
-	 { (char *)"AerosolOptical_notify_update", _wrap_AerosolOptical_notify_update, METH_VARARGS, NULL},
-	 { (char *)"AerosolOptical_pf_mom", _wrap_AerosolOptical_pf_mom, METH_VARARGS, NULL},
-	 { (char *)"AerosolOptical__v_number_particle", _wrap_AerosolOptical__v_number_particle, METH_VARARGS, NULL},
-	 { (char *)"AerosolOptical_aerosol_optical_depth", _wrap_AerosolOptical_aerosol_optical_depth, METH_VARARGS, NULL},
-	 { (char *)"AerosolOptical_aerosol_optical_depth_total", _wrap_AerosolOptical_aerosol_optical_depth_total, METH_VARARGS, NULL},
-	 { (char *)"AerosolOptical_clone", _wrap_AerosolOptical_clone, METH_VARARGS, NULL},
-	 { (char *)"AerosolOptical__v_aerosol_name", _wrap_AerosolOptical__v_aerosol_name, METH_VARARGS, NULL},
-	 { (char *)"AerosolOptical__v_aerosol_name_arr", _wrap_AerosolOptical__v_aerosol_name_arr, METH_VARARGS, NULL},
-	 { (char *)"AerosolOptical__v_pressure", _wrap_AerosolOptical__v_pressure, METH_VARARGS, NULL},
-	 { (char *)"AerosolOptical_aerosol_extinction", _wrap_AerosolOptical_aerosol_extinction, METH_VARARGS, NULL},
-	 { (char *)"AerosolOptical_aerosol_property", _wrap_AerosolOptical_aerosol_property, METH_VARARGS, NULL},
-	 { (char *)"delete_AerosolOptical", _wrap_delete_AerosolOptical, METH_VARARGS, NULL},
+	 { (char *)"new_AerosolOptical", _wrap_new_AerosolOptical, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::AerosolOptical::AerosolOptical(const std::vector< boost::shared_ptr< AerosolExtinction > > &Aext,\n"
+		"const std::vector< boost::shared_ptr< AerosolProperty > >\n"
+		"&Aerosol_prop, const boost::shared_ptr< Pressure > &Press, const\n"
+		"boost::shared_ptr< RelativeHumidity > &Rh, double\n"
+		"Reference_wn=1e4/0.755)\n"
+		"\n"
+		""},
+	 { (char *)"AerosolOptical_optical_depth_each_layer", _wrap_AerosolOptical_optical_depth_each_layer, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual ArrayAd<double, 2> FullPhysics::AerosolOptical::optical_depth_each_layer(double wn) const\n"
+		"\n"
+		""},
+	 { (char *)"AerosolOptical_ssa_each_layer", _wrap_AerosolOptical_ssa_each_layer, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual ArrayAd<double, 1> FullPhysics::AerosolOptical::ssa_each_layer(double wn) const\n"
+		"\n"
+		""},
+	 { (char *)"AerosolOptical_notify_update", _wrap_AerosolOptical_notify_update, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::AerosolOptical::notify_update(const AerosolProperty &A)\n"
+		"\n"
+		""},
+	 { (char *)"AerosolOptical_pf_mom", _wrap_AerosolOptical_pf_mom, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual ArrayAd<double, 3> FullPhysics::AerosolOptical::pf_mom(double wn, const ArrayAd< double, 2 > &frac_aer, int nummom=-1, int\n"
+		"numscat=-1) const\n"
+		"\n"
+		""},
+	 { (char *)"AerosolOptical__v_number_particle", _wrap_AerosolOptical__v_number_particle, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual int FullPhysics::AerosolOptical::number_particle() const\n"
+		"\n"
+		""},
+	 { (char *)"AerosolOptical_aerosol_optical_depth", _wrap_AerosolOptical_aerosol_optical_depth, METH_VARARGS, (char *)"\n"
+		"\n"
+		"double FullPhysics::AerosolOptical::aerosol_optical_depth(int aer_idx, double pmin=std::numeric_limits< double >::min(), double\n"
+		"pmax=std::numeric_limits< double >::max()) const\n"
+		"\n"
+		""},
+	 { (char *)"AerosolOptical_aerosol_optical_depth_total", _wrap_AerosolOptical_aerosol_optical_depth_total, METH_VARARGS, (char *)"\n"
+		"\n"
+		"double FullPhysics::AerosolOptical::aerosol_optical_depth_total(double pmin=std::numeric_limits< double >::min(), double\n"
+		"pmax=std::numeric_limits< double >::max()) const\n"
+		"\n"
+		""},
+	 { (char *)"AerosolOptical_clone", _wrap_AerosolOptical_clone, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual boost::shared_ptr<Aerosol> FullPhysics::AerosolOptical::clone(const boost::shared_ptr< Pressure > &Press, const boost::shared_ptr<\n"
+		"RelativeHumidity > &Rh) const\n"
+		"\n"
+		""},
+	 { (char *)"AerosolOptical__v_aerosol_name", _wrap_AerosolOptical__v_aerosol_name, METH_VARARGS, (char *)"\n"
+		"\n"
+		"std::vector<std::string> FullPhysics::AerosolOptical::aerosol_name() const\n"
+		"\n"
+		""},
+	 { (char *)"AerosolOptical__v_aerosol_name_arr", _wrap_AerosolOptical__v_aerosol_name_arr, METH_VARARGS, (char *)"\n"
+		"\n"
+		"blitz::Array<std::string, 1> FullPhysics::AerosolOptical::aerosol_name_arr() const\n"
+		"\n"
+		""},
+	 { (char *)"AerosolOptical__v_pressure", _wrap_AerosolOptical__v_pressure, METH_VARARGS, (char *)"\n"
+		"\n"
+		"const boost::shared_ptr<Pressure>& FullPhysics::AerosolOptical::pressure() const\n"
+		"Return pressure. \n"
+		""},
+	 { (char *)"AerosolOptical_aerosol_extinction", _wrap_AerosolOptical_aerosol_extinction, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::AerosolOptical::aerosol_extinction(int i, const boost::shared_ptr< AerosolExtinction > &V)\n"
+		"Set AerosolExtinction. \n"
+		""},
+	 { (char *)"AerosolOptical_aerosol_property", _wrap_AerosolOptical_aerosol_property, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::AerosolOptical::aerosol_property(int i, const boost::shared_ptr< AerosolProperty > &V)\n"
+		"Set AerosolProperty. \n"
+		""},
+	 { (char *)"delete_AerosolOptical", _wrap_delete_AerosolOptical, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::AerosolOptical::~AerosolOptical()\n"
+		"\n"
+		""},
 	 { (char *)"AerosolOptical_swigregister", AerosolOptical_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };

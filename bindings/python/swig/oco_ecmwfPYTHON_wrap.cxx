@@ -5210,8 +5210,17 @@ SWIGINTERN PyObject *OcoEcmwf_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObj
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"delete_OcoEcmwf", _wrap_delete_OcoEcmwf, METH_VARARGS, NULL},
-	 { (char *)"new_OcoEcmwf", _wrap_new_OcoEcmwf, METH_VARARGS, NULL},
+	 { (char *)"delete_OcoEcmwf", _wrap_delete_OcoEcmwf, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::OcoEcmwf::~OcoEcmwf()\n"
+		"\n"
+		""},
+	 { (char *)"new_OcoEcmwf", _wrap_new_OcoEcmwf, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::OcoEcmwf::OcoEcmwf(const std::string &Fname, const boost::shared_ptr< HdfSoundingId >\n"
+		"&Hdf_sounding_id)\n"
+		"\n"
+		""},
 	 { (char *)"OcoEcmwf_swigregister", OcoEcmwf_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };

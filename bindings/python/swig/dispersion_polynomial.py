@@ -124,6 +124,19 @@ import full_physics_swig.sub_state_vector_array
 import full_physics_swig.generic_object
 import full_physics_swig.dispersion
 class DispersionPolynomial(full_physics_swig.dispersion.SubStateVectorArrayDispersion):
+    """
+
+    This is an implementation of Dispersion that uses a polynomial
+    expression to calculate the wavenumbers.
+
+    Note that there are two minor variations of the dispersion polynomial.
+    The first wavenumber returned can either be the polynomial evaluated
+    at the value of "1", or a value of "0". By convention, the
+    polynomial is 1 based for GOSAT and OCO, but 0 based for FTS.
+
+    C++ includes: dispersion_polynomial.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.dispersion.SubStateVectorArrayDispersion]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -135,6 +148,13 @@ class DispersionPolynomial(full_physics_swig.dispersion.SubStateVectorArrayDispe
     __repr__ = _swig_repr
 
     def __init__(self, *args):
+        """
+
+        FullPhysics::DispersionPolynomial::DispersionPolynomial(const blitz::Array< double, 1 > &Coeff, const blitz::Array< bool, 1 >
+        &Used_flag, const std::string &Coeff_unit_name, const std::string
+        &Band_name, int Number_pixel, bool Is_one_based)
+
+        """
         this = _dispersion_polynomial.new_DispersionPolynomial(*args)
         try:
             self.this.append(this)
@@ -144,7 +164,13 @@ class DispersionPolynomial(full_physics_swig.dispersion.SubStateVectorArrayDispe
     __del__ = lambda self: None
 
     def _v_pixel_grid(self):
+        """
+
+        virtual SpectralDomain FullPhysics::DispersionPolynomial::pixel_grid() const
+
+        """
         return _dispersion_polynomial.DispersionPolynomial__v_pixel_grid(self)
+
 
     @property
     def pixel_grid(self):
@@ -152,7 +178,13 @@ class DispersionPolynomial(full_physics_swig.dispersion.SubStateVectorArrayDispe
 
 
     def clone(self):
+        """
+
+        virtual boost::shared_ptr<Dispersion> FullPhysics::DispersionPolynomial::clone() const
+
+        """
         return _dispersion_polynomial.DispersionPolynomial_clone(self)
+
 DispersionPolynomial_swigregister = _dispersion_polynomial.DispersionPolynomial_swigregister
 DispersionPolynomial_swigregister(DispersionPolynomial)
 

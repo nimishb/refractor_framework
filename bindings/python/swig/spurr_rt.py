@@ -129,6 +129,14 @@ import full_physics_swig.radiative_transfer_fixed_stokes_coefficient
 import full_physics_swig.radiative_transfer
 import full_physics_swig.named_spectrum
 class SpurrRt(full_physics_swig.radiative_transfer_single_wn.RadiativeTransferSingleWn, full_physics_swig.rt_atmosphere.ObserverRtAtmosphere):
+    """
+
+    Abstract Interface for Rt classes based on Spurr driver
+    implementations.
+
+    C++ includes: spurr_rt.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.radiative_transfer_single_wn.RadiativeTransferSingleWn, full_physics_swig.rt_atmosphere.ObserverRtAtmosphere]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -143,7 +151,14 @@ class SpurrRt(full_physics_swig.radiative_transfer_single_wn.RadiativeTransferSi
     __repr__ = _swig_repr
 
     def _v_number_stokes(self):
+        """
+
+        virtual int FullPhysics::SpurrRt::number_stokes() const
+        Number of stokes in returned stokes values Note that LIDORT will only
+        ever calculate the first stoke index for I,. 
+        """
         return _spurr_rt.SpurrRt__v_number_stokes(self)
+
 
     @property
     def number_stokes(self):
@@ -151,7 +166,14 @@ class SpurrRt(full_physics_swig.radiative_transfer_single_wn.RadiativeTransferSi
 
 
     def _v_surface_type(self):
+        """
+
+        virtual int FullPhysics::SpurrRt::surface_type() const
+        Integer representing the surface type using the LIDORT indexing
+        nomenclature. 
+        """
         return _spurr_rt.SpurrRt__v_surface_type(self)
+
 
     @property
     def surface_type(self):
@@ -165,10 +187,22 @@ class SpurrRt(full_physics_swig.radiative_transfer_single_wn.RadiativeTransferSi
         return _spurr_rt.SpurrRt_stokes_and_jacobian(self, Spec_domain, Spec_index)
 
     def stokes_single_wn(self, Wn, Spec_index, Iv):
+        """
+
+        virtual blitz::Array<double, 1> FullPhysics::SpurrRt::stokes_single_wn(double Wn, int Spec_index, const ArrayAd< double, 2 > &Iv) const
+
+        """
         return _spurr_rt.SpurrRt_stokes_single_wn(self, Wn, Spec_index, Iv)
 
+
     def stokes_and_jacobian_single_wn(self, Wn, Spec_index, Iv):
+        """
+
+        virtual ArrayAd<double, 1> FullPhysics::SpurrRt::stokes_and_jacobian_single_wn(double Wn, int Spec_index, const ArrayAd< double, 2 > &Iv) const
+
+        """
         return _spurr_rt.SpurrRt_stokes_and_jacobian_single_wn(self, Wn, Spec_index, Iv)
+
     __swig_destroy__ = _spurr_rt.delete_SpurrRt
     __del__ = lambda self: None
 SpurrRt_swigregister = _spurr_rt.SpurrRt_swigregister

@@ -181,6 +181,13 @@ ObserverInstrument_swigregister = _instrument.ObserverInstrument_swigregister
 ObserverInstrument_swigregister(ObserverInstrument)
 
 class Instrument(full_physics_swig.state_vector.StateVectorObserver, ObservableInstrument):
+    """
+
+    This applies a instrument model to radiances.
+
+    C++ includes: instrument.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.state_vector.StateVectorObserver, ObservableInstrument]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -200,19 +207,68 @@ class Instrument(full_physics_swig.state_vector.StateVectorObserver, ObservableI
         return _instrument.Instrument___str__(self)
 
     def add_observer(self, Obs):
+        """
+
+        virtual void FullPhysics::Instrument::add_observer(Observer< Instrument > &Obs)
+
+        """
         return _instrument.Instrument_add_observer(self, Obs)
 
+
     def remove_observer(self, Obs):
+        """
+
+        virtual void FullPhysics::Instrument::remove_observer(Observer< Instrument > &Obs)
+
+        """
         return _instrument.Instrument_remove_observer(self, Obs)
 
+
     def clone(self):
+        """
+
+        virtual boost::shared_ptr<Instrument> FullPhysics::Instrument::clone() const =0
+        Clone an Instrument object.
+
+        Note that the cloned version will not be attached to and StateVector
+        or Observer<Instrument>, although you can of course attach them after
+        receiving the cloned object.
+
+        Because this isn't attached to the StateVector, one use of the clone
+        operator is to create a "frozen" Instrument object. 
+        """
         return _instrument.Instrument_clone(self)
 
+
     def apply_instrument_model(self, High_resolution_spectrum, Pixel_list, Spec_index):
+        """
+
+        virtual Spectrum FullPhysics::Instrument::apply_instrument_model(const Spectrum &High_resolution_spectrum, const std::vector< int >
+        &Pixel_list, int Spec_index) const =0
+        Apply the instrument model to both the radiance and derivatives.
+
+        Parameters:
+        -----------
+
+        High_resolution_spectrum:  High resolution spectrum.
+
+        Pixel_list:  List of pixels to include in radiance
+
+        Spec_index:  Spectral index
+
+        Spectrum with instrument model applied. 
+        """
         return _instrument.Instrument_apply_instrument_model(self, High_resolution_spectrum, Pixel_list, Spec_index)
 
+
     def _v_number_spectrometer(self):
+        """
+
+        virtual int FullPhysics::Instrument::number_spectrometer() const =0
+        Give number of spectrometers. 
+        """
         return _instrument.Instrument__v_number_spectrometer(self)
+
 
     @property
     def number_spectrometer(self):
@@ -220,16 +276,47 @@ class Instrument(full_physics_swig.state_vector.StateVectorObserver, ObservableI
 
 
     def pixel_spectral_domain(self, Spec_index):
+        """
+
+        virtual SpectralDomain FullPhysics::Instrument::pixel_spectral_domain(int Spec_index) const =0
+        This is the pixel wavenumber/wavelength for each pixel. 
+        """
         return _instrument.Instrument_pixel_spectral_domain(self, Spec_index)
 
+
     def band_name(self, Spec_index):
+        """
+
+        virtual std::string FullPhysics::Instrument::band_name(int Spec_index) const =0
+        Band name for given Spec_index. 
+        """
         return _instrument.Instrument_band_name(self, Spec_index)
 
+
     def hdf_band_name(self, Spec_index):
+        """
+
+        virtual std::string FullPhysics::Instrument::hdf_band_name(int Spec_index) const
+        In general, the name used in HDF files for a particular band is
+        similar but not identical to the more human readable band_name.
+
+        For example, with GOSAT we use the HDF field name "weak_co2", but
+        the band name is "WC-Band". This gives the HDF name to use.
+
+        The default implementation just returns the same string as the band
+        name. 
+        """
         return _instrument.Instrument_hdf_band_name(self, Spec_index)
 
+
     def ils_half_width(self, *args):
+        """
+
+        virtual void FullPhysics::Instrument::ils_half_width(int Spec_index, DoubleWithUnit &half_width)=0
+
+        """
         return _instrument.Instrument_ils_half_width(self, *args)
+
 Instrument_swigregister = _instrument.Instrument_swigregister
 Instrument_swigregister(Instrument)
 

@@ -5455,10 +5455,26 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
 	 { (char *)"LogTiming___str__", _wrap_LogTiming___str__, METH_VARARGS, NULL},
-	 { (char *)"new_LogTiming", _wrap_new_LogTiming, METH_VARARGS, NULL},
-	 { (char *)"LogTiming_notify_update", _wrap_LogTiming_notify_update, METH_VARARGS, NULL},
-	 { (char *)"LogTiming_write_to_log", _wrap_LogTiming_write_to_log, METH_VARARGS, NULL},
-	 { (char *)"delete_LogTiming", _wrap_delete_LogTiming, METH_VARARGS, NULL},
+	 { (char *)"new_LogTiming", _wrap_new_LogTiming, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::LogTiming::LogTiming()\n"
+		"\n"
+		""},
+	 { (char *)"LogTiming_notify_update", _wrap_LogTiming_notify_update, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::LogTiming::notify_update(const ConnorSolver &Solver)\n"
+		"\n"
+		""},
+	 { (char *)"LogTiming_write_to_log", _wrap_LogTiming_write_to_log, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::LogTiming::write_to_log(const std::string &Prefix=\"\") const\n"
+		"\n"
+		""},
+	 { (char *)"delete_LogTiming", _wrap_delete_LogTiming, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::LogTiming::~LogTiming()\n"
+		"\n"
+		""},
 	 { (char *)"LogTiming_swigregister", LogTiming_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };

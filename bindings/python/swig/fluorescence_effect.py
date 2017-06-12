@@ -125,6 +125,14 @@ import full_physics_swig.sub_state_vector_array
 import full_physics_swig.generic_object
 import full_physics_swig.spectrum_effect
 class FluorescenceEffect(full_physics_swig.spectrum_effect_imp_base.SpectrumEffectImpBase):
+    """
+
+    Implements adding the effect of fluorescence to A-Band spectrum by
+    using a retrievable across the band parametrization of the effect.
+
+    C++ includes: fluorescence_effect.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.spectrum_effect_imp_base.SpectrumEffectImpBase]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -136,6 +144,15 @@ class FluorescenceEffect(full_physics_swig.spectrum_effect_imp_base.SpectrumEffe
     __repr__ = _swig_repr
 
     def __init__(self, Coeff, Used_flag, Atm, Stokes_coef, Sza, Spec_index, Reference, Retrieval_unit):
+        """
+
+        FullPhysics::FluorescenceEffect::FluorescenceEffect(const blitz::Array< double, 1 > &Coeff, const blitz::Array< bool, 1 >
+        &Used_flag, const boost::shared_ptr< RtAtmosphere > &Atm, const
+        boost::shared_ptr< StokesCoefficient > &Stokes_coef, const
+        DoubleWithUnit &Lza, const int Spec_index, const DoubleWithUnit
+        &Reference, const Unit &Retrieval_unit)
+
+        """
         this = _fluorescence_effect.new_FluorescenceEffect(Coeff, Used_flag, Atm, Stokes_coef, Sza, Spec_index, Reference, Retrieval_unit)
         try:
             self.this.append(this)
@@ -143,19 +160,50 @@ class FluorescenceEffect(full_physics_swig.spectrum_effect_imp_base.SpectrumEffe
             self.this = this
 
     def apply_effect(self, Spec, Forward_model_grid):
+        """
+
+        virtual void FullPhysics::FluorescenceEffect::apply_effect(Spectrum &Spec, const ForwardModelSpectralGrid &Forward_model_grid)
+        const
+
+        """
         return _fluorescence_effect.FluorescenceEffect_apply_effect(self, Spec, Forward_model_grid)
 
+
     def clone(self):
+        """
+
+        virtual boost::shared_ptr<SpectrumEffect> FullPhysics::FluorescenceEffect::clone() const
+
+        """
         return _fluorescence_effect.FluorescenceEffect_clone(self)
 
+
     def state_vector_name_i(self, i):
+        """
+
+        virtual std::string FullPhysics::FluorescenceEffect::state_vector_name_i(int i) const
+
+        """
         return _fluorescence_effect.FluorescenceEffect_state_vector_name_i(self, i)
 
+
     def print_desc(self, Os):
+        """
+
+        virtual void FullPhysics::FluorescenceEffect::print(std::ostream &Os) const
+
+        """
         return _fluorescence_effect.FluorescenceEffect_print_desc(self, Os)
 
+
     def _v_name(self):
+        """
+
+        virtual std::string FullPhysics::FluorescenceEffect::name() const
+
+        """
         return _fluorescence_effect.FluorescenceEffect__v_name(self)
+
 
     @property
     def name(self):
@@ -163,7 +211,13 @@ class FluorescenceEffect(full_physics_swig.spectrum_effect_imp_base.SpectrumEffe
 
 
     def _v_fluorescence_at_reference(self):
+        """
+
+        double FullPhysics::FluorescenceEffect::fluorescence_at_reference() const
+        Fluorescence value at reference point. 
+        """
         return _fluorescence_effect.FluorescenceEffect__v_fluorescence_at_reference(self)
+
 
     @property
     def fluorescence_at_reference(self):
@@ -171,7 +225,13 @@ class FluorescenceEffect(full_physics_swig.spectrum_effect_imp_base.SpectrumEffe
 
 
     def _v_fluorescence_at_reference_uncertainty(self):
+        """
+
+        double FullPhysics::FluorescenceEffect::fluorescence_at_reference_uncertainty() const
+        Assumed uncertainty of fluorescence at reference point. 
+        """
         return _fluorescence_effect.FluorescenceEffect__v_fluorescence_at_reference_uncertainty(self)
+
 
     @property
     def fluorescence_at_reference_uncertainty(self):
@@ -179,7 +239,13 @@ class FluorescenceEffect(full_physics_swig.spectrum_effect_imp_base.SpectrumEffe
 
 
     def _v_fluorescence_slope(self):
+        """
+
+        double FullPhysics::FluorescenceEffect::fluorescence_slope() const
+        Fluorescence slope across band. 
+        """
         return _fluorescence_effect.FluorescenceEffect__v_fluorescence_slope(self)
+
 
     @property
     def fluorescence_slope(self):
@@ -187,7 +253,13 @@ class FluorescenceEffect(full_physics_swig.spectrum_effect_imp_base.SpectrumEffe
 
 
     def _v_fluorescence_slope_uncertainty(self):
+        """
+
+        double FullPhysics::FluorescenceEffect::fluorescence_slope_uncertainty() const
+        Assumed uncertainty of fluorescence slope. 
+        """
         return _fluorescence_effect.FluorescenceEffect__v_fluorescence_slope_uncertainty(self)
+
 
     @property
     def fluorescence_slope_uncertainty(self):

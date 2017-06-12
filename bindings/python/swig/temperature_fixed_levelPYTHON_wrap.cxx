@@ -5720,13 +5720,44 @@ SWIGINTERN PyObject *TemperatureFixedLevel_swigregister(PyObject *SWIGUNUSEDPARM
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"new_TemperatureFixedLevel", _wrap_new_TemperatureFixedLevel, METH_VARARGS, NULL},
-	 { (char *)"delete_TemperatureFixedLevel", _wrap_delete_TemperatureFixedLevel, METH_VARARGS, NULL},
-	 { (char *)"TemperatureFixedLevel__v_temperature_levels", _wrap_TemperatureFixedLevel__v_temperature_levels, METH_VARARGS, NULL},
-	 { (char *)"TemperatureFixedLevel_clone", _wrap_TemperatureFixedLevel_clone, METH_VARARGS, NULL},
-	 { (char *)"TemperatureFixedLevel_state_vector_name_i", _wrap_TemperatureFixedLevel_state_vector_name_i, METH_VARARGS, NULL},
-	 { (char *)"TemperatureFixedLevel__v_temperature_offset", _wrap_TemperatureFixedLevel__v_temperature_offset, METH_VARARGS, NULL},
-	 { (char *)"TemperatureFixedLevel__v_temperature_offset_uncertainty", _wrap_TemperatureFixedLevel__v_temperature_offset_uncertainty, METH_VARARGS, NULL},
+	 { (char *)"new_TemperatureFixedLevel", _wrap_new_TemperatureFixedLevel, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::TemperatureFixedLevel::TemperatureFixedLevel(const blitz::Array< bool, 1 > &Flag_temp, bool Flag_offset, const\n"
+		"blitz::Array< double, 1 > &Temp, double T_offset, const\n"
+		"boost::shared_ptr< Pressure > &Press, const boost::shared_ptr<\n"
+		"PressureLevelInput > &Press_level)\n"
+		"\n"
+		""},
+	 { (char *)"delete_TemperatureFixedLevel", _wrap_delete_TemperatureFixedLevel, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::TemperatureFixedLevel::~TemperatureFixedLevel()\n"
+		"\n"
+		""},
+	 { (char *)"TemperatureFixedLevel__v_temperature_levels", _wrap_TemperatureFixedLevel__v_temperature_levels, METH_VARARGS, (char *)"\n"
+		"\n"
+		"ArrayAd<double, 1> FullPhysics::TemperatureFixedLevel::temperature_levels() const\n"
+		"\n"
+		""},
+	 { (char *)"TemperatureFixedLevel_clone", _wrap_TemperatureFixedLevel_clone, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual boost::shared_ptr<Temperature> FullPhysics::TemperatureFixedLevel::clone(const boost::shared_ptr< Pressure > &Press) const\n"
+		"\n"
+		""},
+	 { (char *)"TemperatureFixedLevel_state_vector_name_i", _wrap_TemperatureFixedLevel_state_vector_name_i, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual std::string FullPhysics::TemperatureFixedLevel::state_vector_name_i(int i) const\n"
+		"\n"
+		""},
+	 { (char *)"TemperatureFixedLevel__v_temperature_offset", _wrap_TemperatureFixedLevel__v_temperature_offset, METH_VARARGS, (char *)"\n"
+		"\n"
+		"double FullPhysics::TemperatureFixedLevel::temperature_offset() const\n"
+		"Temperature offset. \n"
+		""},
+	 { (char *)"TemperatureFixedLevel__v_temperature_offset_uncertainty", _wrap_TemperatureFixedLevel__v_temperature_offset_uncertainty, METH_VARARGS, (char *)"\n"
+		"\n"
+		"double FullPhysics::TemperatureFixedLevel::temperature_offset_uncertainty() const\n"
+		"\n"
+		""},
 	 { (char *)"TemperatureFixedLevel_swigregister", TemperatureFixedLevel_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };

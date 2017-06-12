@@ -6666,15 +6666,54 @@ SWIGINTERN PyObject *TcconApriori_swigregister(PyObject *SWIGUNUSEDPARM(self), P
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"new_TcconApriori", _wrap_new_TcconApriori, METH_VARARGS, NULL},
-	 { (char *)"TcconApriori_co2_vmr", _wrap_TcconApriori_co2_vmr, METH_VARARGS, NULL},
-	 { (char *)"TcconApriori_co2_vmr_grid", _wrap_TcconApriori_co2_vmr_grid, METH_VARARGS, NULL},
-	 { (char *)"TcconApriori_tropopause_pressure", _wrap_TcconApriori_tropopause_pressure, METH_VARARGS, NULL},
-	 { (char *)"TcconApriori_planetary_boundary_layer_pressure", _wrap_TcconApriori_planetary_boundary_layer_pressure, METH_VARARGS, NULL},
-	 { (char *)"TcconApriori_fractional_amplitude_seasonal_cycle", _wrap_TcconApriori_fractional_amplitude_seasonal_cycle, METH_VARARGS, NULL},
-	 { (char *)"TcconApriori_age_air", _wrap_TcconApriori_age_air, METH_VARARGS, NULL},
+	 { (char *)"new_TcconApriori", _wrap_new_TcconApriori, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::TcconApriori::TcconApriori(const boost::shared_ptr< Level1b > &L1b_file, const\n"
+		"boost::shared_ptr< Pressure > &Pressure, const boost::shared_ptr<\n"
+		"Temperature > &Temp, double Co2_ref=0.000380, const Time\n"
+		"&Ref_time=Time::parse_time(\"2005-01-01T00:00:00Z\"), DoubleWithUnit\n"
+		"Rate_increase=DoubleWithUnit(0.005,\"year^-1\"), DoubleWithUnit\n"
+		"Age_air_pbl=DoubleWithUnit(0.2,\"year\"), DoubleWithUnit\n"
+		"Age_air_tropopause=DoubleWithUnit(0.4,\"year\"), DoubleWithUnit\n"
+		"Age_air_upper_stratosphere=DoubleWithUnit(5.5,\"year\"))\n"
+		"\n"
+		""},
+	 { (char *)"TcconApriori_co2_vmr", _wrap_TcconApriori_co2_vmr, METH_VARARGS, (char *)"\n"
+		"\n"
+		"double FullPhysics::TcconApriori::co2_vmr(double P) const\n"
+		"\n"
+		""},
+	 { (char *)"TcconApriori_co2_vmr_grid", _wrap_TcconApriori_co2_vmr_grid, METH_VARARGS, (char *)"\n"
+		"\n"
+		"blitz::Array<double, 1> FullPhysics::TcconApriori::co2_vmr_grid(const Pressure &P) const\n"
+		"\n"
+		""},
+	 { (char *)"TcconApriori_tropopause_pressure", _wrap_TcconApriori_tropopause_pressure, METH_VARARGS, (char *)"\n"
+		"\n"
+		"double FullPhysics::TcconApriori::tropopause_pressure() const\n"
+		"\n"
+		""},
+	 { (char *)"TcconApriori_planetary_boundary_layer_pressure", _wrap_TcconApriori_planetary_boundary_layer_pressure, METH_VARARGS, (char *)"\n"
+		"\n"
+		"double FullPhysics::TcconApriori::planetary_boundary_layer_pressure() const\n"
+		"\n"
+		""},
+	 { (char *)"TcconApriori_fractional_amplitude_seasonal_cycle", _wrap_TcconApriori_fractional_amplitude_seasonal_cycle, METH_VARARGS, (char *)"\n"
+		"\n"
+		"double FullPhysics::TcconApriori::fractional_amplitude_seasonal_cycle() const\n"
+		"\n"
+		""},
+	 { (char *)"TcconApriori_age_air", _wrap_TcconApriori_age_air, METH_VARARGS, (char *)"\n"
+		"\n"
+		"DoubleWithUnit FullPhysics::TcconApriori::age_air(double P) const\n"
+		"\n"
+		""},
 	 { (char *)"TcconApriori___str__", _wrap_TcconApriori___str__, METH_VARARGS, NULL},
-	 { (char *)"delete_TcconApriori", _wrap_delete_TcconApriori, METH_VARARGS, NULL},
+	 { (char *)"delete_TcconApriori", _wrap_delete_TcconApriori, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::TcconApriori::~TcconApriori()\n"
+		"\n"
+		""},
 	 { (char *)"TcconApriori_swigregister", TcconApriori_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };

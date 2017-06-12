@@ -9420,17 +9420,61 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"SubStateVectorArrayAerosolExtinction__v_statevector_covariance", _wrap_SubStateVectorArrayAerosolExtinction__v_statevector_covariance, METH_VARARGS, NULL},
 	 { (char *)"SubStateVectorArrayAerosolExtinction__v_pressure", _wrap_SubStateVectorArrayAerosolExtinction__v_pressure, METH_VARARGS, NULL},
 	 { (char *)"SubStateVectorArrayAerosolExtinction_swigregister", SubStateVectorArrayAerosolExtinction_swigregister, METH_VARARGS, NULL},
-	 { (char *)"delete_AerosolExtinctionImpBase", _wrap_delete_AerosolExtinctionImpBase, METH_VARARGS, NULL},
-	 { (char *)"AerosolExtinctionImpBase_clone", _wrap_AerosolExtinctionImpBase_clone, METH_VARARGS, NULL},
-	 { (char *)"AerosolExtinctionImpBase_extinction_for_layer", _wrap_AerosolExtinctionImpBase_extinction_for_layer, METH_VARARGS, NULL},
-	 { (char *)"AerosolExtinctionImpBase__v_aerosol_name", _wrap_AerosolExtinctionImpBase__v_aerosol_name, METH_VARARGS, NULL},
-	 { (char *)"AerosolExtinctionImpBase__v_aerosol_extinction", _wrap_AerosolExtinctionImpBase__v_aerosol_extinction, METH_VARARGS, NULL},
-	 { (char *)"AerosolExtinctionImpBase__v_model_short_name", _wrap_AerosolExtinctionImpBase__v_model_short_name, METH_VARARGS, NULL},
+	 { (char *)"delete_AerosolExtinctionImpBase", _wrap_delete_AerosolExtinctionImpBase, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::AerosolExtinctionImpBase::~AerosolExtinctionImpBase()\n"
+		"\n"
+		""},
+	 { (char *)"AerosolExtinctionImpBase_clone", _wrap_AerosolExtinctionImpBase_clone, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual boost::shared_ptr<AerosolExtinction> FullPhysics::AerosolExtinctionImpBase::clone(const boost::shared_ptr< Pressure > &Press) const =0\n"
+		"\n"
+		""},
+	 { (char *)"AerosolExtinctionImpBase_extinction_for_layer", _wrap_AerosolExtinctionImpBase_extinction_for_layer, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual AutoDerivative<double> FullPhysics::AerosolExtinctionImpBase::extinction_for_layer(int i) const\n"
+		"\n"
+		""},
+	 { (char *)"AerosolExtinctionImpBase__v_aerosol_name", _wrap_AerosolExtinctionImpBase__v_aerosol_name, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual std::string FullPhysics::AerosolExtinctionImpBase::aerosol_name() const\n"
+		"\n"
+		""},
+	 { (char *)"AerosolExtinctionImpBase__v_aerosol_extinction", _wrap_AerosolExtinctionImpBase__v_aerosol_extinction, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual ArrayAd<double, 1> FullPhysics::AerosolExtinctionImpBase::aerosol_extinction() const\n"
+		"\n"
+		""},
+	 { (char *)"AerosolExtinctionImpBase__v_model_short_name", _wrap_AerosolExtinctionImpBase__v_model_short_name, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual std::string FullPhysics::AerosolExtinctionImpBase::model_short_name() const =0\n"
+		"A short name representing the type of extinction model being\n"
+		"implemented. \n"
+		""},
 	 { (char *)"AerosolExtinctionImpBase_add_observer", _wrap_AerosolExtinctionImpBase_add_observer, METH_VARARGS, NULL},
 	 { (char *)"AerosolExtinctionImpBase_remove_observer", _wrap_AerosolExtinctionImpBase_remove_observer, METH_VARARGS, NULL},
-	 { (char *)"AerosolExtinctionImpBase_update_sub_state_hook", _wrap_AerosolExtinctionImpBase_update_sub_state_hook, METH_VARARGS, NULL},
-	 { (char *)"AerosolExtinctionImpBase_print_desc", _wrap_AerosolExtinctionImpBase_print_desc, METH_VARARGS, NULL},
-	 { (char *)"AerosolExtinctionImpBase__v_desc", _wrap_AerosolExtinctionImpBase__v_desc, METH_VARARGS, NULL},
+	 { (char *)"AerosolExtinctionImpBase_update_sub_state_hook", _wrap_AerosolExtinctionImpBase_update_sub_state_hook, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::AerosolExtinctionImpBase::update_sub_state_hook()\n"
+		"\n"
+		""},
+	 { (char *)"AerosolExtinctionImpBase_print_desc", _wrap_AerosolExtinctionImpBase_print_desc, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::AerosolExtinctionImpBase::print(std::ostream &Os) const\n"
+		"Print to stream.\n"
+		"\n"
+		"The default calls the function \"desc\" that returns a string. This\n"
+		"gives cleaner interface for deriving from this class in python, but\n"
+		"most C++ classes will want to override this function rather than using\n"
+		"desc. \n"
+		""},
+	 { (char *)"AerosolExtinctionImpBase__v_desc", _wrap_AerosolExtinctionImpBase__v_desc, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual std::string FullPhysics::AerosolExtinctionImpBase::desc() const\n"
+		"Description of object, to be printed to stream.\n"
+		"\n"
+		"This gives a cleaner interface for deriving from python. \n"
+		""},
 	 { (char *)"AerosolExtinctionImpBase_mark_used", _wrap_AerosolExtinctionImpBase_mark_used, METH_VARARGS, NULL},
 	 { (char *)"AerosolExtinctionImpBase_state_vector_name", _wrap_AerosolExtinctionImpBase_state_vector_name, METH_VARARGS, NULL},
 	 { (char *)"AerosolExtinctionImpBase_notify_update", _wrap_AerosolExtinctionImpBase_notify_update, METH_VARARGS, NULL},
@@ -9439,8 +9483,17 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"AerosolExtinctionImpBase_update_sub_state", _wrap_AerosolExtinctionImpBase_update_sub_state, METH_VARARGS, NULL},
 	 { (char *)"AerosolExtinctionImpBase_state_vector_name_i", _wrap_AerosolExtinctionImpBase_state_vector_name_i, METH_VARARGS, NULL},
 	 { (char *)"AerosolExtinctionImpBase_state_vector_name_sub", _wrap_AerosolExtinctionImpBase_state_vector_name_sub, METH_VARARGS, NULL},
-	 { (char *)"AerosolExtinctionImpBase__v_aerosol_parameter", _wrap_AerosolExtinctionImpBase__v_aerosol_parameter, METH_VARARGS, NULL},
-	 { (char *)"AerosolExtinctionImpBase__v_aerosol_parameter_uncertainty", _wrap_AerosolExtinctionImpBase__v_aerosol_parameter_uncertainty, METH_VARARGS, NULL},
+	 { (char *)"AerosolExtinctionImpBase__v_aerosol_parameter", _wrap_AerosolExtinctionImpBase__v_aerosol_parameter, METH_VARARGS, (char *)"\n"
+		"\n"
+		"blitz::Array<double, 1> FullPhysics::AerosolExtinctionImpBase::aerosol_parameter() const\n"
+		"Returns the value of the coefficients used to generate the aerosol\n"
+		"extinction. \n"
+		""},
+	 { (char *)"AerosolExtinctionImpBase__v_aerosol_parameter_uncertainty", _wrap_AerosolExtinctionImpBase__v_aerosol_parameter_uncertainty, METH_VARARGS, (char *)"\n"
+		"\n"
+		"blitz::Array<double, 1> FullPhysics::AerosolExtinctionImpBase::aerosol_parameter_uncertainty() const\n"
+		"Returns the uncertainty of the aerosol type coefficients. \n"
+		""},
 	 { (char *)"AerosolExtinctionImpBase_cache_stale_set", _wrap_AerosolExtinctionImpBase_cache_stale_set, METH_VARARGS, NULL},
 	 { (char *)"AerosolExtinctionImpBase_cache_stale_get", _wrap_AerosolExtinctionImpBase_cache_stale_get, METH_VARARGS, NULL},
 	 { (char *)"AerosolExtinctionImpBase_aext_set", _wrap_AerosolExtinctionImpBase_aext_set, METH_VARARGS, NULL},

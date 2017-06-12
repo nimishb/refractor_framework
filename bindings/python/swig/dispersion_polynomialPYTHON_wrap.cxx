@@ -5741,10 +5741,28 @@ SWIGINTERN PyObject *DispersionPolynomial_swigregister(PyObject *SWIGUNUSEDPARM(
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"new_DispersionPolynomial", _wrap_new_DispersionPolynomial, METH_VARARGS, NULL},
-	 { (char *)"delete_DispersionPolynomial", _wrap_delete_DispersionPolynomial, METH_VARARGS, NULL},
-	 { (char *)"DispersionPolynomial__v_pixel_grid", _wrap_DispersionPolynomial__v_pixel_grid, METH_VARARGS, NULL},
-	 { (char *)"DispersionPolynomial_clone", _wrap_DispersionPolynomial_clone, METH_VARARGS, NULL},
+	 { (char *)"new_DispersionPolynomial", _wrap_new_DispersionPolynomial, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::DispersionPolynomial::DispersionPolynomial(const blitz::Array< double, 1 > &Coeff, const blitz::Array< bool, 1 >\n"
+		"&Used_flag, const std::string &Coeff_unit_name, const std::string\n"
+		"&Band_name, int Number_pixel, bool Is_one_based)\n"
+		"\n"
+		""},
+	 { (char *)"delete_DispersionPolynomial", _wrap_delete_DispersionPolynomial, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::DispersionPolynomial::~DispersionPolynomial()\n"
+		"\n"
+		""},
+	 { (char *)"DispersionPolynomial__v_pixel_grid", _wrap_DispersionPolynomial__v_pixel_grid, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual SpectralDomain FullPhysics::DispersionPolynomial::pixel_grid() const\n"
+		"\n"
+		""},
+	 { (char *)"DispersionPolynomial_clone", _wrap_DispersionPolynomial_clone, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual boost::shared_ptr<Dispersion> FullPhysics::DispersionPolynomial::clone() const\n"
+		"\n"
+		""},
 	 { (char *)"DispersionPolynomial_swigregister", DispersionPolynomial_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };

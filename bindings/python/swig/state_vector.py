@@ -182,6 +182,20 @@ ObservableStateVector_swigregister = _state_vector.ObservableStateVector_swigreg
 ObservableStateVector_swigregister(ObservableStateVector)
 
 class StateVectorObserver(ObserverStateVector):
+    """
+
+    This is an observer of a StateVector.
+
+    If attached to a StateVector, this class gets notified when a state
+    vector is updated.
+
+    It is completely unspecified what an observer does with this
+    information, but commonly the class will update its internal state
+    based on the state vector update.
+
+    C++ includes: state_vector.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [ObserverStateVector]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -201,14 +215,43 @@ class StateVectorObserver(ObserverStateVector):
         return _state_vector.StateVectorObserver___str__(self)
 
     def mark_used(self, Sv, Used):
+        """
+
+        virtual void FullPhysics::StateVectorObserver::mark_used(const StateVector &Sv, blitz::Array< bool, 1 > &Used) const
+        Mark elements that we are actively using (i.e., that aren't ignored).
+
+        You only need to mark the ones that are used as true, everything is
+        already initialized as false. Default is to do nothing. 
+        """
         return _state_vector.StateVectorObserver_mark_used(self, Sv, Used)
 
+
     def state_vector_name(self, Sv, Sv_name):
+        """
+
+        virtual void FullPhysics::StateVectorObserver::state_vector_name(const StateVector &Sv, blitz::Array< std::string, 1 > &Sv_name) const
+        Update any portion of the list of the state vector names that apply to
+        this object.
+
+        Default is to do nothing. 
+        """
         return _state_vector.StateVectorObserver_state_vector_name(self, Sv, Sv_name)
+
 StateVectorObserver_swigregister = _state_vector.StateVectorObserver_swigregister
 StateVectorObserver_swigregister(StateVectorObserver)
 
 class StateVector(ObservableStateVector):
+    """
+
+    This handles informing a set of interested objects when the state
+    vector has updated.
+
+    Those objects then update their internal state to account for the new
+    state vector.
+
+    C++ includes: state_vector.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [ObservableStateVector]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -225,6 +268,11 @@ class StateVector(ObservableStateVector):
         return _state_vector.StateVector___str__(self)
 
     def __init__(self):
+        """
+
+        FullPhysics::StateVector::StateVector()
+
+        """
         this = _state_vector.new_StateVector()
         try:
             self.this.append(this)
@@ -232,13 +280,31 @@ class StateVector(ObservableStateVector):
             self.this = this
 
     def add_observer(self, Obs):
+        """
+
+        virtual void FullPhysics::StateVector::add_observer(Observer< StateVector > &Obs)
+
+        """
         return _state_vector.StateVector_add_observer(self, Obs)
 
+
     def remove_observer(self, Obs):
+        """
+
+        virtual void FullPhysics::StateVector::remove_observer(Observer< StateVector > &Obs)
+
+        """
         return _state_vector.StateVector_remove_observer(self, Obs)
 
+
     def _v_state(self):
+        """
+
+        const blitz::Array<double, 1>& FullPhysics::StateVector::state() const
+        Current state vector. 
+        """
         return _state_vector.StateVector__v_state(self)
+
 
     @property
     def state(self):
@@ -246,7 +312,19 @@ class StateVector(ObservableStateVector):
 
 
     def _v_state_with_derivative(self):
+        """
+
+        const ArrayAd<double, 1>& FullPhysics::StateVector::state_with_derivative() const
+        Return the state vector as state() does, but also make each value a
+        AutoDerivative.
+
+        The derivative is with respect to the state vector, i.e., we treat the
+        state vector as the independent variables. This means the first value
+        has a gradient all 0's except for 1 in the first index, the second
+        value all zeros except for 1 in the second index, etc. 
+        """
         return _state_vector.StateVector__v_state_with_derivative(self)
+
 
     @property
     def state_with_derivative(self):
@@ -262,7 +340,13 @@ class StateVector(ObservableStateVector):
 
 
     def _v_state_covariance(self):
+        """
+
+        const blitz::Array<double, 2>& FullPhysics::StateVector::state_covariance() const
+        Current covariance of the state vector. 
+        """
         return _state_vector.StateVector__v_state_covariance(self)
+
 
     @property
     def state_covariance(self):
@@ -270,10 +354,23 @@ class StateVector(ObservableStateVector):
 
 
     def update_state(self, *args):
+        """
+
+        void FullPhysics::StateVector::update_state(const blitz::Array< double, 1 > &X, const blitz::Array< double, 2 >
+        &Cov)
+
+        """
         return _state_vector.StateVector_update_state(self, *args)
 
+
     def _v_used_flag(self):
+        """
+
+        blitz::Array<bool, 1> FullPhysics::StateVector::used_flag() const
+
+        """
         return _state_vector.StateVector__v_used_flag(self)
+
 
     @property
     def used_flag(self):
@@ -281,7 +378,13 @@ class StateVector(ObservableStateVector):
 
 
     def _v_observer_claimed_size(self, *args):
+        """
+
+        void FullPhysics::StateVector::observer_claimed_size(int Pstart)
+        Update claimed size of state vector. 
+        """
         return _state_vector.StateVector__v_observer_claimed_size(self, *args)
+
 
     @property
     def observer_claimed_size(self):
@@ -295,6 +398,16 @@ StateVector_swigregister = _state_vector.StateVector_swigregister
 StateVector_swigregister(StateVector)
 
 class SubStateVectorObserver(StateVectorObserver):
+    """
+
+    A common StateVectorObserver just "owns" a subset of the
+    StateVector.
+
+    This class gives the common behavior for this case.
+
+    C++ includes: state_vector.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [StateVectorObserver]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -311,16 +424,46 @@ class SubStateVectorObserver(StateVectorObserver):
     __del__ = lambda self: None
 
     def notify_update(self, Sv):
+        """
+
+        virtual void FullPhysics::SubStateVectorObserver::notify_update(const StateVector &Sv)
+
+        """
         return _state_vector.SubStateVectorObserver_notify_update(self, Sv)
 
+
     def mark_used(self, Sv, Used):
+        """
+
+        virtual void FullPhysics::SubStateVectorObserver::mark_used(const StateVector &Sv, blitz::Array< bool, 1 > &Used) const
+        Mark elements that we are actively using (i.e., that aren't ignored).
+
+        You only need to mark the ones that are used as true, everything is
+        already initialized as false. Default is to do nothing. 
+        """
         return _state_vector.SubStateVectorObserver_mark_used(self, Sv, Used)
 
+
     def state_vector_name(self, Sv, Sv_name):
+        """
+
+        virtual void FullPhysics::SubStateVectorObserver::state_vector_name(const StateVector &Sv, blitz::Array< std::string, 1 > &Sv_name) const
+        Update any portion of the list of the state vector names that apply to
+        this object.
+
+        Default is to do nothing. 
+        """
         return _state_vector.SubStateVectorObserver_state_vector_name(self, Sv, Sv_name)
 
+
     def _v_state_vector_start_index(self):
+        """
+
+        int FullPhysics::SubStateVectorObserver::state_vector_start_index() const
+        Starting index of state vector used by this object. 
+        """
         return _state_vector.SubStateVectorObserver__v_state_vector_start_index(self)
+
 
     @property
     def state_vector_start_index(self):
@@ -328,7 +471,13 @@ class SubStateVectorObserver(StateVectorObserver):
 
 
     def _v_sub_vector_size(self):
+        """
+
+        int FullPhysics::SubStateVectorObserver::sub_vector_size() const
+        Length of the sub set of the state vector used by this object. 
+        """
         return _state_vector.SubStateVectorObserver__v_sub_vector_size(self)
+
 
     @property
     def sub_vector_size(self):
@@ -336,22 +485,68 @@ class SubStateVectorObserver(StateVectorObserver):
 
 
     def update_sub_state(self, Sv_sub, Cov_sub):
+        """
+
+        virtual void FullPhysics::SubStateVectorObserver::update_sub_state(const ArrayAd< double, 1 > &Sv_sub, const blitz::Array< double, 2 >
+        &Cov_sub)=0
+        Called by update_state with the subset of the state vector used by
+        this class. 
+        """
         return _state_vector.SubStateVectorObserver_update_sub_state(self, Sv_sub, Cov_sub)
 
+
     def mark_used_sub(self, Used):
+        """
+
+        virtual void FullPhysics::SubStateVectorObserver::mark_used_sub(blitz::Array< bool, 1 > &Used) const
+        Called by mark_used with the subset of the state vector used by this
+        class.
+
+        The default marks everything as used, but derived classes can override
+        this. 
+        """
         return _state_vector.SubStateVectorObserver_mark_used_sub(self, Used)
 
+
     def state_vector_name_sub(self, Sv_name):
+        """
+
+        virtual void FullPhysics::SubStateVectorObserver::state_vector_name_sub(blitz::Array< std::string, 1 > &Sv_name) const
+        Called by state_vector_name with the subset of the Sv_name used by
+        this class.
+
+        The default function doesn't change anything, but derived classes can
+        ovveride this. 
+        """
         return _state_vector.SubStateVectorObserver_state_vector_name_sub(self, Sv_name)
 
+
     def print_desc(self, Os):
+        """
+
+        virtual void FullPhysics::SubStateVectorObserver::print(std::ostream &Os) const
+
+        """
         return _state_vector.SubStateVectorObserver_print_desc(self, Os)
 
+
     def notify_add(self, Sv):
+        """
+
+        virtual void FullPhysics::SubStateVectorObserver::notify_add(StateVector &Sv)
+
+        """
         return _state_vector.SubStateVectorObserver_notify_add(self, Sv)
 
+
     def notify_remove(self, Sv):
+        """
+
+        virtual void FullPhysics::SubStateVectorObserver::notify_remove(StateVector &Sv)
+
+        """
         return _state_vector.SubStateVectorObserver_notify_remove(self, Sv)
+
 SubStateVectorObserver_swigregister = _state_vector.SubStateVectorObserver_swigregister
 SubStateVectorObserver_swigregister(SubStateVectorObserver)
 

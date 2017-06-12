@@ -123,6 +123,21 @@ def _new_from_set(cls, version, *args):
 import full_physics_swig.ecmwf
 import full_physics_swig.generic_object
 class OcoSimMetEcmwf(full_physics_swig.ecmwf.Ecmwf):
+    """
+
+    This class implements the OCO specific ECMWF reading functionality.
+
+    This reads the simulator meteorology files. This are similar to the
+    OCO ECMWF, but the fields have different names.
+
+    Note that the actual OCO simulator used "scene" files, which are
+    somewhat lime the meteorology but in a different format, and with a
+    different number of levels (not the normal 91 ECMWF). The meteorology
+    files are this scene information resampled to the 91 levels.
+
+    C++ includes: oco_sim_met_ecmwf.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.ecmwf.Ecmwf]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -136,6 +151,12 @@ class OcoSimMetEcmwf(full_physics_swig.ecmwf.Ecmwf):
     __del__ = lambda self: None
 
     def __init__(self, Fname, Hdf_sounding_id):
+        """
+
+        FullPhysics::OcoSimMetEcmwf::OcoSimMetEcmwf(const std::string &Fname, const boost::shared_ptr< HdfSoundingId >
+        &Hdf_sounding_id)
+
+        """
         this = _oco_sim_met_ecmwf.new_OcoSimMetEcmwf(Fname, Hdf_sounding_id)
         try:
             self.this.append(this)

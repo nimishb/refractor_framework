@@ -6363,25 +6363,73 @@ SWIGINTERN PyObject *Output_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObjec
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"new_OutputDouble", _wrap_new_OutputDouble, METH_VARARGS, NULL},
-	 { (char *)"delete_OutputDouble", _wrap_delete_OutputDouble, METH_VARARGS, NULL},
-	 { (char *)"OutputDouble_f", _wrap_OutputDouble_f, METH_VARARGS, NULL},
+	 { (char *)"new_OutputDouble", _wrap_new_OutputDouble, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::OutputDouble::OutputDouble()\n"
+		"\n"
+		""},
+	 { (char *)"delete_OutputDouble", _wrap_delete_OutputDouble, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::OutputDouble::~OutputDouble()\n"
+		"\n"
+		""},
+	 { (char *)"OutputDouble_f", _wrap_OutputDouble_f, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual double FullPhysics::OutputDouble::f() const =0\n"
+		"\n"
+		""},
 	 { (char *)"disown_OutputDouble", _wrap_disown_OutputDouble, METH_VARARGS, NULL},
 	 { (char *)"OutputDouble_swigregister", OutputDouble_swigregister, METH_VARARGS, NULL},
-	 { (char *)"new_OutputBlitz1d", _wrap_new_OutputBlitz1d, METH_VARARGS, NULL},
-	 { (char *)"delete_OutputBlitz1d", _wrap_delete_OutputBlitz1d, METH_VARARGS, NULL},
-	 { (char *)"OutputBlitz1d_f", _wrap_OutputBlitz1d_f, METH_VARARGS, NULL},
+	 { (char *)"new_OutputBlitz1d", _wrap_new_OutputBlitz1d, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::OutputBlitz1d::OutputBlitz1d()\n"
+		"\n"
+		""},
+	 { (char *)"delete_OutputBlitz1d", _wrap_delete_OutputBlitz1d, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::OutputBlitz1d::~OutputBlitz1d()\n"
+		"\n"
+		""},
+	 { (char *)"OutputBlitz1d_f", _wrap_OutputBlitz1d_f, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual blitz::Array<double,1> FullPhysics::OutputBlitz1d::f() const =0\n"
+		"\n"
+		""},
 	 { (char *)"disown_OutputBlitz1d", _wrap_disown_OutputBlitz1d, METH_VARARGS, NULL},
 	 { (char *)"OutputBlitz1d_swigregister", OutputBlitz1d_swigregister, METH_VARARGS, NULL},
-	 { (char *)"new_OutputBlitz2d", _wrap_new_OutputBlitz2d, METH_VARARGS, NULL},
-	 { (char *)"delete_OutputBlitz2d", _wrap_delete_OutputBlitz2d, METH_VARARGS, NULL},
-	 { (char *)"OutputBlitz2d_f", _wrap_OutputBlitz2d_f, METH_VARARGS, NULL},
+	 { (char *)"new_OutputBlitz2d", _wrap_new_OutputBlitz2d, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::OutputBlitz2d::OutputBlitz2d()\n"
+		"\n"
+		""},
+	 { (char *)"delete_OutputBlitz2d", _wrap_delete_OutputBlitz2d, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::OutputBlitz2d::~OutputBlitz2d()\n"
+		"\n"
+		""},
+	 { (char *)"OutputBlitz2d_f", _wrap_OutputBlitz2d_f, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual blitz::Array<double,2> FullPhysics::OutputBlitz2d::f() const =0\n"
+		"\n"
+		""},
 	 { (char *)"disown_OutputBlitz2d", _wrap_disown_OutputBlitz2d, METH_VARARGS, NULL},
 	 { (char *)"OutputBlitz2d_swigregister", OutputBlitz2d_swigregister, METH_VARARGS, NULL},
-	 { (char *)"delete_Output", _wrap_delete_Output, METH_VARARGS, NULL},
+	 { (char *)"delete_Output", _wrap_delete_Output, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::Output::~Output()\n"
+		"\n"
+		""},
 	 { (char *)"Output___str__", _wrap_Output___str__, METH_VARARGS, NULL},
-	 { (char *)"Output_write", _wrap_Output_write, METH_VARARGS, NULL},
-	 { (char *)"Output_write_best_attempt", _wrap_Output_write_best_attempt, METH_VARARGS, NULL},
+	 { (char *)"Output_write", _wrap_Output_write, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Output::write()\n"
+		"\n"
+		""},
+	 { (char *)"Output_write_best_attempt", _wrap_Output_write_best_attempt, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Output::write_best_attempt()\n"
+		"\n"
+		""},
 	 { (char *)"Output__register_data_source", _wrap_Output__register_data_source, METH_VARARGS, NULL},
 	 { (char *)"Output_swigregister", Output_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }

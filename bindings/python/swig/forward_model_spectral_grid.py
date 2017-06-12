@@ -123,6 +123,31 @@ def _new_from_set(cls, version, *args):
 import full_physics_swig.generic_object
 import full_physics_swig.state_vector
 class ForwardModelSpectralGrid(full_physics_swig.generic_object.GenericObject):
+    """
+
+    This is the Forward Model spectral grid.
+
+    This is in a separate class because this is a bit complicated. We have
+    3 grids to worry about
+
+    The low resolution grid, which is the ultimate output of the
+    ForwardModel.
+
+    The high resolution grid, which is where we calculate the RT on. This
+    is the spectrum before we have convolved it with Ils. Depending on the
+    options used, this grid might be nonuniform.
+
+    The high resolution grid we interpolate to. If we are not doing
+    nonuniform sampling, then this is the same as the high resolution
+    grid.
+
+    Note that there are a few closely related classes, with similar
+    sounding names. See spectrum_doxygen for a description of each of
+    these.
+
+    C++ includes: forward_model_spectral_grid.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.generic_object.GenericObject]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -134,6 +159,11 @@ class ForwardModelSpectralGrid(full_physics_swig.generic_object.GenericObject):
     __repr__ = _swig_repr
 
     def __init__(self, Inst, Spectral_window, Spectrum_sampling):
+        """
+
+        FullPhysics::ForwardModelSpectralGrid::ForwardModelSpectralGrid()
+
+        """
         this = _forward_model_spectral_grid.new_ForwardModelSpectralGrid(Inst, Spectral_window, Spectrum_sampling)
         try:
             self.this.append(this)
@@ -144,7 +174,13 @@ class ForwardModelSpectralGrid(full_physics_swig.generic_object.GenericObject):
         return _forward_model_spectral_grid.ForwardModelSpectralGrid___str__(self)
 
     def _v_number_spectrometer(self):
+        """
+
+        int FullPhysics::ForwardModelSpectralGrid::number_spectrometer() const
+        Number of spectrometer. 
+        """
         return _forward_model_spectral_grid.ForwardModelSpectralGrid__v_number_spectrometer(self)
+
 
     @property
     def number_spectrometer(self):
@@ -152,19 +188,49 @@ class ForwardModelSpectralGrid(full_physics_swig.generic_object.GenericObject):
 
 
     def low_resolution_grid(self, Spec_index):
+        """
+
+        const SpectralDomain FullPhysics::ForwardModelSpectralGrid::low_resolution_grid(int Spec_index) const
+        The low resolution grid. 
+        """
         return _forward_model_spectral_grid.ForwardModelSpectralGrid_low_resolution_grid(self, Spec_index)
 
+
     def high_resolution_grid(self, Spec_index):
+        """
+
+        const SpectralDomain FullPhysics::ForwardModelSpectralGrid::high_resolution_grid(int Spec_index) const
+        The high resolution grid, possibly nonuniform. 
+        """
         return _forward_model_spectral_grid.ForwardModelSpectralGrid_high_resolution_grid(self, Spec_index)
 
+
     def high_resolution_interpolated_grid(self, Spec_index):
+        """
+
+        const SpectralDomain FullPhysics::ForwardModelSpectralGrid::high_resolution_interpolated_grid(int Spec_index) const
+        The high resolution grid, interpolated to be uniform. 
+        """
         return _forward_model_spectral_grid.ForwardModelSpectralGrid_high_resolution_interpolated_grid(self, Spec_index)
 
+
     def interpolate_spectrum(self, Spec_in, Spec_index):
+        """
+
+        Spectrum FullPhysics::ForwardModelSpectralGrid::interpolate_spectrum(const Spectrum &Spec_in, int Spec_index) const
+
+        """
         return _forward_model_spectral_grid.ForwardModelSpectralGrid_interpolate_spectrum(self, Spec_in, Spec_index)
 
+
     def pixel_list(self, Spec_index):
+        """
+
+        const std::vector<int> FullPhysics::ForwardModelSpectralGrid::pixel_list(int Spec_index) const
+        Pixel indexes to use for low resolution grid. 
+        """
         return _forward_model_spectral_grid.ForwardModelSpectralGrid_pixel_list(self, Spec_index)
+
     __swig_destroy__ = _forward_model_spectral_grid.delete_ForwardModelSpectralGrid
     __del__ = lambda self: None
 ForwardModelSpectralGrid_swigregister = _forward_model_spectral_grid.ForwardModelSpectralGrid_swigregister

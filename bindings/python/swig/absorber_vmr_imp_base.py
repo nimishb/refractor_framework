@@ -193,6 +193,20 @@ SubStateVectorArrayAbsorberVmr_swigregister = _absorber_vmr_imp_base.SubStateVec
 SubStateVectorArrayAbsorberVmr_swigregister(SubStateVectorArrayAbsorberVmr)
 
 class AbsorberVmrImpBase(SubStateVectorArrayAbsorberVmr):
+    """
+
+    As a design principle, we have each base class with the absolutely
+    minimum interface needed for use from the rest of the system.
+
+    This allows us to support any future code that supports this minimum
+    interface.
+
+    However, almost always you will want to derive from this class
+    instead. See PressureImpBase for a more complete discussion of this.
+
+    C++ includes: absorber_vmr_imp_base.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [SubStateVectorArrayAbsorberVmr]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -206,10 +220,22 @@ class AbsorberVmrImpBase(SubStateVectorArrayAbsorberVmr):
     __del__ = lambda self: None
 
     def clone(self, *args):
+        """
+
+        virtual boost::shared_ptr<AbsorberVmr> FullPhysics::AbsorberVmrImpBase::clone(const boost::shared_ptr< Pressure > &Press) const =0
+
+        """
         return _absorber_vmr_imp_base.AbsorberVmrImpBase_clone(self, *args)
 
+
     def _v_gas_name(self):
+        """
+
+        virtual std::string FullPhysics::AbsorberVmrImpBase::gas_name() const
+
+        """
         return _absorber_vmr_imp_base.AbsorberVmrImpBase__v_gas_name(self)
+
 
     @property
     def gas_name(self):
@@ -217,10 +243,22 @@ class AbsorberVmrImpBase(SubStateVectorArrayAbsorberVmr):
 
 
     def volume_mixing_ratio(self, P):
+        """
+
+        virtual AutoDerivative<double> FullPhysics::AbsorberVmrImpBase::volume_mixing_ratio(const AutoDerivative< double > &P) const
+
+        """
         return _absorber_vmr_imp_base.AbsorberVmrImpBase_volume_mixing_ratio(self, P)
 
+
     def _v_state_used(self):
+        """
+
+        virtual blitz::Array<bool, 1> FullPhysics::AbsorberVmrImpBase::state_used() const
+
+        """
         return _absorber_vmr_imp_base.AbsorberVmrImpBase__v_state_used(self)
+
 
     @property
     def state_used(self):
@@ -234,13 +272,38 @@ class AbsorberVmrImpBase(SubStateVectorArrayAbsorberVmr):
         return _absorber_vmr_imp_base.AbsorberVmrImpBase_remove_observer(self, Obs)
 
     def update_sub_state_hook(self):
+        """
+
+        virtual void FullPhysics::AbsorberVmrImpBase::update_sub_state_hook()
+
+        """
         return _absorber_vmr_imp_base.AbsorberVmrImpBase_update_sub_state_hook(self)
 
+
     def print_desc(self, Os):
+        """
+
+        virtual void FullPhysics::AbsorberVmrImpBase::print(std::ostream &Os) const
+        Print to stream.
+
+        The default calls the function "desc" that returns a string. This
+        gives cleaner interface for deriving from this class in python, but
+        most C++ classes will want to override this function rather than using
+        desc. 
+        """
         return _absorber_vmr_imp_base.AbsorberVmrImpBase_print_desc(self, Os)
 
+
     def _v_desc(self):
+        """
+
+        virtual std::string FullPhysics::AbsorberVmrImpBase::desc() const
+        Description of object, to be printed to stream.
+
+        This gives a cleaner interface for deriving from python. 
+        """
         return _absorber_vmr_imp_base.AbsorberVmrImpBase__v_desc(self)
+
 
     @property
     def desc(self):

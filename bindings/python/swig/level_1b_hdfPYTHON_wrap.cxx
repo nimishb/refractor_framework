@@ -5917,19 +5917,71 @@ SWIGINTERN PyObject *Level1bHdf_swigregister(PyObject *SWIGUNUSEDPARM(self), PyO
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"delete_Level1bHdf", _wrap_delete_Level1bHdf, METH_VARARGS, NULL},
-	 { (char *)"Level1bHdf_latitude", _wrap_Level1bHdf_latitude, METH_VARARGS, NULL},
-	 { (char *)"Level1bHdf_longitude", _wrap_Level1bHdf_longitude, METH_VARARGS, NULL},
-	 { (char *)"Level1bHdf_sounding_zenith", _wrap_Level1bHdf_sounding_zenith, METH_VARARGS, NULL},
-	 { (char *)"Level1bHdf_sounding_azimuth", _wrap_Level1bHdf_sounding_azimuth, METH_VARARGS, NULL},
-	 { (char *)"Level1bHdf_stokes_coefficient", _wrap_Level1bHdf_stokes_coefficient, METH_VARARGS, NULL},
-	 { (char *)"Level1bHdf_solar_zenith", _wrap_Level1bHdf_solar_zenith, METH_VARARGS, NULL},
-	 { (char *)"Level1bHdf_solar_azimuth", _wrap_Level1bHdf_solar_azimuth, METH_VARARGS, NULL},
-	 { (char *)"Level1bHdf_altitude", _wrap_Level1bHdf_altitude, METH_VARARGS, NULL},
-	 { (char *)"Level1bHdf_relative_velocity", _wrap_Level1bHdf_relative_velocity, METH_VARARGS, NULL},
-	 { (char *)"Level1bHdf_spectral_coefficient", _wrap_Level1bHdf_spectral_coefficient, METH_VARARGS, NULL},
-	 { (char *)"Level1bHdf_time", _wrap_Level1bHdf_time, METH_VARARGS, NULL},
-	 { (char *)"Level1bHdf__v_noise_model", _wrap_Level1bHdf__v_noise_model, METH_VARARGS, NULL},
+	 { (char *)"delete_Level1bHdf", _wrap_delete_Level1bHdf, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::Level1bHdf::~Level1bHdf()\n"
+		"\n"
+		""},
+	 { (char *)"Level1bHdf_latitude", _wrap_Level1bHdf_latitude, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual DoubleWithUnit FullPhysics::Level1bHdf::latitude(int i) const\n"
+		"\n"
+		""},
+	 { (char *)"Level1bHdf_longitude", _wrap_Level1bHdf_longitude, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual DoubleWithUnit FullPhysics::Level1bHdf::longitude(int i) const\n"
+		"\n"
+		""},
+	 { (char *)"Level1bHdf_sounding_zenith", _wrap_Level1bHdf_sounding_zenith, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual DoubleWithUnit FullPhysics::Level1bHdf::sounding_zenith(int i) const\n"
+		"\n"
+		""},
+	 { (char *)"Level1bHdf_sounding_azimuth", _wrap_Level1bHdf_sounding_azimuth, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual DoubleWithUnit FullPhysics::Level1bHdf::sounding_azimuth(int i) const\n"
+		"\n"
+		""},
+	 { (char *)"Level1bHdf_stokes_coefficient", _wrap_Level1bHdf_stokes_coefficient, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual blitz::Array<double, 1> FullPhysics::Level1bHdf::stokes_coefficient(int i) const\n"
+		"\n"
+		""},
+	 { (char *)"Level1bHdf_solar_zenith", _wrap_Level1bHdf_solar_zenith, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual DoubleWithUnit FullPhysics::Level1bHdf::solar_zenith(int i) const\n"
+		"\n"
+		""},
+	 { (char *)"Level1bHdf_solar_azimuth", _wrap_Level1bHdf_solar_azimuth, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual DoubleWithUnit FullPhysics::Level1bHdf::solar_azimuth(int i) const\n"
+		"\n"
+		""},
+	 { (char *)"Level1bHdf_altitude", _wrap_Level1bHdf_altitude, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual DoubleWithUnit FullPhysics::Level1bHdf::altitude(int i) const\n"
+		"\n"
+		""},
+	 { (char *)"Level1bHdf_relative_velocity", _wrap_Level1bHdf_relative_velocity, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual DoubleWithUnit FullPhysics::Level1bHdf::relative_velocity(int i) const\n"
+		"\n"
+		""},
+	 { (char *)"Level1bHdf_spectral_coefficient", _wrap_Level1bHdf_spectral_coefficient, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual ArrayWithUnit<double, 1> FullPhysics::Level1bHdf::spectral_coefficient(int Spec_index) const\n"
+		"\n"
+		""},
+	 { (char *)"Level1bHdf_time", _wrap_Level1bHdf_time, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual Time FullPhysics::Level1bHdf::time(int Spec_index) const\n"
+		"\n"
+		""},
+	 { (char *)"Level1bHdf__v_noise_model", _wrap_Level1bHdf__v_noise_model, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Level1bHdf::noise_model(const boost::shared_ptr< NoiseModel > &Noise_model)\n"
+		"Set the noise model. \n"
+		""},
 	 { (char *)"Level1bHdf_swigregister", Level1bHdf_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };

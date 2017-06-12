@@ -5577,15 +5577,108 @@ SWIGINTERN PyObject *ProblemState_swigregister(PyObject *SWIGUNUSEDPARM(self), P
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"delete_ProblemState", _wrap_delete_ProblemState, METH_VARARGS, NULL},
-	 { (char *)"ProblemState_set", _wrap_ProblemState_set, METH_VARARGS, NULL},
-	 { (char *)"ProblemState_clear", _wrap_ProblemState_clear, METH_VARARGS, NULL},
-	 { (char *)"ProblemState_parameters_different", _wrap_ProblemState_parameters_different, METH_VARARGS, NULL},
-	 { (char *)"ProblemState__v_parameters", _wrap_ProblemState__v_parameters, METH_VARARGS, NULL},
-	 { (char *)"ProblemState__v_parameter_size", _wrap_ProblemState__v_parameter_size, METH_VARARGS, NULL},
-	 { (char *)"ProblemState__v_expected_parameter_size", _wrap_ProblemState__v_expected_parameter_size, METH_VARARGS, NULL},
-	 { (char *)"ProblemState_assert_parameter_set_correctly", _wrap_ProblemState_assert_parameter_set_correctly, METH_VARARGS, NULL},
-	 { (char *)"ProblemState_assert_parameter_correct", _wrap_ProblemState_assert_parameter_correct, METH_VARARGS, NULL},
+	 { (char *)"delete_ProblemState", _wrap_delete_ProblemState, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::ProblemState::~ProblemState()\n"
+		"\n"
+		""},
+	 { (char *)"ProblemState_set", _wrap_ProblemState_set, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::ProblemState::set(const ProblemState &s)\n"
+		"Makes self a copy of the input state.\n"
+		"\n"
+		"This method makes the object, for which it is called, a copy of the\n"
+		"input state.\n"
+		"\n"
+		"Parameters:\n"
+		"-----------\n"
+		"\n"
+		"s:  another ProblemState \n"
+		""},
+	 { (char *)"ProblemState_clear", _wrap_ProblemState_clear, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::ProblemState::clear()\n"
+		"Deletes data contents.\n"
+		"\n"
+		"This method deletes state. It must be reimplemented by other classes\n"
+		"derived from this class to delete other saved components associated\n"
+		"with the state as well. \n"
+		""},
+	 { (char *)"ProblemState_parameters_different", _wrap_ProblemState_parameters_different, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual bool FullPhysics::ProblemState::parameters_different(const blitz::Array< double, 1 > &x) const\n"
+		"Checks whether or not new input parameters are different from the\n"
+		"current ones.\n"
+		"\n"
+		"The methods checks to see whether or not the new input parameters\n"
+		"(point in the parameter space) are different from the parameters\n"
+		"maintained by the object for which the method is called.\n"
+		"\n"
+		"If the size of the input parameters is not equal to the expected size\n"
+		"of the parameters (check comments on expected_parameter_size), then\n"
+		"the method will throw an exception.\n"
+		"\n"
+		"If the object for which the method is called has currently no\n"
+		"parameters set, then the method returns true. Otherwise, the method\n"
+		"uses some algorithm to figure out when the difference is \"big\n"
+		"enough\" to be considered different. If the method determines that the\n"
+		"new input parameters are different from the current parameters, then\n"
+		"it returns true, otherwise, it returns false.\n"
+		"\n"
+		"Parameters:\n"
+		"-----------\n"
+		"\n"
+		"x:  New set of parameters \n"
+		""},
+	 { (char *)"ProblemState__v_parameters", _wrap_ProblemState__v_parameters, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual blitz::Array<double, 1> FullPhysics::ProblemState::parameters() const\n"
+		"Returns the current parameters.\n"
+		"\n"
+		"Current parameter \n"
+		""},
+	 { (char *)"ProblemState__v_parameter_size", _wrap_ProblemState__v_parameter_size, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual int FullPhysics::ProblemState::parameter_size() const\n"
+		"Returns the size of the parameters.\n"
+		"\n"
+		"Size of parameters \n"
+		""},
+	 { (char *)"ProblemState__v_expected_parameter_size", _wrap_ProblemState__v_expected_parameter_size, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual int FullPhysics::ProblemState::expected_parameter_size() const\n"
+		"Returns the expected size of the parameters.\n"
+		"\n"
+		"This method must be reimplemented by the problem class the inherits\n"
+		"ProblemState. It is only in the context of an optimization problem\n"
+		"that one knows what the size of the parameters (number of the\n"
+		"dimensions of the parameter space) is.\n"
+		"\n"
+		"This method is intentionally implemented here instead of being left as\n"
+		"a pure virtual method. The intention is that the user to be able to\n"
+		"create an object of this class or its derived classes for the purpose\n"
+		"of preserving an older state of a problem if needed.\n"
+		"\n"
+		"Expected size of parameters \n"
+		""},
+	 { (char *)"ProblemState_assert_parameter_set_correctly", _wrap_ProblemState_assert_parameter_set_correctly, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::ProblemState::assert_parameter_set_correctly() const\n"
+		"Checks that the parameters are set correctly.\n"
+		"\n"
+		"This method checks to see whether or not the parameters are set\n"
+		"correctly. If the parameters are not set correctly then it throws an\n"
+		"exception. \n"
+		""},
+	 { (char *)"ProblemState_assert_parameter_correct", _wrap_ProblemState_assert_parameter_correct, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::ProblemState::assert_parameter_correct(const blitz::Array< double, 1 > &x) const\n"
+		"Checks that the new input parameters are correct.\n"
+		"\n"
+		"This method checks to see whether or not the new input parameters are\n"
+		"correct. If the parameters are not correct then it throws an\n"
+		"exception. \n"
+		""},
 	 { (char *)"ProblemState___str__", _wrap_ProblemState___str__, METH_VARARGS, NULL},
 	 { (char *)"ProblemState_swigregister", ProblemState_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }

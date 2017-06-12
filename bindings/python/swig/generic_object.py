@@ -121,6 +121,17 @@ def _new_from_set(cls, version, *args):
     return inst
 
 class GenericObject(_object):
+    """
+
+    For use with SWIG, it is useful to have a base class that everything
+    can be cast to.
+
+    This class doesn't provide any functionality, other than allowing
+    casts.
+
+    C++ includes: generic_object.h 
+    """
+
     __swig_setmethods__ = {}
     __setattr__ = lambda self, name, value: _swig_setattr(self, GenericObject, name, value)
     __swig_getmethods__ = {}

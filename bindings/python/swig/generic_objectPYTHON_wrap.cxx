@@ -5010,7 +5010,11 @@ SWIGINTERN PyObject *GenericObject_swigregister(PyObject *SWIGUNUSEDPARM(self), 
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"delete_GenericObject", _wrap_delete_GenericObject, METH_VARARGS, NULL},
+	 { (char *)"delete_GenericObject", _wrap_delete_GenericObject, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::GenericObject::~GenericObject()\n"
+		"\n"
+		""},
 	 { (char *)"new_GenericObject", _wrap_new_GenericObject, METH_VARARGS, NULL},
 	 { (char *)"GenericObject_swigregister", GenericObject_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }

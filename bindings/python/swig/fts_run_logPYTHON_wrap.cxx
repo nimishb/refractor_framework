@@ -8556,11 +8556,24 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"FtsRunLogRecord_airmass_independent_path_length_get", _wrap_FtsRunLogRecord_airmass_independent_path_length_get, METH_VARARGS, NULL},
 	 { (char *)"FtsRunLogRecord_spectrum_index_set", _wrap_FtsRunLogRecord_spectrum_index_set, METH_VARARGS, NULL},
 	 { (char *)"FtsRunLogRecord_spectrum_index_get", _wrap_FtsRunLogRecord_spectrum_index_get, METH_VARARGS, NULL},
-	 { (char *)"new_FtsRunLogRecord", _wrap_new_FtsRunLogRecord, METH_VARARGS, NULL},
+	 { (char *)"new_FtsRunLogRecord", _wrap_new_FtsRunLogRecord, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::FtsRunLogRecord::FtsRunLogRecord()\n"
+		"Initializes all the records to a sane default. \n"
+		""},
 	 { (char *)"delete_FtsRunLogRecord", _wrap_delete_FtsRunLogRecord, METH_VARARGS, NULL},
 	 { (char *)"FtsRunLogRecord_swigregister", FtsRunLogRecord_swigregister, METH_VARARGS, NULL},
-	 { (char *)"new_FtsRunLog", _wrap_new_FtsRunLog, METH_VARARGS, NULL},
-	 { (char *)"FtsRunLog_read", _wrap_FtsRunLog_read, METH_VARARGS, NULL},
+	 { (char *)"new_FtsRunLog", _wrap_new_FtsRunLog, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::FtsRunLog::FtsRunLog(const HdfFile &Hfile, const std::string &Group_name, const\n"
+		"std::vector< std::string > &Band_names)\n"
+		"\n"
+		""},
+	 { (char *)"FtsRunLog_read", _wrap_FtsRunLog_read, METH_VARARGS, (char *)"\n"
+		"\n"
+		"const FtsRunLogRecord& FullPhysics::FtsRunLog::read(const std::string &spectrum_name) const\n"
+		"\n"
+		""},
 	 { (char *)"delete_FtsRunLog", _wrap_delete_FtsRunLog, METH_VARARGS, NULL},
 	 { (char *)"FtsRunLog_swigregister", FtsRunLog_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }

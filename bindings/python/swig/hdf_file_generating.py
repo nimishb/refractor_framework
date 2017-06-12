@@ -122,6 +122,19 @@ def _new_from_set(cls, version, *args):
 
 import full_physics_swig.generic_object
 class HdfFileGenerating(full_physics_swig.generic_object.GenericObject):
+    """
+
+    To avoid creating files when an error occurs, we create the file with
+    the name ".generating" appended.
+
+    Only after the file has been fully rewritten to we rename it without
+    the ".generating" extension added.
+
+    This class handles this bit of logic.
+
+    C++ includes: hdf_file_generating.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.generic_object.GenericObject]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -133,6 +146,14 @@ class HdfFileGenerating(full_physics_swig.generic_object.GenericObject):
     __repr__ = _swig_repr
 
     def __init__(self, Fname):
+        """
+
+        FullPhysics::HdfFileGenerating::HdfFileGenerating(const std::string &Fname)
+        Create a HDF file with the given name.
+
+        This should not have the ".generating" added, we add this in this
+        class. 
+        """
         this = _hdf_file_generating.new_HdfFileGenerating(Fname)
         try:
             self.this.append(this)
@@ -140,13 +161,31 @@ class HdfFileGenerating(full_physics_swig.generic_object.GenericObject):
             self.this = this
 
     def close(self):
+        """
+
+        void FullPhysics::HdfFileGenerating::close()
+
+        """
         return _hdf_file_generating.HdfFileGenerating_close(self)
 
+
     def abandon(self):
+        """
+
+        void FullPhysics::HdfFileGenerating::abandon()
+
+        """
         return _hdf_file_generating.HdfFileGenerating_abandon(self)
 
+
     def hdf_file(self):
+        """
+
+        HdfFile& FullPhysics::HdfFileGenerating::hdf_file()
+
+        """
         return _hdf_file_generating.HdfFileGenerating_hdf_file(self)
+
 
     def __str__(self):
         return _hdf_file_generating.HdfFileGenerating___str__(self)

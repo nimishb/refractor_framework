@@ -6178,18 +6178,69 @@ SWIGINTERN PyObject *GroundLambertian_swigregister(PyObject *SWIGUNUSEDPARM(self
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"new_GroundLambertian", _wrap_new_GroundLambertian, METH_VARARGS, NULL},
-	 { (char *)"GroundLambertian_surface_parameter", _wrap_GroundLambertian_surface_parameter, METH_VARARGS, NULL},
-	 { (char *)"GroundLambertian_albedo", _wrap_GroundLambertian_albedo, METH_VARARGS, NULL},
-	 { (char *)"GroundLambertian_number_spectrometer", _wrap_GroundLambertian_number_spectrometer, METH_VARARGS, NULL},
-	 { (char *)"GroundLambertian_number_params", _wrap_GroundLambertian_number_params, METH_VARARGS, NULL},
-	 { (char *)"GroundLambertian_albedo_coefficients", _wrap_GroundLambertian_albedo_coefficients, METH_VARARGS, NULL},
-	 { (char *)"GroundLambertian_albedo_covariance", _wrap_GroundLambertian_albedo_covariance, METH_VARARGS, NULL},
-	 { (char *)"GroundLambertian_reference_point", _wrap_GroundLambertian_reference_point, METH_VARARGS, NULL},
-	 { (char *)"GroundLambertian_clone", _wrap_GroundLambertian_clone, METH_VARARGS, NULL},
-	 { (char *)"GroundLambertian_state_vector_name_i", _wrap_GroundLambertian_state_vector_name_i, METH_VARARGS, NULL},
-	 { (char *)"GroundLambertian_print_desc", _wrap_GroundLambertian_print_desc, METH_VARARGS, NULL},
-	 { (char *)"GroundLambertian_desc", _wrap_GroundLambertian_desc, METH_VARARGS, NULL},
+	 { (char *)"new_GroundLambertian", _wrap_new_GroundLambertian, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::GroundLambertian::GroundLambertian(const blitz::Array< double, 2 > &Spec_coeffs, const blitz::Array<\n"
+		"bool, 2 > &Flag, const ArrayWithUnit< double, 1 > &Ref_points, const\n"
+		"std::vector< std::string > &Desc_band_names)\n"
+		"\n"
+		""},
+	 { (char *)"GroundLambertian_surface_parameter", _wrap_GroundLambertian_surface_parameter, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual ArrayAd<double, 1> FullPhysics::GroundLambertian::surface_parameter(const double wn, const int spec_index) const\n"
+		"\n"
+		""},
+	 { (char *)"GroundLambertian_albedo", _wrap_GroundLambertian_albedo, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual const AutoDerivative<double> FullPhysics::GroundLambertian::albedo(const DoubleWithUnit wave_point, const int spec_index) const\n"
+		"\n"
+		""},
+	 { (char *)"GroundLambertian_number_spectrometer", _wrap_GroundLambertian_number_spectrometer, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual const int FullPhysics::GroundLambertian::number_spectrometer() const\n"
+		"\n"
+		""},
+	 { (char *)"GroundLambertian_number_params", _wrap_GroundLambertian_number_params, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual const int FullPhysics::GroundLambertian::number_params() const\n"
+		"\n"
+		""},
+	 { (char *)"GroundLambertian_albedo_coefficients", _wrap_GroundLambertian_albedo_coefficients, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual const ArrayAd<double, 1> FullPhysics::GroundLambertian::albedo_coefficients(const int spec_index) const\n"
+		"\n"
+		""},
+	 { (char *)"GroundLambertian_albedo_covariance", _wrap_GroundLambertian_albedo_covariance, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual const blitz::Array<double, 2> FullPhysics::GroundLambertian::albedo_covariance(const int spec_index) const\n"
+		"\n"
+		""},
+	 { (char *)"GroundLambertian_reference_point", _wrap_GroundLambertian_reference_point, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual const DoubleWithUnit FullPhysics::GroundLambertian::reference_point(const int spec_index) const\n"
+		"Center wavelength that spectrally dependent parameter is referenced\n"
+		"to. \n"
+		""},
+	 { (char *)"GroundLambertian_clone", _wrap_GroundLambertian_clone, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual boost::shared_ptr<Ground> FullPhysics::GroundLambertian::clone() const\n"
+		"\n"
+		""},
+	 { (char *)"GroundLambertian_state_vector_name_i", _wrap_GroundLambertian_state_vector_name_i, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual std::string FullPhysics::GroundLambertian::state_vector_name_i(int i) const\n"
+		"\n"
+		""},
+	 { (char *)"GroundLambertian_print_desc", _wrap_GroundLambertian_print_desc, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::GroundLambertian::print(std::ostream &Os) const\n"
+		"\n"
+		""},
+	 { (char *)"GroundLambertian_desc", _wrap_GroundLambertian_desc, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual std::string FullPhysics::GroundLambertian::desc() const\n"
+		"\n"
+		""},
 	 { (char *)"delete_GroundLambertian", _wrap_delete_GroundLambertian, METH_VARARGS, NULL},
 	 { (char *)"GroundLambertian_swigregister", GroundLambertian_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }

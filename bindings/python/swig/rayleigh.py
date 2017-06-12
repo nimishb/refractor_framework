@@ -184,6 +184,13 @@ ObserverRayleigh_swigregister = _rayleigh.ObserverRayleigh_swigregister
 ObserverRayleigh_swigregister(ObserverRayleigh)
 
 class Rayleigh(full_physics_swig.pressure.ObserverPressure, full_physics_swig.altitude.ObserverAltitude):
+    """
+
+    This class calculates the Rayleigh portion of the optical depth.
+
+    C++ includes: rayleigh.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.pressure.ObserverPressure, full_physics_swig.altitude.ObserverAltitude]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -195,6 +202,12 @@ class Rayleigh(full_physics_swig.pressure.ObserverPressure, full_physics_swig.al
     __repr__ = _swig_repr
 
     def __init__(self, Pres, Alt, C):
+        """
+
+        FullPhysics::Rayleigh::Rayleigh(const boost::shared_ptr< Pressure > &Pres, const std::vector<
+        boost::shared_ptr< Altitude > > &Alt, const Constant &C)
+
+        """
         this = _rayleigh.new_Rayleigh(Pres, Alt, C)
         try:
             self.this.append(this)
@@ -202,21 +215,46 @@ class Rayleigh(full_physics_swig.pressure.ObserverPressure, full_physics_swig.al
             self.this = this
 
     def notify_update(self, *args):
+        """
+
+        virtual void FullPhysics::Rayleigh::notify_update(const Altitude &A)
+
+        """
         return _rayleigh.Rayleigh_notify_update(self, *args)
 
+
     def optical_depth_each_layer(self, wn, spec_index):
+        """
+
+        ArrayAd<double, 1> FullPhysics::Rayleigh::optical_depth_each_layer(double wn, int spec_index) const
+
+        """
         return _rayleigh.Rayleigh_optical_depth_each_layer(self, wn, spec_index)
-    __swig_getmethods__["cross_section"] = lambda x: _rayleigh.Rayleigh_cross_section
+
+
+    def cross_section(*args):
+        """
+
+        static DoubleWithUnit FullPhysics::Rayleigh::cross_section(const DoubleWithUnit &W, const Constant &C=DefaultConstant())
+
+        """
+        return _rayleigh.Rayleigh_cross_section(*args)
+
     if _newclass:
-        cross_section = staticmethod(_rayleigh.Rayleigh_cross_section)
+        cross_section = staticmethod(cross_section)
+    __swig_getmethods__["cross_section"] = lambda x: cross_section
     __swig_destroy__ = _rayleigh.delete_Rayleigh
     __del__ = lambda self: None
 Rayleigh_swigregister = _rayleigh.Rayleigh_swigregister
 Rayleigh_swigregister(Rayleigh)
 
 def Rayleigh_cross_section(*args):
+    """
+
+    static DoubleWithUnit FullPhysics::Rayleigh::cross_section(const DoubleWithUnit &W, const Constant &C=DefaultConstant())
+
+    """
     return _rayleigh.Rayleigh_cross_section(*args)
-Rayleigh_cross_section = _rayleigh.Rayleigh_cross_section
 
 # This file is compatible with both classic and new-style classes.
 

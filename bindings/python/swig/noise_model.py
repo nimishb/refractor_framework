@@ -122,6 +122,14 @@ def _new_from_set(cls, version, *args):
 
 import full_physics_swig.generic_object
 class NoiseModel(full_physics_swig.generic_object.GenericObject):
+    """
+
+    Interface for calculating noise/uncertainty values from radiance data
+    given some internal representation of the noise model.
+
+    C++ includes: noise_model.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.generic_object.GenericObject]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -138,7 +146,13 @@ class NoiseModel(full_physics_swig.generic_object.GenericObject):
     __del__ = lambda self: None
 
     def uncertainty(self, Spec_index, Radiance):
+        """
+
+        virtual blitz::Array<double, 1> FullPhysics::NoiseModel::uncertainty(int Spec_index, const blitz::Array< double, 1 > &Radiance) const =0
+        Uncertainty on radiance, for given spectral band. 
+        """
         return _noise_model.NoiseModel_uncertainty(self, Spec_index, Radiance)
+
 
     def __str__(self):
         return _noise_model.NoiseModel___str__(self)

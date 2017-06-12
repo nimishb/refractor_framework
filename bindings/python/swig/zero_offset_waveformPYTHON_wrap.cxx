@@ -5563,10 +5563,27 @@ SWIGINTERN PyObject *ZeroOffsetWaveform_swigregister(PyObject *SWIGUNUSEDPARM(se
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"ZeroOffsetWaveform_state_vector_name_i", _wrap_ZeroOffsetWaveform_state_vector_name_i, METH_VARARGS, NULL},
-	 { (char *)"ZeroOffsetWaveform_apply_correction", _wrap_ZeroOffsetWaveform_apply_correction, METH_VARARGS, NULL},
-	 { (char *)"ZeroOffsetWaveform__v_zero_offset", _wrap_ZeroOffsetWaveform__v_zero_offset, METH_VARARGS, NULL},
-	 { (char *)"delete_ZeroOffsetWaveform", _wrap_delete_ZeroOffsetWaveform, METH_VARARGS, NULL},
+	 { (char *)"ZeroOffsetWaveform_state_vector_name_i", _wrap_ZeroOffsetWaveform_state_vector_name_i, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual std::string FullPhysics::ZeroOffsetWaveform::state_vector_name_i(int i) const\n"
+		"\n"
+		""},
+	 { (char *)"ZeroOffsetWaveform_apply_correction", _wrap_ZeroOffsetWaveform_apply_correction, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::ZeroOffsetWaveform::apply_correction(const SpectralDomain &Pixel_grid, const std::vector< int >\n"
+		"&Pixel_list, SpectralRange &Radiance) const\n"
+		"\n"
+		""},
+	 { (char *)"ZeroOffsetWaveform__v_zero_offset", _wrap_ZeroOffsetWaveform__v_zero_offset, METH_VARARGS, (char *)"\n"
+		"\n"
+		"ArrayWithUnit<double, 1> FullPhysics::ZeroOffsetWaveform::zero_offset() const\n"
+		"Current value of zero level offset, for each pixel number. \n"
+		""},
+	 { (char *)"delete_ZeroOffsetWaveform", _wrap_delete_ZeroOffsetWaveform, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::ZeroOffsetWaveform::~ZeroOffsetWaveform()\n"
+		"\n"
+		""},
 	 { (char *)"ZeroOffsetWaveform_swigregister", ZeroOffsetWaveform_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };

@@ -5820,12 +5820,40 @@ SWIGINTERN PyObject *AbsorberVmrFixedLevel_swigregister(PyObject *SWIGUNUSEDPARM
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"new_AbsorberVmrFixedLevel", _wrap_new_AbsorberVmrFixedLevel, METH_VARARGS, NULL},
-	 { (char *)"AbsorberVmrFixedLevel_clone", _wrap_AbsorberVmrFixedLevel_clone, METH_VARARGS, NULL},
-	 { (char *)"AbsorberVmrFixedLevel_state_vector_name_i", _wrap_AbsorberVmrFixedLevel_state_vector_name_i, METH_VARARGS, NULL},
-	 { (char *)"AbsorberVmrFixedLevel__v_volume_mixing_ratio_level", _wrap_AbsorberVmrFixedLevel__v_volume_mixing_ratio_level, METH_VARARGS, NULL},
-	 { (char *)"AbsorberVmrFixedLevel__v_volume_mixing_ratio_active_level", _wrap_AbsorberVmrFixedLevel__v_volume_mixing_ratio_active_level, METH_VARARGS, NULL},
-	 { (char *)"delete_AbsorberVmrFixedLevel", _wrap_delete_AbsorberVmrFixedLevel, METH_VARARGS, NULL},
+	 { (char *)"new_AbsorberVmrFixedLevel", _wrap_new_AbsorberVmrFixedLevel, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::AbsorberVmrFixedLevel::AbsorberVmrFixedLevel(const boost::shared_ptr< Pressure > &Press, const boost::shared_ptr<\n"
+		"PressureLevelInput > &Press_level, const blitz::Array< bool, 1 >\n"
+		"&Used_flag, const blitz::Array< double, 1 > &Vmr, const std::string\n"
+		"&Gas_name)\n"
+		"\n"
+		""},
+	 { (char *)"AbsorberVmrFixedLevel_clone", _wrap_AbsorberVmrFixedLevel_clone, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual boost::shared_ptr<AbsorberVmr> FullPhysics::AbsorberVmrFixedLevel::clone(const boost::shared_ptr< Pressure > &Press) const\n"
+		"\n"
+		""},
+	 { (char *)"AbsorberVmrFixedLevel_state_vector_name_i", _wrap_AbsorberVmrFixedLevel_state_vector_name_i, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual std::string FullPhysics::AbsorberVmrFixedLevel::state_vector_name_i(int i) const\n"
+		"\n"
+		""},
+	 { (char *)"AbsorberVmrFixedLevel__v_volume_mixing_ratio_level", _wrap_AbsorberVmrFixedLevel__v_volume_mixing_ratio_level, METH_VARARGS, (char *)"\n"
+		"\n"
+		"blitz::Array<double, 1> FullPhysics::AbsorberVmrFixedLevel::volume_mixing_ratio_level() const\n"
+		"Volume mixing ratio on the fixed pressure levels. \n"
+		""},
+	 { (char *)"AbsorberVmrFixedLevel__v_volume_mixing_ratio_active_level", _wrap_AbsorberVmrFixedLevel__v_volume_mixing_ratio_active_level, METH_VARARGS, (char *)"\n"
+		"\n"
+		"blitz::Array<double, 1> FullPhysics::AbsorberVmrFixedLevel::volume_mixing_ratio_active_level() const\n"
+		"Volume mixing ratio on the fixed pressure levels, restricted to the\n"
+		"active levels. \n"
+		""},
+	 { (char *)"delete_AbsorberVmrFixedLevel", _wrap_delete_AbsorberVmrFixedLevel, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::AbsorberVmrFixedLevel::~AbsorberVmrFixedLevel()\n"
+		"\n"
+		""},
 	 { (char *)"AbsorberVmrFixedLevel_swigregister", AbsorberVmrFixedLevel_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };

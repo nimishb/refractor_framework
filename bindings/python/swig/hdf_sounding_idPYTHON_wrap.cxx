@@ -5189,10 +5189,26 @@ SWIGINTERN PyObject *HdfSoundingId_swigregister(PyObject *SWIGUNUSEDPARM(self), 
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"delete_HdfSoundingId", _wrap_delete_HdfSoundingId, METH_VARARGS, NULL},
-	 { (char *)"HdfSoundingId__v_frame_number", _wrap_HdfSoundingId__v_frame_number, METH_VARARGS, NULL},
-	 { (char *)"HdfSoundingId__v_sounding_number", _wrap_HdfSoundingId__v_sounding_number, METH_VARARGS, NULL},
-	 { (char *)"HdfSoundingId__v_sounding_id", _wrap_HdfSoundingId__v_sounding_id, METH_VARARGS, NULL},
+	 { (char *)"delete_HdfSoundingId", _wrap_delete_HdfSoundingId, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::HdfSoundingId::~HdfSoundingId()\n"
+		"\n"
+		""},
+	 { (char *)"HdfSoundingId__v_frame_number", _wrap_HdfSoundingId__v_frame_number, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual int FullPhysics::HdfSoundingId::frame_number() const\n"
+		"\n"
+		""},
+	 { (char *)"HdfSoundingId__v_sounding_number", _wrap_HdfSoundingId__v_sounding_number, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual int FullPhysics::HdfSoundingId::sounding_number() const\n"
+		"\n"
+		""},
+	 { (char *)"HdfSoundingId__v_sounding_id", _wrap_HdfSoundingId__v_sounding_id, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual int64_t FullPhysics::HdfSoundingId::sounding_id() const\n"
+		"\n"
+		""},
 	 { (char *)"HdfSoundingId___str__", _wrap_HdfSoundingId___str__, METH_VARARGS, NULL},
 	 { (char *)"HdfSoundingId_swigregister", HdfSoundingId_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }

@@ -5279,8 +5279,16 @@ SWIGINTERN PyObject *PrecomputedNoiseModel_swigregister(PyObject *SWIGUNUSEDPARM
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"new_PrecomputedNoiseModel", _wrap_new_PrecomputedNoiseModel, METH_VARARGS, NULL},
-	 { (char *)"PrecomputedNoiseModel_uncertainty", _wrap_PrecomputedNoiseModel_uncertainty, METH_VARARGS, NULL},
+	 { (char *)"new_PrecomputedNoiseModel", _wrap_new_PrecomputedNoiseModel, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::PrecomputedNoiseModel::PrecomputedNoiseModel(const HeritageFile &Noise_file)\n"
+		"\n"
+		""},
+	 { (char *)"PrecomputedNoiseModel_uncertainty", _wrap_PrecomputedNoiseModel_uncertainty, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual blitz::Array<double, 1> FullPhysics::PrecomputedNoiseModel::uncertainty(int Spec_index, const blitz::Array< double, 1 > &Radiance) const\n"
+		"\n"
+		""},
 	 { (char *)"delete_PrecomputedNoiseModel", _wrap_delete_PrecomputedNoiseModel, METH_VARARGS, NULL},
 	 { (char *)"PrecomputedNoiseModel_swigregister", PrecomputedNoiseModel_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }

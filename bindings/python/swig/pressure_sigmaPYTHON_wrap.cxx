@@ -5810,15 +5810,53 @@ SWIGINTERN PyObject *PressureSigma_swigregister(PyObject *SWIGUNUSEDPARM(self), 
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"new_PressureSigma", _wrap_new_PressureSigma, METH_VARARGS, NULL},
-	 { (char *)"PressureSigma__v_surface_pressure_uncertainty", _wrap_PressureSigma__v_surface_pressure_uncertainty, METH_VARARGS, NULL},
-	 { (char *)"PressureSigma_set_surface_pressure", _wrap_PressureSigma_set_surface_pressure, METH_VARARGS, NULL},
-	 { (char *)"PressureSigma_set_levels_from_grid", _wrap_PressureSigma_set_levels_from_grid, METH_VARARGS, NULL},
-	 { (char *)"PressureSigma_clone", _wrap_PressureSigma_clone, METH_VARARGS, NULL},
-	 { (char *)"PressureSigma_state_vector_name_i", _wrap_PressureSigma_state_vector_name_i, METH_VARARGS, NULL},
-	 { (char *)"PressureSigma__v_a", _wrap_PressureSigma__v_a, METH_VARARGS, NULL},
-	 { (char *)"PressureSigma__v_b", _wrap_PressureSigma__v_b, METH_VARARGS, NULL},
-	 { (char *)"delete_PressureSigma", _wrap_delete_PressureSigma, METH_VARARGS, NULL},
+	 { (char *)"new_PressureSigma", _wrap_new_PressureSigma, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::PressureSigma::PressureSigma(const blitz::Array< double, 1 > &Pressure_grid, double\n"
+		"Surface_pressure, bool Pressure_flag)\n"
+		"\n"
+		""},
+	 { (char *)"PressureSigma__v_surface_pressure_uncertainty", _wrap_PressureSigma__v_surface_pressure_uncertainty, METH_VARARGS, (char *)"\n"
+		"\n"
+		"double FullPhysics::PressureSigma::surface_pressure_uncertainty() const\n"
+		"Return the current surface pressure uncertainty. This is in Pascals.\n"
+		"\n"
+		""},
+	 { (char *)"PressureSigma_set_surface_pressure", _wrap_PressureSigma_set_surface_pressure, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::PressureSigma::set_surface_pressure(const AutoDerivative< double > &Surface_pressure)\n"
+		"Set the surface pressure. This is in Pascals. \n"
+		""},
+	 { (char *)"PressureSigma_set_levels_from_grid", _wrap_PressureSigma_set_levels_from_grid, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::PressureSigma::set_levels_from_grid(const blitz::Array< double, 1 > &Pressure_grid)\n"
+		"\n"
+		""},
+	 { (char *)"PressureSigma_clone", _wrap_PressureSigma_clone, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual boost::shared_ptr<Pressure> FullPhysics::PressureSigma::clone() const\n"
+		"\n"
+		""},
+	 { (char *)"PressureSigma_state_vector_name_i", _wrap_PressureSigma_state_vector_name_i, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual std::string FullPhysics::PressureSigma::state_vector_name_i(int i) const\n"
+		"\n"
+		""},
+	 { (char *)"PressureSigma__v_a", _wrap_PressureSigma__v_a, METH_VARARGS, (char *)"\n"
+		"\n"
+		"const blitz::Array<double, 1>& FullPhysics::PressureSigma::a() const\n"
+		"\n"
+		""},
+	 { (char *)"PressureSigma__v_b", _wrap_PressureSigma__v_b, METH_VARARGS, (char *)"\n"
+		"\n"
+		"const blitz::Array<double, 1>& FullPhysics::PressureSigma::b() const\n"
+		"\n"
+		""},
+	 { (char *)"delete_PressureSigma", _wrap_delete_PressureSigma, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::PressureSigma::~PressureSigma()\n"
+		"\n"
+		""},
 	 { (char *)"PressureSigma_swigregister", PressureSigma_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };

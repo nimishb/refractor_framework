@@ -5471,10 +5471,30 @@ fail:
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"solve_least_squares", _wrap_solve_least_squares, METH_VARARGS, NULL},
-	 { (char *)"svd", _wrap_svd, METH_VARARGS, NULL},
-	 { (char *)"generalized_inverse", _wrap_generalized_inverse, METH_VARARGS, NULL},
-	 { (char *)"solve_least_squares_qr", _wrap_solve_least_squares_qr, METH_VARARGS, NULL},
+	 { (char *)"solve_least_squares", _wrap_solve_least_squares, METH_VARARGS, (char *)"\n"
+		"\n"
+		"blitz::Array<double, 1> FullPhysics::solve_least_squares(const blitz::Array< double, 2 > &A, const blitz::Array< double, 1 >\n"
+		"&B, double Rcond=1e-12)\n"
+		"\n"
+		""},
+	 { (char *)"svd", _wrap_svd, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::svd(const blitz::Array< double, 2 > &A, blitz::Array< double, 1 > &S,\n"
+		"blitz::Array< double, 2 > &U, blitz::Array< double, 2 > &VT)\n"
+		"\n"
+		""},
+	 { (char *)"generalized_inverse", _wrap_generalized_inverse, METH_VARARGS, (char *)"\n"
+		"\n"
+		"blitz::Array<double, 2> FullPhysics::generalized_inverse(const blitz::Array< double, 2 > &A, const blitz::Array< bool, 1 >\n"
+		"&Zero_unused, double Rcond=std::numeric_limits< double >::epsilon())\n"
+		"\n"
+		""},
+	 { (char *)"solve_least_squares_qr", _wrap_solve_least_squares_qr, METH_VARARGS, (char *)"\n"
+		"\n"
+		"blitz::Array<double, 1> FullPhysics::solve_least_squares_qr(const blitz::Array< double, 2 > &A, const blitz::Array< double, 1 >\n"
+		"&B)\n"
+		"\n"
+		""},
 	 { NULL, NULL, 0, NULL }
 };
 

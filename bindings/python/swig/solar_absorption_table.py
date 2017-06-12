@@ -123,6 +123,16 @@ def _new_from_set(cls, version, *args):
 import full_physics_swig.solar_absorption_spectrum
 import full_physics_swig.generic_object
 class SolarAbsorptionTable(full_physics_swig.solar_absorption_spectrum.SolarAbsorptionSpectrum):
+    """
+
+    This class calculates the solar absorption spectrum.
+
+    This particular implementation reads a table of values, and
+    interpolates to give a value.
+
+    C++ includes: solar_absorption_table.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.solar_absorption_spectrum.SolarAbsorptionSpectrum]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -134,6 +144,11 @@ class SolarAbsorptionTable(full_physics_swig.solar_absorption_spectrum.SolarAbso
     __repr__ = _swig_repr
 
     def __init__(self, Hdf_static_input, Hdf_group):
+        """
+
+        FullPhysics::SolarAbsorptionTable::SolarAbsorptionTable(const HdfFile &Hdf_static_input, const std::string &Hdf_group)
+
+        """
         this = _solar_absorption_table.new_SolarAbsorptionTable(Hdf_static_input, Hdf_group)
         try:
             self.this.append(this)
@@ -141,7 +156,13 @@ class SolarAbsorptionTable(full_physics_swig.solar_absorption_spectrum.SolarAbso
             self.this = this
 
     def solar_absorption_spectrum(self, spec_domain):
+        """
+
+        virtual Spectrum FullPhysics::SolarAbsorptionTable::solar_absorption_spectrum(const SpectralDomain &spec_domain) const
+
+        """
         return _solar_absorption_table.SolarAbsorptionTable_solar_absorption_spectrum(self, spec_domain)
+
     __swig_destroy__ = _solar_absorption_table.delete_SolarAbsorptionTable
     __del__ = lambda self: None
 SolarAbsorptionTable_swigregister = _solar_absorption_table.SolarAbsorptionTable_swigregister

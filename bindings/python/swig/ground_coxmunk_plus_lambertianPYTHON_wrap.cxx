@@ -5605,13 +5605,42 @@ SWIGINTERN PyObject *GroundCoxmunkPlusLambertian_swigregister(PyObject *SWIGUNUS
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"new_GroundCoxmunkPlusLambertian", _wrap_new_GroundCoxmunkPlusLambertian, METH_VARARGS, NULL},
-	 { (char *)"GroundCoxmunkPlusLambertian_surface_parameter", _wrap_GroundCoxmunkPlusLambertian_surface_parameter, METH_VARARGS, NULL},
-	 { (char *)"GroundCoxmunkPlusLambertian__v_coxmunk", _wrap_GroundCoxmunkPlusLambertian__v_coxmunk, METH_VARARGS, NULL},
-	 { (char *)"GroundCoxmunkPlusLambertian__v_lambertian", _wrap_GroundCoxmunkPlusLambertian__v_lambertian, METH_VARARGS, NULL},
-	 { (char *)"GroundCoxmunkPlusLambertian_clone", _wrap_GroundCoxmunkPlusLambertian_clone, METH_VARARGS, NULL},
-	 { (char *)"GroundCoxmunkPlusLambertian_print_desc", _wrap_GroundCoxmunkPlusLambertian_print_desc, METH_VARARGS, NULL},
-	 { (char *)"GroundCoxmunkPlusLambertian_desc", _wrap_GroundCoxmunkPlusLambertian_desc, METH_VARARGS, NULL},
+	 { (char *)"new_GroundCoxmunkPlusLambertian", _wrap_new_GroundCoxmunkPlusLambertian, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::GroundCoxmunkPlusLambertian::GroundCoxmunkPlusLambertian(const boost::shared_ptr< GroundCoxmunk > &Coxmunk, const\n"
+		"boost::shared_ptr< GroundLambertian > &Lambertian)\n"
+		"\n"
+		""},
+	 { (char *)"GroundCoxmunkPlusLambertian_surface_parameter", _wrap_GroundCoxmunkPlusLambertian_surface_parameter, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual ArrayAd<double, 1> FullPhysics::GroundCoxmunkPlusLambertian::surface_parameter(const double wn, const int spec_index) const\n"
+		"\n"
+		""},
+	 { (char *)"GroundCoxmunkPlusLambertian__v_coxmunk", _wrap_GroundCoxmunkPlusLambertian__v_coxmunk, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual const boost::shared_ptr<GroundCoxmunk> FullPhysics::GroundCoxmunkPlusLambertian::coxmunk() const\n"
+		"\n"
+		""},
+	 { (char *)"GroundCoxmunkPlusLambertian__v_lambertian", _wrap_GroundCoxmunkPlusLambertian__v_lambertian, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual const boost::shared_ptr<GroundLambertian> FullPhysics::GroundCoxmunkPlusLambertian::lambertian() const\n"
+		"\n"
+		""},
+	 { (char *)"GroundCoxmunkPlusLambertian_clone", _wrap_GroundCoxmunkPlusLambertian_clone, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual boost::shared_ptr<Ground> FullPhysics::GroundCoxmunkPlusLambertian::clone() const\n"
+		"\n"
+		""},
+	 { (char *)"GroundCoxmunkPlusLambertian_print_desc", _wrap_GroundCoxmunkPlusLambertian_print_desc, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::GroundCoxmunkPlusLambertian::print(std::ostream &Os) const\n"
+		"\n"
+		""},
+	 { (char *)"GroundCoxmunkPlusLambertian_desc", _wrap_GroundCoxmunkPlusLambertian_desc, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual std::string FullPhysics::GroundCoxmunkPlusLambertian::desc() const\n"
+		"\n"
+		""},
 	 { (char *)"delete_GroundCoxmunkPlusLambertian", _wrap_delete_GroundCoxmunkPlusLambertian, METH_VARARGS, NULL},
 	 { (char *)"GroundCoxmunkPlusLambertian_swigregister", GroundCoxmunkPlusLambertian_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }

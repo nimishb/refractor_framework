@@ -183,6 +183,14 @@ ObserverRadiativeTransferRetrievable_swigregister = _radiative_transfer_retrieva
 ObserverRadiativeTransferRetrievable_swigregister(ObserverRadiativeTransferRetrievable)
 
 class RadiativeTransferRetrievable(full_physics_swig.radiative_transfer.RadiativeTransfer, full_physics_swig.state_vector.StateVectorObserver, ObservableRadiativeTransferRetrievable):
+    """
+
+    Interface class for radiative transfer implementations that happen to
+    have retrievable parameters.
+
+    C++ includes: radiative_transfer_retrievable.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.radiative_transfer.RadiativeTransfer, full_physics_swig.state_vector.StateVectorObserver, ObservableRadiativeTransferRetrievable]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -199,10 +207,22 @@ class RadiativeTransferRetrievable(full_physics_swig.radiative_transfer.Radiativ
     __del__ = lambda self: None
 
     def add_observer(self, Obs):
+        """
+
+        virtual void FullPhysics::RadiativeTransferRetrievable::add_observer(Observer< RadiativeTransferRetrievable > &Obs)
+
+        """
         return _radiative_transfer_retrievable.RadiativeTransferRetrievable_add_observer(self, Obs)
 
+
     def remove_observer(self, Obs):
+        """
+
+        virtual void FullPhysics::RadiativeTransferRetrievable::remove_observer(Observer< RadiativeTransferRetrievable > &Obs)
+
+        """
         return _radiative_transfer_retrievable.RadiativeTransferRetrievable_remove_observer(self, Obs)
+
 RadiativeTransferRetrievable_swigregister = _radiative_transfer_retrievable.RadiativeTransferRetrievable_swigregister
 RadiativeTransferRetrievable_swigregister(RadiativeTransferRetrievable)
 

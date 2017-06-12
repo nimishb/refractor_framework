@@ -6019,12 +6019,38 @@ SWIGINTERN PyObject *AerosolPropertyHdf_swigregister(PyObject *SWIGUNUSEDPARM(se
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"new_AerosolPropertyHdf", _wrap_new_AerosolPropertyHdf, METH_VARARGS, NULL},
-	 { (char *)"AerosolPropertyHdf_clone", _wrap_AerosolPropertyHdf_clone, METH_VARARGS, NULL},
-	 { (char *)"AerosolPropertyHdf_extinction_coefficient_each_layer", _wrap_AerosolPropertyHdf_extinction_coefficient_each_layer, METH_VARARGS, NULL},
-	 { (char *)"AerosolPropertyHdf_scattering_coefficient_each_layer", _wrap_AerosolPropertyHdf_scattering_coefficient_each_layer, METH_VARARGS, NULL},
-	 { (char *)"AerosolPropertyHdf_phase_function_moment_each_layer", _wrap_AerosolPropertyHdf_phase_function_moment_each_layer, METH_VARARGS, NULL},
-	 { (char *)"delete_AerosolPropertyHdf", _wrap_delete_AerosolPropertyHdf, METH_VARARGS, NULL},
+	 { (char *)"new_AerosolPropertyHdf", _wrap_new_AerosolPropertyHdf, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::AerosolPropertyHdf::AerosolPropertyHdf(const HdfFile &F, const std::string &Group_name, const\n"
+		"boost::shared_ptr< Pressure > &Press)\n"
+		"\n"
+		""},
+	 { (char *)"AerosolPropertyHdf_clone", _wrap_AerosolPropertyHdf_clone, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual boost::shared_ptr<AerosolProperty> FullPhysics::AerosolPropertyHdf::clone(const boost::shared_ptr< Pressure > &Press, const boost::shared_ptr<\n"
+		"RelativeHumidity > &Rh) const\n"
+		"\n"
+		""},
+	 { (char *)"AerosolPropertyHdf_extinction_coefficient_each_layer", _wrap_AerosolPropertyHdf_extinction_coefficient_each_layer, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual ArrayAd<double, 1> FullPhysics::AerosolPropertyHdf::extinction_coefficient_each_layer(double wn) const\n"
+		"\n"
+		""},
+	 { (char *)"AerosolPropertyHdf_scattering_coefficient_each_layer", _wrap_AerosolPropertyHdf_scattering_coefficient_each_layer, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual ArrayAd<double, 1> FullPhysics::AerosolPropertyHdf::scattering_coefficient_each_layer(double wn) const\n"
+		"\n"
+		""},
+	 { (char *)"AerosolPropertyHdf_phase_function_moment_each_layer", _wrap_AerosolPropertyHdf_phase_function_moment_each_layer, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual ArrayAd<double, 3> FullPhysics::AerosolPropertyHdf::phase_function_moment_each_layer(double wn, int nmom=-1, int nscatt=-1) const\n"
+		"\n"
+		""},
+	 { (char *)"delete_AerosolPropertyHdf", _wrap_delete_AerosolPropertyHdf, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::AerosolPropertyHdf::~AerosolPropertyHdf()\n"
+		"\n"
+		""},
 	 { (char *)"AerosolPropertyHdf_swigregister", AerosolPropertyHdf_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };

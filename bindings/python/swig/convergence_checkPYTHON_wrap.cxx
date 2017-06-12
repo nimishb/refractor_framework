@@ -6907,7 +6907,14 @@ SWIGINTERN PyObject *ConvergenceCheck_swigregister(PyObject *SWIGUNUSEDPARM(self
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"new_FitStatistic", _wrap_new_FitStatistic, METH_VARARGS, NULL},
+	 { (char *)"new_FitStatistic", _wrap_new_FitStatistic, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::FitStatistic::FitStatistic(bool Fit_succeeded, OUTCOME Outcome, int Number_iteration, int\n"
+		"Number_divergent, double D_sigma_sq, double D_sigma_sq_scaled, double\n"
+		"Chisq_apriori, double Chisq_measured, double Chisq_apriori_fc, double\n"
+		"Chisq_measured_fc)\n"
+		"\n"
+		""},
 	 { (char *)"FitStatistic_fit_succeeded_set", _wrap_FitStatistic_fit_succeeded_set, METH_VARARGS, NULL},
 	 { (char *)"FitStatistic_fit_succeeded_get", _wrap_FitStatistic_fit_succeeded_get, METH_VARARGS, NULL},
 	 { (char *)"FitStatistic_outcome_set", _wrap_FitStatistic_outcome_set, METH_VARARGS, NULL},
@@ -6920,8 +6927,17 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"FitStatistic_d_sigma_sq_get", _wrap_FitStatistic_d_sigma_sq_get, METH_VARARGS, NULL},
 	 { (char *)"FitStatistic_d_sigma_sq_scaled_set", _wrap_FitStatistic_d_sigma_sq_scaled_set, METH_VARARGS, NULL},
 	 { (char *)"FitStatistic_d_sigma_sq_scaled_get", _wrap_FitStatistic_d_sigma_sq_scaled_get, METH_VARARGS, NULL},
-	 { (char *)"FitStatistic__v_gamma2", _wrap_FitStatistic__v_gamma2, METH_VARARGS, NULL},
-	 { (char *)"FitStatistic__v_gamma2_fc", _wrap_FitStatistic__v_gamma2_fc, METH_VARARGS, NULL},
+	 { (char *)"FitStatistic__v_gamma2", _wrap_FitStatistic__v_gamma2, METH_VARARGS, (char *)"\n"
+		"\n"
+		"double FullPhysics::FitStatistic::gamma2() const\n"
+		"Parameter \"gamma2\", which is just chi2_apriori + chi2_measured. \n"
+		""},
+	 { (char *)"FitStatistic__v_gamma2_fc", _wrap_FitStatistic__v_gamma2_fc, METH_VARARGS, (char *)"\n"
+		"\n"
+		"double FullPhysics::FitStatistic::gamma2_fc() const\n"
+		"Parameter \"gamma2_fc\", which is just chisq_apriori_fc +\n"
+		"chisq_measured_fc. \n"
+		""},
 	 { (char *)"FitStatistic_chisq_apriori_set", _wrap_FitStatistic_chisq_apriori_set, METH_VARARGS, NULL},
 	 { (char *)"FitStatistic_chisq_apriori_get", _wrap_FitStatistic_chisq_apriori_get, METH_VARARGS, NULL},
 	 { (char *)"FitStatistic_chisq_measured_set", _wrap_FitStatistic_chisq_measured_set, METH_VARARGS, NULL},
@@ -6930,17 +6946,92 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"FitStatistic_chisq_apriori_fc_get", _wrap_FitStatistic_chisq_apriori_fc_get, METH_VARARGS, NULL},
 	 { (char *)"FitStatistic_chisq_measured_fc_set", _wrap_FitStatistic_chisq_measured_fc_set, METH_VARARGS, NULL},
 	 { (char *)"FitStatistic_chisq_measured_fc_get", _wrap_FitStatistic_chisq_measured_fc_get, METH_VARARGS, NULL},
-	 { (char *)"FitStatistic_chisq_measure_norm", _wrap_FitStatistic_chisq_measure_norm, METH_VARARGS, NULL},
-	 { (char *)"FitStatistic_residual_abs_rms", _wrap_FitStatistic_residual_abs_rms, METH_VARARGS, NULL},
-	 { (char *)"FitStatistic_residual_rel_rms", _wrap_FitStatistic_residual_rel_rms, METH_VARARGS, NULL},
+	 { (char *)"FitStatistic_chisq_measure_norm", _wrap_FitStatistic_chisq_measure_norm, METH_VARARGS, (char *)"\n"
+		"\n"
+		"double FullPhysics::FitStatistic::chisq_measure_norm(const blitz::Array< double, 1 > &Residual, const blitz::Array<\n"
+		"double, 1 > &Residual_cov_diag) const\n"
+		"Calculate chisq for given residual and covariance matrix. \n"
+		""},
+	 { (char *)"FitStatistic_residual_abs_rms", _wrap_FitStatistic_residual_abs_rms, METH_VARARGS, (char *)"\n"
+		"\n"
+		"double FullPhysics::FitStatistic::residual_abs_rms(const blitz::Array< double, 1 > &Residual) const\n"
+		"Calculate absolute root mean squared for given residual. \n"
+		""},
+	 { (char *)"FitStatistic_residual_rel_rms", _wrap_FitStatistic_residual_rel_rms, METH_VARARGS, (char *)"\n"
+		"\n"
+		"double FullPhysics::FitStatistic::residual_rel_rms(const blitz::Array< double, 1 > &Residual, const blitz::Array<\n"
+		"double, 1 > &Rad_measure) const\n"
+		"Calculate relative root mean squared for given residual. \n"
+		""},
 	 { (char *)"FitStatistic___str__", _wrap_FitStatistic___str__, METH_VARARGS, NULL},
 	 { (char *)"delete_FitStatistic", _wrap_delete_FitStatistic, METH_VARARGS, NULL},
 	 { (char *)"FitStatistic_swigregister", FitStatistic_swigregister, METH_VARARGS, NULL},
-	 { (char *)"delete_ConvergenceCheck", _wrap_delete_ConvergenceCheck, METH_VARARGS, NULL},
+	 { (char *)"delete_ConvergenceCheck", _wrap_delete_ConvergenceCheck, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::ConvergenceCheck::~ConvergenceCheck()\n"
+		"\n"
+		""},
 	 { (char *)"ConvergenceCheck___str__", _wrap_ConvergenceCheck___str__, METH_VARARGS, NULL},
-	 { (char *)"ConvergenceCheck_initialize_check", _wrap_ConvergenceCheck_initialize_check, METH_VARARGS, NULL},
-	 { (char *)"ConvergenceCheck_convergence_check", _wrap_ConvergenceCheck_convergence_check, METH_VARARGS, NULL},
-	 { (char *)"ConvergenceCheck_evaluate_quality", _wrap_ConvergenceCheck_evaluate_quality, METH_VARARGS, NULL},
+	 { (char *)"ConvergenceCheck_initialize_check", _wrap_ConvergenceCheck_initialize_check, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::ConvergenceCheck::initialize_check()\n"
+		"Called before the first iteration, in case there is any setup.\n"
+		"\n"
+		"The default here does nothing, but derived classes can override this\n"
+		"to do whatever initialization is needed. \n"
+		""},
+	 { (char *)"ConvergenceCheck_convergence_check", _wrap_ConvergenceCheck_convergence_check, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::ConvergenceCheck::convergence_check(const FitStatistic &fit_stat_last, FitStatistic &fit_stat, bool\n"
+		"&has_converged, bool &convergence_failed, double &gamma, bool\n"
+		"&step_diverged)=0\n"
+		"Check for the convergence of a Solver, or if we have taken a divergent\n"
+		"step.\n"
+		"\n"
+		"We pass in data from both this iteration and the last. If this is the\n"
+		"first iteration, then the last values can be any kind of garbage value\n"
+		"that is convenient (e.g., an empty Array) - we don't look at the\n"
+		"value.\n"
+		"\n"
+		"Parameters:\n"
+		"-----------\n"
+		"\n"
+		"fit_stat_last:   FitStatistic from the last iteration.\n"
+		"\n"
+		"fit_stat:   FitStatistic from this iteration. If we fail convergence,\n"
+		"the class may update fit_stat.outcome with the reason for failing.\n"
+		"\n"
+		"has_converged:  On exit, true if we have converged to a solution.\n"
+		"\n"
+		"convergence_failed:  On exit, true if we have failed to converge and\n"
+		"solver should just give up (e.g., we've exceeded a maximum number of\n"
+		"iterations.\n"
+		"\n"
+		"gamma:  The Levenberg-Marquardt gamma parameter. On input this is\n"
+		"value used in this iteration, on exit this is possibly updated to a\n"
+		"new value.\n"
+		"\n"
+		"step_diverged:  On exit, this is true if the last iteration took a\n"
+		"divergent step. In that case, we also update gamma to its new value.\n"
+		"\n"
+		""},
+	 { (char *)"ConvergenceCheck_evaluate_quality", _wrap_ConvergenceCheck_evaluate_quality, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::ConvergenceCheck::evaluate_quality(FitStatistic &fit_stat_last, const blitz::Array< double, 1 >\n"
+		"&Residual, const blitz::Array< double, 1 > &Residual_cov_diag)=0\n"
+		"Evaluates the quality of a converged fit from the residuals and\n"
+		"expected residual error.\n"
+		"\n"
+		"Parameters:\n"
+		"-----------\n"
+		"\n"
+		"fit_stat_last:   FitStatistic from the last iteration. An error should\n"
+		"occur if fit_stat.fit_succeeded = False\n"
+		"\n"
+		"Residual:  The residual fit from the solver.\n"
+		"\n"
+		"Residual_cov_diag:  The expected error for the fit data. \n"
+		""},
 	 { (char *)"ConvergenceCheck_swigregister", ConvergenceCheck_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };

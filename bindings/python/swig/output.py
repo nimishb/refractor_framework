@@ -122,6 +122,12 @@ def _new_from_set(cls, version, *args):
 
 import full_physics_swig.generic_object
 class OutputDouble(full_physics_swig.generic_object.GenericObject):
+    """
+
+    C++ includes: output.h
+
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.generic_object.GenericObject]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -133,6 +139,11 @@ class OutputDouble(full_physics_swig.generic_object.GenericObject):
     __repr__ = _swig_repr
 
     def __init__(self):
+        """
+
+        FullPhysics::OutputDouble::OutputDouble()
+
+        """
         if self.__class__ == OutputDouble:
             _self = None
         else:
@@ -146,7 +157,13 @@ class OutputDouble(full_physics_swig.generic_object.GenericObject):
     __del__ = lambda self: None
 
     def f(self):
+        """
+
+        virtual double FullPhysics::OutputDouble::f() const =0
+
+        """
         return _output.OutputDouble_f(self)
+
     def __disown__(self):
         self.this.disown()
         _output.disown_OutputDouble(self)
@@ -155,6 +172,12 @@ OutputDouble_swigregister = _output.OutputDouble_swigregister
 OutputDouble_swigregister(OutputDouble)
 
 class OutputBlitz1d(full_physics_swig.generic_object.GenericObject):
+    """
+
+    C++ includes: output.h
+
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.generic_object.GenericObject]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -166,6 +189,11 @@ class OutputBlitz1d(full_physics_swig.generic_object.GenericObject):
     __repr__ = _swig_repr
 
     def __init__(self):
+        """
+
+        FullPhysics::OutputBlitz1d::OutputBlitz1d()
+
+        """
         if self.__class__ == OutputBlitz1d:
             _self = None
         else:
@@ -179,7 +207,13 @@ class OutputBlitz1d(full_physics_swig.generic_object.GenericObject):
     __del__ = lambda self: None
 
     def f(self):
+        """
+
+        virtual blitz::Array<double,1> FullPhysics::OutputBlitz1d::f() const =0
+
+        """
         return _output.OutputBlitz1d_f(self)
+
     def __disown__(self):
         self.this.disown()
         _output.disown_OutputBlitz1d(self)
@@ -188,6 +222,12 @@ OutputBlitz1d_swigregister = _output.OutputBlitz1d_swigregister
 OutputBlitz1d_swigregister(OutputBlitz1d)
 
 class OutputBlitz2d(full_physics_swig.generic_object.GenericObject):
+    """
+
+    C++ includes: output.h
+
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.generic_object.GenericObject]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -199,6 +239,11 @@ class OutputBlitz2d(full_physics_swig.generic_object.GenericObject):
     __repr__ = _swig_repr
 
     def __init__(self):
+        """
+
+        FullPhysics::OutputBlitz2d::OutputBlitz2d()
+
+        """
         if self.__class__ == OutputBlitz2d:
             _self = None
         else:
@@ -212,7 +257,13 @@ class OutputBlitz2d(full_physics_swig.generic_object.GenericObject):
     __del__ = lambda self: None
 
     def f(self):
+        """
+
+        virtual blitz::Array<double,2> FullPhysics::OutputBlitz2d::f() const =0
+
+        """
         return _output.OutputBlitz2d_f(self)
+
     def __disown__(self):
         self.this.disown()
         _output.disown_OutputBlitz2d(self)
@@ -247,6 +298,54 @@ class OutputBlitz2dWrap(OutputBlitz2d):
 
 
 class Output(_object):
+    """
+
+    This is the base class for classes that write output for Level 2 Full
+    Physics.
+
+    Specific derived classes are used to write out files (e.g., OutputHdf,
+    OutputHeritage), this class just captures the common behavior.
+
+    The output is designed to be decentralized. Classes register
+    themselves as being able to supply data to be written out when
+    requested, and the OutputHeritage class will request this data when it
+    wants to write out the state of the system. This "write on demand"
+    design allows for scenarios such as "dump data out when an error
+    occurs" and "dump data on each iteration of the retrieval solver",
+    and "checkpoint results".
+
+    In many cases, the dataset and metadata is supplied either as a
+    constant unchanging value, or as a pointer to a member function of an
+    object supplied as a boost::shared_ptr<T>. The functions
+    "register_data_source" have been overloaded to handle these common
+    cases, most of the time these are the only functions you need. If you
+    want to specify this with a more general boost::function, you can do
+    so also.
+
+    The derived class need to supply various write_xxx functions to act as
+    a data sink for this data.
+
+    This class only supports a fixed number of data types (int, double,
+    std::string) and array rank (scalar, 1d, 2d, 3d). We also have a
+    int64_t scalar, needed for the sounding id. We can easily extend this
+    to other types and ranks if needed. For developers, you add a new
+    types by adding a new write_data function to this class, along with
+    adding the type to function "pass_to_write".
+
+    A write is intended to be atomic - either it completely succeeds or
+    the output should be cleaned up and nothing produced. This prevents a
+    file with "missing fields" from being generated.
+
+    In the case of a processing error, we may want to make an attempt to
+    dump as much of the data as possible to help with diagnostics. A
+    separate "write_best_attempt" routines is supplied, this will write
+    out whatever we can, ignoring all errors. This can results in partial
+    files, but in the case of a diagnostic file whatever we can get is
+    better than nothing.
+
+    C++ includes: output.h 
+    """
+
     __swig_setmethods__ = {}
     __setattr__ = lambda self, name, value: _swig_setattr(self, Output, name, value)
     __swig_getmethods__ = {}
@@ -262,10 +361,22 @@ class Output(_object):
         return _output.Output___str__(self)
 
     def write(self):
+        """
+
+        void FullPhysics::Output::write()
+
+        """
         return _output.Output_write(self)
 
+
     def write_best_attempt(self):
+        """
+
+        void FullPhysics::Output::write_best_attempt()
+
+        """
         return _output.Output_write_best_attempt(self)
+
 
     def _register_data_source(self, *args):
         return _output.Output__register_data_source(self, *args)

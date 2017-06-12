@@ -124,6 +124,19 @@ import full_physics_swig.connor_solver
 import full_physics_swig.observer
 import full_physics_swig.generic_object
 class SolverIterationLog(full_physics_swig.connor_solver.ObserverConnorSolver):
+    """
+
+    This is an observer of the ConnorSolver that writes out the state
+    vector values in a nicely formated way on each iteration.
+
+    For this to work it must be registered as an Observer of the
+    instantiated ConnorSolver.
+
+    When we support more solvers, this can be made more generic.
+
+    C++ includes: solver_iteration_log.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.connor_solver.ObserverConnorSolver]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -135,6 +148,11 @@ class SolverIterationLog(full_physics_swig.connor_solver.ObserverConnorSolver):
     __repr__ = _swig_repr
 
     def __init__(self, Sv):
+        """
+
+        FullPhysics::SolverIterationLog::SolverIterationLog(const boost::shared_ptr< StateVector > &Sv)
+
+        """
         this = _solver_iteration_log.new_SolverIterationLog(Sv)
         try:
             self.this.append(this)
@@ -142,7 +160,13 @@ class SolverIterationLog(full_physics_swig.connor_solver.ObserverConnorSolver):
             self.this = this
 
     def notify_update(self, solver):
+        """
+
+        void FullPhysics::SolverIterationLog::notify_update(const ConnorSolver &solver)
+
+        """
         return _solver_iteration_log.SolverIterationLog_notify_update(self, solver)
+
 
     def __str__(self):
         return _solver_iteration_log.SolverIterationLog___str__(self)

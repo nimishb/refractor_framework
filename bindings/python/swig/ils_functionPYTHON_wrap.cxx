@@ -5249,11 +5249,52 @@ SWIGINTERN PyObject *IlsFunction_swigregister(PyObject *SWIGUNUSEDPARM(self), Py
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"delete_IlsFunction", _wrap_delete_IlsFunction, METH_VARARGS, NULL},
+	 { (char *)"delete_IlsFunction", _wrap_delete_IlsFunction, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::IlsFunction::~IlsFunction()\n"
+		"\n"
+		""},
 	 { (char *)"IlsFunction___str__", _wrap_IlsFunction___str__, METH_VARARGS, NULL},
-	 { (char *)"IlsFunction_ils", _wrap_IlsFunction_ils, METH_VARARGS, NULL},
-	 { (char *)"IlsFunction__v_band_name", _wrap_IlsFunction__v_band_name, METH_VARARGS, NULL},
-	 { (char *)"IlsFunction__v_hdf_band_name", _wrap_IlsFunction__v_hdf_band_name, METH_VARARGS, NULL},
+	 { (char *)"IlsFunction_ils", _wrap_IlsFunction_ils, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::IlsFunction::ils(const AutoDerivative< double > &wn_center, const blitz::Array<\n"
+		"double, 1 > &wn, ArrayAd< double, 1 > &res) const =0\n"
+		"Return response function.\n"
+		"\n"
+		"Note that is function turns out to be a bit of a bottle neck because\n"
+		"it is called so many times. Most of the time the results are the same\n"
+		"size from one call to the next, so we pass in the results rather than\n"
+		"having this be a return value like we normally do. This avoids\n"
+		"recreating the array multiple times. We resize the output, so it is\n"
+		"fine if it doesn't happen to be the final result size. But much of the\n"
+		"time we avoid and extra allocation and destruction.\n"
+		"\n"
+		"Parameters:\n"
+		"-----------\n"
+		"\n"
+		"wn_center:  The wave number of the center of the response function\n"
+		"\n"
+		"wn:  The wavenumbers to return response function for.\n"
+		"\n"
+		"res:  Return the response function for each of the wn value. \n"
+		""},
+	 { (char *)"IlsFunction__v_band_name", _wrap_IlsFunction__v_band_name, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual std::string FullPhysics::IlsFunction::band_name() const =0\n"
+		"Descriptive name of the band. \n"
+		""},
+	 { (char *)"IlsFunction__v_hdf_band_name", _wrap_IlsFunction__v_hdf_band_name, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual std::string FullPhysics::IlsFunction::hdf_band_name() const\n"
+		"In general, the name used in HDF files for a particular band is\n"
+		"similar but not identical to the more human readable band_name.\n"
+		"\n"
+		"For example, with GOSAT we use the HDF field name \"weak_co2\", but\n"
+		"the band name is \"WC-Band\". This gives the HDF name to use.\n"
+		"\n"
+		"The default implementation just returns the same string as the band\n"
+		"name. \n"
+		""},
 	 { (char *)"IlsFunction_swigregister", IlsFunction_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };

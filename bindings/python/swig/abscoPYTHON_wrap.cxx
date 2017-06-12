@@ -9668,18 +9668,80 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"SwigPyIterator___sub__", _wrap_SwigPyIterator___sub__, METH_VARARGS, NULL},
 	 { (char *)"SwigPyIterator_swigregister", SwigPyIterator_swigregister, METH_VARARGS, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"Absco__v_number_broadener_vmr", _wrap_Absco__v_number_broadener_vmr, METH_VARARGS, NULL},
-	 { (char *)"Absco__v_number_layer", _wrap_Absco__v_number_layer, METH_VARARGS, NULL},
-	 { (char *)"Absco__v_number_temperature", _wrap_Absco__v_number_temperature, METH_VARARGS, NULL},
-	 { (char *)"Absco__v_broadener_vmr_grid", _wrap_Absco__v_broadener_vmr_grid, METH_VARARGS, NULL},
-	 { (char *)"Absco__v_pressure_grid", _wrap_Absco__v_pressure_grid, METH_VARARGS, NULL},
-	 { (char *)"Absco__v_temperature_grid", _wrap_Absco__v_temperature_grid, METH_VARARGS, NULL},
-	 { (char *)"Absco__v_broadener_name", _wrap_Absco__v_broadener_name, METH_VARARGS, NULL},
-	 { (char *)"Absco_table_scale", _wrap_Absco_table_scale, METH_VARARGS, NULL},
-	 { (char *)"Absco_absorption_cross_section", _wrap_Absco_absorption_cross_section, METH_VARARGS, NULL},
+	 { (char *)"Absco__v_number_broadener_vmr", _wrap_Absco__v_number_broadener_vmr, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual int FullPhysics::Absco::number_broadener_vmr() const\n"
+		"Number of broadener VMR values in absco file.\n"
+		"\n"
+		"This may be 0, if we don't have any broadening. \n"
+		""},
+	 { (char *)"Absco__v_number_layer", _wrap_Absco__v_number_layer, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual int FullPhysics::Absco::number_layer() const\n"
+		"Number of pressure layers in absco file. \n"
+		""},
+	 { (char *)"Absco__v_number_temperature", _wrap_Absco__v_number_temperature, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual int FullPhysics::Absco::number_temperature() const\n"
+		"Number of temperature values in absco file. \n"
+		""},
+	 { (char *)"Absco__v_broadener_vmr_grid", _wrap_Absco__v_broadener_vmr_grid, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual blitz::Array<double, 1> FullPhysics::Absco::broadener_vmr_grid() const =0\n"
+		"Return the broadener VMR grid used for this Absco file.\n"
+		"\n"
+		"This is number_broadener_vmr() in size, which may be size 0.\n"
+		"\n"
+		"This is dimensionless. \n"
+		""},
+	 { (char *)"Absco__v_pressure_grid", _wrap_Absco__v_pressure_grid, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual blitz::Array<double, 1> FullPhysics::Absco::pressure_grid() const =0\n"
+		"Return the pressure grid used for this Absco file.\n"
+		"\n"
+		"This is number_layer() in size.\n"
+		"\n"
+		"This is in Pascals. \n"
+		""},
+	 { (char *)"Absco__v_temperature_grid", _wrap_Absco__v_temperature_grid, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual blitz::Array<double, 2> FullPhysics::Absco::temperature_grid() const =0\n"
+		"Return the temperature grid for this Absco file.\n"
+		"\n"
+		"This is number_layer() x number_temperature() in size.\n"
+		"\n"
+		"This is in Kelvin. \n"
+		""},
+	 { (char *)"Absco__v_broadener_name", _wrap_Absco__v_broadener_name, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual std::string FullPhysics::Absco::broadener_name() const =0\n"
+		"\n"
+		""},
+	 { (char *)"Absco_table_scale", _wrap_Absco_table_scale, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual double FullPhysics::Absco::table_scale(double wn) const =0\n"
+		"Scale to apply to underlying ABSCO data to get the\n"
+		"absorption_cross_section.\n"
+		"\n"
+		"This allows empirical corrections to be applied the ABSCO tables\n"
+		"(e.g., O2 scaling). Note that as a user you don't need to apply this\n"
+		"correction, it is already applied in absorption_cross_section() and\n"
+		"AbscoInterpolator. \n"
+		""},
+	 { (char *)"Absco_absorption_cross_section", _wrap_Absco_absorption_cross_section, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual AutoDerivativeWithUnit<double> FullPhysics::Absco::absorption_cross_section(double wn, const DoubleWithUnit &press, const AutoDerivativeWithUnit<\n"
+		"double > &temp, const AutoDerivativeWithUnit< double > &broadener_vmr)\n"
+		"const\n"
+		"\n"
+		""},
 	 { (char *)"Absco_read_double", _wrap_Absco_read_double, METH_VARARGS, NULL},
 	 { (char *)"Absco_read_float", _wrap_Absco_read_float, METH_VARARGS, NULL},
-	 { (char *)"delete_Absco", _wrap_delete_Absco, METH_VARARGS, NULL},
+	 { (char *)"delete_Absco", _wrap_delete_Absco, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::Absco::~Absco()\n"
+		"\n"
+		""},
 	 { (char *)"Absco_swigregister", Absco_swigregister, METH_VARARGS, NULL},
 	 { (char *)"vector_absco_iterator", _wrap_vector_absco_iterator, METH_VARARGS, NULL},
 	 { (char *)"vector_absco___nonzero__", _wrap_vector_absco___nonzero__, METH_VARARGS, NULL},

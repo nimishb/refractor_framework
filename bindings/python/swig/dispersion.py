@@ -181,6 +181,14 @@ ObserverDispersion_swigregister = _dispersion.ObserverDispersion_swigregister
 ObserverDispersion_swigregister(ObserverDispersion)
 
 class Dispersion(full_physics_swig.state_vector.StateVectorObserver, ObservableDispersion):
+    """
+
+    This class calculates the wavenumber for each pixel in a single band
+    of an Instrument.
+
+    C++ includes: dispersion.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.state_vector.StateVectorObserver, ObservableDispersion]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -197,16 +205,51 @@ class Dispersion(full_physics_swig.state_vector.StateVectorObserver, ObservableD
     __del__ = lambda self: None
 
     def add_observer(self, Obs):
+        """
+
+        virtual void FullPhysics::Dispersion::add_observer(Observer< Dispersion > &Obs)
+
+        """
         return _dispersion.Dispersion_add_observer(self, Obs)
 
+
     def remove_observer(self, Obs):
+        """
+
+        virtual void FullPhysics::Dispersion::remove_observer(Observer< Dispersion > &Obs)
+
+        """
         return _dispersion.Dispersion_remove_observer(self, Obs)
 
+
     def clone(self):
+        """
+
+        virtual boost::shared_ptr<Dispersion> FullPhysics::Dispersion::clone() const =0
+        Clone an Dispersion object.
+
+        Note that the cloned version will not be attached to and StateVector
+        or Observer<Dispersion>, although you can of course attach them after
+        receiving the cloned object.
+
+        Because this isn't attached to the StateVector, one use of the clone
+        operator is to create a "frozen" Dispersion object. 
+        """
         return _dispersion.Dispersion_clone(self)
 
+
     def _v_pixel_grid(self):
+        """
+
+        virtual SpectralDomain FullPhysics::Dispersion::pixel_grid() const =0
+        Returns as list of grid points for each instrument pixel, and the
+        gradient of the points wrt the state vector.
+
+        This is for the full instrument pixels, i.e., any windowing etc.
+        happens in later processing. 
+        """
         return _dispersion.Dispersion__v_pixel_grid(self)
+
 
     @property
     def pixel_grid(self):

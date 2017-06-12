@@ -5198,10 +5198,31 @@ SWIGINTERN PyObject *SolarDopplerShift_swigregister(PyObject *SWIGUNUSEDPARM(sel
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"delete_SolarDopplerShift", _wrap_delete_SolarDopplerShift, METH_VARARGS, NULL},
+	 { (char *)"delete_SolarDopplerShift", _wrap_delete_SolarDopplerShift, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::SolarDopplerShift::~SolarDopplerShift()\n"
+		"\n"
+		""},
 	 { (char *)"SolarDopplerShift___str__", _wrap_SolarDopplerShift___str__, METH_VARARGS, NULL},
-	 { (char *)"SolarDopplerShift__v_solar_distance", _wrap_SolarDopplerShift__v_solar_distance, METH_VARARGS, NULL},
-	 { (char *)"SolarDopplerShift_doppler_stretch", _wrap_SolarDopplerShift_doppler_stretch, METH_VARARGS, NULL},
+	 { (char *)"SolarDopplerShift__v_solar_distance", _wrap_SolarDopplerShift__v_solar_distance, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual DoubleWithUnit FullPhysics::SolarDopplerShift::solar_distance() const =0\n"
+		"Return Earth-Sun distance.\n"
+		"\n"
+		"Earth-Sun distance. \n"
+		""},
+	 { (char *)"SolarDopplerShift_doppler_stretch", _wrap_SolarDopplerShift_doppler_stretch, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual SpectralDomain FullPhysics::SolarDopplerShift::doppler_stretch(const SpectralDomain &Spec_domain) const =0\n"
+		"Shift wavenumbers to account for doppler stretch.\n"
+		"\n"
+		"Parameters:\n"
+		"-----------\n"
+		"\n"
+		"Spec_domain:  wavenumber/wavelength\n"
+		"\n"
+		"Wavenumber/wavelength with Doppler stretch. \n"
+		""},
 	 { (char *)"SolarDopplerShift_swigregister", SolarDopplerShift_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };

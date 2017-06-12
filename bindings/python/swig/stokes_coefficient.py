@@ -181,6 +181,13 @@ ObserverStokesCoefficient_swigregister = _stokes_coefficient.ObserverStokesCoeff
 ObserverStokesCoefficient_swigregister(ObserverStokesCoefficient)
 
 class StokesCoefficient(full_physics_swig.state_vector.StateVectorObserver, ObservableStokesCoefficient):
+    """
+
+    This class maintains the stokes coefficient portion of the state.
+
+    C++ includes: stokes_coefficient.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.state_vector.StateVectorObserver, ObservableStokesCoefficient]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -197,13 +204,39 @@ class StokesCoefficient(full_physics_swig.state_vector.StateVectorObserver, Obse
     __del__ = lambda self: None
 
     def add_observer(self, Obs):
+        """
+
+        virtual void FullPhysics::StokesCoefficient::add_observer(Observer< StokesCoefficient > &Obs)
+
+        """
         return _stokes_coefficient.StokesCoefficient_add_observer(self, Obs)
 
+
     def remove_observer(self, Obs):
+        """
+
+        virtual void FullPhysics::StokesCoefficient::remove_observer(Observer< StokesCoefficient > &Obs)
+
+        """
         return _stokes_coefficient.StokesCoefficient_remove_observer(self, Obs)
 
+
     def _v_stokes_coefficient(self):
+        """
+
+        virtual ArrayAd<double, 2> FullPhysics::StokesCoefficient::stokes_coefficient() const =0
+        Return Stokes coefficients used to go from Stokes vector to scalar
+        reflectance.
+
+        This is number_spectrometer() x 4, and is unit less.
+
+        Note that is simple a matter of convenience that we have "4" rather
+        than just number_stokes(). This happens to be how the stokes
+        coefficients are given the Level 1 file. We only actually use the
+        first number_stokes() coefficients. 
+        """
         return _stokes_coefficient.StokesCoefficient__v_stokes_coefficient(self)
+
 
     @property
     def stokes_coefficient(self):
@@ -211,7 +244,20 @@ class StokesCoefficient(full_physics_swig.state_vector.StateVectorObserver, Obse
 
 
     def clone(self):
+        """
+
+        virtual boost::shared_ptr<StokesCoefficient> FullPhysics::StokesCoefficient::clone() const =0
+        Clone a StokesCoefficient object.
+
+        Note that the cloned version will not be attached to a StateVector or
+        Observer<StokesCoefficient>, although you can of course attach them
+        after receiving the cloned object.
+
+        Because this isn't attached to the StateVector, one use of the clone
+        operator is to create a "frozen" StokesCoefficient object. 
+        """
         return _stokes_coefficient.StokesCoefficient_clone(self)
+
 
     def __str__(self):
         return _stokes_coefficient.StokesCoefficient___str__(self)

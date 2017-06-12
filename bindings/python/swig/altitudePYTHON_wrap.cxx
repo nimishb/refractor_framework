@@ -10413,14 +10413,48 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"ObserverAltitude_notify_add", _wrap_ObserverAltitude_notify_add, METH_VARARGS, NULL},
 	 { (char *)"ObserverAltitude_notify_remove", _wrap_ObserverAltitude_notify_remove, METH_VARARGS, NULL},
 	 { (char *)"ObserverAltitude_swigregister", ObserverAltitude_swigregister, METH_VARARGS, NULL},
-	 { (char *)"delete_Altitude", _wrap_delete_Altitude, METH_VARARGS, NULL},
+	 { (char *)"delete_Altitude", _wrap_delete_Altitude, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::Altitude::~Altitude()\n"
+		"\n"
+		""},
 	 { (char *)"Altitude___str__", _wrap_Altitude___str__, METH_VARARGS, NULL},
-	 { (char *)"Altitude_print_desc", _wrap_Altitude_print_desc, METH_VARARGS, NULL},
-	 { (char *)"Altitude_add_observer", _wrap_Altitude_add_observer, METH_VARARGS, NULL},
-	 { (char *)"Altitude_remove_observer", _wrap_Altitude_remove_observer, METH_VARARGS, NULL},
-	 { (char *)"Altitude_altitude", _wrap_Altitude_altitude, METH_VARARGS, NULL},
-	 { (char *)"Altitude_gravity", _wrap_Altitude_gravity, METH_VARARGS, NULL},
-	 { (char *)"Altitude_clone", _wrap_Altitude_clone, METH_VARARGS, NULL},
+	 { (char *)"Altitude_print_desc", _wrap_Altitude_print_desc, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::Altitude::print(std::ostream &Os) const\n"
+		"\n"
+		""},
+	 { (char *)"Altitude_add_observer", _wrap_Altitude_add_observer, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::Altitude::add_observer(Observer< Altitude > &Obs)\n"
+		"\n"
+		""},
+	 { (char *)"Altitude_remove_observer", _wrap_Altitude_remove_observer, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::Altitude::remove_observer(Observer< Altitude > &Obs)\n"
+		"\n"
+		""},
+	 { (char *)"Altitude_altitude", _wrap_Altitude_altitude, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual AutoDerivativeWithUnit<double> FullPhysics::Altitude::altitude(const AutoDerivativeWithUnit< double > &P) const =0\n"
+		"Return altitude grid for the given pressure. \n"
+		""},
+	 { (char *)"Altitude_gravity", _wrap_Altitude_gravity, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual AutoDerivativeWithUnit<double> FullPhysics::Altitude::gravity(const AutoDerivativeWithUnit< double > &P) const =0\n"
+		"Return gravity constant for the given pressure. \n"
+		""},
+	 { (char *)"Altitude_clone", _wrap_Altitude_clone, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual boost::shared_ptr<Altitude> FullPhysics::Altitude::clone(const boost::shared_ptr< Pressure > &Press, const boost::shared_ptr<\n"
+		"Temperature > &Temp) const =0\n"
+		"This version of clone takes a pressure and temperature to use.\n"
+		"\n"
+		"The intent is that the pressure and temperature has been cloned from\n"
+		"the original pressure and temperature (although this class has no way\n"
+		"to verify this). This allows sets of objects to be cloned using a\n"
+		"common Pressure and Temperature clone, e.g. Atmosphere. \n"
+		""},
 	 { (char *)"new_Altitude", _wrap_new_Altitude, METH_VARARGS, NULL},
 	 { (char *)"disown_Altitude", _wrap_disown_Altitude, METH_VARARGS, NULL},
 	 { (char *)"Altitude_swigregister", Altitude_swigregister, METH_VARARGS, NULL},

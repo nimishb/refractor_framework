@@ -5327,11 +5327,23 @@ SWIGINTERN PyObject *FpLogger_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObj
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"new_FpLogger", _wrap_new_FpLogger, METH_VARARGS, NULL},
-	 { (char *)"FpLogger_flush", _wrap_FpLogger_flush, METH_VARARGS, NULL},
+	 { (char *)"new_FpLogger", _wrap_new_FpLogger, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::FpLogger::FpLogger(int Verbosity_level=LogImp::DEBUG)\n"
+		"Constructor. \n"
+		""},
+	 { (char *)"FpLogger_flush", _wrap_FpLogger_flush, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::FpLogger::flush(log_level l)\n"
+		"\n"
+		""},
 	 { (char *)"FpLogger_turn_on_logger", _wrap_FpLogger_turn_on_logger, METH_VARARGS, NULL},
 	 { (char *)"FpLogger_turn_off_logger", _wrap_FpLogger_turn_off_logger, METH_VARARGS, NULL},
-	 { (char *)"delete_FpLogger", _wrap_delete_FpLogger, METH_VARARGS, NULL},
+	 { (char *)"delete_FpLogger", _wrap_delete_FpLogger, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::FpLogger::~FpLogger()\n"
+		"\n"
+		""},
 	 { (char *)"FpLogger_swigregister", FpLogger_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };

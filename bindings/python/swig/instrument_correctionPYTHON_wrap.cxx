@@ -7183,10 +7183,45 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"ObserverInstrumentCorrection_notify_add", _wrap_ObserverInstrumentCorrection_notify_add, METH_VARARGS, NULL},
 	 { (char *)"ObserverInstrumentCorrection_notify_remove", _wrap_ObserverInstrumentCorrection_notify_remove, METH_VARARGS, NULL},
 	 { (char *)"ObserverInstrumentCorrection_swigregister", ObserverInstrumentCorrection_swigregister, METH_VARARGS, NULL},
-	 { (char *)"delete_InstrumentCorrection", _wrap_delete_InstrumentCorrection, METH_VARARGS, NULL},
+	 { (char *)"delete_InstrumentCorrection", _wrap_delete_InstrumentCorrection, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::InstrumentCorrection::~InstrumentCorrection()\n"
+		"\n"
+		""},
 	 { (char *)"InstrumentCorrection___str__", _wrap_InstrumentCorrection___str__, METH_VARARGS, NULL},
-	 { (char *)"InstrumentCorrection_apply_correction", _wrap_InstrumentCorrection_apply_correction, METH_VARARGS, NULL},
-	 { (char *)"InstrumentCorrection_clone", _wrap_InstrumentCorrection_clone, METH_VARARGS, NULL},
+	 { (char *)"InstrumentCorrection_apply_correction", _wrap_InstrumentCorrection_apply_correction, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::InstrumentCorrection::apply_correction(const SpectralDomain &Pixel_grid, const std::vector< int >\n"
+		"&Pixel_list, SpectralRange &Radiance) const =0\n"
+		"Apply correction to radiance values, in place.\n"
+		"\n"
+		"If Radiance includes a Jacobian, then we include the Jacobian\n"
+		"calculation. Otherwise we don't include the Jacobian in the\n"
+		"calculation.\n"
+		"\n"
+		"Parameters:\n"
+		"-----------\n"
+		"\n"
+		"Pixel_grid:  - The grid point of each pixel. We only use a subset of\n"
+		"these points, but the full list is passed in for use by the class.\n"
+		"\n"
+		"Pixel_list:  - List of pixels that actually appear in Radiance, in the\n"
+		"order that they appear.\n"
+		"\n"
+		"Radiance:  - Radiance values, that will be corrected in place. \n"
+		""},
+	 { (char *)"InstrumentCorrection_clone", _wrap_InstrumentCorrection_clone, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual boost::shared_ptr<InstrumentCorrection> FullPhysics::InstrumentCorrection::clone() const =0\n"
+		"Clone an InstrumentCorrection object.\n"
+		"\n"
+		"Note that the cloned version will not be attached to and StateVector\n"
+		"or Observer<InstrumentCorrection>, although you can of course attach\n"
+		"them after receiving the cloned object.\n"
+		"\n"
+		"Because this isn't attached to the StateVector, one use of the clone\n"
+		"operator is to create a \"frozen\" InstrumentCorrection object. \n"
+		""},
 	 { (char *)"InstrumentCorrection_swigregister", InstrumentCorrection_swigregister, METH_VARARGS, NULL},
 	 { (char *)"SubStateVectorArrayInstrumentCorrection_init", _wrap_SubStateVectorArrayInstrumentCorrection_init, METH_VARARGS, NULL},
 	 { (char *)"delete_SubStateVectorArrayInstrumentCorrection", _wrap_delete_SubStateVectorArrayInstrumentCorrection, METH_VARARGS, NULL},

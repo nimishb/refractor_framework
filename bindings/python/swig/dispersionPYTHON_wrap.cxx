@@ -7082,11 +7082,42 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"ObserverDispersion_notify_add", _wrap_ObserverDispersion_notify_add, METH_VARARGS, NULL},
 	 { (char *)"ObserverDispersion_notify_remove", _wrap_ObserverDispersion_notify_remove, METH_VARARGS, NULL},
 	 { (char *)"ObserverDispersion_swigregister", ObserverDispersion_swigregister, METH_VARARGS, NULL},
-	 { (char *)"delete_Dispersion", _wrap_delete_Dispersion, METH_VARARGS, NULL},
-	 { (char *)"Dispersion_add_observer", _wrap_Dispersion_add_observer, METH_VARARGS, NULL},
-	 { (char *)"Dispersion_remove_observer", _wrap_Dispersion_remove_observer, METH_VARARGS, NULL},
-	 { (char *)"Dispersion_clone", _wrap_Dispersion_clone, METH_VARARGS, NULL},
-	 { (char *)"Dispersion__v_pixel_grid", _wrap_Dispersion__v_pixel_grid, METH_VARARGS, NULL},
+	 { (char *)"delete_Dispersion", _wrap_delete_Dispersion, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::Dispersion::~Dispersion()\n"
+		"\n"
+		""},
+	 { (char *)"Dispersion_add_observer", _wrap_Dispersion_add_observer, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::Dispersion::add_observer(Observer< Dispersion > &Obs)\n"
+		"\n"
+		""},
+	 { (char *)"Dispersion_remove_observer", _wrap_Dispersion_remove_observer, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::Dispersion::remove_observer(Observer< Dispersion > &Obs)\n"
+		"\n"
+		""},
+	 { (char *)"Dispersion_clone", _wrap_Dispersion_clone, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual boost::shared_ptr<Dispersion> FullPhysics::Dispersion::clone() const =0\n"
+		"Clone an Dispersion object.\n"
+		"\n"
+		"Note that the cloned version will not be attached to and StateVector\n"
+		"or Observer<Dispersion>, although you can of course attach them after\n"
+		"receiving the cloned object.\n"
+		"\n"
+		"Because this isn't attached to the StateVector, one use of the clone\n"
+		"operator is to create a \"frozen\" Dispersion object. \n"
+		""},
+	 { (char *)"Dispersion__v_pixel_grid", _wrap_Dispersion__v_pixel_grid, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual SpectralDomain FullPhysics::Dispersion::pixel_grid() const =0\n"
+		"Returns as list of grid points for each instrument pixel, and the\n"
+		"gradient of the points wrt the state vector.\n"
+		"\n"
+		"This is for the full instrument pixels, i.e., any windowing etc.\n"
+		"happens in later processing. \n"
+		""},
 	 { (char *)"Dispersion_swigregister", Dispersion_swigregister, METH_VARARGS, NULL},
 	 { (char *)"SubStateVectorArrayDispersion_init", _wrap_SubStateVectorArrayDispersion_init, METH_VARARGS, NULL},
 	 { (char *)"delete_SubStateVectorArrayDispersion", _wrap_delete_SubStateVectorArrayDispersion, METH_VARARGS, NULL},

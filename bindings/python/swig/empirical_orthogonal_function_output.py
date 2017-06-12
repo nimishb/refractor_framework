@@ -125,6 +125,17 @@ import full_physics_swig.generic_object
 import full_physics_swig.sub_state_vector_array
 import full_physics_swig.instrument_correction
 class EmpiricalOrthogonalFunctionOutput(full_physics_swig.register_output_base.RegisterOutputBase):
+    """
+
+    This registers the portions of the EmpiricalOrthogonalFunction class
+    that should be written as output.
+
+    See the discussion in RegisterOutputBase why this isn't just part of
+    the EmpiricalOrthogonalFunction class.
+
+    C++ includes: empirical_orthogonal_function_output.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.register_output_base.RegisterOutputBase]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -139,10 +150,22 @@ class EmpiricalOrthogonalFunctionOutput(full_physics_swig.register_output_base.R
     __repr__ = _swig_repr
 
     def register_output(self, out):
+        """
+
+        virtual void FullPhysics::EmpiricalOrthogonalFunctionOutput::register_output(const boost::shared_ptr< Output > &out) const
+
+        """
         return _empirical_orthogonal_function_output.EmpiricalOrthogonalFunctionOutput_register_output(self, out)
 
+
     def register_output_apriori(self, out):
+        """
+
+        virtual void FullPhysics::EmpiricalOrthogonalFunctionOutput::register_output_apriori(const boost::shared_ptr< Output > &out) const
+
+        """
         return _empirical_orthogonal_function_output.EmpiricalOrthogonalFunctionOutput_register_output_apriori(self, out)
+
     __swig_destroy__ = _empirical_orthogonal_function_output.delete_EmpiricalOrthogonalFunctionOutput
     __del__ = lambda self: None
 EmpiricalOrthogonalFunctionOutput_swigregister = _empirical_orthogonal_function_output.EmpiricalOrthogonalFunctionOutput_swigregister

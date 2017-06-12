@@ -6617,17 +6617,83 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"ObserverInstrument_notify_add", _wrap_ObserverInstrument_notify_add, METH_VARARGS, NULL},
 	 { (char *)"ObserverInstrument_notify_remove", _wrap_ObserverInstrument_notify_remove, METH_VARARGS, NULL},
 	 { (char *)"ObserverInstrument_swigregister", ObserverInstrument_swigregister, METH_VARARGS, NULL},
-	 { (char *)"delete_Instrument", _wrap_delete_Instrument, METH_VARARGS, NULL},
+	 { (char *)"delete_Instrument", _wrap_delete_Instrument, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::Instrument::~Instrument()\n"
+		"\n"
+		""},
 	 { (char *)"Instrument___str__", _wrap_Instrument___str__, METH_VARARGS, NULL},
-	 { (char *)"Instrument_add_observer", _wrap_Instrument_add_observer, METH_VARARGS, NULL},
-	 { (char *)"Instrument_remove_observer", _wrap_Instrument_remove_observer, METH_VARARGS, NULL},
-	 { (char *)"Instrument_clone", _wrap_Instrument_clone, METH_VARARGS, NULL},
-	 { (char *)"Instrument_apply_instrument_model", _wrap_Instrument_apply_instrument_model, METH_VARARGS, NULL},
-	 { (char *)"Instrument__v_number_spectrometer", _wrap_Instrument__v_number_spectrometer, METH_VARARGS, NULL},
-	 { (char *)"Instrument_pixel_spectral_domain", _wrap_Instrument_pixel_spectral_domain, METH_VARARGS, NULL},
-	 { (char *)"Instrument_band_name", _wrap_Instrument_band_name, METH_VARARGS, NULL},
-	 { (char *)"Instrument_hdf_band_name", _wrap_Instrument_hdf_band_name, METH_VARARGS, NULL},
-	 { (char *)"Instrument_ils_half_width", _wrap_Instrument_ils_half_width, METH_VARARGS, NULL},
+	 { (char *)"Instrument_add_observer", _wrap_Instrument_add_observer, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::Instrument::add_observer(Observer< Instrument > &Obs)\n"
+		"\n"
+		""},
+	 { (char *)"Instrument_remove_observer", _wrap_Instrument_remove_observer, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::Instrument::remove_observer(Observer< Instrument > &Obs)\n"
+		"\n"
+		""},
+	 { (char *)"Instrument_clone", _wrap_Instrument_clone, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual boost::shared_ptr<Instrument> FullPhysics::Instrument::clone() const =0\n"
+		"Clone an Instrument object.\n"
+		"\n"
+		"Note that the cloned version will not be attached to and StateVector\n"
+		"or Observer<Instrument>, although you can of course attach them after\n"
+		"receiving the cloned object.\n"
+		"\n"
+		"Because this isn't attached to the StateVector, one use of the clone\n"
+		"operator is to create a \"frozen\" Instrument object. \n"
+		""},
+	 { (char *)"Instrument_apply_instrument_model", _wrap_Instrument_apply_instrument_model, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual Spectrum FullPhysics::Instrument::apply_instrument_model(const Spectrum &High_resolution_spectrum, const std::vector< int >\n"
+		"&Pixel_list, int Spec_index) const =0\n"
+		"Apply the instrument model to both the radiance and derivatives.\n"
+		"\n"
+		"Parameters:\n"
+		"-----------\n"
+		"\n"
+		"High_resolution_spectrum:  High resolution spectrum.\n"
+		"\n"
+		"Pixel_list:  List of pixels to include in radiance\n"
+		"\n"
+		"Spec_index:  Spectral index\n"
+		"\n"
+		"Spectrum with instrument model applied. \n"
+		""},
+	 { (char *)"Instrument__v_number_spectrometer", _wrap_Instrument__v_number_spectrometer, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual int FullPhysics::Instrument::number_spectrometer() const =0\n"
+		"Give number of spectrometers. \n"
+		""},
+	 { (char *)"Instrument_pixel_spectral_domain", _wrap_Instrument_pixel_spectral_domain, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual SpectralDomain FullPhysics::Instrument::pixel_spectral_domain(int Spec_index) const =0\n"
+		"This is the pixel wavenumber/wavelength for each pixel. \n"
+		""},
+	 { (char *)"Instrument_band_name", _wrap_Instrument_band_name, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual std::string FullPhysics::Instrument::band_name(int Spec_index) const =0\n"
+		"Band name for given Spec_index. \n"
+		""},
+	 { (char *)"Instrument_hdf_band_name", _wrap_Instrument_hdf_band_name, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual std::string FullPhysics::Instrument::hdf_band_name(int Spec_index) const\n"
+		"In general, the name used in HDF files for a particular band is\n"
+		"similar but not identical to the more human readable band_name.\n"
+		"\n"
+		"For example, with GOSAT we use the HDF field name \"weak_co2\", but\n"
+		"the band name is \"WC-Band\". This gives the HDF name to use.\n"
+		"\n"
+		"The default implementation just returns the same string as the band\n"
+		"name. \n"
+		""},
+	 { (char *)"Instrument_ils_half_width", _wrap_Instrument_ils_half_width, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::Instrument::ils_half_width(int Spec_index, DoubleWithUnit &half_width)=0\n"
+		"\n"
+		""},
 	 { (char *)"Instrument_swigregister", Instrument_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };

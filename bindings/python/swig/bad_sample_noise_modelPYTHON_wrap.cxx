@@ -5449,11 +5449,32 @@ SWIGINTERN PyObject *BadSampleNoiseModel_swigregister(PyObject *SWIGUNUSEDPARM(s
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"new_BadSampleNoiseModel", _wrap_new_BadSampleNoiseModel, METH_VARARGS, NULL},
-	 { (char *)"BadSampleNoiseModel_uncertainty", _wrap_BadSampleNoiseModel_uncertainty, METH_VARARGS, NULL},
-	 { (char *)"BadSampleNoiseModel__v_bad_sample_uncertainty", _wrap_BadSampleNoiseModel__v_bad_sample_uncertainty, METH_VARARGS, NULL},
-	 { (char *)"BadSampleNoiseModel__v_underlying_noise_model", _wrap_BadSampleNoiseModel__v_underlying_noise_model, METH_VARARGS, NULL},
-	 { (char *)"BadSampleNoiseModel__v_bad_sample_mask", _wrap_BadSampleNoiseModel__v_bad_sample_mask, METH_VARARGS, NULL},
+	 { (char *)"new_BadSampleNoiseModel", _wrap_new_BadSampleNoiseModel, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::BadSampleNoiseModel::BadSampleNoiseModel(const boost::shared_ptr< NoiseModel > &Underlying_noise_model, const\n"
+		"blitz::Array< T, 2 > &Bad_sample_mask, double Bad_sample_uncer)\n"
+		"\n"
+		""},
+	 { (char *)"BadSampleNoiseModel_uncertainty", _wrap_BadSampleNoiseModel_uncertainty, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual blitz::Array<double, 1> FullPhysics::BadSampleNoiseModel::uncertainty(int Spec_index, const blitz::Array< double, 1 > &Radiance) const\n"
+		"\n"
+		""},
+	 { (char *)"BadSampleNoiseModel__v_bad_sample_uncertainty", _wrap_BadSampleNoiseModel__v_bad_sample_uncertainty, METH_VARARGS, (char *)"\n"
+		"\n"
+		"double FullPhysics::BadSampleNoiseModel::bad_sample_uncertainty() const\n"
+		"\n"
+		""},
+	 { (char *)"BadSampleNoiseModel__v_underlying_noise_model", _wrap_BadSampleNoiseModel__v_underlying_noise_model, METH_VARARGS, (char *)"\n"
+		"\n"
+		"const boost::shared_ptr<NoiseModel>& FullPhysics::BadSampleNoiseModel::underlying_noise_model() const\n"
+		"\n"
+		""},
+	 { (char *)"BadSampleNoiseModel__v_bad_sample_mask", _wrap_BadSampleNoiseModel__v_bad_sample_mask, METH_VARARGS, (char *)"\n"
+		"\n"
+		"const blitz::Array<bool, 2>& FullPhysics::BadSampleNoiseModel::bad_sample_mask() const\n"
+		"\n"
+		""},
 	 { (char *)"delete_BadSampleNoiseModel", _wrap_delete_BadSampleNoiseModel, METH_VARARGS, NULL},
 	 { (char *)"BadSampleNoiseModel_swigregister", BadSampleNoiseModel_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }

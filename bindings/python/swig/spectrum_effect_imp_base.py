@@ -124,6 +124,20 @@ import full_physics_swig.sub_state_vector_array
 import full_physics_swig.generic_object
 import full_physics_swig.spectrum_effect
 class SpectrumEffectImpBase(full_physics_swig.spectrum_effect.SubStateVectorArraySpectrumEffect):
+    """
+
+    As a design principle, we have each base class with the absolutely
+    minimum interface needed for use from the rest of the system.
+
+    This allows us to support any future code that supports this minimum
+    interface.
+
+    However, almost always you will want to derive from this class
+    instead. See PressureImpBase for a more complete discussion of this.
+
+    C++ includes: spectrum_effect_imp_base.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.spectrum_effect.SubStateVectorArraySpectrumEffect]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -137,7 +151,13 @@ class SpectrumEffectImpBase(full_physics_swig.spectrum_effect.SubStateVectorArra
     __del__ = lambda self: None
 
     def clone(self):
+        """
+
+        virtual boost::shared_ptr<SpectrumEffect> FullPhysics::SpectrumEffectImpBase::clone() const =0
+
+        """
         return _spectrum_effect_imp_base.SpectrumEffectImpBase_clone(self)
+
 
     def apply_effect(self, Spec, Forward_model_grid):
         return _spectrum_effect_imp_base.SpectrumEffectImpBase_apply_effect(self, Spec, Forward_model_grid)
@@ -152,10 +172,29 @@ class SpectrumEffectImpBase(full_physics_swig.spectrum_effect.SubStateVectorArra
         return _spectrum_effect_imp_base.SpectrumEffectImpBase_update_sub_state_hook(self)
 
     def print_desc(self, Os):
+        """
+
+        virtual void FullPhysics::SpectrumEffectImpBase::print(std::ostream &Os, bool Short_form=false) const
+        Print to stream.
+
+        The default calls the function "desc" that returns a string. This
+        gives cleaner interface for deriving from this class in python, but
+        most C++ classes will want to override this function rather than using
+        desc. 
+        """
         return _spectrum_effect_imp_base.SpectrumEffectImpBase_print_desc(self, Os)
 
+
     def _v_desc(self):
+        """
+
+        virtual std::string FullPhysics::SpectrumEffectImpBase::desc() const
+        Description of object, to be printed to stream.
+
+        This gives a cleaner interface for deriving from python. 
+        """
         return _spectrum_effect_imp_base.SpectrumEffectImpBase__v_desc(self)
+
 
     @property
     def desc(self):

@@ -181,6 +181,22 @@ ObserverTemperature_swigregister = _temperature.ObserverTemperature_swigregister
 ObserverTemperature_swigregister(ObserverTemperature)
 
 class Temperature(full_physics_swig.state_vector.StateVectorObserver, ObservableTemperature):
+    """
+
+    This class maintains the temperature portion of the state.
+
+    Other objects may depend on the temperature, and should be updated
+    when the temperature is updated. To facilitate that, this class in an
+    Oberverable, and objects can add themselves as Observers to be
+    notified when the temperature is updated.
+
+    When implementing a new class, you almost always will want to derive
+    from TemperatureImpBase rather than from this class. See that class
+    for a description.
+
+    C++ includes: temperature.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.state_vector.StateVectorObserver, ObservableTemperature]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -197,13 +213,41 @@ class Temperature(full_physics_swig.state_vector.StateVectorObserver, Observable
     __del__ = lambda self: None
 
     def add_observer(self, Obs):
+        """
+
+        virtual void FullPhysics::Temperature::add_observer(Observer< Temperature > &Obs)
+
+        """
         return _temperature.Temperature_add_observer(self, Obs)
 
+
     def remove_observer(self, Obs):
+        """
+
+        virtual void FullPhysics::Temperature::remove_observer(Observer< Temperature > &Obs)
+
+        """
         return _temperature.Temperature_remove_observer(self, Obs)
 
+
     def _v_important_pressure_level(self):
+        """
+
+        virtual ArrayWithUnit<double, 1> FullPhysics::Temperature::important_pressure_level() const
+        The temperature can vary quickly over a small pressure range, e.g.
+
+        at the tropopause and stratopause. It is important that this structure
+        is included in anything using the temperature, e.g., the integration
+        does to calculate the optical depth of a layer in AbsorberAbsco.
+
+        This supplied "important" pressures where something interesting in
+        the temperature may be happening.
+
+        The default is that there are not important pressures, but a derived
+        class can override this, e.g. give the ECMWF pressure levels. 
+        """
         return _temperature.Temperature__v_important_pressure_level(self)
+
 
     @property
     def important_pressure_level(self):
@@ -211,13 +255,38 @@ class Temperature(full_physics_swig.state_vector.StateVectorObserver, Observable
 
 
     def temperature(self, Press):
+        """
+
+        virtual AutoDerivativeWithUnit<double> FullPhysics::Temperature::temperature(const AutoDerivativeWithUnit< double > &Press) const =0
+        Return the temperature at the given pressure (in Pascals)
+
+        This is in Kelvin. 
+        """
         return _temperature.Temperature_temperature(self, Press)
 
+
     def temperature_grid(self, P):
+        """
+
+        virtual ArrayAdWithUnit<double, 1> FullPhysics::Temperature::temperature_grid(const Pressure &P) const
+
+        """
         return _temperature.Temperature_temperature_grid(self, P)
 
+
     def clone(self, *args):
+        """
+
+        virtual boost::shared_ptr<Temperature> FullPhysics::Temperature::clone(const boost::shared_ptr< Pressure > &Press) const =0
+        This version of clone takes a pressure to use.
+
+        The intent is that the pressure has been cloned from the original
+        pressure (although this class has no way to verify this). This allows
+        sets of objects to be cloned using a common Pressure clone, e.g.
+        Atmosphere. 
+        """
         return _temperature.Temperature_clone(self, *args)
+
 
     def __str__(self):
         return _temperature.Temperature___str__(self)

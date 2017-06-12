@@ -9896,12 +9896,41 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"ObserverAerosolExtinction_notify_add", _wrap_ObserverAerosolExtinction_notify_add, METH_VARARGS, NULL},
 	 { (char *)"ObserverAerosolExtinction_notify_remove", _wrap_ObserverAerosolExtinction_notify_remove, METH_VARARGS, NULL},
 	 { (char *)"ObserverAerosolExtinction_swigregister", ObserverAerosolExtinction_swigregister, METH_VARARGS, NULL},
-	 { (char *)"delete_AerosolExtinction", _wrap_delete_AerosolExtinction, METH_VARARGS, NULL},
-	 { (char *)"AerosolExtinction_add_observer", _wrap_AerosolExtinction_add_observer, METH_VARARGS, NULL},
-	 { (char *)"AerosolExtinction_remove_observer", _wrap_AerosolExtinction_remove_observer, METH_VARARGS, NULL},
-	 { (char *)"AerosolExtinction_clone", _wrap_AerosolExtinction_clone, METH_VARARGS, NULL},
-	 { (char *)"AerosolExtinction_extinction_for_layer", _wrap_AerosolExtinction_extinction_for_layer, METH_VARARGS, NULL},
-	 { (char *)"AerosolExtinction__v_aerosol_name", _wrap_AerosolExtinction__v_aerosol_name, METH_VARARGS, NULL},
+	 { (char *)"delete_AerosolExtinction", _wrap_delete_AerosolExtinction, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::AerosolExtinction::~AerosolExtinction()\n"
+		"\n"
+		""},
+	 { (char *)"AerosolExtinction_add_observer", _wrap_AerosolExtinction_add_observer, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::AerosolExtinction::add_observer(Observer< AerosolExtinction > &Obs)\n"
+		"\n"
+		""},
+	 { (char *)"AerosolExtinction_remove_observer", _wrap_AerosolExtinction_remove_observer, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::AerosolExtinction::remove_observer(Observer< AerosolExtinction > &Obs)\n"
+		"\n"
+		""},
+	 { (char *)"AerosolExtinction_clone", _wrap_AerosolExtinction_clone, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual boost::shared_ptr<AerosolExtinction> FullPhysics::AerosolExtinction::clone(const boost::shared_ptr< Pressure > &Press) const =0\n"
+		"This version of clone takes a pressure to use.\n"
+		"\n"
+		"The intent is that the pressure has been cloned from the original\n"
+		"pressure (although this class has no way to verify this). This allows\n"
+		"sets of objects to be cloned using a common Pressure clone, e.g.\n"
+		"Atmosphere. \n"
+		""},
+	 { (char *)"AerosolExtinction_extinction_for_layer", _wrap_AerosolExtinction_extinction_for_layer, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual AutoDerivative<double> FullPhysics::AerosolExtinction::extinction_for_layer(int i) const =0\n"
+		"Extinction for given layer. \n"
+		""},
+	 { (char *)"AerosolExtinction__v_aerosol_name", _wrap_AerosolExtinction__v_aerosol_name, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual std::string FullPhysics::AerosolExtinction::aerosol_name() const =0\n"
+		"Name of aerosol. \n"
+		""},
 	 { (char *)"AerosolExtinction___str__", _wrap_AerosolExtinction___str__, METH_VARARGS, NULL},
 	 { (char *)"AerosolExtinction_print_desc", _wrap_AerosolExtinction_print_desc, METH_VARARGS, NULL},
 	 { (char *)"AerosolExtinction_swigregister", AerosolExtinction_swigregister, METH_VARARGS, NULL},

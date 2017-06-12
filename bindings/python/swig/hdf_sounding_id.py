@@ -122,6 +122,19 @@ def _new_from_set(cls, version, *args):
 
 import full_physics_swig.generic_object
 class HdfSoundingId(full_physics_swig.generic_object.GenericObject):
+    """
+
+    This class defines the interface for a sounding id referring to data
+    within an HDF file.
+
+    This amounts to translating a string into frame and sounding indexes
+    where data should be read from the HDF files. The details of the exact
+    meaning of the string and how the indexing is computed may differ from
+    file type to file type.
+
+    C++ includes: hdf_sounding_id.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.generic_object.GenericObject]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -138,7 +151,13 @@ class HdfSoundingId(full_physics_swig.generic_object.GenericObject):
     __del__ = lambda self: None
 
     def _v_frame_number(self):
+        """
+
+        virtual int FullPhysics::HdfSoundingId::frame_number() const
+
+        """
         return _hdf_sounding_id.HdfSoundingId__v_frame_number(self)
+
 
     @property
     def frame_number(self):
@@ -146,7 +165,13 @@ class HdfSoundingId(full_physics_swig.generic_object.GenericObject):
 
 
     def _v_sounding_number(self):
+        """
+
+        virtual int FullPhysics::HdfSoundingId::sounding_number() const
+
+        """
         return _hdf_sounding_id.HdfSoundingId__v_sounding_number(self)
+
 
     @property
     def sounding_number(self):
@@ -154,7 +179,13 @@ class HdfSoundingId(full_physics_swig.generic_object.GenericObject):
 
 
     def _v_sounding_id(self):
+        """
+
+        virtual int64_t FullPhysics::HdfSoundingId::sounding_id() const
+
+        """
         return _hdf_sounding_id.HdfSoundingId__v_sounding_id(self)
+
 
     @property
     def sounding_id(self):

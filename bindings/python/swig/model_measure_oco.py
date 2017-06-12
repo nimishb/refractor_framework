@@ -125,6 +125,12 @@ import full_physics_swig.model_state
 import full_physics_swig.problem_state
 import full_physics_swig.generic_object
 class ModelMeasureOCO(full_physics_swig.model_measure.ModelMeasure):
+    """
+
+    C++ includes: model_measure_oco.h
+
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.model_measure.ModelMeasure]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -141,16 +147,40 @@ class ModelMeasureOCO(full_physics_swig.model_measure.ModelMeasure):
     __del__ = lambda self: None
 
     def model_eval(self):
+        """
+
+        virtual void FullPhysics::ModelMeasureOCO::model_eval()
+
+        """
         return _model_measure_oco.ModelMeasureOCO_model_eval(self)
 
+
     def jacobian_eval(self):
+        """
+
+        virtual void FullPhysics::ModelMeasureOCO::jacobian_eval()
+
+        """
         return _model_measure_oco.ModelMeasureOCO_jacobian_eval(self)
 
+
     def model_jacobian_eval(self):
+        """
+
+        virtual void FullPhysics::ModelMeasureOCO::model_jacobian_eval()
+
+        """
         return _model_measure_oco.ModelMeasureOCO_model_jacobian_eval(self)
 
+
     def _v_expected_parameter_size(self):
+        """
+
+        virtual int FullPhysics::ModelMeasureOCO::expected_parameter_size() const
+
+        """
         return _model_measure_oco.ModelMeasureOCO__v_expected_parameter_size(self)
+
 
     @property
     def expected_parameter_size(self):
@@ -158,7 +188,18 @@ class ModelMeasureOCO(full_physics_swig.model_measure.ModelMeasure):
 
 
     def _v_parameters(self, *args):
+        """
+
+        virtual blitz::Array<double, 1> FullPhysics::ModelMeasureOCO::parameters() const
+        Just returns the current values of parameters.
+
+        This method is redefined here (see the root base class) because of a
+        compiler bug; otherwise, there should be no need for its redefinition.
+
+        Current parameter values 
+        """
         return _model_measure_oco.ModelMeasureOCO__v_parameters(self, *args)
+
 
     @property
     def parameters(self):

@@ -6733,16 +6733,74 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"ObserverPressure_notify_add", _wrap_ObserverPressure_notify_add, METH_VARARGS, NULL},
 	 { (char *)"ObserverPressure_notify_remove", _wrap_ObserverPressure_notify_remove, METH_VARARGS, NULL},
 	 { (char *)"ObserverPressure_swigregister", ObserverPressure_swigregister, METH_VARARGS, NULL},
-	 { (char *)"delete_Pressure", _wrap_delete_Pressure, METH_VARARGS, NULL},
-	 { (char *)"Pressure_add_observer", _wrap_Pressure_add_observer, METH_VARARGS, NULL},
-	 { (char *)"Pressure_remove_observer", _wrap_Pressure_remove_observer, METH_VARARGS, NULL},
-	 { (char *)"Pressure__v_surface_pressure", _wrap_Pressure__v_surface_pressure, METH_VARARGS, NULL},
-	 { (char *)"Pressure__v_surface_pressure_value", _wrap_Pressure__v_surface_pressure_value, METH_VARARGS, NULL},
-	 { (char *)"Pressure__v_pressure_grid", _wrap_Pressure__v_pressure_grid, METH_VARARGS, NULL},
-	 { (char *)"Pressure__v_number_layer", _wrap_Pressure__v_number_layer, METH_VARARGS, NULL},
-	 { (char *)"Pressure__v_number_level", _wrap_Pressure__v_number_level, METH_VARARGS, NULL},
-	 { (char *)"Pressure__v_max_number_level", _wrap_Pressure__v_max_number_level, METH_VARARGS, NULL},
-	 { (char *)"Pressure_clone", _wrap_Pressure_clone, METH_VARARGS, NULL},
+	 { (char *)"delete_Pressure", _wrap_delete_Pressure, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::Pressure::~Pressure()\n"
+		"\n"
+		""},
+	 { (char *)"Pressure_add_observer", _wrap_Pressure_add_observer, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::Pressure::add_observer(Observer< Pressure > &Obs)\n"
+		"\n"
+		""},
+	 { (char *)"Pressure_remove_observer", _wrap_Pressure_remove_observer, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::Pressure::remove_observer(Observer< Pressure > &Obs)\n"
+		"\n"
+		""},
+	 { (char *)"Pressure__v_surface_pressure", _wrap_Pressure__v_surface_pressure, METH_VARARGS, (char *)"\n"
+		"\n"
+		"AutoDerivativeWithUnit<double> FullPhysics::Pressure::surface_pressure() const\n"
+		"\n"
+		""},
+	 { (char *)"Pressure__v_surface_pressure_value", _wrap_Pressure__v_surface_pressure_value, METH_VARARGS, (char *)"\n"
+		"\n"
+		"double FullPhysics::Pressure::surface_pressure_value() const\n"
+		"Return the current surface pressure value, without the gradient.\n"
+		"\n"
+		"This is in Pascals. \n"
+		""},
+	 { (char *)"Pressure__v_pressure_grid", _wrap_Pressure__v_pressure_grid, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual ArrayAdWithUnit<double, 1> FullPhysics::Pressure::pressure_grid() const =0\n"
+		"This returns the pressure grid to use for layer retrieval, along with\n"
+		"the gradient of each of the pressure grid values with the state\n"
+		"vector. \n"
+		""},
+	 { (char *)"Pressure__v_number_layer", _wrap_Pressure__v_number_layer, METH_VARARGS, (char *)"\n"
+		"\n"
+		"int FullPhysics::Pressure::number_layer() const\n"
+		"This is the number of layers.\n"
+		"\n"
+		"This is the same as pressure_grid.rows() - 1. \n"
+		""},
+	 { (char *)"Pressure__v_number_level", _wrap_Pressure__v_number_level, METH_VARARGS, (char *)"\n"
+		"\n"
+		"int FullPhysics::Pressure::number_level() const\n"
+		"This is the number of levels.\n"
+		"\n"
+		"This is the same as pressure_grid.rows() - 1. \n"
+		""},
+	 { (char *)"Pressure__v_max_number_level", _wrap_Pressure__v_max_number_level, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual int FullPhysics::Pressure::max_number_level() const\n"
+		"The maximum number of levels that we can have.\n"
+		"\n"
+		"The default is just number_level() (i.e., we don't change the number\n"
+		"of levels from one iteration to the next). \n"
+		""},
+	 { (char *)"Pressure_clone", _wrap_Pressure_clone, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual boost::shared_ptr<Pressure> FullPhysics::Pressure::clone() const =0\n"
+		"Clone a Pressure object.\n"
+		"\n"
+		"Note that the cloned version will not be attached to a StateVector or\n"
+		"Observer<Pressure>, although you can of course attach them after\n"
+		"receiving the cloned object.\n"
+		"\n"
+		"Because this isn't attached to the StateVector, one use of the clone\n"
+		"operator is to create a \"frozen\" Pressure object. \n"
+		""},
 	 { (char *)"Pressure___str__", _wrap_Pressure___str__, METH_VARARGS, NULL},
 	 { (char *)"new_Pressure", _wrap_new_Pressure, METH_VARARGS, NULL},
 	 { (char *)"disown_Pressure", _wrap_disown_Pressure, METH_VARARGS, NULL},

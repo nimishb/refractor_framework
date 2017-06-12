@@ -122,6 +122,19 @@ def _new_from_set(cls, version, *args):
 
 import full_physics_swig.generic_object
 class SubStateVectorProxy(_object):
+    """
+
+    Proxies for multiple SubStateVectorObserver classes that are combined
+    for a result, but handle their state vector data seperately.
+
+    Can only be used as a base for another class.
+
+    Proxied classes should be pushed into proxied_observers in
+    consturctor.
+
+    C++ includes: sub_state_vector_proxy.h 
+    """
+
     __swig_setmethods__ = {}
     __setattr__ = lambda self, name, value: _swig_setattr(self, SubStateVectorProxy, name, value)
     __swig_getmethods__ = {}
@@ -134,13 +147,32 @@ class SubStateVectorProxy(_object):
     __del__ = lambda self: None
 
     def update_sub_state(self, Sv_sub, Cov_sub):
+        """
+
+        virtual void FullPhysics::SubStateVectorProxy::update_sub_state(const ArrayAd< double, 1 > &Sv_sub, const blitz::Array< double, 2 >
+        &Cov_sub)
+
+        """
         return _sub_state_vector_proxy.SubStateVectorProxy_update_sub_state(self, Sv_sub, Cov_sub)
 
+
     def mark_used_sub(self, Used):
+        """
+
+        virtual void FullPhysics::SubStateVectorProxy::mark_used_sub(blitz::Array< bool, 1 > &Used) const
+
+        """
         return _sub_state_vector_proxy.SubStateVectorProxy_mark_used_sub(self, Used)
 
+
     def state_vector_name_sub(self, Sv_name):
+        """
+
+        virtual void FullPhysics::SubStateVectorProxy::state_vector_name_sub(blitz::Array< std::string, 1 > &Sv_name) const
+
+        """
         return _sub_state_vector_proxy.SubStateVectorProxy_state_vector_name_sub(self, Sv_name)
+
 
     def notify_add(self, Sv):
         return _sub_state_vector_proxy.SubStateVectorProxy_notify_add(self, Sv)
@@ -149,7 +181,13 @@ class SubStateVectorProxy(_object):
         return _sub_state_vector_proxy.SubStateVectorProxy_notify_remove(self, Sv)
 
     def print_desc(self, Os):
+        """
+
+        virtual void FullPhysics::SubStateVectorProxy::print(std::ostream &Os) const
+
+        """
         return _sub_state_vector_proxy.SubStateVectorProxy_print_desc(self, Os)
+
 SubStateVectorProxy_swigregister = _sub_state_vector_proxy.SubStateVectorProxy_swigregister
 SubStateVectorProxy_swigregister(SubStateVectorProxy)
 

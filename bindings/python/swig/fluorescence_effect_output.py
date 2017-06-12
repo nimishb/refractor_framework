@@ -126,6 +126,14 @@ import full_physics_swig.spectrum_effect_imp_base
 import full_physics_swig.sub_state_vector_array
 import full_physics_swig.spectrum_effect
 class FluorescenceEffectOutput(full_physics_swig.register_output_base.RegisterOutputBase):
+    """
+
+    This registers the portions of the FluorescenceEffect class that
+    should be written as output.
+
+    C++ includes: fluorescence_effect_output.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.register_output_base.RegisterOutputBase]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -142,10 +150,22 @@ class FluorescenceEffectOutput(full_physics_swig.register_output_base.RegisterOu
     __del__ = lambda self: None
 
     def register_output(self, out):
+        """
+
+        virtual void FullPhysics::FluorescenceEffectOutput::register_output(const boost::shared_ptr< Output > &out) const
+
+        """
         return _fluorescence_effect_output.FluorescenceEffectOutput_register_output(self, out)
 
+
     def register_output_apriori(self, out):
+        """
+
+        virtual void FullPhysics::FluorescenceEffectOutput::register_output_apriori(const boost::shared_ptr< Output > &out) const
+
+        """
         return _fluorescence_effect_output.FluorescenceEffectOutput_register_output_apriori(self, out)
+
 FluorescenceEffectOutput_swigregister = _fluorescence_effect_output.FluorescenceEffectOutput_swigregister
 FluorescenceEffectOutput_swigregister(FluorescenceEffectOutput)
 

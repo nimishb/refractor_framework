@@ -122,6 +122,17 @@ def _new_from_set(cls, version, *args):
 
 import full_physics_swig.generic_object
 class FitStatistic(full_physics_swig.generic_object.GenericObject):
+    """
+
+    This class holds various parameters describing how good of a fit we
+    have.
+
+    This is pretty much just a structure to collect various statistics in
+    one place.
+
+    C++ includes: convergence_check.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.generic_object.GenericObject]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -138,6 +149,14 @@ class FitStatistic(full_physics_swig.generic_object.GenericObject):
     EXCEED_MAX_DIVERGENT = _convergence_check.FitStatistic_EXCEED_MAX_DIVERGENT
 
     def __init__(self, *args):
+        """
+
+        FullPhysics::FitStatistic::FitStatistic(bool Fit_succeeded, OUTCOME Outcome, int Number_iteration, int
+        Number_divergent, double D_sigma_sq, double D_sigma_sq_scaled, double
+        Chisq_apriori, double Chisq_measured, double Chisq_apriori_fc, double
+        Chisq_measured_fc)
+
+        """
         this = _convergence_check.new_FitStatistic(*args)
         try:
             self.this.append(this)
@@ -169,7 +188,13 @@ class FitStatistic(full_physics_swig.generic_object.GenericObject):
         d_sigma_sq_scaled = _swig_property(_convergence_check.FitStatistic_d_sigma_sq_scaled_get, _convergence_check.FitStatistic_d_sigma_sq_scaled_set)
 
     def _v_gamma2(self):
+        """
+
+        double FullPhysics::FitStatistic::gamma2() const
+        Parameter "gamma2", which is just chi2_apriori + chi2_measured. 
+        """
         return _convergence_check.FitStatistic__v_gamma2(self)
+
 
     @property
     def gamma2(self):
@@ -177,7 +202,14 @@ class FitStatistic(full_physics_swig.generic_object.GenericObject):
 
 
     def _v_gamma2_fc(self):
+        """
+
+        double FullPhysics::FitStatistic::gamma2_fc() const
+        Parameter "gamma2_fc", which is just chisq_apriori_fc +
+        chisq_measured_fc. 
+        """
         return _convergence_check.FitStatistic__v_gamma2_fc(self)
+
 
     @property
     def gamma2_fc(self):
@@ -201,13 +233,33 @@ class FitStatistic(full_physics_swig.generic_object.GenericObject):
         chisq_measured_fc = _swig_property(_convergence_check.FitStatistic_chisq_measured_fc_get, _convergence_check.FitStatistic_chisq_measured_fc_set)
 
     def chisq_measure_norm(self, Residual, Residual_cov_diag):
+        """
+
+        double FullPhysics::FitStatistic::chisq_measure_norm(const blitz::Array< double, 1 > &Residual, const blitz::Array<
+        double, 1 > &Residual_cov_diag) const
+        Calculate chisq for given residual and covariance matrix. 
+        """
         return _convergence_check.FitStatistic_chisq_measure_norm(self, Residual, Residual_cov_diag)
 
+
     def residual_abs_rms(self, Residual):
+        """
+
+        double FullPhysics::FitStatistic::residual_abs_rms(const blitz::Array< double, 1 > &Residual) const
+        Calculate absolute root mean squared for given residual. 
+        """
         return _convergence_check.FitStatistic_residual_abs_rms(self, Residual)
 
+
     def residual_rel_rms(self, Residual, Rad_measure):
+        """
+
+        double FullPhysics::FitStatistic::residual_rel_rms(const blitz::Array< double, 1 > &Residual, const blitz::Array<
+        double, 1 > &Rad_measure) const
+        Calculate relative root mean squared for given residual. 
+        """
         return _convergence_check.FitStatistic_residual_rel_rms(self, Residual, Rad_measure)
+
 
     def __str__(self):
         return _convergence_check.FitStatistic___str__(self)
@@ -225,6 +277,13 @@ FitStatistic_swigregister = _convergence_check.FitStatistic_swigregister
 FitStatistic_swigregister(FitStatistic)
 
 class ConvergenceCheck(full_physics_swig.generic_object.GenericObject):
+    """
+
+    This class tests for convergence of a Levenberg-Marquardt solver.
+
+    C++ includes: convergence_check.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.generic_object.GenericObject]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -244,13 +303,76 @@ class ConvergenceCheck(full_physics_swig.generic_object.GenericObject):
         return _convergence_check.ConvergenceCheck___str__(self)
 
     def initialize_check(self):
+        """
+
+        virtual void FullPhysics::ConvergenceCheck::initialize_check()
+        Called before the first iteration, in case there is any setup.
+
+        The default here does nothing, but derived classes can override this
+        to do whatever initialization is needed. 
+        """
         return _convergence_check.ConvergenceCheck_initialize_check(self)
 
+
     def convergence_check(self, fit_stat_last, fit_stat, has_converged, convergence_failed, gamma, step_diverged):
+        """
+
+        virtual void FullPhysics::ConvergenceCheck::convergence_check(const FitStatistic &fit_stat_last, FitStatistic &fit_stat, bool
+        &has_converged, bool &convergence_failed, double &gamma, bool
+        &step_diverged)=0
+        Check for the convergence of a Solver, or if we have taken a divergent
+        step.
+
+        We pass in data from both this iteration and the last. If this is the
+        first iteration, then the last values can be any kind of garbage value
+        that is convenient (e.g., an empty Array) - we don't look at the
+        value.
+
+        Parameters:
+        -----------
+
+        fit_stat_last:   FitStatistic from the last iteration.
+
+        fit_stat:   FitStatistic from this iteration. If we fail convergence,
+        the class may update fit_stat.outcome with the reason for failing.
+
+        has_converged:  On exit, true if we have converged to a solution.
+
+        convergence_failed:  On exit, true if we have failed to converge and
+        solver should just give up (e.g., we've exceeded a maximum number of
+        iterations.
+
+        gamma:  The Levenberg-Marquardt gamma parameter. On input this is
+        value used in this iteration, on exit this is possibly updated to a
+        new value.
+
+        step_diverged:  On exit, this is true if the last iteration took a
+        divergent step. In that case, we also update gamma to its new value.
+
+        """
         return _convergence_check.ConvergenceCheck_convergence_check(self, fit_stat_last, fit_stat, has_converged, convergence_failed, gamma, step_diverged)
 
+
     def evaluate_quality(self, fit_stat, Residual, Residual_cov_diag):
+        """
+
+        virtual void FullPhysics::ConvergenceCheck::evaluate_quality(FitStatistic &fit_stat_last, const blitz::Array< double, 1 >
+        &Residual, const blitz::Array< double, 1 > &Residual_cov_diag)=0
+        Evaluates the quality of a converged fit from the residuals and
+        expected residual error.
+
+        Parameters:
+        -----------
+
+        fit_stat_last:   FitStatistic from the last iteration. An error should
+        occur if fit_stat.fit_succeeded = False
+
+        Residual:  The residual fit from the solver.
+
+        Residual_cov_diag:  The expected error for the fit data. 
+        """
         return _convergence_check.ConvergenceCheck_evaluate_quality(self, fit_stat, Residual, Residual_cov_diag)
+
 ConvergenceCheck_swigregister = _convergence_check.ConvergenceCheck_swigregister
 ConvergenceCheck_swigregister(ConvergenceCheck)
 

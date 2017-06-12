@@ -5025,8 +5025,21 @@ SWIGINTERN PyObject *CostMinimizer_swigregister(PyObject *SWIGUNUSEDPARM(self), 
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"delete_CostMinimizer", _wrap_delete_CostMinimizer, METH_VARARGS, NULL},
-	 { (char *)"CostMinimizer__v_cost_min_problem", _wrap_CostMinimizer__v_cost_min_problem, METH_VARARGS, NULL},
+	 { (char *)"delete_CostMinimizer", _wrap_delete_CostMinimizer, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::CostMinimizer::~CostMinimizer()\n"
+		"\n"
+		""},
+	 { (char *)"CostMinimizer__v_cost_min_problem", _wrap_CostMinimizer__v_cost_min_problem, METH_VARARGS, (char *)"\n"
+		"\n"
+		"const boost::shared_ptr<CostFunc>& FullPhysics::CostMinimizer::cost_min_problem() const\n"
+		"Returns the cost minimization problem.\n"
+		"\n"
+		"This method returns the cost minimization problem that is passed to\n"
+		"the constructor of the solver.\n"
+		"\n"
+		"Cost-function problem \n"
+		""},
 	 { (char *)"CostMinimizer_swigregister", CostMinimizer_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };

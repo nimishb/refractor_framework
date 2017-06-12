@@ -5089,9 +5089,33 @@ SWIGINTERN PyObject *CostFuncState_swigregister(PyObject *SWIGUNUSEDPARM(self), 
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"delete_CostFuncState", _wrap_delete_CostFuncState, METH_VARARGS, NULL},
-	 { (char *)"CostFuncState_set", _wrap_CostFuncState_set, METH_VARARGS, NULL},
-	 { (char *)"CostFuncState_clear", _wrap_CostFuncState_clear, METH_VARARGS, NULL},
+	 { (char *)"delete_CostFuncState", _wrap_delete_CostFuncState, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::CostFuncState::~CostFuncState()\n"
+		"\n"
+		""},
+	 { (char *)"CostFuncState_set", _wrap_CostFuncState_set, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::CostFuncState::set(const CostFuncState &s)\n"
+		"Makes self a copy of the input state.\n"
+		"\n"
+		"This method makes the object, for which it is called, a copy of the\n"
+		"input state.\n"
+		"\n"
+		"Parameters:\n"
+		"-----------\n"
+		"\n"
+		"s:  another CostFuncState \n"
+		""},
+	 { (char *)"CostFuncState_clear", _wrap_CostFuncState_clear, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::CostFuncState::clear()\n"
+		"Deletes data contents.\n"
+		"\n"
+		"This method deletes state. If needed, it must be reimplemented by\n"
+		"other classes derived from this class to delete other saved components\n"
+		"associated with the state as well. \n"
+		""},
 	 { (char *)"CostFuncState_swigregister", CostFuncState_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };

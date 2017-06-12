@@ -5360,13 +5360,34 @@ SWIGINTERN PyObject *SubStateVectorProxy_swigregister(PyObject *SWIGUNUSEDPARM(s
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"delete_SubStateVectorProxy", _wrap_delete_SubStateVectorProxy, METH_VARARGS, NULL},
-	 { (char *)"SubStateVectorProxy_update_sub_state", _wrap_SubStateVectorProxy_update_sub_state, METH_VARARGS, NULL},
-	 { (char *)"SubStateVectorProxy_mark_used_sub", _wrap_SubStateVectorProxy_mark_used_sub, METH_VARARGS, NULL},
-	 { (char *)"SubStateVectorProxy_state_vector_name_sub", _wrap_SubStateVectorProxy_state_vector_name_sub, METH_VARARGS, NULL},
+	 { (char *)"delete_SubStateVectorProxy", _wrap_delete_SubStateVectorProxy, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::SubStateVectorProxy::~SubStateVectorProxy()\n"
+		"\n"
+		""},
+	 { (char *)"SubStateVectorProxy_update_sub_state", _wrap_SubStateVectorProxy_update_sub_state, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::SubStateVectorProxy::update_sub_state(const ArrayAd< double, 1 > &Sv_sub, const blitz::Array< double, 2 >\n"
+		"&Cov_sub)\n"
+		"\n"
+		""},
+	 { (char *)"SubStateVectorProxy_mark_used_sub", _wrap_SubStateVectorProxy_mark_used_sub, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::SubStateVectorProxy::mark_used_sub(blitz::Array< bool, 1 > &Used) const\n"
+		"\n"
+		""},
+	 { (char *)"SubStateVectorProxy_state_vector_name_sub", _wrap_SubStateVectorProxy_state_vector_name_sub, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::SubStateVectorProxy::state_vector_name_sub(blitz::Array< std::string, 1 > &Sv_name) const\n"
+		"\n"
+		""},
 	 { (char *)"SubStateVectorProxy_notify_add", _wrap_SubStateVectorProxy_notify_add, METH_VARARGS, NULL},
 	 { (char *)"SubStateVectorProxy_notify_remove", _wrap_SubStateVectorProxy_notify_remove, METH_VARARGS, NULL},
-	 { (char *)"SubStateVectorProxy_print_desc", _wrap_SubStateVectorProxy_print_desc, METH_VARARGS, NULL},
+	 { (char *)"SubStateVectorProxy_print_desc", _wrap_SubStateVectorProxy_print_desc, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::SubStateVectorProxy::print(std::ostream &Os) const\n"
+		"\n"
+		""},
 	 { (char *)"SubStateVectorProxy_swigregister", SubStateVectorProxy_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };

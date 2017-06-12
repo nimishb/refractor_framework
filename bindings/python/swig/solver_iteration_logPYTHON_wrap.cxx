@@ -5229,8 +5229,16 @@ SWIGINTERN PyObject *SolverIterationLog_swigregister(PyObject *SWIGUNUSEDPARM(se
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"new_SolverIterationLog", _wrap_new_SolverIterationLog, METH_VARARGS, NULL},
-	 { (char *)"SolverIterationLog_notify_update", _wrap_SolverIterationLog_notify_update, METH_VARARGS, NULL},
+	 { (char *)"new_SolverIterationLog", _wrap_new_SolverIterationLog, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::SolverIterationLog::SolverIterationLog(const boost::shared_ptr< StateVector > &Sv)\n"
+		"\n"
+		""},
+	 { (char *)"SolverIterationLog_notify_update", _wrap_SolverIterationLog_notify_update, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::SolverIterationLog::notify_update(const ConnorSolver &solver)\n"
+		"\n"
+		""},
 	 { (char *)"SolverIterationLog___str__", _wrap_SolverIterationLog___str__, METH_VARARGS, NULL},
 	 { (char *)"delete_SolverIterationLog", _wrap_delete_SolverIterationLog, METH_VARARGS, NULL},
 	 { (char *)"SolverIterationLog_swigregister", SolverIterationLog_swigregister, METH_VARARGS, NULL},

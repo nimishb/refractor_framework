@@ -5706,16 +5706,67 @@ SWIGINTERN PyObject *PressureFixedLevel_swigregister(PyObject *SWIGUNUSEDPARM(se
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"new_PressureFixedLevel", _wrap_new_PressureFixedLevel, METH_VARARGS, NULL},
-	 { (char *)"PressureFixedLevel__v_surface_pressure_uncertainty", _wrap_PressureFixedLevel__v_surface_pressure_uncertainty, METH_VARARGS, NULL},
-	 { (char *)"PressureFixedLevel_set_surface_pressure", _wrap_PressureFixedLevel_set_surface_pressure, METH_VARARGS, NULL},
-	 { (char *)"PressureFixedLevel__v_number_active_level", _wrap_PressureFixedLevel__v_number_active_level, METH_VARARGS, NULL},
-	 { (char *)"PressureFixedLevel__v_number_active_layer", _wrap_PressureFixedLevel__v_number_active_layer, METH_VARARGS, NULL},
-	 { (char *)"PressureFixedLevel__v_max_number_level", _wrap_PressureFixedLevel__v_max_number_level, METH_VARARGS, NULL},
-	 { (char *)"PressureFixedLevel__v_pressure_active_levels", _wrap_PressureFixedLevel__v_pressure_active_levels, METH_VARARGS, NULL},
-	 { (char *)"PressureFixedLevel_clone", _wrap_PressureFixedLevel_clone, METH_VARARGS, NULL},
-	 { (char *)"PressureFixedLevel_state_vector_name_i", _wrap_PressureFixedLevel_state_vector_name_i, METH_VARARGS, NULL},
-	 { (char *)"delete_PressureFixedLevel", _wrap_delete_PressureFixedLevel, METH_VARARGS, NULL},
+	 { (char *)"new_PressureFixedLevel", _wrap_new_PressureFixedLevel, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::PressureFixedLevel::PressureFixedLevel(bool Pressure_flag, const boost::shared_ptr< PressureLevelInput >\n"
+		"&Press_level, double Surface_pressure)\n"
+		"\n"
+		""},
+	 { (char *)"PressureFixedLevel__v_surface_pressure_uncertainty", _wrap_PressureFixedLevel__v_surface_pressure_uncertainty, METH_VARARGS, (char *)"\n"
+		"\n"
+		"double FullPhysics::PressureFixedLevel::surface_pressure_uncertainty() const\n"
+		"Return the current surface pressure uncertainty. This is in Pascals.\n"
+		"\n"
+		""},
+	 { (char *)"PressureFixedLevel_set_surface_pressure", _wrap_PressureFixedLevel_set_surface_pressure, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::PressureFixedLevel::set_surface_pressure(const AutoDerivative< double > &Surface_pressure)\n"
+		"Set the surface pressure. This is in Pascals. \n"
+		""},
+	 { (char *)"PressureFixedLevel__v_number_active_level", _wrap_PressureFixedLevel__v_number_active_level, METH_VARARGS, (char *)"\n"
+		"\n"
+		"int FullPhysics::PressureFixedLevel::number_active_level() const\n"
+		"Number of active levels, this is just the size of pressure_grid for\n"
+		"the current surface pressure. \n"
+		""},
+	 { (char *)"PressureFixedLevel__v_number_active_layer", _wrap_PressureFixedLevel__v_number_active_layer, METH_VARARGS, (char *)"\n"
+		"\n"
+		"int FullPhysics::PressureFixedLevel::number_active_layer() const\n"
+		"Number of active layers.\n"
+		"\n"
+		"This is 1 less than the number of levels, since the levels give the\n"
+		"top an bottom of a layer. \n"
+		""},
+	 { (char *)"PressureFixedLevel__v_max_number_level", _wrap_PressureFixedLevel__v_max_number_level, METH_VARARGS, (char *)"\n"
+		"\n"
+		"int FullPhysics::PressureFixedLevel::max_number_level() const\n"
+		"Maximum number of levels that we can have. \n"
+		""},
+	 { (char *)"PressureFixedLevel__v_pressure_active_levels", _wrap_PressureFixedLevel__v_pressure_active_levels, METH_VARARGS, (char *)"\n"
+		"\n"
+		"blitz::Array<double, 1> FullPhysics::PressureFixedLevel::pressure_active_levels() const\n"
+		"Return the pressure on the fixed levels, but only include the\n"
+		"\"active\" portion.\n"
+		"\n"
+		"This is all the pressure levels above the surface, plus the last one\n"
+		"at or below the surface. This is the same size as pressure_grid, but\n"
+		"differs in that the bottom level typically lies below the surface \n"
+		""},
+	 { (char *)"PressureFixedLevel_clone", _wrap_PressureFixedLevel_clone, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual boost::shared_ptr<Pressure> FullPhysics::PressureFixedLevel::clone() const\n"
+		"\n"
+		""},
+	 { (char *)"PressureFixedLevel_state_vector_name_i", _wrap_PressureFixedLevel_state_vector_name_i, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual std::string FullPhysics::PressureFixedLevel::state_vector_name_i(int i) const\n"
+		"\n"
+		""},
+	 { (char *)"delete_PressureFixedLevel", _wrap_delete_PressureFixedLevel, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::PressureFixedLevel::~PressureFixedLevel()\n"
+		"\n"
+		""},
 	 { (char *)"PressureFixedLevel_swigregister", PressureFixedLevel_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };

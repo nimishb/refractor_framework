@@ -5744,8 +5744,18 @@ SWIGINTERN PyObject *GosatNoiseModel_swigregister(PyObject *SWIGUNUSEDPARM(self)
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"new_GosatNoiseModel", _wrap_new_GosatNoiseModel, METH_VARARGS, NULL},
-	 { (char *)"GosatNoiseModel_uncertainty", _wrap_GosatNoiseModel_uncertainty, METH_VARARGS, NULL},
+	 { (char *)"new_GosatNoiseModel", _wrap_new_GosatNoiseModel, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::GosatNoiseModel::GosatNoiseModel(const HdfFile &Noise_file, const HdfSoundingId &Sounding_Id, const\n"
+		"std::vector< std::string > &Hdf_band_name, const HdfFile\n"
+		"&Emp_Coeff_File, const std::string &Group_name=\"Instrument\")\n"
+		"\n"
+		""},
+	 { (char *)"GosatNoiseModel_uncertainty", _wrap_GosatNoiseModel_uncertainty, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual blitz::Array<double, 1> FullPhysics::GosatNoiseModel::uncertainty(int Spec_index, const blitz::Array< double, 1 > &Radiance) const\n"
+		"\n"
+		""},
 	 { (char *)"delete_GosatNoiseModel", _wrap_delete_GosatNoiseModel, METH_VARARGS, NULL},
 	 { (char *)"GosatNoiseModel_swigregister", GosatNoiseModel_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }

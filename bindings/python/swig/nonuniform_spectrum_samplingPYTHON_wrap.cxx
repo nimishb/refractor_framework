@@ -5264,8 +5264,17 @@ SWIGINTERN PyObject *NonuniformSpectrumSampling_swigregister(PyObject *SWIGUNUSE
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"NonuniformSpectrumSampling_spectral_domain", _wrap_NonuniformSpectrumSampling_spectral_domain, METH_VARARGS, NULL},
-	 { (char *)"delete_NonuniformSpectrumSampling", _wrap_delete_NonuniformSpectrumSampling, METH_VARARGS, NULL},
+	 { (char *)"NonuniformSpectrumSampling_spectral_domain", _wrap_NonuniformSpectrumSampling_spectral_domain, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual SpectralDomain FullPhysics::NonuniformSpectrumSampling::spectral_domain(int spec_index, const SpectralDomain &Lowres_grid, const\n"
+		"DoubleWithUnit &Ils_half_width) const\n"
+		"\n"
+		""},
+	 { (char *)"delete_NonuniformSpectrumSampling", _wrap_delete_NonuniformSpectrumSampling, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::NonuniformSpectrumSampling::~NonuniformSpectrumSampling()\n"
+		"\n"
+		""},
 	 { (char *)"NonuniformSpectrumSampling_swigregister", NonuniformSpectrumSampling_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };

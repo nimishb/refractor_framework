@@ -121,6 +121,16 @@ def _new_from_set(cls, version, *args):
     return inst
 
 class LuaState(_object):
+    """
+
+    This is a light wrapper around the lua_state object.
+
+    This maintains the lifetime of this object, as well as other house
+    keeping chores.
+
+    C++ includes: lua_state.h 
+    """
+
     __swig_setmethods__ = {}
     __setattr__ = lambda self, name, value: _swig_setattr(self, LuaState, name, value)
     __swig_getmethods__ = {}
@@ -128,6 +138,11 @@ class LuaState(_object):
     __repr__ = _swig_repr
 
     def __init__(self, *args):
+        """
+
+        FullPhysics::LuaState::LuaState(const std::string &Dir_name="./")
+
+        """
         this = _lua_state.new_LuaState(*args)
         try:
             self.this.append(this)
@@ -136,18 +151,45 @@ class LuaState(_object):
 
     def __str__(self):
         return _lua_state.LuaState___str__(self)
-    __swig_getmethods__["load_file"] = lambda x: _lua_state.LuaState_load_file
+
+    def load_file(Fname):
+        """
+
+        static boost::shared_ptr<LuaState> FullPhysics::LuaState::load_file(const std::string &Fname)
+
+        """
+        return _lua_state.LuaState_load_file(Fname)
+
     if _newclass:
-        load_file = staticmethod(_lua_state.LuaState_load_file)
+        load_file = staticmethod(load_file)
+    __swig_getmethods__["load_file"] = lambda x: load_file
 
     def do_file(self, Fname):
+        """
+
+        void FullPhysics::LuaState::do_file(const std::string &Fname)
+
+        """
         return _lua_state.LuaState_do_file(self, Fname)
 
+
     def run(self, S):
+        """
+
+        void FullPhysics::LuaState::run(const std::string &S)
+
+        """
         return _lua_state.LuaState_run(self, S)
 
+
     def _v_globals(self):
+        """
+
+        LuabindObject FullPhysics::LuaState::globals()
+
+        """
         return _lua_state.LuaState__v_globals(self)
+
 
     @property
     def globals(self):
@@ -155,7 +197,13 @@ class LuaState(_object):
 
 
     def _v_registry(self):
+        """
+
+        LuabindObject FullPhysics::LuaState::registry()
+
+        """
         return _lua_state.LuaState__v_registry(self)
+
 
     @property
     def registry(self):
@@ -167,8 +215,12 @@ LuaState_swigregister = _lua_state.LuaState_swigregister
 LuaState_swigregister(LuaState)
 
 def LuaState_load_file(Fname):
+    """
+
+    static boost::shared_ptr<LuaState> FullPhysics::LuaState::load_file(const std::string &Fname)
+
+    """
     return _lua_state.LuaState_load_file(Fname)
-LuaState_load_file = _lua_state.LuaState_load_file
 
 # This file is compatible with both classic and new-style classes.
 

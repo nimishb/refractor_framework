@@ -9019,10 +9019,26 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"SwigPyIterator_swigregister", SwigPyIterator_swigregister, METH_VARARGS, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
 	 { (char *)"Spectrum___str__", _wrap_Spectrum___str__, METH_VARARGS, NULL},
-	 { (char *)"new_Spectrum", _wrap_new_Spectrum, METH_VARARGS, NULL},
-	 { (char *)"Spectrum__v_spectral_domain", _wrap_Spectrum__v_spectral_domain, METH_VARARGS, NULL},
-	 { (char *)"Spectrum__v_spectral_range", _wrap_Spectrum__v_spectral_range, METH_VARARGS, NULL},
-	 { (char *)"delete_Spectrum", _wrap_delete_Spectrum, METH_VARARGS, NULL},
+	 { (char *)"new_Spectrum", _wrap_new_Spectrum, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::Spectrum::Spectrum()\n"
+		"Default constructor needed for SWIG. \n"
+		""},
+	 { (char *)"Spectrum__v_spectral_domain", _wrap_Spectrum__v_spectral_domain, METH_VARARGS, (char *)"\n"
+		"\n"
+		"SpectralDomain& FullPhysics::Spectrum::spectral_domain()\n"
+		"\n"
+		""},
+	 { (char *)"Spectrum__v_spectral_range", _wrap_Spectrum__v_spectral_range, METH_VARARGS, (char *)"\n"
+		"\n"
+		"SpectralRange& FullPhysics::Spectrum::spectral_range()\n"
+		"\n"
+		""},
+	 { (char *)"delete_Spectrum", _wrap_delete_Spectrum, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::Spectrum::~Spectrum()\n"
+		"\n"
+		""},
 	 { (char *)"Spectrum_swigregister", Spectrum_swigregister, METH_VARARGS, NULL},
 	 { (char *)"vector_spectrum_iterator", _wrap_vector_spectrum_iterator, METH_VARARGS, NULL},
 	 { (char *)"vector_spectrum___nonzero__", _wrap_vector_spectrum___nonzero__, METH_VARARGS, NULL},

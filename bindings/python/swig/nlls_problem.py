@@ -125,6 +125,53 @@ import full_physics_swig.cost_func
 import full_physics_swig.problem_state
 import full_physics_swig.generic_object
 class NLLSProblem(full_physics_swig.cost_func_diff.CostFuncDiff):
+    """
+
+    The base class for the Non-Linear Least Squares problem.
+
+    The class NLLSProblem is the base class for all problem classes that
+    implement a Non-Linear Least Squares (NLLS) problem. The two main
+    interface components provided by this class are the residual of the
+    problem (a vector function)
+
+    the Jacobian of the residual (the first order derivatives and a matrix
+    function)
+
+    A NLLS problem can be solved by NLLS solvers such as the Gauss-Newton
+    or the Levenberg-Marquardt methods.
+
+    NLLSProblem implements cost and gradient from its inherited classes;
+    therefore, an NLLS problem can also be solved by methods that solve
+    optimization problems of CostFunc or CostFuncDiff form.
+
+    A DESIGN RELATED QUESTION:
+
+    Similar to CostFunc and CostFuncDiff, why don't we have a class that
+    only adds the residual to the class interface and then derive this
+    class from that one to add the Jacobian to the interface as well?
+
+    ANSWER TO THE ABOVE QUESTION:
+
+    As mentioned in the comments of CostFunc, CostFuncDiff and NLLSProblem
+    (this) classes, the problems of the forms cost only (CostFunc)
+
+    cost and gradient (CostFuncDiff)
+
+    residual and Jacobian ( NLLSProblem)
+
+    can be solved by certain algorithms. However, there is no method for
+    solving a problem of the form residual only
+
+    If the first order derivatives (the Jacobian) of the residual are not
+    available, then the problem can be solved only by the methods that
+    solve a problem of cost-only (CostFunc) form after converting the
+    residual vector function into a cost scalar function using the
+    equation \\[ c(x) = \\frac{1}{2}\\parallel f(x) \\parallel^2
+    \\]
+
+    C++ includes: nlls_problem.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.cost_func_diff.CostFuncDiff]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -141,7 +188,13 @@ class NLLSProblem(full_physics_swig.cost_func_diff.CostFuncDiff):
     __del__ = lambda self: None
 
     def _v_cost(self):
+        """
+
+        virtual double FullPhysics::NLLSProblem::cost()
+        Read comments on CostFunc::cost() 
+        """
         return _nlls_problem.NLLSProblem__v_cost(self)
+
 
     @property
     def cost(self):
@@ -149,7 +202,41 @@ class NLLSProblem(full_physics_swig.cost_func_diff.CostFuncDiff):
 
 
     def _v_residual(self):
+        """
+
+        virtual blitz::Array<double, 1> FullPhysics::NLLSProblem::residual()=0
+        The residual vector function.
+
+        This method must be implemented by the classes derived from this
+        class.
+
+        The parameters (the point in the parameter space) must have already
+        been set before calling this method. The parameters are already set if
+        one of the following methods is already called successfully:
+        parameters() (see ProblemState class)
+
+        cost_x() (see CostFunc class)
+
+        gradient_x() (see CostFuncDiff class)
+
+        cost_gradient_x() (see CostFuncDiff class)
+
+        residual_x()
+
+        jacobian_x()
+
+        residual_jacobian_x()
+
+        If the parameters are already set, then this method returns the
+        residual of the NLLS problem at the current set point.
+
+        The size of the residual vector can be obtained in advance by calling
+        residual_size().
+
+        The residual of the NLLS problem 
+        """
         return _nlls_problem.NLLSProblem__v_residual(self)
+
 
     @property
     def residual(self):
@@ -157,10 +244,68 @@ class NLLSProblem(full_physics_swig.cost_func_diff.CostFuncDiff):
 
 
     def residual_x(self, x):
+        """
+
+        virtual blitz::Array<double, 1> FullPhysics::NLLSProblem::residual_x(const blitz::Array< double, 1 > &x)
+        The residual function with parameters.
+
+        This method also evaluates the residual of the NLLS problem; however,
+        it sets the problem at the input new point and then evaluates the
+        residual.
+
+        The size of the residual vector can be obtained in advance by calling
+        residual_size().
+
+        Parameters:
+        -----------
+
+        x:  New set of parameters
+
+        The residual of the cost function 
+        """
         return _nlls_problem.NLLSProblem_residual_x(self, x)
 
+
     def _v_jacobian(self):
+        """
+
+        virtual blitz::Array<double, 2> FullPhysics::NLLSProblem::jacobian()=0
+        The Jacobian matrix function.
+
+        This method must be implemented by the classes derived from this
+        class.
+
+        The parameters (the point in the parameter space) must have already
+        been set before calling this method. The parameters are already set if
+        one of the following methods is already called successfully:
+        parameters() (see ProblemState class)
+
+        cost_x() (see CostFunc class)
+
+        gradient_x() (see CostFuncDiff class)
+
+        cost_gradient_x() (see CostFuncDiff class)
+
+        residual_x()
+
+        jacobian_x()
+
+        residual_jacobian_x()
+
+        If the parameters are already set, then this method returns the
+        Jacobian of the residual of the NLLS problem at the current set point.
+
+        The sizes of the Jacobian matrix can be obtained in advance: The
+        number of its rows is the same as residual_size().
+
+        The number of its columns is the same as
+        ProblemState::expected_parameter_size() or
+        CostFuncDiff::gradient_size()
+
+        The Jacobian of the residual of the NLLS problem 
+        """
         return _nlls_problem.NLLSProblem__v_jacobian(self)
+
 
     @property
     def jacobian(self):
@@ -168,16 +313,96 @@ class NLLSProblem(full_physics_swig.cost_func_diff.CostFuncDiff):
 
 
     def jacobian_x(self, x):
+        """
+
+        virtual blitz::Array<double, 2> FullPhysics::NLLSProblem::jacobian_x(const blitz::Array< double, 1 > &x)
+        The Jacobian function with parameters.
+
+        This method also evaluates the Jacobian of the residual of the NLLS
+        problem; however, it sets the problem at the input new point and then
+        evaluates the Jacobian.
+
+        The sizes of the Jacobian matrix can be obtained in advance as
+        mentioned in the comments on jacobian() method.
+
+        Parameters:
+        -----------
+
+        x:  New set of parameters
+
+        The Jacobian of the residual of the NLLS problem 
+        """
         return _nlls_problem.NLLSProblem_jacobian_x(self, x)
 
+
     def residual_jacobian(self):
+        """
+
+        virtual void FullPhysics::NLLSProblem::residual_jacobian(blitz::Array< double, 1 > &r, blitz::Array< double, 2 > &j)
+        The residual function and its Jacobian together.
+
+        This method passes to the caller the evaluated residual function and
+        its Jacobian at the current set point.
+
+        The parameters (the point in the parameter space) must have already
+        been set before calling this method. The parameters are already set if
+        one of the following methods is already called successfully:
+        parameters() (see ProblemState class)
+
+        cost_x() (see CostFunc class)
+
+        gradient_x()
+
+        cost_gradient_x()
+
+        residual_x()
+
+        jacobian_x()
+
+        residual_jacobian_x()
+
+        Parameters:
+        -----------
+
+        r:  The residual vector
+
+        j:  The Jacobian matrix 
+        """
         return _nlls_problem.NLLSProblem_residual_jacobian(self)
 
+
     def residual_jacobian_x(self, x):
+        """
+
+        virtual void FullPhysics::NLLSProblem::residual_jacobian_x(const blitz::Array< double, 1 > &x, blitz::Array< double, 1 > &r,
+        blitz::Array< double, 2 > &j)
+        The residual and its Jacobian with parameters.
+
+        This method passes to the caller the evaluated residual function and
+        its Jacobian after setting the problem at the input new point.
+
+        Parameters:
+        -----------
+
+        x:  New set of parameters
+
+        r:  The residual vector
+
+        j:  The Jacobian matrix 
+        """
         return _nlls_problem.NLLSProblem_residual_jacobian_x(self, x)
 
+
     def _v_num_residual_evaluations(self):
+        """
+
+        virtual int FullPhysics::NLLSProblem::num_residual_evaluations() const
+        Returns the number of the times residual has been evaluated.
+
+        The number of the times residual has been evaluated 
+        """
         return _nlls_problem.NLLSProblem__v_num_residual_evaluations(self)
+
 
     @property
     def num_residual_evaluations(self):
@@ -185,7 +410,15 @@ class NLLSProblem(full_physics_swig.cost_func_diff.CostFuncDiff):
 
 
     def _v_num_jacobian_evaluations(self):
+        """
+
+        virtual int FullPhysics::NLLSProblem::num_jacobian_evaluations() const
+        Returns the number of the times Jacobian has been evaluated.
+
+        The number of the times Jacobian has been evaluated 
+        """
         return _nlls_problem.NLLSProblem__v_num_jacobian_evaluations(self)
+
 
     @property
     def num_jacobian_evaluations(self):
@@ -193,7 +426,18 @@ class NLLSProblem(full_physics_swig.cost_func_diff.CostFuncDiff):
 
 
     def _v_residual_size(self):
+        """
+
+        virtual int FullPhysics::NLLSProblem::residual_size() const =0
+        The size of the residual returned by residual()
+
+        This method must be implemented by the classes derived from this
+        class.
+
+        The size of the residual that will be returned by residual() 
+        """
         return _nlls_problem.NLLSProblem__v_residual_size(self)
+
 
     @property
     def residual_size(self):

@@ -8739,37 +8739,170 @@ SWIGINTERN PyObject *AbsorberAbsco_swigregister(PyObject *SWIGUNUSEDPARM(self), 
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"new_AbsorberAbsco", _wrap_new_AbsorberAbsco, METH_VARARGS, NULL},
-	 { (char *)"AbsorberAbsco_integrand_independent_wn", _wrap_AbsorberAbsco_integrand_independent_wn, METH_VARARGS, NULL},
-	 { (char *)"AbsorberAbsco_integrand", _wrap_AbsorberAbsco_integrand, METH_VARARGS, NULL},
-	 { (char *)"AbsorberAbsco_optical_depth_each_layer_direct_integrate", _wrap_AbsorberAbsco_optical_depth_each_layer_direct_integrate, METH_VARARGS, NULL},
-	 { (char *)"AbsorberAbsco_notify_add", _wrap_AbsorberAbsco_notify_add, METH_VARARGS, NULL},
-	 { (char *)"AbsorberAbsco_notify_remove", _wrap_AbsorberAbsco_notify_remove, METH_VARARGS, NULL},
-	 { (char *)"AbsorberAbsco__v_number_species", _wrap_AbsorberAbsco__v_number_species, METH_VARARGS, NULL},
-	 { (char *)"AbsorberAbsco__v_number_spectrometer", _wrap_AbsorberAbsco__v_number_spectrometer, METH_VARARGS, NULL},
-	 { (char *)"AbsorberAbsco__v_number_layer", _wrap_AbsorberAbsco__v_number_layer, METH_VARARGS, NULL},
-	 { (char *)"AbsorberAbsco_gas_name", _wrap_AbsorberAbsco_gas_name, METH_VARARGS, NULL},
-	 { (char *)"AbsorberAbsco_notify_update", _wrap_AbsorberAbsco_notify_update, METH_VARARGS, NULL},
-	 { (char *)"AbsorberAbsco_optical_depth_each_layer", _wrap_AbsorberAbsco_optical_depth_each_layer, METH_VARARGS, NULL},
-	 { (char *)"AbsorberAbsco__v_specific_humidity_layer", _wrap_AbsorberAbsco__v_specific_humidity_layer, METH_VARARGS, NULL},
-	 { (char *)"AbsorberAbsco__v_dry_air_molecular_density_layer", _wrap_AbsorberAbsco__v_dry_air_molecular_density_layer, METH_VARARGS, NULL},
-	 { (char *)"AbsorberAbsco__v_dry_air_column_thickness_layer", _wrap_AbsorberAbsco__v_dry_air_column_thickness_layer, METH_VARARGS, NULL},
-	 { (char *)"AbsorberAbsco__v_wet_air_column_thickness_layer", _wrap_AbsorberAbsco__v_wet_air_column_thickness_layer, METH_VARARGS, NULL},
-	 { (char *)"AbsorberAbsco__v_pressure_weighting_function_layer", _wrap_AbsorberAbsco__v_pressure_weighting_function_layer, METH_VARARGS, NULL},
-	 { (char *)"AbsorberAbsco__v_pressure_weighting_function_grid", _wrap_AbsorberAbsco__v_pressure_weighting_function_grid, METH_VARARGS, NULL},
-	 { (char *)"AbsorberAbsco_gas_column_thickness_layer", _wrap_AbsorberAbsco_gas_column_thickness_layer, METH_VARARGS, NULL},
-	 { (char *)"AbsorberAbsco_gas_total_column_thickness", _wrap_AbsorberAbsco_gas_total_column_thickness, METH_VARARGS, NULL},
-	 { (char *)"AbsorberAbsco_xgas", _wrap_AbsorberAbsco_xgas, METH_VARARGS, NULL},
-	 { (char *)"AbsorberAbsco_average_vmr", _wrap_AbsorberAbsco_average_vmr, METH_VARARGS, NULL},
-	 { (char *)"AbsorberAbsco_clone", _wrap_AbsorberAbsco_clone, METH_VARARGS, NULL},
-	 { (char *)"AbsorberAbsco_absorber_vmr", _wrap_AbsorberAbsco_absorber_vmr, METH_VARARGS, NULL},
-	 { (char *)"AbsorberAbsco_gas_absorption", _wrap_AbsorberAbsco_gas_absorption, METH_VARARGS, NULL},
-	 { (char *)"AbsorberAbsco__v_pressure_sublayer", _wrap_AbsorberAbsco__v_pressure_sublayer, METH_VARARGS, NULL},
-	 { (char *)"AbsorberAbsco__v_temperature_sublayer", _wrap_AbsorberAbsco__v_temperature_sublayer, METH_VARARGS, NULL},
-	 { (char *)"AbsorberAbsco__v_h2o_vmr_sublayer", _wrap_AbsorberAbsco__v_h2o_vmr_sublayer, METH_VARARGS, NULL},
-	 { (char *)"AbsorberAbsco_vmr_sublayer", _wrap_AbsorberAbsco_vmr_sublayer, METH_VARARGS, NULL},
-	 { (char *)"AbsorberAbsco_gravity_sublayer", _wrap_AbsorberAbsco_gravity_sublayer, METH_VARARGS, NULL},
-	 { (char *)"delete_AbsorberAbsco", _wrap_delete_AbsorberAbsco, METH_VARARGS, NULL},
+	 { (char *)"new_AbsorberAbsco", _wrap_new_AbsorberAbsco, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::AbsorberAbsco::AbsorberAbsco(const std::vector< boost::shared_ptr< AbsorberVmr > > Vmr, const\n"
+		"boost::shared_ptr< Pressure > &Press, const boost::shared_ptr<\n"
+		"Temperature > &Temp, const std::vector< boost::shared_ptr< Altitude >\n"
+		"> &Alt, const std::vector< boost::shared_ptr< GasAbsorption > >\n"
+		"&Gas_absorption, const boost::shared_ptr< Constant > &C, int Nsub=10)\n"
+		"\n"
+		""},
+	 { (char *)"AbsorberAbsco_integrand_independent_wn", _wrap_AbsorberAbsco_integrand_independent_wn, METH_VARARGS, (char *)"\n"
+		"\n"
+		"AutoDerivativeWithUnit<double> FullPhysics::AbsorberAbsco::integrand_independent_wn(int Spec_index, int Species_index, const DoubleWithUnit &P) const\n"
+		"\n"
+		""},
+	 { (char *)"AbsorberAbsco_integrand", _wrap_AbsorberAbsco_integrand, METH_VARARGS, (char *)"\n"
+		"\n"
+		"double FullPhysics::AbsorberAbsco::integrand(double wn, double p, int Spec_index, int Species_index) const\n"
+		"\n"
+		""},
+	 { (char *)"AbsorberAbsco_optical_depth_each_layer_direct_integrate", _wrap_AbsorberAbsco_optical_depth_each_layer_direct_integrate, METH_VARARGS, (char *)"\n"
+		"\n"
+		"blitz::Array<double, 2> FullPhysics::AbsorberAbsco::optical_depth_each_layer_direct_integrate(double wn, int Spec_index, double eps_abs=0, double eps_rel=1e-3)\n"
+		"const\n"
+		"\n"
+		""},
+	 { (char *)"AbsorberAbsco_notify_add", _wrap_AbsorberAbsco_notify_add, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::AbsorberAbsco::notify_add(StateVector &Sv)\n"
+		"\n"
+		""},
+	 { (char *)"AbsorberAbsco_notify_remove", _wrap_AbsorberAbsco_notify_remove, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::AbsorberAbsco::notify_remove(StateVector &Sv)\n"
+		"\n"
+		""},
+	 { (char *)"AbsorberAbsco__v_number_species", _wrap_AbsorberAbsco__v_number_species, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual int FullPhysics::AbsorberAbsco::number_species() const\n"
+		"\n"
+		""},
+	 { (char *)"AbsorberAbsco__v_number_spectrometer", _wrap_AbsorberAbsco__v_number_spectrometer, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual int FullPhysics::AbsorberAbsco::number_spectrometer() const\n"
+		"\n"
+		""},
+	 { (char *)"AbsorberAbsco__v_number_layer", _wrap_AbsorberAbsco__v_number_layer, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual int FullPhysics::AbsorberAbsco::number_layer() const\n"
+		"\n"
+		""},
+	 { (char *)"AbsorberAbsco_gas_name", _wrap_AbsorberAbsco_gas_name, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual std::string FullPhysics::AbsorberAbsco::gas_name(int Species_index) const\n"
+		"\n"
+		""},
+	 { (char *)"AbsorberAbsco_notify_update", _wrap_AbsorberAbsco_notify_update, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::AbsorberAbsco::notify_update(const AbsorberVmr &A)\n"
+		"\n"
+		""},
+	 { (char *)"AbsorberAbsco_optical_depth_each_layer", _wrap_AbsorberAbsco_optical_depth_each_layer, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual ArrayAd<double, 2> FullPhysics::AbsorberAbsco::optical_depth_each_layer(double wn, int spec_index) const\n"
+		"\n"
+		""},
+	 { (char *)"AbsorberAbsco__v_specific_humidity_layer", _wrap_AbsorberAbsco__v_specific_humidity_layer, METH_VARARGS, (char *)"\n"
+		"\n"
+		"ArrayAdWithUnit<double, 1> FullPhysics::AbsorberAbsco::specific_humidity_layer() const\n"
+		"\n"
+		""},
+	 { (char *)"AbsorberAbsco__v_dry_air_molecular_density_layer", _wrap_AbsorberAbsco__v_dry_air_molecular_density_layer, METH_VARARGS, (char *)"\n"
+		"\n"
+		"ArrayAdWithUnit<double, 1> FullPhysics::AbsorberAbsco::dry_air_molecular_density_layer() const\n"
+		"\n"
+		""},
+	 { (char *)"AbsorberAbsco__v_dry_air_column_thickness_layer", _wrap_AbsorberAbsco__v_dry_air_column_thickness_layer, METH_VARARGS, (char *)"\n"
+		"\n"
+		"ArrayAdWithUnit<double, 1> FullPhysics::AbsorberAbsco::dry_air_column_thickness_layer() const\n"
+		"\n"
+		""},
+	 { (char *)"AbsorberAbsco__v_wet_air_column_thickness_layer", _wrap_AbsorberAbsco__v_wet_air_column_thickness_layer, METH_VARARGS, (char *)"\n"
+		"\n"
+		"ArrayAdWithUnit<double, 1> FullPhysics::AbsorberAbsco::wet_air_column_thickness_layer() const\n"
+		"\n"
+		""},
+	 { (char *)"AbsorberAbsco__v_pressure_weighting_function_layer", _wrap_AbsorberAbsco__v_pressure_weighting_function_layer, METH_VARARGS, (char *)"\n"
+		"\n"
+		"ArrayAd<double, 1> FullPhysics::AbsorberAbsco::pressure_weighting_function_layer() const\n"
+		"\n"
+		""},
+	 { (char *)"AbsorberAbsco__v_pressure_weighting_function_grid", _wrap_AbsorberAbsco__v_pressure_weighting_function_grid, METH_VARARGS, (char *)"\n"
+		"\n"
+		"ArrayAd<double, 1> FullPhysics::AbsorberAbsco::pressure_weighting_function_grid() const\n"
+		"\n"
+		""},
+	 { (char *)"AbsorberAbsco_gas_column_thickness_layer", _wrap_AbsorberAbsco_gas_column_thickness_layer, METH_VARARGS, (char *)"\n"
+		"\n"
+		"ArrayAdWithUnit<double, 1> FullPhysics::AbsorberAbsco::gas_column_thickness_layer(const std::string &Gas_name) const\n"
+		"\n"
+		""},
+	 { (char *)"AbsorberAbsco_gas_total_column_thickness", _wrap_AbsorberAbsco_gas_total_column_thickness, METH_VARARGS, (char *)"\n"
+		"\n"
+		"AutoDerivativeWithUnit<double> FullPhysics::AbsorberAbsco::gas_total_column_thickness(const std::string &Gas_name) const\n"
+		"\n"
+		""},
+	 { (char *)"AbsorberAbsco_xgas", _wrap_AbsorberAbsco_xgas, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual AutoDerivative<double> FullPhysics::AbsorberAbsco::xgas(const std::string &Gas_name) const\n"
+		"\n"
+		""},
+	 { (char *)"AbsorberAbsco_average_vmr", _wrap_AbsorberAbsco_average_vmr, METH_VARARGS, (char *)"\n"
+		"\n"
+		"AutoDerivative<double> FullPhysics::AbsorberAbsco::average_vmr(const std::string &Gas_name) const\n"
+		"\n"
+		""},
+	 { (char *)"AbsorberAbsco_clone", _wrap_AbsorberAbsco_clone, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual boost::shared_ptr<Absorber> FullPhysics::AbsorberAbsco::clone(const boost::shared_ptr< Pressure > &Press, const boost::shared_ptr<\n"
+		"Temperature > &Temp, const std::vector< boost::shared_ptr< Altitude >\n"
+		"> &Alt) const\n"
+		"\n"
+		""},
+	 { (char *)"AbsorberAbsco_absorber_vmr", _wrap_AbsorberAbsco_absorber_vmr, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual boost::shared_ptr<AbsorberVmr> FullPhysics::AbsorberAbsco::absorber_vmr(const std::string &Gas_name) const\n"
+		"\n"
+		""},
+	 { (char *)"AbsorberAbsco_gas_absorption", _wrap_AbsorberAbsco_gas_absorption, METH_VARARGS, (char *)"\n"
+		"\n"
+		"boost::shared_ptr<GasAbsorption> FullPhysics::AbsorberAbsco::gas_absorption_ptr(const std::string &Gas_name) const\n"
+		"\n"
+		""},
+	 { (char *)"AbsorberAbsco__v_pressure_sublayer", _wrap_AbsorberAbsco__v_pressure_sublayer, METH_VARARGS, (char *)"\n"
+		"\n"
+		"ArrayWithUnit<double, 1> FullPhysics::AbsorberAbsco::pressure_sublayer() const\n"
+		"Return the pressure we use for each sublayer.\n"
+		"\n"
+		"This is meant for diagnostic purposes. \n"
+		""},
+	 { (char *)"AbsorberAbsco__v_temperature_sublayer", _wrap_AbsorberAbsco__v_temperature_sublayer, METH_VARARGS, (char *)"\n"
+		"\n"
+		"ArrayAdWithUnit<double, 1> FullPhysics::AbsorberAbsco::temperature_sublayer() const\n"
+		"\n"
+		""},
+	 { (char *)"AbsorberAbsco__v_h2o_vmr_sublayer", _wrap_AbsorberAbsco__v_h2o_vmr_sublayer, METH_VARARGS, (char *)"\n"
+		"\n"
+		"ArrayAdWithUnit<double, 1> FullPhysics::AbsorberAbsco::h2o_vmr_sublayer() const\n"
+		"\n"
+		""},
+	 { (char *)"AbsorberAbsco_vmr_sublayer", _wrap_AbsorberAbsco_vmr_sublayer, METH_VARARGS, (char *)"\n"
+		"\n"
+		"ArrayAdWithUnit<double, 1> FullPhysics::AbsorberAbsco::vmr_sublayer(const std::string &Gas_name) const\n"
+		"\n"
+		""},
+	 { (char *)"AbsorberAbsco_gravity_sublayer", _wrap_AbsorberAbsco_gravity_sublayer, METH_VARARGS, (char *)"\n"
+		"\n"
+		"ArrayAdWithUnit<double, 1> FullPhysics::AbsorberAbsco::gravity_sublayer(int Spec_index) const\n"
+		"\n"
+		""},
+	 { (char *)"delete_AbsorberAbsco", _wrap_delete_AbsorberAbsco, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::AbsorberAbsco::~AbsorberAbsco()\n"
+		"\n"
+		""},
 	 { (char *)"AbsorberAbsco_swigregister", AbsorberAbsco_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };

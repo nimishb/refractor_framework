@@ -181,6 +181,33 @@ ObserverPressure_swigregister = _pressure.ObserverPressure_swigregister
 ObserverPressure_swigregister(ObserverPressure)
 
 class Pressure(full_physics_swig.state_vector.StateVectorObserver, ObservablePressure):
+    """
+
+    This class maintains the pressure portion of the state.
+
+    Note that in a retrieval, there are typically two different pressure
+    levels of interest. On is the pressure levels where various initial
+    parameters are defined, e.g. Temperature read from an ECMWF file at
+    specific pressure levels. The second set is the current pressure
+    levels that define the layers used in the Radiative Transfer
+    calculation. The first set is fixed constant level, it is whatever was
+    used when we initial read the input data. The second will potentially
+    vary as we do a retrieval.
+
+    This class captures the second, potentially varying set of pressure.
+
+    Other classes typically depend on the pressure levels, e.g., Altitude.
+    As a convenience to these classes, the Pressure class can notify them
+    when it is changed. These classes can register themselves as Observers
+    of the Pressure object if desired.
+
+    When implementing a new class, you almost always will want to derive
+    from PressureImpBase rather than from this class. See that class for a
+    description.
+
+    C++ includes: pressure.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.state_vector.StateVectorObserver, ObservablePressure]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -194,13 +221,31 @@ class Pressure(full_physics_swig.state_vector.StateVectorObserver, ObservablePre
     __del__ = lambda self: None
 
     def add_observer(self, Obs):
+        """
+
+        virtual void FullPhysics::Pressure::add_observer(Observer< Pressure > &Obs)
+
+        """
         return _pressure.Pressure_add_observer(self, Obs)
 
+
     def remove_observer(self, Obs):
+        """
+
+        virtual void FullPhysics::Pressure::remove_observer(Observer< Pressure > &Obs)
+
+        """
         return _pressure.Pressure_remove_observer(self, Obs)
 
+
     def _v_surface_pressure(self):
+        """
+
+        AutoDerivativeWithUnit<double> FullPhysics::Pressure::surface_pressure() const
+
+        """
         return _pressure.Pressure__v_surface_pressure(self)
+
 
     @property
     def surface_pressure(self):
@@ -208,7 +253,15 @@ class Pressure(full_physics_swig.state_vector.StateVectorObserver, ObservablePre
 
 
     def _v_surface_pressure_value(self):
+        """
+
+        double FullPhysics::Pressure::surface_pressure_value() const
+        Return the current surface pressure value, without the gradient.
+
+        This is in Pascals. 
+        """
         return _pressure.Pressure__v_surface_pressure_value(self)
+
 
     @property
     def surface_pressure_value(self):
@@ -216,7 +269,15 @@ class Pressure(full_physics_swig.state_vector.StateVectorObserver, ObservablePre
 
 
     def _v_pressure_grid(self):
+        """
+
+        virtual ArrayAdWithUnit<double, 1> FullPhysics::Pressure::pressure_grid() const =0
+        This returns the pressure grid to use for layer retrieval, along with
+        the gradient of each of the pressure grid values with the state
+        vector. 
+        """
         return _pressure.Pressure__v_pressure_grid(self)
+
 
     @property
     def pressure_grid(self):
@@ -224,7 +285,15 @@ class Pressure(full_physics_swig.state_vector.StateVectorObserver, ObservablePre
 
 
     def _v_number_layer(self):
+        """
+
+        int FullPhysics::Pressure::number_layer() const
+        This is the number of layers.
+
+        This is the same as pressure_grid.rows() - 1. 
+        """
         return _pressure.Pressure__v_number_layer(self)
+
 
     @property
     def number_layer(self):
@@ -232,7 +301,15 @@ class Pressure(full_physics_swig.state_vector.StateVectorObserver, ObservablePre
 
 
     def _v_number_level(self):
+        """
+
+        int FullPhysics::Pressure::number_level() const
+        This is the number of levels.
+
+        This is the same as pressure_grid.rows() - 1. 
+        """
         return _pressure.Pressure__v_number_level(self)
+
 
     @property
     def number_level(self):
@@ -240,7 +317,16 @@ class Pressure(full_physics_swig.state_vector.StateVectorObserver, ObservablePre
 
 
     def _v_max_number_level(self):
+        """
+
+        virtual int FullPhysics::Pressure::max_number_level() const
+        The maximum number of levels that we can have.
+
+        The default is just number_level() (i.e., we don't change the number
+        of levels from one iteration to the next). 
+        """
         return _pressure.Pressure__v_max_number_level(self)
+
 
     @property
     def max_number_level(self):
@@ -248,7 +334,20 @@ class Pressure(full_physics_swig.state_vector.StateVectorObserver, ObservablePre
 
 
     def clone(self):
+        """
+
+        virtual boost::shared_ptr<Pressure> FullPhysics::Pressure::clone() const =0
+        Clone a Pressure object.
+
+        Note that the cloned version will not be attached to a StateVector or
+        Observer<Pressure>, although you can of course attach them after
+        receiving the cloned object.
+
+        Because this isn't attached to the StateVector, one use of the clone
+        operator is to create a "frozen" Pressure object. 
+        """
         return _pressure.Pressure_clone(self)
+
 
     def __str__(self):
         return _pressure.Pressure___str__(self)

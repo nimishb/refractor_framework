@@ -122,6 +122,15 @@ def _new_from_set(cls, version, *args):
 
 import full_physics_swig.generic_object
 class ArrayAdWithUnitDouble_1(_object):
+    """
+
+    This is a ArrayAd that also has units associated with it.
+
+    This is a simple structure that just keeps these two things together.
+
+    C++ includes: array_ad_with_unit.h 
+    """
+
     __swig_setmethods__ = {}
     __setattr__ = lambda self, name, value: _swig_setattr(self, ArrayAdWithUnitDouble_1, name, value)
     __swig_getmethods__ = {}
@@ -129,6 +138,11 @@ class ArrayAdWithUnitDouble_1(_object):
     __repr__ = _swig_repr
 
     def __init__(self, *args):
+        """
+
+        FullPhysics::ArrayAdWithUnit< T, D >::ArrayAdWithUnit(const ArrayAd< T, D > &V)
+
+        """
         this = _array_ad_with_unit.new_ArrayAdWithUnitDouble_1(*args)
         try:
             self.this.append(this)
@@ -136,10 +150,22 @@ class ArrayAdWithUnitDouble_1(_object):
             self.this = this
 
     def convert(self, *args):
+        """
+
+        ArrayAdWithUnit<T, D> FullPhysics::ArrayAdWithUnit< T, D >::convert(const Unit &R) const
+        Convert to the given units. 
+        """
         return _array_ad_with_unit.ArrayAdWithUnitDouble_1_convert(self, *args)
 
+
     def _v_rows(self):
+        """
+
+        int FullPhysics::ArrayAdWithUnit< T, D >::rows() const
+
+        """
         return _array_ad_with_unit.ArrayAdWithUnitDouble_1__v_rows(self)
+
 
     @property
     def rows(self):
@@ -147,7 +173,13 @@ class ArrayAdWithUnitDouble_1(_object):
 
 
     def _v_cols(self):
+        """
+
+        int FullPhysics::ArrayAdWithUnit< T, D >::cols() const
+
+        """
         return _array_ad_with_unit.ArrayAdWithUnitDouble_1__v_cols(self)
+
 
     @property
     def cols(self):
@@ -155,7 +187,13 @@ class ArrayAdWithUnitDouble_1(_object):
 
 
     def _v_depth(self):
+        """
+
+        int FullPhysics::ArrayAdWithUnit< T, D >::depth() const
+
+        """
         return _array_ad_with_unit.ArrayAdWithUnitDouble_1__v_depth(self)
+
 
     @property
     def depth(self):
@@ -163,7 +201,13 @@ class ArrayAdWithUnitDouble_1(_object):
 
 
     def _v_is_constant(self):
+        """
+
+        bool FullPhysics::ArrayAdWithUnit< T, D >::is_constant() const
+
+        """
         return _array_ad_with_unit.ArrayAdWithUnitDouble_1__v_is_constant(self)
+
 
     @property
     def is_constant(self):
@@ -171,7 +215,13 @@ class ArrayAdWithUnitDouble_1(_object):
 
 
     def _v_number_variable(self):
+        """
+
+        int FullPhysics::ArrayAdWithUnit< T, D >::number_variable() const
+
+        """
         return _array_ad_with_unit.ArrayAdWithUnitDouble_1__v_number_variable(self)
+
 
     @property
     def number_variable(self):
@@ -179,7 +229,13 @@ class ArrayAdWithUnitDouble_1(_object):
 
 
     def reference(self, V):
+        """
+
+        void FullPhysics::ArrayAdWithUnit< T, D >::reference(const ArrayAdWithUnit< T, D > &V)
+
+        """
         return _array_ad_with_unit.ArrayAdWithUnitDouble_1_reference(self, V)
+
 
     def _value(self):
         return _array_ad_with_unit.ArrayAdWithUnitDouble_1__value(self)
@@ -215,6 +271,15 @@ ArrayAdWithUnitDouble_1_swigregister = _array_ad_with_unit.ArrayAdWithUnitDouble
 ArrayAdWithUnitDouble_1_swigregister(ArrayAdWithUnitDouble_1)
 
 class ArrayAdWithUnitDouble_2(_object):
+    """
+
+    This is a ArrayAd that also has units associated with it.
+
+    This is a simple structure that just keeps these two things together.
+
+    C++ includes: array_ad_with_unit.h 
+    """
+
     __swig_setmethods__ = {}
     __setattr__ = lambda self, name, value: _swig_setattr(self, ArrayAdWithUnitDouble_2, name, value)
     __swig_getmethods__ = {}
@@ -222,6 +287,11 @@ class ArrayAdWithUnitDouble_2(_object):
     __repr__ = _swig_repr
 
     def __init__(self, *args):
+        """
+
+        FullPhysics::ArrayAdWithUnit< T, D >::ArrayAdWithUnit(const ArrayAd< T, D > &V)
+
+        """
         this = _array_ad_with_unit.new_ArrayAdWithUnitDouble_2(*args)
         try:
             self.this.append(this)
@@ -229,10 +299,22 @@ class ArrayAdWithUnitDouble_2(_object):
             self.this = this
 
     def convert(self, *args):
+        """
+
+        ArrayAdWithUnit<T, D> FullPhysics::ArrayAdWithUnit< T, D >::convert(const Unit &R) const
+        Convert to the given units. 
+        """
         return _array_ad_with_unit.ArrayAdWithUnitDouble_2_convert(self, *args)
 
+
     def _v_rows(self):
+        """
+
+        int FullPhysics::ArrayAdWithUnit< T, D >::rows() const
+
+        """
         return _array_ad_with_unit.ArrayAdWithUnitDouble_2__v_rows(self)
+
 
     @property
     def rows(self):
@@ -240,7 +322,13 @@ class ArrayAdWithUnitDouble_2(_object):
 
 
     def _v_cols(self):
+        """
+
+        int FullPhysics::ArrayAdWithUnit< T, D >::cols() const
+
+        """
         return _array_ad_with_unit.ArrayAdWithUnitDouble_2__v_cols(self)
+
 
     @property
     def cols(self):
@@ -248,7 +336,13 @@ class ArrayAdWithUnitDouble_2(_object):
 
 
     def _v_depth(self):
+        """
+
+        int FullPhysics::ArrayAdWithUnit< T, D >::depth() const
+
+        """
         return _array_ad_with_unit.ArrayAdWithUnitDouble_2__v_depth(self)
+
 
     @property
     def depth(self):
@@ -256,7 +350,13 @@ class ArrayAdWithUnitDouble_2(_object):
 
 
     def _v_is_constant(self):
+        """
+
+        bool FullPhysics::ArrayAdWithUnit< T, D >::is_constant() const
+
+        """
         return _array_ad_with_unit.ArrayAdWithUnitDouble_2__v_is_constant(self)
+
 
     @property
     def is_constant(self):
@@ -264,7 +364,13 @@ class ArrayAdWithUnitDouble_2(_object):
 
 
     def _v_number_variable(self):
+        """
+
+        int FullPhysics::ArrayAdWithUnit< T, D >::number_variable() const
+
+        """
         return _array_ad_with_unit.ArrayAdWithUnitDouble_2__v_number_variable(self)
+
 
     @property
     def number_variable(self):
@@ -272,7 +378,13 @@ class ArrayAdWithUnitDouble_2(_object):
 
 
     def reference(self, V):
+        """
+
+        void FullPhysics::ArrayAdWithUnit< T, D >::reference(const ArrayAdWithUnit< T, D > &V)
+
+        """
         return _array_ad_with_unit.ArrayAdWithUnitDouble_2_reference(self, V)
+
 
     def _value(self):
         return _array_ad_with_unit.ArrayAdWithUnitDouble_2__value(self)
@@ -308,6 +420,15 @@ ArrayAdWithUnitDouble_2_swigregister = _array_ad_with_unit.ArrayAdWithUnitDouble
 ArrayAdWithUnitDouble_2_swigregister(ArrayAdWithUnitDouble_2)
 
 class ArrayAdWithUnitDouble_3(_object):
+    """
+
+    This is a ArrayAd that also has units associated with it.
+
+    This is a simple structure that just keeps these two things together.
+
+    C++ includes: array_ad_with_unit.h 
+    """
+
     __swig_setmethods__ = {}
     __setattr__ = lambda self, name, value: _swig_setattr(self, ArrayAdWithUnitDouble_3, name, value)
     __swig_getmethods__ = {}
@@ -315,6 +436,11 @@ class ArrayAdWithUnitDouble_3(_object):
     __repr__ = _swig_repr
 
     def __init__(self, *args):
+        """
+
+        FullPhysics::ArrayAdWithUnit< T, D >::ArrayAdWithUnit(const ArrayAd< T, D > &V)
+
+        """
         this = _array_ad_with_unit.new_ArrayAdWithUnitDouble_3(*args)
         try:
             self.this.append(this)
@@ -322,10 +448,22 @@ class ArrayAdWithUnitDouble_3(_object):
             self.this = this
 
     def convert(self, *args):
+        """
+
+        ArrayAdWithUnit<T, D> FullPhysics::ArrayAdWithUnit< T, D >::convert(const Unit &R) const
+        Convert to the given units. 
+        """
         return _array_ad_with_unit.ArrayAdWithUnitDouble_3_convert(self, *args)
 
+
     def _v_rows(self):
+        """
+
+        int FullPhysics::ArrayAdWithUnit< T, D >::rows() const
+
+        """
         return _array_ad_with_unit.ArrayAdWithUnitDouble_3__v_rows(self)
+
 
     @property
     def rows(self):
@@ -333,7 +471,13 @@ class ArrayAdWithUnitDouble_3(_object):
 
 
     def _v_cols(self):
+        """
+
+        int FullPhysics::ArrayAdWithUnit< T, D >::cols() const
+
+        """
         return _array_ad_with_unit.ArrayAdWithUnitDouble_3__v_cols(self)
+
 
     @property
     def cols(self):
@@ -341,7 +485,13 @@ class ArrayAdWithUnitDouble_3(_object):
 
 
     def _v_depth(self):
+        """
+
+        int FullPhysics::ArrayAdWithUnit< T, D >::depth() const
+
+        """
         return _array_ad_with_unit.ArrayAdWithUnitDouble_3__v_depth(self)
+
 
     @property
     def depth(self):
@@ -349,7 +499,13 @@ class ArrayAdWithUnitDouble_3(_object):
 
 
     def _v_is_constant(self):
+        """
+
+        bool FullPhysics::ArrayAdWithUnit< T, D >::is_constant() const
+
+        """
         return _array_ad_with_unit.ArrayAdWithUnitDouble_3__v_is_constant(self)
+
 
     @property
     def is_constant(self):
@@ -357,7 +513,13 @@ class ArrayAdWithUnitDouble_3(_object):
 
 
     def _v_number_variable(self):
+        """
+
+        int FullPhysics::ArrayAdWithUnit< T, D >::number_variable() const
+
+        """
         return _array_ad_with_unit.ArrayAdWithUnitDouble_3__v_number_variable(self)
+
 
     @property
     def number_variable(self):
@@ -365,7 +527,13 @@ class ArrayAdWithUnitDouble_3(_object):
 
 
     def reference(self, V):
+        """
+
+        void FullPhysics::ArrayAdWithUnit< T, D >::reference(const ArrayAdWithUnit< T, D > &V)
+
+        """
         return _array_ad_with_unit.ArrayAdWithUnitDouble_3_reference(self, V)
+
 
     def _value(self):
         return _array_ad_with_unit.ArrayAdWithUnitDouble_3__value(self)
@@ -401,6 +569,15 @@ ArrayAdWithUnitDouble_3_swigregister = _array_ad_with_unit.ArrayAdWithUnitDouble
 ArrayAdWithUnitDouble_3_swigregister(ArrayAdWithUnitDouble_3)
 
 class ArrayAdWithUnitDouble_4(_object):
+    """
+
+    This is a ArrayAd that also has units associated with it.
+
+    This is a simple structure that just keeps these two things together.
+
+    C++ includes: array_ad_with_unit.h 
+    """
+
     __swig_setmethods__ = {}
     __setattr__ = lambda self, name, value: _swig_setattr(self, ArrayAdWithUnitDouble_4, name, value)
     __swig_getmethods__ = {}
@@ -408,6 +585,11 @@ class ArrayAdWithUnitDouble_4(_object):
     __repr__ = _swig_repr
 
     def __init__(self, *args):
+        """
+
+        FullPhysics::ArrayAdWithUnit< T, D >::ArrayAdWithUnit(const ArrayAd< T, D > &V)
+
+        """
         this = _array_ad_with_unit.new_ArrayAdWithUnitDouble_4(*args)
         try:
             self.this.append(this)
@@ -415,10 +597,22 @@ class ArrayAdWithUnitDouble_4(_object):
             self.this = this
 
     def convert(self, *args):
+        """
+
+        ArrayAdWithUnit<T, D> FullPhysics::ArrayAdWithUnit< T, D >::convert(const Unit &R) const
+        Convert to the given units. 
+        """
         return _array_ad_with_unit.ArrayAdWithUnitDouble_4_convert(self, *args)
 
+
     def _v_rows(self):
+        """
+
+        int FullPhysics::ArrayAdWithUnit< T, D >::rows() const
+
+        """
         return _array_ad_with_unit.ArrayAdWithUnitDouble_4__v_rows(self)
+
 
     @property
     def rows(self):
@@ -426,7 +620,13 @@ class ArrayAdWithUnitDouble_4(_object):
 
 
     def _v_cols(self):
+        """
+
+        int FullPhysics::ArrayAdWithUnit< T, D >::cols() const
+
+        """
         return _array_ad_with_unit.ArrayAdWithUnitDouble_4__v_cols(self)
+
 
     @property
     def cols(self):
@@ -434,7 +634,13 @@ class ArrayAdWithUnitDouble_4(_object):
 
 
     def _v_depth(self):
+        """
+
+        int FullPhysics::ArrayAdWithUnit< T, D >::depth() const
+
+        """
         return _array_ad_with_unit.ArrayAdWithUnitDouble_4__v_depth(self)
+
 
     @property
     def depth(self):
@@ -442,7 +648,13 @@ class ArrayAdWithUnitDouble_4(_object):
 
 
     def _v_is_constant(self):
+        """
+
+        bool FullPhysics::ArrayAdWithUnit< T, D >::is_constant() const
+
+        """
         return _array_ad_with_unit.ArrayAdWithUnitDouble_4__v_is_constant(self)
+
 
     @property
     def is_constant(self):
@@ -450,7 +662,13 @@ class ArrayAdWithUnitDouble_4(_object):
 
 
     def _v_number_variable(self):
+        """
+
+        int FullPhysics::ArrayAdWithUnit< T, D >::number_variable() const
+
+        """
         return _array_ad_with_unit.ArrayAdWithUnitDouble_4__v_number_variable(self)
+
 
     @property
     def number_variable(self):
@@ -458,7 +676,13 @@ class ArrayAdWithUnitDouble_4(_object):
 
 
     def reference(self, V):
+        """
+
+        void FullPhysics::ArrayAdWithUnit< T, D >::reference(const ArrayAdWithUnit< T, D > &V)
+
+        """
         return _array_ad_with_unit.ArrayAdWithUnitDouble_4_reference(self, V)
+
 
     def _value(self):
         return _array_ad_with_unit.ArrayAdWithUnitDouble_4__value(self)

@@ -5213,8 +5213,16 @@ SWIGINTERN PyObject *UqSoundingId_swigregister(PyObject *SWIGUNUSEDPARM(self), P
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"new_UqSoundingId", _wrap_new_UqSoundingId, METH_VARARGS, NULL},
-	 { (char *)"delete_UqSoundingId", _wrap_delete_UqSoundingId, METH_VARARGS, NULL},
+	 { (char *)"new_UqSoundingId", _wrap_new_UqSoundingId, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::UqSoundingId::UqSoundingId(const HdfFile &File, const std::string &Sounding_id)\n"
+		"\n"
+		""},
+	 { (char *)"delete_UqSoundingId", _wrap_delete_UqSoundingId, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::UqSoundingId::~UqSoundingId()\n"
+		"\n"
+		""},
 	 { (char *)"UqSoundingId_swigregister", UqSoundingId_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };

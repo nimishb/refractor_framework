@@ -122,6 +122,17 @@ def _new_from_set(cls, version, *args):
 
 import full_physics_swig.logger
 class FpLogger(full_physics_swig.logger.LogImp):
+    """
+
+    This is the implementation of the Logger used for the Full Physics
+    program.
+
+    This just writes to stdout or stderr, filtering by the level, and
+    adding in a leading label (e.g., "INFO").
+
+    C++ includes: fp_logger.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.logger.LogImp]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -133,6 +144,11 @@ class FpLogger(full_physics_swig.logger.LogImp):
     __repr__ = _swig_repr
 
     def __init__(self, *args):
+        """
+
+        FullPhysics::FpLogger::FpLogger(int Verbosity_level=LogImp::DEBUG)
+        Constructor. 
+        """
         this = _fp_logger.new_FpLogger(*args)
         try:
             self.this.append(this)
@@ -140,7 +156,13 @@ class FpLogger(full_physics_swig.logger.LogImp):
             self.this = this
 
     def flush(self, l):
+        """
+
+        virtual void FullPhysics::FpLogger::flush(log_level l)
+
+        """
         return _fp_logger.FpLogger_flush(self, l)
+
     __swig_getmethods__["turn_on_logger"] = lambda x: _fp_logger.FpLogger_turn_on_logger
     if _newclass:
         turn_on_logger = staticmethod(_fp_logger.FpLogger_turn_on_logger)

@@ -5355,12 +5355,42 @@ SWIGINTERN PyObject *L2FpConfiguration_swigregister(PyObject *SWIGUNUSEDPARM(sel
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"delete_L2FpConfiguration", _wrap_delete_L2FpConfiguration, METH_VARARGS, NULL},
-	 { (char *)"L2FpConfiguration__v_logger", _wrap_L2FpConfiguration__v_logger, METH_VARARGS, NULL},
-	 { (char *)"L2FpConfiguration__v_forward_model", _wrap_L2FpConfiguration__v_forward_model, METH_VARARGS, NULL},
-	 { (char *)"L2FpConfiguration__v_solver", _wrap_L2FpConfiguration__v_solver, METH_VARARGS, NULL},
-	 { (char *)"L2FpConfiguration__v_initial_guess", _wrap_L2FpConfiguration__v_initial_guess, METH_VARARGS, NULL},
-	 { (char *)"L2FpConfiguration_output", _wrap_L2FpConfiguration_output, METH_VARARGS, NULL},
+	 { (char *)"delete_L2FpConfiguration", _wrap_delete_L2FpConfiguration, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::L2FpConfiguration::~L2FpConfiguration()\n"
+		"\n"
+		""},
+	 { (char *)"L2FpConfiguration__v_logger", _wrap_L2FpConfiguration__v_logger, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual boost::shared_ptr<LogImp> FullPhysics::L2FpConfiguration::logger() const =0\n"
+		"Logger to use. \n"
+		""},
+	 { (char *)"L2FpConfiguration__v_forward_model", _wrap_L2FpConfiguration__v_forward_model, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual boost::shared_ptr<ForwardModel> FullPhysics::L2FpConfiguration::forward_model() const =0\n"
+		"Forward model. Everything should be initialized to the initial guess.\n"
+		"\n"
+		""},
+	 { (char *)"L2FpConfiguration__v_solver", _wrap_L2FpConfiguration__v_solver, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual boost::shared_ptr<ConnorSolver> FullPhysics::L2FpConfiguration::solver() const =0\n"
+		"Solver. \n"
+		""},
+	 { (char *)"L2FpConfiguration__v_initial_guess", _wrap_L2FpConfiguration__v_initial_guess, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual boost::shared_ptr<InitialGuess> FullPhysics::L2FpConfiguration::initial_guess() const =0\n"
+		"Initial guess. \n"
+		""},
+	 { (char *)"L2FpConfiguration_output", _wrap_L2FpConfiguration_output, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::L2FpConfiguration::output(boost::shared_ptr< Output > &Regular_output, boost::shared_ptr<\n"
+		"Output > &Error_output) const =0\n"
+		"Create output, for both a normal run and for an error run (either or\n"
+		"both can be null if we don't want output).\n"
+		"\n"
+		"This should have all the RegisterOutputBase applied to it that the\n"
+		"configuration says should be. \n"
+		""},
 	 { (char *)"L2FpConfiguration___str__", _wrap_L2FpConfiguration___str__, METH_VARARGS, NULL},
 	 { (char *)"L2FpConfiguration_swigregister", L2FpConfiguration_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }

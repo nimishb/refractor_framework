@@ -122,20 +122,40 @@ def _new_from_set(cls, version, *args):
 
 
 def solve_least_squares(A, B, Rcond=1e-12):
+    """
+
+    blitz::Array<double, 1> FullPhysics::solve_least_squares(const blitz::Array< double, 2 > &A, const blitz::Array< double, 1 >
+    &B, double Rcond=1e-12)
+
+    """
     return _linear_algebra.solve_least_squares(A, B, Rcond)
-solve_least_squares = _linear_algebra.solve_least_squares
 
 def svd(A, S, U, VT):
+    """
+
+    void FullPhysics::svd(const blitz::Array< double, 2 > &A, blitz::Array< double, 1 > &S,
+    blitz::Array< double, 2 > &U, blitz::Array< double, 2 > &VT)
+
+    """
     return _linear_algebra.svd(A, S, U, VT)
-svd = _linear_algebra.svd
 
 def generalized_inverse(*args):
+    """
+
+    blitz::Array<double, 2> FullPhysics::generalized_inverse(const blitz::Array< double, 2 > &A, const blitz::Array< bool, 1 >
+    &Zero_unused, double Rcond=std::numeric_limits< double >::epsilon())
+
+    """
     return _linear_algebra.generalized_inverse(*args)
-generalized_inverse = _linear_algebra.generalized_inverse
 
 def solve_least_squares_qr(A, B):
+    """
+
+    blitz::Array<double, 1> FullPhysics::solve_least_squares_qr(const blitz::Array< double, 2 > &A, const blitz::Array< double, 1 >
+    &B)
+
+    """
     return _linear_algebra.solve_least_squares_qr(A, B)
-solve_least_squares_qr = _linear_algebra.solve_least_squares_qr
 # This file is compatible with both classic and new-style classes.
 
 

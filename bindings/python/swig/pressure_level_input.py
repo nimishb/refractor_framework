@@ -122,6 +122,24 @@ def _new_from_set(cls, version, *args):
 
 import full_physics_swig.generic_object
 class PressureLevelInput(_object):
+    """
+
+    In a retrieval, there are typically two different pressure levels of
+    interest.
+
+    One is the pressure levels where various initial parameters are
+    defined, e.g. Temperature read from an ECMWF file at specific pressure
+    levels. The second set is the current pressure levels that define the
+    layers used in the Radiative Transfer calculation. The first set is
+    fixed constant level, it is whatever was used when we initial read the
+    input data. The second will potentially vary as we do a retrieval.
+
+    This class captures the first, fixed set of pressure levels. This is
+    little more than an Array of values.
+
+    C++ includes: pressure_level_input.h 
+    """
+
     __swig_setmethods__ = {}
     __setattr__ = lambda self, name, value: _swig_setattr(self, PressureLevelInput, name, value)
     __swig_getmethods__ = {}
@@ -129,6 +147,18 @@ class PressureLevelInput(_object):
     __repr__ = _swig_repr
 
     def __init__(self, *args):
+        """
+
+        FullPhysics::PressureLevelInput::PressureLevelInput(const HdfFile &Hdf_file, const std::string &Hdf_group="Pressure")
+        Constructor.
+
+        Parameters:
+        -----------
+
+        Hdf_file:  The HdfFile to read. This reads the given HDF group.
+
+        Hdf_group:  The HDF group to read. 
+        """
         this = _pressure_level_input.new_PressureLevelInput(*args)
         try:
             self.this.append(this)
@@ -136,7 +166,15 @@ class PressureLevelInput(_object):
             self.this = this
 
     def _v_pressure_level(self):
+        """
+
+        const blitz::Array<double, 1>& FullPhysics::PressureLevelInput::pressure_level() const
+        Pressure levels that input data was defined on.
+
+        Pressure level in ascending order, in Pascals. 
+        """
         return _pressure_level_input.PressureLevelInput__v_pressure_level(self)
+
 
     @property
     def pressure_level(self):

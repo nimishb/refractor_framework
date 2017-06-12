@@ -6805,11 +6805,34 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
 	 { (char *)"HdfFile___str__", _wrap_HdfFile___str__, METH_VARARGS, NULL},
-	 { (char *)"new_HdfFile", _wrap_new_HdfFile, METH_VARARGS, NULL},
-	 { (char *)"HdfFile_close", _wrap_HdfFile_close, METH_VARARGS, NULL},
-	 { (char *)"HdfFile__v_file_name", _wrap_HdfFile__v_file_name, METH_VARARGS, NULL},
-	 { (char *)"HdfFile__v_mode", _wrap_HdfFile__v_mode, METH_VARARGS, NULL},
-	 { (char *)"HdfFile_is_hdf", _wrap_HdfFile_is_hdf, METH_VARARGS, NULL},
+	 { (char *)"new_HdfFile", _wrap_new_HdfFile, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::HdfFile::HdfFile(const std::string &Fname, Mode M=READ)\n"
+		"\n"
+		""},
+	 { (char *)"HdfFile_close", _wrap_HdfFile_close, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::HdfFile::close()\n"
+		"Close the underlying file.\n"
+		"\n"
+		"This is automatically done by the destructor, so you only need to call\n"
+		"this if you want to force a close (e.g., for a unit test) \n"
+		""},
+	 { (char *)"HdfFile__v_file_name", _wrap_HdfFile__v_file_name, METH_VARARGS, (char *)"\n"
+		"\n"
+		"const std::string& FullPhysics::HdfFile::file_name() const\n"
+		"File name. \n"
+		""},
+	 { (char *)"HdfFile__v_mode", _wrap_HdfFile__v_mode, METH_VARARGS, (char *)"\n"
+		"\n"
+		"Mode FullPhysics::HdfFile::mode() const\n"
+		"Mode file was opened with. \n"
+		""},
+	 { (char *)"HdfFile_is_hdf", _wrap_HdfFile_is_hdf, METH_VARARGS, (char *)"\n"
+		"\n"
+		"static bool FullPhysics::HdfFile::is_hdf(const std::string &Fname)\n"
+		"Return true if the given file is an HDF file. \n"
+		""},
 	 { (char *)"HdfFile_write_double_1d", _wrap_HdfFile_write_double_1d, METH_VARARGS, NULL},
 	 { (char *)"HdfFile_write_double_2d", _wrap_HdfFile_write_double_2d, METH_VARARGS, NULL},
 	 { (char *)"HdfFile_write_double_3d", _wrap_HdfFile_write_double_3d, METH_VARARGS, NULL},
@@ -6826,7 +6849,11 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"HdfFile_read_double_with_unit_2d", _wrap_HdfFile_read_double_with_unit_2d, METH_VARARGS, NULL},
 	 { (char *)"HdfFile_read_double_with_unit_3d", _wrap_HdfFile_read_double_with_unit_3d, METH_VARARGS, NULL},
 	 { (char *)"HdfFile_read_double_with_unit_4d", _wrap_HdfFile_read_double_with_unit_4d, METH_VARARGS, NULL},
-	 { (char *)"delete_HdfFile", _wrap_delete_HdfFile, METH_VARARGS, NULL},
+	 { (char *)"delete_HdfFile", _wrap_delete_HdfFile, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::HdfFile::~HdfFile()\n"
+		"\n"
+		""},
 	 { (char *)"HdfFile_swigregister", HdfFile_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };

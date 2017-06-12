@@ -6421,13 +6421,45 @@ SWIGINTERN PyObject *SolarDopplerShiftPolynomial_swigregister(PyObject *SWIGUNUS
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"new_SolarDopplerShiftPolynomial", _wrap_new_SolarDopplerShiftPolynomial, METH_VARARGS, NULL},
-	 { (char *)"SolarDopplerShiftPolynomial__v_doppler_shift", _wrap_SolarDopplerShiftPolynomial__v_doppler_shift, METH_VARARGS, NULL},
-	 { (char *)"SolarDopplerShiftPolynomial__v_solar_velocity", _wrap_SolarDopplerShiftPolynomial__v_solar_velocity, METH_VARARGS, NULL},
-	 { (char *)"SolarDopplerShiftPolynomial__v_total_velocity", _wrap_SolarDopplerShiftPolynomial__v_total_velocity, METH_VARARGS, NULL},
-	 { (char *)"SolarDopplerShiftPolynomial__v_solar_distance", _wrap_SolarDopplerShiftPolynomial__v_solar_distance, METH_VARARGS, NULL},
-	 { (char *)"SolarDopplerShiftPolynomial_doppler_stretch", _wrap_SolarDopplerShiftPolynomial_doppler_stretch, METH_VARARGS, NULL},
-	 { (char *)"delete_SolarDopplerShiftPolynomial", _wrap_delete_SolarDopplerShiftPolynomial, METH_VARARGS, NULL},
+	 { (char *)"new_SolarDopplerShiftPolynomial", _wrap_new_SolarDopplerShiftPolynomial, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::SolarDopplerShiftPolynomial::SolarDopplerShiftPolynomial(double Doppler_shift, const Time &t, const Constant\n"
+		"&constant=DefaultConstant(), bool apply_doppler_shift=true)\n"
+		"\n"
+		""},
+	 { (char *)"SolarDopplerShiftPolynomial__v_doppler_shift", _wrap_SolarDopplerShiftPolynomial__v_doppler_shift, METH_VARARGS, (char *)"\n"
+		"\n"
+		"double FullPhysics::SolarDopplerShiftPolynomial::doppler_shift() const\n"
+		"\n"
+		""},
+	 { (char *)"SolarDopplerShiftPolynomial__v_solar_velocity", _wrap_SolarDopplerShiftPolynomial__v_solar_velocity, METH_VARARGS, (char *)"\n"
+		"\n"
+		"DoubleWithUnit FullPhysics::SolarDopplerShiftPolynomial::solar_velocity() const\n"
+		"Velocity of the center of the earth to the center of the sun.\n"
+		"\n"
+		"Positive means they are getting farther apart. This does not include\n"
+		"the rotation of the earth. \n"
+		""},
+	 { (char *)"SolarDopplerShiftPolynomial__v_total_velocity", _wrap_SolarDopplerShiftPolynomial__v_total_velocity, METH_VARARGS, (char *)"\n"
+		"\n"
+		"DoubleWithUnit FullPhysics::SolarDopplerShiftPolynomial::total_velocity() const\n"
+		"Total velocity, including rotation of earth. \n"
+		""},
+	 { (char *)"SolarDopplerShiftPolynomial__v_solar_distance", _wrap_SolarDopplerShiftPolynomial__v_solar_distance, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual DoubleWithUnit FullPhysics::SolarDopplerShiftPolynomial::solar_distance() const\n"
+		"\n"
+		""},
+	 { (char *)"SolarDopplerShiftPolynomial_doppler_stretch", _wrap_SolarDopplerShiftPolynomial_doppler_stretch, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual SpectralDomain FullPhysics::SolarDopplerShiftPolynomial::doppler_stretch(const SpectralDomain &Spec_domain) const\n"
+		"\n"
+		""},
+	 { (char *)"delete_SolarDopplerShiftPolynomial", _wrap_delete_SolarDopplerShiftPolynomial, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::SolarDopplerShiftPolynomial::~SolarDopplerShiftPolynomial()\n"
+		"\n"
+		""},
 	 { (char *)"SolarDopplerShiftPolynomial_swigregister", SolarDopplerShiftPolynomial_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };

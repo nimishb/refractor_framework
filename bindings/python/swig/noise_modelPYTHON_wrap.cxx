@@ -5295,8 +5295,16 @@ SWIGINTERN PyObject *NoiseModel_swigregister(PyObject *SWIGUNUSEDPARM(self), PyO
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"delete_NoiseModel", _wrap_delete_NoiseModel, METH_VARARGS, NULL},
-	 { (char *)"NoiseModel_uncertainty", _wrap_NoiseModel_uncertainty, METH_VARARGS, NULL},
+	 { (char *)"delete_NoiseModel", _wrap_delete_NoiseModel, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::NoiseModel::~NoiseModel()\n"
+		"\n"
+		""},
+	 { (char *)"NoiseModel_uncertainty", _wrap_NoiseModel_uncertainty, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual blitz::Array<double, 1> FullPhysics::NoiseModel::uncertainty(int Spec_index, const blitz::Array< double, 1 > &Radiance) const =0\n"
+		"Uncertainty on radiance, for given spectral band. \n"
+		""},
 	 { (char *)"NoiseModel___str__", _wrap_NoiseModel___str__, METH_VARARGS, NULL},
 	 { (char *)"NoiseModel_swigregister", NoiseModel_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }

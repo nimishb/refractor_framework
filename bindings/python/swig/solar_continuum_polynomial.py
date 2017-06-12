@@ -123,6 +123,16 @@ def _new_from_set(cls, version, *args):
 import full_physics_swig.solar_continuum_spectrum
 import full_physics_swig.generic_object
 class SolarContinuumPolynomial(full_physics_swig.solar_continuum_spectrum.SolarContinuumSpectrum):
+    """
+
+    This class calculates the solar continuum spectrum.
+
+    This particular implementation uses a polynomial parametrization to
+    calculate the Solar Planck Function.
+
+    C++ includes: solar_continuum_polynomial.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.solar_continuum_spectrum.SolarContinuumSpectrum]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -134,6 +144,12 @@ class SolarContinuumPolynomial(full_physics_swig.solar_continuum_spectrum.SolarC
     __repr__ = _swig_repr
 
     def __init__(self, Param, Convert_from_photon=True):
+        """
+
+        FullPhysics::SolarContinuumPolynomial::SolarContinuumPolynomial(const ArrayWithUnit< double, 1 > &Param, bool
+        Convert_from_photon=true)
+
+        """
         this = _solar_continuum_polynomial.new_SolarContinuumPolynomial(Param, Convert_from_photon)
         try:
             self.this.append(this)
@@ -141,7 +157,13 @@ class SolarContinuumPolynomial(full_physics_swig.solar_continuum_spectrum.SolarC
             self.this = this
 
     def solar_continuum_spectrum(self, spec_domain):
+        """
+
+        virtual Spectrum FullPhysics::SolarContinuumPolynomial::solar_continuum_spectrum(const SpectralDomain &spec_domain) const
+
+        """
         return _solar_continuum_polynomial.SolarContinuumPolynomial_solar_continuum_spectrum(self, spec_domain)
+
     __swig_destroy__ = _solar_continuum_polynomial.delete_SolarContinuumPolynomial
     __del__ = lambda self: None
 SolarContinuumPolynomial_swigregister = _solar_continuum_polynomial.SolarContinuumPolynomial_swigregister

@@ -6668,14 +6668,83 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"ObservableAerosol_remove_observer", _wrap_ObservableAerosol_remove_observer, METH_VARARGS, NULL},
 	 { (char *)"ObservableAerosol_swigregister", ObservableAerosol_swigregister, METH_VARARGS, NULL},
 	 { (char *)"Aerosol___str__", _wrap_Aerosol___str__, METH_VARARGS, NULL},
-	 { (char *)"Aerosol_add_observer", _wrap_Aerosol_add_observer, METH_VARARGS, NULL},
-	 { (char *)"Aerosol_remove_observer", _wrap_Aerosol_remove_observer, METH_VARARGS, NULL},
-	 { (char *)"Aerosol_pf_mom", _wrap_Aerosol_pf_mom, METH_VARARGS, NULL},
-	 { (char *)"Aerosol_optical_depth_each_layer", _wrap_Aerosol_optical_depth_each_layer, METH_VARARGS, NULL},
-	 { (char *)"Aerosol_ssa_each_layer", _wrap_Aerosol_ssa_each_layer, METH_VARARGS, NULL},
-	 { (char *)"Aerosol__v_number_particle", _wrap_Aerosol__v_number_particle, METH_VARARGS, NULL},
-	 { (char *)"Aerosol_clone", _wrap_Aerosol_clone, METH_VARARGS, NULL},
-	 { (char *)"delete_Aerosol", _wrap_delete_Aerosol, METH_VARARGS, NULL},
+	 { (char *)"Aerosol_add_observer", _wrap_Aerosol_add_observer, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::Aerosol::add_observer(Observer< Aerosol > &Obs)\n"
+		"\n"
+		""},
+	 { (char *)"Aerosol_remove_observer", _wrap_Aerosol_remove_observer, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::Aerosol::remove_observer(Observer< Aerosol > &Obs)\n"
+		"\n"
+		""},
+	 { (char *)"Aerosol_pf_mom", _wrap_Aerosol_pf_mom, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual ArrayAd<double, 3> FullPhysics::Aerosol::pf_mom(double wn, const ArrayAd< double, 2 > &frac_aer, int nummom=-1, int\n"
+		"numscat=-1) const =0\n"
+		"This calculates the portion of the phase function moments that come\n"
+		"from the aerosol.\n"
+		"\n"
+		"Parameters:\n"
+		"-----------\n"
+		"\n"
+		"wn:  The wave number.\n"
+		"\n"
+		"frac_aer:  This is number_active_layer() x number_particle()\n"
+		"\n"
+		"nummom:  Number of moments to fill in\n"
+		"\n"
+		"numscat:  Number of scatters to fill in \n"
+		""},
+	 { (char *)"Aerosol_optical_depth_each_layer", _wrap_Aerosol_optical_depth_each_layer, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual ArrayAd<double, 2> FullPhysics::Aerosol::optical_depth_each_layer(double wn) const =0\n"
+		"This gives the optical depth for each layer, for the given wave\n"
+		"number.\n"
+		"\n"
+		"Note this only includes the aerosol portion of this, Atmosphere class\n"
+		"combines this with Absorbers and rayleigh scattering.\n"
+		"\n"
+		"This calculates the derivatives with respect to the state vector.\n"
+		"\n"
+		"This has size of number_active_layer() x number_particle(). \n"
+		""},
+	 { (char *)"Aerosol_ssa_each_layer", _wrap_Aerosol_ssa_each_layer, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual ArrayAd<double, 1> FullPhysics::Aerosol::ssa_each_layer(double wn, int particle_index, const ArrayAd< double, 1 > &Od) const\n"
+		"=0\n"
+		"This gives the single scatter albedo for each layer, for the given\n"
+		"wave number, for the given particle.\n"
+		"\n"
+		"Note this only includes the aerosol portion of this, Atmosphere class\n"
+		"combines this with Rayleigh scattering.\n"
+		"\n"
+		"We take in the optical depth of each layer. This is just what is\n"
+		"returned by optical_depth_each_layer(), we take this in because we can\n"
+		"change what the derivative of optical_depth_each_layer is respect to,\n"
+		"e.g. in AtmosphereOco we use taua_i.\n"
+		"\n"
+		"This calculates the derivative with respect to whatever variables Od\n"
+		"is relative to.\n"
+		"\n"
+		"This has size of number_active_layer() \n"
+		""},
+	 { (char *)"Aerosol__v_number_particle", _wrap_Aerosol__v_number_particle, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual int FullPhysics::Aerosol::number_particle() const =0\n"
+		"Number of aerosol particles. \n"
+		""},
+	 { (char *)"Aerosol_clone", _wrap_Aerosol_clone, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual boost::shared_ptr<Aerosol> FullPhysics::Aerosol::clone(const boost::shared_ptr< Pressure > &Press, const boost::shared_ptr<\n"
+		"RelativeHumidity > &Rh) const =0\n"
+		"\n"
+		""},
+	 { (char *)"delete_Aerosol", _wrap_delete_Aerosol, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::Aerosol::~Aerosol()\n"
+		"\n"
+		""},
 	 { (char *)"Aerosol_swigregister", Aerosol_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };

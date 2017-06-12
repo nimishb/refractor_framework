@@ -122,6 +122,53 @@ def _new_from_set(cls, version, *args):
 
 import full_physics_swig.generic_object
 class ProblemState(full_physics_swig.generic_object.GenericObject):
+    """
+
+    The base class for all problem states.
+
+    ProblemState is the base class for the state of all optimization
+    problems.
+
+    An optimization problem is just a cost function to be minimized.
+    Therefore, in its simplest form, the state of an optimization problem
+    is the point in the parameter space where the cost function is
+    currently evaluated. In other words, given a point in the parameter
+    space, everything else needed (cost function value and its derivatives
+    if needed) can be determined. Therefore, in the context of our
+    optimization problem we may also use "problem state" to refer to the
+    point in the parameter space where the optimization related cost
+    function is evaluated.
+
+    However, the role of this class is expanded and has resulted in a
+    class hierarchy rooted at ProblemState class. It could be very
+    expensive to evaluate some cost functions and/or their derivatives;
+    therefore, it is desirable to store computationally expensive
+    components of a cost function after evaluation. The classes in the
+    class hierarchy (rooted at ProblemState class) enable maintaining of
+    the problem state (the current point in the parameter space) and
+    computationally expensive components of the cost function just in case
+    they are needed repeatedly.
+
+    This hierarchy provides a systematic way to store an optimization
+    problem state and the related computationally expensive components,
+
+    delete all stored components of the cost function when the state
+    changes, and
+
+    determine when a new state is different enough from the current state
+    to be considered a change in the state.
+
+    All optimization problem classes in the class hierarchy rooted at
+    CostFunc class must directly or indirectly inherit at least
+    ProblemState class. Given that CostFunc is derived form ProblemState,
+    then all classes in the problem class hierarchy will inherit CostFunc
+    automatically. However, a problem class may also optionally inherit
+    another appropriate problem state class in ProblemState class
+    hierarchy.
+
+    C++ includes: problem_state.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.generic_object.GenericObject]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -138,16 +185,75 @@ class ProblemState(full_physics_swig.generic_object.GenericObject):
     __del__ = lambda self: None
 
     def set(self, s):
+        """
+
+        virtual void FullPhysics::ProblemState::set(const ProblemState &s)
+        Makes self a copy of the input state.
+
+        This method makes the object, for which it is called, a copy of the
+        input state.
+
+        Parameters:
+        -----------
+
+        s:  another ProblemState 
+        """
         return _problem_state.ProblemState_set(self, s)
 
+
     def clear(self):
+        """
+
+        virtual void FullPhysics::ProblemState::clear()
+        Deletes data contents.
+
+        This method deletes state. It must be reimplemented by other classes
+        derived from this class to delete other saved components associated
+        with the state as well. 
+        """
         return _problem_state.ProblemState_clear(self)
 
+
     def parameters_different(self, x):
+        """
+
+        virtual bool FullPhysics::ProblemState::parameters_different(const blitz::Array< double, 1 > &x) const
+        Checks whether or not new input parameters are different from the
+        current ones.
+
+        The methods checks to see whether or not the new input parameters
+        (point in the parameter space) are different from the parameters
+        maintained by the object for which the method is called.
+
+        If the size of the input parameters is not equal to the expected size
+        of the parameters (check comments on expected_parameter_size), then
+        the method will throw an exception.
+
+        If the object for which the method is called has currently no
+        parameters set, then the method returns true. Otherwise, the method
+        uses some algorithm to figure out when the difference is "big
+        enough" to be considered different. If the method determines that the
+        new input parameters are different from the current parameters, then
+        it returns true, otherwise, it returns false.
+
+        Parameters:
+        -----------
+
+        x:  New set of parameters 
+        """
         return _problem_state.ProblemState_parameters_different(self, x)
 
+
     def _v_parameters(self, *args):
+        """
+
+        virtual blitz::Array<double, 1> FullPhysics::ProblemState::parameters() const
+        Returns the current parameters.
+
+        Current parameter 
+        """
         return _problem_state.ProblemState__v_parameters(self, *args)
+
 
     @property
     def parameters(self):
@@ -159,7 +265,15 @@ class ProblemState(full_physics_swig.generic_object.GenericObject):
 
 
     def _v_parameter_size(self):
+        """
+
+        virtual int FullPhysics::ProblemState::parameter_size() const
+        Returns the size of the parameters.
+
+        Size of parameters 
+        """
         return _problem_state.ProblemState__v_parameter_size(self)
+
 
     @property
     def parameter_size(self):
@@ -167,7 +281,25 @@ class ProblemState(full_physics_swig.generic_object.GenericObject):
 
 
     def _v_expected_parameter_size(self):
+        """
+
+        virtual int FullPhysics::ProblemState::expected_parameter_size() const
+        Returns the expected size of the parameters.
+
+        This method must be reimplemented by the problem class the inherits
+        ProblemState. It is only in the context of an optimization problem
+        that one knows what the size of the parameters (number of the
+        dimensions of the parameter space) is.
+
+        This method is intentionally implemented here instead of being left as
+        a pure virtual method. The intention is that the user to be able to
+        create an object of this class or its derived classes for the purpose
+        of preserving an older state of a problem if needed.
+
+        Expected size of parameters 
+        """
         return _problem_state.ProblemState__v_expected_parameter_size(self)
+
 
     @property
     def expected_parameter_size(self):
@@ -175,10 +307,30 @@ class ProblemState(full_physics_swig.generic_object.GenericObject):
 
 
     def assert_parameter_set_correctly(self):
+        """
+
+        virtual void FullPhysics::ProblemState::assert_parameter_set_correctly() const
+        Checks that the parameters are set correctly.
+
+        This method checks to see whether or not the parameters are set
+        correctly. If the parameters are not set correctly then it throws an
+        exception. 
+        """
         return _problem_state.ProblemState_assert_parameter_set_correctly(self)
 
+
     def assert_parameter_correct(self, x):
+        """
+
+        virtual void FullPhysics::ProblemState::assert_parameter_correct(const blitz::Array< double, 1 > &x) const
+        Checks that the new input parameters are correct.
+
+        This method checks to see whether or not the new input parameters are
+        correct. If the parameters are not correct then it throws an
+        exception. 
+        """
         return _problem_state.ProblemState_assert_parameter_correct(self, x)
+
 
     def __str__(self):
         return _problem_state.ProblemState___str__(self)

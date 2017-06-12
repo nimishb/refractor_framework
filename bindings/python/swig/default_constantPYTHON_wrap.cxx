@@ -5288,14 +5288,52 @@ SWIGINTERN PyObject *DefaultConstant_swigregister(PyObject *SWIGUNUSEDPARM(self)
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"new_DefaultConstant", _wrap_new_DefaultConstant, METH_VARARGS, NULL},
-	 { (char *)"DefaultConstant__v_rayleigh_depolarization_factor", _wrap_DefaultConstant__v_rayleigh_depolarization_factor, METH_VARARGS, NULL},
-	 { (char *)"DefaultConstant__v_rayleigh_a", _wrap_DefaultConstant__v_rayleigh_a, METH_VARARGS, NULL},
-	 { (char *)"DefaultConstant__v_rayleigh_b", _wrap_DefaultConstant__v_rayleigh_b, METH_VARARGS, NULL},
-	 { (char *)"DefaultConstant__v_molar_weight_dry_air", _wrap_DefaultConstant__v_molar_weight_dry_air, METH_VARARGS, NULL},
-	 { (char *)"DefaultConstant__v_molar_weight_water", _wrap_DefaultConstant__v_molar_weight_water, METH_VARARGS, NULL},
-	 { (char *)"DefaultConstant__v_avogadro_constant", _wrap_DefaultConstant__v_avogadro_constant, METH_VARARGS, NULL},
-	 { (char *)"delete_DefaultConstant", _wrap_delete_DefaultConstant, METH_VARARGS, NULL},
+	 { (char *)"new_DefaultConstant", _wrap_new_DefaultConstant, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::DefaultConstant::DefaultConstant()\n"
+		"\n"
+		""},
+	 { (char *)"DefaultConstant__v_rayleigh_depolarization_factor", _wrap_DefaultConstant__v_rayleigh_depolarization_factor, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual double FullPhysics::DefaultConstant::rayleigh_depolarization_factor() const\n"
+		"Rayleigh depolarization factor. \n"
+		""},
+	 { (char *)"DefaultConstant__v_rayleigh_a", _wrap_DefaultConstant__v_rayleigh_a, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual DoubleWithUnit FullPhysics::DefaultConstant::rayleigh_a() const\n"
+		"Rayleigh \"a\" value.\n"
+		"\n"
+		"This along with \"b\" are the wavelength dependence coefficients for\n"
+		"the refractive index. \n"
+		""},
+	 { (char *)"DefaultConstant__v_rayleigh_b", _wrap_DefaultConstant__v_rayleigh_b, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual DoubleWithUnit FullPhysics::DefaultConstant::rayleigh_b() const\n"
+		"Rayleigh \"b\" value.\n"
+		"\n"
+		"This along with \"a\" are the wavelength dependence coefficients for\n"
+		"the refractive index. \n"
+		""},
+	 { (char *)"DefaultConstant__v_molar_weight_dry_air", _wrap_DefaultConstant__v_molar_weight_dry_air, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual DoubleWithUnit FullPhysics::DefaultConstant::molar_weight_dry_air() const\n"
+		"Molar weight of dry air. \n"
+		""},
+	 { (char *)"DefaultConstant__v_molar_weight_water", _wrap_DefaultConstant__v_molar_weight_water, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual DoubleWithUnit FullPhysics::DefaultConstant::molar_weight_water() const\n"
+		"Molar weight of water. \n"
+		""},
+	 { (char *)"DefaultConstant__v_avogadro_constant", _wrap_DefaultConstant__v_avogadro_constant, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual DoubleWithUnit FullPhysics::DefaultConstant::avogadro_constant() const\n"
+		"Avogadro constant. \n"
+		""},
+	 { (char *)"delete_DefaultConstant", _wrap_delete_DefaultConstant, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::DefaultConstant::~DefaultConstant()\n"
+		"\n"
+		""},
 	 { (char *)"DefaultConstant_swigregister", DefaultConstant_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };

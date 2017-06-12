@@ -5521,15 +5521,55 @@ SWIGINTERN PyObject *CompositePerturbation_swigregister(PyObject *SWIGUNUSEDPARM
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"delete_PerturbationBuilder", _wrap_delete_PerturbationBuilder, METH_VARARGS, NULL},
-	 { (char *)"PerturbationBuilder__v_number_element", _wrap_PerturbationBuilder__v_number_element, METH_VARARGS, NULL},
-	 { (char *)"PerturbationBuilder_build_perturbation", _wrap_PerturbationBuilder_build_perturbation, METH_VARARGS, NULL},
+	 { (char *)"delete_PerturbationBuilder", _wrap_delete_PerturbationBuilder, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::PerturbationBuilder::~PerturbationBuilder()\n"
+		"\n"
+		""},
+	 { (char *)"PerturbationBuilder__v_number_element", _wrap_PerturbationBuilder__v_number_element, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual int FullPhysics::PerturbationBuilder::number_element() const =0\n"
+		"Number of elements we will be adding to the perturbation.\n"
+		"\n"
+		"0 is a legal value, if we are changing elements but not adding any. \n"
+		""},
+	 { (char *)"PerturbationBuilder_build_perturbation", _wrap_PerturbationBuilder_build_perturbation, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::PerturbationBuilder::build_perturbation(blitz::Array< double, 1 > &v, int index) const =0\n"
+		"Called when we need this class to do its part in setting up the\n"
+		"perturbation array.\n"
+		"\n"
+		"Parameters:\n"
+		"-----------\n"
+		"\n"
+		"v:  Perturbation vector that should be updated in place.\n"
+		"\n"
+		"index:  Since we are often adding to the end of the state vector,\n"
+		"index is passed in. This is the sum of the number_elements() of all\n"
+		"the PerturbationBuilder that appear before this object in the list. \n"
+		""},
 	 { (char *)"PerturbationBuilder_swigregister", PerturbationBuilder_swigregister, METH_VARARGS, NULL},
-	 { (char *)"CompositePerturbation__v_perturbation", _wrap_CompositePerturbation__v_perturbation, METH_VARARGS, NULL},
-	 { (char *)"CompositePerturbation_add_builder", _wrap_CompositePerturbation_add_builder, METH_VARARGS, NULL},
-	 { (char *)"CompositePerturbation_remove_builder", _wrap_CompositePerturbation_remove_builder, METH_VARARGS, NULL},
+	 { (char *)"CompositePerturbation__v_perturbation", _wrap_CompositePerturbation__v_perturbation, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual blitz::Array<double, 1> FullPhysics::CompositePerturbation::perturbation() const\n"
+		"\n"
+		""},
+	 { (char *)"CompositePerturbation_add_builder", _wrap_CompositePerturbation_add_builder, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::CompositePerturbation::add_builder(const boost::shared_ptr< PerturbationBuilder > &B)\n"
+		"Add a builder to the build list. \n"
+		""},
+	 { (char *)"CompositePerturbation_remove_builder", _wrap_CompositePerturbation_remove_builder, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::CompositePerturbation::remove_builder(const boost::shared_ptr< PerturbationBuilder > &B)\n"
+		"Remove a builder to the build list. \n"
+		""},
 	 { (char *)"new_CompositePerturbation", _wrap_new_CompositePerturbation, METH_VARARGS, NULL},
-	 { (char *)"delete_CompositePerturbation", _wrap_delete_CompositePerturbation, METH_VARARGS, NULL},
+	 { (char *)"delete_CompositePerturbation", _wrap_delete_CompositePerturbation, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::CompositePerturbation::~CompositePerturbation()\n"
+		"\n"
+		""},
 	 { (char *)"CompositePerturbation_swigregister", CompositePerturbation_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };

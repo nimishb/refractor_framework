@@ -5175,10 +5175,18 @@ SWIGINTERN PyObject *AbsorberVmrEcmwf_swigregister(PyObject *SWIGUNUSEDPARM(self
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"AbsorberVmrEcmwf_clone", _wrap_AbsorberVmrEcmwf_clone, METH_VARARGS, NULL},
+	 { (char *)"AbsorberVmrEcmwf_clone", _wrap_AbsorberVmrEcmwf_clone, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual boost::shared_ptr<AbsorberVmr> FullPhysics::AbsorberVmrEcmwf::clone(const boost::shared_ptr< Pressure > &Press) const\n"
+		"\n"
+		""},
 	 { (char *)"AbsorberVmrEcmwf__v_scale_factor", _wrap_AbsorberVmrEcmwf__v_scale_factor, METH_VARARGS, NULL},
 	 { (char *)"AbsorberVmrEcmwf__v_scale_uncertainty", _wrap_AbsorberVmrEcmwf__v_scale_uncertainty, METH_VARARGS, NULL},
-	 { (char *)"delete_AbsorberVmrEcmwf", _wrap_delete_AbsorberVmrEcmwf, METH_VARARGS, NULL},
+	 { (char *)"delete_AbsorberVmrEcmwf", _wrap_delete_AbsorberVmrEcmwf, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::AbsorberVmrEcmwf::~AbsorberVmrEcmwf()\n"
+		"\n"
+		""},
 	 { (char *)"AbsorberVmrEcmwf_swigregister", AbsorberVmrEcmwf_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };

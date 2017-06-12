@@ -12076,26 +12076,99 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"LuaCallback___str__", _wrap_LuaCallback___str__, METH_VARARGS, NULL},
 	 { (char *)"disown_LuaCallback", _wrap_disown_LuaCallback, METH_VARARGS, NULL},
 	 { (char *)"LuaCallback_swigregister", LuaCallback_swigregister, METH_VARARGS, NULL},
-	 { (char *)"new_LuabindIterator", _wrap_new_LuabindIterator, METH_VARARGS, NULL},
-	 { (char *)"LuabindIterator_at_end", _wrap_LuabindIterator_at_end, METH_VARARGS, NULL},
-	 { (char *)"LuabindIterator_key", _wrap_LuabindIterator_key, METH_VARARGS, NULL},
-	 { (char *)"LuabindIterator_next", _wrap_LuabindIterator_next, METH_VARARGS, NULL},
+	 { (char *)"new_LuabindIterator", _wrap_new_LuabindIterator, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::LuabindIterator::LuabindIterator(const LuabindObject &Lbo, const boost::shared_ptr< LuaState > &Ls)\n"
+		"Constructor. \n"
+		""},
+	 { (char *)"LuabindIterator_at_end", _wrap_LuabindIterator_at_end, METH_VARARGS, (char *)"\n"
+		"\n"
+		"bool FullPhysics::LuabindIterator::at_end() const\n"
+		"\n"
+		""},
+	 { (char *)"LuabindIterator_key", _wrap_LuabindIterator_key, METH_VARARGS, (char *)"\n"
+		"\n"
+		"LuabindObject FullPhysics::LuabindIterator::key() const\n"
+		"\n"
+		""},
+	 { (char *)"LuabindIterator_next", _wrap_LuabindIterator_next, METH_VARARGS, (char *)"\n"
+		"\n"
+		"LuabindObject FullPhysics::LuabindIterator::next()\n"
+		"\n"
+		""},
 	 { (char *)"delete_LuabindIterator", _wrap_delete_LuabindIterator, METH_VARARGS, NULL},
 	 { (char *)"LuabindIterator_swigregister", LuabindIterator_swigregister, METH_VARARGS, NULL},
 	 { (char *)"LuabindObject___str__", _wrap_LuabindObject___str__, METH_VARARGS, NULL},
-	 { (char *)"LuabindObject_is_nil", _wrap_LuabindObject_is_nil, METH_VARARGS, NULL},
-	 { (char *)"LuabindObject_is_boolean", _wrap_LuabindObject_is_boolean, METH_VARARGS, NULL},
-	 { (char *)"LuabindObject_is_number", _wrap_LuabindObject_is_number, METH_VARARGS, NULL},
-	 { (char *)"LuabindObject_is_string", _wrap_LuabindObject_is_string, METH_VARARGS, NULL},
-	 { (char *)"LuabindObject_is_table", _wrap_LuabindObject_is_table, METH_VARARGS, NULL},
-	 { (char *)"LuabindObject_is_function", _wrap_LuabindObject_is_function, METH_VARARGS, NULL},
-	 { (char *)"LuabindObject_length", _wrap_LuabindObject_length, METH_VARARGS, NULL},
-	 { (char *)"LuabindObject_call", _wrap_LuabindObject_call, METH_VARARGS, NULL},
-	 { (char *)"LuabindObject_lua_state", _wrap_LuabindObject_lua_state, METH_VARARGS, NULL},
-	 { (char *)"LuabindObject_object", _wrap_LuabindObject_object, METH_VARARGS, NULL},
-	 { (char *)"LuabindObject_new_table", _wrap_LuabindObject_new_table, METH_VARARGS, NULL},
-	 { (char *)"LuabindObject_nil", _wrap_LuabindObject_nil, METH_VARARGS, NULL},
-	 { (char *)"LuabindObject_value_generic_object", _wrap_LuabindObject_value_generic_object, METH_VARARGS, NULL},
+	 { (char *)"LuabindObject_is_nil", _wrap_LuabindObject_is_nil, METH_VARARGS, (char *)"\n"
+		"\n"
+		"bool FullPhysics::LuabindObject::is_nil() const\n"
+		"Test type of an object. \n"
+		""},
+	 { (char *)"LuabindObject_is_boolean", _wrap_LuabindObject_is_boolean, METH_VARARGS, (char *)"\n"
+		"\n"
+		"bool FullPhysics::LuabindObject::is_boolean() const\n"
+		"\n"
+		""},
+	 { (char *)"LuabindObject_is_number", _wrap_LuabindObject_is_number, METH_VARARGS, (char *)"\n"
+		"\n"
+		"bool FullPhysics::LuabindObject::is_number() const\n"
+		"\n"
+		""},
+	 { (char *)"LuabindObject_is_string", _wrap_LuabindObject_is_string, METH_VARARGS, (char *)"\n"
+		"\n"
+		"bool FullPhysics::LuabindObject::is_string() const\n"
+		"\n"
+		""},
+	 { (char *)"LuabindObject_is_table", _wrap_LuabindObject_is_table, METH_VARARGS, (char *)"\n"
+		"\n"
+		"bool FullPhysics::LuabindObject::is_table() const\n"
+		"\n"
+		""},
+	 { (char *)"LuabindObject_is_function", _wrap_LuabindObject_is_function, METH_VARARGS, (char *)"\n"
+		"\n"
+		"bool FullPhysics::LuabindObject::is_function() const\n"
+		"\n"
+		""},
+	 { (char *)"LuabindObject_length", _wrap_LuabindObject_length, METH_VARARGS, (char *)"\n"
+		"\n"
+		"int FullPhysics::LuabindObject::length(int index=0) const\n"
+		"Return the \"length\" of the value at the given index using the Lua\n"
+		"interpreter method that evaluates as the length operator. \n"
+		""},
+	 { (char *)"LuabindObject_call", _wrap_LuabindObject_call, METH_VARARGS, (char *)"\n"
+		"\n"
+		"LuabindObject FullPhysics::LuabindObject::call(const T1 &Arg1, const T2 &Arg2, const T3 &Arg3, const T4 &Arg4, const\n"
+		"T5 &Arg5, const T6 &Arg6, const T7 &Arg7, const T8 &Arg8)\n"
+		"\n"
+		""},
+	 { (char *)"LuabindObject_lua_state", _wrap_LuabindObject_lua_state, METH_VARARGS, (char *)"\n"
+		"\n"
+		"const boost::shared_ptr<LuaState>& FullPhysics::LuabindObject::lua_state() const\n"
+		"Lua state pointer.\n"
+		"\n"
+		"You can use this to do things with luabind (or directly with Lua) that\n"
+		"this class doesn't already support. \n"
+		""},
+	 { (char *)"LuabindObject_object", _wrap_LuabindObject_object, METH_VARARGS, (char *)"\n"
+		"\n"
+		"const luabind::object& FullPhysics::LuabindObject::object() const\n"
+		"\n"
+		""},
+	 { (char *)"LuabindObject_new_table", _wrap_LuabindObject_new_table, METH_VARARGS, (char *)"\n"
+		"\n"
+		"LuabindObject FullPhysics::LuabindObject::new_table()\n"
+		"Creates a new table object. \n"
+		""},
+	 { (char *)"LuabindObject_nil", _wrap_LuabindObject_nil, METH_VARARGS, (char *)"\n"
+		"\n"
+		"static LuabindObject FullPhysics::LuabindObject::nil(const boost::shared_ptr< LuaState > &Ls)\n"
+		"Return a nil value. \n"
+		""},
+	 { (char *)"LuabindObject_value_generic_object", _wrap_LuabindObject_value_generic_object, METH_VARARGS, (char *)"\n"
+		"\n"
+		"boost::shared_ptr<GenericObject> FullPhysics::LuabindObject::value_generic_object() const\n"
+		"\n"
+		""},
 	 { (char *)"LuabindObject_isvector_altitude", _wrap_LuabindObject_isvector_altitude, METH_VARARGS, NULL},
 	 { (char *)"LuabindObject_getvector_altitude", _wrap_LuabindObject_getvector_altitude, METH_VARARGS, NULL},
 	 { (char *)"LuabindObject_isblitzarray1d_double", _wrap_LuabindObject_isblitzarray1d_double, METH_VARARGS, NULL},
@@ -12104,17 +12177,37 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"LuabindObject_getblitzarray2d_double", _wrap_LuabindObject_getblitzarray2d_double, METH_VARARGS, NULL},
 	 { (char *)"LuabindObject_isblitzarray1d_bool", _wrap_LuabindObject_isblitzarray1d_bool, METH_VARARGS, NULL},
 	 { (char *)"LuabindObject_getblitzarray1d_bool", _wrap_LuabindObject_getblitzarray1d_bool, METH_VARARGS, NULL},
-	 { (char *)"LuabindObject_set_value", _wrap_LuabindObject_set_value, METH_VARARGS, NULL},
-	 { (char *)"LuabindObject_set_index", _wrap_LuabindObject_set_index, METH_VARARGS, NULL},
-	 { (char *)"new_LuabindObject", _wrap_new_LuabindObject, METH_VARARGS, NULL},
+	 { (char *)"LuabindObject_set_value", _wrap_LuabindObject_set_value, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::LuabindObject::set_value(const std::string &Vname, const LuabindObject &V)\n"
+		"\n"
+		""},
+	 { (char *)"LuabindObject_set_index", _wrap_LuabindObject_set_index, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::LuabindObject::set_index(int Vidx, const LuabindObject &V)\n"
+		"\n"
+		""},
+	 { (char *)"new_LuabindObject", _wrap_new_LuabindObject, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::LuabindObject::LuabindObject(const boost::shared_ptr< LuaState > &Ls, const LuabindObject &V)\n"
+		"\n"
+		""},
 	 { (char *)"LuabindObject_set_value_bool", _wrap_LuabindObject_set_value_bool, METH_VARARGS, NULL},
 	 { (char *)"LuabindObject_set_index_bool", _wrap_LuabindObject_set_index_bool, METH_VARARGS, NULL},
 	 { (char *)"LuabindObject_get_string", _wrap_LuabindObject_get_string, METH_VARARGS, NULL},
-	 { (char *)"LuabindObject_get_index", _wrap_LuabindObject_get_index, METH_VARARGS, NULL},
+	 { (char *)"LuabindObject_get_index", _wrap_LuabindObject_get_index, METH_VARARGS, (char *)"\n"
+		"\n"
+		"LuabindObject FullPhysics::LuabindObject::get_index(int Vidx) const\n"
+		"\n"
+		""},
 	 { (char *)"LuabindObject_getbool", _wrap_LuabindObject_getbool, METH_VARARGS, NULL},
 	 { (char *)"LuabindObject_getnum", _wrap_LuabindObject_getnum, METH_VARARGS, NULL},
 	 { (char *)"LuabindObject_getstring", _wrap_LuabindObject_getstring, METH_VARARGS, NULL},
-	 { (char *)"delete_LuabindObject", _wrap_delete_LuabindObject, METH_VARARGS, NULL},
+	 { (char *)"delete_LuabindObject", _wrap_delete_LuabindObject, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::LuabindObject::~LuabindObject()\n"
+		"\n"
+		""},
 	 { (char *)"LuabindObject_swigregister", LuabindObject_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };

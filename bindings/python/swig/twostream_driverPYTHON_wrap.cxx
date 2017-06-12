@@ -6505,31 +6505,131 @@ SWIGINTERN PyObject *TwostreamRtDriver_swigregister(PyObject *SWIGUNUSEDPARM(sel
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"new_TwostreamBrdfDriver", _wrap_new_TwostreamBrdfDriver, METH_VARARGS, NULL},
-	 { (char *)"delete_TwostreamBrdfDriver", _wrap_delete_TwostreamBrdfDriver, METH_VARARGS, NULL},
-	 { (char *)"TwostreamBrdfDriver_setup_geometry", _wrap_TwostreamBrdfDriver_setup_geometry, METH_VARARGS, NULL},
-	 { (char *)"TwostreamBrdfDriver__v_n_brdf_kernels", _wrap_TwostreamBrdfDriver__v_n_brdf_kernels, METH_VARARGS, NULL},
-	 { (char *)"TwostreamBrdfDriver__v_n_kernel_factor_wfs", _wrap_TwostreamBrdfDriver__v_n_kernel_factor_wfs, METH_VARARGS, NULL},
-	 { (char *)"TwostreamBrdfDriver__v_n_kernel_params_wfs", _wrap_TwostreamBrdfDriver__v_n_kernel_params_wfs, METH_VARARGS, NULL},
-	 { (char *)"TwostreamBrdfDriver__v_n_surface_wfs", _wrap_TwostreamBrdfDriver__v_n_surface_wfs, METH_VARARGS, NULL},
-	 { (char *)"TwostreamBrdfDriver__v_do_shadow_effect", _wrap_TwostreamBrdfDriver__v_do_shadow_effect, METH_VARARGS, NULL},
-	 { (char *)"TwostreamBrdfDriver__v_brdf_interface", _wrap_TwostreamBrdfDriver__v_brdf_interface, METH_VARARGS, NULL},
-	 { (char *)"TwostreamBrdfDriver_do_kparams_derivs", _wrap_TwostreamBrdfDriver_do_kparams_derivs, METH_VARARGS, NULL},
+	 { (char *)"new_TwostreamBrdfDriver", _wrap_new_TwostreamBrdfDriver, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::TwostreamBrdfDriver::TwostreamBrdfDriver(int surface_type)\n"
+		"\n"
+		""},
+	 { (char *)"delete_TwostreamBrdfDriver", _wrap_delete_TwostreamBrdfDriver, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::TwostreamBrdfDriver::~TwostreamBrdfDriver()\n"
+		"\n"
+		""},
+	 { (char *)"TwostreamBrdfDriver_setup_geometry", _wrap_TwostreamBrdfDriver_setup_geometry, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::TwostreamBrdfDriver::setup_geometry(double sza, double azm, double zen) const\n"
+		"\n"
+		""},
+	 { (char *)"TwostreamBrdfDriver__v_n_brdf_kernels", _wrap_TwostreamBrdfDriver__v_n_brdf_kernels, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual int FullPhysics::TwostreamBrdfDriver::n_brdf_kernels() const\n"
+		"\n"
+		""},
+	 { (char *)"TwostreamBrdfDriver__v_n_kernel_factor_wfs", _wrap_TwostreamBrdfDriver__v_n_kernel_factor_wfs, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual int FullPhysics::TwostreamBrdfDriver::n_kernel_factor_wfs() const\n"
+		"\n"
+		""},
+	 { (char *)"TwostreamBrdfDriver__v_n_kernel_params_wfs", _wrap_TwostreamBrdfDriver__v_n_kernel_params_wfs, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual int FullPhysics::TwostreamBrdfDriver::n_kernel_params_wfs() const\n"
+		"\n"
+		""},
+	 { (char *)"TwostreamBrdfDriver__v_n_surface_wfs", _wrap_TwostreamBrdfDriver__v_n_surface_wfs, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual int FullPhysics::TwostreamBrdfDriver::n_surface_wfs() const\n"
+		"\n"
+		""},
+	 { (char *)"TwostreamBrdfDriver__v_do_shadow_effect", _wrap_TwostreamBrdfDriver__v_do_shadow_effect, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual bool FullPhysics::TwostreamBrdfDriver::do_shadow_effect() const\n"
+		"\n"
+		""},
+	 { (char *)"TwostreamBrdfDriver__v_brdf_interface", _wrap_TwostreamBrdfDriver__v_brdf_interface, METH_VARARGS, (char *)"\n"
+		"\n"
+		"boost::shared_ptr<Twostream_Ls_Brdf_Supplement> FullPhysics::TwostreamBrdfDriver::brdf_interface() const\n"
+		"\n"
+		""},
+	 { (char *)"TwostreamBrdfDriver_do_kparams_derivs", _wrap_TwostreamBrdfDriver_do_kparams_derivs, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual bool FullPhysics::TwostreamBrdfDriver::do_kparams_derivs(const int kernel_index) const\n"
+		"\n"
+		""},
 	 { (char *)"TwostreamBrdfDriver_swigregister", TwostreamBrdfDriver_swigregister, METH_VARARGS, NULL},
-	 { (char *)"new_TwostreamRtDriver", _wrap_new_TwostreamRtDriver, METH_VARARGS, NULL},
-	 { (char *)"TwostreamRtDriver_setup_height_grid", _wrap_TwostreamRtDriver_setup_height_grid, METH_VARARGS, NULL},
-	 { (char *)"TwostreamRtDriver_setup_geometry", _wrap_TwostreamRtDriver_setup_geometry, METH_VARARGS, NULL},
-	 { (char *)"TwostreamRtDriver_setup_optical_inputs", _wrap_TwostreamRtDriver_setup_optical_inputs, METH_VARARGS, NULL},
-	 { (char *)"TwostreamRtDriver_clear_linear_inputs", _wrap_TwostreamRtDriver_clear_linear_inputs, METH_VARARGS, NULL},
-	 { (char *)"TwostreamRtDriver_setup_linear_inputs", _wrap_TwostreamRtDriver_setup_linear_inputs, METH_VARARGS, NULL},
-	 { (char *)"TwostreamRtDriver_calculate_rt", _wrap_TwostreamRtDriver_calculate_rt, METH_VARARGS, NULL},
-	 { (char *)"TwostreamRtDriver_get_intensity", _wrap_TwostreamRtDriver_get_intensity, METH_VARARGS, NULL},
-	 { (char *)"TwostreamRtDriver_copy_jacobians", _wrap_TwostreamRtDriver_copy_jacobians, METH_VARARGS, NULL},
-	 { (char *)"TwostreamRtDriver__v_twostream_brdf_driver", _wrap_TwostreamRtDriver__v_twostream_brdf_driver, METH_VARARGS, NULL},
-	 { (char *)"TwostreamRtDriver__v_brdf_interface", _wrap_TwostreamRtDriver__v_brdf_interface, METH_VARARGS, NULL},
-	 { (char *)"TwostreamRtDriver__v_twostream_interface", _wrap_TwostreamRtDriver__v_twostream_interface, METH_VARARGS, NULL},
-	 { (char *)"TwostreamRtDriver__v_do_full_quadrature", _wrap_TwostreamRtDriver__v_do_full_quadrature, METH_VARARGS, NULL},
-	 { (char *)"TwostreamRtDriver__v_pure_nadir", _wrap_TwostreamRtDriver__v_pure_nadir, METH_VARARGS, NULL},
+	 { (char *)"new_TwostreamRtDriver", _wrap_new_TwostreamRtDriver, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::TwostreamRtDriver::TwostreamRtDriver(int nlayers, int npars, int surface_type, bool\n"
+		"do_fullquadrature=true, bool pure_nadir=false)\n"
+		"\n"
+		""},
+	 { (char *)"TwostreamRtDriver_setup_height_grid", _wrap_TwostreamRtDriver_setup_height_grid, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::TwostreamRtDriver::setup_height_grid(const blitz::Array< double, 1 > &height_grid) const\n"
+		"\n"
+		""},
+	 { (char *)"TwostreamRtDriver_setup_geometry", _wrap_TwostreamRtDriver_setup_geometry, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::TwostreamRtDriver::setup_geometry(double sza, double azm, double zen) const\n"
+		"\n"
+		""},
+	 { (char *)"TwostreamRtDriver_setup_optical_inputs", _wrap_TwostreamRtDriver_setup_optical_inputs, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::TwostreamRtDriver::setup_optical_inputs(const blitz::Array< double, 1 > &od, const blitz::Array< double, 1 >\n"
+		"&ssa, const blitz::Array< double, 2 > &pf) const\n"
+		"\n"
+		""},
+	 { (char *)"TwostreamRtDriver_clear_linear_inputs", _wrap_TwostreamRtDriver_clear_linear_inputs, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::TwostreamRtDriver::clear_linear_inputs() const\n"
+		"\n"
+		""},
+	 { (char *)"TwostreamRtDriver_setup_linear_inputs", _wrap_TwostreamRtDriver_setup_linear_inputs, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::TwostreamRtDriver::setup_linear_inputs(const ArrayAd< double, 1 > &od, const ArrayAd< double, 1 > &ssa,\n"
+		"const ArrayAd< double, 2 > &pf, bool do_surface_linearization) const\n"
+		"\n"
+		""},
+	 { (char *)"TwostreamRtDriver_calculate_rt", _wrap_TwostreamRtDriver_calculate_rt, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::TwostreamRtDriver::calculate_rt() const\n"
+		"\n"
+		""},
+	 { (char *)"TwostreamRtDriver_get_intensity", _wrap_TwostreamRtDriver_get_intensity, METH_VARARGS, (char *)"\n"
+		"\n"
+		"double FullPhysics::TwostreamRtDriver::get_intensity() const\n"
+		"\n"
+		""},
+	 { (char *)"TwostreamRtDriver_copy_jacobians", _wrap_TwostreamRtDriver_copy_jacobians, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::TwostreamRtDriver::copy_jacobians(blitz::Array< double, 2 > &jac_atm, blitz::Array< double, 1 >\n"
+		"&jac_surf) const\n"
+		"\n"
+		""},
+	 { (char *)"TwostreamRtDriver__v_twostream_brdf_driver", _wrap_TwostreamRtDriver__v_twostream_brdf_driver, METH_VARARGS, (char *)"\n"
+		"\n"
+		"boost::shared_ptr<TwostreamBrdfDriver> FullPhysics::TwostreamRtDriver::twostream_brdf_driver() const\n"
+		"\n"
+		""},
+	 { (char *)"TwostreamRtDriver__v_brdf_interface", _wrap_TwostreamRtDriver__v_brdf_interface, METH_VARARGS, (char *)"\n"
+		"\n"
+		"boost::shared_ptr<Twostream_Ls_Brdf_Supplement> FullPhysics::TwostreamRtDriver::brdf_interface() const\n"
+		"\n"
+		""},
+	 { (char *)"TwostreamRtDriver__v_twostream_interface", _wrap_TwostreamRtDriver__v_twostream_interface, METH_VARARGS, (char *)"\n"
+		"\n"
+		"boost::shared_ptr<Twostream_L_Master> FullPhysics::TwostreamRtDriver::twostream_interface() const\n"
+		"\n"
+		""},
+	 { (char *)"TwostreamRtDriver__v_do_full_quadrature", _wrap_TwostreamRtDriver__v_do_full_quadrature, METH_VARARGS, (char *)"\n"
+		"\n"
+		"bool FullPhysics::TwostreamRtDriver::do_full_quadrature() const\n"
+		"\n"
+		""},
+	 { (char *)"TwostreamRtDriver__v_pure_nadir", _wrap_TwostreamRtDriver__v_pure_nadir, METH_VARARGS, (char *)"\n"
+		"\n"
+		"bool FullPhysics::TwostreamRtDriver::pure_nadir() const\n"
+		"\n"
+		""},
 	 { (char *)"delete_TwostreamRtDriver", _wrap_delete_TwostreamRtDriver, METH_VARARGS, NULL},
 	 { (char *)"TwostreamRtDriver_swigregister", TwostreamRtDriver_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }

@@ -127,6 +127,12 @@ import full_physics_swig.problem_state
 import full_physics_swig.generic_object
 import full_physics_swig.model_measure_oco
 class MaxAPosterioriOCO(full_physics_swig.max_a_posteriori.MaxAPosteriori, full_physics_swig.model_measure_oco.ModelMeasureOCO):
+    """
+
+    C++ includes: max_a_posteriori_oco.h
+
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.max_a_posteriori.MaxAPosteriori, full_physics_swig.model_measure_oco.ModelMeasureOCO]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -138,6 +144,13 @@ class MaxAPosterioriOCO(full_physics_swig.max_a_posteriori.MaxAPosteriori, full_
     __repr__ = _swig_repr
 
     def __init__(self, fm, a_priori_params, a_priori_cov):
+        """
+
+        FullPhysics::MaxAPosterioriOCO::MaxAPosterioriOCO(const boost::shared_ptr< ForwardModel > &fm, const blitz::Array<
+        double, 1 > a_priori_params, const blitz::Array< double, 2 >
+        a_priori_cov)
+        Constructor. 
+        """
         this = _max_a_posteriori_oco.new_MaxAPosterioriOCO(fm, a_priori_params, a_priori_cov)
         try:
             self.this.append(this)

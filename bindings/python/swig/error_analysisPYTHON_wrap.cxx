@@ -6717,31 +6717,137 @@ SWIGINTERN PyObject *ErrorAnalysis_swigregister(PyObject *SWIGUNUSEDPARM(self), 
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"new_ErrorAnalysis", _wrap_new_ErrorAnalysis, METH_VARARGS, NULL},
-	 { (char *)"ErrorAnalysis_residual_sum_sq", _wrap_ErrorAnalysis_residual_sum_sq, METH_VARARGS, NULL},
-	 { (char *)"ErrorAnalysis_residual_mean_sq", _wrap_ErrorAnalysis_residual_mean_sq, METH_VARARGS, NULL},
-	 { (char *)"ErrorAnalysis_reduced_chisq", _wrap_ErrorAnalysis_reduced_chisq, METH_VARARGS, NULL},
-	 { (char *)"ErrorAnalysis_relative_residual_mean_sq", _wrap_ErrorAnalysis_relative_residual_mean_sq, METH_VARARGS, NULL},
-	 { (char *)"ErrorAnalysis_signal", _wrap_ErrorAnalysis_signal, METH_VARARGS, NULL},
-	 { (char *)"ErrorAnalysis_noise", _wrap_ErrorAnalysis_noise, METH_VARARGS, NULL},
-	 { (char *)"ErrorAnalysis_chisq_measure_norm", _wrap_ErrorAnalysis_chisq_measure_norm, METH_VARARGS, NULL},
-	 { (char *)"ErrorAnalysis__v_xco2_measurement_error", _wrap_ErrorAnalysis__v_xco2_measurement_error, METH_VARARGS, NULL},
-	 { (char *)"ErrorAnalysis__v_xco2_smoothing_error", _wrap_ErrorAnalysis__v_xco2_smoothing_error, METH_VARARGS, NULL},
-	 { (char *)"ErrorAnalysis__v_xco2_uncertainty", _wrap_ErrorAnalysis__v_xco2_uncertainty, METH_VARARGS, NULL},
-	 { (char *)"ErrorAnalysis__v_xco2_interference_error", _wrap_ErrorAnalysis__v_xco2_interference_error, METH_VARARGS, NULL},
-	 { (char *)"ErrorAnalysis__v_xco2_gain_vector", _wrap_ErrorAnalysis__v_xco2_gain_vector, METH_VARARGS, NULL},
-	 { (char *)"ErrorAnalysis__v_xco2_uncert_noise", _wrap_ErrorAnalysis__v_xco2_uncert_noise, METH_VARARGS, NULL},
-	 { (char *)"ErrorAnalysis__v_xco2_uncert_smooth", _wrap_ErrorAnalysis__v_xco2_uncert_smooth, METH_VARARGS, NULL},
-	 { (char *)"ErrorAnalysis__v_xco2_uncert_interf", _wrap_ErrorAnalysis__v_xco2_uncert_interf, METH_VARARGS, NULL},
-	 { (char *)"ErrorAnalysis__v_degrees_of_freedom_full_vector", _wrap_ErrorAnalysis__v_degrees_of_freedom_full_vector, METH_VARARGS, NULL},
-	 { (char *)"ErrorAnalysis__v_degrees_of_freedom_xco2", _wrap_ErrorAnalysis__v_degrees_of_freedom_xco2, METH_VARARGS, NULL},
-	 { (char *)"ErrorAnalysis__v_xco2_avg_kernel", _wrap_ErrorAnalysis__v_xco2_avg_kernel, METH_VARARGS, NULL},
-	 { (char *)"ErrorAnalysis__v_co2_averaging_kernel", _wrap_ErrorAnalysis__v_co2_averaging_kernel, METH_VARARGS, NULL},
-	 { (char *)"ErrorAnalysis__v_xco2_avg_kernel_full", _wrap_ErrorAnalysis__v_xco2_avg_kernel_full, METH_VARARGS, NULL},
-	 { (char *)"ErrorAnalysis__v_xco2_avg_kernel_norm", _wrap_ErrorAnalysis__v_xco2_avg_kernel_norm, METH_VARARGS, NULL},
-	 { (char *)"ErrorAnalysis__v_xco2_correlation_interf", _wrap_ErrorAnalysis__v_xco2_correlation_interf, METH_VARARGS, NULL},
-	 { (char *)"ErrorAnalysis__v_interference_smoothing_uncertainty", _wrap_ErrorAnalysis__v_interference_smoothing_uncertainty, METH_VARARGS, NULL},
-	 { (char *)"delete_ErrorAnalysis", _wrap_delete_ErrorAnalysis, METH_VARARGS, NULL},
+	 { (char *)"new_ErrorAnalysis", _wrap_new_ErrorAnalysis, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::ErrorAnalysis::ErrorAnalysis(const boost::shared_ptr< MaxAPosteriori > &Max_a_posteriori, const\n"
+		"boost::shared_ptr< RtAtmosphere > &Atm, const boost::shared_ptr<\n"
+		"ForwardModel > &Fm)\n"
+		"\n"
+		""},
+	 { (char *)"ErrorAnalysis_residual_sum_sq", _wrap_ErrorAnalysis_residual_sum_sq, METH_VARARGS, (char *)"\n"
+		"\n"
+		"double FullPhysics::ErrorAnalysis::residual_sum_sq(int Band) const\n"
+		"Return the sum of the squares of the residual for the given band. \n"
+		""},
+	 { (char *)"ErrorAnalysis_residual_mean_sq", _wrap_ErrorAnalysis_residual_mean_sq, METH_VARARGS, (char *)"\n"
+		"\n"
+		"double FullPhysics::ErrorAnalysis::residual_mean_sq(int Band) const\n"
+		"Return the residual mean square for the O2 band. \n"
+		""},
+	 { (char *)"ErrorAnalysis_reduced_chisq", _wrap_ErrorAnalysis_reduced_chisq, METH_VARARGS, (char *)"\n"
+		"\n"
+		"double FullPhysics::ErrorAnalysis::reduced_chisq(int Band) const\n"
+		"Return the reduced chisq for band. \n"
+		""},
+	 { (char *)"ErrorAnalysis_relative_residual_mean_sq", _wrap_ErrorAnalysis_relative_residual_mean_sq, METH_VARARGS, (char *)"\n"
+		"\n"
+		"double FullPhysics::ErrorAnalysis::relative_residual_mean_sq(int Band) const\n"
+		"Return the relative residual mean square for the given band. \n"
+		""},
+	 { (char *)"ErrorAnalysis_signal", _wrap_ErrorAnalysis_signal, METH_VARARGS, (char *)"\n"
+		"\n"
+		"double FullPhysics::ErrorAnalysis::signal(int band) const\n"
+		"\n"
+		""},
+	 { (char *)"ErrorAnalysis_noise", _wrap_ErrorAnalysis_noise, METH_VARARGS, (char *)"\n"
+		"\n"
+		"double FullPhysics::ErrorAnalysis::noise(int band) const\n"
+		"\n"
+		""},
+	 { (char *)"ErrorAnalysis_chisq_measure_norm", _wrap_ErrorAnalysis_chisq_measure_norm, METH_VARARGS, (char *)"\n"
+		"\n"
+		"double FullPhysics::ErrorAnalysis::chisq_measure_norm(const blitz::Array< double, 1 > &Residual, const blitz::Array<\n"
+		"double, 1 > &Residual_cov_diag) const\n"
+		"return chisq_measure_norm for the given data. \n"
+		""},
+	 { (char *)"ErrorAnalysis__v_xco2_measurement_error", _wrap_ErrorAnalysis__v_xco2_measurement_error, METH_VARARGS, (char *)"\n"
+		"\n"
+		"double FullPhysics::ErrorAnalysis::xco2_measurement_error() const\n"
+		"\n"
+		""},
+	 { (char *)"ErrorAnalysis__v_xco2_smoothing_error", _wrap_ErrorAnalysis__v_xco2_smoothing_error, METH_VARARGS, (char *)"\n"
+		"\n"
+		"double FullPhysics::ErrorAnalysis::xco2_smoothing_error() const\n"
+		"\n"
+		""},
+	 { (char *)"ErrorAnalysis__v_xco2_uncertainty", _wrap_ErrorAnalysis__v_xco2_uncertainty, METH_VARARGS, (char *)"\n"
+		"\n"
+		"double FullPhysics::ErrorAnalysis::xco2_uncertainty() const\n"
+		"\n"
+		""},
+	 { (char *)"ErrorAnalysis__v_xco2_interference_error", _wrap_ErrorAnalysis__v_xco2_interference_error, METH_VARARGS, (char *)"\n"
+		"\n"
+		"double FullPhysics::ErrorAnalysis::xco2_interference_error() const\n"
+		"\n"
+		""},
+	 { (char *)"ErrorAnalysis__v_xco2_gain_vector", _wrap_ErrorAnalysis__v_xco2_gain_vector, METH_VARARGS, (char *)"\n"
+		"\n"
+		"blitz::Array<double, 1> FullPhysics::ErrorAnalysis::xco2_gain_vector() const\n"
+		"\n"
+		""},
+	 { (char *)"ErrorAnalysis__v_xco2_uncert_noise", _wrap_ErrorAnalysis__v_xco2_uncert_noise, METH_VARARGS, (char *)"\n"
+		"\n"
+		"double FullPhysics::ErrorAnalysis::xco2_uncert_noise() const\n"
+		"Calculate xco2_uncert_noise. \n"
+		""},
+	 { (char *)"ErrorAnalysis__v_xco2_uncert_smooth", _wrap_ErrorAnalysis__v_xco2_uncert_smooth, METH_VARARGS, (char *)"\n"
+		"\n"
+		"double FullPhysics::ErrorAnalysis::xco2_uncert_smooth() const\n"
+		"Calculate xco2_uncert_smooth. \n"
+		""},
+	 { (char *)"ErrorAnalysis__v_xco2_uncert_interf", _wrap_ErrorAnalysis__v_xco2_uncert_interf, METH_VARARGS, (char *)"\n"
+		"\n"
+		"double FullPhysics::ErrorAnalysis::xco2_uncert_interf() const\n"
+		"Calculate xco2_uncert_interf. \n"
+		""},
+	 { (char *)"ErrorAnalysis__v_degrees_of_freedom_full_vector", _wrap_ErrorAnalysis__v_degrees_of_freedom_full_vector, METH_VARARGS, (char *)"\n"
+		"\n"
+		"double FullPhysics::ErrorAnalysis::degrees_of_freedom_full_vector() const\n"
+		"Calculate the degrees of freedom for the full state vector.\n"
+		"\n"
+		"This is just the trace of the averaging kernel. \n"
+		""},
+	 { (char *)"ErrorAnalysis__v_degrees_of_freedom_xco2", _wrap_ErrorAnalysis__v_degrees_of_freedom_xco2, METH_VARARGS, (char *)"\n"
+		"\n"
+		"double FullPhysics::ErrorAnalysis::degrees_of_freedom_xco2() const\n"
+		"Calculate the degrees of freedom for the portion of the state vector\n"
+		"used to determine xco2. \n"
+		""},
+	 { (char *)"ErrorAnalysis__v_xco2_avg_kernel", _wrap_ErrorAnalysis__v_xco2_avg_kernel, METH_VARARGS, (char *)"\n"
+		"\n"
+		"blitz::Array<double, 1> FullPhysics::ErrorAnalysis::xco2_avg_kernel() const\n"
+		"\n"
+		""},
+	 { (char *)"ErrorAnalysis__v_co2_averaging_kernel", _wrap_ErrorAnalysis__v_co2_averaging_kernel, METH_VARARGS, (char *)"\n"
+		"\n"
+		"blitz::Array<double, 2> FullPhysics::ErrorAnalysis::co2_averaging_kernel() const\n"
+		"\n"
+		""},
+	 { (char *)"ErrorAnalysis__v_xco2_avg_kernel_full", _wrap_ErrorAnalysis__v_xco2_avg_kernel_full, METH_VARARGS, (char *)"\n"
+		"\n"
+		"blitz::Array<double, 1> FullPhysics::ErrorAnalysis::xco2_avg_kernel_full() const\n"
+		"\n"
+		""},
+	 { (char *)"ErrorAnalysis__v_xco2_avg_kernel_norm", _wrap_ErrorAnalysis__v_xco2_avg_kernel_norm, METH_VARARGS, (char *)"\n"
+		"\n"
+		"blitz::Array<double, 1> FullPhysics::ErrorAnalysis::xco2_avg_kernel_norm() const\n"
+		"\n"
+		""},
+	 { (char *)"ErrorAnalysis__v_xco2_correlation_interf", _wrap_ErrorAnalysis__v_xco2_correlation_interf, METH_VARARGS, (char *)"\n"
+		"\n"
+		"blitz::Array<double, 1> FullPhysics::ErrorAnalysis::xco2_correlation_interf() const\n"
+		"\n"
+		""},
+	 { (char *)"ErrorAnalysis__v_interference_smoothing_uncertainty", _wrap_ErrorAnalysis__v_interference_smoothing_uncertainty, METH_VARARGS, (char *)"\n"
+		"\n"
+		"blitz::Array<double, 1> FullPhysics::ErrorAnalysis::interference_smoothing_uncertainty() const\n"
+		"\n"
+		""},
+	 { (char *)"delete_ErrorAnalysis", _wrap_delete_ErrorAnalysis, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::ErrorAnalysis::~ErrorAnalysis()\n"
+		"\n"
+		""},
 	 { (char *)"ErrorAnalysis_swigregister", ErrorAnalysis_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };

@@ -125,6 +125,17 @@ import full_physics_swig.generic_object
 import full_physics_swig.sub_state_vector_array
 import full_physics_swig.dispersion
 class DispersionPolynomialOutput(full_physics_swig.register_output_base.RegisterOutputBase):
+    """
+
+    This registers the portions of the DispersionPolynomial class that
+    should be written as output.
+
+    See the discussion in RegisterOutputBase why this isn't just part of
+    the DispersionPolynomial class.
+
+    C++ includes: dispersion_polynomial_output.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.register_output_base.RegisterOutputBase]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -139,10 +150,22 @@ class DispersionPolynomialOutput(full_physics_swig.register_output_base.Register
     __repr__ = _swig_repr
 
     def register_output(self, out):
+        """
+
+        virtual void FullPhysics::DispersionPolynomialOutput::register_output(const boost::shared_ptr< Output > &out) const
+
+        """
         return _dispersion_polynomial_output.DispersionPolynomialOutput_register_output(self, out)
 
+
     def register_output_apriori(self, out):
+        """
+
+        virtual void FullPhysics::DispersionPolynomialOutput::register_output_apriori(const boost::shared_ptr< Output > &out) const
+
+        """
         return _dispersion_polynomial_output.DispersionPolynomialOutput_register_output_apriori(self, out)
+
     __swig_destroy__ = _dispersion_polynomial_output.delete_DispersionPolynomialOutput
     __del__ = lambda self: None
 DispersionPolynomialOutput_swigregister = _dispersion_polynomial_output.DispersionPolynomialOutput_swigregister

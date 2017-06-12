@@ -122,6 +122,15 @@ def _new_from_set(cls, version, *args):
 
 import full_physics_swig.generic_object
 class ArrayWithUnit_double_1(full_physics_swig.generic_object.GenericObject):
+    """
+
+    We frequently have a array of numbers with units associated with them.
+
+    This is a simple structure that just keeps these two things together.
+
+    C++ includes: array_with_unit.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.generic_object.GenericObject]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -133,6 +142,12 @@ class ArrayWithUnit_double_1(full_physics_swig.generic_object.GenericObject):
     __repr__ = _swig_repr
 
     def __init__(self, *args):
+        """
+
+        FullPhysics::ArrayWithUnit< T, D >::ArrayWithUnit(const blitz::Array< T, D > &Value, const std::string
+        &Value_units_name)
+
+        """
         this = _array_with_unit.new_ArrayWithUnit_double_1(*args)
         try:
             self.this.append(this)
@@ -152,13 +167,36 @@ class ArrayWithUnit_double_1(full_physics_swig.generic_object.GenericObject):
         return _array_with_unit.ArrayWithUnit_double_1___idiv__(self, V)
 
     def convert(self, *args):
+        """
+
+        ArrayWithUnit<T, D> FullPhysics::ArrayWithUnit< T, D >::convert(const Unit &R) const
+        Convert to the given units. 
+        """
         return _array_with_unit.ArrayWithUnit_double_1_convert(self, *args)
 
+
     def convert_wave(self, *args):
+        """
+
+        ArrayWithUnit<T,D> FullPhysics::ArrayWithUnit< T, D >::convert_wave(const Unit &R) const
+        We often need to handle conversion from wavenumber to/from wavelength.
+
+        This is either a normal conversion of the units before and after match
+        in the power of length (so cm^-1 to m^-1), or do an inversion. Since
+        we do this often enough, it is worth having a function that handles
+        this logic. 
+        """
         return _array_with_unit.ArrayWithUnit_double_1_convert_wave(self, *args)
 
+
     def _v_rows(self):
+        """
+
+        int FullPhysics::ArrayWithUnit< T, D >::rows() const
+
+        """
         return _array_with_unit.ArrayWithUnit_double_1__v_rows(self)
+
 
     @property
     def rows(self):
@@ -166,7 +204,13 @@ class ArrayWithUnit_double_1(full_physics_swig.generic_object.GenericObject):
 
 
     def _v_cols(self):
+        """
+
+        int FullPhysics::ArrayWithUnit< T, D >::cols() const
+
+        """
         return _array_with_unit.ArrayWithUnit_double_1__v_cols(self)
+
 
     @property
     def cols(self):
@@ -174,7 +218,13 @@ class ArrayWithUnit_double_1(full_physics_swig.generic_object.GenericObject):
 
 
     def _v_depth(self):
+        """
+
+        int FullPhysics::ArrayWithUnit< T, D >::depth() const
+
+        """
         return _array_with_unit.ArrayWithUnit_double_1__v_depth(self)
+
 
     @property
     def depth(self):
@@ -206,6 +256,15 @@ ArrayWithUnit_double_1_swigregister = _array_with_unit.ArrayWithUnit_double_1_sw
 ArrayWithUnit_double_1_swigregister(ArrayWithUnit_double_1)
 
 class ArrayWithUnit_double_2(full_physics_swig.generic_object.GenericObject):
+    """
+
+    We frequently have a array of numbers with units associated with them.
+
+    This is a simple structure that just keeps these two things together.
+
+    C++ includes: array_with_unit.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.generic_object.GenericObject]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -217,6 +276,12 @@ class ArrayWithUnit_double_2(full_physics_swig.generic_object.GenericObject):
     __repr__ = _swig_repr
 
     def __init__(self, *args):
+        """
+
+        FullPhysics::ArrayWithUnit< T, D >::ArrayWithUnit(const blitz::Array< T, D > &Value, const std::string
+        &Value_units_name)
+
+        """
         this = _array_with_unit.new_ArrayWithUnit_double_2(*args)
         try:
             self.this.append(this)
@@ -236,13 +301,36 @@ class ArrayWithUnit_double_2(full_physics_swig.generic_object.GenericObject):
         return _array_with_unit.ArrayWithUnit_double_2___idiv__(self, V)
 
     def convert(self, *args):
+        """
+
+        ArrayWithUnit<T, D> FullPhysics::ArrayWithUnit< T, D >::convert(const Unit &R) const
+        Convert to the given units. 
+        """
         return _array_with_unit.ArrayWithUnit_double_2_convert(self, *args)
 
+
     def convert_wave(self, *args):
+        """
+
+        ArrayWithUnit<T,D> FullPhysics::ArrayWithUnit< T, D >::convert_wave(const Unit &R) const
+        We often need to handle conversion from wavenumber to/from wavelength.
+
+        This is either a normal conversion of the units before and after match
+        in the power of length (so cm^-1 to m^-1), or do an inversion. Since
+        we do this often enough, it is worth having a function that handles
+        this logic. 
+        """
         return _array_with_unit.ArrayWithUnit_double_2_convert_wave(self, *args)
 
+
     def _v_rows(self):
+        """
+
+        int FullPhysics::ArrayWithUnit< T, D >::rows() const
+
+        """
         return _array_with_unit.ArrayWithUnit_double_2__v_rows(self)
+
 
     @property
     def rows(self):
@@ -250,7 +338,13 @@ class ArrayWithUnit_double_2(full_physics_swig.generic_object.GenericObject):
 
 
     def _v_cols(self):
+        """
+
+        int FullPhysics::ArrayWithUnit< T, D >::cols() const
+
+        """
         return _array_with_unit.ArrayWithUnit_double_2__v_cols(self)
+
 
     @property
     def cols(self):
@@ -258,7 +352,13 @@ class ArrayWithUnit_double_2(full_physics_swig.generic_object.GenericObject):
 
 
     def _v_depth(self):
+        """
+
+        int FullPhysics::ArrayWithUnit< T, D >::depth() const
+
+        """
         return _array_with_unit.ArrayWithUnit_double_2__v_depth(self)
+
 
     @property
     def depth(self):
@@ -290,6 +390,15 @@ ArrayWithUnit_double_2_swigregister = _array_with_unit.ArrayWithUnit_double_2_sw
 ArrayWithUnit_double_2_swigregister(ArrayWithUnit_double_2)
 
 class ArrayWithUnit_double_3(full_physics_swig.generic_object.GenericObject):
+    """
+
+    We frequently have a array of numbers with units associated with them.
+
+    This is a simple structure that just keeps these two things together.
+
+    C++ includes: array_with_unit.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.generic_object.GenericObject]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -301,6 +410,12 @@ class ArrayWithUnit_double_3(full_physics_swig.generic_object.GenericObject):
     __repr__ = _swig_repr
 
     def __init__(self, *args):
+        """
+
+        FullPhysics::ArrayWithUnit< T, D >::ArrayWithUnit(const blitz::Array< T, D > &Value, const std::string
+        &Value_units_name)
+
+        """
         this = _array_with_unit.new_ArrayWithUnit_double_3(*args)
         try:
             self.this.append(this)
@@ -320,13 +435,36 @@ class ArrayWithUnit_double_3(full_physics_swig.generic_object.GenericObject):
         return _array_with_unit.ArrayWithUnit_double_3___idiv__(self, V)
 
     def convert(self, *args):
+        """
+
+        ArrayWithUnit<T, D> FullPhysics::ArrayWithUnit< T, D >::convert(const Unit &R) const
+        Convert to the given units. 
+        """
         return _array_with_unit.ArrayWithUnit_double_3_convert(self, *args)
 
+
     def convert_wave(self, *args):
+        """
+
+        ArrayWithUnit<T,D> FullPhysics::ArrayWithUnit< T, D >::convert_wave(const Unit &R) const
+        We often need to handle conversion from wavenumber to/from wavelength.
+
+        This is either a normal conversion of the units before and after match
+        in the power of length (so cm^-1 to m^-1), or do an inversion. Since
+        we do this often enough, it is worth having a function that handles
+        this logic. 
+        """
         return _array_with_unit.ArrayWithUnit_double_3_convert_wave(self, *args)
 
+
     def _v_rows(self):
+        """
+
+        int FullPhysics::ArrayWithUnit< T, D >::rows() const
+
+        """
         return _array_with_unit.ArrayWithUnit_double_3__v_rows(self)
+
 
     @property
     def rows(self):
@@ -334,7 +472,13 @@ class ArrayWithUnit_double_3(full_physics_swig.generic_object.GenericObject):
 
 
     def _v_cols(self):
+        """
+
+        int FullPhysics::ArrayWithUnit< T, D >::cols() const
+
+        """
         return _array_with_unit.ArrayWithUnit_double_3__v_cols(self)
+
 
     @property
     def cols(self):
@@ -342,7 +486,13 @@ class ArrayWithUnit_double_3(full_physics_swig.generic_object.GenericObject):
 
 
     def _v_depth(self):
+        """
+
+        int FullPhysics::ArrayWithUnit< T, D >::depth() const
+
+        """
         return _array_with_unit.ArrayWithUnit_double_3__v_depth(self)
+
 
     @property
     def depth(self):

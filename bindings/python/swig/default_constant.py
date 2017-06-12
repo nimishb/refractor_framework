@@ -123,6 +123,17 @@ def _new_from_set(cls, version, *args):
 import full_physics_swig.constant
 import full_physics_swig.generic_object
 class DefaultConstant(full_physics_swig.constant.Constant):
+    """
+
+    This class is an implementation of Constant that uses hard coded
+    values suitable for Earth.
+
+    This is useful for things like unit tests where we just need
+    reasonable values.
+
+    C++ includes: default_constant.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.constant.Constant]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -134,6 +145,11 @@ class DefaultConstant(full_physics_swig.constant.Constant):
     __repr__ = _swig_repr
 
     def __init__(self):
+        """
+
+        FullPhysics::DefaultConstant::DefaultConstant()
+
+        """
         this = _default_constant.new_DefaultConstant()
         try:
             self.this.append(this)
@@ -141,7 +157,13 @@ class DefaultConstant(full_physics_swig.constant.Constant):
             self.this = this
 
     def _v_rayleigh_depolarization_factor(self):
+        """
+
+        virtual double FullPhysics::DefaultConstant::rayleigh_depolarization_factor() const
+        Rayleigh depolarization factor. 
+        """
         return _default_constant.DefaultConstant__v_rayleigh_depolarization_factor(self)
+
 
     @property
     def rayleigh_depolarization_factor(self):
@@ -149,7 +171,16 @@ class DefaultConstant(full_physics_swig.constant.Constant):
 
 
     def _v_rayleigh_a(self):
+        """
+
+        virtual DoubleWithUnit FullPhysics::DefaultConstant::rayleigh_a() const
+        Rayleigh "a" value.
+
+        This along with "b" are the wavelength dependence coefficients for
+        the refractive index. 
+        """
         return _default_constant.DefaultConstant__v_rayleigh_a(self)
+
 
     @property
     def rayleigh_a(self):
@@ -157,7 +188,16 @@ class DefaultConstant(full_physics_swig.constant.Constant):
 
 
     def _v_rayleigh_b(self):
+        """
+
+        virtual DoubleWithUnit FullPhysics::DefaultConstant::rayleigh_b() const
+        Rayleigh "b" value.
+
+        This along with "a" are the wavelength dependence coefficients for
+        the refractive index. 
+        """
         return _default_constant.DefaultConstant__v_rayleigh_b(self)
+
 
     @property
     def rayleigh_b(self):
@@ -165,7 +205,13 @@ class DefaultConstant(full_physics_swig.constant.Constant):
 
 
     def _v_molar_weight_dry_air(self):
+        """
+
+        virtual DoubleWithUnit FullPhysics::DefaultConstant::molar_weight_dry_air() const
+        Molar weight of dry air. 
+        """
         return _default_constant.DefaultConstant__v_molar_weight_dry_air(self)
+
 
     @property
     def molar_weight_dry_air(self):
@@ -173,7 +219,13 @@ class DefaultConstant(full_physics_swig.constant.Constant):
 
 
     def _v_molar_weight_water(self):
+        """
+
+        virtual DoubleWithUnit FullPhysics::DefaultConstant::molar_weight_water() const
+        Molar weight of water. 
+        """
         return _default_constant.DefaultConstant__v_molar_weight_water(self)
+
 
     @property
     def molar_weight_water(self):
@@ -181,7 +233,13 @@ class DefaultConstant(full_physics_swig.constant.Constant):
 
 
     def _v_avogadro_constant(self):
+        """
+
+        virtual DoubleWithUnit FullPhysics::DefaultConstant::avogadro_constant() const
+        Avogadro constant. 
+        """
         return _default_constant.DefaultConstant__v_avogadro_constant(self)
+
 
     @property
     def avogadro_constant(self):

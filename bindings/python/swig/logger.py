@@ -121,6 +121,13 @@ def _new_from_set(cls, version, *args):
     return inst
 
 class LogImp(_object):
+    """
+
+    The actual implementation of the Logger.
+
+    C++ includes: logger.h 
+    """
+
     __swig_setmethods__ = {}
     __setattr__ = lambda self, name, value: _swig_setattr(self, LogImp, name, value)
     __swig_getmethods__ = {}
@@ -138,14 +145,43 @@ class LogImp(_object):
     FATAL = _logger.LogImp_FATAL
 
     def write(self, l, v):
+        """
+
+        void FullPhysics::LogImp::write(log_level l, const char *v)
+
+        """
         return _logger.LogImp_write(self, l, v)
 
+
     def flush(self, l):
+        """
+
+        virtual void FullPhysics::LogImp::flush(log_level l)=0
+        Flush data to the log, at the given level. 
+        """
         return _logger.LogImp_flush(self, l)
+
 LogImp_swigregister = _logger.LogImp_swigregister
 LogImp_swigregister(LogImp)
 
 class Logger(_object):
+    """
+
+    This is a simple logger.
+
+    The logger depends on a specific implementation being set by
+    set_implementation. If we don't have an implementation set, then the
+    logger doesn't do anything.
+
+    The logger is a singleton, there is just one global logger. You can
+    directly access it through instance, but normally you just do things
+    like "Logger::debug() << 'My debug message\\n'". Data is flushed
+    when a "\\n" is encountered, you should end all messages with
+    "\\n".
+
+    C++ includes: logger.h 
+    """
+
     __swig_setmethods__ = {}
     __setattr__ = lambda self, name, value: _swig_setattr(self, Logger, name, value)
     __swig_getmethods__ = {}
@@ -154,17 +190,36 @@ class Logger(_object):
     def __init__(self, *args, **kwargs):
         raise AttributeError("No constructor defined")
     __repr__ = _swig_repr
-    __swig_getmethods__["set_implementation"] = lambda x: _logger.Logger_set_implementation
+
+    def set_implementation(imp):
+        """
+
+        static void FullPhysics::Logger::set_implementation(LogImp *imp)
+        Set the implementation.
+
+        It is perfectly legal for this to be a null pointer, in that case we
+        just don't send log messages anywhere. 
+        """
+        return _logger.Logger_set_implementation(imp)
+
     if _newclass:
-        set_implementation = staticmethod(_logger.Logger_set_implementation)
+        set_implementation = staticmethod(set_implementation)
+    __swig_getmethods__["set_implementation"] = lambda x: set_implementation
     __swig_destroy__ = _logger.delete_Logger
     __del__ = lambda self: None
 Logger_swigregister = _logger.Logger_swigregister
 Logger_swigregister(Logger)
 
 def Logger_set_implementation(imp):
+    """
+
+    static void FullPhysics::Logger::set_implementation(LogImp *imp)
+    Set the implementation.
+
+    It is perfectly legal for this to be a null pointer, in that case we
+    just don't send log messages anywhere. 
+    """
     return _logger.Logger_set_implementation(imp)
-Logger_set_implementation = _logger.Logger_set_implementation
 
 # This file is compatible with both classic and new-style classes.
 

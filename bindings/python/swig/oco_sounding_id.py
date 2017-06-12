@@ -123,6 +123,17 @@ def _new_from_set(cls, version, *args):
 import full_physics_swig.hdf_sounding_id
 import full_physics_swig.generic_object
 class OcoSoundingId(full_physics_swig.hdf_sounding_id.HdfSoundingId):
+    """
+
+    This class reads a given file, and extracts out the sounding
+    information.
+
+    This determine the indexes into the HDF file for the given sounding
+    (referred to as "frame number" and "sounding number").
+
+    C++ includes: oco_sounding_id.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.hdf_sounding_id.HdfSoundingId]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -134,6 +145,11 @@ class OcoSoundingId(full_physics_swig.hdf_sounding_id.HdfSoundingId):
     __repr__ = _swig_repr
 
     def __init__(self, File, Sounding_id):
+        """
+
+        FullPhysics::OcoSoundingId::OcoSoundingId(const HdfFile &File, const std::string &Sounding_id)
+
+        """
         this = _oco_sounding_id.new_OcoSoundingId(File, Sounding_id)
         try:
             self.this.append(this)

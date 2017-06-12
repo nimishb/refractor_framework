@@ -124,6 +124,14 @@ import full_physics_swig.connor_solver
 import full_physics_swig.observer
 import full_physics_swig.generic_object
 class LogTiming(full_physics_swig.connor_solver.ObserverConnorSolver):
+    """
+
+    This is a helper class that logs basic timing information to the
+    Logger.
+
+    C++ includes: log_timing.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.connor_solver.ObserverConnorSolver]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -138,6 +146,11 @@ class LogTiming(full_physics_swig.connor_solver.ObserverConnorSolver):
         return _log_timing.LogTiming___str__(self)
 
     def __init__(self):
+        """
+
+        FullPhysics::LogTiming::LogTiming()
+
+        """
         this = _log_timing.new_LogTiming()
         try:
             self.this.append(this)
@@ -145,10 +158,22 @@ class LogTiming(full_physics_swig.connor_solver.ObserverConnorSolver):
             self.this = this
 
     def notify_update(self, Solver):
+        """
+
+        virtual void FullPhysics::LogTiming::notify_update(const ConnorSolver &Solver)
+
+        """
         return _log_timing.LogTiming_notify_update(self, Solver)
 
+
     def write_to_log(self, *args):
+        """
+
+        virtual void FullPhysics::LogTiming::write_to_log(const std::string &Prefix="") const
+
+        """
         return _log_timing.LogTiming_write_to_log(self, *args)
+
     __swig_destroy__ = _log_timing.delete_LogTiming
     __del__ = lambda self: None
 LogTiming_swigregister = _log_timing.LogTiming_swigregister

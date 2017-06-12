@@ -126,6 +126,16 @@ import full_physics_swig.generic_object
 import full_physics_swig.dispersion
 import full_physics_swig.level_1b
 class IlsFts(full_physics_swig.ils.Ils, full_physics_swig.dispersion.ObserverDispersion):
+    """
+
+    This does an ILS convolution for FTS data.
+
+    This wraps some old Fortran code that models and sinc + box-car. We
+    may replace this at some point.
+
+    C++ includes: ils_fts.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.ils.Ils, full_physics_swig.dispersion.ObserverDispersion]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -137,6 +147,16 @@ class IlsFts(full_physics_swig.ils.Ils, full_physics_swig.dispersion.ObserverDis
     __repr__ = _swig_repr
 
     def __init__(self, Disp, Dispersion_perturb, Level_1b, Spec_index, Band_name, Hdf_band_name):
+        """
+
+        FullPhysics::IlsFts::IlsFts(const boost::shared_ptr< DispersionPolynomial > &Disp, const
+        blitz::Array< double, 2 > &Dispersion_perturb, const
+        boost::shared_ptr< Level1bFts > &Level_1b, int Spec_index, const
+        std::string &Band_name, const std::string &Hdf_band_name, const
+        DoubleWithUnit &Ils_half_width=DoubleWithUnit((2000+1)*1e-2,
+        units::inv_cm))
+
+        """
         this = _ils_fts.new_IlsFts(Disp, Dispersion_perturb, Level_1b, Spec_index, Band_name, Hdf_band_name)
         try:
             self.this.append(this)
@@ -144,19 +164,51 @@ class IlsFts(full_physics_swig.ils.Ils, full_physics_swig.dispersion.ObserverDis
             self.this = this
 
     def notify_add(self, Sv):
+        """
+
+        virtual void FullPhysics::IlsFts::notify_add(StateVector &Sv)
+
+        """
         return _ils_fts.IlsFts_notify_add(self, Sv)
 
+
     def notify_remove(self, Sv):
+        """
+
+        virtual void FullPhysics::IlsFts::notify_remove(StateVector &Sv)
+
+        """
         return _ils_fts.IlsFts_notify_remove(self, Sv)
 
+
     def notify_update(self, *args):
+        """
+
+        virtual void FullPhysics::IlsFts::notify_update(const Dispersion &D)
+
+        """
         return _ils_fts.IlsFts_notify_update(self, *args)
 
+
     def apply_ils(self, *args):
+        """
+
+        virtual ArrayAd<double, 1> FullPhysics::IlsFts::apply_ils(const blitz::Array< double, 1 > &High_resolution_wave_number, const
+        ArrayAd< double, 1 > &High_resolution_radiance, const std::vector< int
+        > &Pixel_list) const
+
+        """
         return _ils_fts.IlsFts_apply_ils(self, *args)
 
+
     def clone(self):
+        """
+
+        virtual boost::shared_ptr<Ils> FullPhysics::IlsFts::clone() const
+
+        """
         return _ils_fts.IlsFts_clone(self)
+
     __swig_destroy__ = _ils_fts.delete_IlsFts
     __del__ = lambda self: None
 IlsFts_swigregister = _ils_fts.IlsFts_swigregister

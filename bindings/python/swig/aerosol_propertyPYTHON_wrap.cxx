@@ -10187,13 +10187,76 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"ObserverAerosolProperty_notify_add", _wrap_ObserverAerosolProperty_notify_add, METH_VARARGS, NULL},
 	 { (char *)"ObserverAerosolProperty_notify_remove", _wrap_ObserverAerosolProperty_notify_remove, METH_VARARGS, NULL},
 	 { (char *)"ObserverAerosolProperty_swigregister", ObserverAerosolProperty_swigregister, METH_VARARGS, NULL},
-	 { (char *)"delete_AerosolProperty", _wrap_delete_AerosolProperty, METH_VARARGS, NULL},
-	 { (char *)"AerosolProperty_add_observer", _wrap_AerosolProperty_add_observer, METH_VARARGS, NULL},
-	 { (char *)"AerosolProperty_remove_observer", _wrap_AerosolProperty_remove_observer, METH_VARARGS, NULL},
-	 { (char *)"AerosolProperty_clone", _wrap_AerosolProperty_clone, METH_VARARGS, NULL},
-	 { (char *)"AerosolProperty_extinction_coefficient_each_layer", _wrap_AerosolProperty_extinction_coefficient_each_layer, METH_VARARGS, NULL},
-	 { (char *)"AerosolProperty_scattering_coefficient_each_layer", _wrap_AerosolProperty_scattering_coefficient_each_layer, METH_VARARGS, NULL},
-	 { (char *)"AerosolProperty_phase_function_moment_each_layer", _wrap_AerosolProperty_phase_function_moment_each_layer, METH_VARARGS, NULL},
+	 { (char *)"delete_AerosolProperty", _wrap_delete_AerosolProperty, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::AerosolProperty::~AerosolProperty()\n"
+		"\n"
+		""},
+	 { (char *)"AerosolProperty_add_observer", _wrap_AerosolProperty_add_observer, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::AerosolProperty::add_observer(Observer< AerosolProperty > &Obs)\n"
+		"\n"
+		""},
+	 { (char *)"AerosolProperty_remove_observer", _wrap_AerosolProperty_remove_observer, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::AerosolProperty::remove_observer(Observer< AerosolProperty > &Obs)\n"
+		"\n"
+		""},
+	 { (char *)"AerosolProperty_clone", _wrap_AerosolProperty_clone, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual boost::shared_ptr<AerosolProperty> FullPhysics::AerosolProperty::clone(const boost::shared_ptr< Pressure > &Press, const boost::shared_ptr<\n"
+		"RelativeHumidity > &Rh) const =0\n"
+		"This version of clone takes a pressure to use.\n"
+		"\n"
+		"The intent is that the pressure has been cloned from the original\n"
+		"pressure (although this class has no way to verify this). This allows\n"
+		"sets of objects to be cloned using a common Pressure clone, e.g.\n"
+		"Atmosphere. \n"
+		""},
+	 { (char *)"AerosolProperty_extinction_coefficient_each_layer", _wrap_AerosolProperty_extinction_coefficient_each_layer, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual ArrayAd<double, 1> FullPhysics::AerosolProperty::extinction_coefficient_each_layer(double wn) const =0\n"
+		"Return extinction coefficient for the given wave number, for each\n"
+		"layer.\n"
+		"\n"
+		"Parameters:\n"
+		"-----------\n"
+		"\n"
+		"wn:  - Wavenumber \n"
+		""},
+	 { (char *)"AerosolProperty_scattering_coefficient_each_layer", _wrap_AerosolProperty_scattering_coefficient_each_layer, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual ArrayAd<double, 1> FullPhysics::AerosolProperty::scattering_coefficient_each_layer(double wn) const =0\n"
+		"Return scattering coefficient for the given wave number for each\n"
+		"layer.\n"
+		"\n"
+		"Parameters:\n"
+		"-----------\n"
+		"\n"
+		"wn:  - Wavenumber \n"
+		""},
+	 { (char *)"AerosolProperty_phase_function_moment_each_layer", _wrap_AerosolProperty_phase_function_moment_each_layer, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual ArrayAd<double, 3> FullPhysics::AerosolProperty::phase_function_moment_each_layer(double wn, int nmom=-1, int nscatt=-1) const =0\n"
+		"Return phase function moments for the given wave number for each\n"
+		"layer.\n"
+		"\n"
+		"Note that we use the de Rooij convention for the scattering matrix\n"
+		"moments.\n"
+		"\n"
+		"Parameters:\n"
+		"-----------\n"
+		"\n"
+		"wn:  Wavenumber\n"
+		"\n"
+		"nmom:  Optional number of moments to return. Default is all moments.\n"
+		"\n"
+		"nscatt:  Optional number of scattering elements to return. Default is\n"
+		"all of them.\n"
+		"\n"
+		"Phase function moment. This is nmom + 1 x nlayer x number scattering\n"
+		"elements. \n"
+		""},
 	 { (char *)"AerosolProperty___str__", _wrap_AerosolProperty___str__, METH_VARARGS, NULL},
 	 { (char *)"AerosolProperty_swigregister", AerosolProperty_swigregister, METH_VARARGS, NULL},
 	 { (char *)"vector_aerosol_property_iterator", _wrap_vector_aerosol_property_iterator, METH_VARARGS, NULL},

@@ -5661,10 +5661,42 @@ SWIGINTERN PyObject *AerosolExtinctionLinear_swigregister(PyObject *SWIGUNUSEDPA
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"new_AerosolExtinctionLinear", _wrap_new_AerosolExtinctionLinear, METH_VARARGS, NULL},
-	 { (char *)"AerosolExtinctionLinear_clone", _wrap_AerosolExtinctionLinear_clone, METH_VARARGS, NULL},
-	 { (char *)"AerosolExtinctionLinear_state_vector_name_i", _wrap_AerosolExtinctionLinear_state_vector_name_i, METH_VARARGS, NULL},
-	 { (char *)"delete_AerosolExtinctionLinear", _wrap_delete_AerosolExtinctionLinear, METH_VARARGS, NULL},
+	 { (char *)"new_AerosolExtinctionLinear", _wrap_new_AerosolExtinctionLinear, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::AerosolExtinctionLinear::AerosolExtinctionLinear(const boost::shared_ptr< Pressure > &Press, const blitz::Array< bool,\n"
+		"1 > &Flag, const blitz::Array< double, 1 > &Aext, const std::string\n"
+		"&Aerosol_name)\n"
+		"Constructor.\n"
+		"\n"
+		"Parameters:\n"
+		"-----------\n"
+		"\n"
+		"Press:  The pressure to use\n"
+		"\n"
+		"Flag:  Boolean flag indicating which levels are to be set by the state\n"
+		"vector. A value of false means the level is held fixed when the state\n"
+		"vector changes.\n"
+		"\n"
+		"Aext:  The aerosol extinction value.\n"
+		"\n"
+		"Aerosol_name:  The name of the aerosol. This is used to generate the\n"
+		"state vector name metadata, so it should be whatever is convenient. \n"
+		""},
+	 { (char *)"AerosolExtinctionLinear_clone", _wrap_AerosolExtinctionLinear_clone, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual boost::shared_ptr<AerosolExtinction> FullPhysics::AerosolExtinctionLinear::clone(const boost::shared_ptr< Pressure > &P) const\n"
+		"\n"
+		""},
+	 { (char *)"AerosolExtinctionLinear_state_vector_name_i", _wrap_AerosolExtinctionLinear_state_vector_name_i, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual std::string FullPhysics::AerosolExtinctionLinear::state_vector_name_i(int i) const\n"
+		"\n"
+		""},
+	 { (char *)"delete_AerosolExtinctionLinear", _wrap_delete_AerosolExtinctionLinear, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::AerosolExtinctionLinear::~AerosolExtinctionLinear()\n"
+		"\n"
+		""},
 	 { (char *)"AerosolExtinctionLinear_swigregister", AerosolExtinctionLinear_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };

@@ -121,14 +121,33 @@ def _new_from_set(cls, version, *args):
     return inst
 
 class RayleighGreekMoment(_object):
+    """
+
+    This class provides the Rayleigh Greek Moments.
+
+    This is really just a constant, but we put this in a central class to
+    have the code for this in one place.
+
+    C++ includes: rayleigh_greek_moment.h 
+    """
+
     __swig_setmethods__ = {}
     __setattr__ = lambda self, name, value: _swig_setattr(self, RayleighGreekMoment, name, value)
     __swig_getmethods__ = {}
     __getattr__ = lambda self, name: _swig_getattr(self, RayleighGreekMoment, name)
     __repr__ = _swig_repr
-    __swig_getmethods__["array"] = lambda x: _rayleigh_greek_moment.RayleighGreekMoment_array
+
+    def array():
+        """
+
+        static const blitz::Array<double, 2>& FullPhysics::RayleighGreekMoment::array(double depolar_fact=0.02790)
+
+        """
+        return _rayleigh_greek_moment.RayleighGreekMoment_array()
+
     if _newclass:
-        array = staticmethod(_rayleigh_greek_moment.RayleighGreekMoment_array)
+        array = staticmethod(array)
+    __swig_getmethods__["array"] = lambda x: array
 
     def __init__(self):
         this = _rayleigh_greek_moment.new_RayleighGreekMoment()
@@ -142,8 +161,12 @@ RayleighGreekMoment_swigregister = _rayleigh_greek_moment.RayleighGreekMoment_sw
 RayleighGreekMoment_swigregister(RayleighGreekMoment)
 
 def RayleighGreekMoment_array():
+    """
+
+    static const blitz::Array<double, 2>& FullPhysics::RayleighGreekMoment::array(double depolar_fact=0.02790)
+
+    """
     return _rayleigh_greek_moment.RayleighGreekMoment_array()
-RayleighGreekMoment_array = _rayleigh_greek_moment.RayleighGreekMoment_array
 
 # This file is compatible with both classic and new-style classes.
 

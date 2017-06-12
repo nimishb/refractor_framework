@@ -193,6 +193,20 @@ SubStateVectorArrayTemperature_swigregister = _temperature_imp_base.SubStateVect
 SubStateVectorArrayTemperature_swigregister(SubStateVectorArrayTemperature)
 
 class TemperatureImpBase(SubStateVectorArrayTemperature):
+    """
+
+    As a design principle, we have each base class with the absolutely
+    minimum interface needed for use from the rest of the system.
+
+    This allows us to support any future code that supports this minimum
+    interface.
+
+    However, almost always you will want to derive from this class
+    instead. See PressureImpBase for a more complete discussion of this.
+
+    C++ includes: temperature_imp_base.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [SubStateVectorArrayTemperature]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -206,10 +220,22 @@ class TemperatureImpBase(SubStateVectorArrayTemperature):
     __del__ = lambda self: None
 
     def clone(self, *args):
+        """
+
+        virtual boost::shared_ptr<Temperature> FullPhysics::TemperatureImpBase::clone(const boost::shared_ptr< Pressure > &Press) const =0
+
+        """
         return _temperature_imp_base.TemperatureImpBase_clone(self, *args)
 
+
     def temperature(self, Press):
+        """
+
+        virtual AutoDerivativeWithUnit<double> FullPhysics::TemperatureImpBase::temperature(const AutoDerivativeWithUnit< double > &Press) const
+
+        """
         return _temperature_imp_base.TemperatureImpBase_temperature(self, Press)
+
 
     def add_observer(self, Obs):
         return _temperature_imp_base.TemperatureImpBase_add_observer(self, Obs)
@@ -218,13 +244,38 @@ class TemperatureImpBase(SubStateVectorArrayTemperature):
         return _temperature_imp_base.TemperatureImpBase_remove_observer(self, Obs)
 
     def update_sub_state_hook(self):
+        """
+
+        virtual void FullPhysics::TemperatureImpBase::update_sub_state_hook()
+
+        """
         return _temperature_imp_base.TemperatureImpBase_update_sub_state_hook(self)
 
+
     def print_desc(self, Os):
+        """
+
+        virtual void FullPhysics::TemperatureImpBase::print(std::ostream &Os) const
+        Print to stream.
+
+        The default calls the function "desc" that returns a string. This
+        gives cleaner interface for deriving from this class in python, but
+        most C++ classes will want to override this function rather than using
+        desc. 
+        """
         return _temperature_imp_base.TemperatureImpBase_print_desc(self, Os)
 
+
     def _v_desc(self):
+        """
+
+        virtual std::string FullPhysics::TemperatureImpBase::desc() const
+        Description of object, to be printed to stream.
+
+        This gives a cleaner interface for deriving from python. 
+        """
         return _temperature_imp_base.TemperatureImpBase__v_desc(self)
+
 
     @property
     def desc(self):

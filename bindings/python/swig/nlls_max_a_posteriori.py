@@ -129,6 +129,12 @@ import full_physics_swig.nlls_problem_state
 import full_physics_swig.model_measure
 import full_physics_swig.model_state
 class NLLSMaxAPosteriori(full_physics_swig.nlls_problem.NLLSProblem, full_physics_swig.nlls_problem_state.NLLSProblemState):
+    """
+
+    C++ includes: nlls_max_a_posteriori.h
+
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.nlls_problem.NLLSProblem, full_physics_swig.nlls_problem_state.NLLSProblemState]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -140,6 +146,11 @@ class NLLSMaxAPosteriori(full_physics_swig.nlls_problem.NLLSProblem, full_physic
     __repr__ = _swig_repr
 
     def __init__(self, map, together=False):
+        """
+
+        FullPhysics::NLLSMaxAPosteriori::NLLSMaxAPosteriori(const boost::shared_ptr< MaxAPosteriori > &map, bool together=false)
+        Constructor. 
+        """
         this = _nlls_max_a_posteriori.new_NLLSMaxAPosteriori(map, together)
         try:
             self.this.append(this)
@@ -149,7 +160,15 @@ class NLLSMaxAPosteriori(full_physics_swig.nlls_problem.NLLSProblem, full_physic
     __del__ = lambda self: None
 
     def _v_residual(self):
+        """
+
+        virtual blitz::Array<double, 1> FullPhysics::NLLSMaxAPosteriori::residual()
+        Return the residual of the NLLS problem at the current set point.
+
+        Residual 
+        """
         return _nlls_max_a_posteriori.NLLSMaxAPosteriori__v_residual(self)
+
 
     @property
     def residual(self):
@@ -157,7 +176,16 @@ class NLLSMaxAPosteriori(full_physics_swig.nlls_problem.NLLSProblem, full_physic
 
 
     def _v_jacobian(self):
+        """
+
+        virtual blitz::Array<double, 2> FullPhysics::NLLSMaxAPosteriori::jacobian()
+        Return the Jacobian of the residual of the NLLS problem at the current
+        set point.
+
+        The Jacobian of the cost function. 
+        """
         return _nlls_max_a_posteriori.NLLSMaxAPosteriori__v_jacobian(self)
+
 
     @property
     def jacobian(self):
@@ -165,7 +193,13 @@ class NLLSMaxAPosteriori(full_physics_swig.nlls_problem.NLLSProblem, full_physic
 
 
     def _v_residual_size(self):
+        """
+
+        virtual int FullPhysics::NLLSMaxAPosteriori::residual_size() const
+        Return the size of the residual that will be returned by residual() 
+        """
         return _nlls_max_a_posteriori.NLLSMaxAPosteriori__v_residual_size(self)
+
 
     @property
     def residual_size(self):
@@ -173,7 +207,13 @@ class NLLSMaxAPosteriori(full_physics_swig.nlls_problem.NLLSProblem, full_physic
 
 
     def _v_expected_parameter_size(self):
+        """
+
+        virtual int FullPhysics::NLLSMaxAPosteriori::expected_parameter_size() const
+        Return the expected size of the parameter X. 
+        """
         return _nlls_max_a_posteriori.NLLSMaxAPosteriori__v_expected_parameter_size(self)
+
 
     @property
     def expected_parameter_size(self):
@@ -181,7 +221,18 @@ class NLLSMaxAPosteriori(full_physics_swig.nlls_problem.NLLSProblem, full_physic
 
 
     def _v_parameters(self, *args):
+        """
+
+        virtual blitz::Array<double, 1> FullPhysics::NLLSMaxAPosteriori::parameters() const
+        Just returns the current values of parameters.
+
+        This method is redefined here (see the root base class) because of a
+        compiler bug; otherwise, there should be no need for its redefinition.
+
+        Current parameter values 
+        """
         return _nlls_max_a_posteriori.NLLSMaxAPosteriori__v_parameters(self, *args)
+
 
     @property
     def parameters(self):
@@ -193,7 +244,13 @@ class NLLSMaxAPosteriori(full_physics_swig.nlls_problem.NLLSProblem, full_physic
 
 
     def _v_max_a_posteriori(self):
+        """
+
+        boost::shared_ptr<MaxAPosteriori> FullPhysics::NLLSMaxAPosteriori::max_a_posteriori()
+
+        """
         return _nlls_max_a_posteriori.NLLSMaxAPosteriori__v_max_a_posteriori(self)
+
 
     @property
     def max_a_posteriori(self):

@@ -182,6 +182,23 @@ ObservableAerosol_swigregister = _aerosol.ObservableAerosol_swigregister
 ObservableAerosol_swigregister(ObservableAerosol)
 
 class Aerosol(full_physics_swig.state_vector.StateVectorObserver, ObservableAerosol):
+    """
+
+    This class maintains the aerosol portion of the state.
+
+    Other objects may depend on the aerosol, and should be updated when
+    the aerosol is updated. To facilitate that, this class in an
+    Oberverable, and objects can add themselves as Observers to be
+    notified when the aerosol is updated.
+
+    I'm not really sure what the interface for this class should be. Right
+    now it is used only by AtmosphereOco, and there is only one instance
+    AerosolOptical, so the functions are what AtmosphereOco needs. But we
+    may perhaps want to modify this in the future to be more general.
+
+    C++ includes: aerosol.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.state_vector.StateVectorObserver, ObservableAerosol]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -199,22 +216,94 @@ class Aerosol(full_physics_swig.state_vector.StateVectorObserver, ObservableAero
         return _aerosol.Aerosol___str__(self)
 
     def add_observer(self, Obs):
+        """
+
+        virtual void FullPhysics::Aerosol::add_observer(Observer< Aerosol > &Obs)
+
+        """
         return _aerosol.Aerosol_add_observer(self, Obs)
 
+
     def remove_observer(self, Obs):
+        """
+
+        virtual void FullPhysics::Aerosol::remove_observer(Observer< Aerosol > &Obs)
+
+        """
         return _aerosol.Aerosol_remove_observer(self, Obs)
 
+
     def pf_mom(self, wn, frac_aer, nummom=-1, numscat=-1):
+        """
+
+        virtual ArrayAd<double, 3> FullPhysics::Aerosol::pf_mom(double wn, const ArrayAd< double, 2 > &frac_aer, int nummom=-1, int
+        numscat=-1) const =0
+        This calculates the portion of the phase function moments that come
+        from the aerosol.
+
+        Parameters:
+        -----------
+
+        wn:  The wave number.
+
+        frac_aer:  This is number_active_layer() x number_particle()
+
+        nummom:  Number of moments to fill in
+
+        numscat:  Number of scatters to fill in 
+        """
         return _aerosol.Aerosol_pf_mom(self, wn, frac_aer, nummom, numscat)
 
+
     def optical_depth_each_layer(self, wn):
+        """
+
+        virtual ArrayAd<double, 2> FullPhysics::Aerosol::optical_depth_each_layer(double wn) const =0
+        This gives the optical depth for each layer, for the given wave
+        number.
+
+        Note this only includes the aerosol portion of this, Atmosphere class
+        combines this with Absorbers and rayleigh scattering.
+
+        This calculates the derivatives with respect to the state vector.
+
+        This has size of number_active_layer() x number_particle(). 
+        """
         return _aerosol.Aerosol_optical_depth_each_layer(self, wn)
 
+
     def ssa_each_layer(self, wn, particle_index, Od):
+        """
+
+        virtual ArrayAd<double, 1> FullPhysics::Aerosol::ssa_each_layer(double wn, int particle_index, const ArrayAd< double, 1 > &Od) const
+        =0
+        This gives the single scatter albedo for each layer, for the given
+        wave number, for the given particle.
+
+        Note this only includes the aerosol portion of this, Atmosphere class
+        combines this with Rayleigh scattering.
+
+        We take in the optical depth of each layer. This is just what is
+        returned by optical_depth_each_layer(), we take this in because we can
+        change what the derivative of optical_depth_each_layer is respect to,
+        e.g. in AtmosphereOco we use taua_i.
+
+        This calculates the derivative with respect to whatever variables Od
+        is relative to.
+
+        This has size of number_active_layer() 
+        """
         return _aerosol.Aerosol_ssa_each_layer(self, wn, particle_index, Od)
 
+
     def _v_number_particle(self):
+        """
+
+        virtual int FullPhysics::Aerosol::number_particle() const =0
+        Number of aerosol particles. 
+        """
         return _aerosol.Aerosol__v_number_particle(self)
+
 
     @property
     def number_particle(self):
@@ -222,7 +311,14 @@ class Aerosol(full_physics_swig.state_vector.StateVectorObserver, ObservableAero
 
 
     def clone(self, *args):
+        """
+
+        virtual boost::shared_ptr<Aerosol> FullPhysics::Aerosol::clone(const boost::shared_ptr< Pressure > &Press, const boost::shared_ptr<
+        RelativeHumidity > &Rh) const =0
+
+        """
         return _aerosol.Aerosol_clone(self, *args)
+
     __swig_destroy__ = _aerosol.delete_Aerosol
     __del__ = lambda self: None
 Aerosol_swigregister = _aerosol.Aerosol_swigregister

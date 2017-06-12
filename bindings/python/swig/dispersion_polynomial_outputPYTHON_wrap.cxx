@@ -5171,9 +5171,21 @@ SWIGINTERN PyObject *DispersionPolynomialOutput_swigregister(PyObject *SWIGUNUSE
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"DispersionPolynomialOutput_register_output", _wrap_DispersionPolynomialOutput_register_output, METH_VARARGS, NULL},
-	 { (char *)"DispersionPolynomialOutput_register_output_apriori", _wrap_DispersionPolynomialOutput_register_output_apriori, METH_VARARGS, NULL},
-	 { (char *)"delete_DispersionPolynomialOutput", _wrap_delete_DispersionPolynomialOutput, METH_VARARGS, NULL},
+	 { (char *)"DispersionPolynomialOutput_register_output", _wrap_DispersionPolynomialOutput_register_output, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::DispersionPolynomialOutput::register_output(const boost::shared_ptr< Output > &out) const\n"
+		"\n"
+		""},
+	 { (char *)"DispersionPolynomialOutput_register_output_apriori", _wrap_DispersionPolynomialOutput_register_output_apriori, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::DispersionPolynomialOutput::register_output_apriori(const boost::shared_ptr< Output > &out) const\n"
+		"\n"
+		""},
+	 { (char *)"delete_DispersionPolynomialOutput", _wrap_delete_DispersionPolynomialOutput, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::DispersionPolynomialOutput::~DispersionPolynomialOutput()\n"
+		"\n"
+		""},
 	 { (char *)"DispersionPolynomialOutput_swigregister", DispersionPolynomialOutput_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };

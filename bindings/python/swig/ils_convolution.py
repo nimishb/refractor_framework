@@ -125,6 +125,14 @@ import full_physics_swig.state_vector
 import full_physics_swig.generic_object
 import full_physics_swig.dispersion
 class IlsConvolution(full_physics_swig.ils.Ils, full_physics_swig.dispersion.ObserverDispersion):
+    """
+
+    This is a ILS where we use a Dispersion object to determine the
+    wavenumbers of each pixel, and convolve against a IlsFunction.
+
+    C++ includes: ils_convolution.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.ils.Ils, full_physics_swig.dispersion.ObserverDispersion]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -136,6 +144,12 @@ class IlsConvolution(full_physics_swig.ils.Ils, full_physics_swig.dispersion.Obs
     __repr__ = _swig_repr
 
     def __init__(self, *args):
+        """
+
+        FullPhysics::IlsConvolution::IlsConvolution(const boost::shared_ptr< Dispersion > &Disp, const boost::shared_ptr<
+        IlsFunction > &Ils_func, double Ils_half_width)
+        Constructor. 
+        """
         this = _ils_convolution.new_IlsConvolution(*args)
         try:
             self.this.append(this)
@@ -143,22 +157,60 @@ class IlsConvolution(full_physics_swig.ils.Ils, full_physics_swig.dispersion.Obs
             self.this = this
 
     def notify_add(self, Sv):
+        """
+
+        virtual void FullPhysics::IlsConvolution::notify_add(StateVector &Sv)
+
+        """
         return _ils_convolution.IlsConvolution_notify_add(self, Sv)
 
+
     def notify_remove(self, Sv):
+        """
+
+        virtual void FullPhysics::IlsConvolution::notify_remove(StateVector &Sv)
+
+        """
         return _ils_convolution.IlsConvolution_notify_remove(self, Sv)
 
+
     def notify_update(self, *args):
+        """
+
+        virtual void FullPhysics::IlsConvolution::notify_update(const Dispersion &D)
+
+        """
         return _ils_convolution.IlsConvolution_notify_update(self, *args)
 
+
     def apply_ils(self, *args):
+        """
+
+        virtual ArrayAd<double, 1> FullPhysics::IlsConvolution::apply_ils(const blitz::Array< double, 1 > &High_resolution_wave_number, const
+        ArrayAd< double, 1 > &High_resolution_radiance, const std::vector< int
+        > &Pixel_list) const
+
+        """
         return _ils_convolution.IlsConvolution_apply_ils(self, *args)
 
+
     def clone(self):
+        """
+
+        virtual boost::shared_ptr<Ils> FullPhysics::IlsConvolution::clone() const
+
+        """
         return _ils_convolution.IlsConvolution_clone(self)
 
+
     def _v_ils_function(self):
+        """
+
+        boost::shared_ptr<IlsFunction> FullPhysics::IlsConvolution::ils_function() const
+        Underlying IlsFunction. 
+        """
         return _ils_convolution.IlsConvolution__v_ils_function(self)
+
 
     @property
     def ils_function(self):
@@ -166,7 +218,13 @@ class IlsConvolution(full_physics_swig.ils.Ils, full_physics_swig.dispersion.Obs
 
 
     def _v_dispersion(self):
+        """
+
+        boost::shared_ptr<Dispersion> FullPhysics::IlsConvolution::dispersion() const
+        Underlying dispersion. 
+        """
         return _ils_convolution.IlsConvolution__v_dispersion(self)
+
 
     @property
     def dispersion(self):

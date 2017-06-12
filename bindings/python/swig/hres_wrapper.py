@@ -128,6 +128,23 @@ import full_physics_swig.observer
 import full_physics_swig.named_spectrum
 import full_physics_swig.state_vector
 class HresWrapper(full_physics_swig.radiative_transfer_single_wn.RadiativeTransferSingleWn):
+    """
+
+    For timing purposes, it can be useful to separate out the high
+    resolution radiative transfer vs.
+
+    the low resolution. Valgrind lumps them all together, since it is
+    organized by function call and the same function is called for both
+    high resolution and low resolution.
+
+    This class provides an easy work around. It just forwards everything
+    to an actual RadiativeTransferSingleWn class, but it wraps this in a
+    separate function call. This then means valgrind lists this as
+    separate.
+
+    C++ includes: hres_wrapper.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.radiative_transfer_single_wn.RadiativeTransferSingleWn]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -142,7 +159,13 @@ class HresWrapper(full_physics_swig.radiative_transfer_single_wn.RadiativeTransf
     __repr__ = _swig_repr
 
     def _v_number_stokes(self):
+        """
+
+        virtual int FullPhysics::HresWrapper::number_stokes() const
+
+        """
         return _hres_wrapper.HresWrapper__v_number_stokes(self)
+
 
     @property
     def number_stokes(self):
@@ -150,7 +173,13 @@ class HresWrapper(full_physics_swig.radiative_transfer_single_wn.RadiativeTransf
 
 
     def _v_number_stream(self):
+        """
+
+        virtual int FullPhysics::HresWrapper::number_stream() const
+
+        """
         return _hres_wrapper.HresWrapper__v_number_stream(self)
+
 
     @property
     def number_stream(self):
@@ -158,13 +187,31 @@ class HresWrapper(full_physics_swig.radiative_transfer_single_wn.RadiativeTransf
 
 
     def stokes_single_wn(self, Wn, Spec_index, Iv):
+        """
+
+        virtual blitz::Array<double, 1> FullPhysics::HresWrapper::stokes_single_wn(double Wn, int Spec_index, const ArrayAd< double, 2 > &Iv) const
+
+        """
         return _hres_wrapper.HresWrapper_stokes_single_wn(self, Wn, Spec_index, Iv)
 
+
     def stokes_and_jacobian_single_wn(self, Wn, Spec_index, Iv):
+        """
+
+        virtual ArrayAd<double, 1> FullPhysics::HresWrapper::stokes_and_jacobian_single_wn(double Wn, int Spec_index, const ArrayAd< double, 2 > &Iv) const
+
+        """
         return _hres_wrapper.HresWrapper_stokes_and_jacobian_single_wn(self, Wn, Spec_index, Iv)
 
+
     def _v_rt(self):
+        """
+
+        virtual boost::shared_ptr<RadiativeTransfer> FullPhysics::HresWrapper::rt() const
+
+        """
         return _hres_wrapper.HresWrapper__v_rt(self)
+
 
     @property
     def rt(self):

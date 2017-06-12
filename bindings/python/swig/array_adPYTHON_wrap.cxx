@@ -14700,66 +14700,258 @@ SWIGINTERN PyObject *ArrayAd_double_4_swigregister(PyObject *SWIGUNUSEDPARM(self
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"new_ArrayAd_double_1", _wrap_new_ArrayAd_double_1, METH_VARARGS, NULL},
-	 { (char *)"ArrayAd_double_1_resize_number_variable", _wrap_ArrayAd_double_1_resize_number_variable, METH_VARARGS, NULL},
-	 { (char *)"ArrayAd_double_1_resize", _wrap_ArrayAd_double_1_resize, METH_VARARGS, NULL},
-	 { (char *)"ArrayAd_double_1__v_value", _wrap_ArrayAd_double_1__v_value, METH_VARARGS, NULL},
-	 { (char *)"ArrayAd_double_1__v_jacobian", _wrap_ArrayAd_double_1__v_jacobian, METH_VARARGS, NULL},
-	 { (char *)"ArrayAd_double_1__v_rows", _wrap_ArrayAd_double_1__v_rows, METH_VARARGS, NULL},
-	 { (char *)"ArrayAd_double_1__v_cols", _wrap_ArrayAd_double_1__v_cols, METH_VARARGS, NULL},
-	 { (char *)"ArrayAd_double_1__v_depth", _wrap_ArrayAd_double_1__v_depth, METH_VARARGS, NULL},
-	 { (char *)"ArrayAd_double_1__v_is_constant", _wrap_ArrayAd_double_1__v_is_constant, METH_VARARGS, NULL},
-	 { (char *)"ArrayAd_double_1__v_number_variable", _wrap_ArrayAd_double_1__v_number_variable, METH_VARARGS, NULL},
-	 { (char *)"ArrayAd_double_1_reference", _wrap_ArrayAd_double_1_reference, METH_VARARGS, NULL},
-	 { (char *)"ArrayAd_double_1_copy", _wrap_ArrayAd_double_1_copy, METH_VARARGS, NULL},
+	 { (char *)"new_ArrayAd_double_1", _wrap_new_ArrayAd_double_1, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::ArrayAd< T, D >::ArrayAd(const blitz::TinyVector< int, D > &Shape, int nvar)\n"
+		"\n"
+		""},
+	 { (char *)"ArrayAd_double_1_resize_number_variable", _wrap_ArrayAd_double_1_resize_number_variable, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::ArrayAd< T, D >::resize_number_variable(int nvar)\n"
+		"\n"
+		""},
+	 { (char *)"ArrayAd_double_1_resize", _wrap_ArrayAd_double_1_resize, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::ArrayAd< T, D >::resize(int n1, int n2, int n3, int n4, int n5, int nvar)\n"
+		"\n"
+		""},
+	 { (char *)"ArrayAd_double_1__v_value", _wrap_ArrayAd_double_1__v_value, METH_VARARGS, (char *)"\n"
+		"\n"
+		"blitz::Array<T, D>& FullPhysics::ArrayAd< T, D >::value()\n"
+		"\n"
+		""},
+	 { (char *)"ArrayAd_double_1__v_jacobian", _wrap_ArrayAd_double_1__v_jacobian, METH_VARARGS, (char *)"\n"
+		"\n"
+		"blitz::Array<T, D+1>& FullPhysics::ArrayAd< T, D >::jacobian()\n"
+		"\n"
+		""},
+	 { (char *)"ArrayAd_double_1__v_rows", _wrap_ArrayAd_double_1__v_rows, METH_VARARGS, (char *)"\n"
+		"\n"
+		"int FullPhysics::ArrayAd< T, D >::rows() const\n"
+		"\n"
+		""},
+	 { (char *)"ArrayAd_double_1__v_cols", _wrap_ArrayAd_double_1__v_cols, METH_VARARGS, (char *)"\n"
+		"\n"
+		"int FullPhysics::ArrayAd< T, D >::cols() const\n"
+		"\n"
+		""},
+	 { (char *)"ArrayAd_double_1__v_depth", _wrap_ArrayAd_double_1__v_depth, METH_VARARGS, (char *)"\n"
+		"\n"
+		"int FullPhysics::ArrayAd< T, D >::depth() const\n"
+		"\n"
+		""},
+	 { (char *)"ArrayAd_double_1__v_is_constant", _wrap_ArrayAd_double_1__v_is_constant, METH_VARARGS, (char *)"\n"
+		"\n"
+		"bool FullPhysics::ArrayAd< T, D >::is_constant() const\n"
+		"\n"
+		""},
+	 { (char *)"ArrayAd_double_1__v_number_variable", _wrap_ArrayAd_double_1__v_number_variable, METH_VARARGS, (char *)"\n"
+		"\n"
+		"int FullPhysics::ArrayAd< T, D >::number_variable() const\n"
+		"\n"
+		""},
+	 { (char *)"ArrayAd_double_1_reference", _wrap_ArrayAd_double_1_reference, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::ArrayAd< T, D >::reference(const ArrayAd< T, D > &V)\n"
+		"\n"
+		""},
+	 { (char *)"ArrayAd_double_1_copy", _wrap_ArrayAd_double_1_copy, METH_VARARGS, (char *)"\n"
+		"\n"
+		"ArrayAd<T, D> FullPhysics::ArrayAd< T, D >::copy() const\n"
+		"\n"
+		""},
 	 { (char *)"ArrayAd_double_1_read", _wrap_ArrayAd_double_1_read, METH_VARARGS, NULL},
 	 { (char *)"ArrayAd_double_1_write", _wrap_ArrayAd_double_1_write, METH_VARARGS, NULL},
 	 { (char *)"delete_ArrayAd_double_1", _wrap_delete_ArrayAd_double_1, METH_VARARGS, NULL},
 	 { (char *)"ArrayAd_double_1_swigregister", ArrayAd_double_1_swigregister, METH_VARARGS, NULL},
-	 { (char *)"new_ArrayAd_double_2", _wrap_new_ArrayAd_double_2, METH_VARARGS, NULL},
-	 { (char *)"ArrayAd_double_2_resize_number_variable", _wrap_ArrayAd_double_2_resize_number_variable, METH_VARARGS, NULL},
-	 { (char *)"ArrayAd_double_2_resize", _wrap_ArrayAd_double_2_resize, METH_VARARGS, NULL},
-	 { (char *)"ArrayAd_double_2__v_value", _wrap_ArrayAd_double_2__v_value, METH_VARARGS, NULL},
-	 { (char *)"ArrayAd_double_2__v_jacobian", _wrap_ArrayAd_double_2__v_jacobian, METH_VARARGS, NULL},
-	 { (char *)"ArrayAd_double_2__v_rows", _wrap_ArrayAd_double_2__v_rows, METH_VARARGS, NULL},
-	 { (char *)"ArrayAd_double_2__v_cols", _wrap_ArrayAd_double_2__v_cols, METH_VARARGS, NULL},
-	 { (char *)"ArrayAd_double_2__v_depth", _wrap_ArrayAd_double_2__v_depth, METH_VARARGS, NULL},
-	 { (char *)"ArrayAd_double_2__v_is_constant", _wrap_ArrayAd_double_2__v_is_constant, METH_VARARGS, NULL},
-	 { (char *)"ArrayAd_double_2__v_number_variable", _wrap_ArrayAd_double_2__v_number_variable, METH_VARARGS, NULL},
-	 { (char *)"ArrayAd_double_2_reference", _wrap_ArrayAd_double_2_reference, METH_VARARGS, NULL},
-	 { (char *)"ArrayAd_double_2_copy", _wrap_ArrayAd_double_2_copy, METH_VARARGS, NULL},
+	 { (char *)"new_ArrayAd_double_2", _wrap_new_ArrayAd_double_2, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::ArrayAd< T, D >::ArrayAd(const blitz::TinyVector< int, D > &Shape, int nvar)\n"
+		"\n"
+		""},
+	 { (char *)"ArrayAd_double_2_resize_number_variable", _wrap_ArrayAd_double_2_resize_number_variable, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::ArrayAd< T, D >::resize_number_variable(int nvar)\n"
+		"\n"
+		""},
+	 { (char *)"ArrayAd_double_2_resize", _wrap_ArrayAd_double_2_resize, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::ArrayAd< T, D >::resize(int n1, int n2, int n3, int n4, int n5, int nvar)\n"
+		"\n"
+		""},
+	 { (char *)"ArrayAd_double_2__v_value", _wrap_ArrayAd_double_2__v_value, METH_VARARGS, (char *)"\n"
+		"\n"
+		"blitz::Array<T, D>& FullPhysics::ArrayAd< T, D >::value()\n"
+		"\n"
+		""},
+	 { (char *)"ArrayAd_double_2__v_jacobian", _wrap_ArrayAd_double_2__v_jacobian, METH_VARARGS, (char *)"\n"
+		"\n"
+		"blitz::Array<T, D+1>& FullPhysics::ArrayAd< T, D >::jacobian()\n"
+		"\n"
+		""},
+	 { (char *)"ArrayAd_double_2__v_rows", _wrap_ArrayAd_double_2__v_rows, METH_VARARGS, (char *)"\n"
+		"\n"
+		"int FullPhysics::ArrayAd< T, D >::rows() const\n"
+		"\n"
+		""},
+	 { (char *)"ArrayAd_double_2__v_cols", _wrap_ArrayAd_double_2__v_cols, METH_VARARGS, (char *)"\n"
+		"\n"
+		"int FullPhysics::ArrayAd< T, D >::cols() const\n"
+		"\n"
+		""},
+	 { (char *)"ArrayAd_double_2__v_depth", _wrap_ArrayAd_double_2__v_depth, METH_VARARGS, (char *)"\n"
+		"\n"
+		"int FullPhysics::ArrayAd< T, D >::depth() const\n"
+		"\n"
+		""},
+	 { (char *)"ArrayAd_double_2__v_is_constant", _wrap_ArrayAd_double_2__v_is_constant, METH_VARARGS, (char *)"\n"
+		"\n"
+		"bool FullPhysics::ArrayAd< T, D >::is_constant() const\n"
+		"\n"
+		""},
+	 { (char *)"ArrayAd_double_2__v_number_variable", _wrap_ArrayAd_double_2__v_number_variable, METH_VARARGS, (char *)"\n"
+		"\n"
+		"int FullPhysics::ArrayAd< T, D >::number_variable() const\n"
+		"\n"
+		""},
+	 { (char *)"ArrayAd_double_2_reference", _wrap_ArrayAd_double_2_reference, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::ArrayAd< T, D >::reference(const ArrayAd< T, D > &V)\n"
+		"\n"
+		""},
+	 { (char *)"ArrayAd_double_2_copy", _wrap_ArrayAd_double_2_copy, METH_VARARGS, (char *)"\n"
+		"\n"
+		"ArrayAd<T, D> FullPhysics::ArrayAd< T, D >::copy() const\n"
+		"\n"
+		""},
 	 { (char *)"ArrayAd_double_2_read", _wrap_ArrayAd_double_2_read, METH_VARARGS, NULL},
 	 { (char *)"ArrayAd_double_2_write", _wrap_ArrayAd_double_2_write, METH_VARARGS, NULL},
 	 { (char *)"delete_ArrayAd_double_2", _wrap_delete_ArrayAd_double_2, METH_VARARGS, NULL},
 	 { (char *)"ArrayAd_double_2_swigregister", ArrayAd_double_2_swigregister, METH_VARARGS, NULL},
-	 { (char *)"new_ArrayAd_double_3", _wrap_new_ArrayAd_double_3, METH_VARARGS, NULL},
-	 { (char *)"ArrayAd_double_3_resize_number_variable", _wrap_ArrayAd_double_3_resize_number_variable, METH_VARARGS, NULL},
-	 { (char *)"ArrayAd_double_3_resize", _wrap_ArrayAd_double_3_resize, METH_VARARGS, NULL},
-	 { (char *)"ArrayAd_double_3__v_value", _wrap_ArrayAd_double_3__v_value, METH_VARARGS, NULL},
-	 { (char *)"ArrayAd_double_3__v_jacobian", _wrap_ArrayAd_double_3__v_jacobian, METH_VARARGS, NULL},
-	 { (char *)"ArrayAd_double_3__v_rows", _wrap_ArrayAd_double_3__v_rows, METH_VARARGS, NULL},
-	 { (char *)"ArrayAd_double_3__v_cols", _wrap_ArrayAd_double_3__v_cols, METH_VARARGS, NULL},
-	 { (char *)"ArrayAd_double_3__v_depth", _wrap_ArrayAd_double_3__v_depth, METH_VARARGS, NULL},
-	 { (char *)"ArrayAd_double_3__v_is_constant", _wrap_ArrayAd_double_3__v_is_constant, METH_VARARGS, NULL},
-	 { (char *)"ArrayAd_double_3__v_number_variable", _wrap_ArrayAd_double_3__v_number_variable, METH_VARARGS, NULL},
-	 { (char *)"ArrayAd_double_3_reference", _wrap_ArrayAd_double_3_reference, METH_VARARGS, NULL},
-	 { (char *)"ArrayAd_double_3_copy", _wrap_ArrayAd_double_3_copy, METH_VARARGS, NULL},
+	 { (char *)"new_ArrayAd_double_3", _wrap_new_ArrayAd_double_3, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::ArrayAd< T, D >::ArrayAd(const blitz::TinyVector< int, D > &Shape, int nvar)\n"
+		"\n"
+		""},
+	 { (char *)"ArrayAd_double_3_resize_number_variable", _wrap_ArrayAd_double_3_resize_number_variable, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::ArrayAd< T, D >::resize_number_variable(int nvar)\n"
+		"\n"
+		""},
+	 { (char *)"ArrayAd_double_3_resize", _wrap_ArrayAd_double_3_resize, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::ArrayAd< T, D >::resize(int n1, int n2, int n3, int n4, int n5, int nvar)\n"
+		"\n"
+		""},
+	 { (char *)"ArrayAd_double_3__v_value", _wrap_ArrayAd_double_3__v_value, METH_VARARGS, (char *)"\n"
+		"\n"
+		"blitz::Array<T, D>& FullPhysics::ArrayAd< T, D >::value()\n"
+		"\n"
+		""},
+	 { (char *)"ArrayAd_double_3__v_jacobian", _wrap_ArrayAd_double_3__v_jacobian, METH_VARARGS, (char *)"\n"
+		"\n"
+		"blitz::Array<T, D+1>& FullPhysics::ArrayAd< T, D >::jacobian()\n"
+		"\n"
+		""},
+	 { (char *)"ArrayAd_double_3__v_rows", _wrap_ArrayAd_double_3__v_rows, METH_VARARGS, (char *)"\n"
+		"\n"
+		"int FullPhysics::ArrayAd< T, D >::rows() const\n"
+		"\n"
+		""},
+	 { (char *)"ArrayAd_double_3__v_cols", _wrap_ArrayAd_double_3__v_cols, METH_VARARGS, (char *)"\n"
+		"\n"
+		"int FullPhysics::ArrayAd< T, D >::cols() const\n"
+		"\n"
+		""},
+	 { (char *)"ArrayAd_double_3__v_depth", _wrap_ArrayAd_double_3__v_depth, METH_VARARGS, (char *)"\n"
+		"\n"
+		"int FullPhysics::ArrayAd< T, D >::depth() const\n"
+		"\n"
+		""},
+	 { (char *)"ArrayAd_double_3__v_is_constant", _wrap_ArrayAd_double_3__v_is_constant, METH_VARARGS, (char *)"\n"
+		"\n"
+		"bool FullPhysics::ArrayAd< T, D >::is_constant() const\n"
+		"\n"
+		""},
+	 { (char *)"ArrayAd_double_3__v_number_variable", _wrap_ArrayAd_double_3__v_number_variable, METH_VARARGS, (char *)"\n"
+		"\n"
+		"int FullPhysics::ArrayAd< T, D >::number_variable() const\n"
+		"\n"
+		""},
+	 { (char *)"ArrayAd_double_3_reference", _wrap_ArrayAd_double_3_reference, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::ArrayAd< T, D >::reference(const ArrayAd< T, D > &V)\n"
+		"\n"
+		""},
+	 { (char *)"ArrayAd_double_3_copy", _wrap_ArrayAd_double_3_copy, METH_VARARGS, (char *)"\n"
+		"\n"
+		"ArrayAd<T, D> FullPhysics::ArrayAd< T, D >::copy() const\n"
+		"\n"
+		""},
 	 { (char *)"ArrayAd_double_3_read", _wrap_ArrayAd_double_3_read, METH_VARARGS, NULL},
 	 { (char *)"ArrayAd_double_3_write", _wrap_ArrayAd_double_3_write, METH_VARARGS, NULL},
 	 { (char *)"delete_ArrayAd_double_3", _wrap_delete_ArrayAd_double_3, METH_VARARGS, NULL},
 	 { (char *)"ArrayAd_double_3_swigregister", ArrayAd_double_3_swigregister, METH_VARARGS, NULL},
-	 { (char *)"new_ArrayAd_double_4", _wrap_new_ArrayAd_double_4, METH_VARARGS, NULL},
-	 { (char *)"ArrayAd_double_4_resize_number_variable", _wrap_ArrayAd_double_4_resize_number_variable, METH_VARARGS, NULL},
-	 { (char *)"ArrayAd_double_4_resize", _wrap_ArrayAd_double_4_resize, METH_VARARGS, NULL},
-	 { (char *)"ArrayAd_double_4__v_value", _wrap_ArrayAd_double_4__v_value, METH_VARARGS, NULL},
-	 { (char *)"ArrayAd_double_4__v_jacobian", _wrap_ArrayAd_double_4__v_jacobian, METH_VARARGS, NULL},
-	 { (char *)"ArrayAd_double_4__v_rows", _wrap_ArrayAd_double_4__v_rows, METH_VARARGS, NULL},
-	 { (char *)"ArrayAd_double_4__v_cols", _wrap_ArrayAd_double_4__v_cols, METH_VARARGS, NULL},
-	 { (char *)"ArrayAd_double_4__v_depth", _wrap_ArrayAd_double_4__v_depth, METH_VARARGS, NULL},
-	 { (char *)"ArrayAd_double_4__v_is_constant", _wrap_ArrayAd_double_4__v_is_constant, METH_VARARGS, NULL},
-	 { (char *)"ArrayAd_double_4__v_number_variable", _wrap_ArrayAd_double_4__v_number_variable, METH_VARARGS, NULL},
-	 { (char *)"ArrayAd_double_4_reference", _wrap_ArrayAd_double_4_reference, METH_VARARGS, NULL},
-	 { (char *)"ArrayAd_double_4_copy", _wrap_ArrayAd_double_4_copy, METH_VARARGS, NULL},
+	 { (char *)"new_ArrayAd_double_4", _wrap_new_ArrayAd_double_4, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::ArrayAd< T, D >::ArrayAd(const blitz::TinyVector< int, D > &Shape, int nvar)\n"
+		"\n"
+		""},
+	 { (char *)"ArrayAd_double_4_resize_number_variable", _wrap_ArrayAd_double_4_resize_number_variable, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::ArrayAd< T, D >::resize_number_variable(int nvar)\n"
+		"\n"
+		""},
+	 { (char *)"ArrayAd_double_4_resize", _wrap_ArrayAd_double_4_resize, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::ArrayAd< T, D >::resize(int n1, int n2, int n3, int n4, int n5, int nvar)\n"
+		"\n"
+		""},
+	 { (char *)"ArrayAd_double_4__v_value", _wrap_ArrayAd_double_4__v_value, METH_VARARGS, (char *)"\n"
+		"\n"
+		"blitz::Array<T, D>& FullPhysics::ArrayAd< T, D >::value()\n"
+		"\n"
+		""},
+	 { (char *)"ArrayAd_double_4__v_jacobian", _wrap_ArrayAd_double_4__v_jacobian, METH_VARARGS, (char *)"\n"
+		"\n"
+		"blitz::Array<T, D+1>& FullPhysics::ArrayAd< T, D >::jacobian()\n"
+		"\n"
+		""},
+	 { (char *)"ArrayAd_double_4__v_rows", _wrap_ArrayAd_double_4__v_rows, METH_VARARGS, (char *)"\n"
+		"\n"
+		"int FullPhysics::ArrayAd< T, D >::rows() const\n"
+		"\n"
+		""},
+	 { (char *)"ArrayAd_double_4__v_cols", _wrap_ArrayAd_double_4__v_cols, METH_VARARGS, (char *)"\n"
+		"\n"
+		"int FullPhysics::ArrayAd< T, D >::cols() const\n"
+		"\n"
+		""},
+	 { (char *)"ArrayAd_double_4__v_depth", _wrap_ArrayAd_double_4__v_depth, METH_VARARGS, (char *)"\n"
+		"\n"
+		"int FullPhysics::ArrayAd< T, D >::depth() const\n"
+		"\n"
+		""},
+	 { (char *)"ArrayAd_double_4__v_is_constant", _wrap_ArrayAd_double_4__v_is_constant, METH_VARARGS, (char *)"\n"
+		"\n"
+		"bool FullPhysics::ArrayAd< T, D >::is_constant() const\n"
+		"\n"
+		""},
+	 { (char *)"ArrayAd_double_4__v_number_variable", _wrap_ArrayAd_double_4__v_number_variable, METH_VARARGS, (char *)"\n"
+		"\n"
+		"int FullPhysics::ArrayAd< T, D >::number_variable() const\n"
+		"\n"
+		""},
+	 { (char *)"ArrayAd_double_4_reference", _wrap_ArrayAd_double_4_reference, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::ArrayAd< T, D >::reference(const ArrayAd< T, D > &V)\n"
+		"\n"
+		""},
+	 { (char *)"ArrayAd_double_4_copy", _wrap_ArrayAd_double_4_copy, METH_VARARGS, (char *)"\n"
+		"\n"
+		"ArrayAd<T, D> FullPhysics::ArrayAd< T, D >::copy() const\n"
+		"\n"
+		""},
 	 { (char *)"ArrayAd_double_4_read", _wrap_ArrayAd_double_4_read, METH_VARARGS, NULL},
 	 { (char *)"ArrayAd_double_4_write", _wrap_ArrayAd_double_4_write, METH_VARARGS, NULL},
 	 { (char *)"delete_ArrayAd_double_4", _wrap_delete_ArrayAd_double_4, METH_VARARGS, NULL},

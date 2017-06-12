@@ -6637,12 +6637,38 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"SwigPyIterator___sub__", _wrap_SwigPyIterator___sub__, METH_VARARGS, NULL},
 	 { (char *)"SwigPyIterator_swigregister", SwigPyIterator_swigregister, METH_VARARGS, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"delete_RadiativeTransferFixedStokesCoefficient", _wrap_delete_RadiativeTransferFixedStokesCoefficient, METH_VARARGS, NULL},
-	 { (char *)"RadiativeTransferFixedStokesCoefficient__v_stokes_coefficient", _wrap_RadiativeTransferFixedStokesCoefficient__v_stokes_coefficient, METH_VARARGS, NULL},
-	 { (char *)"RadiativeTransferFixedStokesCoefficient__v_number_spectrometer", _wrap_RadiativeTransferFixedStokesCoefficient__v_number_spectrometer, METH_VARARGS, NULL},
-	 { (char *)"RadiativeTransferFixedStokesCoefficient_reflectance", _wrap_RadiativeTransferFixedStokesCoefficient_reflectance, METH_VARARGS, NULL},
-	 { (char *)"RadiativeTransferFixedStokesCoefficient_add_observer", _wrap_RadiativeTransferFixedStokesCoefficient_add_observer, METH_VARARGS, NULL},
-	 { (char *)"RadiativeTransferFixedStokesCoefficient_remove_observer", _wrap_RadiativeTransferFixedStokesCoefficient_remove_observer, METH_VARARGS, NULL},
+	 { (char *)"delete_RadiativeTransferFixedStokesCoefficient", _wrap_delete_RadiativeTransferFixedStokesCoefficient, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::RadiativeTransferFixedStokesCoefficient::~RadiativeTransferFixedStokesCoefficient()\n"
+		"\n"
+		""},
+	 { (char *)"RadiativeTransferFixedStokesCoefficient__v_stokes_coefficient", _wrap_RadiativeTransferFixedStokesCoefficient__v_stokes_coefficient, METH_VARARGS, (char *)"\n"
+		"\n"
+		"const boost::shared_ptr<StokesCoefficient>& FullPhysics::RadiativeTransferFixedStokesCoefficient::stokes_coefficient() const\n"
+		"Stokes coefficients used to go from Stokes vector to scalar\n"
+		"reflectance. \n"
+		""},
+	 { (char *)"RadiativeTransferFixedStokesCoefficient__v_number_spectrometer", _wrap_RadiativeTransferFixedStokesCoefficient__v_number_spectrometer, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual int FullPhysics::RadiativeTransferFixedStokesCoefficient::number_spectrometer() const\n"
+		"Number of spectrometer we have. \n"
+		""},
+	 { (char *)"RadiativeTransferFixedStokesCoefficient_reflectance", _wrap_RadiativeTransferFixedStokesCoefficient_reflectance, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual Spectrum FullPhysics::RadiativeTransferFixedStokesCoefficient::reflectance(const SpectralDomain &Spec_domain, int Spec_index, bool\n"
+		"Skip_jacobian=false) const\n"
+		"\n"
+		""},
+	 { (char *)"RadiativeTransferFixedStokesCoefficient_add_observer", _wrap_RadiativeTransferFixedStokesCoefficient_add_observer, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::RadiativeTransferFixedStokesCoefficient::add_observer(Observer< std::vector< boost::shared_ptr< NamedSpectrum > > > &Obs)\n"
+		"Required observable functions. \n"
+		""},
+	 { (char *)"RadiativeTransferFixedStokesCoefficient_remove_observer", _wrap_RadiativeTransferFixedStokesCoefficient_remove_observer, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::RadiativeTransferFixedStokesCoefficient::remove_observer(Observer< std::vector< boost::shared_ptr< NamedSpectrum > > > &Obs)\n"
+		"\n"
+		""},
 	 { (char *)"RadiativeTransferFixedStokesCoefficient_swigregister", RadiativeTransferFixedStokesCoefficient_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };

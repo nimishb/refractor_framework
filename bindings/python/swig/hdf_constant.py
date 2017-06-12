@@ -123,6 +123,12 @@ def _new_from_set(cls, version, *args):
 import full_physics_swig.constant
 import full_physics_swig.generic_object
 class HdfConstant(full_physics_swig.constant.Constant):
+    """
+
+    C++ includes: hdf_constant.h
+
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.constant.Constant]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -134,6 +140,11 @@ class HdfConstant(full_physics_swig.constant.Constant):
     __repr__ = _swig_repr
 
     def __init__(self, Hdf_file):
+        """
+
+        FullPhysics::HdfConstant::HdfConstant(const boost::shared_ptr< HdfFile > &Hdf_file)
+
+        """
         this = _hdf_constant.new_HdfConstant(Hdf_file)
         try:
             self.this.append(this)
@@ -141,22 +152,64 @@ class HdfConstant(full_physics_swig.constant.Constant):
             self.this = this
 
     def _v_rayleigh_depolarization_factor(self):
+        """
+
+        virtual double FullPhysics::HdfConstant::rayleigh_depolarization_factor() const
+        Rayleigh depolarization factor. 
+        """
         return _hdf_constant.HdfConstant__v_rayleigh_depolarization_factor(self)
 
+
     def _v_rayleigh_a(self):
+        """
+
+        virtual DoubleWithUnit FullPhysics::HdfConstant::rayleigh_a() const
+        Rayleigh "a" value.
+
+        This along with "b" are the wavelength dependence coefficients for
+        the refractive index. 
+        """
         return _hdf_constant.HdfConstant__v_rayleigh_a(self)
 
+
     def _v_rayleigh_b(self):
+        """
+
+        virtual DoubleWithUnit FullPhysics::HdfConstant::rayleigh_b() const
+        Rayleigh "b" value.
+
+        This along with "a" are the wavelength dependence coefficients for
+        the refractive index. 
+        """
         return _hdf_constant.HdfConstant__v_rayleigh_b(self)
 
+
     def _v_molar_weight_dry_air(self):
+        """
+
+        virtual DoubleWithUnit FullPhysics::HdfConstant::molar_weight_dry_air() const
+        Molar weight of dry air. 
+        """
         return _hdf_constant.HdfConstant__v_molar_weight_dry_air(self)
 
+
     def _v_molar_weight_water(self):
+        """
+
+        virtual DoubleWithUnit FullPhysics::HdfConstant::molar_weight_water() const
+        Molar weight of water. 
+        """
         return _hdf_constant.HdfConstant__v_molar_weight_water(self)
 
+
     def _v_avogadro_constant(self):
+        """
+
+        virtual DoubleWithUnit FullPhysics::HdfConstant::avogadro_constant() const
+        Avogadro constant. 
+        """
         return _hdf_constant.HdfConstant__v_avogadro_constant(self)
+
     __swig_destroy__ = _hdf_constant.delete_HdfConstant
     __del__ = lambda self: None
 HdfConstant_swigregister = _hdf_constant.HdfConstant_swigregister

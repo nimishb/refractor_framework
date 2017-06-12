@@ -7201,14 +7201,45 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"SubStateVectorArrayStokesCoefficient__v_statevector_covariance", _wrap_SubStateVectorArrayStokesCoefficient__v_statevector_covariance, METH_VARARGS, NULL},
 	 { (char *)"SubStateVectorArrayStokesCoefficient__v_pressure", _wrap_SubStateVectorArrayStokesCoefficient__v_pressure, METH_VARARGS, NULL},
 	 { (char *)"SubStateVectorArrayStokesCoefficient_swigregister", SubStateVectorArrayStokesCoefficient_swigregister, METH_VARARGS, NULL},
-	 { (char *)"delete_StokesCoefficientImpBase", _wrap_delete_StokesCoefficientImpBase, METH_VARARGS, NULL},
-	 { (char *)"StokesCoefficientImpBase_clone", _wrap_StokesCoefficientImpBase_clone, METH_VARARGS, NULL},
-	 { (char *)"StokesCoefficientImpBase__v_stokes_coefficient", _wrap_StokesCoefficientImpBase__v_stokes_coefficient, METH_VARARGS, NULL},
+	 { (char *)"delete_StokesCoefficientImpBase", _wrap_delete_StokesCoefficientImpBase, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::StokesCoefficientImpBase::~StokesCoefficientImpBase()\n"
+		"\n"
+		""},
+	 { (char *)"StokesCoefficientImpBase_clone", _wrap_StokesCoefficientImpBase_clone, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual boost::shared_ptr<StokesCoefficient> FullPhysics::StokesCoefficientImpBase::clone() const =0\n"
+		"\n"
+		""},
+	 { (char *)"StokesCoefficientImpBase__v_stokes_coefficient", _wrap_StokesCoefficientImpBase__v_stokes_coefficient, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual ArrayAd<double, 2> FullPhysics::StokesCoefficientImpBase::stokes_coefficient() const\n"
+		"\n"
+		""},
 	 { (char *)"StokesCoefficientImpBase_add_observer", _wrap_StokesCoefficientImpBase_add_observer, METH_VARARGS, NULL},
 	 { (char *)"StokesCoefficientImpBase_remove_observer", _wrap_StokesCoefficientImpBase_remove_observer, METH_VARARGS, NULL},
-	 { (char *)"StokesCoefficientImpBase_update_sub_state_hook", _wrap_StokesCoefficientImpBase_update_sub_state_hook, METH_VARARGS, NULL},
-	 { (char *)"StokesCoefficientImpBase_print_desc", _wrap_StokesCoefficientImpBase_print_desc, METH_VARARGS, NULL},
-	 { (char *)"StokesCoefficientImpBase__v_desc", _wrap_StokesCoefficientImpBase__v_desc, METH_VARARGS, NULL},
+	 { (char *)"StokesCoefficientImpBase_update_sub_state_hook", _wrap_StokesCoefficientImpBase_update_sub_state_hook, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::StokesCoefficientImpBase::update_sub_state_hook()\n"
+		"\n"
+		""},
+	 { (char *)"StokesCoefficientImpBase_print_desc", _wrap_StokesCoefficientImpBase_print_desc, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::StokesCoefficientImpBase::print(std::ostream &Os) const\n"
+		"Print to stream.\n"
+		"\n"
+		"The default calls the function \"desc\" that returns a string. This\n"
+		"gives cleaner interface for deriving from this class in python, but\n"
+		"most C++ classes will want to override this function rather than using\n"
+		"desc. \n"
+		""},
+	 { (char *)"StokesCoefficientImpBase__v_desc", _wrap_StokesCoefficientImpBase__v_desc, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual std::string FullPhysics::StokesCoefficientImpBase::desc() const\n"
+		"Description of object, to be printed to stream.\n"
+		"\n"
+		"This gives a cleaner interface for deriving from python. \n"
+		""},
 	 { (char *)"StokesCoefficientImpBase_mark_used", _wrap_StokesCoefficientImpBase_mark_used, METH_VARARGS, NULL},
 	 { (char *)"StokesCoefficientImpBase_state_vector_name", _wrap_StokesCoefficientImpBase_state_vector_name, METH_VARARGS, NULL},
 	 { (char *)"StokesCoefficientImpBase_notify_update", _wrap_StokesCoefficientImpBase_notify_update, METH_VARARGS, NULL},

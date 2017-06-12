@@ -5712,11 +5712,28 @@ SWIGINTERN PyObject *Level1bAcos_swigregister(PyObject *SWIGUNUSEDPARM(self), Py
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"new_Level1bAcos", _wrap_new_Level1bAcos, METH_VARARGS, NULL},
+	 { (char *)"new_Level1bAcos", _wrap_new_Level1bAcos, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::Level1bAcos::Level1bAcos(const boost::shared_ptr< HdfFile > &Hfile, const boost::shared_ptr<\n"
+		"HdfSoundingId > &Sounding_id)\n"
+		"\n"
+		""},
 	 { (char *)"Level1bAcos_radiance", _wrap_Level1bAcos_radiance, METH_VARARGS, NULL},
-	 { (char *)"Level1bAcos_land_fraction", _wrap_Level1bAcos_land_fraction, METH_VARARGS, NULL},
-	 { (char *)"Level1bAcos_is_h_gain", _wrap_Level1bAcos_is_h_gain, METH_VARARGS, NULL},
-	 { (char *)"Level1bAcos_is_m_gain", _wrap_Level1bAcos_is_m_gain, METH_VARARGS, NULL},
+	 { (char *)"Level1bAcos_land_fraction", _wrap_Level1bAcos_land_fraction, METH_VARARGS, (char *)"\n"
+		"\n"
+		"double FullPhysics::Level1bAcos::land_fraction(int spec_index) const\n"
+		"Percentage of land in sounding Field of View. \n"
+		""},
+	 { (char *)"Level1bAcos_is_h_gain", _wrap_Level1bAcos_is_h_gain, METH_VARARGS, (char *)"\n"
+		"\n"
+		"bool FullPhysics::Level1bAcos::is_h_gain() const\n"
+		"True if this is H gain. \n"
+		""},
+	 { (char *)"Level1bAcos_is_m_gain", _wrap_Level1bAcos_is_m_gain, METH_VARARGS, (char *)"\n"
+		"\n"
+		"bool FullPhysics::Level1bAcos::is_m_gain() const\n"
+		"True if this is M gain. \n"
+		""},
 	 { (char *)"delete_Level1bAcos", _wrap_delete_Level1bAcos, METH_VARARGS, NULL},
 	 { (char *)"Level1bAcos_swigregister", Level1bAcos_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }

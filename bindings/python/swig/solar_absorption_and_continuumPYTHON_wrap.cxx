@@ -5428,13 +5428,45 @@ SWIGINTERN PyObject *SolarAbsorptionAndContinuum_swigregister(PyObject *SWIGUNUS
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"delete_SolarAbsorptionAndContinuum", _wrap_delete_SolarAbsorptionAndContinuum, METH_VARARGS, NULL},
-	 { (char *)"new_SolarAbsorptionAndContinuum", _wrap_new_SolarAbsorptionAndContinuum, METH_VARARGS, NULL},
-	 { (char *)"SolarAbsorptionAndContinuum_clone", _wrap_SolarAbsorptionAndContinuum_clone, METH_VARARGS, NULL},
-	 { (char *)"SolarAbsorptionAndContinuum__v_doppler_shift", _wrap_SolarAbsorptionAndContinuum__v_doppler_shift, METH_VARARGS, NULL},
-	 { (char *)"SolarAbsorptionAndContinuum__v_absorption_spectrum", _wrap_SolarAbsorptionAndContinuum__v_absorption_spectrum, METH_VARARGS, NULL},
-	 { (char *)"SolarAbsorptionAndContinuum__v_continuum_spectrum", _wrap_SolarAbsorptionAndContinuum__v_continuum_spectrum, METH_VARARGS, NULL},
-	 { (char *)"SolarAbsorptionAndContinuum_solar_spectrum", _wrap_SolarAbsorptionAndContinuum_solar_spectrum, METH_VARARGS, NULL},
+	 { (char *)"delete_SolarAbsorptionAndContinuum", _wrap_delete_SolarAbsorptionAndContinuum, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::SolarAbsorptionAndContinuum::~SolarAbsorptionAndContinuum()\n"
+		"\n"
+		""},
+	 { (char *)"new_SolarAbsorptionAndContinuum", _wrap_new_SolarAbsorptionAndContinuum, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::SolarAbsorptionAndContinuum::SolarAbsorptionAndContinuum(const boost::shared_ptr< SolarDopplerShift > &doppler_shiftv, const\n"
+		"boost::shared_ptr< SolarAbsorptionSpectrum > &absorption_spectrumv,\n"
+		"const boost::shared_ptr< SolarContinuumSpectrum >\n"
+		"&continuum_spectrumv)\n"
+		"Create a SolarModel that uses the given doppler shift, absorption\n"
+		"spectrum, and continuum spectrum. \n"
+		""},
+	 { (char *)"SolarAbsorptionAndContinuum_clone", _wrap_SolarAbsorptionAndContinuum_clone, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual boost::shared_ptr<SpectrumEffect> FullPhysics::SolarAbsorptionAndContinuum::clone() const\n"
+		"Clone a SolarAbsorptionAndContinuum object. \n"
+		""},
+	 { (char *)"SolarAbsorptionAndContinuum__v_doppler_shift", _wrap_SolarAbsorptionAndContinuum__v_doppler_shift, METH_VARARGS, (char *)"\n"
+		"\n"
+		"const boost::shared_ptr<SolarDopplerShift>& FullPhysics::SolarAbsorptionAndContinuum::doppler_shift_ptr() const\n"
+		"The SolarDopplerShift object used by this class, as a ptr. \n"
+		""},
+	 { (char *)"SolarAbsorptionAndContinuum__v_absorption_spectrum", _wrap_SolarAbsorptionAndContinuum__v_absorption_spectrum, METH_VARARGS, (char *)"\n"
+		"\n"
+		"const boost::shared_ptr<SolarAbsorptionSpectrum>& FullPhysics::SolarAbsorptionAndContinuum::absorption_spectrum_ptr() const\n"
+		"The SolarAbsorptionSpectrum object used by this class, as a ptr. \n"
+		""},
+	 { (char *)"SolarAbsorptionAndContinuum__v_continuum_spectrum", _wrap_SolarAbsorptionAndContinuum__v_continuum_spectrum, METH_VARARGS, (char *)"\n"
+		"\n"
+		"const boost::shared_ptr<SolarContinuumSpectrum>& FullPhysics::SolarAbsorptionAndContinuum::continuum_spectrum_ptr() const\n"
+		"The SolarContinuumSpectrum object used by this class, as a ptr. \n"
+		""},
+	 { (char *)"SolarAbsorptionAndContinuum_solar_spectrum", _wrap_SolarAbsorptionAndContinuum_solar_spectrum, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual Spectrum FullPhysics::SolarAbsorptionAndContinuum::solar_spectrum(const SpectralDomain &Spec_domain) const\n"
+		"\n"
+		""},
 	 { (char *)"SolarAbsorptionAndContinuum_swigregister", SolarAbsorptionAndContinuum_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };

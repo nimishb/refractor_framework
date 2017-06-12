@@ -157,6 +157,30 @@ ObserverAtmosphereOco_swigregister = _atmosphere_oco.ObserverAtmosphereOco_swigr
 ObserverAtmosphereOco_swigregister(ObserverAtmosphereOco)
 
 class AtmosphereOco(full_physics_swig.rt_atmosphere.RtAtmosphere, full_physics_swig.aerosol.ObserverAerosol):
+    """
+
+    This class maintains the atmosphere portion of the state, and uses
+    this to set up the atmosphere and ground information needed to run the
+    Radiative transfer code.
+
+    This particular implementation forwards most of the work to other
+    classes such as Absorber and Aerosol. This class then coordinates
+    these other classes, and provides the calculations needed to set up
+    the RT code.
+
+    For some set ups, aerosol_ptr and/or ground_ptr may be null. For a
+    Rayleigh only atmosphere, we don't have any aerosol to include. For up
+    looking (e.g., TCCON FTS), there is no ground portion included in the
+    radiative transfer.
+
+    To speed up the calculation of the Jacobian in LIDORT, we make use of
+    "intermediate" variables instead of directly using state vector
+    variables. A description of this in more detail can be found in
+    doc/LIDORT_Jacobian.pdf
+
+    C++ includes: atmosphere_oco.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.rt_atmosphere.RtAtmosphere, full_physics_swig.aerosol.ObserverAerosol]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -168,6 +192,15 @@ class AtmosphereOco(full_physics_swig.rt_atmosphere.RtAtmosphere, full_physics_s
     __repr__ = _swig_repr
 
     def __init__(self, absorberv, pressurev, temperaturev, aerosolv, rhv, groundv, altv, C):
+        """
+
+        FullPhysics::AtmosphereOco::AtmosphereOco(const boost::shared_ptr< Absorber > &absorberv, const
+        boost::shared_ptr< Pressure > &pressurev, const boost::shared_ptr<
+        Temperature > &temperaturev, const boost::shared_ptr< RelativeHumidity
+        > &Rh, const std::vector< boost::shared_ptr< Altitude > > &altv, const
+        boost::shared_ptr< Constant > &C)
+
+        """
         this = _atmosphere_oco.new_AtmosphereOco(absorberv, pressurev, temperaturev, aerosolv, rhv, groundv, altv, C)
         try:
             self.this.append(this)
@@ -175,52 +208,149 @@ class AtmosphereOco(full_physics_swig.rt_atmosphere.RtAtmosphere, full_physics_s
             self.this = this
 
     def notify_add(self, Sv):
+        """
+
+        virtual void FullPhysics::AtmosphereOco::notify_add(StateVector &Sv)
+
+        """
         return _atmosphere_oco.AtmosphereOco_notify_add(self, Sv)
 
+
     def notify_remove(self, Sv):
+        """
+
+        virtual void FullPhysics::AtmosphereOco::notify_remove(StateVector &Sv)
+
+        """
         return _atmosphere_oco.AtmosphereOco_notify_remove(self, Sv)
 
+
     def altitude(self, spec_index):
+        """
+
+        virtual ArrayAdWithUnit<double, 1> FullPhysics::AtmosphereOco::altitude(int spec_index) const
+
+        """
         return _atmosphere_oco.AtmosphereOco_altitude(self, spec_index)
 
+
     def _v_number_spectrometer(self):
+        """
+
+        virtual int FullPhysics::AtmosphereOco::number_spectrometer() const
+
+        """
         return _atmosphere_oco.AtmosphereOco__v_number_spectrometer(self)
 
+
     def _v_number_layer(self):
+        """
+
+        virtual int FullPhysics::AtmosphereOco::number_layer() const
+
+        """
         return _atmosphere_oco.AtmosphereOco__v_number_layer(self)
 
+
     def column_optical_depth(self, wn, spec_index, Gas_name):
+        """
+
+        virtual AutoDerivative<double> FullPhysics::AtmosphereOco::column_optical_depth(double wn, int spec_index, const std::string &Gas_name) const
+
+        """
         return _atmosphere_oco.AtmosphereOco_column_optical_depth(self, wn, spec_index, Gas_name)
 
+
     def optical_depth_wrt_iv(self, *args):
+        """
+
+        virtual ArrayAd<double, 1> FullPhysics::AtmosphereOco::optical_depth_wrt_iv(double wn, int spec_index, const ArrayAd< double, 2 > &iv) const
+
+        """
         return _atmosphere_oco.AtmosphereOco_optical_depth_wrt_iv(self, *args)
 
+
     def single_scattering_albedo_wrt_iv(self, *args):
+        """
+
+        virtual ArrayAd<double, 1> FullPhysics::AtmosphereOco::single_scattering_albedo_wrt_iv(double wn, int spec_index, const ArrayAd< double, 2 > &iv) const
+
+        """
         return _atmosphere_oco.AtmosphereOco_single_scattering_albedo_wrt_iv(self, *args)
 
+
     def scattering_moment_wrt_iv(self, *args):
+        """
+
+        virtual ArrayAd<double, 3> FullPhysics::AtmosphereOco::scattering_moment_wrt_iv(double wn, int spec_index, const ArrayAd< double, 2 > &iv, int
+        nummom=-1, int numscat=-1) const
+
+        """
         return _atmosphere_oco.AtmosphereOco_scattering_moment_wrt_iv(self, *args)
 
+
     def intermediate_variable(self, wn, spec_index):
+        """
+
+        virtual ArrayAd<double, 2> FullPhysics::AtmosphereOco::intermediate_variable(double wn, int spec_index) const
+
+        """
         return _atmosphere_oco.AtmosphereOco_intermediate_variable(self, wn, spec_index)
 
+
     def _v_ground(self):
+        """
+
+        virtual const boost::shared_ptr<Ground> FullPhysics::AtmosphereOco::ground() const
+
+        """
         return _atmosphere_oco.AtmosphereOco__v_ground(self)
 
+
     def _v_uplooking(self):
+        """
+
+        virtual bool FullPhysics::AtmosphereOco::uplooking() const
+
+        """
         return _atmosphere_oco.AtmosphereOco__v_uplooking(self)
 
+
     def notify_update(self, *args):
+        """
+
+        virtual void FullPhysics::AtmosphereOco::notify_update(const Pressure &P)
+
+        """
         return _atmosphere_oco.AtmosphereOco_notify_update(self, *args)
 
+
     def reset_timer(self):
+        """
+
+        virtual void FullPhysics::AtmosphereOco::reset_timer()
+
+        """
         return _atmosphere_oco.AtmosphereOco_reset_timer(self)
 
+
     def _v_timer_info(self):
+        """
+
+        virtual std::string FullPhysics::AtmosphereOco::timer_info() const
+
+        """
         return _atmosphere_oco.AtmosphereOco__v_timer_info(self)
 
+
     def _v_pressure(self):
+        """
+
+        const boost::shared_ptr<Pressure>& FullPhysics::AtmosphereOco::pressure_ptr() const
+
+        """
         return _atmosphere_oco.AtmosphereOco__v_pressure(self)
+
 
     @property
     def pressure(self):
@@ -228,7 +358,13 @@ class AtmosphereOco(full_physics_swig.rt_atmosphere.RtAtmosphere, full_physics_s
 
 
     def _v_absorber(self):
+        """
+
+        const boost::shared_ptr<Absorber>& FullPhysics::AtmosphereOco::absorber_ptr() const
+
+        """
         return _atmosphere_oco.AtmosphereOco__v_absorber(self)
+
 
     @property
     def absorber(self):
@@ -236,7 +372,13 @@ class AtmosphereOco(full_physics_swig.rt_atmosphere.RtAtmosphere, full_physics_s
 
 
     def _v_aerosol(self):
+        """
+
+        const boost::shared_ptr<Aerosol>& FullPhysics::AtmosphereOco::aerosol_ptr() const
+
+        """
         return _atmosphere_oco.AtmosphereOco__v_aerosol(self)
+
 
     @property
     def aerosol(self):
@@ -244,10 +386,22 @@ class AtmosphereOco(full_physics_swig.rt_atmosphere.RtAtmosphere, full_physics_s
 
 
     def set_aerosol(self, new_aerosol, Sv):
+        """
+
+        void FullPhysics::AtmosphereOco::set_aerosol(boost::shared_ptr< Aerosol > &new_aerosol, StateVector &Sv)
+
+        """
         return _atmosphere_oco.AtmosphereOco_set_aerosol(self, new_aerosol, Sv)
 
+
     def _v_temperature(self):
+        """
+
+        const boost::shared_ptr<Temperature>& FullPhysics::AtmosphereOco::temperature_ptr() const
+
+        """
         return _atmosphere_oco.AtmosphereOco__v_temperature(self)
+
 
     @property
     def temperature(self):
@@ -255,7 +409,13 @@ class AtmosphereOco(full_physics_swig.rt_atmosphere.RtAtmosphere, full_physics_s
 
 
     def _v_relative_humidity(self):
+        """
+
+        const boost::shared_ptr<RelativeHumidity>& FullPhysics::AtmosphereOco::relative_humidity_ptr() const
+
+        """
         return _atmosphere_oco.AtmosphereOco__v_relative_humidity(self)
+
 
     @property
     def relative_humidity(self):
@@ -263,7 +423,13 @@ class AtmosphereOco(full_physics_swig.rt_atmosphere.RtAtmosphere, full_physics_s
 
 
     def _v_constant(self):
+        """
+
+        const boost::shared_ptr<Constant>& FullPhysics::AtmosphereOco::constant_ptr() const
+
+        """
         return _atmosphere_oco.AtmosphereOco__v_constant(self)
+
 
     @property
     def constant(self):
@@ -271,7 +437,13 @@ class AtmosphereOco(full_physics_swig.rt_atmosphere.RtAtmosphere, full_physics_s
 
 
     def _v_rayleigh(self):
+        """
+
+        const boost::shared_ptr<Rayleigh>& FullPhysics::AtmosphereOco::rayleigh_ptr() const
+
+        """
         return _atmosphere_oco.AtmosphereOco__v_rayleigh(self)
+
 
     @property
     def rayleigh(self):
@@ -279,7 +451,13 @@ class AtmosphereOco(full_physics_swig.rt_atmosphere.RtAtmosphere, full_physics_s
 
 
     def _v_altitude_obj(self):
+        """
+
+        const boost::shared_ptr<Altitude>& FullPhysics::AtmosphereOco::altitude_ptr(int Spec_index) const
+
+        """
         return _atmosphere_oco.AtmosphereOco__v_altitude_obj(self)
+
 
     @property
     def altitude_obj(self):
@@ -287,10 +465,23 @@ class AtmosphereOco(full_physics_swig.rt_atmosphere.RtAtmosphere, full_physics_s
 
 
     def clone(self):
+        """
+
+        boost::shared_ptr<AtmosphereOco> FullPhysics::AtmosphereOco::clone() const
+
+        """
         return _atmosphere_oco.AtmosphereOco_clone(self)
 
+
     def _v_rayleigh_only_atmosphere(self):
+        """
+
+        bool FullPhysics::AtmosphereOco::rayleigh_only_atmosphere() const
+        Indicate we have rayleigh only atmosphere, i.e., we don't have any
+        aerosol content. 
+        """
         return _atmosphere_oco.AtmosphereOco__v_rayleigh_only_atmosphere(self)
+
 
     @property
     def rayleigh_only_atmosphere(self):
@@ -298,7 +489,13 @@ class AtmosphereOco(full_physics_swig.rt_atmosphere.RtAtmosphere, full_physics_s
 
 
     def set_surface_pressure_for_testing(self, x):
+        """
+
+        void FullPhysics::AtmosphereOco::set_surface_pressure_for_testing(double x)
+
+        """
         return _atmosphere_oco.AtmosphereOco_set_surface_pressure_for_testing(self, x)
+
     __swig_destroy__ = _atmosphere_oco.delete_AtmosphereOco
     __del__ = lambda self: None
 AtmosphereOco_swigregister = _atmosphere_oco.AtmosphereOco_swigregister

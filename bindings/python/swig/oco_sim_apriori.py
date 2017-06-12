@@ -123,6 +123,14 @@ def _new_from_set(cls, version, *args):
 import full_physics_swig.generic_object
 import full_physics_swig.state_vector
 class OcoSimApriori(full_physics_swig.generic_object.GenericObject):
+    """
+
+    This class is used to calculate a CO2 apriori using the scene file
+    from a OCO simulator run.
+
+    C++ includes: oco_sim_apriori.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.generic_object.GenericObject]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -134,6 +142,11 @@ class OcoSimApriori(full_physics_swig.generic_object.GenericObject):
     __repr__ = _swig_repr
 
     def __init__(self, Oco_sim_scene, Sid):
+        """
+
+        FullPhysics::OcoSimApriori::OcoSimApriori(const std::string &Oco_sim_scene, const HdfSoundingId &Sid)
+
+        """
         this = _oco_sim_apriori.new_OcoSimApriori(Oco_sim_scene, Sid)
         try:
             self.this.append(this)
@@ -141,10 +154,22 @@ class OcoSimApriori(full_physics_swig.generic_object.GenericObject):
             self.this = this
 
     def co2_vmr(self, P):
+        """
+
+        double FullPhysics::OcoSimApriori::co2_vmr(double P) const
+
+        """
         return _oco_sim_apriori.OcoSimApriori_co2_vmr(self, P)
 
+
     def co2_vmr_grid(self, P):
+        """
+
+        blitz::Array<double, 1> FullPhysics::OcoSimApriori::co2_vmr_grid(const Pressure &P) const
+
+        """
         return _oco_sim_apriori.OcoSimApriori_co2_vmr_grid(self, P)
+
 
     def __str__(self):
         return _oco_sim_apriori.OcoSimApriori___str__(self)

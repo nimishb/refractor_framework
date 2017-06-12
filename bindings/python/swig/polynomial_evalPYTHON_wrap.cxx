@@ -5291,7 +5291,12 @@ SWIGINTERN PyObject *Poly1d_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObjec
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"new_Poly1d", _wrap_new_Poly1d, METH_VARARGS, NULL},
+	 { (char *)"new_Poly1d", _wrap_new_Poly1d, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::Poly1d::Poly1d(const ArrayAd< double, 1 > &Coefficients, const bool\n"
+		"Decreasing_order=true)\n"
+		"The polynomial's coefficients, in decreasing powers. \n"
+		""},
 	 { (char *)"Poly1d___call__", _wrap_Poly1d___call__, METH_VARARGS, NULL},
 	 { (char *)"Poly1d___str__", _wrap_Poly1d___str__, METH_VARARGS, NULL},
 	 { (char *)"delete_Poly1d", _wrap_delete_Poly1d, METH_VARARGS, NULL},

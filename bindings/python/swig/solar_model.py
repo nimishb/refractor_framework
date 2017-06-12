@@ -188,6 +188,14 @@ import full_physics_swig.spectrum_effect
 import full_physics_swig.generic_object
 import full_physics_swig.state_vector
 class SolarModel(full_physics_swig.spectrum_effect.SpectrumEffect):
+    """
+
+    This applies a solar model to reflectance to model the incoming solar
+    irradiance.
+
+    C++ includes: solar_model.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.spectrum_effect.SpectrumEffect]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -204,13 +212,43 @@ class SolarModel(full_physics_swig.spectrum_effect.SpectrumEffect):
     __del__ = lambda self: None
 
     def apply_solar_model(self, Spec):
+        """
+
+        virtual Spectrum FullPhysics::SolarModel::apply_solar_model(const Spectrum &Spec) const
+
+        """
         return _solar_model.SolarModel_apply_solar_model(self, Spec)
 
+
     def solar_spectrum(self, Spec_domain):
+        """
+
+        virtual Spectrum FullPhysics::SolarModel::solar_spectrum(const SpectralDomain &Spec_domain) const =0
+        Calculate solar spectrum.
+
+        Parameters:
+        -----------
+
+        Spec_domain:  Wavenumber/Wavelength reflectance is given
+
+        Solar spectrum. This should have units commensurate with something
+        like W / m^2 / cm^-1.  Note that the wavenumber/frequency are in the
+        earth rest frame. The solar model may need to work in the solar rest
+        frame, bu the conversion to this is internal. The input and output
+        from this function should be in the earth rest frame. 
+        """
         return _solar_model.SolarModel_solar_spectrum(self, Spec_domain)
 
+
     def apply_effect(self, Spec, Forward_model_grid):
+        """
+
+        virtual void FullPhysics::SolarModel::apply_effect(Spectrum &Spec, const ForwardModelSpectralGrid &Forward_model_grid)
+        const
+
+        """
         return _solar_model.SolarModel_apply_effect(self, Spec, Forward_model_grid)
+
 SolarModel_swigregister = _solar_model.SolarModel_swigregister
 SolarModel_swigregister(SolarModel)
 

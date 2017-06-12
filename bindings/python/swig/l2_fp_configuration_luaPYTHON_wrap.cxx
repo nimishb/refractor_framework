@@ -5966,11 +5966,33 @@ SWIGINTERN PyObject *L2FpConfigurationLua_swigregister(PyObject *SWIGUNUSEDPARM(
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"new_L2FpConfigurationLua", _wrap_new_L2FpConfigurationLua, METH_VARARGS, NULL},
-	 { (char *)"L2FpConfigurationLua__v_lua_state", _wrap_L2FpConfigurationLua__v_lua_state, METH_VARARGS, NULL},
-	 { (char *)"L2FpConfigurationLua__v_output_name", _wrap_L2FpConfigurationLua__v_output_name, METH_VARARGS, NULL},
-	 { (char *)"L2FpConfigurationLua_output", _wrap_L2FpConfigurationLua_output, METH_VARARGS, NULL},
-	 { (char *)"delete_L2FpConfigurationLua", _wrap_delete_L2FpConfigurationLua, METH_VARARGS, NULL},
+	 { (char *)"new_L2FpConfigurationLua", _wrap_new_L2FpConfigurationLua, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::L2FpConfigurationLua::L2FpConfigurationLua(int Argc, char **Argv)\n"
+		"Parse the arguments passed to the executable to set up configuration.\n"
+		"\n"
+		""},
+	 { (char *)"L2FpConfigurationLua__v_lua_state", _wrap_L2FpConfigurationLua__v_lua_state, METH_VARARGS, (char *)"\n"
+		"\n"
+		"LuaState& FullPhysics::L2FpConfigurationLua::lua_state()\n"
+		"\n"
+		""},
+	 { (char *)"L2FpConfigurationLua__v_output_name", _wrap_L2FpConfigurationLua__v_output_name, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::L2FpConfigurationLua::output_name(const std::string &F)\n"
+		"\n"
+		""},
+	 { (char *)"L2FpConfigurationLua_output", _wrap_L2FpConfigurationLua_output, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::L2FpConfigurationLua::output(boost::shared_ptr< Output > &Regular_output, boost::shared_ptr<\n"
+		"Output > &Error_output) const\n"
+		"\n"
+		""},
+	 { (char *)"delete_L2FpConfigurationLua", _wrap_delete_L2FpConfigurationLua, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::L2FpConfigurationLua::~L2FpConfigurationLua()\n"
+		"\n"
+		""},
 	 { (char *)"L2FpConfigurationLua_swigregister", L2FpConfigurationLua_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };

@@ -123,6 +123,21 @@ def _new_from_set(cls, version, *args):
 import full_physics_swig.problem_state
 import full_physics_swig.generic_object
 class CostFunc(full_physics_swig.problem_state.ProblemState):
+    """
+
+    The base class for all problem classes that implement a cost function.
+
+    The class CostFunc is the base class for all problem classes that
+    implement a cost function (a scalar real function with a range that
+    never includes negative numbers).
+
+    A cost function only (without derivatives of any order) can be
+    optimized by methods such as the Sampling Method that do not require
+    derivatives of any order.
+
+    C++ includes: cost_func.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.problem_state.ProblemState]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -139,13 +154,55 @@ class CostFunc(full_physics_swig.problem_state.ProblemState):
     __del__ = lambda self: None
 
     def cost(self):
+        """
+
+        virtual double FullPhysics::CostFunc::cost()=0
+        The cost function.
+
+        This method must be implemented by the classes derived from this
+        class.
+
+        The parameters (the point in the parameter space) must have already
+        been set before calling this method. The parameters are already set if
+        parameters() method (see ProblemState class) or cost_x() method are
+        already called successfully. If the parameters are already set, then
+        this method returns the value of the cost function at the current set
+        point.
+
+        Cost function value 
+        """
         return _cost_func.CostFunc_cost(self)
 
+
     def cost_x(self, x):
+        """
+
+        virtual double FullPhysics::CostFunc::cost_x(const blitz::Array< double, 1 > &x)
+        The cost function with parameters.
+
+        This method also evaluates the cost function; however, it sets the
+        problem at the input new point and then evaluates the cost function.
+
+        Parameters:
+        -----------
+
+        x:  New set of parameters
+
+        Cost function value 
+        """
         return _cost_func.CostFunc_cost_x(self, x)
 
+
     def _v_num_cost_evaluations(self):
+        """
+
+        virtual int FullPhysics::CostFunc::num_cost_evaluations() const
+        Returns the number of the times cost has been evaluated.
+
+        The number of the times cost has been evaluated. 
+        """
         return _cost_func.CostFunc__v_num_cost_evaluations(self)
+
 
     @property
     def num_cost_evaluations(self):
@@ -153,7 +210,13 @@ class CostFunc(full_physics_swig.problem_state.ProblemState):
 
 
     def zero_num_evaluations(self):
+        """
+
+        virtual void FullPhysics::CostFunc::zero_num_evaluations()
+        Sets cost evaluation counter to zero. 
+        """
         return _cost_func.CostFunc_zero_num_evaluations(self)
+
 CostFunc_swigregister = _cost_func.CostFunc_swigregister
 CostFunc_swigregister(CostFunc)
 

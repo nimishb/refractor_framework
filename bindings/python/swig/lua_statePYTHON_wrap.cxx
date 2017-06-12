@@ -5545,14 +5545,42 @@ SWIGINTERN PyObject *LuaState_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObj
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"new_LuaState", _wrap_new_LuaState, METH_VARARGS, NULL},
+	 { (char *)"new_LuaState", _wrap_new_LuaState, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::LuaState::LuaState(const std::string &Dir_name=\"./\")\n"
+		"\n"
+		""},
 	 { (char *)"LuaState___str__", _wrap_LuaState___str__, METH_VARARGS, NULL},
-	 { (char *)"LuaState_load_file", _wrap_LuaState_load_file, METH_VARARGS, NULL},
-	 { (char *)"LuaState_do_file", _wrap_LuaState_do_file, METH_VARARGS, NULL},
-	 { (char *)"LuaState_run", _wrap_LuaState_run, METH_VARARGS, NULL},
-	 { (char *)"LuaState__v_globals", _wrap_LuaState__v_globals, METH_VARARGS, NULL},
-	 { (char *)"LuaState__v_registry", _wrap_LuaState__v_registry, METH_VARARGS, NULL},
-	 { (char *)"delete_LuaState", _wrap_delete_LuaState, METH_VARARGS, NULL},
+	 { (char *)"LuaState_load_file", _wrap_LuaState_load_file, METH_VARARGS, (char *)"\n"
+		"\n"
+		"static boost::shared_ptr<LuaState> FullPhysics::LuaState::load_file(const std::string &Fname)\n"
+		"\n"
+		""},
+	 { (char *)"LuaState_do_file", _wrap_LuaState_do_file, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::LuaState::do_file(const std::string &Fname)\n"
+		"\n"
+		""},
+	 { (char *)"LuaState_run", _wrap_LuaState_run, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::LuaState::run(const std::string &S)\n"
+		"\n"
+		""},
+	 { (char *)"LuaState__v_globals", _wrap_LuaState__v_globals, METH_VARARGS, (char *)"\n"
+		"\n"
+		"LuabindObject FullPhysics::LuaState::globals()\n"
+		"\n"
+		""},
+	 { (char *)"LuaState__v_registry", _wrap_LuaState__v_registry, METH_VARARGS, (char *)"\n"
+		"\n"
+		"LuabindObject FullPhysics::LuaState::registry()\n"
+		"\n"
+		""},
+	 { (char *)"delete_LuaState", _wrap_delete_LuaState, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::LuaState::~LuaState()\n"
+		"\n"
+		""},
 	 { (char *)"LuaState_swigregister", LuaState_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };

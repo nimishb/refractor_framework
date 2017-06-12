@@ -6163,13 +6163,58 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"ObserverTemperature_notify_add", _wrap_ObserverTemperature_notify_add, METH_VARARGS, NULL},
 	 { (char *)"ObserverTemperature_notify_remove", _wrap_ObserverTemperature_notify_remove, METH_VARARGS, NULL},
 	 { (char *)"ObserverTemperature_swigregister", ObserverTemperature_swigregister, METH_VARARGS, NULL},
-	 { (char *)"delete_Temperature", _wrap_delete_Temperature, METH_VARARGS, NULL},
-	 { (char *)"Temperature_add_observer", _wrap_Temperature_add_observer, METH_VARARGS, NULL},
-	 { (char *)"Temperature_remove_observer", _wrap_Temperature_remove_observer, METH_VARARGS, NULL},
-	 { (char *)"Temperature__v_important_pressure_level", _wrap_Temperature__v_important_pressure_level, METH_VARARGS, NULL},
-	 { (char *)"Temperature_temperature", _wrap_Temperature_temperature, METH_VARARGS, NULL},
-	 { (char *)"Temperature_temperature_grid", _wrap_Temperature_temperature_grid, METH_VARARGS, NULL},
-	 { (char *)"Temperature_clone", _wrap_Temperature_clone, METH_VARARGS, NULL},
+	 { (char *)"delete_Temperature", _wrap_delete_Temperature, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::Temperature::~Temperature()\n"
+		"\n"
+		""},
+	 { (char *)"Temperature_add_observer", _wrap_Temperature_add_observer, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::Temperature::add_observer(Observer< Temperature > &Obs)\n"
+		"\n"
+		""},
+	 { (char *)"Temperature_remove_observer", _wrap_Temperature_remove_observer, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::Temperature::remove_observer(Observer< Temperature > &Obs)\n"
+		"\n"
+		""},
+	 { (char *)"Temperature__v_important_pressure_level", _wrap_Temperature__v_important_pressure_level, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual ArrayWithUnit<double, 1> FullPhysics::Temperature::important_pressure_level() const\n"
+		"The temperature can vary quickly over a small pressure range, e.g.\n"
+		"\n"
+		"at the tropopause and stratopause. It is important that this structure\n"
+		"is included in anything using the temperature, e.g., the integration\n"
+		"does to calculate the optical depth of a layer in AbsorberAbsco.\n"
+		"\n"
+		"This supplied \"important\" pressures where something interesting in\n"
+		"the temperature may be happening.\n"
+		"\n"
+		"The default is that there are not important pressures, but a derived\n"
+		"class can override this, e.g. give the ECMWF pressure levels. \n"
+		""},
+	 { (char *)"Temperature_temperature", _wrap_Temperature_temperature, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual AutoDerivativeWithUnit<double> FullPhysics::Temperature::temperature(const AutoDerivativeWithUnit< double > &Press) const =0\n"
+		"Return the temperature at the given pressure (in Pascals)\n"
+		"\n"
+		"This is in Kelvin. \n"
+		""},
+	 { (char *)"Temperature_temperature_grid", _wrap_Temperature_temperature_grid, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual ArrayAdWithUnit<double, 1> FullPhysics::Temperature::temperature_grid(const Pressure &P) const\n"
+		"\n"
+		""},
+	 { (char *)"Temperature_clone", _wrap_Temperature_clone, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual boost::shared_ptr<Temperature> FullPhysics::Temperature::clone(const boost::shared_ptr< Pressure > &Press) const =0\n"
+		"This version of clone takes a pressure to use.\n"
+		"\n"
+		"The intent is that the pressure has been cloned from the original\n"
+		"pressure (although this class has no way to verify this). This allows\n"
+		"sets of objects to be cloned using a common Pressure clone, e.g.\n"
+		"Atmosphere. \n"
+		""},
 	 { (char *)"Temperature___str__", _wrap_Temperature___str__, METH_VARARGS, NULL},
 	 { (char *)"Temperature_swigregister", Temperature_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }

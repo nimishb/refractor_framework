@@ -126,6 +126,16 @@ import full_physics_swig.generic_object
 import full_physics_swig.sub_state_vector_array
 import full_physics_swig.absorber_vmr
 class AbsorberVmrLevel(full_physics_swig.absorber_vmr_imp_base.AbsorberVmrImpBase):
+    """
+
+    This class maps the state vector to the absorber VMR on each level.
+
+    This particular implementation uses the state vector values as the VMR
+    for each pressure level.
+
+    C++ includes: absorber_vmr_level.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.absorber_vmr_imp_base.AbsorberVmrImpBase]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -137,6 +147,13 @@ class AbsorberVmrLevel(full_physics_swig.absorber_vmr_imp_base.AbsorberVmrImpBas
     __repr__ = _swig_repr
 
     def __init__(self, Press, Vmr, Vmr_flag, Gas_name):
+        """
+
+        FullPhysics::AbsorberVmrLevel::AbsorberVmrLevel(const boost::shared_ptr< Pressure > &Press, const blitz::Array<
+        double, 1 > &Vmr, const blitz::Array< bool, 1 > &Vmr_flag, const
+        std::string &Gas_name)
+
+        """
         this = _absorber_vmr_level.new_AbsorberVmrLevel(Press, Vmr, Vmr_flag, Gas_name)
         try:
             self.this.append(this)
@@ -144,13 +161,33 @@ class AbsorberVmrLevel(full_physics_swig.absorber_vmr_imp_base.AbsorberVmrImpBas
             self.this = this
 
     def clone(self, *args):
+        """
+
+        virtual boost::shared_ptr<AbsorberVmr> FullPhysics::AbsorberVmrLevel::clone(const boost::shared_ptr< Pressure > &Press) const
+
+        """
         return _absorber_vmr_level.AbsorberVmrLevel_clone(self, *args)
 
+
     def state_vector_name_i(self, i):
+        """
+
+        virtual std::string FullPhysics::AbsorberVmrLevel::state_vector_name_i(int i) const
+
+        """
         return _absorber_vmr_level.AbsorberVmrLevel_state_vector_name_i(self, i)
 
+
     def _v_vmr_profile(self):
+        """
+
+        blitz::Array<double, 1> FullPhysics::AbsorberVmrLevel::vmr_profile() const
+        VMR on the pressure grid.
+
+        This is just coeff.value, but this is useful for generating output. 
+        """
         return _absorber_vmr_level.AbsorberVmrLevel__v_vmr_profile(self)
+
 
     @property
     def vmr_profile(self):
@@ -158,7 +195,13 @@ class AbsorberVmrLevel(full_physics_swig.absorber_vmr_imp_base.AbsorberVmrImpBas
 
 
     def _v_vmr_covariance(self):
+        """
+
+        blitz::Array<double, 2> FullPhysics::AbsorberVmrLevel::vmr_covariance() const
+        Covariance of vmr profile. 
+        """
         return _absorber_vmr_level.AbsorberVmrLevel__v_vmr_covariance(self)
+
 
     @property
     def vmr_covariance(self):
@@ -166,7 +209,13 @@ class AbsorberVmrLevel(full_physics_swig.absorber_vmr_imp_base.AbsorberVmrImpBas
 
 
     def _v_vmr_uncertainty(self):
+        """
+
+        blitz::Array<double, 1> FullPhysics::AbsorberVmrLevel::vmr_uncertainty() const
+        Uncertainty of VMR. 
+        """
         return _absorber_vmr_level.AbsorberVmrLevel__v_vmr_uncertainty(self)
+
 
     @property
     def vmr_uncertainty(self):

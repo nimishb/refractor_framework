@@ -123,6 +123,18 @@ def _new_from_set(cls, version, *args):
 import full_physics_swig.hdf_sounding_id
 import full_physics_swig.generic_object
 class AcosSoundingId(full_physics_swig.hdf_sounding_id.HdfSoundingId):
+    """
+
+    This class reads a given file, and extracts out the sounding
+    information.
+
+    This determine the index into the HDF file for the given sounding
+    (referred to as "frame number"), and determines which sounding we
+    are using (s or p), or if we are doing averaging.
+
+    C++ includes: acos_sounding_id.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.hdf_sounding_id.HdfSoundingId]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -138,20 +150,39 @@ class AcosSoundingId(full_physics_swig.hdf_sounding_id.HdfSoundingId):
     __del__ = lambda self: None
 
     def __init__(self, File, Sounding_id, st):
+        """
+
+        FullPhysics::AcosSoundingId::AcosSoundingId(const HdfFile &File, const std::string &Sounding_id, SoundingType
+        Sounding_type)
+
+        """
         this = _acos_sounding_id.new_AcosSoundingId(File, Sounding_id, st)
         try:
             self.this.append(this)
         except Exception:
             self.this = this
-    __swig_getmethods__["create"] = lambda x: _acos_sounding_id.AcosSoundingId_create
+
+    def create(File, Sounding_id):
+        """
+
+        static std::vector<boost::shared_ptr<HdfSoundingId> > FullPhysics::AcosSoundingId::create(const HdfFile &File, const std::string &Sounding_id)
+
+        """
+        return _acos_sounding_id.AcosSoundingId_create(File, Sounding_id)
+
     if _newclass:
-        create = staticmethod(_acos_sounding_id.AcosSoundingId_create)
+        create = staticmethod(create)
+    __swig_getmethods__["create"] = lambda x: create
 AcosSoundingId_swigregister = _acos_sounding_id.AcosSoundingId_swigregister
 AcosSoundingId_swigregister(AcosSoundingId)
 
 def AcosSoundingId_create(File, Sounding_id):
+    """
+
+    static std::vector<boost::shared_ptr<HdfSoundingId> > FullPhysics::AcosSoundingId::create(const HdfFile &File, const std::string &Sounding_id)
+
+    """
     return _acos_sounding_id.AcosSoundingId_create(File, Sounding_id)
-AcosSoundingId_create = _acos_sounding_id.AcosSoundingId_create
 
 # This file is compatible with both classic and new-style classes.
 

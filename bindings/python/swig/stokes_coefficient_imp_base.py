@@ -192,6 +192,30 @@ SubStateVectorArrayStokesCoefficient_swigregister = _stokes_coefficient_imp_base
 SubStateVectorArrayStokesCoefficient_swigregister(SubStateVectorArrayStokesCoefficient)
 
 class StokesCoefficientImpBase(SubStateVectorArrayStokesCoefficient):
+    """
+
+    As a design principle, we have each base class with the absolutely
+    minimum interface needed for use from the rest of the system.
+
+    This allows us to support any future code that supports this minimum
+    interface.
+
+    However, almost always you will want to derive from this class
+    instead. This provides additional functionality that you will almost
+    always want. We support have a subset set of the full StateVector
+    provide coefficients for this class, as well as caching the
+    calculation of the stokes coefficient so we only do the calculation
+    when something has changed (e.g., the StateVector).
+
+    The more general StokesCoefficient interface can be used to support
+    unusual cases that don't match this implementation, for example
+    wrapping an existing third party library that doesn't mesh with how
+    PressureImpBase sets things up. But most of the time, you'll want to
+    derive from this class.
+
+    C++ includes: stokes_coefficient_imp_base.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [SubStateVectorArrayStokesCoefficient]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -208,10 +232,22 @@ class StokesCoefficientImpBase(SubStateVectorArrayStokesCoefficient):
     __del__ = lambda self: None
 
     def clone(self):
+        """
+
+        virtual boost::shared_ptr<StokesCoefficient> FullPhysics::StokesCoefficientImpBase::clone() const =0
+
+        """
         return _stokes_coefficient_imp_base.StokesCoefficientImpBase_clone(self)
 
+
     def _v_stokes_coefficient(self):
+        """
+
+        virtual ArrayAd<double, 2> FullPhysics::StokesCoefficientImpBase::stokes_coefficient() const
+
+        """
         return _stokes_coefficient_imp_base.StokesCoefficientImpBase__v_stokes_coefficient(self)
+
 
     def add_observer(self, Obs):
         return _stokes_coefficient_imp_base.StokesCoefficientImpBase_add_observer(self, Obs)
@@ -220,13 +256,38 @@ class StokesCoefficientImpBase(SubStateVectorArrayStokesCoefficient):
         return _stokes_coefficient_imp_base.StokesCoefficientImpBase_remove_observer(self, Obs)
 
     def update_sub_state_hook(self):
+        """
+
+        virtual void FullPhysics::StokesCoefficientImpBase::update_sub_state_hook()
+
+        """
         return _stokes_coefficient_imp_base.StokesCoefficientImpBase_update_sub_state_hook(self)
 
+
     def print_desc(self, Os):
+        """
+
+        virtual void FullPhysics::StokesCoefficientImpBase::print(std::ostream &Os) const
+        Print to stream.
+
+        The default calls the function "desc" that returns a string. This
+        gives cleaner interface for deriving from this class in python, but
+        most C++ classes will want to override this function rather than using
+        desc. 
+        """
         return _stokes_coefficient_imp_base.StokesCoefficientImpBase_print_desc(self, Os)
 
+
     def _v_desc(self):
+        """
+
+        virtual std::string FullPhysics::StokesCoefficientImpBase::desc() const
+        Description of object, to be printed to stream.
+
+        This gives a cleaner interface for deriving from python. 
+        """
         return _stokes_coefficient_imp_base.StokesCoefficientImpBase__v_desc(self)
+
 
     @property
     def desc(self):

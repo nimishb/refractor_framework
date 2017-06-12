@@ -127,6 +127,14 @@ import full_physics_swig.generic_object
 import full_physics_swig.state_vector
 import full_physics_swig.sub_state_vector_array
 class AerosolShapeGaussian(full_physics_swig.aerosol_extinction_imp_base.AerosolExtinctionImpBase):
+    """
+
+    This class maps the state vector to aerosol extinction defined by a
+    Gaussian parameterization.
+
+    C++ includes: aerosol_shape_gaussian.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.aerosol_extinction_imp_base.AerosolExtinctionImpBase]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -141,10 +149,22 @@ class AerosolShapeGaussian(full_physics_swig.aerosol_extinction_imp_base.Aerosol
     __repr__ = _swig_repr
 
     def clone(self, *args):
+        """
+
+        virtual boost::shared_ptr<AerosolExtinction> FullPhysics::AerosolShapeGaussian::clone(const boost::shared_ptr< Pressure > &P) const
+
+        """
         return _aerosol_shape_gaussian.AerosolShapeGaussian_clone(self, *args)
 
+
     def state_vector_name_i(self, i):
+        """
+
+        virtual std::string FullPhysics::AerosolShapeGaussian::state_vector_name_i(int i) const
+
+        """
         return _aerosol_shape_gaussian.AerosolShapeGaussian_state_vector_name_i(self, i)
+
     __swig_destroy__ = _aerosol_shape_gaussian.delete_AerosolShapeGaussian
     __del__ = lambda self: None
 AerosolShapeGaussian_swigregister = _aerosol_shape_gaussian.AerosolShapeGaussian_swigregister

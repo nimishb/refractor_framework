@@ -123,6 +123,18 @@ def _new_from_set(cls, version, *args):
 import full_physics_swig.problem_state
 import full_physics_swig.generic_object
 class CostFuncState(full_physics_swig.problem_state.ProblemState):
+    """
+
+    The state for a problem that only its cost function is implemented.
+
+    CostFuncState is used for the problems that only their cost functions
+    are implemented. With this class one can store the current point in
+    the parameter space (the state) and the value of the cost function at
+    that point.
+
+    C++ includes: cost_func_state.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.problem_state.ProblemState]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -139,10 +151,34 @@ class CostFuncState(full_physics_swig.problem_state.ProblemState):
     __del__ = lambda self: None
 
     def set(self, s):
+        """
+
+        virtual void FullPhysics::CostFuncState::set(const CostFuncState &s)
+        Makes self a copy of the input state.
+
+        This method makes the object, for which it is called, a copy of the
+        input state.
+
+        Parameters:
+        -----------
+
+        s:  another CostFuncState 
+        """
         return _cost_func_state.CostFuncState_set(self, s)
 
+
     def clear(self):
+        """
+
+        virtual void FullPhysics::CostFuncState::clear()
+        Deletes data contents.
+
+        This method deletes state. If needed, it must be reimplemented by
+        other classes derived from this class to delete other saved components
+        associated with the state as well. 
+        """
         return _cost_func_state.CostFuncState_clear(self)
+
 CostFuncState_swigregister = _cost_func_state.CostFuncState_swigregister
 CostFuncState_swigregister(CostFuncState)
 

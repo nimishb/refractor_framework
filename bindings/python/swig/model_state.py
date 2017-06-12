@@ -123,6 +123,37 @@ def _new_from_set(cls, version, *args):
 import full_physics_swig.problem_state
 import full_physics_swig.generic_object
 class ModelState(full_physics_swig.problem_state.ProblemState):
+    """
+
+    The state for a parametrized mathematical model (a vector function)
+    and its Jacobian.
+
+    This class is used as a state for a mathematical model and not an
+    optimization problem.
+
+    Given NLLSProblemState class it appears thath ModelState is redundant.
+    After all, both classes just are designed to maintain a vector
+    function and its Jacobian. Then why do we have two similar classes
+    that are only different in their names or the names of some of their
+    members?
+
+    A parametrized mathematical model is not an optimization problem by
+    itself; however, it is a component of an optimization problem when we
+    try to fit the model to measured data.
+
+    When a parametrized mathematical model appears in an optimization
+    problem in the form of a Nonlinear Least Squares problem, the vector
+    model function and its Jacobian are not the same as the vector
+    residual function of the NLLS problem and its Jacobian. They are
+    different, and they are very different when we use some statistical
+    analysis method to fit the model to the measured data. In my judgment,
+    emphasizing the differences and avoiding confusion are more important
+    than redundancy in this case; therefore, I implemented ModelState as
+    well as NLLSProblemState.
+
+    C++ includes: model_state.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.problem_state.ProblemState]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -139,10 +170,34 @@ class ModelState(full_physics_swig.problem_state.ProblemState):
     __del__ = lambda self: None
 
     def set(self, s):
+        """
+
+        virtual void FullPhysics::ModelState::set(const ModelState &s)
+        Makes self a copy of the input state.
+
+        This method makes the object, for which it is called, a copy of the
+        input state.
+
+        Parameters:
+        -----------
+
+        s:  another ModelState 
+        """
         return _model_state.ModelState_set(self, s)
 
+
     def clear(self):
+        """
+
+        virtual void FullPhysics::ModelState::clear()
+        Deletes data contents.
+
+        This method deletes state. If needed, it must be reimplemented by
+        other classes derived from this class to delete other saved components
+        associated with the state as well. 
+        """
         return _model_state.ModelState_clear(self)
+
 ModelState_swigregister = _model_state.ModelState_swigregister
 ModelState_swigregister(ModelState)
 

@@ -5627,12 +5627,25 @@ SWIGINTERN PyObject *TemperatureLevelOffset_swigregister(PyObject *SWIGUNUSEDPAR
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"new_TemperatureLevelOffset", _wrap_new_TemperatureLevelOffset, METH_VARARGS, NULL},
-	 { (char *)"TemperatureLevelOffset_clone", _wrap_TemperatureLevelOffset_clone, METH_VARARGS, NULL},
+	 { (char *)"new_TemperatureLevelOffset", _wrap_new_TemperatureLevelOffset, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::TemperatureLevelOffset::TemperatureLevelOffset(const boost::shared_ptr< Pressure > &Press, const blitz::Array<\n"
+		"double, 1 > &Temp_levels, double Temp_offset, bool Temp_flag)\n"
+		"\n"
+		""},
+	 { (char *)"TemperatureLevelOffset_clone", _wrap_TemperatureLevelOffset_clone, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual boost::shared_ptr<Temperature> FullPhysics::TemperatureLevelOffset::clone(const boost::shared_ptr< Pressure > &Press) const\n"
+		"\n"
+		""},
 	 { (char *)"TemperatureLevelOffset_state_vector_name_i", _wrap_TemperatureLevelOffset_state_vector_name_i, METH_VARARGS, NULL},
 	 { (char *)"TemperatureLevelOffset__v_temperature_offset", _wrap_TemperatureLevelOffset__v_temperature_offset, METH_VARARGS, NULL},
 	 { (char *)"TemperatureLevelOffset__v_temperature_offset_uncertainty", _wrap_TemperatureLevelOffset__v_temperature_offset_uncertainty, METH_VARARGS, NULL},
-	 { (char *)"delete_TemperatureLevelOffset", _wrap_delete_TemperatureLevelOffset, METH_VARARGS, NULL},
+	 { (char *)"delete_TemperatureLevelOffset", _wrap_delete_TemperatureLevelOffset, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::TemperatureLevelOffset::~TemperatureLevelOffset()\n"
+		"\n"
+		""},
 	 { (char *)"TemperatureLevelOffset_swigregister", TemperatureLevelOffset_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };

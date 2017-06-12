@@ -127,6 +127,17 @@ import full_physics_swig.generic_object
 import full_physics_swig.sub_state_vector_array
 import full_physics_swig.absorber_vmr
 class AbsorberVmrEcmwf(full_physics_swig.absorber_vmr_scaled.AbsorberVmrScaled):
+    """
+
+    This class maps the state vector to the absorber VMR on each level.
+
+    This particular implementation uses the value from ECMWF file
+    (interpolated to the current pressure grid), along with a scale
+    factor.
+
+    C++ includes: absorber_vmr_ecmwf.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.absorber_vmr_scaled.AbsorberVmrScaled]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -141,7 +152,13 @@ class AbsorberVmrEcmwf(full_physics_swig.absorber_vmr_scaled.AbsorberVmrScaled):
     __repr__ = _swig_repr
 
     def clone(self, Press):
+        """
+
+        virtual boost::shared_ptr<AbsorberVmr> FullPhysics::AbsorberVmrEcmwf::clone(const boost::shared_ptr< Pressure > &Press) const
+
+        """
         return _absorber_vmr_ecmwf.AbsorberVmrEcmwf_clone(self, Press)
+
 
     def _v_scale_factor(self):
         return _absorber_vmr_ecmwf.AbsorberVmrEcmwf__v_scale_factor(self)

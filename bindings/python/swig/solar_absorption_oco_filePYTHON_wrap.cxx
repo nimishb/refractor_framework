@@ -5440,11 +5440,32 @@ SWIGINTERN PyObject *SolarAbsorptionOcoFile_swigregister(PyObject *SWIGUNUSEDPAR
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"new_SolarAbsorptionOcoFile", _wrap_new_SolarAbsorptionOcoFile, METH_VARARGS, NULL},
-	 { (char *)"SolarAbsorptionOcoFile_solar_absorption_spectrum", _wrap_SolarAbsorptionOcoFile_solar_absorption_spectrum, METH_VARARGS, NULL},
-	 { (char *)"SolarAbsorptionOcoFile__v_number_line", _wrap_SolarAbsorptionOcoFile__v_number_line, METH_VARARGS, NULL},
-	 { (char *)"SolarAbsorptionOcoFile__v_fraction_solar_diameter", _wrap_SolarAbsorptionOcoFile__v_fraction_solar_diameter, METH_VARARGS, NULL},
-	 { (char *)"delete_SolarAbsorptionOcoFile", _wrap_delete_SolarAbsorptionOcoFile, METH_VARARGS, NULL},
+	 { (char *)"new_SolarAbsorptionOcoFile", _wrap_new_SolarAbsorptionOcoFile, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::SolarAbsorptionOcoFile::SolarAbsorptionOcoFile(const HdfFile &Hdf_static_input, const std::string &Hdf_group, double\n"
+		"Fraction_solar_diameter=1.0)\n"
+		"\n"
+		""},
+	 { (char *)"SolarAbsorptionOcoFile_solar_absorption_spectrum", _wrap_SolarAbsorptionOcoFile_solar_absorption_spectrum, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual Spectrum FullPhysics::SolarAbsorptionOcoFile::solar_absorption_spectrum(const SpectralDomain &spec_domain) const\n"
+		"\n"
+		""},
+	 { (char *)"SolarAbsorptionOcoFile__v_number_line", _wrap_SolarAbsorptionOcoFile__v_number_line, METH_VARARGS, (char *)"\n"
+		"\n"
+		"int FullPhysics::SolarAbsorptionOcoFile::number_line() const\n"
+		"Number of lines in the solar line list file. \n"
+		""},
+	 { (char *)"SolarAbsorptionOcoFile__v_fraction_solar_diameter", _wrap_SolarAbsorptionOcoFile__v_fraction_solar_diameter, METH_VARARGS, (char *)"\n"
+		"\n"
+		"double FullPhysics::SolarAbsorptionOcoFile::fraction_solar_diameter() const\n"
+		"Fraction of solar diameter that we view. \n"
+		""},
+	 { (char *)"delete_SolarAbsorptionOcoFile", _wrap_delete_SolarAbsorptionOcoFile, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::SolarAbsorptionOcoFile::~SolarAbsorptionOcoFile()\n"
+		"\n"
+		""},
 	 { (char *)"SolarAbsorptionOcoFile_swigregister", SolarAbsorptionOcoFile_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };

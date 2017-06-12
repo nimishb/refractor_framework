@@ -8181,56 +8181,184 @@ SWIGINTERN PyObject *ArrayAdWithUnitDouble_4_swigregister(PyObject *SWIGUNUSEDPA
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"new_ArrayAdWithUnitDouble_1", _wrap_new_ArrayAdWithUnitDouble_1, METH_VARARGS, NULL},
-	 { (char *)"ArrayAdWithUnitDouble_1_convert", _wrap_ArrayAdWithUnitDouble_1_convert, METH_VARARGS, NULL},
-	 { (char *)"ArrayAdWithUnitDouble_1__v_rows", _wrap_ArrayAdWithUnitDouble_1__v_rows, METH_VARARGS, NULL},
-	 { (char *)"ArrayAdWithUnitDouble_1__v_cols", _wrap_ArrayAdWithUnitDouble_1__v_cols, METH_VARARGS, NULL},
-	 { (char *)"ArrayAdWithUnitDouble_1__v_depth", _wrap_ArrayAdWithUnitDouble_1__v_depth, METH_VARARGS, NULL},
-	 { (char *)"ArrayAdWithUnitDouble_1__v_is_constant", _wrap_ArrayAdWithUnitDouble_1__v_is_constant, METH_VARARGS, NULL},
-	 { (char *)"ArrayAdWithUnitDouble_1__v_number_variable", _wrap_ArrayAdWithUnitDouble_1__v_number_variable, METH_VARARGS, NULL},
-	 { (char *)"ArrayAdWithUnitDouble_1_reference", _wrap_ArrayAdWithUnitDouble_1_reference, METH_VARARGS, NULL},
+	 { (char *)"new_ArrayAdWithUnitDouble_1", _wrap_new_ArrayAdWithUnitDouble_1, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::ArrayAdWithUnit< T, D >::ArrayAdWithUnit(const ArrayAd< T, D > &V)\n"
+		"\n"
+		""},
+	 { (char *)"ArrayAdWithUnitDouble_1_convert", _wrap_ArrayAdWithUnitDouble_1_convert, METH_VARARGS, (char *)"\n"
+		"\n"
+		"ArrayAdWithUnit<T, D> FullPhysics::ArrayAdWithUnit< T, D >::convert(const Unit &R) const\n"
+		"Convert to the given units. \n"
+		""},
+	 { (char *)"ArrayAdWithUnitDouble_1__v_rows", _wrap_ArrayAdWithUnitDouble_1__v_rows, METH_VARARGS, (char *)"\n"
+		"\n"
+		"int FullPhysics::ArrayAdWithUnit< T, D >::rows() const\n"
+		"\n"
+		""},
+	 { (char *)"ArrayAdWithUnitDouble_1__v_cols", _wrap_ArrayAdWithUnitDouble_1__v_cols, METH_VARARGS, (char *)"\n"
+		"\n"
+		"int FullPhysics::ArrayAdWithUnit< T, D >::cols() const\n"
+		"\n"
+		""},
+	 { (char *)"ArrayAdWithUnitDouble_1__v_depth", _wrap_ArrayAdWithUnitDouble_1__v_depth, METH_VARARGS, (char *)"\n"
+		"\n"
+		"int FullPhysics::ArrayAdWithUnit< T, D >::depth() const\n"
+		"\n"
+		""},
+	 { (char *)"ArrayAdWithUnitDouble_1__v_is_constant", _wrap_ArrayAdWithUnitDouble_1__v_is_constant, METH_VARARGS, (char *)"\n"
+		"\n"
+		"bool FullPhysics::ArrayAdWithUnit< T, D >::is_constant() const\n"
+		"\n"
+		""},
+	 { (char *)"ArrayAdWithUnitDouble_1__v_number_variable", _wrap_ArrayAdWithUnitDouble_1__v_number_variable, METH_VARARGS, (char *)"\n"
+		"\n"
+		"int FullPhysics::ArrayAdWithUnit< T, D >::number_variable() const\n"
+		"\n"
+		""},
+	 { (char *)"ArrayAdWithUnitDouble_1_reference", _wrap_ArrayAdWithUnitDouble_1_reference, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::ArrayAdWithUnit< T, D >::reference(const ArrayAdWithUnit< T, D > &V)\n"
+		"\n"
+		""},
 	 { (char *)"ArrayAdWithUnitDouble_1__value", _wrap_ArrayAdWithUnitDouble_1__value, METH_VARARGS, NULL},
 	 { (char *)"ArrayAdWithUnitDouble_1__value_set", _wrap_ArrayAdWithUnitDouble_1__value_set, METH_VARARGS, NULL},
 	 { (char *)"ArrayAdWithUnitDouble_1__units", _wrap_ArrayAdWithUnitDouble_1__units, METH_VARARGS, NULL},
 	 { (char *)"ArrayAdWithUnitDouble_1__units_set", _wrap_ArrayAdWithUnitDouble_1__units_set, METH_VARARGS, NULL},
 	 { (char *)"delete_ArrayAdWithUnitDouble_1", _wrap_delete_ArrayAdWithUnitDouble_1, METH_VARARGS, NULL},
 	 { (char *)"ArrayAdWithUnitDouble_1_swigregister", ArrayAdWithUnitDouble_1_swigregister, METH_VARARGS, NULL},
-	 { (char *)"new_ArrayAdWithUnitDouble_2", _wrap_new_ArrayAdWithUnitDouble_2, METH_VARARGS, NULL},
-	 { (char *)"ArrayAdWithUnitDouble_2_convert", _wrap_ArrayAdWithUnitDouble_2_convert, METH_VARARGS, NULL},
-	 { (char *)"ArrayAdWithUnitDouble_2__v_rows", _wrap_ArrayAdWithUnitDouble_2__v_rows, METH_VARARGS, NULL},
-	 { (char *)"ArrayAdWithUnitDouble_2__v_cols", _wrap_ArrayAdWithUnitDouble_2__v_cols, METH_VARARGS, NULL},
-	 { (char *)"ArrayAdWithUnitDouble_2__v_depth", _wrap_ArrayAdWithUnitDouble_2__v_depth, METH_VARARGS, NULL},
-	 { (char *)"ArrayAdWithUnitDouble_2__v_is_constant", _wrap_ArrayAdWithUnitDouble_2__v_is_constant, METH_VARARGS, NULL},
-	 { (char *)"ArrayAdWithUnitDouble_2__v_number_variable", _wrap_ArrayAdWithUnitDouble_2__v_number_variable, METH_VARARGS, NULL},
-	 { (char *)"ArrayAdWithUnitDouble_2_reference", _wrap_ArrayAdWithUnitDouble_2_reference, METH_VARARGS, NULL},
+	 { (char *)"new_ArrayAdWithUnitDouble_2", _wrap_new_ArrayAdWithUnitDouble_2, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::ArrayAdWithUnit< T, D >::ArrayAdWithUnit(const ArrayAd< T, D > &V)\n"
+		"\n"
+		""},
+	 { (char *)"ArrayAdWithUnitDouble_2_convert", _wrap_ArrayAdWithUnitDouble_2_convert, METH_VARARGS, (char *)"\n"
+		"\n"
+		"ArrayAdWithUnit<T, D> FullPhysics::ArrayAdWithUnit< T, D >::convert(const Unit &R) const\n"
+		"Convert to the given units. \n"
+		""},
+	 { (char *)"ArrayAdWithUnitDouble_2__v_rows", _wrap_ArrayAdWithUnitDouble_2__v_rows, METH_VARARGS, (char *)"\n"
+		"\n"
+		"int FullPhysics::ArrayAdWithUnit< T, D >::rows() const\n"
+		"\n"
+		""},
+	 { (char *)"ArrayAdWithUnitDouble_2__v_cols", _wrap_ArrayAdWithUnitDouble_2__v_cols, METH_VARARGS, (char *)"\n"
+		"\n"
+		"int FullPhysics::ArrayAdWithUnit< T, D >::cols() const\n"
+		"\n"
+		""},
+	 { (char *)"ArrayAdWithUnitDouble_2__v_depth", _wrap_ArrayAdWithUnitDouble_2__v_depth, METH_VARARGS, (char *)"\n"
+		"\n"
+		"int FullPhysics::ArrayAdWithUnit< T, D >::depth() const\n"
+		"\n"
+		""},
+	 { (char *)"ArrayAdWithUnitDouble_2__v_is_constant", _wrap_ArrayAdWithUnitDouble_2__v_is_constant, METH_VARARGS, (char *)"\n"
+		"\n"
+		"bool FullPhysics::ArrayAdWithUnit< T, D >::is_constant() const\n"
+		"\n"
+		""},
+	 { (char *)"ArrayAdWithUnitDouble_2__v_number_variable", _wrap_ArrayAdWithUnitDouble_2__v_number_variable, METH_VARARGS, (char *)"\n"
+		"\n"
+		"int FullPhysics::ArrayAdWithUnit< T, D >::number_variable() const\n"
+		"\n"
+		""},
+	 { (char *)"ArrayAdWithUnitDouble_2_reference", _wrap_ArrayAdWithUnitDouble_2_reference, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::ArrayAdWithUnit< T, D >::reference(const ArrayAdWithUnit< T, D > &V)\n"
+		"\n"
+		""},
 	 { (char *)"ArrayAdWithUnitDouble_2__value", _wrap_ArrayAdWithUnitDouble_2__value, METH_VARARGS, NULL},
 	 { (char *)"ArrayAdWithUnitDouble_2__value_set", _wrap_ArrayAdWithUnitDouble_2__value_set, METH_VARARGS, NULL},
 	 { (char *)"ArrayAdWithUnitDouble_2__units", _wrap_ArrayAdWithUnitDouble_2__units, METH_VARARGS, NULL},
 	 { (char *)"ArrayAdWithUnitDouble_2__units_set", _wrap_ArrayAdWithUnitDouble_2__units_set, METH_VARARGS, NULL},
 	 { (char *)"delete_ArrayAdWithUnitDouble_2", _wrap_delete_ArrayAdWithUnitDouble_2, METH_VARARGS, NULL},
 	 { (char *)"ArrayAdWithUnitDouble_2_swigregister", ArrayAdWithUnitDouble_2_swigregister, METH_VARARGS, NULL},
-	 { (char *)"new_ArrayAdWithUnitDouble_3", _wrap_new_ArrayAdWithUnitDouble_3, METH_VARARGS, NULL},
-	 { (char *)"ArrayAdWithUnitDouble_3_convert", _wrap_ArrayAdWithUnitDouble_3_convert, METH_VARARGS, NULL},
-	 { (char *)"ArrayAdWithUnitDouble_3__v_rows", _wrap_ArrayAdWithUnitDouble_3__v_rows, METH_VARARGS, NULL},
-	 { (char *)"ArrayAdWithUnitDouble_3__v_cols", _wrap_ArrayAdWithUnitDouble_3__v_cols, METH_VARARGS, NULL},
-	 { (char *)"ArrayAdWithUnitDouble_3__v_depth", _wrap_ArrayAdWithUnitDouble_3__v_depth, METH_VARARGS, NULL},
-	 { (char *)"ArrayAdWithUnitDouble_3__v_is_constant", _wrap_ArrayAdWithUnitDouble_3__v_is_constant, METH_VARARGS, NULL},
-	 { (char *)"ArrayAdWithUnitDouble_3__v_number_variable", _wrap_ArrayAdWithUnitDouble_3__v_number_variable, METH_VARARGS, NULL},
-	 { (char *)"ArrayAdWithUnitDouble_3_reference", _wrap_ArrayAdWithUnitDouble_3_reference, METH_VARARGS, NULL},
+	 { (char *)"new_ArrayAdWithUnitDouble_3", _wrap_new_ArrayAdWithUnitDouble_3, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::ArrayAdWithUnit< T, D >::ArrayAdWithUnit(const ArrayAd< T, D > &V)\n"
+		"\n"
+		""},
+	 { (char *)"ArrayAdWithUnitDouble_3_convert", _wrap_ArrayAdWithUnitDouble_3_convert, METH_VARARGS, (char *)"\n"
+		"\n"
+		"ArrayAdWithUnit<T, D> FullPhysics::ArrayAdWithUnit< T, D >::convert(const Unit &R) const\n"
+		"Convert to the given units. \n"
+		""},
+	 { (char *)"ArrayAdWithUnitDouble_3__v_rows", _wrap_ArrayAdWithUnitDouble_3__v_rows, METH_VARARGS, (char *)"\n"
+		"\n"
+		"int FullPhysics::ArrayAdWithUnit< T, D >::rows() const\n"
+		"\n"
+		""},
+	 { (char *)"ArrayAdWithUnitDouble_3__v_cols", _wrap_ArrayAdWithUnitDouble_3__v_cols, METH_VARARGS, (char *)"\n"
+		"\n"
+		"int FullPhysics::ArrayAdWithUnit< T, D >::cols() const\n"
+		"\n"
+		""},
+	 { (char *)"ArrayAdWithUnitDouble_3__v_depth", _wrap_ArrayAdWithUnitDouble_3__v_depth, METH_VARARGS, (char *)"\n"
+		"\n"
+		"int FullPhysics::ArrayAdWithUnit< T, D >::depth() const\n"
+		"\n"
+		""},
+	 { (char *)"ArrayAdWithUnitDouble_3__v_is_constant", _wrap_ArrayAdWithUnitDouble_3__v_is_constant, METH_VARARGS, (char *)"\n"
+		"\n"
+		"bool FullPhysics::ArrayAdWithUnit< T, D >::is_constant() const\n"
+		"\n"
+		""},
+	 { (char *)"ArrayAdWithUnitDouble_3__v_number_variable", _wrap_ArrayAdWithUnitDouble_3__v_number_variable, METH_VARARGS, (char *)"\n"
+		"\n"
+		"int FullPhysics::ArrayAdWithUnit< T, D >::number_variable() const\n"
+		"\n"
+		""},
+	 { (char *)"ArrayAdWithUnitDouble_3_reference", _wrap_ArrayAdWithUnitDouble_3_reference, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::ArrayAdWithUnit< T, D >::reference(const ArrayAdWithUnit< T, D > &V)\n"
+		"\n"
+		""},
 	 { (char *)"ArrayAdWithUnitDouble_3__value", _wrap_ArrayAdWithUnitDouble_3__value, METH_VARARGS, NULL},
 	 { (char *)"ArrayAdWithUnitDouble_3__value_set", _wrap_ArrayAdWithUnitDouble_3__value_set, METH_VARARGS, NULL},
 	 { (char *)"ArrayAdWithUnitDouble_3__units", _wrap_ArrayAdWithUnitDouble_3__units, METH_VARARGS, NULL},
 	 { (char *)"ArrayAdWithUnitDouble_3__units_set", _wrap_ArrayAdWithUnitDouble_3__units_set, METH_VARARGS, NULL},
 	 { (char *)"delete_ArrayAdWithUnitDouble_3", _wrap_delete_ArrayAdWithUnitDouble_3, METH_VARARGS, NULL},
 	 { (char *)"ArrayAdWithUnitDouble_3_swigregister", ArrayAdWithUnitDouble_3_swigregister, METH_VARARGS, NULL},
-	 { (char *)"new_ArrayAdWithUnitDouble_4", _wrap_new_ArrayAdWithUnitDouble_4, METH_VARARGS, NULL},
-	 { (char *)"ArrayAdWithUnitDouble_4_convert", _wrap_ArrayAdWithUnitDouble_4_convert, METH_VARARGS, NULL},
-	 { (char *)"ArrayAdWithUnitDouble_4__v_rows", _wrap_ArrayAdWithUnitDouble_4__v_rows, METH_VARARGS, NULL},
-	 { (char *)"ArrayAdWithUnitDouble_4__v_cols", _wrap_ArrayAdWithUnitDouble_4__v_cols, METH_VARARGS, NULL},
-	 { (char *)"ArrayAdWithUnitDouble_4__v_depth", _wrap_ArrayAdWithUnitDouble_4__v_depth, METH_VARARGS, NULL},
-	 { (char *)"ArrayAdWithUnitDouble_4__v_is_constant", _wrap_ArrayAdWithUnitDouble_4__v_is_constant, METH_VARARGS, NULL},
-	 { (char *)"ArrayAdWithUnitDouble_4__v_number_variable", _wrap_ArrayAdWithUnitDouble_4__v_number_variable, METH_VARARGS, NULL},
-	 { (char *)"ArrayAdWithUnitDouble_4_reference", _wrap_ArrayAdWithUnitDouble_4_reference, METH_VARARGS, NULL},
+	 { (char *)"new_ArrayAdWithUnitDouble_4", _wrap_new_ArrayAdWithUnitDouble_4, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::ArrayAdWithUnit< T, D >::ArrayAdWithUnit(const ArrayAd< T, D > &V)\n"
+		"\n"
+		""},
+	 { (char *)"ArrayAdWithUnitDouble_4_convert", _wrap_ArrayAdWithUnitDouble_4_convert, METH_VARARGS, (char *)"\n"
+		"\n"
+		"ArrayAdWithUnit<T, D> FullPhysics::ArrayAdWithUnit< T, D >::convert(const Unit &R) const\n"
+		"Convert to the given units. \n"
+		""},
+	 { (char *)"ArrayAdWithUnitDouble_4__v_rows", _wrap_ArrayAdWithUnitDouble_4__v_rows, METH_VARARGS, (char *)"\n"
+		"\n"
+		"int FullPhysics::ArrayAdWithUnit< T, D >::rows() const\n"
+		"\n"
+		""},
+	 { (char *)"ArrayAdWithUnitDouble_4__v_cols", _wrap_ArrayAdWithUnitDouble_4__v_cols, METH_VARARGS, (char *)"\n"
+		"\n"
+		"int FullPhysics::ArrayAdWithUnit< T, D >::cols() const\n"
+		"\n"
+		""},
+	 { (char *)"ArrayAdWithUnitDouble_4__v_depth", _wrap_ArrayAdWithUnitDouble_4__v_depth, METH_VARARGS, (char *)"\n"
+		"\n"
+		"int FullPhysics::ArrayAdWithUnit< T, D >::depth() const\n"
+		"\n"
+		""},
+	 { (char *)"ArrayAdWithUnitDouble_4__v_is_constant", _wrap_ArrayAdWithUnitDouble_4__v_is_constant, METH_VARARGS, (char *)"\n"
+		"\n"
+		"bool FullPhysics::ArrayAdWithUnit< T, D >::is_constant() const\n"
+		"\n"
+		""},
+	 { (char *)"ArrayAdWithUnitDouble_4__v_number_variable", _wrap_ArrayAdWithUnitDouble_4__v_number_variable, METH_VARARGS, (char *)"\n"
+		"\n"
+		"int FullPhysics::ArrayAdWithUnit< T, D >::number_variable() const\n"
+		"\n"
+		""},
+	 { (char *)"ArrayAdWithUnitDouble_4_reference", _wrap_ArrayAdWithUnitDouble_4_reference, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::ArrayAdWithUnit< T, D >::reference(const ArrayAdWithUnit< T, D > &V)\n"
+		"\n"
+		""},
 	 { (char *)"ArrayAdWithUnitDouble_4__value", _wrap_ArrayAdWithUnitDouble_4__value, METH_VARARGS, NULL},
 	 { (char *)"ArrayAdWithUnitDouble_4__value_set", _wrap_ArrayAdWithUnitDouble_4__value_set, METH_VARARGS, NULL},
 	 { (char *)"ArrayAdWithUnitDouble_4__units", _wrap_ArrayAdWithUnitDouble_4__units, METH_VARARGS, NULL},

@@ -122,6 +122,13 @@ def _new_from_set(cls, version, *args):
 
 import full_physics_swig.generic_object
 class SolarAbsorptionSpectrum(full_physics_swig.generic_object.GenericObject):
+    """
+
+    This class calculates the solar absorption spectrum.
+
+    C++ includes: solar_absorption_spectrum.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.generic_object.GenericObject]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -141,7 +148,25 @@ class SolarAbsorptionSpectrum(full_physics_swig.generic_object.GenericObject):
         return _solar_absorption_spectrum.SolarAbsorptionSpectrum___str__(self)
 
     def solar_absorption_spectrum(self, spec_domain):
+        """
+
+        virtual Spectrum FullPhysics::SolarAbsorptionSpectrum::solar_absorption_spectrum(const SpectralDomain &Spec_domain) const =0
+        This calculates the solar absorption spectrum.
+
+        Parameters:
+        -----------
+
+        Spec_domain:  Wavenumber/Wavelength to return solar absorption
+        spectrum for.
+
+        The solar absorption spectrum. This is unit less, it is a scaled value
+        with 1.0 being no absorption.  Note that the spectral domain here is
+        in the solar rest frame, not the earth rest frame used in most other
+        places. The class SolarAbsorptionAndContinuum handles this conversion
+        internally. 
+        """
         return _solar_absorption_spectrum.SolarAbsorptionSpectrum_solar_absorption_spectrum(self, spec_domain)
+
 SolarAbsorptionSpectrum_swigregister = _solar_absorption_spectrum.SolarAbsorptionSpectrum_swigregister
 SolarAbsorptionSpectrum_swigregister(SolarAbsorptionSpectrum)
 

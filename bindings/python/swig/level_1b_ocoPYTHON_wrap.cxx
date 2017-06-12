@@ -5943,15 +5943,57 @@ SWIGINTERN PyObject *Level1bOco_swigregister(PyObject *SWIGUNUSEDPARM(self), PyO
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"new_Level1bOco", _wrap_new_Level1bOco, METH_VARARGS, NULL},
+	 { (char *)"new_Level1bOco", _wrap_new_Level1bOco, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::Level1bOco::Level1bOco(const boost::shared_ptr< HdfFile > &Hfile, const boost::shared_ptr<\n"
+		"HdfSoundingId > &Sounding_id)\n"
+		"\n"
+		""},
 	 { (char *)"Level1bOco_radiance", _wrap_Level1bOco_radiance, METH_VARARGS, NULL},
-	 { (char *)"Level1bOco_has_spike_eof", _wrap_Level1bOco_has_spike_eof, METH_VARARGS, NULL},
-	 { (char *)"Level1bOco_spike_eof", _wrap_Level1bOco_spike_eof, METH_VARARGS, NULL},
-	 { (char *)"Level1bOco__v_has_solar_relative_velocity", _wrap_Level1bOco__v_has_solar_relative_velocity, METH_VARARGS, NULL},
-	 { (char *)"Level1bOco__v_land_fraction", _wrap_Level1bOco__v_land_fraction, METH_VARARGS, NULL},
-	 { (char *)"Level1bOco__v_solar_distance", _wrap_Level1bOco__v_solar_distance, METH_VARARGS, NULL},
-	 { (char *)"Level1bOco__v_solar_velocity", _wrap_Level1bOco__v_solar_velocity, METH_VARARGS, NULL},
-	 { (char *)"Level1bOco__v_acquisition_mode", _wrap_Level1bOco__v_acquisition_mode, METH_VARARGS, NULL},
+	 { (char *)"Level1bOco_has_spike_eof", _wrap_Level1bOco_has_spike_eof, METH_VARARGS, (char *)"\n"
+		"\n"
+		"bool FullPhysics::Level1bOco::has_spike_eof(int Spec_index) const\n"
+		"True if we have the SpikeEOF data available. \n"
+		""},
+	 { (char *)"Level1bOco_spike_eof", _wrap_Level1bOco_spike_eof, METH_VARARGS, (char *)"\n"
+		"\n"
+		"blitz::Array<double, 1> FullPhysics::Level1bOco::spike_eof(int Spec_index) const\n"
+		"\n"
+		""},
+	 { (char *)"Level1bOco__v_has_solar_relative_velocity", _wrap_Level1bOco__v_has_solar_relative_velocity, METH_VARARGS, (char *)"\n"
+		"\n"
+		"bool FullPhysics::Level1bOco::has_solar_relative_velocity() const\n"
+		"True if the Level 1 data has the solar relative velocity.\n"
+		"\n"
+		"Older versions of OCO and also the simulated data do not have this\n"
+		"field, so this returns false. \n"
+		""},
+	 { (char *)"Level1bOco__v_land_fraction", _wrap_Level1bOco__v_land_fraction, METH_VARARGS, (char *)"\n"
+		"\n"
+		"double FullPhysics::Level1bOco::land_fraction() const\n"
+		"Return land fraction, as a percentage going from 0 to 100. \n"
+		""},
+	 { (char *)"Level1bOco__v_solar_distance", _wrap_Level1bOco__v_solar_distance, METH_VARARGS, (char *)"\n"
+		"\n"
+		"DoubleWithUnit FullPhysics::Level1bOco::solar_distance() const\n"
+		"Distance from sounding location to the sun. \n"
+		""},
+	 { (char *)"Level1bOco__v_solar_velocity", _wrap_Level1bOco__v_solar_velocity, METH_VARARGS, (char *)"\n"
+		"\n"
+		"DoubleWithUnit FullPhysics::Level1bOco::solar_velocity() const\n"
+		"Velocity of sun along the sounding location/sun vector.\n"
+		"\n"
+		"Note this includes the rotation of the earth along with the earth/sun\n"
+		"velocity, so we can take this directly to calculate the doppler shift.\n"
+		"\n"
+		""},
+	 { (char *)"Level1bOco__v_acquisition_mode", _wrap_Level1bOco__v_acquisition_mode, METH_VARARGS, (char *)"\n"
+		"\n"
+		"const std::string& FullPhysics::Level1bOco::acquisition_mode() const\n"
+		"The acquisition mode.\n"
+		"\n"
+		"The data we process will be \"Nadir\", \"Glint\" or \"Target\". \n"
+		""},
 	 { (char *)"delete_Level1bOco", _wrap_delete_Level1bOco, METH_VARARGS, NULL},
 	 { (char *)"Level1bOco_swigregister", Level1bOco_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }

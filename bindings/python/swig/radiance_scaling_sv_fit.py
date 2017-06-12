@@ -125,6 +125,15 @@ import full_physics_swig.instrument_correction
 import full_physics_swig.state_vector
 import full_physics_swig.generic_object
 class RadianceScalingSvFit(full_physics_swig.radiance_scaling.RadianceScaling, full_physics_swig.instrument_correction.SubStateVectorArrayInstrumentCorrection):
+    """
+
+    Implements a fitted radiance scaling correction.
+
+    This correction is retrieved by the state vector.
+
+    C++ includes: radiance_scaling_sv_fit.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.radiance_scaling.RadianceScaling, full_physics_swig.instrument_correction.SubStateVectorArrayInstrumentCorrection]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -141,22 +150,59 @@ class RadianceScalingSvFit(full_physics_swig.radiance_scaling.RadianceScaling, f
     __del__ = lambda self: None
 
     def state_vector_name_i(self, i):
+        """
+
+        virtual std::string FullPhysics::RadianceScalingSvFit::state_vector_name_i(int i) const
+
+        """
         return _radiance_scaling_sv_fit.RadianceScalingSvFit_state_vector_name_i(self, i)
 
+
     def clone(self):
+        """
+
+        virtual boost::shared_ptr<InstrumentCorrection> FullPhysics::RadianceScalingSvFit::clone() const
+
+        """
         return _radiance_scaling_sv_fit.RadianceScalingSvFit_clone(self)
 
+
     def apply_correction(self, Pixel_grid, Pixel_list, Radiance):
+        """
+
+        virtual void FullPhysics::RadianceScalingSvFit::apply_correction(const SpectralDomain &Pixel_grid, const std::vector< int >
+        &Pixel_list, SpectralRange &Radiance) const
+
+        """
         return _radiance_scaling_sv_fit.RadianceScalingSvFit_apply_correction(self, Pixel_grid, Pixel_list, Radiance)
 
+
     def print_desc(self, Os):
+        """
+
+        virtual void FullPhysics::RadianceScalingSvFit::print(std::ostream &Os) const
+
+        """
         return _radiance_scaling_sv_fit.RadianceScalingSvFit_print_desc(self, Os)
 
+
     def notify_update(self, Sv):
+        """
+
+        virtual void FullPhysics::RadianceScalingSvFit::notify_update(const StateVector &Sv)
+
+        """
         return _radiance_scaling_sv_fit.RadianceScalingSvFit_notify_update(self, Sv)
 
+
     def _v_radiance_scaling_coeff_uncertainty(self):
+        """
+
+        blitz::Array<double, 1> FullPhysics::RadianceScalingSvFit::radiance_scaling_coeff_uncertainty() const
+        Assumed uncertainty of radiance scaling coefficients. 
+        """
         return _radiance_scaling_sv_fit.RadianceScalingSvFit__v_radiance_scaling_coeff_uncertainty(self)
+
 
     @property
     def radiance_scaling_coeff_uncertainty(self):

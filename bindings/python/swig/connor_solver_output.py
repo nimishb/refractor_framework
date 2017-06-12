@@ -124,6 +124,17 @@ import full_physics_swig.register_output_base
 import full_physics_swig.generic_object
 import full_physics_swig.observer
 class ConnorSolverOutput(full_physics_swig.register_output_base.RegisterOutputBase):
+    """
+
+    This registers the portions of the ConnorSolver class that should be
+    written as output.
+
+    See the discussion in RegisterOutputBase why this isn't just part of
+    the ConnnorSolver class.
+
+    C++ includes: connor_solver_output.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.register_output_base.RegisterOutputBase]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -138,7 +149,13 @@ class ConnorSolverOutput(full_physics_swig.register_output_base.RegisterOutputBa
     __repr__ = _swig_repr
 
     def register_output(self, out):
+        """
+
+        virtual void FullPhysics::ConnorSolverOutput::register_output(const boost::shared_ptr< Output > &out) const
+
+        """
         return _connor_solver_output.ConnorSolverOutput_register_output(self, out)
+
     __swig_destroy__ = _connor_solver_output.delete_ConnorSolverOutput
     __del__ = lambda self: None
 ConnorSolverOutput_swigregister = _connor_solver_output.ConnorSolverOutput_swigregister

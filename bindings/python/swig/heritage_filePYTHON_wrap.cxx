@@ -6033,7 +6033,7 @@ SWIGINTERN PyObject *_wrap_HeritageFile_value_string_vector(PyObject *SWIGUNUSED
   int res2 = SWIG_OLDOBJ ;
   PyObject * obj0 = 0 ;
   PyObject * obj1 = 0 ;
-  std::vector< std::string,std::allocator< std::string > > result;
+  SwigValueWrapper< std::vector< std::string,std::allocator< std::string > > > result;
   
   if (!PyArg_ParseTuple(args,(char *)"OO:HeritageFile_value_string_vector",&obj0,&obj1)) SWIG_fail;
   {
@@ -6091,7 +6091,7 @@ SWIGINTERN PyObject *_wrap_HeritageFile_value_double_vector(PyObject *SWIGUNUSED
   int res2 = SWIG_OLDOBJ ;
   PyObject * obj0 = 0 ;
   PyObject * obj1 = 0 ;
-  std::vector< double,std::allocator< double > > result;
+  SwigValueWrapper< std::vector< double,std::allocator< double > > > result;
   
   if (!PyArg_ParseTuple(args,(char *)"OO:HeritageFile_value_double_vector",&obj0,&obj1)) SWIG_fail;
   {
@@ -6189,19 +6189,43 @@ SWIGINTERN PyObject *HeritageFile_swigregister(PyObject *SWIGUNUSEDPARM(self), P
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"new_HeritageFile", _wrap_new_HeritageFile, METH_VARARGS, NULL},
+	 { (char *)"new_HeritageFile", _wrap_new_HeritageFile, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::HeritageFile::HeritageFile(const std::string &Fname)\n"
+		"\n"
+		""},
 	 { (char *)"HeritageFile___str__", _wrap_HeritageFile___str__, METH_VARARGS, NULL},
-	 { (char *)"HeritageFile_parse_file", _wrap_HeritageFile_parse_file, METH_VARARGS, NULL},
-	 { (char *)"HeritageFile_column_index", _wrap_HeritageFile_column_index, METH_VARARGS, NULL},
-	 { (char *)"HeritageFile__v_data", _wrap_HeritageFile__v_data, METH_VARARGS, NULL},
-	 { (char *)"HeritageFile_has_value", _wrap_HeritageFile_has_value, METH_VARARGS, NULL},
+	 { (char *)"HeritageFile_parse_file", _wrap_HeritageFile_parse_file, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::HeritageFile::parse_file(const std::string &Fname)\n"
+		"\n"
+		""},
+	 { (char *)"HeritageFile_column_index", _wrap_HeritageFile_column_index, METH_VARARGS, (char *)"\n"
+		"\n"
+		"int FullPhysics::HeritageFile::column_index(const std::string &Col_name) const\n"
+		"\n"
+		""},
+	 { (char *)"HeritageFile__v_data", _wrap_HeritageFile__v_data, METH_VARARGS, (char *)"\n"
+		"\n"
+		"blitz::Array<double, 1> FullPhysics::HeritageFile::data(const std::string &Col_name) const\n"
+		"\n"
+		""},
+	 { (char *)"HeritageFile_has_value", _wrap_HeritageFile_has_value, METH_VARARGS, (char *)"\n"
+		"\n"
+		"bool FullPhysics::HeritageFile::has_value(const std::string &Keyword) const\n"
+		"Return true if we found a value for the given Keyword path. \n"
+		""},
 	 { (char *)"HeritageFile_value_int", _wrap_HeritageFile_value_int, METH_VARARGS, NULL},
 	 { (char *)"HeritageFile_value_double", _wrap_HeritageFile_value_double, METH_VARARGS, NULL},
 	 { (char *)"HeritageFile_value_string", _wrap_HeritageFile_value_string, METH_VARARGS, NULL},
 	 { (char *)"HeritageFile_value_bool", _wrap_HeritageFile_value_bool, METH_VARARGS, NULL},
 	 { (char *)"HeritageFile_value_string_vector", _wrap_HeritageFile_value_string_vector, METH_VARARGS, NULL},
 	 { (char *)"HeritageFile_value_double_vector", _wrap_HeritageFile_value_double_vector, METH_VARARGS, NULL},
-	 { (char *)"delete_HeritageFile", _wrap_delete_HeritageFile, METH_VARARGS, NULL},
+	 { (char *)"delete_HeritageFile", _wrap_delete_HeritageFile, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::HeritageFile::~HeritageFile()\n"
+		"\n"
+		""},
 	 { (char *)"HeritageFile_swigregister", HeritageFile_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };

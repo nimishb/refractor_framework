@@ -5946,16 +5946,61 @@ SWIGINTERN PyObject *FluorescenceEffect_swigregister(PyObject *SWIGUNUSEDPARM(se
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"new_FluorescenceEffect", _wrap_new_FluorescenceEffect, METH_VARARGS, NULL},
-	 { (char *)"FluorescenceEffect_apply_effect", _wrap_FluorescenceEffect_apply_effect, METH_VARARGS, NULL},
-	 { (char *)"FluorescenceEffect_clone", _wrap_FluorescenceEffect_clone, METH_VARARGS, NULL},
-	 { (char *)"FluorescenceEffect_state_vector_name_i", _wrap_FluorescenceEffect_state_vector_name_i, METH_VARARGS, NULL},
-	 { (char *)"FluorescenceEffect_print_desc", _wrap_FluorescenceEffect_print_desc, METH_VARARGS, NULL},
-	 { (char *)"FluorescenceEffect__v_name", _wrap_FluorescenceEffect__v_name, METH_VARARGS, NULL},
-	 { (char *)"FluorescenceEffect__v_fluorescence_at_reference", _wrap_FluorescenceEffect__v_fluorescence_at_reference, METH_VARARGS, NULL},
-	 { (char *)"FluorescenceEffect__v_fluorescence_at_reference_uncertainty", _wrap_FluorescenceEffect__v_fluorescence_at_reference_uncertainty, METH_VARARGS, NULL},
-	 { (char *)"FluorescenceEffect__v_fluorescence_slope", _wrap_FluorescenceEffect__v_fluorescence_slope, METH_VARARGS, NULL},
-	 { (char *)"FluorescenceEffect__v_fluorescence_slope_uncertainty", _wrap_FluorescenceEffect__v_fluorescence_slope_uncertainty, METH_VARARGS, NULL},
+	 { (char *)"new_FluorescenceEffect", _wrap_new_FluorescenceEffect, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::FluorescenceEffect::FluorescenceEffect(const blitz::Array< double, 1 > &Coeff, const blitz::Array< bool, 1 >\n"
+		"&Used_flag, const boost::shared_ptr< RtAtmosphere > &Atm, const\n"
+		"boost::shared_ptr< StokesCoefficient > &Stokes_coef, const\n"
+		"DoubleWithUnit &Lza, const int Spec_index, const DoubleWithUnit\n"
+		"&Reference, const Unit &Retrieval_unit)\n"
+		"\n"
+		""},
+	 { (char *)"FluorescenceEffect_apply_effect", _wrap_FluorescenceEffect_apply_effect, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::FluorescenceEffect::apply_effect(Spectrum &Spec, const ForwardModelSpectralGrid &Forward_model_grid)\n"
+		"const\n"
+		"\n"
+		""},
+	 { (char *)"FluorescenceEffect_clone", _wrap_FluorescenceEffect_clone, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual boost::shared_ptr<SpectrumEffect> FullPhysics::FluorescenceEffect::clone() const\n"
+		"\n"
+		""},
+	 { (char *)"FluorescenceEffect_state_vector_name_i", _wrap_FluorescenceEffect_state_vector_name_i, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual std::string FullPhysics::FluorescenceEffect::state_vector_name_i(int i) const\n"
+		"\n"
+		""},
+	 { (char *)"FluorescenceEffect_print_desc", _wrap_FluorescenceEffect_print_desc, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::FluorescenceEffect::print(std::ostream &Os) const\n"
+		"\n"
+		""},
+	 { (char *)"FluorescenceEffect__v_name", _wrap_FluorescenceEffect__v_name, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual std::string FullPhysics::FluorescenceEffect::name() const\n"
+		"\n"
+		""},
+	 { (char *)"FluorescenceEffect__v_fluorescence_at_reference", _wrap_FluorescenceEffect__v_fluorescence_at_reference, METH_VARARGS, (char *)"\n"
+		"\n"
+		"double FullPhysics::FluorescenceEffect::fluorescence_at_reference() const\n"
+		"Fluorescence value at reference point. \n"
+		""},
+	 { (char *)"FluorescenceEffect__v_fluorescence_at_reference_uncertainty", _wrap_FluorescenceEffect__v_fluorescence_at_reference_uncertainty, METH_VARARGS, (char *)"\n"
+		"\n"
+		"double FullPhysics::FluorescenceEffect::fluorescence_at_reference_uncertainty() const\n"
+		"Assumed uncertainty of fluorescence at reference point. \n"
+		""},
+	 { (char *)"FluorescenceEffect__v_fluorescence_slope", _wrap_FluorescenceEffect__v_fluorescence_slope, METH_VARARGS, (char *)"\n"
+		"\n"
+		"double FullPhysics::FluorescenceEffect::fluorescence_slope() const\n"
+		"Fluorescence slope across band. \n"
+		""},
+	 { (char *)"FluorescenceEffect__v_fluorescence_slope_uncertainty", _wrap_FluorescenceEffect__v_fluorescence_slope_uncertainty, METH_VARARGS, (char *)"\n"
+		"\n"
+		"double FullPhysics::FluorescenceEffect::fluorescence_slope_uncertainty() const\n"
+		"Assumed uncertainty of fluorescence slope. \n"
+		""},
 	 { (char *)"delete_FluorescenceEffect", _wrap_delete_FluorescenceEffect, METH_VARARGS, NULL},
 	 { (char *)"FluorescenceEffect_swigregister", FluorescenceEffect_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }

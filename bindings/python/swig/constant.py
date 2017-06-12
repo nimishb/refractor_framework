@@ -122,6 +122,17 @@ def _new_from_set(cls, version, *args):
 
 import full_physics_swig.generic_object
 class Constant(full_physics_swig.generic_object.GenericObject):
+    """
+
+    This class contains various constants.
+
+    We have this in a separate class rather than just having a header of
+    constants so that we can replace these constants. In particular, some
+    of the constants depend on the planet we are working on (e.g., Venus).
+
+    C++ includes: constant.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.generic_object.GenericObject]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -139,7 +150,13 @@ class Constant(full_physics_swig.generic_object.GenericObject):
         return _constant.Constant___str__(self)
 
     def _v_rayleigh_depolarization_factor(self):
+        """
+
+        virtual double FullPhysics::Constant::rayleigh_depolarization_factor() const =0
+        Rayleigh depolarization factor. 
+        """
         return _constant.Constant__v_rayleigh_depolarization_factor(self)
+
 
     @property
     def rayleigh_depolarization_factor(self):
@@ -147,7 +164,16 @@ class Constant(full_physics_swig.generic_object.GenericObject):
 
 
     def _v_rayleigh_a(self):
+        """
+
+        virtual DoubleWithUnit FullPhysics::Constant::rayleigh_a() const =0
+        Rayleigh "a" value.
+
+        This along with "b" are the wavelength dependence coefficients for
+        the refractive index. 
+        """
         return _constant.Constant__v_rayleigh_a(self)
+
 
     @property
     def rayleigh_a(self):
@@ -155,7 +181,16 @@ class Constant(full_physics_swig.generic_object.GenericObject):
 
 
     def _v_rayleigh_b(self):
+        """
+
+        virtual DoubleWithUnit FullPhysics::Constant::rayleigh_b() const =0
+        Rayleigh "b" value.
+
+        This along with "a" are the wavelength dependence coefficients for
+        the refractive index. 
+        """
         return _constant.Constant__v_rayleigh_b(self)
+
 
     @property
     def rayleigh_b(self):
@@ -163,7 +198,13 @@ class Constant(full_physics_swig.generic_object.GenericObject):
 
 
     def _v_molar_weight_dry_air(self):
+        """
+
+        virtual DoubleWithUnit FullPhysics::Constant::molar_weight_dry_air() const =0
+        Molar weight of dry air. 
+        """
         return _constant.Constant__v_molar_weight_dry_air(self)
+
 
     @property
     def molar_weight_dry_air(self):
@@ -171,7 +212,13 @@ class Constant(full_physics_swig.generic_object.GenericObject):
 
 
     def _v_molar_weight_water(self):
+        """
+
+        virtual DoubleWithUnit FullPhysics::Constant::molar_weight_water() const =0
+        Molar weight of water. 
+        """
         return _constant.Constant__v_molar_weight_water(self)
+
 
     @property
     def molar_weight_water(self):
@@ -179,7 +226,13 @@ class Constant(full_physics_swig.generic_object.GenericObject):
 
 
     def _v_avogadro_constant(self):
+        """
+
+        virtual DoubleWithUnit FullPhysics::Constant::avogadro_constant() const =0
+        Avogadro constant. 
+        """
         return _constant.Constant__v_avogadro_constant(self)
+
 
     @property
     def avogadro_constant(self):

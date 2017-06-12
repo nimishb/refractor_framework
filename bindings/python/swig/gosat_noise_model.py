@@ -125,6 +125,14 @@ import full_physics_swig.generic_object
 import full_physics_swig.hdf_sounding_id
 import full_physics_swig.state_vector
 class GosatNoiseModel(full_physics_swig.noise_model.NoiseModel):
+    """
+
+    This class creates a GOSAT noise model using inputs from the supplied
+    file which can be either a hertitage file format or HDF file.
+
+    C++ includes: gosat_noise_model.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.noise_model.NoiseModel]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -136,6 +144,13 @@ class GosatNoiseModel(full_physics_swig.noise_model.NoiseModel):
     __repr__ = _swig_repr
 
     def __init__(self, *args):
+        """
+
+        FullPhysics::GosatNoiseModel::GosatNoiseModel(const HdfFile &Noise_file, const HdfSoundingId &Sounding_Id, const
+        std::vector< std::string > &Hdf_band_name, const HdfFile
+        &Emp_Coeff_File, const std::string &Group_name="Instrument")
+
+        """
         this = _gosat_noise_model.new_GosatNoiseModel(*args)
         try:
             self.this.append(this)
@@ -143,7 +158,13 @@ class GosatNoiseModel(full_physics_swig.noise_model.NoiseModel):
             self.this = this
 
     def uncertainty(self, Spec_index, Radiance):
+        """
+
+        virtual blitz::Array<double, 1> FullPhysics::GosatNoiseModel::uncertainty(int Spec_index, const blitz::Array< double, 1 > &Radiance) const
+
+        """
         return _gosat_noise_model.GosatNoiseModel_uncertainty(self, Spec_index, Radiance)
+
     __swig_destroy__ = _gosat_noise_model.delete_GosatNoiseModel
     __del__ = lambda self: None
 GosatNoiseModel_swigregister = _gosat_noise_model.GosatNoiseModel_swigregister

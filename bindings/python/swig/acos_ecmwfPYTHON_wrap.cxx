@@ -5358,8 +5358,16 @@ SWIGINTERN PyObject *AcosEcmwf_swigregister(PyObject *SWIGUNUSEDPARM(self), PyOb
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"delete_AcosEcmwf", _wrap_delete_AcosEcmwf, METH_VARARGS, NULL},
-	 { (char *)"new_AcosEcmwf", _wrap_new_AcosEcmwf, METH_VARARGS, NULL},
+	 { (char *)"delete_AcosEcmwf", _wrap_delete_AcosEcmwf, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::AcosEcmwf::~AcosEcmwf()\n"
+		"\n"
+		""},
+	 { (char *)"new_AcosEcmwf", _wrap_new_AcosEcmwf, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::AcosEcmwf::AcosEcmwf(const std::string &Fname, const HeritageFile &Run_file)\n"
+		"\n"
+		""},
 	 { (char *)"AcosEcmwf_swigregister", AcosEcmwf_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };

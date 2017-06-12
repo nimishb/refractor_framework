@@ -5382,12 +5382,35 @@ SWIGINTERN PyObject *HdfFileGenerating_swigregister(PyObject *SWIGUNUSEDPARM(sel
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"new_HdfFileGenerating", _wrap_new_HdfFileGenerating, METH_VARARGS, NULL},
-	 { (char *)"HdfFileGenerating_close", _wrap_HdfFileGenerating_close, METH_VARARGS, NULL},
-	 { (char *)"HdfFileGenerating_abandon", _wrap_HdfFileGenerating_abandon, METH_VARARGS, NULL},
-	 { (char *)"HdfFileGenerating_hdf_file", _wrap_HdfFileGenerating_hdf_file, METH_VARARGS, NULL},
+	 { (char *)"new_HdfFileGenerating", _wrap_new_HdfFileGenerating, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::HdfFileGenerating::HdfFileGenerating(const std::string &Fname)\n"
+		"Create a HDF file with the given name.\n"
+		"\n"
+		"This should not have the \".generating\" added, we add this in this\n"
+		"class. \n"
+		""},
+	 { (char *)"HdfFileGenerating_close", _wrap_HdfFileGenerating_close, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::HdfFileGenerating::close()\n"
+		"\n"
+		""},
+	 { (char *)"HdfFileGenerating_abandon", _wrap_HdfFileGenerating_abandon, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::HdfFileGenerating::abandon()\n"
+		"\n"
+		""},
+	 { (char *)"HdfFileGenerating_hdf_file", _wrap_HdfFileGenerating_hdf_file, METH_VARARGS, (char *)"\n"
+		"\n"
+		"HdfFile& FullPhysics::HdfFileGenerating::hdf_file()\n"
+		"\n"
+		""},
 	 { (char *)"HdfFileGenerating___str__", _wrap_HdfFileGenerating___str__, METH_VARARGS, NULL},
-	 { (char *)"delete_HdfFileGenerating", _wrap_delete_HdfFileGenerating, METH_VARARGS, NULL},
+	 { (char *)"delete_HdfFileGenerating", _wrap_delete_HdfFileGenerating, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::HdfFileGenerating::~HdfFileGenerating()\n"
+		"\n"
+		""},
 	 { (char *)"HdfFileGenerating_swigregister", HdfFileGenerating_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };

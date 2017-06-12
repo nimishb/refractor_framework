@@ -5862,15 +5862,60 @@ SWIGINTERN PyObject *ReferenceVmrApriori_swigregister(PyObject *SWIGUNUSEDPARM(s
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"new_ReferenceVmrApriori", _wrap_new_ReferenceVmrApriori, METH_VARARGS, NULL},
-	 { (char *)"ReferenceVmrApriori_model_tropopause_altitude", _wrap_ReferenceVmrApriori_model_tropopause_altitude, METH_VARARGS, NULL},
-	 { (char *)"ReferenceVmrApriori_effective_altitude", _wrap_ReferenceVmrApriori_effective_altitude, METH_VARARGS, NULL},
-	 { (char *)"ReferenceVmrApriori_age_of_air", _wrap_ReferenceVmrApriori_age_of_air, METH_VARARGS, NULL},
-	 { (char *)"ReferenceVmrApriori_resample_to_model_grid", _wrap_ReferenceVmrApriori_resample_to_model_grid, METH_VARARGS, NULL},
-	 { (char *)"ReferenceVmrApriori_apply_latitude_gradient", _wrap_ReferenceVmrApriori_apply_latitude_gradient, METH_VARARGS, NULL},
-	 { (char *)"ReferenceVmrApriori_apply_secular_trend", _wrap_ReferenceVmrApriori_apply_secular_trend, METH_VARARGS, NULL},
-	 { (char *)"ReferenceVmrApriori_apply_seasonal_cycle", _wrap_ReferenceVmrApriori_apply_seasonal_cycle, METH_VARARGS, NULL},
-	 { (char *)"ReferenceVmrApriori_apriori_vmr", _wrap_ReferenceVmrApriori_apriori_vmr, METH_VARARGS, NULL},
+	 { (char *)"new_ReferenceVmrApriori", _wrap_new_ReferenceVmrApriori, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::ReferenceVmrApriori::ReferenceVmrApriori(const blitz::Array< double, 1 > &Model_pressure, const blitz::Array<\n"
+		"double, 1 > &Model_altitude, const blitz::Array< double, 1 >\n"
+		"&Model_temperature, const blitz::Array< double, 1 > &Ref_altitude,\n"
+		"const double Ref_latitude, const Time &Ref_time, const double\n"
+		"Ref_tropopause_altitude, const double Obs_latitude, const Time\n"
+		"&Obs_time)\n"
+		"\n"
+		""},
+	 { (char *)"ReferenceVmrApriori_model_tropopause_altitude", _wrap_ReferenceVmrApriori_model_tropopause_altitude, METH_VARARGS, (char *)"\n"
+		"\n"
+		"double FullPhysics::ReferenceVmrApriori::model_tropopause_altitude() const\n"
+		"\n"
+		""},
+	 { (char *)"ReferenceVmrApriori_effective_altitude", _wrap_ReferenceVmrApriori_effective_altitude, METH_VARARGS, (char *)"\n"
+		"\n"
+		"const blitz::Array<double, 1> FullPhysics::ReferenceVmrApriori::effective_altitude() const\n"
+		"\n"
+		""},
+	 { (char *)"ReferenceVmrApriori_age_of_air", _wrap_ReferenceVmrApriori_age_of_air, METH_VARARGS, (char *)"\n"
+		"\n"
+		"const double FullPhysics::ReferenceVmrApriori::age_of_air(const double altitude) const\n"
+		"\n"
+		""},
+	 { (char *)"ReferenceVmrApriori_resample_to_model_grid", _wrap_ReferenceVmrApriori_resample_to_model_grid, METH_VARARGS, (char *)"\n"
+		"\n"
+		"const blitz::Array<double, 1> FullPhysics::ReferenceVmrApriori::resample_to_model_grid(const blitz::Array< double, 1 > &vmr) const\n"
+		"\n"
+		""},
+	 { (char *)"ReferenceVmrApriori_apply_latitude_gradient", _wrap_ReferenceVmrApriori_apply_latitude_gradient, METH_VARARGS, (char *)"\n"
+		"\n"
+		"const blitz::Array<double, 1> FullPhysics::ReferenceVmrApriori::apply_latitude_gradient(const blitz::Array< double, 1 > &vmr, const std::string &gas_name)\n"
+		"const\n"
+		"\n"
+		""},
+	 { (char *)"ReferenceVmrApriori_apply_secular_trend", _wrap_ReferenceVmrApriori_apply_secular_trend, METH_VARARGS, (char *)"\n"
+		"\n"
+		"const blitz::Array<double, 1> FullPhysics::ReferenceVmrApriori::apply_secular_trend(const blitz::Array< double, 1 > &vmr, const std::string &gas_name)\n"
+		"const\n"
+		"\n"
+		""},
+	 { (char *)"ReferenceVmrApriori_apply_seasonal_cycle", _wrap_ReferenceVmrApriori_apply_seasonal_cycle, METH_VARARGS, (char *)"\n"
+		"\n"
+		"const blitz::Array<double, 1> FullPhysics::ReferenceVmrApriori::apply_seasonal_cycle(const blitz::Array< double, 1 > &vmr, const std::string &gas_name)\n"
+		"const\n"
+		"\n"
+		""},
+	 { (char *)"ReferenceVmrApriori_apriori_vmr", _wrap_ReferenceVmrApriori_apriori_vmr, METH_VARARGS, (char *)"\n"
+		"\n"
+		"const blitz::Array<double, 1> FullPhysics::ReferenceVmrApriori::apriori_vmr(const blitz::Array< double, 1 > &vmr, const std::string &gas_name)\n"
+		"const\n"
+		"\n"
+		""},
 	 { (char *)"ReferenceVmrApriori___str__", _wrap_ReferenceVmrApriori___str__, METH_VARARGS, NULL},
 	 { (char *)"delete_ReferenceVmrApriori", _wrap_delete_ReferenceVmrApriori, METH_VARARGS, NULL},
 	 { (char *)"ReferenceVmrApriori_swigregister", ReferenceVmrApriori_swigregister, METH_VARARGS, NULL},

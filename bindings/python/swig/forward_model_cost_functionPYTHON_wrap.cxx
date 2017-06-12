@@ -5200,9 +5200,23 @@ SWIGINTERN PyObject *ForwardModelCostFunction_swigregister(PyObject *SWIGUNUSEDP
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"new_ForwardModelCostFunction", _wrap_new_ForwardModelCostFunction, METH_VARARGS, NULL},
-	 { (char *)"ForwardModelCostFunction_cost_function", _wrap_ForwardModelCostFunction_cost_function, METH_VARARGS, NULL},
-	 { (char *)"delete_ForwardModelCostFunction", _wrap_delete_ForwardModelCostFunction, METH_VARARGS, NULL},
+	 { (char *)"new_ForwardModelCostFunction", _wrap_new_ForwardModelCostFunction, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::ForwardModelCostFunction::ForwardModelCostFunction(const boost::shared_ptr< ForwardModel > &fm)\n"
+		"\n"
+		""},
+	 { (char *)"ForwardModelCostFunction_cost_function", _wrap_ForwardModelCostFunction_cost_function, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::ForwardModelCostFunction::cost_function(const blitz::Array< double, 1 > &X, blitz::Array< double, 1 >\n"
+		"&Residual, blitz::Array< double, 1 > &Se, blitz::Array< double, 2 >\n"
+		"&Jacobian) const\n"
+		"\n"
+		""},
+	 { (char *)"delete_ForwardModelCostFunction", _wrap_delete_ForwardModelCostFunction, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::ForwardModelCostFunction::~ForwardModelCostFunction()\n"
+		"\n"
+		""},
 	 { (char *)"ForwardModelCostFunction_swigregister", ForwardModelCostFunction_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };

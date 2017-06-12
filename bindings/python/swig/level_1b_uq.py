@@ -125,6 +125,13 @@ import full_physics_swig.level_1b_hdf
 import full_physics_swig.level_1b
 import full_physics_swig.generic_object
 class Level1bUq(full_physics_swig.level_1b_oco.Level1bOco):
+    """
+
+    This reads a Uncertainty Quantification L1B file.
+
+    C++ includes: level_1b_uq.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.level_1b_oco.Level1bOco]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -136,6 +143,12 @@ class Level1bUq(full_physics_swig.level_1b_oco.Level1bOco):
     __repr__ = _swig_repr
 
     def __init__(self, Hfile, Sounding_id):
+        """
+
+        FullPhysics::Level1bUq::Level1bUq(const boost::shared_ptr< HdfFile > &Hfile, const boost::shared_ptr<
+        HdfSoundingId > &Sounding_id)
+
+        """
         this = _level_1b_uq.new_Level1bUq(Hfile, Sounding_id)
         try:
             self.this.append(this)
@@ -143,7 +156,13 @@ class Level1bUq(full_physics_swig.level_1b_oco.Level1bOco):
             self.this = this
 
     def set_radiance(self, Spec_index, Rad):
+        """
+
+        void FullPhysics::Level1bUq::set_radiance(int Spec_index, boost::shared_ptr< SpectralRange > &Rad)
+
+        """
         return _level_1b_uq.Level1bUq_set_radiance(self, Spec_index, Rad)
+
     __swig_destroy__ = _level_1b_uq.delete_Level1bUq
     __del__ = lambda self: None
 Level1bUq_swigregister = _level_1b_uq.Level1bUq_swigregister

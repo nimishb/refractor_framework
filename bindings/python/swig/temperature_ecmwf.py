@@ -127,6 +127,16 @@ import full_physics_swig.state_vector
 import full_physics_swig.generic_object
 import full_physics_swig.sub_state_vector_array
 class TemperatureEcmwf(full_physics_swig.temperature_offset.TemperatureOffset):
+    """
+
+    This class maintains the temperature portion of the state.
+
+    This particular implementation uses the temperature from ECMWF file
+    (interpolated to the current pressure grid), along with an offset.
+
+    C++ includes: temperature_ecmwf.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.temperature_offset.TemperatureOffset]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -138,6 +148,13 @@ class TemperatureEcmwf(full_physics_swig.temperature_offset.TemperatureOffset):
     __repr__ = _swig_repr
 
     def __init__(self, Ecmwf_file, Press, Temp_offset, Temp_flag):
+        """
+
+        FullPhysics::TemperatureEcmwf::TemperatureEcmwf(const boost::shared_ptr< Ecmwf > &Ecmwf_file, const
+        boost::shared_ptr< Pressure > &Press, double Temp_offset, bool
+        Temp_flag)
+
+        """
         this = _temperature_ecmwf.new_TemperatureEcmwf(Ecmwf_file, Press, Temp_offset, Temp_flag)
         try:
             self.this.append(this)
@@ -145,7 +162,13 @@ class TemperatureEcmwf(full_physics_swig.temperature_offset.TemperatureOffset):
             self.this = this
 
     def clone(self, *args):
+        """
+
+        virtual boost::shared_ptr<Temperature> FullPhysics::TemperatureEcmwf::clone(const boost::shared_ptr< Pressure > &Press) const
+
+        """
         return _temperature_ecmwf.TemperatureEcmwf_clone(self, *args)
+
 
     def state_vector_name_i(self, i):
         return _temperature_ecmwf.TemperatureEcmwf_state_vector_name_i(self, i)
@@ -167,7 +190,13 @@ class TemperatureEcmwf(full_physics_swig.temperature_offset.TemperatureOffset):
 
 
     def _v_temperature_profile(self):
+        """
+
+        virtual blitz::Array<double, 1> FullPhysics::TemperatureEcmwf::temperature_profile() const
+        Temperature from ECMWF, used to write to output file. 
+        """
         return _temperature_ecmwf.TemperatureEcmwf__v_temperature_profile(self)
+
 
     @property
     def temperature_profile(self):
@@ -175,7 +204,14 @@ class TemperatureEcmwf(full_physics_swig.temperature_offset.TemperatureOffset):
 
 
     def _v_pressure_profile(self):
+        """
+
+        virtual blitz::Array<double, 1> FullPhysics::TemperatureEcmwf::pressure_profile() const
+        Pressure levels that temperature is on from ECMWF, used to write to
+        output file. 
+        """
         return _temperature_ecmwf.TemperatureEcmwf__v_pressure_profile(self)
+
 
     @property
     def pressure_profile(self):

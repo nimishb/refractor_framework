@@ -122,6 +122,28 @@ def _new_from_set(cls, version, *args):
 
 import full_physics_swig.generic_object
 class Unit(full_physics_swig.generic_object.GenericObject):
+    """
+
+    Libraries such as boost::units allow unit handling where we know the
+    units at compile time.
+
+    This class provide the same sort of handling, but for instances where
+    we know the units at runtime rather than compile time (e.g., based on
+    input read).
+
+    We do dimensional analysis based on the SI base units. In order, these
+    are meter, kilogram, second, Kelvin, Ampere, mole, candela, steradian,
+    radian, photon, sample_index
+
+    Note that steradian, radian and sample_index are actually
+    dimensionless, but it is useful to track them. Also photon is a photon
+    count, which doesn't really have units either. But it is useful to
+    track because we can determine the photon count at a particular
+    wavelength to convert to cm^-1.
+
+    C++ includes: unit.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.generic_object.GenericObject]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -139,6 +161,11 @@ class Unit(full_physics_swig.generic_object.GenericObject):
         number_base_unit = _swig_property(_unit.Unit_number_base_unit_get)
 
     def __init__(self, *args):
+        """
+
+        FullPhysics::Unit::Unit()
+
+        """
         this = _unit.new_Unit(*args)
         try:
             self.this.append(this)
@@ -146,7 +173,14 @@ class Unit(full_physics_swig.generic_object.GenericObject):
             self.this = this
 
     def _v_base_unit_powers(self):
+        """
+
+        const boost::array<boost::rational<int>, number_base_unit>& FullPhysics::Unit::base_unit_powers() const
+        Array of the powers of the base units (so m^2 would return
+        (1,0,0,0,0,0,0,0)) 
+        """
         return _unit.Unit__v_base_unit_powers(self)
+
 
     @property
     def base_unit_powers(self):
@@ -154,7 +188,13 @@ class Unit(full_physics_swig.generic_object.GenericObject):
 
 
     def _v_conversion_to_si(self):
+        """
+
+        double FullPhysics::Unit::conversion_to_si() const
+        Conversion factor to go to SI units. 
+        """
         return _unit.Unit__v_conversion_to_si(self)
+
 
     @property
     def conversion_to_si(self):
@@ -162,7 +202,13 @@ class Unit(full_physics_swig.generic_object.GenericObject):
 
 
     def _v_name(self):
+        """
+
+        void FullPhysics::Unit::name(const std::string &V)
+        Set name of unit. 
+        """
         return _unit.Unit__v_name(self)
+
 
     @property
     def name(self):
@@ -170,7 +216,16 @@ class Unit(full_physics_swig.generic_object.GenericObject):
 
 
     def is_commensurate(self, Units):
+        """
+
+        bool FullPhysics::Unit::is_commensurate(const Unit &Units) const
+        Test if this set of units is commensurate with another set.
+
+        If this return true then conversion() would succeed, otherwise it
+        would fail. 
+        """
         return _unit.Unit_is_commensurate(self, Units)
+
 
     def __imul__(self, *args):
         return _unit.Unit___imul__(self, *args)

@@ -5753,18 +5753,66 @@ SWIGINTERN PyObject *Level1bAverage_swigregister(PyObject *SWIGUNUSEDPARM(self),
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"Level1bAverage_latitude", _wrap_Level1bAverage_latitude, METH_VARARGS, NULL},
-	 { (char *)"Level1bAverage_longitude", _wrap_Level1bAverage_longitude, METH_VARARGS, NULL},
-	 { (char *)"Level1bAverage_sounding_zenith", _wrap_Level1bAverage_sounding_zenith, METH_VARARGS, NULL},
-	 { (char *)"Level1bAverage_sounding_azimuth", _wrap_Level1bAverage_sounding_azimuth, METH_VARARGS, NULL},
-	 { (char *)"Level1bAverage_stokes_coefficient", _wrap_Level1bAverage_stokes_coefficient, METH_VARARGS, NULL},
-	 { (char *)"Level1bAverage_solar_zenith", _wrap_Level1bAverage_solar_zenith, METH_VARARGS, NULL},
-	 { (char *)"Level1bAverage_solar_azimuth", _wrap_Level1bAverage_solar_azimuth, METH_VARARGS, NULL},
-	 { (char *)"Level1bAverage_altitude", _wrap_Level1bAverage_altitude, METH_VARARGS, NULL},
-	 { (char *)"Level1bAverage_relative_velocity", _wrap_Level1bAverage_relative_velocity, METH_VARARGS, NULL},
-	 { (char *)"Level1bAverage_time", _wrap_Level1bAverage_time, METH_VARARGS, NULL},
-	 { (char *)"Level1bAverage_radiance", _wrap_Level1bAverage_radiance, METH_VARARGS, NULL},
-	 { (char *)"delete_Level1bAverage", _wrap_delete_Level1bAverage, METH_VARARGS, NULL},
+	 { (char *)"Level1bAverage_latitude", _wrap_Level1bAverage_latitude, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual DoubleWithUnit FullPhysics::Level1bAverage::latitude(int i) const\n"
+		"\n"
+		""},
+	 { (char *)"Level1bAverage_longitude", _wrap_Level1bAverage_longitude, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual DoubleWithUnit FullPhysics::Level1bAverage::longitude(int i) const\n"
+		"\n"
+		""},
+	 { (char *)"Level1bAverage_sounding_zenith", _wrap_Level1bAverage_sounding_zenith, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual DoubleWithUnit FullPhysics::Level1bAverage::sounding_zenith(int i) const\n"
+		"\n"
+		""},
+	 { (char *)"Level1bAverage_sounding_azimuth", _wrap_Level1bAverage_sounding_azimuth, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual DoubleWithUnit FullPhysics::Level1bAverage::sounding_azimuth(int i) const\n"
+		"\n"
+		""},
+	 { (char *)"Level1bAverage_stokes_coefficient", _wrap_Level1bAverage_stokes_coefficient, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual blitz::Array<double, 1> FullPhysics::Level1bAverage::stokes_coefficient(int i) const\n"
+		"\n"
+		""},
+	 { (char *)"Level1bAverage_solar_zenith", _wrap_Level1bAverage_solar_zenith, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual DoubleWithUnit FullPhysics::Level1bAverage::solar_zenith(int i) const\n"
+		"\n"
+		""},
+	 { (char *)"Level1bAverage_solar_azimuth", _wrap_Level1bAverage_solar_azimuth, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual DoubleWithUnit FullPhysics::Level1bAverage::solar_azimuth(int i) const\n"
+		"\n"
+		""},
+	 { (char *)"Level1bAverage_altitude", _wrap_Level1bAverage_altitude, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual DoubleWithUnit FullPhysics::Level1bAverage::altitude(int i) const\n"
+		"\n"
+		""},
+	 { (char *)"Level1bAverage_relative_velocity", _wrap_Level1bAverage_relative_velocity, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual DoubleWithUnit FullPhysics::Level1bAverage::relative_velocity(int Spec_index) const\n"
+		"\n"
+		""},
+	 { (char *)"Level1bAverage_time", _wrap_Level1bAverage_time, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual Time FullPhysics::Level1bAverage::time(int Spec_index) const\n"
+		"\n"
+		""},
+	 { (char *)"Level1bAverage_radiance", _wrap_Level1bAverage_radiance, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual SpectralRange FullPhysics::Level1bAverage::radiance(int Spec_index) const\n"
+		"\n"
+		""},
+	 { (char *)"delete_Level1bAverage", _wrap_delete_Level1bAverage, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::Level1bAverage::~Level1bAverage()\n"
+		"\n"
+		""},
 	 { (char *)"Level1bAverage_swigregister", Level1bAverage_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };

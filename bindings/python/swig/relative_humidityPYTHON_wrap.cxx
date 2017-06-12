@@ -6713,13 +6713,39 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"SwigPyIterator___sub__", _wrap_SwigPyIterator___sub__, METH_VARARGS, NULL},
 	 { (char *)"SwigPyIterator_swigregister", SwigPyIterator_swigregister, METH_VARARGS, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"new_RelativeHumidity", _wrap_new_RelativeHumidity, METH_VARARGS, NULL},
-	 { (char *)"RelativeHumidity_clone", _wrap_RelativeHumidity_clone, METH_VARARGS, NULL},
-	 { (char *)"RelativeHumidity_relative_humidity_grid", _wrap_RelativeHumidity_relative_humidity_grid, METH_VARARGS, NULL},
-	 { (char *)"RelativeHumidity_relative_humidity_layer", _wrap_RelativeHumidity_relative_humidity_layer, METH_VARARGS, NULL},
-	 { (char *)"RelativeHumidity_specific_humidity_grid", _wrap_RelativeHumidity_specific_humidity_grid, METH_VARARGS, NULL},
+	 { (char *)"new_RelativeHumidity", _wrap_new_RelativeHumidity, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::RelativeHumidity::RelativeHumidity(const boost::shared_ptr< Absorber > &Abs, const boost::shared_ptr<\n"
+		"Temperature > &Temp, const boost::shared_ptr< Pressure > &Press)\n"
+		"\n"
+		""},
+	 { (char *)"RelativeHumidity_clone", _wrap_RelativeHumidity_clone, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual boost::shared_ptr<RelativeHumidity> FullPhysics::RelativeHumidity::clone(const boost::shared_ptr< Absorber > &Abs, const boost::shared_ptr<\n"
+		"Temperature > &Temp, const boost::shared_ptr< Pressure > &Press) const\n"
+		"\n"
+		""},
+	 { (char *)"RelativeHumidity_relative_humidity_grid", _wrap_RelativeHumidity_relative_humidity_grid, METH_VARARGS, (char *)"\n"
+		"\n"
+		"ArrayAd<double, 1> FullPhysics::RelativeHumidity::relative_humidity_grid() const\n"
+		"\n"
+		""},
+	 { (char *)"RelativeHumidity_relative_humidity_layer", _wrap_RelativeHumidity_relative_humidity_layer, METH_VARARGS, (char *)"\n"
+		"\n"
+		"ArrayAd<double, 1> FullPhysics::RelativeHumidity::relative_humidity_layer() const\n"
+		"\n"
+		""},
+	 { (char *)"RelativeHumidity_specific_humidity_grid", _wrap_RelativeHumidity_specific_humidity_grid, METH_VARARGS, (char *)"\n"
+		"\n"
+		"ArrayAd<double, 1> FullPhysics::RelativeHumidity::specific_humidity_grid() const\n"
+		"\n"
+		""},
 	 { (char *)"RelativeHumidity___str__", _wrap_RelativeHumidity___str__, METH_VARARGS, NULL},
-	 { (char *)"delete_RelativeHumidity", _wrap_delete_RelativeHumidity, METH_VARARGS, NULL},
+	 { (char *)"delete_RelativeHumidity", _wrap_delete_RelativeHumidity, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::RelativeHumidity::~RelativeHumidity()\n"
+		"\n"
+		""},
 	 { (char *)"RelativeHumidity_swigregister", RelativeHumidity_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };

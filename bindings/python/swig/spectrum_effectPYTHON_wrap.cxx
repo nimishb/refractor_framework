@@ -13280,13 +13280,48 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"ObserverSpectrumEffect_notify_add", _wrap_ObserverSpectrumEffect_notify_add, METH_VARARGS, NULL},
 	 { (char *)"ObserverSpectrumEffect_notify_remove", _wrap_ObserverSpectrumEffect_notify_remove, METH_VARARGS, NULL},
 	 { (char *)"ObserverSpectrumEffect_swigregister", ObserverSpectrumEffect_swigregister, METH_VARARGS, NULL},
-	 { (char *)"delete_SpectrumEffect", _wrap_delete_SpectrumEffect, METH_VARARGS, NULL},
+	 { (char *)"delete_SpectrumEffect", _wrap_delete_SpectrumEffect, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::SpectrumEffect::~SpectrumEffect()\n"
+		"\n"
+		""},
 	 { (char *)"SpectrumEffect___str__", _wrap_SpectrumEffect___str__, METH_VARARGS, NULL},
-	 { (char *)"SpectrumEffect_apply_effect", _wrap_SpectrumEffect_apply_effect, METH_VARARGS, NULL},
-	 { (char *)"SpectrumEffect_clone", _wrap_SpectrumEffect_clone, METH_VARARGS, NULL},
-	 { (char *)"SpectrumEffect__v_name", _wrap_SpectrumEffect__v_name, METH_VARARGS, NULL},
-	 { (char *)"SpectrumEffect_add_observer", _wrap_SpectrumEffect_add_observer, METH_VARARGS, NULL},
-	 { (char *)"SpectrumEffect_remove_observer", _wrap_SpectrumEffect_remove_observer, METH_VARARGS, NULL},
+	 { (char *)"SpectrumEffect_apply_effect", _wrap_SpectrumEffect_apply_effect, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::SpectrumEffect::apply_effect(Spectrum &Spec, const ForwardModelSpectralGrid &Forward_model_grid)\n"
+		"const =0\n"
+		"Apply correction to spectrum in place.\n"
+		"\n"
+		"We pass in the forward model grids used. A class can use this to\n"
+		"optimize its calculation, see for example FluorescenceEffect. \n"
+		""},
+	 { (char *)"SpectrumEffect_clone", _wrap_SpectrumEffect_clone, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual boost::shared_ptr<SpectrumEffect> FullPhysics::SpectrumEffect::clone() const =0\n"
+		"Clone a SpectrumEffect object.\n"
+		"\n"
+		"Note that the cloned version will not be attached to and StateVector\n"
+		"or Observer<SpectrumEffect>, although you can of course attach them\n"
+		"after receiving the cloned object.\n"
+		"\n"
+		"Because this isn't attached to the StateVector, one use of the clone\n"
+		"operator is to create a \"frozen\" SpectrumEffect object. \n"
+		""},
+	 { (char *)"SpectrumEffect__v_name", _wrap_SpectrumEffect__v_name, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual std::string FullPhysics::SpectrumEffect::name() const =0\n"
+		"Name of spectrum effect, for use when outputting effects of effect. \n"
+		""},
+	 { (char *)"SpectrumEffect_add_observer", _wrap_SpectrumEffect_add_observer, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::SpectrumEffect::add_observer(Observer< SpectrumEffect > &Obs)\n"
+		"\n"
+		""},
+	 { (char *)"SpectrumEffect_remove_observer", _wrap_SpectrumEffect_remove_observer, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::SpectrumEffect::remove_observer(Observer< SpectrumEffect > &Obs)\n"
+		"\n"
+		""},
 	 { (char *)"SpectrumEffect_swigregister", SpectrumEffect_swigregister, METH_VARARGS, NULL},
 	 { (char *)"SubStateVectorArraySpectrumEffect_init", _wrap_SubStateVectorArraySpectrumEffect_init, METH_VARARGS, NULL},
 	 { (char *)"delete_SubStateVectorArraySpectrumEffect", _wrap_delete_SubStateVectorArraySpectrumEffect, METH_VARARGS, NULL},

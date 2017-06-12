@@ -123,6 +123,13 @@ def _new_from_set(cls, version, *args):
 import full_physics_swig.ils_function
 import full_physics_swig.generic_object
 class IlsGaussian(full_physics_swig.ils_function.IlsFunction):
+    """
+
+    This is an ILS function that is a Gaussian.
+
+    C++ includes: ils_gaussian.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.ils_function.IlsFunction]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -137,7 +144,14 @@ class IlsGaussian(full_physics_swig.ils_function.IlsFunction):
     __repr__ = _swig_repr
 
     def ils(self, wn_center, wn, OUTPUT):
+        """
+
+        virtual void FullPhysics::IlsGaussian::ils(const AutoDerivative< double > &wn_center, const blitz::Array<
+        double, 1 > &wn, ArrayAd< double, 1 > &res) const
+
+        """
         return _ils_gaussian.IlsGaussian_ils(self, wn_center, wn, OUTPUT)
+
     __swig_destroy__ = _ils_gaussian.delete_IlsGaussian
     __del__ = lambda self: None
 IlsGaussian_swigregister = _ils_gaussian.IlsGaussian_swigregister

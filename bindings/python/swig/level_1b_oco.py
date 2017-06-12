@@ -124,6 +124,13 @@ import full_physics_swig.level_1b_hdf
 import full_physics_swig.level_1b
 import full_physics_swig.generic_object
 class Level1bOco(full_physics_swig.level_1b_hdf.Level1bHdf):
+    """
+
+    This reads a Level 1B file that is in the HDF format.
+
+    C++ includes: level_1b_oco.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.level_1b_hdf.Level1bHdf]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -135,6 +142,12 @@ class Level1bOco(full_physics_swig.level_1b_hdf.Level1bHdf):
     __repr__ = _swig_repr
 
     def __init__(self, *args):
+        """
+
+        FullPhysics::Level1bOco::Level1bOco(const boost::shared_ptr< HdfFile > &Hfile, const boost::shared_ptr<
+        HdfSoundingId > &Sounding_id)
+
+        """
         this = _level_1b_oco.new_Level1bOco(*args)
         try:
             self.this.append(this)
@@ -145,13 +158,34 @@ class Level1bOco(full_physics_swig.level_1b_hdf.Level1bHdf):
         return _level_1b_oco.Level1bOco_radiance(self, Spec_index)
 
     def has_spike_eof(self, Spec_index):
+        """
+
+        bool FullPhysics::Level1bOco::has_spike_eof(int Spec_index) const
+        True if we have the SpikeEOF data available. 
+        """
         return _level_1b_oco.Level1bOco_has_spike_eof(self, Spec_index)
 
+
     def spike_eof(self, Spec_index):
+        """
+
+        blitz::Array<double, 1> FullPhysics::Level1bOco::spike_eof(int Spec_index) const
+
+        """
         return _level_1b_oco.Level1bOco_spike_eof(self, Spec_index)
 
+
     def _v_has_solar_relative_velocity(self):
+        """
+
+        bool FullPhysics::Level1bOco::has_solar_relative_velocity() const
+        True if the Level 1 data has the solar relative velocity.
+
+        Older versions of OCO and also the simulated data do not have this
+        field, so this returns false. 
+        """
         return _level_1b_oco.Level1bOco__v_has_solar_relative_velocity(self)
+
 
     @property
     def has_solar_relative_velocity(self):
@@ -159,7 +193,13 @@ class Level1bOco(full_physics_swig.level_1b_hdf.Level1bHdf):
 
 
     def _v_land_fraction(self):
+        """
+
+        double FullPhysics::Level1bOco::land_fraction() const
+        Return land fraction, as a percentage going from 0 to 100. 
+        """
         return _level_1b_oco.Level1bOco__v_land_fraction(self)
+
 
     @property
     def land_fraction(self):
@@ -167,7 +207,13 @@ class Level1bOco(full_physics_swig.level_1b_hdf.Level1bHdf):
 
 
     def _v_solar_distance(self):
+        """
+
+        DoubleWithUnit FullPhysics::Level1bOco::solar_distance() const
+        Distance from sounding location to the sun. 
+        """
         return _level_1b_oco.Level1bOco__v_solar_distance(self)
+
 
     @property
     def solar_distance(self):
@@ -175,7 +221,17 @@ class Level1bOco(full_physics_swig.level_1b_hdf.Level1bHdf):
 
 
     def _v_solar_velocity(self):
+        """
+
+        DoubleWithUnit FullPhysics::Level1bOco::solar_velocity() const
+        Velocity of sun along the sounding location/sun vector.
+
+        Note this includes the rotation of the earth along with the earth/sun
+        velocity, so we can take this directly to calculate the doppler shift.
+
+        """
         return _level_1b_oco.Level1bOco__v_solar_velocity(self)
+
 
     @property
     def solar_velocity(self):
@@ -183,7 +239,15 @@ class Level1bOco(full_physics_swig.level_1b_hdf.Level1bHdf):
 
 
     def _v_acquisition_mode(self):
+        """
+
+        const std::string& FullPhysics::Level1bOco::acquisition_mode() const
+        The acquisition mode.
+
+        The data we process will be "Nadir", "Glint" or "Target". 
+        """
         return _level_1b_oco.Level1bOco__v_acquisition_mode(self)
+
 
     @property
     def acquisition_mode(self):

@@ -127,6 +127,17 @@ import full_physics_swig.generic_object
 import full_physics_swig.state_vector
 import full_physics_swig.sub_state_vector_array
 class AerosolExtinctionLog(full_physics_swig.aerosol_extinction_imp_base.AerosolExtinctionImpBase):
+    """
+
+    This class maps the state vector to the aerosol extinction on each
+    level.
+
+    This implementation just gets the log of the extinction coefficient
+    for each level from the state vector.
+
+    C++ includes: aerosol_extinction_log.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.aerosol_extinction_imp_base.AerosolExtinctionImpBase]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -138,6 +149,27 @@ class AerosolExtinctionLog(full_physics_swig.aerosol_extinction_imp_base.Aerosol
     __repr__ = _swig_repr
 
     def __init__(self, Press, Flag, Aext, Aerosol_name):
+        """
+
+        FullPhysics::AerosolExtinctionLog::AerosolExtinctionLog(const boost::shared_ptr< Pressure > &Press, const blitz::Array< bool,
+        1 > &Flag, const blitz::Array< double, 1 > &Aext, const std::string
+        &Aerosol_name)
+        Constructor.
+
+        Parameters:
+        -----------
+
+        Press:  The pressure to use
+
+        Flag:  Boolean flag indicating which levels are to be set by the state
+        vector. A value of false means the level is held fixed when the state
+        vector changes.
+
+        Aext:  The aerosol extinction value.
+
+        Aerosol_name:  The name of the aerosol. This is used to generate the
+        state vector name metadata, so it should be whatever is convenient. 
+        """
         this = _aerosol_extinction_log.new_AerosolExtinctionLog(Press, Flag, Aext, Aerosol_name)
         try:
             self.this.append(this)
@@ -145,10 +177,22 @@ class AerosolExtinctionLog(full_physics_swig.aerosol_extinction_imp_base.Aerosol
             self.this = this
 
     def clone(self, *args):
+        """
+
+        virtual boost::shared_ptr<AerosolExtinction> FullPhysics::AerosolExtinctionLog::clone(const boost::shared_ptr< Pressure > &P) const
+
+        """
         return _aerosol_extinction_log.AerosolExtinctionLog_clone(self, *args)
 
+
     def state_vector_name_i(self, i):
+        """
+
+        virtual std::string FullPhysics::AerosolExtinctionLog::state_vector_name_i(int i) const
+
+        """
         return _aerosol_extinction_log.AerosolExtinctionLog_state_vector_name_i(self, i)
+
     __swig_destroy__ = _aerosol_extinction_log.delete_AerosolExtinctionLog
     __del__ = lambda self: None
 AerosolExtinctionLog_swigregister = _aerosol_extinction_log.AerosolExtinctionLog_swigregister

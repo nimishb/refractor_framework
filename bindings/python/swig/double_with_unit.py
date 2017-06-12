@@ -122,6 +122,15 @@ def _new_from_set(cls, version, *args):
 
 import full_physics_swig.generic_object
 class DoubleWithUnit(full_physics_swig.generic_object.GenericObject):
+    """
+
+    We frequently have a double with units associated with it.
+
+    This is a simple structure that just keeps these two things together.
+
+    C++ includes: double_with_unit.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.generic_object.GenericObject]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -136,6 +145,11 @@ class DoubleWithUnit(full_physics_swig.generic_object.GenericObject):
         return _double_with_unit.DoubleWithUnit___str__(self)
 
     def __init__(self, *args):
+        """
+
+        FullPhysics::DoubleWithUnit::DoubleWithUnit(double V)
+
+        """
         this = _double_with_unit.new_DoubleWithUnit(*args)
         try:
             self.this.append(this)
@@ -155,10 +169,22 @@ class DoubleWithUnit(full_physics_swig.generic_object.GenericObject):
         return _double_with_unit.DoubleWithUnit___isub__(self, D)
 
     def convert(self, *args):
+        """
+
+        DoubleWithUnit FullPhysics::DoubleWithUnit::convert(const Unit &R) const
+        Convert to the given units. 
+        """
         return _double_with_unit.DoubleWithUnit_convert(self, *args)
 
+
     def convert_wave(self, *args):
+        """
+
+        DoubleWithUnit FullPhysics::DoubleWithUnit::convert_wave(const Unit &R, const SpectralDomain &Pixel_grid) const
+
+        """
         return _double_with_unit.DoubleWithUnit_convert_wave(self, *args)
+
 
     def _value(self):
         return _double_with_unit.DoubleWithUnit__value(self)

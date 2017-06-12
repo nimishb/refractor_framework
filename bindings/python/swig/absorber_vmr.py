@@ -245,6 +245,19 @@ ObserverAbsorberVmr_swigregister = _absorber_vmr.ObserverAbsorberVmr_swigregiste
 ObserverAbsorberVmr_swigregister(ObserverAbsorberVmr)
 
 class AbsorberVmr(full_physics_swig.state_vector.StateVectorObserver, ObservableAbsorberVmr):
+    """
+
+    This gives the Gas Absorber Volumn mixing ratio for a single gas.
+
+    This gets used by AbsorberAbsco class.
+
+    When implementing a new class, you almost always will want to derive
+    from AbsorberVmrImpBase rather than from this class. See that class
+    for a description.
+
+    C++ includes: absorber_vmr.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.state_vector.StateVectorObserver, ObservableAbsorberVmr]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -261,16 +274,48 @@ class AbsorberVmr(full_physics_swig.state_vector.StateVectorObserver, Observable
     __del__ = lambda self: None
 
     def add_observer(self, Obs):
+        """
+
+        virtual void FullPhysics::AbsorberVmr::add_observer(Observer< AbsorberVmr > &Obs)
+
+        """
         return _absorber_vmr.AbsorberVmr_add_observer(self, Obs)
 
+
     def remove_observer(self, Obs):
+        """
+
+        virtual void FullPhysics::AbsorberVmr::remove_observer(Observer< AbsorberVmr > &Obs)
+
+        """
         return _absorber_vmr.AbsorberVmr_remove_observer(self, Obs)
 
+
     def clone(self, *args):
+        """
+
+        virtual boost::shared_ptr<AbsorberVmr> FullPhysics::AbsorberVmr::clone(const boost::shared_ptr< Pressure > &Press) const =0
+        This version of clone takes a pressure to use.
+
+        The intent is that the pressure has been cloned from the original
+        pressure (although this class has no way to verify this). This allows
+        sets of objects to be cloned using a common Pressure clone, e.g.
+        Atmosphere. 
+        """
         return _absorber_vmr.AbsorberVmr_clone(self, *args)
 
+
     def _v_gas_name(self):
+        """
+
+        virtual std::string FullPhysics::AbsorberVmr::gas_name() const =0
+        This indicates the name of this particular Absorber.
+
+        The naming convention is free form but recommended to use the short
+        form often used by HITRAN 
+        """
         return _absorber_vmr.AbsorberVmr__v_gas_name(self)
+
 
     @property
     def gas_name(self):
@@ -278,13 +323,34 @@ class AbsorberVmr(full_physics_swig.state_vector.StateVectorObserver, Observable
 
 
     def volume_mixing_ratio(self, P):
+        """
+
+        virtual AutoDerivative<double> FullPhysics::AbsorberVmr::volume_mixing_ratio(const AutoDerivative< double > &P) const =0
+        This returns the volume mixing ratio at the given pressure level.
+
+        This is dimensionless, and the pressure is in Pascals 
+        """
         return _absorber_vmr.AbsorberVmr_volume_mixing_ratio(self, P)
 
+
     def vmr_grid(self, P):
+        """
+
+        virtual ArrayAd<double, 1> FullPhysics::AbsorberVmr::vmr_grid(const Pressure &P) const
+
+        """
         return _absorber_vmr.AbsorberVmr_vmr_grid(self, P)
 
+
     def _v_state_used(self):
+        """
+
+        virtual blitz::Array<bool, 1> FullPhysics::AbsorberVmr::state_used() const =0
+        Indicate what portion of the state vector is used to calculate the
+        VMR. 
+        """
         return _absorber_vmr.AbsorberVmr__v_state_used(self)
+
 
     @property
     def state_used(self):

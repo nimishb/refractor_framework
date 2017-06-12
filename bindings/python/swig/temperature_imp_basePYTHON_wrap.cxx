@@ -9038,14 +9038,45 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"SubStateVectorArrayTemperature__v_statevector_covariance", _wrap_SubStateVectorArrayTemperature__v_statevector_covariance, METH_VARARGS, NULL},
 	 { (char *)"SubStateVectorArrayTemperature__v_pressure", _wrap_SubStateVectorArrayTemperature__v_pressure, METH_VARARGS, NULL},
 	 { (char *)"SubStateVectorArrayTemperature_swigregister", SubStateVectorArrayTemperature_swigregister, METH_VARARGS, NULL},
-	 { (char *)"delete_TemperatureImpBase", _wrap_delete_TemperatureImpBase, METH_VARARGS, NULL},
-	 { (char *)"TemperatureImpBase_clone", _wrap_TemperatureImpBase_clone, METH_VARARGS, NULL},
-	 { (char *)"TemperatureImpBase_temperature", _wrap_TemperatureImpBase_temperature, METH_VARARGS, NULL},
+	 { (char *)"delete_TemperatureImpBase", _wrap_delete_TemperatureImpBase, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::TemperatureImpBase::~TemperatureImpBase()\n"
+		"\n"
+		""},
+	 { (char *)"TemperatureImpBase_clone", _wrap_TemperatureImpBase_clone, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual boost::shared_ptr<Temperature> FullPhysics::TemperatureImpBase::clone(const boost::shared_ptr< Pressure > &Press) const =0\n"
+		"\n"
+		""},
+	 { (char *)"TemperatureImpBase_temperature", _wrap_TemperatureImpBase_temperature, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual AutoDerivativeWithUnit<double> FullPhysics::TemperatureImpBase::temperature(const AutoDerivativeWithUnit< double > &Press) const\n"
+		"\n"
+		""},
 	 { (char *)"TemperatureImpBase_add_observer", _wrap_TemperatureImpBase_add_observer, METH_VARARGS, NULL},
 	 { (char *)"TemperatureImpBase_remove_observer", _wrap_TemperatureImpBase_remove_observer, METH_VARARGS, NULL},
-	 { (char *)"TemperatureImpBase_update_sub_state_hook", _wrap_TemperatureImpBase_update_sub_state_hook, METH_VARARGS, NULL},
-	 { (char *)"TemperatureImpBase_print_desc", _wrap_TemperatureImpBase_print_desc, METH_VARARGS, NULL},
-	 { (char *)"TemperatureImpBase__v_desc", _wrap_TemperatureImpBase__v_desc, METH_VARARGS, NULL},
+	 { (char *)"TemperatureImpBase_update_sub_state_hook", _wrap_TemperatureImpBase_update_sub_state_hook, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::TemperatureImpBase::update_sub_state_hook()\n"
+		"\n"
+		""},
+	 { (char *)"TemperatureImpBase_print_desc", _wrap_TemperatureImpBase_print_desc, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::TemperatureImpBase::print(std::ostream &Os) const\n"
+		"Print to stream.\n"
+		"\n"
+		"The default calls the function \"desc\" that returns a string. This\n"
+		"gives cleaner interface for deriving from this class in python, but\n"
+		"most C++ classes will want to override this function rather than using\n"
+		"desc. \n"
+		""},
+	 { (char *)"TemperatureImpBase__v_desc", _wrap_TemperatureImpBase__v_desc, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual std::string FullPhysics::TemperatureImpBase::desc() const\n"
+		"Description of object, to be printed to stream.\n"
+		"\n"
+		"This gives a cleaner interface for deriving from python. \n"
+		""},
 	 { (char *)"TemperatureImpBase_mark_used", _wrap_TemperatureImpBase_mark_used, METH_VARARGS, NULL},
 	 { (char *)"TemperatureImpBase_state_vector_name", _wrap_TemperatureImpBase_state_vector_name, METH_VARARGS, NULL},
 	 { (char *)"TemperatureImpBase_notify_update", _wrap_TemperatureImpBase_notify_update, METH_VARARGS, NULL},

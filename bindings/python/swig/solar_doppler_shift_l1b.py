@@ -123,6 +123,17 @@ def _new_from_set(cls, version, *args):
 import full_physics_swig.solar_doppler_shift
 import full_physics_swig.generic_object
 class SolarDopplerShiftL1b(full_physics_swig.solar_doppler_shift.SolarDopplerShift):
+    """
+
+    This class handles the solar Doppler stretch to calculate the shift of
+    the solar lines with respect to the telluric lines.
+
+    This implementation gets the Level 1b solar velocity and solar
+    distance passed to it.
+
+    C++ includes: solar_doppler_shift_l1b.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.solar_doppler_shift.SolarDopplerShift]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -134,6 +145,12 @@ class SolarDopplerShiftL1b(full_physics_swig.solar_doppler_shift.SolarDopplerShi
     __repr__ = _swig_repr
 
     def __init__(self, Solar_distance, Solar_relative_velocity, Apply_doppler_shift=True):
+        """
+
+        FullPhysics::SolarDopplerShiftL1b::SolarDopplerShiftL1b(const DoubleWithUnit &Solar_distance, const DoubleWithUnit
+        &Solar_relative_velocity, bool Apply_doppler_shift=true)
+
+        """
         this = _solar_doppler_shift_l1b.new_SolarDopplerShiftL1b(Solar_distance, Solar_relative_velocity, Apply_doppler_shift)
         try:
             self.this.append(this)
@@ -141,7 +158,13 @@ class SolarDopplerShiftL1b(full_physics_swig.solar_doppler_shift.SolarDopplerShi
             self.this = this
 
     def _v_doppler_shift(self):
+        """
+
+        double FullPhysics::SolarDopplerShiftL1b::doppler_shift() const
+
+        """
         return _solar_doppler_shift_l1b.SolarDopplerShiftL1b__v_doppler_shift(self)
+
 
     @property
     def doppler_shift(self):
@@ -149,7 +172,18 @@ class SolarDopplerShiftL1b(full_physics_swig.solar_doppler_shift.SolarDopplerShi
 
 
     def _v_solar_relative_velocity(self):
+        """
+
+        DoubleWithUnit FullPhysics::SolarDopplerShiftL1b::solar_relative_velocity() const
+        Velocity of the sounding to the center of the sun.
+
+        Positive means they are getting farther apart. This does include the
+        rotation of the earth (cf solar_velocity in
+        SolarDopplerShiftPolynomial which does not include rotation of earth)
+
+        """
         return _solar_doppler_shift_l1b.SolarDopplerShiftL1b__v_solar_relative_velocity(self)
+
 
     @property
     def solar_relative_velocity(self):
@@ -157,7 +191,13 @@ class SolarDopplerShiftL1b(full_physics_swig.solar_doppler_shift.SolarDopplerShi
 
 
     def _v_solar_distance(self):
+        """
+
+        virtual DoubleWithUnit FullPhysics::SolarDopplerShiftL1b::solar_distance() const
+
+        """
         return _solar_doppler_shift_l1b.SolarDopplerShiftL1b__v_solar_distance(self)
+
 
     @property
     def solar_distance(self):
@@ -165,7 +205,13 @@ class SolarDopplerShiftL1b(full_physics_swig.solar_doppler_shift.SolarDopplerShi
 
 
     def doppler_stretch(self, Spec_domain):
+        """
+
+        virtual SpectralDomain FullPhysics::SolarDopplerShiftL1b::doppler_stretch(const SpectralDomain &Spec_domain) const
+
+        """
         return _solar_doppler_shift_l1b.SolarDopplerShiftL1b_doppler_stretch(self, Spec_domain)
+
     __swig_destroy__ = _solar_doppler_shift_l1b.delete_SolarDopplerShiftL1b
     __del__ = lambda self: None
 SolarDopplerShiftL1b_swigregister = _solar_doppler_shift_l1b.SolarDopplerShiftL1b_swigregister

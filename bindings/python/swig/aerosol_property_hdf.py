@@ -126,6 +126,23 @@ import full_physics_swig.observer
 import full_physics_swig.generic_object
 import full_physics_swig.state_vector
 class AerosolPropertyHdf(full_physics_swig.aerosol_property_imp_base.AerosolPropertyImpBase):
+    """
+
+    This gives the Aerosol properties for an Aerosol.
+
+    This particular implementation reads the Aerosol properties from the
+    HDF group in a HDF file. The fields "wave_number",
+    "extinction_coefficient", "scattering_coefficient" and
+    "phase_function_moment" are read.
+
+    The HDF file supplies the particle properties for a few wavenumbers.
+    We then linearly interpolate to get the aerosol properties for
+    wavenumbers between these value. If a wavenumber outside the range of
+    the file is requested, then we extrapolate to get the value.
+
+    C++ includes: aerosol_property_hdf.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.aerosol_property_imp_base.AerosolPropertyImpBase]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -137,6 +154,12 @@ class AerosolPropertyHdf(full_physics_swig.aerosol_property_imp_base.AerosolProp
     __repr__ = _swig_repr
 
     def __init__(self, F, Group_name, Press):
+        """
+
+        FullPhysics::AerosolPropertyHdf::AerosolPropertyHdf(const HdfFile &F, const std::string &Group_name, const
+        boost::shared_ptr< Pressure > &Press)
+
+        """
         this = _aerosol_property_hdf.new_AerosolPropertyHdf(F, Group_name, Press)
         try:
             self.this.append(this)
@@ -144,16 +167,41 @@ class AerosolPropertyHdf(full_physics_swig.aerosol_property_imp_base.AerosolProp
             self.this = this
 
     def clone(self, *args):
+        """
+
+        virtual boost::shared_ptr<AerosolProperty> FullPhysics::AerosolPropertyHdf::clone(const boost::shared_ptr< Pressure > &Press, const boost::shared_ptr<
+        RelativeHumidity > &Rh) const
+
+        """
         return _aerosol_property_hdf.AerosolPropertyHdf_clone(self, *args)
 
+
     def extinction_coefficient_each_layer(self, wn):
+        """
+
+        virtual ArrayAd<double, 1> FullPhysics::AerosolPropertyHdf::extinction_coefficient_each_layer(double wn) const
+
+        """
         return _aerosol_property_hdf.AerosolPropertyHdf_extinction_coefficient_each_layer(self, wn)
 
+
     def scattering_coefficient_each_layer(self, wn):
+        """
+
+        virtual ArrayAd<double, 1> FullPhysics::AerosolPropertyHdf::scattering_coefficient_each_layer(double wn) const
+
+        """
         return _aerosol_property_hdf.AerosolPropertyHdf_scattering_coefficient_each_layer(self, wn)
 
+
     def phase_function_moment_each_layer(self, wn, nmom=-1, nscatt=-1):
+        """
+
+        virtual ArrayAd<double, 3> FullPhysics::AerosolPropertyHdf::phase_function_moment_each_layer(double wn, int nmom=-1, int nscatt=-1) const
+
+        """
         return _aerosol_property_hdf.AerosolPropertyHdf_phase_function_moment_each_layer(self, wn, nmom, nscatt)
+
     __swig_destroy__ = _aerosol_property_hdf.delete_AerosolPropertyHdf
     __del__ = lambda self: None
 AerosolPropertyHdf_swigregister = _aerosol_property_hdf.AerosolPropertyHdf_swigregister

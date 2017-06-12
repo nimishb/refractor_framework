@@ -130,6 +130,17 @@ import full_physics_swig.rt_atmosphere
 import full_physics_swig.state_vector
 import full_physics_swig.aerosol
 class ErrorAnalysisOutput(full_physics_swig.register_output_base.RegisterOutputBase):
+    """
+
+    This registers the portions of the ErrorAnalysis class that should be
+    written as output.
+
+    See the discussion in RegisterOutputBase why this isn't just part of
+    the ErrorAnalysis class.
+
+    C++ includes: error_analysis_output.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.register_output_base.RegisterOutputBase]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -144,7 +155,13 @@ class ErrorAnalysisOutput(full_physics_swig.register_output_base.RegisterOutputB
     __repr__ = _swig_repr
 
     def register_output(self, out):
+        """
+
+        virtual void FullPhysics::ErrorAnalysisOutput::register_output(const boost::shared_ptr< Output > &out) const
+
+        """
         return _error_analysis_output.ErrorAnalysisOutput_register_output(self, out)
+
 
     def register_output_apriori(self, out):
         return _error_analysis_output.ErrorAnalysisOutput_register_output_apriori(self, out)

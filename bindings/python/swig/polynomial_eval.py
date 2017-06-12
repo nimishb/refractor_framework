@@ -122,6 +122,24 @@ def _new_from_set(cls, version, *args):
 
 import full_physics_swig.generic_object
 class Poly1d(full_physics_swig.generic_object.GenericObject):
+    """
+
+    A one-dimensional polynomial class.
+
+    A convenience class, used to encapsulate "natural" operations on
+    polynomials so that said operations may take on their customary form
+    in code.
+
+    Evaluation is done Horner's Scheme to reduce problems due to round off
+    error and overflows.
+
+    Inspired by numpy.poly1d
+
+    Additionally handles ArrayAd data correctly.
+
+    C++ includes: polynomial_eval.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.generic_object.GenericObject]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -133,6 +151,12 @@ class Poly1d(full_physics_swig.generic_object.GenericObject):
     __repr__ = _swig_repr
 
     def __init__(self, Coefficients):
+        """
+
+        FullPhysics::Poly1d::Poly1d(const ArrayAd< double, 1 > &Coefficients, const bool
+        Decreasing_order=true)
+        The polynomial's coefficients, in decreasing powers. 
+        """
         this = _polynomial_eval.new_Poly1d(Coefficients)
         try:
             self.this.append(this)

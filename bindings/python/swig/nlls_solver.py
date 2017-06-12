@@ -127,6 +127,23 @@ import full_physics_swig.cost_func_diff
 import full_physics_swig.cost_func
 import full_physics_swig.problem_state
 class NLLSSolver(full_physics_swig.iterative_solver_der.IterativeSolverDer):
+    """
+
+    The base class for the solvers of the Nonlinear-Least-Squares Problem.
+
+    This is the base class for all Nonlinear-Least-Squares solvers.
+
+    This class is associated with a problem (NLLSProblem) because the
+    problem interface is determined: provide a point in the parameter
+    space
+
+    evaluate the residual function (a vector function) at the point
+
+    evaluate the Jacobian (a matrix function) of the residual at the point
+
+    C++ includes: nlls_solver.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.iterative_solver_der.IterativeSolverDer]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -143,7 +160,18 @@ class NLLSSolver(full_physics_swig.iterative_solver_der.IterativeSolverDer):
     __del__ = lambda self: None
 
     def _v_nlls_problem(self):
+        """
+
+        const boost::shared_ptr<NLLSProblem>& FullPhysics::NLLSSolver::nlls_problem() const
+        Returns the Nonlinear Least Squares problem.
+
+        This method returns the Nonlinear Least Squares problem that is passed
+        to the constructor of the solver.
+
+        Nonlinear least squares problem 
+        """
         return _nlls_solver.NLLSSolver__v_nlls_problem(self)
+
 
     @property
     def nlls_problem(self):

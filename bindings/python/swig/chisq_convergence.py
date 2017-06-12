@@ -123,6 +123,19 @@ def _new_from_set(cls, version, *args):
 import full_physics_swig.convergence_check
 import full_physics_swig.generic_object
 class ChisqConvergence(full_physics_swig.convergence_check.ConvergenceCheck):
+    """
+
+    This class tests for convergence of a Levenberg-Marquardt solver.
+
+    This is a simple criteria based just on the chisq. If the chisq is
+    below a given threshold and has changed less than Stopping_criteria,
+    then we are done. If the chisq is larger than the chisq than the last
+    iteration, we say the step has diverged and increase lambda by a boost
+    factor. Otherwise, we reduce lambda by a drop factor.
+
+    C++ includes: chisq_convergence.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.convergence_check.ConvergenceCheck]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -134,6 +147,12 @@ class ChisqConvergence(full_physics_swig.convergence_check.ConvergenceCheck):
     __repr__ = _swig_repr
 
     def __init__(self, stopping_criteria=0.001, dropf=0.1, boostf=10, min_chisq=0.01, max_iteration=50):
+        """
+
+        FullPhysics::ChisqConvergence::ChisqConvergence(double stopping_criteria=0.001, double dropf=0.1, double boostf=10,
+        double min_chisq=0.01, int max_iteration=50)
+
+        """
         this = _chisq_convergence.new_ChisqConvergence(stopping_criteria, dropf, boostf, min_chisq, max_iteration)
         try:
             self.this.append(this)
@@ -141,10 +160,25 @@ class ChisqConvergence(full_physics_swig.convergence_check.ConvergenceCheck):
             self.this = this
 
     def convergence_check(self, fit_stat_last, fit_stat, has_converged, convergence_failed, gamma, step_diverged):
+        """
+
+        virtual void FullPhysics::ChisqConvergence::convergence_check(const FitStatistic &fit_stat_last, FitStatistic &fit_stat, bool
+        &has_converged, bool &convergence_failed, double &gamma, bool
+        &step_diverged)
+
+        """
         return _chisq_convergence.ChisqConvergence_convergence_check(self, fit_stat_last, fit_stat, has_converged, convergence_failed, gamma, step_diverged)
 
+
     def evaluate_quality(self, fit_stat, Residual, Residual_cov_diag):
+        """
+
+        virtual void FullPhysics::ChisqConvergence::evaluate_quality(FitStatistic &fit_stat, const blitz::Array< double, 1 > &Residual,
+        const blitz::Array< double, 1 > &Residual_cov_diag)
+
+        """
         return _chisq_convergence.ChisqConvergence_evaluate_quality(self, fit_stat, Residual, Residual_cov_diag)
+
     __swig_destroy__ = _chisq_convergence.delete_ChisqConvergence
     __del__ = lambda self: None
 ChisqConvergence_swigregister = _chisq_convergence.ChisqConvergence_swigregister

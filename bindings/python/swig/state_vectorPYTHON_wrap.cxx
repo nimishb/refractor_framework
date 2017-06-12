@@ -7963,36 +7963,165 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"ObservableStateVector_add_observer", _wrap_ObservableStateVector_add_observer, METH_VARARGS, NULL},
 	 { (char *)"ObservableStateVector_remove_observer", _wrap_ObservableStateVector_remove_observer, METH_VARARGS, NULL},
 	 { (char *)"ObservableStateVector_swigregister", ObservableStateVector_swigregister, METH_VARARGS, NULL},
-	 { (char *)"delete_StateVectorObserver", _wrap_delete_StateVectorObserver, METH_VARARGS, NULL},
+	 { (char *)"delete_StateVectorObserver", _wrap_delete_StateVectorObserver, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::StateVectorObserver::~StateVectorObserver()\n"
+		"\n"
+		""},
 	 { (char *)"StateVectorObserver___str__", _wrap_StateVectorObserver___str__, METH_VARARGS, NULL},
-	 { (char *)"StateVectorObserver_mark_used", _wrap_StateVectorObserver_mark_used, METH_VARARGS, NULL},
-	 { (char *)"StateVectorObserver_state_vector_name", _wrap_StateVectorObserver_state_vector_name, METH_VARARGS, NULL},
+	 { (char *)"StateVectorObserver_mark_used", _wrap_StateVectorObserver_mark_used, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::StateVectorObserver::mark_used(const StateVector &Sv, blitz::Array< bool, 1 > &Used) const\n"
+		"Mark elements that we are actively using (i.e., that aren't ignored).\n"
+		"\n"
+		"You only need to mark the ones that are used as true, everything is\n"
+		"already initialized as false. Default is to do nothing. \n"
+		""},
+	 { (char *)"StateVectorObserver_state_vector_name", _wrap_StateVectorObserver_state_vector_name, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::StateVectorObserver::state_vector_name(const StateVector &Sv, blitz::Array< std::string, 1 > &Sv_name) const\n"
+		"Update any portion of the list of the state vector names that apply to\n"
+		"this object.\n"
+		"\n"
+		"Default is to do nothing. \n"
+		""},
 	 { (char *)"StateVectorObserver_swigregister", StateVectorObserver_swigregister, METH_VARARGS, NULL},
-	 { (char *)"delete_StateVector", _wrap_delete_StateVector, METH_VARARGS, NULL},
+	 { (char *)"delete_StateVector", _wrap_delete_StateVector, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::StateVector::~StateVector()\n"
+		"\n"
+		""},
 	 { (char *)"StateVector___str__", _wrap_StateVector___str__, METH_VARARGS, NULL},
-	 { (char *)"new_StateVector", _wrap_new_StateVector, METH_VARARGS, NULL},
-	 { (char *)"StateVector_add_observer", _wrap_StateVector_add_observer, METH_VARARGS, NULL},
-	 { (char *)"StateVector_remove_observer", _wrap_StateVector_remove_observer, METH_VARARGS, NULL},
-	 { (char *)"StateVector__v_state", _wrap_StateVector__v_state, METH_VARARGS, NULL},
-	 { (char *)"StateVector__v_state_with_derivative", _wrap_StateVector__v_state_with_derivative, METH_VARARGS, NULL},
+	 { (char *)"new_StateVector", _wrap_new_StateVector, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::StateVector::StateVector()\n"
+		"\n"
+		""},
+	 { (char *)"StateVector_add_observer", _wrap_StateVector_add_observer, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::StateVector::add_observer(Observer< StateVector > &Obs)\n"
+		"\n"
+		""},
+	 { (char *)"StateVector_remove_observer", _wrap_StateVector_remove_observer, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::StateVector::remove_observer(Observer< StateVector > &Obs)\n"
+		"\n"
+		""},
+	 { (char *)"StateVector__v_state", _wrap_StateVector__v_state, METH_VARARGS, (char *)"\n"
+		"\n"
+		"const blitz::Array<double, 1>& FullPhysics::StateVector::state() const\n"
+		"Current state vector. \n"
+		""},
+	 { (char *)"StateVector__v_state_with_derivative", _wrap_StateVector__v_state_with_derivative, METH_VARARGS, (char *)"\n"
+		"\n"
+		"const ArrayAd<double, 1>& FullPhysics::StateVector::state_with_derivative() const\n"
+		"Return the state vector as state() does, but also make each value a\n"
+		"AutoDerivative.\n"
+		"\n"
+		"The derivative is with respect to the state vector, i.e., we treat the\n"
+		"state vector as the independent variables. This means the first value\n"
+		"has a gradient all 0's except for 1 in the first index, the second\n"
+		"value all zeros except for 1 in the second index, etc. \n"
+		""},
 	 { (char *)"StateVector__state_vector_name", _wrap_StateVector__state_vector_name, METH_VARARGS, NULL},
-	 { (char *)"StateVector__v_state_covariance", _wrap_StateVector__v_state_covariance, METH_VARARGS, NULL},
-	 { (char *)"StateVector_update_state", _wrap_StateVector_update_state, METH_VARARGS, NULL},
-	 { (char *)"StateVector__v_used_flag", _wrap_StateVector__v_used_flag, METH_VARARGS, NULL},
-	 { (char *)"StateVector__v_observer_claimed_size", _wrap_StateVector__v_observer_claimed_size, METH_VARARGS, NULL},
+	 { (char *)"StateVector__v_state_covariance", _wrap_StateVector__v_state_covariance, METH_VARARGS, (char *)"\n"
+		"\n"
+		"const blitz::Array<double, 2>& FullPhysics::StateVector::state_covariance() const\n"
+		"Current covariance of the state vector. \n"
+		""},
+	 { (char *)"StateVector_update_state", _wrap_StateVector_update_state, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::StateVector::update_state(const blitz::Array< double, 1 > &X, const blitz::Array< double, 2 >\n"
+		"&Cov)\n"
+		"\n"
+		""},
+	 { (char *)"StateVector__v_used_flag", _wrap_StateVector__v_used_flag, METH_VARARGS, (char *)"\n"
+		"\n"
+		"blitz::Array<bool, 1> FullPhysics::StateVector::used_flag() const\n"
+		"\n"
+		""},
+	 { (char *)"StateVector__v_observer_claimed_size", _wrap_StateVector__v_observer_claimed_size, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::StateVector::observer_claimed_size(int Pstart)\n"
+		"Update claimed size of state vector. \n"
+		""},
 	 { (char *)"StateVector_swigregister", StateVector_swigregister, METH_VARARGS, NULL},
-	 { (char *)"delete_SubStateVectorObserver", _wrap_delete_SubStateVectorObserver, METH_VARARGS, NULL},
-	 { (char *)"SubStateVectorObserver_notify_update", _wrap_SubStateVectorObserver_notify_update, METH_VARARGS, NULL},
-	 { (char *)"SubStateVectorObserver_mark_used", _wrap_SubStateVectorObserver_mark_used, METH_VARARGS, NULL},
-	 { (char *)"SubStateVectorObserver_state_vector_name", _wrap_SubStateVectorObserver_state_vector_name, METH_VARARGS, NULL},
-	 { (char *)"SubStateVectorObserver__v_state_vector_start_index", _wrap_SubStateVectorObserver__v_state_vector_start_index, METH_VARARGS, NULL},
-	 { (char *)"SubStateVectorObserver__v_sub_vector_size", _wrap_SubStateVectorObserver__v_sub_vector_size, METH_VARARGS, NULL},
-	 { (char *)"SubStateVectorObserver_update_sub_state", _wrap_SubStateVectorObserver_update_sub_state, METH_VARARGS, NULL},
-	 { (char *)"SubStateVectorObserver_mark_used_sub", _wrap_SubStateVectorObserver_mark_used_sub, METH_VARARGS, NULL},
-	 { (char *)"SubStateVectorObserver_state_vector_name_sub", _wrap_SubStateVectorObserver_state_vector_name_sub, METH_VARARGS, NULL},
-	 { (char *)"SubStateVectorObserver_print_desc", _wrap_SubStateVectorObserver_print_desc, METH_VARARGS, NULL},
-	 { (char *)"SubStateVectorObserver_notify_add", _wrap_SubStateVectorObserver_notify_add, METH_VARARGS, NULL},
-	 { (char *)"SubStateVectorObserver_notify_remove", _wrap_SubStateVectorObserver_notify_remove, METH_VARARGS, NULL},
+	 { (char *)"delete_SubStateVectorObserver", _wrap_delete_SubStateVectorObserver, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::SubStateVectorObserver::~SubStateVectorObserver()\n"
+		"\n"
+		""},
+	 { (char *)"SubStateVectorObserver_notify_update", _wrap_SubStateVectorObserver_notify_update, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::SubStateVectorObserver::notify_update(const StateVector &Sv)\n"
+		"\n"
+		""},
+	 { (char *)"SubStateVectorObserver_mark_used", _wrap_SubStateVectorObserver_mark_used, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::SubStateVectorObserver::mark_used(const StateVector &Sv, blitz::Array< bool, 1 > &Used) const\n"
+		"Mark elements that we are actively using (i.e., that aren't ignored).\n"
+		"\n"
+		"You only need to mark the ones that are used as true, everything is\n"
+		"already initialized as false. Default is to do nothing. \n"
+		""},
+	 { (char *)"SubStateVectorObserver_state_vector_name", _wrap_SubStateVectorObserver_state_vector_name, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::SubStateVectorObserver::state_vector_name(const StateVector &Sv, blitz::Array< std::string, 1 > &Sv_name) const\n"
+		"Update any portion of the list of the state vector names that apply to\n"
+		"this object.\n"
+		"\n"
+		"Default is to do nothing. \n"
+		""},
+	 { (char *)"SubStateVectorObserver__v_state_vector_start_index", _wrap_SubStateVectorObserver__v_state_vector_start_index, METH_VARARGS, (char *)"\n"
+		"\n"
+		"int FullPhysics::SubStateVectorObserver::state_vector_start_index() const\n"
+		"Starting index of state vector used by this object. \n"
+		""},
+	 { (char *)"SubStateVectorObserver__v_sub_vector_size", _wrap_SubStateVectorObserver__v_sub_vector_size, METH_VARARGS, (char *)"\n"
+		"\n"
+		"int FullPhysics::SubStateVectorObserver::sub_vector_size() const\n"
+		"Length of the sub set of the state vector used by this object. \n"
+		""},
+	 { (char *)"SubStateVectorObserver_update_sub_state", _wrap_SubStateVectorObserver_update_sub_state, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::SubStateVectorObserver::update_sub_state(const ArrayAd< double, 1 > &Sv_sub, const blitz::Array< double, 2 >\n"
+		"&Cov_sub)=0\n"
+		"Called by update_state with the subset of the state vector used by\n"
+		"this class. \n"
+		""},
+	 { (char *)"SubStateVectorObserver_mark_used_sub", _wrap_SubStateVectorObserver_mark_used_sub, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::SubStateVectorObserver::mark_used_sub(blitz::Array< bool, 1 > &Used) const\n"
+		"Called by mark_used with the subset of the state vector used by this\n"
+		"class.\n"
+		"\n"
+		"The default marks everything as used, but derived classes can override\n"
+		"this. \n"
+		""},
+	 { (char *)"SubStateVectorObserver_state_vector_name_sub", _wrap_SubStateVectorObserver_state_vector_name_sub, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::SubStateVectorObserver::state_vector_name_sub(blitz::Array< std::string, 1 > &Sv_name) const\n"
+		"Called by state_vector_name with the subset of the Sv_name used by\n"
+		"this class.\n"
+		"\n"
+		"The default function doesn't change anything, but derived classes can\n"
+		"ovveride this. \n"
+		""},
+	 { (char *)"SubStateVectorObserver_print_desc", _wrap_SubStateVectorObserver_print_desc, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::SubStateVectorObserver::print(std::ostream &Os) const\n"
+		"\n"
+		""},
+	 { (char *)"SubStateVectorObserver_notify_add", _wrap_SubStateVectorObserver_notify_add, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::SubStateVectorObserver::notify_add(StateVector &Sv)\n"
+		"\n"
+		""},
+	 { (char *)"SubStateVectorObserver_notify_remove", _wrap_SubStateVectorObserver_notify_remove, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::SubStateVectorObserver::notify_remove(StateVector &Sv)\n"
+		"\n"
+		""},
 	 { (char *)"SubStateVectorObserver_swigregister", SubStateVectorObserver_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };

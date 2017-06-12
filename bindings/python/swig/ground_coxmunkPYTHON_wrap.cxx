@@ -5639,14 +5639,47 @@ SWIGINTERN PyObject *GroundCoxmunk_swigregister(PyObject *SWIGUNUSEDPARM(self), 
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"new_GroundCoxmunk", _wrap_new_GroundCoxmunk, METH_VARARGS, NULL},
-	 { (char *)"GroundCoxmunk_surface_parameter", _wrap_GroundCoxmunk_surface_parameter, METH_VARARGS, NULL},
-	 { (char *)"GroundCoxmunk_windspeed", _wrap_GroundCoxmunk_windspeed, METH_VARARGS, NULL},
-	 { (char *)"GroundCoxmunk_refractive_index", _wrap_GroundCoxmunk_refractive_index, METH_VARARGS, NULL},
-	 { (char *)"GroundCoxmunk_clone", _wrap_GroundCoxmunk_clone, METH_VARARGS, NULL},
-	 { (char *)"GroundCoxmunk_state_vector_name_i", _wrap_GroundCoxmunk_state_vector_name_i, METH_VARARGS, NULL},
-	 { (char *)"GroundCoxmunk_print_desc", _wrap_GroundCoxmunk_print_desc, METH_VARARGS, NULL},
-	 { (char *)"GroundCoxmunk_update_sub_state_hook", _wrap_GroundCoxmunk_update_sub_state_hook, METH_VARARGS, NULL},
+	 { (char *)"new_GroundCoxmunk", _wrap_new_GroundCoxmunk, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::GroundCoxmunk::GroundCoxmunk(const double Windspeed, const bool &Ws_flag, const blitz::Array<\n"
+		"double, 1 > &Refr_index)\n"
+		"\n"
+		""},
+	 { (char *)"GroundCoxmunk_surface_parameter", _wrap_GroundCoxmunk_surface_parameter, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual ArrayAd<double, 1> FullPhysics::GroundCoxmunk::surface_parameter(const double wn, const int spec_index) const\n"
+		"\n"
+		""},
+	 { (char *)"GroundCoxmunk_windspeed", _wrap_GroundCoxmunk_windspeed, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual const AutoDerivative<double> FullPhysics::GroundCoxmunk::windspeed() const\n"
+		"\n"
+		""},
+	 { (char *)"GroundCoxmunk_refractive_index", _wrap_GroundCoxmunk_refractive_index, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual const double FullPhysics::GroundCoxmunk::refractive_index(const int Spec_idx) const\n"
+		"\n"
+		""},
+	 { (char *)"GroundCoxmunk_clone", _wrap_GroundCoxmunk_clone, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual boost::shared_ptr<Ground> FullPhysics::GroundCoxmunk::clone() const\n"
+		"\n"
+		""},
+	 { (char *)"GroundCoxmunk_state_vector_name_i", _wrap_GroundCoxmunk_state_vector_name_i, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual std::string FullPhysics::GroundCoxmunk::state_vector_name_i(int i) const\n"
+		"\n"
+		""},
+	 { (char *)"GroundCoxmunk_print_desc", _wrap_GroundCoxmunk_print_desc, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::GroundCoxmunk::print(std::ostream &Os) const\n"
+		"\n"
+		""},
+	 { (char *)"GroundCoxmunk_update_sub_state_hook", _wrap_GroundCoxmunk_update_sub_state_hook, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::GroundCoxmunk::update_sub_state_hook()\n"
+		"\n"
+		""},
 	 { (char *)"delete_GroundCoxmunk", _wrap_delete_GroundCoxmunk, METH_VARARGS, NULL},
 	 { (char *)"GroundCoxmunk_swigregister", GroundCoxmunk_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }

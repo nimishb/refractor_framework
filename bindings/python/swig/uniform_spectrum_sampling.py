@@ -123,6 +123,19 @@ def _new_from_set(cls, version, *args):
 import full_physics_swig.spectrum_sampling
 import full_physics_swig.generic_object
 class UniformSpectrumSampling(full_physics_swig.spectrum_sampling.SpectrumSampling):
+    """
+
+    This is a simple SpectrumSampling that is just a uniform sampling.
+
+    This is useful for doing unit testing.
+
+    Note that there are a few closely related classes, with similar
+    sounding names. See spectrum_doxygen for a description of each of
+    these.
+
+    C++ includes: uniform_spectrum_sampling.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.spectrum_sampling.SpectrumSampling]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -137,7 +150,14 @@ class UniformSpectrumSampling(full_physics_swig.spectrum_sampling.SpectrumSampli
     __repr__ = _swig_repr
 
     def spectral_domain(self, spec_index, Lowres_grid, Ils_half_width):
+        """
+
+        virtual SpectralDomain FullPhysics::UniformSpectrumSampling::spectral_domain(int spec_index, const SpectralDomain &Lowres_grid, const
+        DoubleWithUnit &Ils_half_width) const
+        Wave numbers to use for the given spectrometer. 
+        """
         return _uniform_spectrum_sampling.UniformSpectrumSampling_spectral_domain(self, spec_index, Lowres_grid, Ils_half_width)
+
     __swig_destroy__ = _uniform_spectrum_sampling.delete_UniformSpectrumSampling
     __del__ = lambda self: None
 UniformSpectrumSampling_swigregister = _uniform_spectrum_sampling.UniformSpectrumSampling_swigregister

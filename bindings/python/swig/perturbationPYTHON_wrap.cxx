@@ -5120,9 +5120,17 @@ SWIGINTERN PyObject *Perturbation_swigregister(PyObject *SWIGUNUSEDPARM(self), P
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"delete_Perturbation", _wrap_delete_Perturbation, METH_VARARGS, NULL},
+	 { (char *)"delete_Perturbation", _wrap_delete_Perturbation, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::Perturbation::~Perturbation()\n"
+		"\n"
+		""},
 	 { (char *)"Perturbation___str__", _wrap_Perturbation___str__, METH_VARARGS, NULL},
-	 { (char *)"Perturbation__v_perturbation", _wrap_Perturbation__v_perturbation, METH_VARARGS, NULL},
+	 { (char *)"Perturbation__v_perturbation", _wrap_Perturbation__v_perturbation, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual blitz::Array<double, 1> FullPhysics::Perturbation::perturbation() const =0\n"
+		"Return the perturbation vector to use. \n"
+		""},
 	 { (char *)"Perturbation_swigregister", Perturbation_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };

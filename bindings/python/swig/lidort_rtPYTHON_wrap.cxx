@@ -5543,11 +5543,31 @@ SWIGINTERN PyObject *LidortRt_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObj
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"LidortRt__v_number_stream", _wrap_LidortRt__v_number_stream, METH_VARARGS, NULL},
-	 { (char *)"LidortRt__v_number_moment", _wrap_LidortRt__v_number_moment, METH_VARARGS, NULL},
-	 { (char *)"LidortRt__v_brdf_driver", _wrap_LidortRt__v_brdf_driver, METH_VARARGS, NULL},
-	 { (char *)"LidortRt__v_rt_driver", _wrap_LidortRt__v_rt_driver, METH_VARARGS, NULL},
-	 { (char *)"LidortRt_print_desc", _wrap_LidortRt_print_desc, METH_VARARGS, NULL},
+	 { (char *)"LidortRt__v_number_stream", _wrap_LidortRt__v_number_stream, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual int FullPhysics::LidortRt::number_stream() const\n"
+		"Number of quadtature streams in the cosine half space. \n"
+		""},
+	 { (char *)"LidortRt__v_number_moment", _wrap_LidortRt__v_number_moment, METH_VARARGS, (char *)"\n"
+		"\n"
+		"int FullPhysics::LidortRt::number_moment() const\n"
+		"Number of moments for scattering matrix. \n"
+		""},
+	 { (char *)"LidortRt__v_brdf_driver", _wrap_LidortRt__v_brdf_driver, METH_VARARGS, (char *)"\n"
+		"\n"
+		"const boost::shared_ptr<LidortBrdfDriver> FullPhysics::LidortRt::brdf_driver() const\n"
+		"Convenience routine to get brdf driver object. \n"
+		""},
+	 { (char *)"LidortRt__v_rt_driver", _wrap_LidortRt__v_rt_driver, METH_VARARGS, (char *)"\n"
+		"\n"
+		"const boost::shared_ptr<LidortRtDriver> FullPhysics::LidortRt::rt_driver() const\n"
+		"Convenience routine to get rt driver object. \n"
+		""},
+	 { (char *)"LidortRt_print_desc", _wrap_LidortRt_print_desc, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::LidortRt::print(std::ostream &Os, bool Short_form=false) const\n"
+		"\n"
+		""},
 	 { (char *)"delete_LidortRt", _wrap_delete_LidortRt, METH_VARARGS, NULL},
 	 { (char *)"LidortRt_swigregister", LidortRt_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }

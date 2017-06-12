@@ -5854,15 +5854,47 @@ SWIGINTERN PyObject *ForwardModelSpectralGrid_swigregister(PyObject *SWIGUNUSEDP
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"new_ForwardModelSpectralGrid", _wrap_new_ForwardModelSpectralGrid, METH_VARARGS, NULL},
+	 { (char *)"new_ForwardModelSpectralGrid", _wrap_new_ForwardModelSpectralGrid, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::ForwardModelSpectralGrid::ForwardModelSpectralGrid()\n"
+		"\n"
+		""},
 	 { (char *)"ForwardModelSpectralGrid___str__", _wrap_ForwardModelSpectralGrid___str__, METH_VARARGS, NULL},
-	 { (char *)"ForwardModelSpectralGrid__v_number_spectrometer", _wrap_ForwardModelSpectralGrid__v_number_spectrometer, METH_VARARGS, NULL},
-	 { (char *)"ForwardModelSpectralGrid_low_resolution_grid", _wrap_ForwardModelSpectralGrid_low_resolution_grid, METH_VARARGS, NULL},
-	 { (char *)"ForwardModelSpectralGrid_high_resolution_grid", _wrap_ForwardModelSpectralGrid_high_resolution_grid, METH_VARARGS, NULL},
-	 { (char *)"ForwardModelSpectralGrid_high_resolution_interpolated_grid", _wrap_ForwardModelSpectralGrid_high_resolution_interpolated_grid, METH_VARARGS, NULL},
-	 { (char *)"ForwardModelSpectralGrid_interpolate_spectrum", _wrap_ForwardModelSpectralGrid_interpolate_spectrum, METH_VARARGS, NULL},
-	 { (char *)"ForwardModelSpectralGrid_pixel_list", _wrap_ForwardModelSpectralGrid_pixel_list, METH_VARARGS, NULL},
-	 { (char *)"delete_ForwardModelSpectralGrid", _wrap_delete_ForwardModelSpectralGrid, METH_VARARGS, NULL},
+	 { (char *)"ForwardModelSpectralGrid__v_number_spectrometer", _wrap_ForwardModelSpectralGrid__v_number_spectrometer, METH_VARARGS, (char *)"\n"
+		"\n"
+		"int FullPhysics::ForwardModelSpectralGrid::number_spectrometer() const\n"
+		"Number of spectrometer. \n"
+		""},
+	 { (char *)"ForwardModelSpectralGrid_low_resolution_grid", _wrap_ForwardModelSpectralGrid_low_resolution_grid, METH_VARARGS, (char *)"\n"
+		"\n"
+		"const SpectralDomain FullPhysics::ForwardModelSpectralGrid::low_resolution_grid(int Spec_index) const\n"
+		"The low resolution grid. \n"
+		""},
+	 { (char *)"ForwardModelSpectralGrid_high_resolution_grid", _wrap_ForwardModelSpectralGrid_high_resolution_grid, METH_VARARGS, (char *)"\n"
+		"\n"
+		"const SpectralDomain FullPhysics::ForwardModelSpectralGrid::high_resolution_grid(int Spec_index) const\n"
+		"The high resolution grid, possibly nonuniform. \n"
+		""},
+	 { (char *)"ForwardModelSpectralGrid_high_resolution_interpolated_grid", _wrap_ForwardModelSpectralGrid_high_resolution_interpolated_grid, METH_VARARGS, (char *)"\n"
+		"\n"
+		"const SpectralDomain FullPhysics::ForwardModelSpectralGrid::high_resolution_interpolated_grid(int Spec_index) const\n"
+		"The high resolution grid, interpolated to be uniform. \n"
+		""},
+	 { (char *)"ForwardModelSpectralGrid_interpolate_spectrum", _wrap_ForwardModelSpectralGrid_interpolate_spectrum, METH_VARARGS, (char *)"\n"
+		"\n"
+		"Spectrum FullPhysics::ForwardModelSpectralGrid::interpolate_spectrum(const Spectrum &Spec_in, int Spec_index) const\n"
+		"\n"
+		""},
+	 { (char *)"ForwardModelSpectralGrid_pixel_list", _wrap_ForwardModelSpectralGrid_pixel_list, METH_VARARGS, (char *)"\n"
+		"\n"
+		"const std::vector<int> FullPhysics::ForwardModelSpectralGrid::pixel_list(int Spec_index) const\n"
+		"Pixel indexes to use for low resolution grid. \n"
+		""},
+	 { (char *)"delete_ForwardModelSpectralGrid", _wrap_delete_ForwardModelSpectralGrid, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::ForwardModelSpectralGrid::~ForwardModelSpectralGrid()\n"
+		"\n"
+		""},
 	 { (char *)"ForwardModelSpectralGrid_swigregister", ForwardModelSpectralGrid_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };

@@ -5808,12 +5808,38 @@ SWIGINTERN PyObject *AbsorberVmrFixedLevelScaled_swigregister(PyObject *SWIGUNUS
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"new_AbsorberVmrFixedLevelScaled", _wrap_new_AbsorberVmrFixedLevelScaled, METH_VARARGS, NULL},
-	 { (char *)"AbsorberVmrFixedLevelScaled_state_vector_name_i", _wrap_AbsorberVmrFixedLevelScaled_state_vector_name_i, METH_VARARGS, NULL},
-	 { (char *)"AbsorberVmrFixedLevelScaled_clone", _wrap_AbsorberVmrFixedLevelScaled_clone, METH_VARARGS, NULL},
-	 { (char *)"AbsorberVmrFixedLevelScaled__v_scale_factor", _wrap_AbsorberVmrFixedLevelScaled__v_scale_factor, METH_VARARGS, NULL},
-	 { (char *)"AbsorberVmrFixedLevelScaled__v_scale_uncertainty", _wrap_AbsorberVmrFixedLevelScaled__v_scale_uncertainty, METH_VARARGS, NULL},
-	 { (char *)"delete_AbsorberVmrFixedLevelScaled", _wrap_delete_AbsorberVmrFixedLevelScaled, METH_VARARGS, NULL},
+	 { (char *)"new_AbsorberVmrFixedLevelScaled", _wrap_new_AbsorberVmrFixedLevelScaled, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::AbsorberVmrFixedLevelScaled::AbsorberVmrFixedLevelScaled(const boost::shared_ptr< Pressure > &Press, const boost::shared_ptr<\n"
+		"PressureLevelInput > &Press_level, const blitz::Array< double, 1 >\n"
+		"&Vmr, bool Used_flag, double Scale, const std::string &Gas_name)\n"
+		"\n"
+		""},
+	 { (char *)"AbsorberVmrFixedLevelScaled_state_vector_name_i", _wrap_AbsorberVmrFixedLevelScaled_state_vector_name_i, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual std::string FullPhysics::AbsorberVmrFixedLevelScaled::state_vector_name_i(int i) const\n"
+		"\n"
+		""},
+	 { (char *)"AbsorberVmrFixedLevelScaled_clone", _wrap_AbsorberVmrFixedLevelScaled_clone, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual boost::shared_ptr<AbsorberVmr> FullPhysics::AbsorberVmrFixedLevelScaled::clone(const boost::shared_ptr< Pressure > &Press) const\n"
+		"\n"
+		""},
+	 { (char *)"AbsorberVmrFixedLevelScaled__v_scale_factor", _wrap_AbsorberVmrFixedLevelScaled__v_scale_factor, METH_VARARGS, (char *)"\n"
+		"\n"
+		"double FullPhysics::AbsorberVmrFixedLevelScaled::scale_factor() const\n"
+		"Scale factor. \n"
+		""},
+	 { (char *)"AbsorberVmrFixedLevelScaled__v_scale_uncertainty", _wrap_AbsorberVmrFixedLevelScaled__v_scale_uncertainty, METH_VARARGS, (char *)"\n"
+		"\n"
+		"double FullPhysics::AbsorberVmrFixedLevelScaled::scale_uncertainty() const\n"
+		"Uncertainty of scale factor. \n"
+		""},
+	 { (char *)"delete_AbsorberVmrFixedLevelScaled", _wrap_delete_AbsorberVmrFixedLevelScaled, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::AbsorberVmrFixedLevelScaled::~AbsorberVmrFixedLevelScaled()\n"
+		"\n"
+		""},
 	 { (char *)"AbsorberVmrFixedLevelScaled_swigregister", AbsorberVmrFixedLevelScaled_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };

@@ -123,6 +123,17 @@ def _new_from_set(cls, version, *args):
 import full_physics_swig.solar_doppler_shift
 import full_physics_swig.generic_object
 class SolarDopplerShiftPolynomial(full_physics_swig.solar_doppler_shift.SolarDopplerShift):
+    """
+
+    This class handles the solar Doppler stretch to calculate the shift of
+    the solar lines with respect to the telluric lines.
+
+    This implementation uses a fit based on a 6th order polynomial fit to
+    data fromhttp://eclipse.gsfc.nasa.gov/TYPE/TYPE.html
+
+    C++ includes: solar_doppler_shift_polynomial.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.solar_doppler_shift.SolarDopplerShift]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -134,6 +145,12 @@ class SolarDopplerShiftPolynomial(full_physics_swig.solar_doppler_shift.SolarDop
     __repr__ = _swig_repr
 
     def __init__(self, *args):
+        """
+
+        FullPhysics::SolarDopplerShiftPolynomial::SolarDopplerShiftPolynomial(double Doppler_shift, const Time &t, const Constant
+        &constant=DefaultConstant(), bool apply_doppler_shift=true)
+
+        """
         this = _solar_doppler_shift_polynomial.new_SolarDopplerShiftPolynomial(*args)
         try:
             self.this.append(this)
@@ -141,7 +158,13 @@ class SolarDopplerShiftPolynomial(full_physics_swig.solar_doppler_shift.SolarDop
             self.this = this
 
     def _v_doppler_shift(self):
+        """
+
+        double FullPhysics::SolarDopplerShiftPolynomial::doppler_shift() const
+
+        """
         return _solar_doppler_shift_polynomial.SolarDopplerShiftPolynomial__v_doppler_shift(self)
+
 
     @property
     def doppler_shift(self):
@@ -149,7 +172,16 @@ class SolarDopplerShiftPolynomial(full_physics_swig.solar_doppler_shift.SolarDop
 
 
     def _v_solar_velocity(self):
+        """
+
+        DoubleWithUnit FullPhysics::SolarDopplerShiftPolynomial::solar_velocity() const
+        Velocity of the center of the earth to the center of the sun.
+
+        Positive means they are getting farther apart. This does not include
+        the rotation of the earth. 
+        """
         return _solar_doppler_shift_polynomial.SolarDopplerShiftPolynomial__v_solar_velocity(self)
+
 
     @property
     def solar_velocity(self):
@@ -157,7 +189,13 @@ class SolarDopplerShiftPolynomial(full_physics_swig.solar_doppler_shift.SolarDop
 
 
     def _v_total_velocity(self):
+        """
+
+        DoubleWithUnit FullPhysics::SolarDopplerShiftPolynomial::total_velocity() const
+        Total velocity, including rotation of earth. 
+        """
         return _solar_doppler_shift_polynomial.SolarDopplerShiftPolynomial__v_total_velocity(self)
+
 
     @property
     def total_velocity(self):
@@ -165,7 +203,13 @@ class SolarDopplerShiftPolynomial(full_physics_swig.solar_doppler_shift.SolarDop
 
 
     def _v_solar_distance(self):
+        """
+
+        virtual DoubleWithUnit FullPhysics::SolarDopplerShiftPolynomial::solar_distance() const
+
+        """
         return _solar_doppler_shift_polynomial.SolarDopplerShiftPolynomial__v_solar_distance(self)
+
 
     @property
     def solar_distance(self):
@@ -173,7 +217,13 @@ class SolarDopplerShiftPolynomial(full_physics_swig.solar_doppler_shift.SolarDop
 
 
     def doppler_stretch(self, Spec_domain):
+        """
+
+        virtual SpectralDomain FullPhysics::SolarDopplerShiftPolynomial::doppler_stretch(const SpectralDomain &Spec_domain) const
+
+        """
         return _solar_doppler_shift_polynomial.SolarDopplerShiftPolynomial_doppler_stretch(self, Spec_domain)
+
     __swig_destroy__ = _solar_doppler_shift_polynomial.delete_SolarDopplerShiftPolynomial
     __del__ = lambda self: None
 SolarDopplerShiftPolynomial_swigregister = _solar_doppler_shift_polynomial.SolarDopplerShiftPolynomial_swigregister

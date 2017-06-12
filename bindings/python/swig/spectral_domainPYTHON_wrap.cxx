@@ -6960,15 +6960,67 @@ SWIGINTERN PyObject *SpectralDomain_swigregister(PyObject *SWIGUNUSEDPARM(self),
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"new_SpectralDomain", _wrap_new_SpectralDomain, METH_VARARGS, NULL},
-	 { (char *)"SpectralDomain__v_data", _wrap_SpectralDomain__v_data, METH_VARARGS, NULL},
-	 { (char *)"SpectralDomain__v_sample_index", _wrap_SpectralDomain__v_sample_index, METH_VARARGS, NULL},
-	 { (char *)"SpectralDomain__v_units", _wrap_SpectralDomain__v_units, METH_VARARGS, NULL},
-	 { (char *)"SpectralDomain__v_type_preference", _wrap_SpectralDomain__v_type_preference, METH_VARARGS, NULL},
-	 { (char *)"SpectralDomain_convert_wave", _wrap_SpectralDomain_convert_wave, METH_VARARGS, NULL},
-	 { (char *)"SpectralDomain_wavenumber", _wrap_SpectralDomain_wavenumber, METH_VARARGS, NULL},
-	 { (char *)"SpectralDomain_wavelength", _wrap_SpectralDomain_wavelength, METH_VARARGS, NULL},
-	 { (char *)"SpectralDomain_photon_to_radiance_factor", _wrap_SpectralDomain_photon_to_radiance_factor, METH_VARARGS, NULL},
+	 { (char *)"new_SpectralDomain", _wrap_new_SpectralDomain, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::SpectralDomain::SpectralDomain()\n"
+		"Default constructor needed for SWIG. \n"
+		""},
+	 { (char *)"SpectralDomain__v_data", _wrap_SpectralDomain__v_data, METH_VARARGS, (char *)"\n"
+		"\n"
+		"const blitz::Array<double, 1>& FullPhysics::SpectralDomain::data() const\n"
+		"Return data.\n"
+		"\n"
+		"This is either wavenumber or wavelength. This member function is\n"
+		"intended for classes that don't care which one we are using. If you do\n"
+		"care, then you should call either wavenumber or wavelength.\n"
+		"\n"
+		"Note that this is a reference to the actual data, so if you intend on\n"
+		"modifying this you should make a deep copy. \n"
+		""},
+	 { (char *)"SpectralDomain__v_sample_index", _wrap_SpectralDomain__v_sample_index, METH_VARARGS, (char *)"\n"
+		"\n"
+		"const blitz::Array<int, 1>& FullPhysics::SpectralDomain::sample_index() const\n"
+		"Return sample index.\n"
+		"\n"
+		"This may be empty if we aren't dealing with the lower resolution grid\n"
+		"that maps to a sample index. If present, this gives the sample index\n"
+		"for each of the data() points.\n"
+		"\n"
+		"Note that by convention the sample index is 1 based, so the first\n"
+		"sample index is 1 rather than zero. \n"
+		""},
+	 { (char *)"SpectralDomain__v_units", _wrap_SpectralDomain__v_units, METH_VARARGS, (char *)"\n"
+		"\n"
+		"const Unit FullPhysics::SpectralDomain::units() const\n"
+		"Units that go with data() \n"
+		""},
+	 { (char *)"SpectralDomain__v_type_preference", _wrap_SpectralDomain__v_type_preference, METH_VARARGS, (char *)"\n"
+		"\n"
+		"TypePreference FullPhysics::SpectralDomain::type_preference() const\n"
+		"Indicate if this class prefers wavelength or wavenumber.\n"
+		"\n"
+		"This is what data() is. \n"
+		""},
+	 { (char *)"SpectralDomain_convert_wave", _wrap_SpectralDomain_convert_wave, METH_VARARGS, (char *)"\n"
+		"\n"
+		"blitz::Array<double, 1> FullPhysics::SpectralDomain::convert_wave(const Unit &Units) const\n"
+		"\n"
+		""},
+	 { (char *)"SpectralDomain_wavenumber", _wrap_SpectralDomain_wavenumber, METH_VARARGS, (char *)"\n"
+		"\n"
+		"blitz::Array<double, 1> FullPhysics::SpectralDomain::wavenumber(const Unit &Units=units::inv_cm) const\n"
+		"\n"
+		""},
+	 { (char *)"SpectralDomain_wavelength", _wrap_SpectralDomain_wavelength, METH_VARARGS, (char *)"\n"
+		"\n"
+		"blitz::Array<double, 1> FullPhysics::SpectralDomain::wavelength(const Unit &Units=units::micron) const\n"
+		"\n"
+		""},
+	 { (char *)"SpectralDomain_photon_to_radiance_factor", _wrap_SpectralDomain_photon_to_radiance_factor, METH_VARARGS, (char *)"\n"
+		"\n"
+		"ArrayWithUnit<double, 1> FullPhysics::SpectralDomain::photon_to_radiance_factor() const\n"
+		"\n"
+		""},
 	 { (char *)"SpectralDomain___str__", _wrap_SpectralDomain___str__, METH_VARARGS, NULL},
 	 { (char *)"delete_SpectralDomain", _wrap_delete_SpectralDomain, METH_VARARGS, NULL},
 	 { (char *)"SpectralDomain_swigregister", SpectralDomain_swigregister, METH_VARARGS, NULL},

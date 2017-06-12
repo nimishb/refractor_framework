@@ -125,6 +125,16 @@ import full_physics_swig.pressure
 import full_physics_swig.state_vector
 import full_physics_swig.generic_object
 class PressureSigma(full_physics_swig.pressure_imp_base.PressureImpBase):
+    """
+
+    This class maintains the pressure portion of the state.
+
+    This particular implementation use pressure sigma levels to determine
+    the pressure levels as the surface pressure changes.
+
+    C++ includes: pressure_sigma.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.pressure_imp_base.PressureImpBase]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -136,6 +146,12 @@ class PressureSigma(full_physics_swig.pressure_imp_base.PressureImpBase):
     __repr__ = _swig_repr
 
     def __init__(self, *args):
+        """
+
+        FullPhysics::PressureSigma::PressureSigma(const blitz::Array< double, 1 > &Pressure_grid, double
+        Surface_pressure, bool Pressure_flag)
+
+        """
         this = _pressure_sigma.new_PressureSigma(*args)
         try:
             self.this.append(this)
@@ -143,7 +159,14 @@ class PressureSigma(full_physics_swig.pressure_imp_base.PressureImpBase):
             self.this = this
 
     def _v_surface_pressure_uncertainty(self):
+        """
+
+        double FullPhysics::PressureSigma::surface_pressure_uncertainty() const
+        Return the current surface pressure uncertainty. This is in Pascals.
+
+        """
         return _pressure_sigma.PressureSigma__v_surface_pressure_uncertainty(self)
+
 
     @property
     def surface_pressure_uncertainty(self):
@@ -151,19 +174,49 @@ class PressureSigma(full_physics_swig.pressure_imp_base.PressureImpBase):
 
 
     def set_surface_pressure(self, Surface_pressure):
+        """
+
+        void FullPhysics::PressureSigma::set_surface_pressure(const AutoDerivative< double > &Surface_pressure)
+        Set the surface pressure. This is in Pascals. 
+        """
         return _pressure_sigma.PressureSigma_set_surface_pressure(self, Surface_pressure)
 
+
     def set_levels_from_grid(self, Pressure_grid):
+        """
+
+        void FullPhysics::PressureSigma::set_levels_from_grid(const blitz::Array< double, 1 > &Pressure_grid)
+
+        """
         return _pressure_sigma.PressureSigma_set_levels_from_grid(self, Pressure_grid)
 
+
     def clone(self):
+        """
+
+        virtual boost::shared_ptr<Pressure> FullPhysics::PressureSigma::clone() const
+
+        """
         return _pressure_sigma.PressureSigma_clone(self)
 
+
     def state_vector_name_i(self, i):
+        """
+
+        virtual std::string FullPhysics::PressureSigma::state_vector_name_i(int i) const
+
+        """
         return _pressure_sigma.PressureSigma_state_vector_name_i(self, i)
 
+
     def _v_a(self):
+        """
+
+        const blitz::Array<double, 1>& FullPhysics::PressureSigma::a() const
+
+        """
         return _pressure_sigma.PressureSigma__v_a(self)
+
 
     @property
     def a(self):
@@ -171,7 +224,13 @@ class PressureSigma(full_physics_swig.pressure_imp_base.PressureImpBase):
 
 
     def _v_b(self):
+        """
+
+        const blitz::Array<double, 1>& FullPhysics::PressureSigma::b() const
+
+        """
         return _pressure_sigma.PressureSigma__v_b(self)
+
 
     @property
     def b(self):

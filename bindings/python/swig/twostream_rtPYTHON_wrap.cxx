@@ -5537,11 +5537,33 @@ SWIGINTERN PyObject *TwostreamRt_swigregister(PyObject *SWIGUNUSEDPARM(self), Py
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"TwostreamRt__v_number_stream", _wrap_TwostreamRt__v_number_stream, METH_VARARGS, NULL},
-	 { (char *)"TwostreamRt__v_number_moment", _wrap_TwostreamRt__v_number_moment, METH_VARARGS, NULL},
-	 { (char *)"TwostreamRt__v_brdf_driver", _wrap_TwostreamRt__v_brdf_driver, METH_VARARGS, NULL},
-	 { (char *)"TwostreamRt__v_rt_driver", _wrap_TwostreamRt__v_rt_driver, METH_VARARGS, NULL},
-	 { (char *)"TwostreamRt_print_desc", _wrap_TwostreamRt_print_desc, METH_VARARGS, NULL},
+	 { (char *)"TwostreamRt__v_number_stream", _wrap_TwostreamRt__v_number_stream, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual int FullPhysics::TwostreamRt::number_stream() const\n"
+		"Number of quadtature streams in the cosine half space. \n"
+		""},
+	 { (char *)"TwostreamRt__v_number_moment", _wrap_TwostreamRt__v_number_moment, METH_VARARGS, (char *)"\n"
+		"\n"
+		"int FullPhysics::TwostreamRt::number_moment() const\n"
+		"Number of moments for scattering matrix.\n"
+		"\n"
+		"2stream natuarally uses up to 3 moments \n"
+		""},
+	 { (char *)"TwostreamRt__v_brdf_driver", _wrap_TwostreamRt__v_brdf_driver, METH_VARARGS, (char *)"\n"
+		"\n"
+		"const boost::shared_ptr<TwostreamBrdfDriver> FullPhysics::TwostreamRt::brdf_driver() const\n"
+		"Convenience routine to get brdf driver object. \n"
+		""},
+	 { (char *)"TwostreamRt__v_rt_driver", _wrap_TwostreamRt__v_rt_driver, METH_VARARGS, (char *)"\n"
+		"\n"
+		"const boost::shared_ptr<TwostreamRtDriver> FullPhysics::TwostreamRt::rt_driver() const\n"
+		"Convenience routine to get rt driver object. \n"
+		""},
+	 { (char *)"TwostreamRt_print_desc", _wrap_TwostreamRt_print_desc, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::TwostreamRt::print(std::ostream &Os, bool Short_form=false) const\n"
+		"\n"
+		""},
 	 { (char *)"delete_TwostreamRt", _wrap_delete_TwostreamRt, METH_VARARGS, NULL},
 	 { (char *)"TwostreamRt_swigregister", TwostreamRt_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }

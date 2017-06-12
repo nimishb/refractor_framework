@@ -124,6 +124,17 @@ import full_physics_swig.composite_initial_guess
 import full_physics_swig.generic_object
 import full_physics_swig.initial_guess
 class InitialGuessValue(full_physics_swig.composite_initial_guess.InitialGuessBuilder):
+    """
+
+    This is a simple implementation of InitialGuessBuilder that just has
+    variables used to give the apriori, initial guess, and covariance.
+
+    Since the initial guess of often just the apriori, the initial guess
+    is allowed to be left empty and we just use the apriori in that case.
+
+    C++ includes: initial_guess_value.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.composite_initial_guess.InitialGuessBuilder]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -137,7 +148,13 @@ class InitialGuessValue(full_physics_swig.composite_initial_guess.InitialGuessBu
     __del__ = lambda self: None
 
     def _v_number_element(self):
+        """
+
+        virtual int FullPhysics::InitialGuessValue::number_element() const
+
+        """
         return _initial_guess_value.InitialGuessValue__v_number_element(self)
+
 
     @property
     def number_element(self):
@@ -145,16 +162,40 @@ class InitialGuessValue(full_physics_swig.composite_initial_guess.InitialGuessBu
 
 
     def build_initial_value(self, v, index):
+        """
+
+        virtual void FullPhysics::InitialGuessValue::build_initial_value(blitz::Array< double, 1 > &v, int index) const
+
+        """
         return _initial_guess_value.InitialGuessValue_build_initial_value(self, v, index)
 
+
     def build_apriori(self, v, index):
+        """
+
+        virtual void FullPhysics::InitialGuessValue::build_apriori(blitz::Array< double, 1 > &v, int index) const
+
+        """
         return _initial_guess_value.InitialGuessValue_build_apriori(self, v, index)
 
+
     def build_apriori_covariance(self, m, index):
+        """
+
+        virtual void FullPhysics::InitialGuessValue::build_apriori_covariance(blitz::Array< double, 2 > &m, int index) const
+
+        """
         return _initial_guess_value.InitialGuessValue_build_apriori_covariance(self, m, index)
 
+
     def _v_apriori(self, *args):
+        """
+
+        void FullPhysics::InitialGuessValue::apriori(const blitz::Array< double, 1 > &v)
+        Set apriori value. 
+        """
         return _initial_guess_value.InitialGuessValue__v_apriori(self, *args)
+
 
     @property
     def apriori(self):
@@ -166,7 +207,13 @@ class InitialGuessValue(full_physics_swig.composite_initial_guess.InitialGuessBu
 
 
     def _v_apriori_covariance(self, *args):
+        """
+
+        void FullPhysics::InitialGuessValue::apriori_covariance(const blitz::Array< double, 2 > &m)
+        Set apriori covariance value. 
+        """
         return _initial_guess_value.InitialGuessValue__v_apriori_covariance(self, *args)
+
 
     @property
     def apriori_covariance(self):
@@ -178,13 +225,33 @@ class InitialGuessValue(full_physics_swig.composite_initial_guess.InitialGuessBu
 
 
     def apriori_subset(self, Flag, V):
+        """
+
+        void FullPhysics::InitialGuessValue::apriori_subset(const blitz::Array< bool, 1 > &Flag, const blitz::Array< double, 1 >
+        &V)
+
+        """
         return _initial_guess_value.InitialGuessValue_apriori_subset(self, Flag, V)
 
+
     def apriori_covariance_subset(self, Flag, V):
+        """
+
+        void FullPhysics::InitialGuessValue::apriori_covariance_subset(const blitz::Array< bool, 1 > &Flag, const blitz::Array< double, 2 >
+        &V)
+
+        """
         return _initial_guess_value.InitialGuessValue_apriori_covariance_subset(self, Flag, V)
 
+
     def _v_initial_guess(self, *args):
+        """
+
+        void FullPhysics::InitialGuessValue::initial_guess(const blitz::Array< double, 1 > &v)
+        Set first guess value. 
+        """
         return _initial_guess_value.InitialGuessValue__v_initial_guess(self, *args)
+
 
     @property
     def initial_guess(self):

@@ -5568,9 +5568,22 @@ SWIGINTERN PyObject *SolarContinuumTable_swigregister(PyObject *SWIGUNUSEDPARM(s
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"new_SolarContinuumTable", _wrap_new_SolarContinuumTable, METH_VARARGS, NULL},
-	 { (char *)"SolarContinuumTable_solar_continuum_spectrum", _wrap_SolarContinuumTable_solar_continuum_spectrum, METH_VARARGS, NULL},
-	 { (char *)"delete_SolarContinuumTable", _wrap_delete_SolarContinuumTable, METH_VARARGS, NULL},
+	 { (char *)"new_SolarContinuumTable", _wrap_new_SolarContinuumTable, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::SolarContinuumTable::SolarContinuumTable(const HdfFile &F, const std::string &Hdf_group, bool\n"
+		"Convert_from_photon=true)\n"
+		"\n"
+		""},
+	 { (char *)"SolarContinuumTable_solar_continuum_spectrum", _wrap_SolarContinuumTable_solar_continuum_spectrum, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual Spectrum FullPhysics::SolarContinuumTable::solar_continuum_spectrum(const SpectralDomain &spec_domain) const\n"
+		"\n"
+		""},
+	 { (char *)"delete_SolarContinuumTable", _wrap_delete_SolarContinuumTable, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::SolarContinuumTable::~SolarContinuumTable()\n"
+		"\n"
+		""},
 	 { (char *)"SolarContinuumTable_swigregister", SolarContinuumTable_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };

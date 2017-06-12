@@ -122,6 +122,35 @@ def _new_from_set(cls, version, *args):
 
 import full_physics_swig.generic_object
 class HdfFile(full_physics_swig.generic_object.GenericObject):
+    """
+
+    This class reads and writes a HDF5 file.
+
+    Note that this is just a thin layer on top of the HDF 5 libraries to
+    make the file operations we need to do in Level 2 Full Physics easier.
+    There are many other things that can be done with a HDF 5 than what
+    this class exposes.
+
+    Note that because it is what is used by Level 2 product, we produce
+    data in 32 bit (either 32 bit integer or 32 bit floating point). On a
+    64 bit system, the underlying double and int are larger. We map
+    between these types as needed transparently.
+
+    HDF supports both fixed length strings and variable length strings. We
+    have the need to write both variable length strings and fixed length
+    strings. As a convention, if std::string are passed we write as
+    variable length. If const char* is passed, we determine the fixed
+    length needed to accommodate the largest string passed and write the
+    data as fixed strings of that length (padding shorter strings with
+    spaces). This is an arbitrary decision, but it allows us to write both
+    types.
+
+    Note that in what is a fairly odd convention, we add a trailing
+    '\\0' in our fixed length string, so there is one extra character.
+
+    C++ includes: hdf_file.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.generic_object.GenericObject]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -139,6 +168,11 @@ class HdfFile(full_physics_swig.generic_object.GenericObject):
     READ_WRITE = _hdf_file.HdfFile_READ_WRITE
 
     def __init__(self, *args):
+        """
+
+        FullPhysics::HdfFile::HdfFile(const std::string &Fname, Mode M=READ)
+
+        """
         this = _hdf_file.new_HdfFile(*args)
         try:
             self.this.append(this)
@@ -146,10 +180,25 @@ class HdfFile(full_physics_swig.generic_object.GenericObject):
             self.this = this
 
     def close(self):
+        """
+
+        void FullPhysics::HdfFile::close()
+        Close the underlying file.
+
+        This is automatically done by the destructor, so you only need to call
+        this if you want to force a close (e.g., for a unit test) 
+        """
         return _hdf_file.HdfFile_close(self)
 
+
     def _v_file_name(self):
+        """
+
+        const std::string& FullPhysics::HdfFile::file_name() const
+        File name. 
+        """
         return _hdf_file.HdfFile__v_file_name(self)
+
 
     @property
     def file_name(self):
@@ -157,15 +206,30 @@ class HdfFile(full_physics_swig.generic_object.GenericObject):
 
 
     def _v_mode(self):
+        """
+
+        Mode FullPhysics::HdfFile::mode() const
+        Mode file was opened with. 
+        """
         return _hdf_file.HdfFile__v_mode(self)
+
 
     @property
     def mode(self):
         return self._v_mode()
 
-    __swig_getmethods__["is_hdf"] = lambda x: _hdf_file.HdfFile_is_hdf
+
+    def is_hdf(Fname):
+        """
+
+        static bool FullPhysics::HdfFile::is_hdf(const std::string &Fname)
+        Return true if the given file is an HDF file. 
+        """
+        return _hdf_file.HdfFile_is_hdf(Fname)
+
     if _newclass:
-        is_hdf = staticmethod(_hdf_file.HdfFile_is_hdf)
+        is_hdf = staticmethod(is_hdf)
+    __swig_getmethods__["is_hdf"] = lambda x: is_hdf
 
     def write_double_1d(self, fname, D):
         return _hdf_file.HdfFile_write_double_1d(self, fname, D)
@@ -228,8 +292,12 @@ HdfFile_swigregister = _hdf_file.HdfFile_swigregister
 HdfFile_swigregister(HdfFile)
 
 def HdfFile_is_hdf(Fname):
+    """
+
+    static bool FullPhysics::HdfFile::is_hdf(const std::string &Fname)
+    Return true if the given file is an HDF file. 
+    """
     return _hdf_file.HdfFile_is_hdf(Fname)
-HdfFile_is_hdf = _hdf_file.HdfFile_is_hdf
 
 # This file is compatible with both classic and new-style classes.
 

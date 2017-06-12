@@ -5187,9 +5187,34 @@ SWIGINTERN PyObject *CostFunction_swigregister(PyObject *SWIGUNUSEDPARM(self), P
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"delete_CostFunction", _wrap_delete_CostFunction, METH_VARARGS, NULL},
+	 { (char *)"delete_CostFunction", _wrap_delete_CostFunction, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::CostFunction::~CostFunction()\n"
+		"\n"
+		""},
 	 { (char *)"CostFunction___str__", _wrap_CostFunction___str__, METH_VARARGS, NULL},
-	 { (char *)"CostFunction_cost_function", _wrap_CostFunction_cost_function, METH_VARARGS, NULL},
+	 { (char *)"CostFunction_cost_function", _wrap_CostFunction_cost_function, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::CostFunction::cost_function(const blitz::Array< double, 1 > &X, blitz::Array< double, 1 >\n"
+		"&Residual, blitz::Array< double, 1 > &Se, blitz::Array< double, 2 >\n"
+		"&Jacobian) const =0\n"
+		"For the given value of X, calculate the residuals and jacobians.\n"
+		"\n"
+		"The residual is defined as F(x) - y, so the Jacobian of the residuals\n"
+		"is the same as the Jacobian of F(x).\n"
+		"\n"
+		"Parameters:\n"
+		"-----------\n"
+		"\n"
+		"X:  Input value\n"
+		"\n"
+		"Residual:  On exit, set to the residual of the cost function\n"
+		"\n"
+		"Se:  On exit, the covariance of the residual. We assume the covariance\n"
+		"is a diagonal matrix, and just return the diagonal elements\n"
+		"\n"
+		"Jacobian:  On exit, the Jacobian of the cost function. \n"
+		""},
 	 { (char *)"CostFunction_swigregister", CostFunction_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };

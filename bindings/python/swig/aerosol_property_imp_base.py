@@ -193,6 +193,20 @@ SubStateVectorArrayAerosolProperty_swigregister = _aerosol_property_imp_base.Sub
 SubStateVectorArrayAerosolProperty_swigregister(SubStateVectorArrayAerosolProperty)
 
 class AerosolPropertyImpBase(SubStateVectorArrayAerosolProperty):
+    """
+
+    As a design principle, we have each base class with the absolutely
+    minimum interface needed for use from the rest of the system.
+
+    This allows us to support any future code that supports this minimum
+    interface.
+
+    However, almost always you will want to derive from this class
+    instead. See PressureImpBase for a more complete discussion of this.
+
+    C++ includes: aerosol_property_imp_base.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [SubStateVectorArrayAerosolProperty]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -206,19 +220,52 @@ class AerosolPropertyImpBase(SubStateVectorArrayAerosolProperty):
     __del__ = lambda self: None
 
     def clone(self, *args):
+        """
+
+        virtual boost::shared_ptr<AerosolProperty> FullPhysics::AerosolPropertyImpBase::clone(const boost::shared_ptr< Pressure > &Press, const boost::shared_ptr<
+        RelativeHumidity > &Rh) const =0
+
+        """
         return _aerosol_property_imp_base.AerosolPropertyImpBase_clone(self, *args)
 
+
     def extinction_coefficient_each_layer(self, wn):
+        """
+
+        virtual ArrayAd<double,1> FullPhysics::AerosolPropertyImpBase::extinction_coefficient_each_layer(double wn) const =0
+
+        """
         return _aerosol_property_imp_base.AerosolPropertyImpBase_extinction_coefficient_each_layer(self, wn)
 
+
     def scattering_coefficient_each_layer(self, wn):
+        """
+
+        virtual ArrayAd<double, 1> FullPhysics::AerosolPropertyImpBase::scattering_coefficient_each_layer(double wn) const =0
+
+        """
         return _aerosol_property_imp_base.AerosolPropertyImpBase_scattering_coefficient_each_layer(self, wn)
 
+
     def phase_function_moment_each_layer(self, wn, nmom=-1, nscatt=-1):
+        """
+
+        virtual ArrayAd<double, 3> FullPhysics::AerosolPropertyImpBase::phase_function_moment_each_layer(double wn, int nmom=-1, int nscatt=-1) const =0
+
+        """
         return _aerosol_property_imp_base.AerosolPropertyImpBase_phase_function_moment_each_layer(self, wn, nmom, nscatt)
 
+
     def desc(self):
+        """
+
+        virtual std::string FullPhysics::AerosolPropertyImpBase::desc() const
+        Description of object, to be printed to stream.
+
+        This gives a cleaner interface for deriving from python. 
+        """
         return _aerosol_property_imp_base.AerosolPropertyImpBase_desc(self)
+
 
     def add_observer(self, Obs):
         return _aerosol_property_imp_base.AerosolPropertyImpBase_add_observer(self, Obs)
@@ -230,10 +277,29 @@ class AerosolPropertyImpBase(SubStateVectorArrayAerosolProperty):
         return _aerosol_property_imp_base.AerosolPropertyImpBase_update_sub_state_hook(self)
 
     def print_desc(self, Os):
+        """
+
+        virtual void FullPhysics::AerosolPropertyImpBase::print(std::ostream &Os) const
+        Print to stream.
+
+        The default calls the function "desc" that returns a string. This
+        gives cleaner interface for deriving from this class in python, but
+        most C++ classes will want to override this function rather than using
+        desc. 
+        """
         return _aerosol_property_imp_base.AerosolPropertyImpBase_print_desc(self, Os)
 
+
     def _v_desc(self):
+        """
+
+        virtual std::string FullPhysics::AerosolPropertyImpBase::desc() const
+        Description of object, to be printed to stream.
+
+        This gives a cleaner interface for deriving from python. 
+        """
         return _aerosol_property_imp_base.AerosolPropertyImpBase__v_desc(self)
+
 
     @property
     def desc(self):
@@ -265,7 +331,14 @@ class AerosolPropertyImpBase(SubStateVectorArrayAerosolProperty):
         return _aerosol_property_imp_base.AerosolPropertyImpBase_state_vector_name_sub(self, Sv_name)
 
     def _v_aerosol_parameter(self):
+        """
+
+        blitz::Array<double, 1> FullPhysics::AerosolPropertyImpBase::aerosol_parameter() const
+        Returns the value of the coefficients used to generate the aerosol
+        property. 
+        """
         return _aerosol_property_imp_base.AerosolPropertyImpBase__v_aerosol_parameter(self)
+
 
     @property
     def aerosol_parameter(self):
@@ -273,7 +346,13 @@ class AerosolPropertyImpBase(SubStateVectorArrayAerosolProperty):
 
 
     def _v_aerosol_parameter_uncertainty(self):
+        """
+
+        blitz::Array<double, 1> FullPhysics::AerosolPropertyImpBase::aerosol_parameter_uncertainty() const
+        Returns the uncertainty of the aerosol type coefficients. 
+        """
         return _aerosol_property_imp_base.AerosolPropertyImpBase__v_aerosol_parameter_uncertainty(self)
+
 
     @property
     def aerosol_parameter_uncertainty(self):

@@ -126,6 +126,16 @@ import full_physics_swig.state_vector
 import full_physics_swig.generic_object
 import full_physics_swig.sub_state_vector_array
 class TemperatureOffset(full_physics_swig.temperature_imp_base.TemperatureImpBase):
+    """
+
+    This class maintains the temperature portion of the state.
+
+    The temperature is retrieved through an offset to an initial guess
+    profile.
+
+    C++ includes: temperature_offset.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.temperature_imp_base.TemperatureImpBase]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -140,13 +150,31 @@ class TemperatureOffset(full_physics_swig.temperature_imp_base.TemperatureImpBas
     __repr__ = _swig_repr
 
     def clone(self, *args):
+        """
+
+        virtual boost::shared_ptr<Temperature> FullPhysics::TemperatureOffset::clone(const boost::shared_ptr< Pressure > &Press) const =0
+
+        """
         return _temperature_offset.TemperatureOffset_clone(self, *args)
 
+
     def state_vector_name_i(self, i):
+        """
+
+        virtual std::string FullPhysics::TemperatureOffset::state_vector_name_i(int i) const
+
+        """
         return _temperature_offset.TemperatureOffset_state_vector_name_i(self, i)
 
+
     def _v_temperature_offset(self):
+        """
+
+        double FullPhysics::TemperatureOffset::temperature_offset() const
+        Temperature offset. 
+        """
         return _temperature_offset.TemperatureOffset__v_temperature_offset(self)
+
 
     @property
     def temperature_offset(self):
@@ -154,7 +182,13 @@ class TemperatureOffset(full_physics_swig.temperature_imp_base.TemperatureImpBas
 
 
     def _v_temperature_offset_uncertainty(self):
+        """
+
+        double FullPhysics::TemperatureOffset::temperature_offset_uncertainty() const
+
+        """
         return _temperature_offset.TemperatureOffset__v_temperature_offset_uncertainty(self)
+
 
     @property
     def temperature_offset_uncertainty(self):

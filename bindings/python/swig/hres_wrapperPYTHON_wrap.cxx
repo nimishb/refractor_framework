@@ -5492,12 +5492,36 @@ SWIGINTERN PyObject *HresWrapper_swigregister(PyObject *SWIGUNUSEDPARM(self), Py
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"HresWrapper__v_number_stokes", _wrap_HresWrapper__v_number_stokes, METH_VARARGS, NULL},
-	 { (char *)"HresWrapper__v_number_stream", _wrap_HresWrapper__v_number_stream, METH_VARARGS, NULL},
-	 { (char *)"HresWrapper_stokes_single_wn", _wrap_HresWrapper_stokes_single_wn, METH_VARARGS, NULL},
-	 { (char *)"HresWrapper_stokes_and_jacobian_single_wn", _wrap_HresWrapper_stokes_and_jacobian_single_wn, METH_VARARGS, NULL},
-	 { (char *)"HresWrapper__v_rt", _wrap_HresWrapper__v_rt, METH_VARARGS, NULL},
-	 { (char *)"delete_HresWrapper", _wrap_delete_HresWrapper, METH_VARARGS, NULL},
+	 { (char *)"HresWrapper__v_number_stokes", _wrap_HresWrapper__v_number_stokes, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual int FullPhysics::HresWrapper::number_stokes() const\n"
+		"\n"
+		""},
+	 { (char *)"HresWrapper__v_number_stream", _wrap_HresWrapper__v_number_stream, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual int FullPhysics::HresWrapper::number_stream() const\n"
+		"\n"
+		""},
+	 { (char *)"HresWrapper_stokes_single_wn", _wrap_HresWrapper_stokes_single_wn, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual blitz::Array<double, 1> FullPhysics::HresWrapper::stokes_single_wn(double Wn, int Spec_index, const ArrayAd< double, 2 > &Iv) const\n"
+		"\n"
+		""},
+	 { (char *)"HresWrapper_stokes_and_jacobian_single_wn", _wrap_HresWrapper_stokes_and_jacobian_single_wn, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual ArrayAd<double, 1> FullPhysics::HresWrapper::stokes_and_jacobian_single_wn(double Wn, int Spec_index, const ArrayAd< double, 2 > &Iv) const\n"
+		"\n"
+		""},
+	 { (char *)"HresWrapper__v_rt", _wrap_HresWrapper__v_rt, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual boost::shared_ptr<RadiativeTransfer> FullPhysics::HresWrapper::rt() const\n"
+		"\n"
+		""},
+	 { (char *)"delete_HresWrapper", _wrap_delete_HresWrapper, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::HresWrapper::~HresWrapper()\n"
+		"\n"
+		""},
 	 { (char *)"HresWrapper_swigregister", HresWrapper_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };

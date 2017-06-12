@@ -9527,112 +9527,533 @@ SWIGINTERN PyObject *Twostream_L_Master_swigregister(PyObject *SWIGUNUSEDPARM(se
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"new_Twostream_Ls_Brdf_Supplement", _wrap_new_Twostream_Ls_Brdf_Supplement, METH_VARARGS, NULL},
-	 { (char *)"Twostream_Ls_Brdf_Supplement_lambertian_kernel_flag", _wrap_Twostream_Ls_Brdf_Supplement_lambertian_kernel_flag, METH_VARARGS, NULL},
-	 { (char *)"Twostream_Ls_Brdf_Supplement_do_shadow_effect", _wrap_Twostream_Ls_Brdf_Supplement_do_shadow_effect, METH_VARARGS, NULL},
-	 { (char *)"Twostream_Ls_Brdf_Supplement_do_surface_emission", _wrap_Twostream_Ls_Brdf_Supplement_do_surface_emission, METH_VARARGS, NULL},
-	 { (char *)"Twostream_Ls_Brdf_Supplement_nbeams", _wrap_Twostream_Ls_Brdf_Supplement_nbeams, METH_VARARGS, NULL},
-	 { (char *)"Twostream_Ls_Brdf_Supplement_n_user_streams", _wrap_Twostream_Ls_Brdf_Supplement_n_user_streams, METH_VARARGS, NULL},
-	 { (char *)"Twostream_Ls_Brdf_Supplement_n_user_relazms", _wrap_Twostream_Ls_Brdf_Supplement_n_user_relazms, METH_VARARGS, NULL},
-	 { (char *)"Twostream_Ls_Brdf_Supplement_beam_szas", _wrap_Twostream_Ls_Brdf_Supplement_beam_szas, METH_VARARGS, NULL},
-	 { (char *)"Twostream_Ls_Brdf_Supplement_user_angles", _wrap_Twostream_Ls_Brdf_Supplement_user_angles, METH_VARARGS, NULL},
-	 { (char *)"Twostream_Ls_Brdf_Supplement_user_relazms", _wrap_Twostream_Ls_Brdf_Supplement_user_relazms, METH_VARARGS, NULL},
-	 { (char *)"Twostream_Ls_Brdf_Supplement_stream_value", _wrap_Twostream_Ls_Brdf_Supplement_stream_value, METH_VARARGS, NULL},
-	 { (char *)"Twostream_Ls_Brdf_Supplement_nstreams_brdf", _wrap_Twostream_Ls_Brdf_Supplement_nstreams_brdf, METH_VARARGS, NULL},
-	 { (char *)"Twostream_Ls_Brdf_Supplement_n_brdf_kernels", _wrap_Twostream_Ls_Brdf_Supplement_n_brdf_kernels, METH_VARARGS, NULL},
-	 { (char *)"Twostream_Ls_Brdf_Supplement_which_brdf", _wrap_Twostream_Ls_Brdf_Supplement_which_brdf, METH_VARARGS, NULL},
-	 { (char *)"Twostream_Ls_Brdf_Supplement_brdf_factors", _wrap_Twostream_Ls_Brdf_Supplement_brdf_factors, METH_VARARGS, NULL},
-	 { (char *)"Twostream_Ls_Brdf_Supplement_n_brdf_parameters", _wrap_Twostream_Ls_Brdf_Supplement_n_brdf_parameters, METH_VARARGS, NULL},
-	 { (char *)"Twostream_Ls_Brdf_Supplement_brdf_parameters", _wrap_Twostream_Ls_Brdf_Supplement_brdf_parameters, METH_VARARGS, NULL},
-	 { (char *)"Twostream_Ls_Brdf_Supplement_nspars", _wrap_Twostream_Ls_Brdf_Supplement_nspars, METH_VARARGS, NULL},
-	 { (char *)"Twostream_Ls_Brdf_Supplement_do_kernel_factor_wfs", _wrap_Twostream_Ls_Brdf_Supplement_do_kernel_factor_wfs, METH_VARARGS, NULL},
-	 { (char *)"Twostream_Ls_Brdf_Supplement_do_kernel_params_wfs", _wrap_Twostream_Ls_Brdf_Supplement_do_kernel_params_wfs, METH_VARARGS, NULL},
-	 { (char *)"Twostream_Ls_Brdf_Supplement_do_kparams_derivs", _wrap_Twostream_Ls_Brdf_Supplement_do_kparams_derivs, METH_VARARGS, NULL},
-	 { (char *)"Twostream_Ls_Brdf_Supplement_n_surface_wfs", _wrap_Twostream_Ls_Brdf_Supplement_n_surface_wfs, METH_VARARGS, NULL},
-	 { (char *)"Twostream_Ls_Brdf_Supplement_n_kernel_factor_wfs", _wrap_Twostream_Ls_Brdf_Supplement_n_kernel_factor_wfs, METH_VARARGS, NULL},
-	 { (char *)"Twostream_Ls_Brdf_Supplement_n_kernel_params_wfs", _wrap_Twostream_Ls_Brdf_Supplement_n_kernel_params_wfs, METH_VARARGS, NULL},
-	 { (char *)"Twostream_Ls_Brdf_Supplement_brdf_f_0", _wrap_Twostream_Ls_Brdf_Supplement_brdf_f_0, METH_VARARGS, NULL},
-	 { (char *)"Twostream_Ls_Brdf_Supplement_brdf_f", _wrap_Twostream_Ls_Brdf_Supplement_brdf_f, METH_VARARGS, NULL},
-	 { (char *)"Twostream_Ls_Brdf_Supplement_ubrdf_f", _wrap_Twostream_Ls_Brdf_Supplement_ubrdf_f, METH_VARARGS, NULL},
-	 { (char *)"Twostream_Ls_Brdf_Supplement_emissivity", _wrap_Twostream_Ls_Brdf_Supplement_emissivity, METH_VARARGS, NULL},
-	 { (char *)"Twostream_Ls_Brdf_Supplement_ls_brdf_f_0", _wrap_Twostream_Ls_Brdf_Supplement_ls_brdf_f_0, METH_VARARGS, NULL},
-	 { (char *)"Twostream_Ls_Brdf_Supplement_ls_brdf_f", _wrap_Twostream_Ls_Brdf_Supplement_ls_brdf_f, METH_VARARGS, NULL},
-	 { (char *)"Twostream_Ls_Brdf_Supplement_ls_ubrdf_f", _wrap_Twostream_Ls_Brdf_Supplement_ls_ubrdf_f, METH_VARARGS, NULL},
-	 { (char *)"Twostream_Ls_Brdf_Supplement_ls_emissivity", _wrap_Twostream_Ls_Brdf_Supplement_ls_emissivity, METH_VARARGS, NULL},
-	 { (char *)"Twostream_Ls_Brdf_Supplement_run", _wrap_Twostream_Ls_Brdf_Supplement_run, METH_VARARGS, NULL},
+	 { (char *)"new_Twostream_Ls_Brdf_Supplement", _wrap_new_Twostream_Ls_Brdf_Supplement, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::Twostream_Ls_Brdf_Supplement::Twostream_Ls_Brdf_Supplement(const int &nbeams_in, const int &n_user_streams_in, const int\n"
+		"&n_user_relazms_in, const int &nspars_in)\n"
+		"\n"
+		""},
+	 { (char *)"Twostream_Ls_Brdf_Supplement_lambertian_kernel_flag", _wrap_Twostream_Ls_Brdf_Supplement_lambertian_kernel_flag, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Twostream_Ls_Brdf_Supplement::lambertian_kernel_flag(const blitz::Array< bool, 1 > &lambertian_kernel_flag_in)\n"
+		"\n"
+		""},
+	 { (char *)"Twostream_Ls_Brdf_Supplement_do_shadow_effect", _wrap_Twostream_Ls_Brdf_Supplement_do_shadow_effect, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Twostream_Ls_Brdf_Supplement::do_shadow_effect(const bool &do_shadow_effect_in)\n"
+		"\n"
+		""},
+	 { (char *)"Twostream_Ls_Brdf_Supplement_do_surface_emission", _wrap_Twostream_Ls_Brdf_Supplement_do_surface_emission, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Twostream_Ls_Brdf_Supplement::do_surface_emission(const bool &do_surface_emission_in)\n"
+		"\n"
+		""},
+	 { (char *)"Twostream_Ls_Brdf_Supplement_nbeams", _wrap_Twostream_Ls_Brdf_Supplement_nbeams, METH_VARARGS, (char *)"\n"
+		"\n"
+		"const int& FullPhysics::Twostream_Ls_Brdf_Supplement::nbeams() const\n"
+		"\n"
+		""},
+	 { (char *)"Twostream_Ls_Brdf_Supplement_n_user_streams", _wrap_Twostream_Ls_Brdf_Supplement_n_user_streams, METH_VARARGS, (char *)"\n"
+		"\n"
+		"const int& FullPhysics::Twostream_Ls_Brdf_Supplement::n_user_streams() const\n"
+		"\n"
+		""},
+	 { (char *)"Twostream_Ls_Brdf_Supplement_n_user_relazms", _wrap_Twostream_Ls_Brdf_Supplement_n_user_relazms, METH_VARARGS, (char *)"\n"
+		"\n"
+		"const int& FullPhysics::Twostream_Ls_Brdf_Supplement::n_user_relazms() const\n"
+		"\n"
+		""},
+	 { (char *)"Twostream_Ls_Brdf_Supplement_beam_szas", _wrap_Twostream_Ls_Brdf_Supplement_beam_szas, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Twostream_Ls_Brdf_Supplement::beam_szas(const blitz::Array< double, 1 > &beam_szas_in)\n"
+		"\n"
+		""},
+	 { (char *)"Twostream_Ls_Brdf_Supplement_user_angles", _wrap_Twostream_Ls_Brdf_Supplement_user_angles, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Twostream_Ls_Brdf_Supplement::user_angles(const blitz::Array< double, 1 > &user_angles_in)\n"
+		"\n"
+		""},
+	 { (char *)"Twostream_Ls_Brdf_Supplement_user_relazms", _wrap_Twostream_Ls_Brdf_Supplement_user_relazms, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Twostream_Ls_Brdf_Supplement::user_relazms(const blitz::Array< double, 1 > &user_relazms_in)\n"
+		"\n"
+		""},
+	 { (char *)"Twostream_Ls_Brdf_Supplement_stream_value", _wrap_Twostream_Ls_Brdf_Supplement_stream_value, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Twostream_Ls_Brdf_Supplement::stream_value(const double &stream_value_in)\n"
+		"\n"
+		""},
+	 { (char *)"Twostream_Ls_Brdf_Supplement_nstreams_brdf", _wrap_Twostream_Ls_Brdf_Supplement_nstreams_brdf, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Twostream_Ls_Brdf_Supplement::nstreams_brdf(const int &nstreams_brdf_in)\n"
+		"\n"
+		""},
+	 { (char *)"Twostream_Ls_Brdf_Supplement_n_brdf_kernels", _wrap_Twostream_Ls_Brdf_Supplement_n_brdf_kernels, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Twostream_Ls_Brdf_Supplement::n_brdf_kernels(const int &n_brdf_kernels_in)\n"
+		"\n"
+		""},
+	 { (char *)"Twostream_Ls_Brdf_Supplement_which_brdf", _wrap_Twostream_Ls_Brdf_Supplement_which_brdf, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Twostream_Ls_Brdf_Supplement::which_brdf(const blitz::Array< int, 1 > &which_brdf_in)\n"
+		"\n"
+		""},
+	 { (char *)"Twostream_Ls_Brdf_Supplement_brdf_factors", _wrap_Twostream_Ls_Brdf_Supplement_brdf_factors, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Twostream_Ls_Brdf_Supplement::brdf_factors(const blitz::Array< double, 1 > &brdf_factors_in)\n"
+		"\n"
+		""},
+	 { (char *)"Twostream_Ls_Brdf_Supplement_n_brdf_parameters", _wrap_Twostream_Ls_Brdf_Supplement_n_brdf_parameters, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Twostream_Ls_Brdf_Supplement::n_brdf_parameters(const blitz::Array< int, 1 > &n_brdf_parameters_in)\n"
+		"\n"
+		""},
+	 { (char *)"Twostream_Ls_Brdf_Supplement_brdf_parameters", _wrap_Twostream_Ls_Brdf_Supplement_brdf_parameters, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Twostream_Ls_Brdf_Supplement::brdf_parameters(const blitz::Array< double, 2 > &brdf_parameters_in)\n"
+		"\n"
+		""},
+	 { (char *)"Twostream_Ls_Brdf_Supplement_nspars", _wrap_Twostream_Ls_Brdf_Supplement_nspars, METH_VARARGS, (char *)"\n"
+		"\n"
+		"const int& FullPhysics::Twostream_Ls_Brdf_Supplement::nspars() const\n"
+		"\n"
+		""},
+	 { (char *)"Twostream_Ls_Brdf_Supplement_do_kernel_factor_wfs", _wrap_Twostream_Ls_Brdf_Supplement_do_kernel_factor_wfs, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Twostream_Ls_Brdf_Supplement::do_kernel_factor_wfs(const blitz::Array< bool, 1 > &do_kernel_factor_wfs_in)\n"
+		"\n"
+		""},
+	 { (char *)"Twostream_Ls_Brdf_Supplement_do_kernel_params_wfs", _wrap_Twostream_Ls_Brdf_Supplement_do_kernel_params_wfs, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Twostream_Ls_Brdf_Supplement::do_kernel_params_wfs(const blitz::Array< bool, 2 > &do_kernel_params_wfs_in)\n"
+		"\n"
+		""},
+	 { (char *)"Twostream_Ls_Brdf_Supplement_do_kparams_derivs", _wrap_Twostream_Ls_Brdf_Supplement_do_kparams_derivs, METH_VARARGS, (char *)"\n"
+		"\n"
+		"const blitz::Array<bool, 1>& FullPhysics::Twostream_Ls_Brdf_Supplement::do_kparams_derivs() const\n"
+		"\n"
+		""},
+	 { (char *)"Twostream_Ls_Brdf_Supplement_n_surface_wfs", _wrap_Twostream_Ls_Brdf_Supplement_n_surface_wfs, METH_VARARGS, (char *)"\n"
+		"\n"
+		"const int& FullPhysics::Twostream_Ls_Brdf_Supplement::n_surface_wfs() const\n"
+		"\n"
+		""},
+	 { (char *)"Twostream_Ls_Brdf_Supplement_n_kernel_factor_wfs", _wrap_Twostream_Ls_Brdf_Supplement_n_kernel_factor_wfs, METH_VARARGS, (char *)"\n"
+		"\n"
+		"const int& FullPhysics::Twostream_Ls_Brdf_Supplement::n_kernel_factor_wfs() const\n"
+		"\n"
+		""},
+	 { (char *)"Twostream_Ls_Brdf_Supplement_n_kernel_params_wfs", _wrap_Twostream_Ls_Brdf_Supplement_n_kernel_params_wfs, METH_VARARGS, (char *)"\n"
+		"\n"
+		"const int& FullPhysics::Twostream_Ls_Brdf_Supplement::n_kernel_params_wfs() const\n"
+		"\n"
+		""},
+	 { (char *)"Twostream_Ls_Brdf_Supplement_brdf_f_0", _wrap_Twostream_Ls_Brdf_Supplement_brdf_f_0, METH_VARARGS, (char *)"\n"
+		"\n"
+		"const blitz::Array<double, 2>& FullPhysics::Twostream_Ls_Brdf_Supplement::brdf_f_0() const\n"
+		"\n"
+		""},
+	 { (char *)"Twostream_Ls_Brdf_Supplement_brdf_f", _wrap_Twostream_Ls_Brdf_Supplement_brdf_f, METH_VARARGS, (char *)"\n"
+		"\n"
+		"const blitz::Array<double, 1>& FullPhysics::Twostream_Ls_Brdf_Supplement::brdf_f() const\n"
+		"\n"
+		""},
+	 { (char *)"Twostream_Ls_Brdf_Supplement_ubrdf_f", _wrap_Twostream_Ls_Brdf_Supplement_ubrdf_f, METH_VARARGS, (char *)"\n"
+		"\n"
+		"const blitz::Array<double, 2>& FullPhysics::Twostream_Ls_Brdf_Supplement::ubrdf_f() const\n"
+		"\n"
+		""},
+	 { (char *)"Twostream_Ls_Brdf_Supplement_emissivity", _wrap_Twostream_Ls_Brdf_Supplement_emissivity, METH_VARARGS, (char *)"\n"
+		"\n"
+		"const double& FullPhysics::Twostream_Ls_Brdf_Supplement::emissivity() const\n"
+		"\n"
+		""},
+	 { (char *)"Twostream_Ls_Brdf_Supplement_ls_brdf_f_0", _wrap_Twostream_Ls_Brdf_Supplement_ls_brdf_f_0, METH_VARARGS, (char *)"\n"
+		"\n"
+		"const blitz::Array<double, 3>& FullPhysics::Twostream_Ls_Brdf_Supplement::ls_brdf_f_0() const\n"
+		"\n"
+		""},
+	 { (char *)"Twostream_Ls_Brdf_Supplement_ls_brdf_f", _wrap_Twostream_Ls_Brdf_Supplement_ls_brdf_f, METH_VARARGS, (char *)"\n"
+		"\n"
+		"const blitz::Array<double, 2>& FullPhysics::Twostream_Ls_Brdf_Supplement::ls_brdf_f() const\n"
+		"\n"
+		""},
+	 { (char *)"Twostream_Ls_Brdf_Supplement_ls_ubrdf_f", _wrap_Twostream_Ls_Brdf_Supplement_ls_ubrdf_f, METH_VARARGS, (char *)"\n"
+		"\n"
+		"const blitz::Array<double, 3>& FullPhysics::Twostream_Ls_Brdf_Supplement::ls_ubrdf_f() const\n"
+		"\n"
+		""},
+	 { (char *)"Twostream_Ls_Brdf_Supplement_ls_emissivity", _wrap_Twostream_Ls_Brdf_Supplement_ls_emissivity, METH_VARARGS, (char *)"\n"
+		"\n"
+		"const blitz::Array<double, 1>& FullPhysics::Twostream_Ls_Brdf_Supplement::ls_emissivity() const\n"
+		"\n"
+		""},
+	 { (char *)"Twostream_Ls_Brdf_Supplement_run", _wrap_Twostream_Ls_Brdf_Supplement_run, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Twostream_Ls_Brdf_Supplement::run()\n"
+		"\n"
+		""},
 	 { (char *)"delete_Twostream_Ls_Brdf_Supplement", _wrap_delete_Twostream_Ls_Brdf_Supplement, METH_VARARGS, NULL},
 	 { (char *)"Twostream_Ls_Brdf_Supplement_swigregister", Twostream_Ls_Brdf_Supplement_swigregister, METH_VARARGS, NULL},
-	 { (char *)"new_Twostream_L_Master", _wrap_new_Twostream_L_Master, METH_VARARGS, NULL},
-	 { (char *)"Twostream_L_Master_thread", _wrap_Twostream_L_Master_thread, METH_VARARGS, NULL},
-	 { (char *)"Twostream_L_Master_do_upwelling", _wrap_Twostream_L_Master_do_upwelling, METH_VARARGS, NULL},
-	 { (char *)"Twostream_L_Master_do_dnwelling", _wrap_Twostream_L_Master_do_dnwelling, METH_VARARGS, NULL},
-	 { (char *)"Twostream_L_Master_do_plane_parallel", _wrap_Twostream_L_Master_do_plane_parallel, METH_VARARGS, NULL},
-	 { (char *)"Twostream_L_Master_do_solar_sources", _wrap_Twostream_L_Master_do_solar_sources, METH_VARARGS, NULL},
-	 { (char *)"Twostream_L_Master_do_thermal_emission", _wrap_Twostream_L_Master_do_thermal_emission, METH_VARARGS, NULL},
-	 { (char *)"Twostream_L_Master_do_surface_emission", _wrap_Twostream_L_Master_do_surface_emission, METH_VARARGS, NULL},
-	 { (char *)"Twostream_L_Master_do_d2s_scaling", _wrap_Twostream_L_Master_do_d2s_scaling, METH_VARARGS, NULL},
-	 { (char *)"Twostream_L_Master_do_brdf_surface", _wrap_Twostream_L_Master_do_brdf_surface, METH_VARARGS, NULL},
-	 { (char *)"Twostream_L_Master_pure_nadir", _wrap_Twostream_L_Master_pure_nadir, METH_VARARGS, NULL},
-	 { (char *)"Twostream_L_Master_nthreads", _wrap_Twostream_L_Master_nthreads, METH_VARARGS, NULL},
-	 { (char *)"Twostream_L_Master_nlayers", _wrap_Twostream_L_Master_nlayers, METH_VARARGS, NULL},
-	 { (char *)"Twostream_L_Master_ntotal", _wrap_Twostream_L_Master_ntotal, METH_VARARGS, NULL},
-	 { (char *)"Twostream_L_Master_n_geometries", _wrap_Twostream_L_Master_n_geometries, METH_VARARGS, NULL},
-	 { (char *)"Twostream_L_Master_stream_value", _wrap_Twostream_L_Master_stream_value, METH_VARARGS, NULL},
-	 { (char *)"Twostream_L_Master_n_user_streams", _wrap_Twostream_L_Master_n_user_streams, METH_VARARGS, NULL},
-	 { (char *)"Twostream_L_Master_user_angles", _wrap_Twostream_L_Master_user_angles, METH_VARARGS, NULL},
-	 { (char *)"Twostream_L_Master_n_user_relazms", _wrap_Twostream_L_Master_n_user_relazms, METH_VARARGS, NULL},
-	 { (char *)"Twostream_L_Master_user_relazms", _wrap_Twostream_L_Master_user_relazms, METH_VARARGS, NULL},
-	 { (char *)"Twostream_L_Master_flux_factor", _wrap_Twostream_L_Master_flux_factor, METH_VARARGS, NULL},
-	 { (char *)"Twostream_L_Master_nbeams", _wrap_Twostream_L_Master_nbeams, METH_VARARGS, NULL},
-	 { (char *)"Twostream_L_Master_beam_szas", _wrap_Twostream_L_Master_beam_szas, METH_VARARGS, NULL},
-	 { (char *)"Twostream_L_Master_earth_radius", _wrap_Twostream_L_Master_earth_radius, METH_VARARGS, NULL},
-	 { (char *)"Twostream_L_Master_height_grid", _wrap_Twostream_L_Master_height_grid, METH_VARARGS, NULL},
-	 { (char *)"Twostream_L_Master_deltau_input", _wrap_Twostream_L_Master_deltau_input, METH_VARARGS, NULL},
-	 { (char *)"Twostream_L_Master_omega_input", _wrap_Twostream_L_Master_omega_input, METH_VARARGS, NULL},
-	 { (char *)"Twostream_L_Master_asymm_input", _wrap_Twostream_L_Master_asymm_input, METH_VARARGS, NULL},
-	 { (char *)"Twostream_L_Master_d2s_scaling", _wrap_Twostream_L_Master_d2s_scaling, METH_VARARGS, NULL},
-	 { (char *)"Twostream_L_Master_thermal_bb_input", _wrap_Twostream_L_Master_thermal_bb_input, METH_VARARGS, NULL},
-	 { (char *)"Twostream_L_Master_lambertian_albedo", _wrap_Twostream_L_Master_lambertian_albedo, METH_VARARGS, NULL},
-	 { (char *)"Twostream_L_Master_brdf_f_0", _wrap_Twostream_L_Master_brdf_f_0, METH_VARARGS, NULL},
-	 { (char *)"Twostream_L_Master_brdf_f", _wrap_Twostream_L_Master_brdf_f, METH_VARARGS, NULL},
-	 { (char *)"Twostream_L_Master_ubrdf_f", _wrap_Twostream_L_Master_ubrdf_f, METH_VARARGS, NULL},
-	 { (char *)"Twostream_L_Master_emissivity", _wrap_Twostream_L_Master_emissivity, METH_VARARGS, NULL},
-	 { (char *)"Twostream_L_Master_surfbb", _wrap_Twostream_L_Master_surfbb, METH_VARARGS, NULL},
-	 { (char *)"Twostream_L_Master_do_sim_only", _wrap_Twostream_L_Master_do_sim_only, METH_VARARGS, NULL},
-	 { (char *)"Twostream_L_Master_do_profile_wfs", _wrap_Twostream_L_Master_do_profile_wfs, METH_VARARGS, NULL},
-	 { (char *)"Twostream_L_Master_do_column_wfs", _wrap_Twostream_L_Master_do_column_wfs, METH_VARARGS, NULL},
-	 { (char *)"Twostream_L_Master_do_surface_wfs", _wrap_Twostream_L_Master_do_surface_wfs, METH_VARARGS, NULL},
-	 { (char *)"Twostream_L_Master_npars", _wrap_Twostream_L_Master_npars, METH_VARARGS, NULL},
-	 { (char *)"Twostream_L_Master_nspars", _wrap_Twostream_L_Master_nspars, METH_VARARGS, NULL},
-	 { (char *)"Twostream_L_Master_layer_vary_flag", _wrap_Twostream_L_Master_layer_vary_flag, METH_VARARGS, NULL},
-	 { (char *)"Twostream_L_Master_layer_vary_number", _wrap_Twostream_L_Master_layer_vary_number, METH_VARARGS, NULL},
-	 { (char *)"Twostream_L_Master_n_column_wfs", _wrap_Twostream_L_Master_n_column_wfs, METH_VARARGS, NULL},
-	 { (char *)"Twostream_L_Master_n_surface_wfs", _wrap_Twostream_L_Master_n_surface_wfs, METH_VARARGS, NULL},
-	 { (char *)"Twostream_L_Master_l_deltau_input", _wrap_Twostream_L_Master_l_deltau_input, METH_VARARGS, NULL},
-	 { (char *)"Twostream_L_Master_l_omega_input", _wrap_Twostream_L_Master_l_omega_input, METH_VARARGS, NULL},
-	 { (char *)"Twostream_L_Master_l_asymm_input", _wrap_Twostream_L_Master_l_asymm_input, METH_VARARGS, NULL},
-	 { (char *)"Twostream_L_Master_l_d2s_scaling", _wrap_Twostream_L_Master_l_d2s_scaling, METH_VARARGS, NULL},
-	 { (char *)"Twostream_L_Master_ls_brdf_f_0", _wrap_Twostream_L_Master_ls_brdf_f_0, METH_VARARGS, NULL},
-	 { (char *)"Twostream_L_Master_ls_brdf_f", _wrap_Twostream_L_Master_ls_brdf_f, METH_VARARGS, NULL},
-	 { (char *)"Twostream_L_Master_ls_ubrdf_f", _wrap_Twostream_L_Master_ls_ubrdf_f, METH_VARARGS, NULL},
-	 { (char *)"Twostream_L_Master_ls_emiss", _wrap_Twostream_L_Master_ls_emiss, METH_VARARGS, NULL},
-	 { (char *)"Twostream_L_Master_intensity_toa", _wrap_Twostream_L_Master_intensity_toa, METH_VARARGS, NULL},
-	 { (char *)"Twostream_L_Master_profilewf_toa", _wrap_Twostream_L_Master_profilewf_toa, METH_VARARGS, NULL},
-	 { (char *)"Twostream_L_Master_columnwf_toa", _wrap_Twostream_L_Master_columnwf_toa, METH_VARARGS, NULL},
-	 { (char *)"Twostream_L_Master_surfacewf_toa", _wrap_Twostream_L_Master_surfacewf_toa, METH_VARARGS, NULL},
-	 { (char *)"Twostream_L_Master_intensity_boa", _wrap_Twostream_L_Master_intensity_boa, METH_VARARGS, NULL},
-	 { (char *)"Twostream_L_Master_profilewf_boa", _wrap_Twostream_L_Master_profilewf_boa, METH_VARARGS, NULL},
-	 { (char *)"Twostream_L_Master_columnwf_boa", _wrap_Twostream_L_Master_columnwf_boa, METH_VARARGS, NULL},
-	 { (char *)"Twostream_L_Master_surfacewf_boa", _wrap_Twostream_L_Master_surfacewf_boa, METH_VARARGS, NULL},
-	 { (char *)"Twostream_L_Master_status_inputcheck", _wrap_Twostream_L_Master_status_inputcheck, METH_VARARGS, NULL},
-	 { (char *)"Twostream_L_Master_c_nmessages", _wrap_Twostream_L_Master_c_nmessages, METH_VARARGS, NULL},
-	 { (char *)"Twostream_L_Master_c_messages", _wrap_Twostream_L_Master_c_messages, METH_VARARGS, NULL},
-	 { (char *)"Twostream_L_Master_c_actions", _wrap_Twostream_L_Master_c_actions, METH_VARARGS, NULL},
-	 { (char *)"Twostream_L_Master_status_execution", _wrap_Twostream_L_Master_status_execution, METH_VARARGS, NULL},
-	 { (char *)"Twostream_L_Master_e_message", _wrap_Twostream_L_Master_e_message, METH_VARARGS, NULL},
-	 { (char *)"Twostream_L_Master_e_trace_1", _wrap_Twostream_L_Master_e_trace_1, METH_VARARGS, NULL},
-	 { (char *)"Twostream_L_Master_e_trace_2", _wrap_Twostream_L_Master_e_trace_2, METH_VARARGS, NULL},
-	 { (char *)"Twostream_L_Master_run", _wrap_Twostream_L_Master_run, METH_VARARGS, NULL},
+	 { (char *)"new_Twostream_L_Master", _wrap_new_Twostream_L_Master, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::Twostream_L_Master::Twostream_L_Master(const int &thread_in, const int &nthreads_in, const int &nlayers_in,\n"
+		"const int &ntotal_in, const int &n_geometries_in, const int\n"
+		"&n_user_streams_in, const int &n_user_relazms_in, const int\n"
+		"&nbeams_in, const double &earth_radius_in, const int &npars_in, const\n"
+		"int &nspars_in)\n"
+		"\n"
+		""},
+	 { (char *)"Twostream_L_Master_thread", _wrap_Twostream_L_Master_thread, METH_VARARGS, (char *)"\n"
+		"\n"
+		"const int& FullPhysics::Twostream_L_Master::thread() const\n"
+		"\n"
+		""},
+	 { (char *)"Twostream_L_Master_do_upwelling", _wrap_Twostream_L_Master_do_upwelling, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Twostream_L_Master::do_upwelling(const bool &do_upwelling_in)\n"
+		"\n"
+		""},
+	 { (char *)"Twostream_L_Master_do_dnwelling", _wrap_Twostream_L_Master_do_dnwelling, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Twostream_L_Master::do_dnwelling(const bool &do_dnwelling_in)\n"
+		"\n"
+		""},
+	 { (char *)"Twostream_L_Master_do_plane_parallel", _wrap_Twostream_L_Master_do_plane_parallel, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Twostream_L_Master::do_plane_parallel(const bool &do_plane_parallel_in)\n"
+		"\n"
+		""},
+	 { (char *)"Twostream_L_Master_do_solar_sources", _wrap_Twostream_L_Master_do_solar_sources, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Twostream_L_Master::do_solar_sources(const bool &do_solar_sources_in)\n"
+		"\n"
+		""},
+	 { (char *)"Twostream_L_Master_do_thermal_emission", _wrap_Twostream_L_Master_do_thermal_emission, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Twostream_L_Master::do_thermal_emission(const bool &do_thermal_emission_in)\n"
+		"\n"
+		""},
+	 { (char *)"Twostream_L_Master_do_surface_emission", _wrap_Twostream_L_Master_do_surface_emission, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Twostream_L_Master::do_surface_emission(const bool &do_surface_emission_in)\n"
+		"\n"
+		""},
+	 { (char *)"Twostream_L_Master_do_d2s_scaling", _wrap_Twostream_L_Master_do_d2s_scaling, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Twostream_L_Master::do_d2s_scaling(const bool &do_d2s_scaling_in)\n"
+		"\n"
+		""},
+	 { (char *)"Twostream_L_Master_do_brdf_surface", _wrap_Twostream_L_Master_do_brdf_surface, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Twostream_L_Master::do_brdf_surface(const bool &do_brdf_surface_in)\n"
+		"\n"
+		""},
+	 { (char *)"Twostream_L_Master_pure_nadir", _wrap_Twostream_L_Master_pure_nadir, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Twostream_L_Master::pure_nadir(const bool &pure_nadir_in)\n"
+		"\n"
+		""},
+	 { (char *)"Twostream_L_Master_nthreads", _wrap_Twostream_L_Master_nthreads, METH_VARARGS, (char *)"\n"
+		"\n"
+		"const int& FullPhysics::Twostream_L_Master::nthreads() const\n"
+		"\n"
+		""},
+	 { (char *)"Twostream_L_Master_nlayers", _wrap_Twostream_L_Master_nlayers, METH_VARARGS, (char *)"\n"
+		"\n"
+		"const int& FullPhysics::Twostream_L_Master::nlayers() const\n"
+		"\n"
+		""},
+	 { (char *)"Twostream_L_Master_ntotal", _wrap_Twostream_L_Master_ntotal, METH_VARARGS, (char *)"\n"
+		"\n"
+		"const int& FullPhysics::Twostream_L_Master::ntotal() const\n"
+		"\n"
+		""},
+	 { (char *)"Twostream_L_Master_n_geometries", _wrap_Twostream_L_Master_n_geometries, METH_VARARGS, (char *)"\n"
+		"\n"
+		"const int& FullPhysics::Twostream_L_Master::n_geometries() const\n"
+		"\n"
+		""},
+	 { (char *)"Twostream_L_Master_stream_value", _wrap_Twostream_L_Master_stream_value, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Twostream_L_Master::stream_value(const double &stream_value_in)\n"
+		"\n"
+		""},
+	 { (char *)"Twostream_L_Master_n_user_streams", _wrap_Twostream_L_Master_n_user_streams, METH_VARARGS, (char *)"\n"
+		"\n"
+		"const int& FullPhysics::Twostream_L_Master::n_user_streams() const\n"
+		"\n"
+		""},
+	 { (char *)"Twostream_L_Master_user_angles", _wrap_Twostream_L_Master_user_angles, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Twostream_L_Master::user_angles(const blitz::Array< double, 1 > &user_angles_in)\n"
+		"\n"
+		""},
+	 { (char *)"Twostream_L_Master_n_user_relazms", _wrap_Twostream_L_Master_n_user_relazms, METH_VARARGS, (char *)"\n"
+		"\n"
+		"const int& FullPhysics::Twostream_L_Master::n_user_relazms() const\n"
+		"\n"
+		""},
+	 { (char *)"Twostream_L_Master_user_relazms", _wrap_Twostream_L_Master_user_relazms, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Twostream_L_Master::user_relazms(const blitz::Array< double, 1 > &user_relazms_in)\n"
+		"\n"
+		""},
+	 { (char *)"Twostream_L_Master_flux_factor", _wrap_Twostream_L_Master_flux_factor, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Twostream_L_Master::flux_factor(const double &flux_factor_in)\n"
+		"\n"
+		""},
+	 { (char *)"Twostream_L_Master_nbeams", _wrap_Twostream_L_Master_nbeams, METH_VARARGS, (char *)"\n"
+		"\n"
+		"const int& FullPhysics::Twostream_L_Master::nbeams() const\n"
+		"\n"
+		""},
+	 { (char *)"Twostream_L_Master_beam_szas", _wrap_Twostream_L_Master_beam_szas, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Twostream_L_Master::beam_szas(const blitz::Array< double, 1 > &beam_szas_in)\n"
+		"\n"
+		""},
+	 { (char *)"Twostream_L_Master_earth_radius", _wrap_Twostream_L_Master_earth_radius, METH_VARARGS, (char *)"\n"
+		"\n"
+		"const double& FullPhysics::Twostream_L_Master::earth_radius() const\n"
+		"\n"
+		""},
+	 { (char *)"Twostream_L_Master_height_grid", _wrap_Twostream_L_Master_height_grid, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Twostream_L_Master::height_grid(const blitz::Array< double, 1 > &height_grid_in)\n"
+		"\n"
+		""},
+	 { (char *)"Twostream_L_Master_deltau_input", _wrap_Twostream_L_Master_deltau_input, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Twostream_L_Master::deltau_input(const blitz::Array< double, 2 > &deltau_input_in)\n"
+		"\n"
+		""},
+	 { (char *)"Twostream_L_Master_omega_input", _wrap_Twostream_L_Master_omega_input, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Twostream_L_Master::omega_input(const blitz::Array< double, 2 > &omega_input_in)\n"
+		"\n"
+		""},
+	 { (char *)"Twostream_L_Master_asymm_input", _wrap_Twostream_L_Master_asymm_input, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Twostream_L_Master::asymm_input(const blitz::Array< double, 2 > &asymm_input_in)\n"
+		"\n"
+		""},
+	 { (char *)"Twostream_L_Master_d2s_scaling", _wrap_Twostream_L_Master_d2s_scaling, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Twostream_L_Master::d2s_scaling(const blitz::Array< double, 2 > &d2s_scaling_in)\n"
+		"\n"
+		""},
+	 { (char *)"Twostream_L_Master_thermal_bb_input", _wrap_Twostream_L_Master_thermal_bb_input, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Twostream_L_Master::thermal_bb_input(const blitz::Array< double, 1 > &thermal_bb_input_in)\n"
+		"\n"
+		""},
+	 { (char *)"Twostream_L_Master_lambertian_albedo", _wrap_Twostream_L_Master_lambertian_albedo, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Twostream_L_Master::lambertian_albedo(const blitz::Array< double, 1 > &lambertian_albedo_in)\n"
+		"\n"
+		""},
+	 { (char *)"Twostream_L_Master_brdf_f_0", _wrap_Twostream_L_Master_brdf_f_0, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Twostream_L_Master::brdf_f_0(const blitz::Array< double, 2 > &brdf_f_0_in)\n"
+		"\n"
+		""},
+	 { (char *)"Twostream_L_Master_brdf_f", _wrap_Twostream_L_Master_brdf_f, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Twostream_L_Master::brdf_f(const blitz::Array< double, 1 > &brdf_f_in)\n"
+		"\n"
+		""},
+	 { (char *)"Twostream_L_Master_ubrdf_f", _wrap_Twostream_L_Master_ubrdf_f, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Twostream_L_Master::ubrdf_f(const blitz::Array< double, 2 > &ubrdf_f_in)\n"
+		"\n"
+		""},
+	 { (char *)"Twostream_L_Master_emissivity", _wrap_Twostream_L_Master_emissivity, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Twostream_L_Master::emissivity(const double &emissivity_in)\n"
+		"\n"
+		""},
+	 { (char *)"Twostream_L_Master_surfbb", _wrap_Twostream_L_Master_surfbb, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Twostream_L_Master::surfbb(const double &surfbb_in)\n"
+		"\n"
+		""},
+	 { (char *)"Twostream_L_Master_do_sim_only", _wrap_Twostream_L_Master_do_sim_only, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Twostream_L_Master::do_sim_only(const bool &do_sim_only_in)\n"
+		"\n"
+		""},
+	 { (char *)"Twostream_L_Master_do_profile_wfs", _wrap_Twostream_L_Master_do_profile_wfs, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Twostream_L_Master::do_profile_wfs(const bool &do_profile_wfs_in)\n"
+		"\n"
+		""},
+	 { (char *)"Twostream_L_Master_do_column_wfs", _wrap_Twostream_L_Master_do_column_wfs, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Twostream_L_Master::do_column_wfs(const bool &do_column_wfs_in)\n"
+		"\n"
+		""},
+	 { (char *)"Twostream_L_Master_do_surface_wfs", _wrap_Twostream_L_Master_do_surface_wfs, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Twostream_L_Master::do_surface_wfs(const bool &do_surface_wfs_in)\n"
+		"\n"
+		""},
+	 { (char *)"Twostream_L_Master_npars", _wrap_Twostream_L_Master_npars, METH_VARARGS, (char *)"\n"
+		"\n"
+		"const int& FullPhysics::Twostream_L_Master::npars() const\n"
+		"\n"
+		""},
+	 { (char *)"Twostream_L_Master_nspars", _wrap_Twostream_L_Master_nspars, METH_VARARGS, (char *)"\n"
+		"\n"
+		"const int& FullPhysics::Twostream_L_Master::nspars() const\n"
+		"\n"
+		""},
+	 { (char *)"Twostream_L_Master_layer_vary_flag", _wrap_Twostream_L_Master_layer_vary_flag, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Twostream_L_Master::layer_vary_flag(const blitz::Array< bool, 1 > &layer_vary_flag_in)\n"
+		"\n"
+		""},
+	 { (char *)"Twostream_L_Master_layer_vary_number", _wrap_Twostream_L_Master_layer_vary_number, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Twostream_L_Master::layer_vary_number(const blitz::Array< int, 1 > &layer_vary_number_in)\n"
+		"\n"
+		""},
+	 { (char *)"Twostream_L_Master_n_column_wfs", _wrap_Twostream_L_Master_n_column_wfs, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Twostream_L_Master::n_column_wfs(const int &n_column_wfs_in)\n"
+		"\n"
+		""},
+	 { (char *)"Twostream_L_Master_n_surface_wfs", _wrap_Twostream_L_Master_n_surface_wfs, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Twostream_L_Master::n_surface_wfs(const int &n_surface_wfs_in)\n"
+		"\n"
+		""},
+	 { (char *)"Twostream_L_Master_l_deltau_input", _wrap_Twostream_L_Master_l_deltau_input, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Twostream_L_Master::l_deltau_input(const blitz::Array< double, 3 > &l_deltau_input_in)\n"
+		"\n"
+		""},
+	 { (char *)"Twostream_L_Master_l_omega_input", _wrap_Twostream_L_Master_l_omega_input, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Twostream_L_Master::l_omega_input(const blitz::Array< double, 3 > &l_omega_input_in)\n"
+		"\n"
+		""},
+	 { (char *)"Twostream_L_Master_l_asymm_input", _wrap_Twostream_L_Master_l_asymm_input, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Twostream_L_Master::l_asymm_input(const blitz::Array< double, 3 > &l_asymm_input_in)\n"
+		"\n"
+		""},
+	 { (char *)"Twostream_L_Master_l_d2s_scaling", _wrap_Twostream_L_Master_l_d2s_scaling, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Twostream_L_Master::l_d2s_scaling(const blitz::Array< double, 3 > &l_d2s_scaling_in)\n"
+		"\n"
+		""},
+	 { (char *)"Twostream_L_Master_ls_brdf_f_0", _wrap_Twostream_L_Master_ls_brdf_f_0, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Twostream_L_Master::ls_brdf_f_0(const blitz::Array< double, 3 > &ls_brdf_f_0_in)\n"
+		"\n"
+		""},
+	 { (char *)"Twostream_L_Master_ls_brdf_f", _wrap_Twostream_L_Master_ls_brdf_f, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Twostream_L_Master::ls_brdf_f(const blitz::Array< double, 2 > &ls_brdf_f_in)\n"
+		"\n"
+		""},
+	 { (char *)"Twostream_L_Master_ls_ubrdf_f", _wrap_Twostream_L_Master_ls_ubrdf_f, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Twostream_L_Master::ls_ubrdf_f(const blitz::Array< double, 3 > &ls_ubrdf_f_in)\n"
+		"\n"
+		""},
+	 { (char *)"Twostream_L_Master_ls_emiss", _wrap_Twostream_L_Master_ls_emiss, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Twostream_L_Master::ls_emiss(const blitz::Array< double, 1 > &ls_emiss_in)\n"
+		"\n"
+		""},
+	 { (char *)"Twostream_L_Master_intensity_toa", _wrap_Twostream_L_Master_intensity_toa, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Twostream_L_Master::intensity_toa(const blitz::Array< double, 2 > &intensity_toa_in)\n"
+		"\n"
+		""},
+	 { (char *)"Twostream_L_Master_profilewf_toa", _wrap_Twostream_L_Master_profilewf_toa, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Twostream_L_Master::profilewf_toa(const blitz::Array< double, 4 > &profilewf_toa_in)\n"
+		"\n"
+		""},
+	 { (char *)"Twostream_L_Master_columnwf_toa", _wrap_Twostream_L_Master_columnwf_toa, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Twostream_L_Master::columnwf_toa(const blitz::Array< double, 3 > &columnwf_toa_in)\n"
+		"\n"
+		""},
+	 { (char *)"Twostream_L_Master_surfacewf_toa", _wrap_Twostream_L_Master_surfacewf_toa, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Twostream_L_Master::surfacewf_toa(const blitz::Array< double, 3 > &surfacewf_toa_in)\n"
+		"\n"
+		""},
+	 { (char *)"Twostream_L_Master_intensity_boa", _wrap_Twostream_L_Master_intensity_boa, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Twostream_L_Master::intensity_boa(const blitz::Array< double, 2 > &intensity_boa_in)\n"
+		"\n"
+		""},
+	 { (char *)"Twostream_L_Master_profilewf_boa", _wrap_Twostream_L_Master_profilewf_boa, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Twostream_L_Master::profilewf_boa(const blitz::Array< double, 4 > &profilewf_boa_in)\n"
+		"\n"
+		""},
+	 { (char *)"Twostream_L_Master_columnwf_boa", _wrap_Twostream_L_Master_columnwf_boa, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Twostream_L_Master::columnwf_boa(const blitz::Array< double, 3 > &columnwf_boa_in)\n"
+		"\n"
+		""},
+	 { (char *)"Twostream_L_Master_surfacewf_boa", _wrap_Twostream_L_Master_surfacewf_boa, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Twostream_L_Master::surfacewf_boa(const blitz::Array< double, 3 > &surfacewf_boa_in)\n"
+		"\n"
+		""},
+	 { (char *)"Twostream_L_Master_status_inputcheck", _wrap_Twostream_L_Master_status_inputcheck, METH_VARARGS, (char *)"\n"
+		"\n"
+		"const int& FullPhysics::Twostream_L_Master::status_inputcheck() const\n"
+		"\n"
+		""},
+	 { (char *)"Twostream_L_Master_c_nmessages", _wrap_Twostream_L_Master_c_nmessages, METH_VARARGS, (char *)"\n"
+		"\n"
+		"const int& FullPhysics::Twostream_L_Master::c_nmessages() const\n"
+		"\n"
+		""},
+	 { (char *)"Twostream_L_Master_c_messages", _wrap_Twostream_L_Master_c_messages, METH_VARARGS, (char *)"\n"
+		"\n"
+		"std::vector< std::string > FullPhysics::Twostream_L_Master::c_messages() const\n"
+		"\n"
+		""},
+	 { (char *)"Twostream_L_Master_c_actions", _wrap_Twostream_L_Master_c_actions, METH_VARARGS, (char *)"\n"
+		"\n"
+		"std::vector< std::string > FullPhysics::Twostream_L_Master::c_actions() const\n"
+		"\n"
+		""},
+	 { (char *)"Twostream_L_Master_status_execution", _wrap_Twostream_L_Master_status_execution, METH_VARARGS, (char *)"\n"
+		"\n"
+		"const int& FullPhysics::Twostream_L_Master::status_execution() const\n"
+		"\n"
+		""},
+	 { (char *)"Twostream_L_Master_e_message", _wrap_Twostream_L_Master_e_message, METH_VARARGS, (char *)"\n"
+		"\n"
+		"std::string FullPhysics::Twostream_L_Master::e_message() const\n"
+		"\n"
+		""},
+	 { (char *)"Twostream_L_Master_e_trace_1", _wrap_Twostream_L_Master_e_trace_1, METH_VARARGS, (char *)"\n"
+		"\n"
+		"std::string FullPhysics::Twostream_L_Master::e_trace_1() const\n"
+		"\n"
+		""},
+	 { (char *)"Twostream_L_Master_e_trace_2", _wrap_Twostream_L_Master_e_trace_2, METH_VARARGS, (char *)"\n"
+		"\n"
+		"std::string FullPhysics::Twostream_L_Master::e_trace_2() const\n"
+		"\n"
+		""},
+	 { (char *)"Twostream_L_Master_run", _wrap_Twostream_L_Master_run, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Twostream_L_Master::run()\n"
+		"\n"
+		""},
 	 { (char *)"delete_Twostream_L_Master", _wrap_delete_Twostream_L_Master, METH_VARARGS, NULL},
 	 { (char *)"Twostream_L_Master_swigregister", Twostream_L_Master_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }

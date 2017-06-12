@@ -6556,20 +6556,78 @@ SWIGINTERN PyObject *Level1bFts_swigregister(PyObject *SWIGUNUSEDPARM(self), PyO
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"new_Level1bFts", _wrap_new_Level1bFts, METH_VARARGS, NULL},
-	 { (char *)"Level1bFts_latitude", _wrap_Level1bFts_latitude, METH_VARARGS, NULL},
-	 { (char *)"Level1bFts_longitude", _wrap_Level1bFts_longitude, METH_VARARGS, NULL},
-	 { (char *)"Level1bFts_sounding_zenith", _wrap_Level1bFts_sounding_zenith, METH_VARARGS, NULL},
-	 { (char *)"Level1bFts_sounding_azimuth", _wrap_Level1bFts_sounding_azimuth, METH_VARARGS, NULL},
-	 { (char *)"Level1bFts_stokes_coefficient", _wrap_Level1bFts_stokes_coefficient, METH_VARARGS, NULL},
-	 { (char *)"Level1bFts_solar_zenith", _wrap_Level1bFts_solar_zenith, METH_VARARGS, NULL},
-	 { (char *)"Level1bFts_solar_azimuth", _wrap_Level1bFts_solar_azimuth, METH_VARARGS, NULL},
-	 { (char *)"Level1bFts_altitude", _wrap_Level1bFts_altitude, METH_VARARGS, NULL},
-	 { (char *)"Level1bFts_relative_velocity", _wrap_Level1bFts_relative_velocity, METH_VARARGS, NULL},
-	 { (char *)"Level1bFts_spectral_coefficient", _wrap_Level1bFts_spectral_coefficient, METH_VARARGS, NULL},
-	 { (char *)"Level1bFts_time", _wrap_Level1bFts_time, METH_VARARGS, NULL},
-	 { (char *)"Level1bFts_radiance", _wrap_Level1bFts_radiance, METH_VARARGS, NULL},
-	 { (char *)"delete_Level1bFts", _wrap_delete_Level1bFts, METH_VARARGS, NULL},
+	 { (char *)"new_Level1bFts", _wrap_new_Level1bFts, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::Level1bFts::Level1bFts(const HdfFile &Hfile, const std::vector< std::string > &Band_names,\n"
+		"const std::string\n"
+		"&Radiance_dataset=\"/SpectralParameters/modeled_radiance\")\n"
+		"\n"
+		""},
+	 { (char *)"Level1bFts_latitude", _wrap_Level1bFts_latitude, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual DoubleWithUnit FullPhysics::Level1bFts::latitude(int i) const\n"
+		"\n"
+		""},
+	 { (char *)"Level1bFts_longitude", _wrap_Level1bFts_longitude, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual DoubleWithUnit FullPhysics::Level1bFts::longitude(int i) const\n"
+		"\n"
+		""},
+	 { (char *)"Level1bFts_sounding_zenith", _wrap_Level1bFts_sounding_zenith, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual DoubleWithUnit FullPhysics::Level1bFts::sounding_zenith(int i) const\n"
+		"\n"
+		""},
+	 { (char *)"Level1bFts_sounding_azimuth", _wrap_Level1bFts_sounding_azimuth, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual DoubleWithUnit FullPhysics::Level1bFts::sounding_azimuth(int i) const\n"
+		"\n"
+		""},
+	 { (char *)"Level1bFts_stokes_coefficient", _wrap_Level1bFts_stokes_coefficient, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual blitz::Array<double, 1> FullPhysics::Level1bFts::stokes_coefficient(int i) const\n"
+		"\n"
+		""},
+	 { (char *)"Level1bFts_solar_zenith", _wrap_Level1bFts_solar_zenith, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual DoubleWithUnit FullPhysics::Level1bFts::solar_zenith(int i) const\n"
+		"\n"
+		""},
+	 { (char *)"Level1bFts_solar_azimuth", _wrap_Level1bFts_solar_azimuth, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual DoubleWithUnit FullPhysics::Level1bFts::solar_azimuth(int i) const\n"
+		"\n"
+		""},
+	 { (char *)"Level1bFts_altitude", _wrap_Level1bFts_altitude, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual DoubleWithUnit FullPhysics::Level1bFts::altitude(int i) const\n"
+		"\n"
+		""},
+	 { (char *)"Level1bFts_relative_velocity", _wrap_Level1bFts_relative_velocity, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual DoubleWithUnit FullPhysics::Level1bFts::relative_velocity(int Spec_index) const\n"
+		"\n"
+		""},
+	 { (char *)"Level1bFts_spectral_coefficient", _wrap_Level1bFts_spectral_coefficient, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual ArrayWithUnit<double, 1> FullPhysics::Level1bFts::spectral_coefficient(int Spec_index) const\n"
+		"\n"
+		""},
+	 { (char *)"Level1bFts_time", _wrap_Level1bFts_time, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual Time FullPhysics::Level1bFts::time(int Spec_index) const\n"
+		"\n"
+		""},
+	 { (char *)"Level1bFts_radiance", _wrap_Level1bFts_radiance, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual SpectralRange FullPhysics::Level1bFts::radiance(int Spec_index) const\n"
+		"\n"
+		""},
+	 { (char *)"delete_Level1bFts", _wrap_delete_Level1bFts, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::Level1bFts::~Level1bFts()\n"
+		"\n"
+		""},
 	 { (char *)"Level1bFts_swigregister", Level1bFts_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };

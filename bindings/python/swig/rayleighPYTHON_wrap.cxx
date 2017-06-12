@@ -6393,10 +6393,27 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"ObserverRayleigh_notify_add", _wrap_ObserverRayleigh_notify_add, METH_VARARGS, NULL},
 	 { (char *)"ObserverRayleigh_notify_remove", _wrap_ObserverRayleigh_notify_remove, METH_VARARGS, NULL},
 	 { (char *)"ObserverRayleigh_swigregister", ObserverRayleigh_swigregister, METH_VARARGS, NULL},
-	 { (char *)"new_Rayleigh", _wrap_new_Rayleigh, METH_VARARGS, NULL},
-	 { (char *)"Rayleigh_notify_update", _wrap_Rayleigh_notify_update, METH_VARARGS, NULL},
-	 { (char *)"Rayleigh_optical_depth_each_layer", _wrap_Rayleigh_optical_depth_each_layer, METH_VARARGS, NULL},
-	 { (char *)"Rayleigh_cross_section", _wrap_Rayleigh_cross_section, METH_VARARGS, NULL},
+	 { (char *)"new_Rayleigh", _wrap_new_Rayleigh, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::Rayleigh::Rayleigh(const boost::shared_ptr< Pressure > &Pres, const std::vector<\n"
+		"boost::shared_ptr< Altitude > > &Alt, const Constant &C)\n"
+		"\n"
+		""},
+	 { (char *)"Rayleigh_notify_update", _wrap_Rayleigh_notify_update, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::Rayleigh::notify_update(const Altitude &A)\n"
+		"\n"
+		""},
+	 { (char *)"Rayleigh_optical_depth_each_layer", _wrap_Rayleigh_optical_depth_each_layer, METH_VARARGS, (char *)"\n"
+		"\n"
+		"ArrayAd<double, 1> FullPhysics::Rayleigh::optical_depth_each_layer(double wn, int spec_index) const\n"
+		"\n"
+		""},
+	 { (char *)"Rayleigh_cross_section", _wrap_Rayleigh_cross_section, METH_VARARGS, (char *)"\n"
+		"\n"
+		"static DoubleWithUnit FullPhysics::Rayleigh::cross_section(const DoubleWithUnit &W, const Constant &C=DefaultConstant())\n"
+		"\n"
+		""},
 	 { (char *)"delete_Rayleigh", _wrap_delete_Rayleigh, METH_VARARGS, NULL},
 	 { (char *)"Rayleigh_swigregister", Rayleigh_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }

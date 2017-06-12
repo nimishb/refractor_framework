@@ -194,6 +194,20 @@ SubStateVectorArrayAerosolExtinction_swigregister = _aerosol_extinction_imp_base
 SubStateVectorArrayAerosolExtinction_swigregister(SubStateVectorArrayAerosolExtinction)
 
 class AerosolExtinctionImpBase(SubStateVectorArrayAerosolExtinction):
+    """
+
+    As a design principle, we have each base class with the absolutely
+    minimum interface needed for use from the rest of the system.
+
+    This allows us to support any future code that supports this minimum
+    interface.
+
+    However, almost always you will want to derive from this class
+    instead. See PressureImpBase for a more complete discussion of this.
+
+    C++ includes: aerosol_extinction_imp_base.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [SubStateVectorArrayAerosolExtinction]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -207,13 +221,31 @@ class AerosolExtinctionImpBase(SubStateVectorArrayAerosolExtinction):
     __del__ = lambda self: None
 
     def clone(self, *args):
+        """
+
+        virtual boost::shared_ptr<AerosolExtinction> FullPhysics::AerosolExtinctionImpBase::clone(const boost::shared_ptr< Pressure > &Press) const =0
+
+        """
         return _aerosol_extinction_imp_base.AerosolExtinctionImpBase_clone(self, *args)
 
+
     def extinction_for_layer(self, i):
+        """
+
+        virtual AutoDerivative<double> FullPhysics::AerosolExtinctionImpBase::extinction_for_layer(int i) const
+
+        """
         return _aerosol_extinction_imp_base.AerosolExtinctionImpBase_extinction_for_layer(self, i)
 
+
     def _v_aerosol_name(self):
+        """
+
+        virtual std::string FullPhysics::AerosolExtinctionImpBase::aerosol_name() const
+
+        """
         return _aerosol_extinction_imp_base.AerosolExtinctionImpBase__v_aerosol_name(self)
+
 
     @property
     def aerosol_name(self):
@@ -221,7 +253,13 @@ class AerosolExtinctionImpBase(SubStateVectorArrayAerosolExtinction):
 
 
     def _v_aerosol_extinction(self):
+        """
+
+        virtual ArrayAd<double, 1> FullPhysics::AerosolExtinctionImpBase::aerosol_extinction() const
+
+        """
         return _aerosol_extinction_imp_base.AerosolExtinctionImpBase__v_aerosol_extinction(self)
+
 
     @property
     def aerosol_extinction(self):
@@ -229,7 +267,14 @@ class AerosolExtinctionImpBase(SubStateVectorArrayAerosolExtinction):
 
 
     def _v_model_short_name(self):
+        """
+
+        virtual std::string FullPhysics::AerosolExtinctionImpBase::model_short_name() const =0
+        A short name representing the type of extinction model being
+        implemented. 
+        """
         return _aerosol_extinction_imp_base.AerosolExtinctionImpBase__v_model_short_name(self)
+
 
     @property
     def model_short_name(self):
@@ -243,13 +288,38 @@ class AerosolExtinctionImpBase(SubStateVectorArrayAerosolExtinction):
         return _aerosol_extinction_imp_base.AerosolExtinctionImpBase_remove_observer(self, Obs)
 
     def update_sub_state_hook(self):
+        """
+
+        virtual void FullPhysics::AerosolExtinctionImpBase::update_sub_state_hook()
+
+        """
         return _aerosol_extinction_imp_base.AerosolExtinctionImpBase_update_sub_state_hook(self)
 
+
     def print_desc(self, Os):
+        """
+
+        virtual void FullPhysics::AerosolExtinctionImpBase::print(std::ostream &Os) const
+        Print to stream.
+
+        The default calls the function "desc" that returns a string. This
+        gives cleaner interface for deriving from this class in python, but
+        most C++ classes will want to override this function rather than using
+        desc. 
+        """
         return _aerosol_extinction_imp_base.AerosolExtinctionImpBase_print_desc(self, Os)
 
+
     def _v_desc(self):
+        """
+
+        virtual std::string FullPhysics::AerosolExtinctionImpBase::desc() const
+        Description of object, to be printed to stream.
+
+        This gives a cleaner interface for deriving from python. 
+        """
         return _aerosol_extinction_imp_base.AerosolExtinctionImpBase__v_desc(self)
+
 
     @property
     def desc(self):
@@ -281,7 +351,14 @@ class AerosolExtinctionImpBase(SubStateVectorArrayAerosolExtinction):
         return _aerosol_extinction_imp_base.AerosolExtinctionImpBase_state_vector_name_sub(self, Sv_name)
 
     def _v_aerosol_parameter(self):
+        """
+
+        blitz::Array<double, 1> FullPhysics::AerosolExtinctionImpBase::aerosol_parameter() const
+        Returns the value of the coefficients used to generate the aerosol
+        extinction. 
+        """
         return _aerosol_extinction_imp_base.AerosolExtinctionImpBase__v_aerosol_parameter(self)
+
 
     @property
     def aerosol_parameter(self):
@@ -289,7 +366,13 @@ class AerosolExtinctionImpBase(SubStateVectorArrayAerosolExtinction):
 
 
     def _v_aerosol_parameter_uncertainty(self):
+        """
+
+        blitz::Array<double, 1> FullPhysics::AerosolExtinctionImpBase::aerosol_parameter_uncertainty() const
+        Returns the uncertainty of the aerosol type coefficients. 
+        """
         return _aerosol_extinction_imp_base.AerosolExtinctionImpBase__v_aerosol_parameter_uncertainty(self)
+
 
     @property
     def aerosol_parameter_uncertainty(self):

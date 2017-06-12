@@ -121,6 +121,12 @@ def _new_from_set(cls, version, *args):
     return inst
 
 class Lidort_Pars(_object):
+    """
+
+    C++ includes: lidort_interface_types.h
+
+    """
+
     __swig_setmethods__ = {}
     __setattr__ = lambda self, name, value: _swig_setattr(self, Lidort_Pars, name, value)
     __swig_getmethods__ = {}
@@ -378,19 +384,38 @@ class Lidort_Pars(_object):
     __swig_getmethods__["maxbrdf_idx"] = _lidort_interface_types.Lidort_Pars_maxbrdf_idx_get
     if _newclass:
         maxbrdf_idx = _swig_property(_lidort_interface_types.Lidort_Pars_maxbrdf_idx_get)
-    __swig_getmethods__["instance"] = lambda x: _lidort_interface_types.Lidort_Pars_instance
+
+    def instance():
+        """
+
+        static Lidort_Pars& FullPhysics::Lidort_Pars::instance()
+
+        """
+        return _lidort_interface_types.Lidort_Pars_instance()
+
     if _newclass:
-        instance = staticmethod(_lidort_interface_types.Lidort_Pars_instance)
+        instance = staticmethod(instance)
+    __swig_getmethods__["instance"] = lambda x: instance
     __swig_destroy__ = _lidort_interface_types.delete_Lidort_Pars
     __del__ = lambda self: None
 Lidort_Pars_swigregister = _lidort_interface_types.Lidort_Pars_swigregister
 Lidort_Pars_swigregister(Lidort_Pars)
 
 def Lidort_Pars_instance():
+    """
+
+    static Lidort_Pars& FullPhysics::Lidort_Pars::instance()
+
+    """
     return _lidort_interface_types.Lidort_Pars_instance()
-Lidort_Pars_instance = _lidort_interface_types.Lidort_Pars_instance
 
 class Lidort_Structure(_object):
+    """
+
+    C++ includes: lidort_interface_types.h
+
+    """
+
     __swig_setmethods__ = {}
     __setattr__ = lambda self, name, value: _swig_setattr(self, Lidort_Structure, name, value)
     __swig_getmethods__ = {}
@@ -401,7 +426,13 @@ class Lidort_Structure(_object):
     __repr__ = _swig_repr
 
     def fortran_type_ptr(self):
+        """
+
+        void* FullPhysics::Lidort_Structure::fortran_type_ptr()
+
+        """
         return _lidort_interface_types.Lidort_Structure_fortran_type_ptr(self)
+
 
     def __str__(self):
         return _lidort_interface_types.Lidort_Structure___str__(self)
@@ -411,6 +442,12 @@ Lidort_Structure_swigregister = _lidort_interface_types.Lidort_Structure_swigreg
 Lidort_Structure_swigregister(Lidort_Structure)
 
 class Brdf_Linsup_Inputs(Lidort_Structure):
+    """
+
+    C++ includes: lidort_interface_types.h
+
+    """
+
     __swig_setmethods__ = {}
     for _s in [Lidort_Structure]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -422,6 +459,11 @@ class Brdf_Linsup_Inputs(Lidort_Structure):
     __repr__ = _swig_repr
 
     def __init__(self, *args):
+        """
+
+        FullPhysics::Brdf_Linsup_Inputs::Brdf_Linsup_Inputs(void *allocated_f_type_c)
+
+        """
         this = _lidort_interface_types.new_Brdf_Linsup_Inputs(*args)
         try:
             self.this.append(this)
@@ -431,29 +473,77 @@ class Brdf_Linsup_Inputs(Lidort_Structure):
     __del__ = lambda self: None
 
     def bs_do_kernel_factor_wfs(self, *args):
+        """
+
+        void FullPhysics::Brdf_Linsup_Inputs::bs_do_kernel_factor_wfs(const blitz::Array< bool, 1 > &bs_do_kernel_factor_wfs_in)
+
+        """
         return _lidort_interface_types.Brdf_Linsup_Inputs_bs_do_kernel_factor_wfs(self, *args)
 
+
     def bs_do_kernel_params_wfs(self, *args):
+        """
+
+        void FullPhysics::Brdf_Linsup_Inputs::bs_do_kernel_params_wfs(const blitz::Array< bool, 2 > &bs_do_kernel_params_wfs_in)
+
+        """
         return _lidort_interface_types.Brdf_Linsup_Inputs_bs_do_kernel_params_wfs(self, *args)
 
+
     def bs_do_kparams_derivs(self, *args):
+        """
+
+        void FullPhysics::Brdf_Linsup_Inputs::bs_do_kparams_derivs(const blitz::Array< bool, 1 > &bs_do_kparams_derivs_in)
+
+        """
         return _lidort_interface_types.Brdf_Linsup_Inputs_bs_do_kparams_derivs(self, *args)
 
+
     def bs_n_surface_wfs(self, *args):
+        """
+
+        void FullPhysics::Brdf_Linsup_Inputs::bs_n_surface_wfs(const int &bs_n_surface_wfs_in)
+
+        """
         return _lidort_interface_types.Brdf_Linsup_Inputs_bs_n_surface_wfs(self, *args)
 
+
     def bs_n_kernel_factor_wfs(self, *args):
+        """
+
+        void FullPhysics::Brdf_Linsup_Inputs::bs_n_kernel_factor_wfs(const int &bs_n_kernel_factor_wfs_in)
+
+        """
         return _lidort_interface_types.Brdf_Linsup_Inputs_bs_n_kernel_factor_wfs(self, *args)
 
+
     def bs_n_kernel_params_wfs(self, *args):
+        """
+
+        void FullPhysics::Brdf_Linsup_Inputs::bs_n_kernel_params_wfs(const int &bs_n_kernel_params_wfs_in)
+
+        """
         return _lidort_interface_types.Brdf_Linsup_Inputs_bs_n_kernel_params_wfs(self, *args)
 
+
     def print_desc(self, output_stream):
+        """
+
+        virtual void FullPhysics::Brdf_Linsup_Inputs::print(std::ostream &output_stream) const
+
+        """
         return _lidort_interface_types.Brdf_Linsup_Inputs_print_desc(self, output_stream)
+
 Brdf_Linsup_Inputs_swigregister = _lidort_interface_types.Brdf_Linsup_Inputs_swigregister
 Brdf_Linsup_Inputs_swigregister(Brdf_Linsup_Inputs)
 
 class Brdf_Linsup_Outputs(Lidort_Structure):
+    """
+
+    C++ includes: lidort_interface_types.h
+
+    """
+
     __swig_setmethods__ = {}
     for _s in [Lidort_Structure]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -465,6 +555,11 @@ class Brdf_Linsup_Outputs(Lidort_Structure):
     __repr__ = _swig_repr
 
     def __init__(self, *args):
+        """
+
+        FullPhysics::Brdf_Linsup_Outputs::Brdf_Linsup_Outputs(void *allocated_f_type_c)
+
+        """
         this = _lidort_interface_types.new_Brdf_Linsup_Outputs(*args)
         try:
             self.this.append(this)
@@ -474,32 +569,86 @@ class Brdf_Linsup_Outputs(Lidort_Structure):
     __del__ = lambda self: None
 
     def bs_ls_exactdb_brdfunc(self, *args):
+        """
+
+        void FullPhysics::Brdf_Linsup_Outputs::bs_ls_exactdb_brdfunc(const blitz::Array< double, 4 > &bs_ls_exactdb_brdfunc_in)
+
+        """
         return _lidort_interface_types.Brdf_Linsup_Outputs_bs_ls_exactdb_brdfunc(self, *args)
 
+
     def bs_ls_brdf_f_0(self, *args):
+        """
+
+        void FullPhysics::Brdf_Linsup_Outputs::bs_ls_brdf_f_0(const blitz::Array< double, 4 > &bs_ls_brdf_f_0_in)
+
+        """
         return _lidort_interface_types.Brdf_Linsup_Outputs_bs_ls_brdf_f_0(self, *args)
 
+
     def bs_ls_brdf_f(self, *args):
+        """
+
+        void FullPhysics::Brdf_Linsup_Outputs::bs_ls_brdf_f(const blitz::Array< double, 4 > &bs_ls_brdf_f_in)
+
+        """
         return _lidort_interface_types.Brdf_Linsup_Outputs_bs_ls_brdf_f(self, *args)
 
+
     def bs_ls_user_brdf_f_0(self, *args):
+        """
+
+        void FullPhysics::Brdf_Linsup_Outputs::bs_ls_user_brdf_f_0(const blitz::Array< double, 4 > &bs_ls_user_brdf_f_0_in)
+
+        """
         return _lidort_interface_types.Brdf_Linsup_Outputs_bs_ls_user_brdf_f_0(self, *args)
 
+
     def bs_ls_user_brdf_f(self, *args):
+        """
+
+        void FullPhysics::Brdf_Linsup_Outputs::bs_ls_user_brdf_f(const blitz::Array< double, 4 > &bs_ls_user_brdf_f_in)
+
+        """
         return _lidort_interface_types.Brdf_Linsup_Outputs_bs_ls_user_brdf_f(self, *args)
 
+
     def bs_ls_emissivity(self, *args):
+        """
+
+        void FullPhysics::Brdf_Linsup_Outputs::bs_ls_emissivity(const blitz::Array< double, 3 > &bs_ls_emissivity_in)
+
+        """
         return _lidort_interface_types.Brdf_Linsup_Outputs_bs_ls_emissivity(self, *args)
 
+
     def bs_ls_user_emissivity(self, *args):
+        """
+
+        void FullPhysics::Brdf_Linsup_Outputs::bs_ls_user_emissivity(const blitz::Array< double, 3 > &bs_ls_user_emissivity_in)
+
+        """
         return _lidort_interface_types.Brdf_Linsup_Outputs_bs_ls_user_emissivity(self, *args)
 
+
     def print_desc(self, output_stream):
+        """
+
+        virtual void FullPhysics::Brdf_Linsup_Outputs::print(std::ostream &output_stream) const
+
+        """
         return _lidort_interface_types.Brdf_Linsup_Outputs_print_desc(self, output_stream)
+
 Brdf_Linsup_Outputs_swigregister = _lidort_interface_types.Brdf_Linsup_Outputs_swigregister
 Brdf_Linsup_Outputs_swigregister(Brdf_Linsup_Outputs)
 
 class Brdf_Sup_Inputs(Lidort_Structure):
+    """
+
+    C++ includes: lidort_interface_types.h
+
+    """
+
     __swig_setmethods__ = {}
     for _s in [Lidort_Structure]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -511,6 +660,11 @@ class Brdf_Sup_Inputs(Lidort_Structure):
     __repr__ = _swig_repr
 
     def __init__(self, *args):
+        """
+
+        FullPhysics::Brdf_Sup_Inputs::Brdf_Sup_Inputs(void *allocated_f_type_c)
+
+        """
         this = _lidort_interface_types.new_Brdf_Sup_Inputs(*args)
         try:
             self.this.append(this)
@@ -520,86 +674,248 @@ class Brdf_Sup_Inputs(Lidort_Structure):
     __del__ = lambda self: None
 
     def bs_do_user_streams(self, *args):
+        """
+
+        void FullPhysics::Brdf_Sup_Inputs::bs_do_user_streams(const bool &bs_do_user_streams_in)
+
+        """
         return _lidort_interface_types.Brdf_Sup_Inputs_bs_do_user_streams(self, *args)
 
+
     def bs_do_brdf_surface(self, *args):
+        """
+
+        void FullPhysics::Brdf_Sup_Inputs::bs_do_brdf_surface(const bool &bs_do_brdf_surface_in)
+
+        """
         return _lidort_interface_types.Brdf_Sup_Inputs_bs_do_brdf_surface(self, *args)
 
+
     def bs_do_surface_emission(self, *args):
+        """
+
+        void FullPhysics::Brdf_Sup_Inputs::bs_do_surface_emission(const bool &bs_do_surface_emission_in)
+
+        """
         return _lidort_interface_types.Brdf_Sup_Inputs_bs_do_surface_emission(self, *args)
 
+
     def bs_nstreams(self, *args):
+        """
+
+        void FullPhysics::Brdf_Sup_Inputs::bs_nstreams(const int &bs_nstreams_in)
+
+        """
         return _lidort_interface_types.Brdf_Sup_Inputs_bs_nstreams(self, *args)
 
+
     def bs_nbeams(self, *args):
+        """
+
+        void FullPhysics::Brdf_Sup_Inputs::bs_nbeams(const int &bs_nbeams_in)
+
+        """
         return _lidort_interface_types.Brdf_Sup_Inputs_bs_nbeams(self, *args)
 
+
     def bs_beam_szas(self, *args):
+        """
+
+        void FullPhysics::Brdf_Sup_Inputs::bs_beam_szas(const blitz::Array< double, 1 > &bs_beam_szas_in)
+
+        """
         return _lidort_interface_types.Brdf_Sup_Inputs_bs_beam_szas(self, *args)
 
+
     def bs_n_user_relazms(self, *args):
+        """
+
+        void FullPhysics::Brdf_Sup_Inputs::bs_n_user_relazms(const int &bs_n_user_relazms_in)
+
+        """
         return _lidort_interface_types.Brdf_Sup_Inputs_bs_n_user_relazms(self, *args)
 
+
     def bs_user_relazms(self, *args):
+        """
+
+        void FullPhysics::Brdf_Sup_Inputs::bs_user_relazms(const blitz::Array< double, 1 > &bs_user_relazms_in)
+
+        """
         return _lidort_interface_types.Brdf_Sup_Inputs_bs_user_relazms(self, *args)
 
+
     def bs_n_user_streams(self, *args):
+        """
+
+        void FullPhysics::Brdf_Sup_Inputs::bs_n_user_streams(const int &bs_n_user_streams_in)
+
+        """
         return _lidort_interface_types.Brdf_Sup_Inputs_bs_n_user_streams(self, *args)
 
+
     def bs_user_angles_input(self, *args):
+        """
+
+        void FullPhysics::Brdf_Sup_Inputs::bs_user_angles_input(const blitz::Array< double, 1 > &bs_user_angles_input_in)
+
+        """
         return _lidort_interface_types.Brdf_Sup_Inputs_bs_user_angles_input(self, *args)
 
+
     def bs_n_brdf_kernels(self, *args):
+        """
+
+        void FullPhysics::Brdf_Sup_Inputs::bs_n_brdf_kernels(const int &bs_n_brdf_kernels_in)
+
+        """
         return _lidort_interface_types.Brdf_Sup_Inputs_bs_n_brdf_kernels(self, *args)
 
+
     def bs_brdf_names(self):
+        """
+
+        const std::vector< std::string > FullPhysics::Brdf_Sup_Inputs::bs_brdf_names() const
+
+        """
         return _lidort_interface_types.Brdf_Sup_Inputs_bs_brdf_names(self)
 
+
     def bs_which_brdf(self, *args):
+        """
+
+        void FullPhysics::Brdf_Sup_Inputs::bs_which_brdf(const blitz::Array< int, 1 > &bs_which_brdf_in)
+
+        """
         return _lidort_interface_types.Brdf_Sup_Inputs_bs_which_brdf(self, *args)
 
+
     def bs_n_brdf_parameters(self, *args):
+        """
+
+        void FullPhysics::Brdf_Sup_Inputs::bs_n_brdf_parameters(const blitz::Array< int, 1 > &bs_n_brdf_parameters_in)
+
+        """
         return _lidort_interface_types.Brdf_Sup_Inputs_bs_n_brdf_parameters(self, *args)
 
+
     def bs_brdf_parameters(self, *args):
+        """
+
+        void FullPhysics::Brdf_Sup_Inputs::bs_brdf_parameters(const blitz::Array< double, 2 > &bs_brdf_parameters_in)
+
+        """
         return _lidort_interface_types.Brdf_Sup_Inputs_bs_brdf_parameters(self, *args)
 
+
     def bs_lambertian_kernel_flag(self, *args):
+        """
+
+        void FullPhysics::Brdf_Sup_Inputs::bs_lambertian_kernel_flag(const blitz::Array< bool, 1 > &bs_lambertian_kernel_flag_in)
+
+        """
         return _lidort_interface_types.Brdf_Sup_Inputs_bs_lambertian_kernel_flag(self, *args)
 
+
     def bs_brdf_factors(self, *args):
+        """
+
+        void FullPhysics::Brdf_Sup_Inputs::bs_brdf_factors(const blitz::Array< double, 1 > &bs_brdf_factors_in)
+
+        """
         return _lidort_interface_types.Brdf_Sup_Inputs_bs_brdf_factors(self, *args)
 
+
     def bs_nstreams_brdf(self, *args):
+        """
+
+        void FullPhysics::Brdf_Sup_Inputs::bs_nstreams_brdf(const int &bs_nstreams_brdf_in)
+
+        """
         return _lidort_interface_types.Brdf_Sup_Inputs_bs_nstreams_brdf(self, *args)
 
+
     def bs_do_shadow_effect(self, *args):
+        """
+
+        void FullPhysics::Brdf_Sup_Inputs::bs_do_shadow_effect(const bool &bs_do_shadow_effect_in)
+
+        """
         return _lidort_interface_types.Brdf_Sup_Inputs_bs_do_shadow_effect(self, *args)
 
+
     def bs_do_exactonly(self, *args):
+        """
+
+        void FullPhysics::Brdf_Sup_Inputs::bs_do_exactonly(const bool &bs_do_exactonly_in)
+
+        """
         return _lidort_interface_types.Brdf_Sup_Inputs_bs_do_exactonly(self, *args)
 
+
     def bs_do_glitter_msrcorr(self, *args):
+        """
+
+        void FullPhysics::Brdf_Sup_Inputs::bs_do_glitter_msrcorr(const bool &bs_do_glitter_msrcorr_in)
+
+        """
         return _lidort_interface_types.Brdf_Sup_Inputs_bs_do_glitter_msrcorr(self, *args)
 
+
     def bs_do_glitter_msrcorr_exactonly(self, *args):
+        """
+
+        void FullPhysics::Brdf_Sup_Inputs::bs_do_glitter_msrcorr_exactonly(const bool &bs_do_glitter_msrcorr_exactonly_in)
+
+        """
         return _lidort_interface_types.Brdf_Sup_Inputs_bs_do_glitter_msrcorr_exactonly(self, *args)
 
+
     def bs_glitter_msrcorr_order(self, *args):
+        """
+
+        void FullPhysics::Brdf_Sup_Inputs::bs_glitter_msrcorr_order(const int &bs_glitter_msrcorr_order_in)
+
+        """
         return _lidort_interface_types.Brdf_Sup_Inputs_bs_glitter_msrcorr_order(self, *args)
 
+
     def bs_glitter_msrcorr_nmuquad(self, *args):
+        """
+
+        void FullPhysics::Brdf_Sup_Inputs::bs_glitter_msrcorr_nmuquad(const int &bs_glitter_msrcorr_nmuquad_in)
+
+        """
         return _lidort_interface_types.Brdf_Sup_Inputs_bs_glitter_msrcorr_nmuquad(self, *args)
 
+
     def bs_glitter_msrcorr_nphiquad(self, *args):
+        """
+
+        void FullPhysics::Brdf_Sup_Inputs::bs_glitter_msrcorr_nphiquad(const int &bs_glitter_msrcorr_nphiquad_in)
+
+        """
         return _lidort_interface_types.Brdf_Sup_Inputs_bs_glitter_msrcorr_nphiquad(self, *args)
 
+
     def print_desc(self, output_stream):
+        """
+
+        virtual void FullPhysics::Brdf_Sup_Inputs::print(std::ostream &output_stream) const
+
+        """
         return _lidort_interface_types.Brdf_Sup_Inputs_print_desc(self, output_stream)
+
 Brdf_Sup_Inputs_swigregister = _lidort_interface_types.Brdf_Sup_Inputs_swigregister
 Brdf_Sup_Inputs_swigregister(Brdf_Sup_Inputs)
 
 class Brdf_Sup_Outputs(Lidort_Structure):
+    """
+
+    C++ includes: lidort_interface_types.h
+
+    """
+
     __swig_setmethods__ = {}
     for _s in [Lidort_Structure]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -611,6 +927,11 @@ class Brdf_Sup_Outputs(Lidort_Structure):
     __repr__ = _swig_repr
 
     def __init__(self, *args):
+        """
+
+        FullPhysics::Brdf_Sup_Outputs::Brdf_Sup_Outputs(void *allocated_f_type_c)
+
+        """
         this = _lidort_interface_types.new_Brdf_Sup_Outputs(*args)
         try:
             self.this.append(this)
@@ -620,32 +941,86 @@ class Brdf_Sup_Outputs(Lidort_Structure):
     __del__ = lambda self: None
 
     def bs_exactdb_brdfunc(self, *args):
+        """
+
+        void FullPhysics::Brdf_Sup_Outputs::bs_exactdb_brdfunc(const blitz::Array< double, 3 > &bs_exactdb_brdfunc_in)
+
+        """
         return _lidort_interface_types.Brdf_Sup_Outputs_bs_exactdb_brdfunc(self, *args)
 
+
     def bs_brdf_f_0(self, *args):
+        """
+
+        void FullPhysics::Brdf_Sup_Outputs::bs_brdf_f_0(const blitz::Array< double, 3 > &bs_brdf_f_0_in)
+
+        """
         return _lidort_interface_types.Brdf_Sup_Outputs_bs_brdf_f_0(self, *args)
 
+
     def bs_brdf_f(self, *args):
+        """
+
+        void FullPhysics::Brdf_Sup_Outputs::bs_brdf_f(const blitz::Array< double, 3 > &bs_brdf_f_in)
+
+        """
         return _lidort_interface_types.Brdf_Sup_Outputs_bs_brdf_f(self, *args)
 
+
     def bs_user_brdf_f_0(self, *args):
+        """
+
+        void FullPhysics::Brdf_Sup_Outputs::bs_user_brdf_f_0(const blitz::Array< double, 3 > &bs_user_brdf_f_0_in)
+
+        """
         return _lidort_interface_types.Brdf_Sup_Outputs_bs_user_brdf_f_0(self, *args)
 
+
     def bs_user_brdf_f(self, *args):
+        """
+
+        void FullPhysics::Brdf_Sup_Outputs::bs_user_brdf_f(const blitz::Array< double, 3 > &bs_user_brdf_f_in)
+
+        """
         return _lidort_interface_types.Brdf_Sup_Outputs_bs_user_brdf_f(self, *args)
 
+
     def bs_emissivity(self, *args):
+        """
+
+        void FullPhysics::Brdf_Sup_Outputs::bs_emissivity(const blitz::Array< double, 2 > &bs_emissivity_in)
+
+        """
         return _lidort_interface_types.Brdf_Sup_Outputs_bs_emissivity(self, *args)
 
+
     def bs_user_emissivity(self, *args):
+        """
+
+        void FullPhysics::Brdf_Sup_Outputs::bs_user_emissivity(const blitz::Array< double, 2 > &bs_user_emissivity_in)
+
+        """
         return _lidort_interface_types.Brdf_Sup_Outputs_bs_user_emissivity(self, *args)
 
+
     def print_desc(self, output_stream):
+        """
+
+        virtual void FullPhysics::Brdf_Sup_Outputs::print(std::ostream &output_stream) const
+
+        """
         return _lidort_interface_types.Brdf_Sup_Outputs_print_desc(self, output_stream)
+
 Brdf_Sup_Outputs_swigregister = _lidort_interface_types.Brdf_Sup_Outputs_swigregister
 Brdf_Sup_Outputs_swigregister(Brdf_Sup_Outputs)
 
 class Brdf_Input_Exception_Handling(Lidort_Structure):
+    """
+
+    C++ includes: lidort_interface_types.h
+
+    """
+
     __swig_setmethods__ = {}
     for _s in [Lidort_Structure]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -657,6 +1032,11 @@ class Brdf_Input_Exception_Handling(Lidort_Structure):
     __repr__ = _swig_repr
 
     def __init__(self, *args):
+        """
+
+        FullPhysics::Brdf_Input_Exception_Handling::Brdf_Input_Exception_Handling(void *allocated_f_type_c)
+
+        """
         this = _lidort_interface_types.new_Brdf_Input_Exception_Handling(*args)
         try:
             self.this.append(this)
@@ -666,23 +1046,59 @@ class Brdf_Input_Exception_Handling(Lidort_Structure):
     __del__ = lambda self: None
 
     def bs_status_inputread(self, *args):
+        """
+
+        void FullPhysics::Brdf_Input_Exception_Handling::bs_status_inputread(const int &bs_status_inputread_in)
+
+        """
         return _lidort_interface_types.Brdf_Input_Exception_Handling_bs_status_inputread(self, *args)
 
+
     def bs_ninputmessages(self, *args):
+        """
+
+        void FullPhysics::Brdf_Input_Exception_Handling::bs_ninputmessages(const int &bs_ninputmessages_in)
+
+        """
         return _lidort_interface_types.Brdf_Input_Exception_Handling_bs_ninputmessages(self, *args)
 
+
     def bs_inputmessages(self):
+        """
+
+        const std::vector< std::string > FullPhysics::Brdf_Input_Exception_Handling::bs_inputmessages() const
+
+        """
         return _lidort_interface_types.Brdf_Input_Exception_Handling_bs_inputmessages(self)
 
+
     def bs_inputactions(self):
+        """
+
+        const std::vector< std::string > FullPhysics::Brdf_Input_Exception_Handling::bs_inputactions() const
+
+        """
         return _lidort_interface_types.Brdf_Input_Exception_Handling_bs_inputactions(self)
 
+
     def print_desc(self, output_stream):
+        """
+
+        virtual void FullPhysics::Brdf_Input_Exception_Handling::print(std::ostream &output_stream) const
+
+        """
         return _lidort_interface_types.Brdf_Input_Exception_Handling_print_desc(self, output_stream)
+
 Brdf_Input_Exception_Handling_swigregister = _lidort_interface_types.Brdf_Input_Exception_Handling_swigregister
 Brdf_Input_Exception_Handling_swigregister(Brdf_Input_Exception_Handling)
 
 class Lidort_Fixed_Lincontrol(Lidort_Structure):
+    """
+
+    C++ includes: lidort_interface_types.h
+
+    """
+
     __swig_setmethods__ = {}
     for _s in [Lidort_Structure]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -694,6 +1110,11 @@ class Lidort_Fixed_Lincontrol(Lidort_Structure):
     __repr__ = _swig_repr
 
     def __init__(self, *args):
+        """
+
+        FullPhysics::Lidort_Fixed_Lincontrol::Lidort_Fixed_Lincontrol(void *allocated_f_type_c)
+
+        """
         this = _lidort_interface_types.new_Lidort_Fixed_Lincontrol(*args)
         try:
             self.this.append(this)
@@ -703,38 +1124,104 @@ class Lidort_Fixed_Lincontrol(Lidort_Structure):
     __del__ = lambda self: None
 
     def ts_do_column_linearization(self, *args):
+        """
+
+        void FullPhysics::Lidort_Fixed_Lincontrol::ts_do_column_linearization(const bool &ts_do_column_linearization_in)
+
+        """
         return _lidort_interface_types.Lidort_Fixed_Lincontrol_ts_do_column_linearization(self, *args)
 
+
     def ts_do_profile_linearization(self, *args):
+        """
+
+        void FullPhysics::Lidort_Fixed_Lincontrol::ts_do_profile_linearization(const bool &ts_do_profile_linearization_in)
+
+        """
         return _lidort_interface_types.Lidort_Fixed_Lincontrol_ts_do_profile_linearization(self, *args)
 
+
     def ts_do_surface_linearization(self, *args):
+        """
+
+        void FullPhysics::Lidort_Fixed_Lincontrol::ts_do_surface_linearization(const bool &ts_do_surface_linearization_in)
+
+        """
         return _lidort_interface_types.Lidort_Fixed_Lincontrol_ts_do_surface_linearization(self, *args)
 
+
     def ts_do_sleave_wfs(self, *args):
+        """
+
+        void FullPhysics::Lidort_Fixed_Lincontrol::ts_do_sleave_wfs(const bool &ts_do_sleave_wfs_in)
+
+        """
         return _lidort_interface_types.Lidort_Fixed_Lincontrol_ts_do_sleave_wfs(self, *args)
 
+
     def ts_layer_vary_flag(self, *args):
+        """
+
+        void FullPhysics::Lidort_Fixed_Lincontrol::ts_layer_vary_flag(const blitz::Array< bool, 1 > &ts_layer_vary_flag_in)
+
+        """
         return _lidort_interface_types.Lidort_Fixed_Lincontrol_ts_layer_vary_flag(self, *args)
 
+
     def ts_layer_vary_number(self, *args):
+        """
+
+        void FullPhysics::Lidort_Fixed_Lincontrol::ts_layer_vary_number(const blitz::Array< int, 1 > &ts_layer_vary_number_in)
+
+        """
         return _lidort_interface_types.Lidort_Fixed_Lincontrol_ts_layer_vary_number(self, *args)
 
+
     def ts_n_totalcolumn_wfs(self, *args):
+        """
+
+        void FullPhysics::Lidort_Fixed_Lincontrol::ts_n_totalcolumn_wfs(const int &ts_n_totalcolumn_wfs_in)
+
+        """
         return _lidort_interface_types.Lidort_Fixed_Lincontrol_ts_n_totalcolumn_wfs(self, *args)
 
+
     def ts_n_surface_wfs(self, *args):
+        """
+
+        void FullPhysics::Lidort_Fixed_Lincontrol::ts_n_surface_wfs(const int &ts_n_surface_wfs_in)
+
+        """
         return _lidort_interface_types.Lidort_Fixed_Lincontrol_ts_n_surface_wfs(self, *args)
 
+
     def ts_n_sleave_wfs(self, *args):
+        """
+
+        void FullPhysics::Lidort_Fixed_Lincontrol::ts_n_sleave_wfs(const int &ts_n_sleave_wfs_in)
+
+        """
         return _lidort_interface_types.Lidort_Fixed_Lincontrol_ts_n_sleave_wfs(self, *args)
 
+
     def print_desc(self, output_stream):
+        """
+
+        virtual void FullPhysics::Lidort_Fixed_Lincontrol::print(std::ostream &output_stream) const
+
+        """
         return _lidort_interface_types.Lidort_Fixed_Lincontrol_print_desc(self, output_stream)
+
 Lidort_Fixed_Lincontrol_swigregister = _lidort_interface_types.Lidort_Fixed_Lincontrol_swigregister
 Lidort_Fixed_Lincontrol_swigregister(Lidort_Fixed_Lincontrol)
 
 class Lidort_Fixed_Linoptical(Lidort_Structure):
+    """
+
+    C++ includes: lidort_interface_types.h
+
+    """
+
     __swig_setmethods__ = {}
     for _s in [Lidort_Structure]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -746,6 +1233,11 @@ class Lidort_Fixed_Linoptical(Lidort_Structure):
     __repr__ = _swig_repr
 
     def __init__(self, *args):
+        """
+
+        FullPhysics::Lidort_Fixed_Linoptical::Lidort_Fixed_Linoptical(void *allocated_f_type_c)
+
+        """
         this = _lidort_interface_types.new_Lidort_Fixed_Linoptical(*args)
         try:
             self.this.append(this)
@@ -755,20 +1247,50 @@ class Lidort_Fixed_Linoptical(Lidort_Structure):
     __del__ = lambda self: None
 
     def ts_l_deltau_vert_input(self, *args):
+        """
+
+        void FullPhysics::Lidort_Fixed_Linoptical::ts_l_deltau_vert_input(const blitz::Array< double, 3 > &ts_l_deltau_vert_input_in)
+
+        """
         return _lidort_interface_types.Lidort_Fixed_Linoptical_ts_l_deltau_vert_input(self, *args)
 
+
     def ts_l_omega_total_input(self, *args):
+        """
+
+        void FullPhysics::Lidort_Fixed_Linoptical::ts_l_omega_total_input(const blitz::Array< double, 3 > &ts_l_omega_total_input_in)
+
+        """
         return _lidort_interface_types.Lidort_Fixed_Linoptical_ts_l_omega_total_input(self, *args)
 
+
     def ts_l_phasmoms_total_input(self, *args):
+        """
+
+        void FullPhysics::Lidort_Fixed_Linoptical::ts_l_phasmoms_total_input(const blitz::Array< double, 4 > &ts_l_phasmoms_total_input_in)
+
+        """
         return _lidort_interface_types.Lidort_Fixed_Linoptical_ts_l_phasmoms_total_input(self, *args)
 
+
     def print_desc(self, output_stream):
+        """
+
+        virtual void FullPhysics::Lidort_Fixed_Linoptical::print(std::ostream &output_stream) const
+
+        """
         return _lidort_interface_types.Lidort_Fixed_Linoptical_print_desc(self, output_stream)
+
 Lidort_Fixed_Linoptical_swigregister = _lidort_interface_types.Lidort_Fixed_Linoptical_swigregister
 Lidort_Fixed_Linoptical_swigregister(Lidort_Fixed_Linoptical)
 
 class Lidort_Fixed_Lininputs(Lidort_Structure):
+    """
+
+    C++ includes: lidort_interface_types.h
+
+    """
+
     __swig_setmethods__ = {}
     for _s in [Lidort_Structure]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -780,6 +1302,11 @@ class Lidort_Fixed_Lininputs(Lidort_Structure):
     __repr__ = _swig_repr
 
     def __init__(self, *args):
+        """
+
+        FullPhysics::Lidort_Fixed_Lininputs::Lidort_Fixed_Lininputs(void *allocated_f_type_c)
+
+        """
         this = _lidort_interface_types.new_Lidort_Fixed_Lininputs(*args)
         try:
             self.this.append(this)
@@ -789,17 +1316,41 @@ class Lidort_Fixed_Lininputs(Lidort_Structure):
     __del__ = lambda self: None
 
     def cont(self, *args):
+        """
+
+        void FullPhysics::Lidort_Fixed_Lininputs::cont(Lidort_Fixed_Lincontrol &cont_in)
+
+        """
         return _lidort_interface_types.Lidort_Fixed_Lininputs_cont(self, *args)
 
+
     def optical(self, *args):
+        """
+
+        void FullPhysics::Lidort_Fixed_Lininputs::optical(Lidort_Fixed_Linoptical &optical_in)
+
+        """
         return _lidort_interface_types.Lidort_Fixed_Lininputs_optical(self, *args)
 
+
     def print_desc(self, output_stream):
+        """
+
+        virtual void FullPhysics::Lidort_Fixed_Lininputs::print(std::ostream &output_stream) const
+
+        """
         return _lidort_interface_types.Lidort_Fixed_Lininputs_print_desc(self, output_stream)
+
 Lidort_Fixed_Lininputs_swigregister = _lidort_interface_types.Lidort_Fixed_Lininputs_swigregister
 Lidort_Fixed_Lininputs_swigregister(Lidort_Fixed_Lininputs)
 
 class Lidort_Modified_Lininputs(Lidort_Structure):
+    """
+
+    C++ includes: lidort_interface_types.h
+
+    """
+
     __swig_setmethods__ = {}
     for _s in [Lidort_Structure]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -811,6 +1362,11 @@ class Lidort_Modified_Lininputs(Lidort_Structure):
     __repr__ = _swig_repr
 
     def __init__(self, *args):
+        """
+
+        FullPhysics::Lidort_Modified_Lininputs::Lidort_Modified_Lininputs(void *allocated_f_type_c)
+
+        """
         this = _lidort_interface_types.new_Lidort_Modified_Lininputs(*args)
         try:
             self.this.append(this)
@@ -820,14 +1376,32 @@ class Lidort_Modified_Lininputs(Lidort_Structure):
     __del__ = lambda self: None
 
     def dummy(self, *args):
+        """
+
+        void FullPhysics::Lidort_Modified_Lininputs::dummy(const int &dummy_in)
+
+        """
         return _lidort_interface_types.Lidort_Modified_Lininputs_dummy(self, *args)
 
+
     def print_desc(self, output_stream):
+        """
+
+        virtual void FullPhysics::Lidort_Modified_Lininputs::print(std::ostream &output_stream) const
+
+        """
         return _lidort_interface_types.Lidort_Modified_Lininputs_print_desc(self, output_stream)
+
 Lidort_Modified_Lininputs_swigregister = _lidort_interface_types.Lidort_Modified_Lininputs_swigregister
 Lidort_Modified_Lininputs_swigregister(Lidort_Modified_Lininputs)
 
 class Lidort_Linatmos(Lidort_Structure):
+    """
+
+    C++ includes: lidort_interface_types.h
+
+    """
+
     __swig_setmethods__ = {}
     for _s in [Lidort_Structure]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -839,6 +1413,11 @@ class Lidort_Linatmos(Lidort_Structure):
     __repr__ = _swig_repr
 
     def __init__(self, *args):
+        """
+
+        FullPhysics::Lidort_Linatmos::Lidort_Linatmos(void *allocated_f_type_c)
+
+        """
         this = _lidort_interface_types.new_Lidort_Linatmos(*args)
         try:
             self.this.append(this)
@@ -848,29 +1427,77 @@ class Lidort_Linatmos(Lidort_Structure):
     __del__ = lambda self: None
 
     def ts_columnwf(self, *args):
+        """
+
+        void FullPhysics::Lidort_Linatmos::ts_columnwf(const blitz::Array< double, 5 > &ts_columnwf_in)
+
+        """
         return _lidort_interface_types.Lidort_Linatmos_ts_columnwf(self, *args)
 
+
     def ts_mint_columnwf(self, *args):
+        """
+
+        void FullPhysics::Lidort_Linatmos::ts_mint_columnwf(const blitz::Array< double, 5 > &ts_mint_columnwf_in)
+
+        """
         return _lidort_interface_types.Lidort_Linatmos_ts_mint_columnwf(self, *args)
 
+
     def ts_flux_columnwf(self, *args):
+        """
+
+        void FullPhysics::Lidort_Linatmos::ts_flux_columnwf(const blitz::Array< double, 5 > &ts_flux_columnwf_in)
+
+        """
         return _lidort_interface_types.Lidort_Linatmos_ts_flux_columnwf(self, *args)
 
+
     def ts_profilewf(self, *args):
+        """
+
+        void FullPhysics::Lidort_Linatmos::ts_profilewf(const blitz::Array< double, 6 > &ts_profilewf_in)
+
+        """
         return _lidort_interface_types.Lidort_Linatmos_ts_profilewf(self, *args)
 
+
     def ts_mint_profilewf(self, *args):
+        """
+
+        void FullPhysics::Lidort_Linatmos::ts_mint_profilewf(const blitz::Array< double, 6 > &ts_mint_profilewf_in)
+
+        """
         return _lidort_interface_types.Lidort_Linatmos_ts_mint_profilewf(self, *args)
 
+
     def ts_flux_profilewf(self, *args):
+        """
+
+        void FullPhysics::Lidort_Linatmos::ts_flux_profilewf(const blitz::Array< double, 6 > &ts_flux_profilewf_in)
+
+        """
         return _lidort_interface_types.Lidort_Linatmos_ts_flux_profilewf(self, *args)
 
+
     def print_desc(self, output_stream):
+        """
+
+        virtual void FullPhysics::Lidort_Linatmos::print(std::ostream &output_stream) const
+
+        """
         return _lidort_interface_types.Lidort_Linatmos_print_desc(self, output_stream)
+
 Lidort_Linatmos_swigregister = _lidort_interface_types.Lidort_Linatmos_swigregister
 Lidort_Linatmos_swigregister(Lidort_Linatmos)
 
 class Lidort_Linsurf(Lidort_Structure):
+    """
+
+    C++ includes: lidort_interface_types.h
+
+    """
+
     __swig_setmethods__ = {}
     for _s in [Lidort_Structure]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -882,6 +1509,11 @@ class Lidort_Linsurf(Lidort_Structure):
     __repr__ = _swig_repr
 
     def __init__(self, *args):
+        """
+
+        FullPhysics::Lidort_Linsurf::Lidort_Linsurf(void *allocated_f_type_c)
+
+        """
         this = _lidort_interface_types.new_Lidort_Linsurf(*args)
         try:
             self.this.append(this)
@@ -891,20 +1523,50 @@ class Lidort_Linsurf(Lidort_Structure):
     __del__ = lambda self: None
 
     def ts_surfacewf(self, *args):
+        """
+
+        void FullPhysics::Lidort_Linsurf::ts_surfacewf(const blitz::Array< double, 5 > &ts_surfacewf_in)
+
+        """
         return _lidort_interface_types.Lidort_Linsurf_ts_surfacewf(self, *args)
 
+
     def ts_mint_surfacewf(self, *args):
+        """
+
+        void FullPhysics::Lidort_Linsurf::ts_mint_surfacewf(const blitz::Array< double, 5 > &ts_mint_surfacewf_in)
+
+        """
         return _lidort_interface_types.Lidort_Linsurf_ts_mint_surfacewf(self, *args)
 
+
     def ts_flux_surfacewf(self, *args):
+        """
+
+        void FullPhysics::Lidort_Linsurf::ts_flux_surfacewf(const blitz::Array< double, 5 > &ts_flux_surfacewf_in)
+
+        """
         return _lidort_interface_types.Lidort_Linsurf_ts_flux_surfacewf(self, *args)
 
+
     def print_desc(self, output_stream):
+        """
+
+        virtual void FullPhysics::Lidort_Linsurf::print(std::ostream &output_stream) const
+
+        """
         return _lidort_interface_types.Lidort_Linsurf_print_desc(self, output_stream)
+
 Lidort_Linsurf_swigregister = _lidort_interface_types.Lidort_Linsurf_swigregister
 Lidort_Linsurf_swigregister(Lidort_Linsurf)
 
 class Lidort_Linoutputs(Lidort_Structure):
+    """
+
+    C++ includes: lidort_interface_types.h
+
+    """
+
     __swig_setmethods__ = {}
     for _s in [Lidort_Structure]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -916,6 +1578,11 @@ class Lidort_Linoutputs(Lidort_Structure):
     __repr__ = _swig_repr
 
     def __init__(self, *args):
+        """
+
+        FullPhysics::Lidort_Linoutputs::Lidort_Linoutputs(void *allocated_f_type_c)
+
+        """
         this = _lidort_interface_types.new_Lidort_Linoutputs(*args)
         try:
             self.this.append(this)
@@ -925,17 +1592,41 @@ class Lidort_Linoutputs(Lidort_Structure):
     __del__ = lambda self: None
 
     def atmos(self, *args):
+        """
+
+        void FullPhysics::Lidort_Linoutputs::atmos(Lidort_Linatmos &atmos_in)
+
+        """
         return _lidort_interface_types.Lidort_Linoutputs_atmos(self, *args)
 
+
     def surf(self, *args):
+        """
+
+        void FullPhysics::Lidort_Linoutputs::surf(Lidort_Linsurf &surf_in)
+
+        """
         return _lidort_interface_types.Lidort_Linoutputs_surf(self, *args)
 
+
     def print_desc(self, output_stream):
+        """
+
+        virtual void FullPhysics::Lidort_Linoutputs::print(std::ostream &output_stream) const
+
+        """
         return _lidort_interface_types.Lidort_Linoutputs_print_desc(self, output_stream)
+
 Lidort_Linoutputs_swigregister = _lidort_interface_types.Lidort_Linoutputs_swigregister
 Lidort_Linoutputs_swigregister(Lidort_Linoutputs)
 
 class Lidort_Linsup_Brdf(Lidort_Structure):
+    """
+
+    C++ includes: lidort_interface_types.h
+
+    """
+
     __swig_setmethods__ = {}
     for _s in [Lidort_Structure]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -947,6 +1638,11 @@ class Lidort_Linsup_Brdf(Lidort_Structure):
     __repr__ = _swig_repr
 
     def __init__(self, *args):
+        """
+
+        FullPhysics::Lidort_Linsup_Brdf::Lidort_Linsup_Brdf(void *allocated_f_type_c)
+
+        """
         this = _lidort_interface_types.new_Lidort_Linsup_Brdf(*args)
         try:
             self.this.append(this)
@@ -956,32 +1652,86 @@ class Lidort_Linsup_Brdf(Lidort_Structure):
     __del__ = lambda self: None
 
     def ts_ls_exactdb_brdfunc(self, *args):
+        """
+
+        void FullPhysics::Lidort_Linsup_Brdf::ts_ls_exactdb_brdfunc(const blitz::Array< double, 4 > &ts_ls_exactdb_brdfunc_in)
+
+        """
         return _lidort_interface_types.Lidort_Linsup_Brdf_ts_ls_exactdb_brdfunc(self, *args)
 
+
     def ts_ls_brdf_f_0(self, *args):
+        """
+
+        void FullPhysics::Lidort_Linsup_Brdf::ts_ls_brdf_f_0(const blitz::Array< double, 4 > &ts_ls_brdf_f_0_in)
+
+        """
         return _lidort_interface_types.Lidort_Linsup_Brdf_ts_ls_brdf_f_0(self, *args)
 
+
     def ts_ls_brdf_f(self, *args):
+        """
+
+        void FullPhysics::Lidort_Linsup_Brdf::ts_ls_brdf_f(const blitz::Array< double, 4 > &ts_ls_brdf_f_in)
+
+        """
         return _lidort_interface_types.Lidort_Linsup_Brdf_ts_ls_brdf_f(self, *args)
 
+
     def ts_ls_user_brdf_f_0(self, *args):
+        """
+
+        void FullPhysics::Lidort_Linsup_Brdf::ts_ls_user_brdf_f_0(const blitz::Array< double, 4 > &ts_ls_user_brdf_f_0_in)
+
+        """
         return _lidort_interface_types.Lidort_Linsup_Brdf_ts_ls_user_brdf_f_0(self, *args)
 
+
     def ts_ls_user_brdf_f(self, *args):
+        """
+
+        void FullPhysics::Lidort_Linsup_Brdf::ts_ls_user_brdf_f(const blitz::Array< double, 4 > &ts_ls_user_brdf_f_in)
+
+        """
         return _lidort_interface_types.Lidort_Linsup_Brdf_ts_ls_user_brdf_f(self, *args)
 
+
     def ts_ls_emissivity(self, *args):
+        """
+
+        void FullPhysics::Lidort_Linsup_Brdf::ts_ls_emissivity(const blitz::Array< double, 3 > &ts_ls_emissivity_in)
+
+        """
         return _lidort_interface_types.Lidort_Linsup_Brdf_ts_ls_emissivity(self, *args)
 
+
     def ts_ls_user_emissivity(self, *args):
+        """
+
+        void FullPhysics::Lidort_Linsup_Brdf::ts_ls_user_emissivity(const blitz::Array< double, 3 > &ts_ls_user_emissivity_in)
+
+        """
         return _lidort_interface_types.Lidort_Linsup_Brdf_ts_ls_user_emissivity(self, *args)
 
+
     def print_desc(self, output_stream):
+        """
+
+        virtual void FullPhysics::Lidort_Linsup_Brdf::print(std::ostream &output_stream) const
+
+        """
         return _lidort_interface_types.Lidort_Linsup_Brdf_print_desc(self, output_stream)
+
 Lidort_Linsup_Brdf_swigregister = _lidort_interface_types.Lidort_Linsup_Brdf_swigregister
 Lidort_Linsup_Brdf_swigregister(Lidort_Linsup_Brdf)
 
 class Lidort_Linsup_Ss_Atmos(Lidort_Structure):
+    """
+
+    C++ includes: lidort_interface_types.h
+
+    """
+
     __swig_setmethods__ = {}
     for _s in [Lidort_Structure]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -993,6 +1743,11 @@ class Lidort_Linsup_Ss_Atmos(Lidort_Structure):
     __repr__ = _swig_repr
 
     def __init__(self, *args):
+        """
+
+        FullPhysics::Lidort_Linsup_Ss_Atmos::Lidort_Linsup_Ss_Atmos(void *allocated_f_type_c)
+
+        """
         this = _lidort_interface_types.new_Lidort_Linsup_Ss_Atmos(*args)
         try:
             self.this.append(this)
@@ -1002,23 +1757,59 @@ class Lidort_Linsup_Ss_Atmos(Lidort_Structure):
     __del__ = lambda self: None
 
     def ts_columnwf_ss(self, *args):
+        """
+
+        void FullPhysics::Lidort_Linsup_Ss_Atmos::ts_columnwf_ss(const blitz::Array< double, 4 > &ts_columnwf_ss_in)
+
+        """
         return _lidort_interface_types.Lidort_Linsup_Ss_Atmos_ts_columnwf_ss(self, *args)
 
+
     def ts_columnwf_db(self, *args):
+        """
+
+        void FullPhysics::Lidort_Linsup_Ss_Atmos::ts_columnwf_db(const blitz::Array< double, 3 > &ts_columnwf_db_in)
+
+        """
         return _lidort_interface_types.Lidort_Linsup_Ss_Atmos_ts_columnwf_db(self, *args)
 
+
     def ts_profilewf_ss(self, *args):
+        """
+
+        void FullPhysics::Lidort_Linsup_Ss_Atmos::ts_profilewf_ss(const blitz::Array< double, 5 > &ts_profilewf_ss_in)
+
+        """
         return _lidort_interface_types.Lidort_Linsup_Ss_Atmos_ts_profilewf_ss(self, *args)
 
+
     def ts_profilewf_db(self, *args):
+        """
+
+        void FullPhysics::Lidort_Linsup_Ss_Atmos::ts_profilewf_db(const blitz::Array< double, 4 > &ts_profilewf_db_in)
+
+        """
         return _lidort_interface_types.Lidort_Linsup_Ss_Atmos_ts_profilewf_db(self, *args)
 
+
     def print_desc(self, output_stream):
+        """
+
+        virtual void FullPhysics::Lidort_Linsup_Ss_Atmos::print(std::ostream &output_stream) const
+
+        """
         return _lidort_interface_types.Lidort_Linsup_Ss_Atmos_print_desc(self, output_stream)
+
 Lidort_Linsup_Ss_Atmos_swigregister = _lidort_interface_types.Lidort_Linsup_Ss_Atmos_swigregister
 Lidort_Linsup_Ss_Atmos_swigregister(Lidort_Linsup_Ss_Atmos)
 
 class Lidort_Linsup_Ss_Surf(Lidort_Structure):
+    """
+
+    C++ includes: lidort_interface_types.h
+
+    """
+
     __swig_setmethods__ = {}
     for _s in [Lidort_Structure]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -1030,6 +1821,11 @@ class Lidort_Linsup_Ss_Surf(Lidort_Structure):
     __repr__ = _swig_repr
 
     def __init__(self, *args):
+        """
+
+        FullPhysics::Lidort_Linsup_Ss_Surf::Lidort_Linsup_Ss_Surf(void *allocated_f_type_c)
+
+        """
         this = _lidort_interface_types.new_Lidort_Linsup_Ss_Surf(*args)
         try:
             self.this.append(this)
@@ -1039,14 +1835,32 @@ class Lidort_Linsup_Ss_Surf(Lidort_Structure):
     __del__ = lambda self: None
 
     def ts_surfacewf_db(self, *args):
+        """
+
+        void FullPhysics::Lidort_Linsup_Ss_Surf::ts_surfacewf_db(const blitz::Array< double, 3 > &ts_surfacewf_db_in)
+
+        """
         return _lidort_interface_types.Lidort_Linsup_Ss_Surf_ts_surfacewf_db(self, *args)
 
+
     def print_desc(self, output_stream):
+        """
+
+        virtual void FullPhysics::Lidort_Linsup_Ss_Surf::print(std::ostream &output_stream) const
+
+        """
         return _lidort_interface_types.Lidort_Linsup_Ss_Surf_print_desc(self, output_stream)
+
 Lidort_Linsup_Ss_Surf_swigregister = _lidort_interface_types.Lidort_Linsup_Ss_Surf_swigregister
 Lidort_Linsup_Ss_Surf_swigregister(Lidort_Linsup_Ss_Surf)
 
 class Lidort_Linsup_Ss(Lidort_Structure):
+    """
+
+    C++ includes: lidort_interface_types.h
+
+    """
+
     __swig_setmethods__ = {}
     for _s in [Lidort_Structure]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -1058,6 +1872,11 @@ class Lidort_Linsup_Ss(Lidort_Structure):
     __repr__ = _swig_repr
 
     def __init__(self, *args):
+        """
+
+        FullPhysics::Lidort_Linsup_Ss::Lidort_Linsup_Ss(void *allocated_f_type_c)
+
+        """
         this = _lidort_interface_types.new_Lidort_Linsup_Ss(*args)
         try:
             self.this.append(this)
@@ -1067,17 +1886,41 @@ class Lidort_Linsup_Ss(Lidort_Structure):
     __del__ = lambda self: None
 
     def atmos(self, *args):
+        """
+
+        void FullPhysics::Lidort_Linsup_Ss::atmos(Lidort_Linsup_Ss_Atmos &atmos_in)
+
+        """
         return _lidort_interface_types.Lidort_Linsup_Ss_atmos(self, *args)
 
+
     def surf(self, *args):
+        """
+
+        void FullPhysics::Lidort_Linsup_Ss::surf(Lidort_Linsup_Ss_Surf &surf_in)
+
+        """
         return _lidort_interface_types.Lidort_Linsup_Ss_surf(self, *args)
 
+
     def print_desc(self, output_stream):
+        """
+
+        virtual void FullPhysics::Lidort_Linsup_Ss::print(std::ostream &output_stream) const
+
+        """
         return _lidort_interface_types.Lidort_Linsup_Ss_print_desc(self, output_stream)
+
 Lidort_Linsup_Ss_swigregister = _lidort_interface_types.Lidort_Linsup_Ss_swigregister
 Lidort_Linsup_Ss_swigregister(Lidort_Linsup_Ss)
 
 class Lidort_Linsup_Sleave(Lidort_Structure):
+    """
+
+    C++ includes: lidort_interface_types.h
+
+    """
+
     __swig_setmethods__ = {}
     for _s in [Lidort_Structure]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -1089,6 +1932,11 @@ class Lidort_Linsup_Sleave(Lidort_Structure):
     __repr__ = _swig_repr
 
     def __init__(self, *args):
+        """
+
+        FullPhysics::Lidort_Linsup_Sleave::Lidort_Linsup_Sleave(void *allocated_f_type_c)
+
+        """
         this = _lidort_interface_types.new_Lidort_Linsup_Sleave(*args)
         try:
             self.this.append(this)
@@ -1098,23 +1946,59 @@ class Lidort_Linsup_Sleave(Lidort_Structure):
     __del__ = lambda self: None
 
     def ts_lssl_slterm_isotropic(self, *args):
+        """
+
+        void FullPhysics::Lidort_Linsup_Sleave::ts_lssl_slterm_isotropic(const blitz::Array< double, 2 > &ts_lssl_slterm_isotropic_in)
+
+        """
         return _lidort_interface_types.Lidort_Linsup_Sleave_ts_lssl_slterm_isotropic(self, *args)
 
+
     def ts_lssl_slterm_userangles(self, *args):
+        """
+
+        void FullPhysics::Lidort_Linsup_Sleave::ts_lssl_slterm_userangles(const blitz::Array< double, 4 > &ts_lssl_slterm_userangles_in)
+
+        """
         return _lidort_interface_types.Lidort_Linsup_Sleave_ts_lssl_slterm_userangles(self, *args)
 
+
     def ts_lssl_slterm_f_0(self, *args):
+        """
+
+        void FullPhysics::Lidort_Linsup_Sleave::ts_lssl_slterm_f_0(const blitz::Array< double, 4 > &ts_lssl_slterm_f_0_in)
+
+        """
         return _lidort_interface_types.Lidort_Linsup_Sleave_ts_lssl_slterm_f_0(self, *args)
 
+
     def ts_lssl_user_slterm_f_0(self, *args):
+        """
+
+        void FullPhysics::Lidort_Linsup_Sleave::ts_lssl_user_slterm_f_0(const blitz::Array< double, 4 > &ts_lssl_user_slterm_f_0_in)
+
+        """
         return _lidort_interface_types.Lidort_Linsup_Sleave_ts_lssl_user_slterm_f_0(self, *args)
 
+
     def print_desc(self, output_stream):
+        """
+
+        virtual void FullPhysics::Lidort_Linsup_Sleave::print(std::ostream &output_stream) const
+
+        """
         return _lidort_interface_types.Lidort_Linsup_Sleave_print_desc(self, output_stream)
+
 Lidort_Linsup_Sleave_swigregister = _lidort_interface_types.Lidort_Linsup_Sleave_swigregister
 Lidort_Linsup_Sleave_swigregister(Lidort_Linsup_Sleave)
 
 class Lidort_Linsup_Inout(Lidort_Structure):
+    """
+
+    C++ includes: lidort_interface_types.h
+
+    """
+
     __swig_setmethods__ = {}
     for _s in [Lidort_Structure]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -1126,6 +2010,11 @@ class Lidort_Linsup_Inout(Lidort_Structure):
     __repr__ = _swig_repr
 
     def __init__(self, *args):
+        """
+
+        FullPhysics::Lidort_Linsup_Inout::Lidort_Linsup_Inout(void *allocated_f_type_c)
+
+        """
         this = _lidort_interface_types.new_Lidort_Linsup_Inout(*args)
         try:
             self.this.append(this)
@@ -1135,20 +2024,50 @@ class Lidort_Linsup_Inout(Lidort_Structure):
     __del__ = lambda self: None
 
     def brdf(self, *args):
+        """
+
+        void FullPhysics::Lidort_Linsup_Inout::brdf(Lidort_Linsup_Brdf &brdf_in)
+
+        """
         return _lidort_interface_types.Lidort_Linsup_Inout_brdf(self, *args)
 
+
     def ss(self, *args):
+        """
+
+        void FullPhysics::Lidort_Linsup_Inout::ss(Lidort_Linsup_Ss &ss_in)
+
+        """
         return _lidort_interface_types.Lidort_Linsup_Inout_ss(self, *args)
 
+
     def sleave(self, *args):
+        """
+
+        void FullPhysics::Lidort_Linsup_Inout::sleave(Lidort_Linsup_Sleave &sleave_in)
+
+        """
         return _lidort_interface_types.Lidort_Linsup_Inout_sleave(self, *args)
 
+
     def print_desc(self, output_stream):
+        """
+
+        virtual void FullPhysics::Lidort_Linsup_Inout::print(std::ostream &output_stream) const
+
+        """
         return _lidort_interface_types.Lidort_Linsup_Inout_print_desc(self, output_stream)
+
 Lidort_Linsup_Inout_swigregister = _lidort_interface_types.Lidort_Linsup_Inout_swigregister
 Lidort_Linsup_Inout_swigregister(Lidort_Linsup_Inout)
 
 class Lidort_Main_Outputs(Lidort_Structure):
+    """
+
+    C++ includes: lidort_interface_types.h
+
+    """
+
     __swig_setmethods__ = {}
     for _s in [Lidort_Structure]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -1160,6 +2079,11 @@ class Lidort_Main_Outputs(Lidort_Structure):
     __repr__ = _swig_repr
 
     def __init__(self, *args):
+        """
+
+        FullPhysics::Lidort_Main_Outputs::Lidort_Main_Outputs(void *allocated_f_type_c)
+
+        """
         this = _lidort_interface_types.new_Lidort_Main_Outputs(*args)
         try:
             self.this.append(this)
@@ -1169,32 +2093,86 @@ class Lidort_Main_Outputs(Lidort_Structure):
     __del__ = lambda self: None
 
     def ts_intensity(self, *args):
+        """
+
+        void FullPhysics::Lidort_Main_Outputs::ts_intensity(const blitz::Array< double, 4 > &ts_intensity_in)
+
+        """
         return _lidort_interface_types.Lidort_Main_Outputs_ts_intensity(self, *args)
 
+
     def ts_mean_intensity(self, *args):
+        """
+
+        void FullPhysics::Lidort_Main_Outputs::ts_mean_intensity(const blitz::Array< double, 4 > &ts_mean_intensity_in)
+
+        """
         return _lidort_interface_types.Lidort_Main_Outputs_ts_mean_intensity(self, *args)
 
+
     def ts_flux_integral(self, *args):
+        """
+
+        void FullPhysics::Lidort_Main_Outputs::ts_flux_integral(const blitz::Array< double, 4 > &ts_flux_integral_in)
+
+        """
         return _lidort_interface_types.Lidort_Main_Outputs_ts_flux_integral(self, *args)
 
+
     def ts_dnflux_direct(self, *args):
+        """
+
+        void FullPhysics::Lidort_Main_Outputs::ts_dnflux_direct(const blitz::Array< double, 3 > &ts_dnflux_direct_in)
+
+        """
         return _lidort_interface_types.Lidort_Main_Outputs_ts_dnflux_direct(self, *args)
 
+
     def ts_dnmean_direct(self, *args):
+        """
+
+        void FullPhysics::Lidort_Main_Outputs::ts_dnmean_direct(const blitz::Array< double, 3 > &ts_dnmean_direct_in)
+
+        """
         return _lidort_interface_types.Lidort_Main_Outputs_ts_dnmean_direct(self, *args)
 
+
     def ts_fourier_saved(self, *args):
+        """
+
+        void FullPhysics::Lidort_Main_Outputs::ts_fourier_saved(const blitz::Array< int, 2 > &ts_fourier_saved_in)
+
+        """
         return _lidort_interface_types.Lidort_Main_Outputs_ts_fourier_saved(self, *args)
 
+
     def ts_n_geometries(self, *args):
+        """
+
+        void FullPhysics::Lidort_Main_Outputs::ts_n_geometries(const int &ts_n_geometries_in)
+
+        """
         return _lidort_interface_types.Lidort_Main_Outputs_ts_n_geometries(self, *args)
 
+
     def print_desc(self, output_stream):
+        """
+
+        virtual void FullPhysics::Lidort_Main_Outputs::print(std::ostream &output_stream) const
+
+        """
         return _lidort_interface_types.Lidort_Main_Outputs_print_desc(self, output_stream)
+
 Lidort_Main_Outputs_swigregister = _lidort_interface_types.Lidort_Main_Outputs_swigregister
 Lidort_Main_Outputs_swigregister(Lidort_Main_Outputs)
 
 class Lidort_Exception_Handling(Lidort_Structure):
+    """
+
+    C++ includes: lidort_interface_types.h
+
+    """
+
     __swig_setmethods__ = {}
     for _s in [Lidort_Structure]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -1206,6 +2184,11 @@ class Lidort_Exception_Handling(Lidort_Structure):
     __repr__ = _swig_repr
 
     def __init__(self, *args):
+        """
+
+        FullPhysics::Lidort_Exception_Handling::Lidort_Exception_Handling(void *allocated_f_type_c)
+
+        """
         this = _lidort_interface_types.new_Lidort_Exception_Handling(*args)
         try:
             self.this.append(this)
@@ -1215,38 +2198,104 @@ class Lidort_Exception_Handling(Lidort_Structure):
     __del__ = lambda self: None
 
     def ts_status_inputcheck(self, *args):
+        """
+
+        void FullPhysics::Lidort_Exception_Handling::ts_status_inputcheck(const int &ts_status_inputcheck_in)
+
+        """
         return _lidort_interface_types.Lidort_Exception_Handling_ts_status_inputcheck(self, *args)
 
+
     def ts_ncheckmessages(self, *args):
+        """
+
+        void FullPhysics::Lidort_Exception_Handling::ts_ncheckmessages(const int &ts_ncheckmessages_in)
+
+        """
         return _lidort_interface_types.Lidort_Exception_Handling_ts_ncheckmessages(self, *args)
 
+
     def ts_checkmessages(self):
+        """
+
+        const std::vector< std::string > FullPhysics::Lidort_Exception_Handling::ts_checkmessages() const
+
+        """
         return _lidort_interface_types.Lidort_Exception_Handling_ts_checkmessages(self)
 
+
     def ts_actions(self):
+        """
+
+        const std::vector< std::string > FullPhysics::Lidort_Exception_Handling::ts_actions() const
+
+        """
         return _lidort_interface_types.Lidort_Exception_Handling_ts_actions(self)
 
+
     def ts_status_calculation(self, *args):
+        """
+
+        void FullPhysics::Lidort_Exception_Handling::ts_status_calculation(const int &ts_status_calculation_in)
+
+        """
         return _lidort_interface_types.Lidort_Exception_Handling_ts_status_calculation(self, *args)
 
+
     def ts_message(self):
+        """
+
+        const std::string FullPhysics::Lidort_Exception_Handling::ts_message() const
+
+        """
         return _lidort_interface_types.Lidort_Exception_Handling_ts_message(self)
 
+
     def ts_trace_1(self):
+        """
+
+        const std::string FullPhysics::Lidort_Exception_Handling::ts_trace_1() const
+
+        """
         return _lidort_interface_types.Lidort_Exception_Handling_ts_trace_1(self)
 
+
     def ts_trace_2(self):
+        """
+
+        const std::string FullPhysics::Lidort_Exception_Handling::ts_trace_2() const
+
+        """
         return _lidort_interface_types.Lidort_Exception_Handling_ts_trace_2(self)
 
+
     def ts_trace_3(self):
+        """
+
+        const std::string FullPhysics::Lidort_Exception_Handling::ts_trace_3() const
+
+        """
         return _lidort_interface_types.Lidort_Exception_Handling_ts_trace_3(self)
 
+
     def print_desc(self, output_stream):
+        """
+
+        virtual void FullPhysics::Lidort_Exception_Handling::print(std::ostream &output_stream) const
+
+        """
         return _lidort_interface_types.Lidort_Exception_Handling_print_desc(self, output_stream)
+
 Lidort_Exception_Handling_swigregister = _lidort_interface_types.Lidort_Exception_Handling_swigregister
 Lidort_Exception_Handling_swigregister(Lidort_Exception_Handling)
 
 class Lidort_Input_Exception_Handling(Lidort_Structure):
+    """
+
+    C++ includes: lidort_interface_types.h
+
+    """
+
     __swig_setmethods__ = {}
     for _s in [Lidort_Structure]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -1258,6 +2307,11 @@ class Lidort_Input_Exception_Handling(Lidort_Structure):
     __repr__ = _swig_repr
 
     def __init__(self, *args):
+        """
+
+        FullPhysics::Lidort_Input_Exception_Handling::Lidort_Input_Exception_Handling(void *allocated_f_type_c)
+
+        """
         this = _lidort_interface_types.new_Lidort_Input_Exception_Handling(*args)
         try:
             self.this.append(this)
@@ -1267,23 +2321,59 @@ class Lidort_Input_Exception_Handling(Lidort_Structure):
     __del__ = lambda self: None
 
     def ts_status_inputread(self, *args):
+        """
+
+        void FullPhysics::Lidort_Input_Exception_Handling::ts_status_inputread(const int &ts_status_inputread_in)
+
+        """
         return _lidort_interface_types.Lidort_Input_Exception_Handling_ts_status_inputread(self, *args)
 
+
     def ts_ninputmessages(self, *args):
+        """
+
+        void FullPhysics::Lidort_Input_Exception_Handling::ts_ninputmessages(const int &ts_ninputmessages_in)
+
+        """
         return _lidort_interface_types.Lidort_Input_Exception_Handling_ts_ninputmessages(self, *args)
 
+
     def ts_inputmessages(self):
+        """
+
+        const std::vector< std::string > FullPhysics::Lidort_Input_Exception_Handling::ts_inputmessages() const
+
+        """
         return _lidort_interface_types.Lidort_Input_Exception_Handling_ts_inputmessages(self)
 
+
     def ts_inputactions(self):
+        """
+
+        const std::vector< std::string > FullPhysics::Lidort_Input_Exception_Handling::ts_inputactions() const
+
+        """
         return _lidort_interface_types.Lidort_Input_Exception_Handling_ts_inputactions(self)
 
+
     def print_desc(self, output_stream):
+        """
+
+        virtual void FullPhysics::Lidort_Input_Exception_Handling::print(std::ostream &output_stream) const
+
+        """
         return _lidort_interface_types.Lidort_Input_Exception_Handling_print_desc(self, output_stream)
+
 Lidort_Input_Exception_Handling_swigregister = _lidort_interface_types.Lidort_Input_Exception_Handling_swigregister
 Lidort_Input_Exception_Handling_swigregister(Lidort_Input_Exception_Handling)
 
 class Lidort_Outputs(Lidort_Structure):
+    """
+
+    C++ includes: lidort_interface_types.h
+
+    """
+
     __swig_setmethods__ = {}
     for _s in [Lidort_Structure]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -1295,6 +2385,11 @@ class Lidort_Outputs(Lidort_Structure):
     __repr__ = _swig_repr
 
     def __init__(self, *args):
+        """
+
+        FullPhysics::Lidort_Outputs::Lidort_Outputs(void *allocated_f_type_c)
+
+        """
         this = _lidort_interface_types.new_Lidort_Outputs(*args)
         try:
             self.this.append(this)
@@ -1304,17 +2399,41 @@ class Lidort_Outputs(Lidort_Structure):
     __del__ = lambda self: None
 
     def main(self, *args):
+        """
+
+        void FullPhysics::Lidort_Outputs::main(Lidort_Main_Outputs &main_in)
+
+        """
         return _lidort_interface_types.Lidort_Outputs_main(self, *args)
 
+
     def status(self, *args):
+        """
+
+        void FullPhysics::Lidort_Outputs::status(Lidort_Exception_Handling &status_in)
+
+        """
         return _lidort_interface_types.Lidort_Outputs_status(self, *args)
 
+
     def print_desc(self, output_stream):
+        """
+
+        virtual void FullPhysics::Lidort_Outputs::print(std::ostream &output_stream) const
+
+        """
         return _lidort_interface_types.Lidort_Outputs_print_desc(self, output_stream)
+
 Lidort_Outputs_swigregister = _lidort_interface_types.Lidort_Outputs_swigregister
 Lidort_Outputs_swigregister(Lidort_Outputs)
 
 class Lidort_Sup_Brdf(Lidort_Structure):
+    """
+
+    C++ includes: lidort_interface_types.h
+
+    """
+
     __swig_setmethods__ = {}
     for _s in [Lidort_Structure]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -1326,6 +2445,11 @@ class Lidort_Sup_Brdf(Lidort_Structure):
     __repr__ = _swig_repr
 
     def __init__(self, *args):
+        """
+
+        FullPhysics::Lidort_Sup_Brdf::Lidort_Sup_Brdf(void *allocated_f_type_c)
+
+        """
         this = _lidort_interface_types.new_Lidort_Sup_Brdf(*args)
         try:
             self.this.append(this)
@@ -1335,32 +2459,86 @@ class Lidort_Sup_Brdf(Lidort_Structure):
     __del__ = lambda self: None
 
     def ts_exactdb_brdfunc(self, *args):
+        """
+
+        void FullPhysics::Lidort_Sup_Brdf::ts_exactdb_brdfunc(const blitz::Array< double, 3 > &ts_exactdb_brdfunc_in)
+
+        """
         return _lidort_interface_types.Lidort_Sup_Brdf_ts_exactdb_brdfunc(self, *args)
 
+
     def ts_brdf_f_0(self, *args):
+        """
+
+        void FullPhysics::Lidort_Sup_Brdf::ts_brdf_f_0(const blitz::Array< double, 3 > &ts_brdf_f_0_in)
+
+        """
         return _lidort_interface_types.Lidort_Sup_Brdf_ts_brdf_f_0(self, *args)
 
+
     def ts_brdf_f(self, *args):
+        """
+
+        void FullPhysics::Lidort_Sup_Brdf::ts_brdf_f(const blitz::Array< double, 3 > &ts_brdf_f_in)
+
+        """
         return _lidort_interface_types.Lidort_Sup_Brdf_ts_brdf_f(self, *args)
 
+
     def ts_user_brdf_f_0(self, *args):
+        """
+
+        void FullPhysics::Lidort_Sup_Brdf::ts_user_brdf_f_0(const blitz::Array< double, 3 > &ts_user_brdf_f_0_in)
+
+        """
         return _lidort_interface_types.Lidort_Sup_Brdf_ts_user_brdf_f_0(self, *args)
 
+
     def ts_user_brdf_f(self, *args):
+        """
+
+        void FullPhysics::Lidort_Sup_Brdf::ts_user_brdf_f(const blitz::Array< double, 3 > &ts_user_brdf_f_in)
+
+        """
         return _lidort_interface_types.Lidort_Sup_Brdf_ts_user_brdf_f(self, *args)
 
+
     def ts_emissivity(self, *args):
+        """
+
+        void FullPhysics::Lidort_Sup_Brdf::ts_emissivity(const blitz::Array< double, 2 > &ts_emissivity_in)
+
+        """
         return _lidort_interface_types.Lidort_Sup_Brdf_ts_emissivity(self, *args)
 
+
     def ts_user_emissivity(self, *args):
+        """
+
+        void FullPhysics::Lidort_Sup_Brdf::ts_user_emissivity(const blitz::Array< double, 2 > &ts_user_emissivity_in)
+
+        """
         return _lidort_interface_types.Lidort_Sup_Brdf_ts_user_emissivity(self, *args)
 
+
     def print_desc(self, output_stream):
+        """
+
+        virtual void FullPhysics::Lidort_Sup_Brdf::print(std::ostream &output_stream) const
+
+        """
         return _lidort_interface_types.Lidort_Sup_Brdf_print_desc(self, output_stream)
+
 Lidort_Sup_Brdf_swigregister = _lidort_interface_types.Lidort_Sup_Brdf_swigregister
 Lidort_Sup_Brdf_swigregister(Lidort_Sup_Brdf)
 
 class Lidort_Sup_Sleave(Lidort_Structure):
+    """
+
+    C++ includes: lidort_interface_types.h
+
+    """
+
     __swig_setmethods__ = {}
     for _s in [Lidort_Structure]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -1372,6 +2550,11 @@ class Lidort_Sup_Sleave(Lidort_Structure):
     __repr__ = _swig_repr
 
     def __init__(self, *args):
+        """
+
+        FullPhysics::Lidort_Sup_Sleave::Lidort_Sup_Sleave(void *allocated_f_type_c)
+
+        """
         this = _lidort_interface_types.new_Lidort_Sup_Sleave(*args)
         try:
             self.this.append(this)
@@ -1381,23 +2564,59 @@ class Lidort_Sup_Sleave(Lidort_Structure):
     __del__ = lambda self: None
 
     def ts_slterm_isotropic(self, *args):
+        """
+
+        void FullPhysics::Lidort_Sup_Sleave::ts_slterm_isotropic(const blitz::Array< double, 1 > &ts_slterm_isotropic_in)
+
+        """
         return _lidort_interface_types.Lidort_Sup_Sleave_ts_slterm_isotropic(self, *args)
 
+
     def ts_slterm_userangles(self, *args):
+        """
+
+        void FullPhysics::Lidort_Sup_Sleave::ts_slterm_userangles(const blitz::Array< double, 3 > &ts_slterm_userangles_in)
+
+        """
         return _lidort_interface_types.Lidort_Sup_Sleave_ts_slterm_userangles(self, *args)
 
+
     def ts_slterm_f_0(self, *args):
+        """
+
+        void FullPhysics::Lidort_Sup_Sleave::ts_slterm_f_0(const blitz::Array< double, 3 > &ts_slterm_f_0_in)
+
+        """
         return _lidort_interface_types.Lidort_Sup_Sleave_ts_slterm_f_0(self, *args)
 
+
     def ts_user_slterm_f_0(self, *args):
+        """
+
+        void FullPhysics::Lidort_Sup_Sleave::ts_user_slterm_f_0(const blitz::Array< double, 3 > &ts_user_slterm_f_0_in)
+
+        """
         return _lidort_interface_types.Lidort_Sup_Sleave_ts_user_slterm_f_0(self, *args)
 
+
     def print_desc(self, output_stream):
+        """
+
+        virtual void FullPhysics::Lidort_Sup_Sleave::print(std::ostream &output_stream) const
+
+        """
         return _lidort_interface_types.Lidort_Sup_Sleave_print_desc(self, output_stream)
+
 Lidort_Sup_Sleave_swigregister = _lidort_interface_types.Lidort_Sup_Sleave_swigregister
 Lidort_Sup_Sleave_swigregister(Lidort_Sup_Sleave)
 
 class Lidort_Sup_Ss(Lidort_Structure):
+    """
+
+    C++ includes: lidort_interface_types.h
+
+    """
+
     __swig_setmethods__ = {}
     for _s in [Lidort_Structure]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -1409,6 +2628,11 @@ class Lidort_Sup_Ss(Lidort_Structure):
     __repr__ = _swig_repr
 
     def __init__(self, *args):
+        """
+
+        FullPhysics::Lidort_Sup_Ss::Lidort_Sup_Ss(void *allocated_f_type_c)
+
+        """
         this = _lidort_interface_types.new_Lidort_Sup_Ss(*args)
         try:
             self.this.append(this)
@@ -1418,17 +2642,41 @@ class Lidort_Sup_Ss(Lidort_Structure):
     __del__ = lambda self: None
 
     def ts_intensity_ss(self, *args):
+        """
+
+        void FullPhysics::Lidort_Sup_Ss::ts_intensity_ss(const blitz::Array< double, 3 > &ts_intensity_ss_in)
+
+        """
         return _lidort_interface_types.Lidort_Sup_Ss_ts_intensity_ss(self, *args)
 
+
     def ts_intensity_db(self, *args):
+        """
+
+        void FullPhysics::Lidort_Sup_Ss::ts_intensity_db(const blitz::Array< double, 2 > &ts_intensity_db_in)
+
+        """
         return _lidort_interface_types.Lidort_Sup_Ss_ts_intensity_db(self, *args)
 
+
     def print_desc(self, output_stream):
+        """
+
+        virtual void FullPhysics::Lidort_Sup_Ss::print(std::ostream &output_stream) const
+
+        """
         return _lidort_interface_types.Lidort_Sup_Ss_print_desc(self, output_stream)
+
 Lidort_Sup_Ss_swigregister = _lidort_interface_types.Lidort_Sup_Ss_swigregister
 Lidort_Sup_Ss_swigregister(Lidort_Sup_Ss)
 
 class Lidort_Sup_Inout(Lidort_Structure):
+    """
+
+    C++ includes: lidort_interface_types.h
+
+    """
+
     __swig_setmethods__ = {}
     for _s in [Lidort_Structure]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -1440,6 +2688,11 @@ class Lidort_Sup_Inout(Lidort_Structure):
     __repr__ = _swig_repr
 
     def __init__(self, *args):
+        """
+
+        FullPhysics::Lidort_Sup_Inout::Lidort_Sup_Inout(void *allocated_f_type_c)
+
+        """
         this = _lidort_interface_types.new_Lidort_Sup_Inout(*args)
         try:
             self.this.append(this)
@@ -1449,20 +2702,50 @@ class Lidort_Sup_Inout(Lidort_Structure):
     __del__ = lambda self: None
 
     def brdf(self, *args):
+        """
+
+        void FullPhysics::Lidort_Sup_Inout::brdf(Lidort_Sup_Brdf &brdf_in)
+
+        """
         return _lidort_interface_types.Lidort_Sup_Inout_brdf(self, *args)
 
+
     def ss(self, *args):
+        """
+
+        void FullPhysics::Lidort_Sup_Inout::ss(Lidort_Sup_Ss &ss_in)
+
+        """
         return _lidort_interface_types.Lidort_Sup_Inout_ss(self, *args)
 
+
     def sleave(self, *args):
+        """
+
+        void FullPhysics::Lidort_Sup_Inout::sleave(Lidort_Sup_Sleave &sleave_in)
+
+        """
         return _lidort_interface_types.Lidort_Sup_Inout_sleave(self, *args)
 
+
     def print_desc(self, output_stream):
+        """
+
+        virtual void FullPhysics::Lidort_Sup_Inout::print(std::ostream &output_stream) const
+
+        """
         return _lidort_interface_types.Lidort_Sup_Inout_print_desc(self, output_stream)
+
 Lidort_Sup_Inout_swigregister = _lidort_interface_types.Lidort_Sup_Inout_swigregister
 Lidort_Sup_Inout_swigregister(Lidort_Sup_Inout)
 
 class Lidort_Fixed_Boolean(Lidort_Structure):
+    """
+
+    C++ includes: lidort_interface_types.h
+
+    """
+
     __swig_setmethods__ = {}
     for _s in [Lidort_Structure]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -1474,6 +2757,11 @@ class Lidort_Fixed_Boolean(Lidort_Structure):
     __repr__ = _swig_repr
 
     def __init__(self, *args):
+        """
+
+        FullPhysics::Lidort_Fixed_Boolean::Lidort_Fixed_Boolean(void *allocated_f_type_c)
+
+        """
         this = _lidort_interface_types.new_Lidort_Fixed_Boolean(*args)
         try:
             self.this.append(this)
@@ -1483,47 +2771,131 @@ class Lidort_Fixed_Boolean(Lidort_Structure):
     __del__ = lambda self: None
 
     def ts_do_fullrad_mode(self, *args):
+        """
+
+        void FullPhysics::Lidort_Fixed_Boolean::ts_do_fullrad_mode(const bool &ts_do_fullrad_mode_in)
+
+        """
         return _lidort_interface_types.Lidort_Fixed_Boolean_ts_do_fullrad_mode(self, *args)
 
+
     def ts_do_sscorr_truncation(self, *args):
+        """
+
+        void FullPhysics::Lidort_Fixed_Boolean::ts_do_sscorr_truncation(const bool &ts_do_sscorr_truncation_in)
+
+        """
         return _lidort_interface_types.Lidort_Fixed_Boolean_ts_do_sscorr_truncation(self, *args)
 
+
     def ts_do_ss_external(self, *args):
+        """
+
+        void FullPhysics::Lidort_Fixed_Boolean::ts_do_ss_external(const bool &ts_do_ss_external_in)
+
+        """
         return _lidort_interface_types.Lidort_Fixed_Boolean_ts_do_ss_external(self, *args)
 
+
     def ts_do_ssfull(self, *args):
+        """
+
+        void FullPhysics::Lidort_Fixed_Boolean::ts_do_ssfull(const bool &ts_do_ssfull_in)
+
+        """
         return _lidort_interface_types.Lidort_Fixed_Boolean_ts_do_ssfull(self, *args)
 
+
     def ts_do_thermal_emission(self, *args):
+        """
+
+        void FullPhysics::Lidort_Fixed_Boolean::ts_do_thermal_emission(const bool &ts_do_thermal_emission_in)
+
+        """
         return _lidort_interface_types.Lidort_Fixed_Boolean_ts_do_thermal_emission(self, *args)
 
+
     def ts_do_surface_emission(self, *args):
+        """
+
+        void FullPhysics::Lidort_Fixed_Boolean::ts_do_surface_emission(const bool &ts_do_surface_emission_in)
+
+        """
         return _lidort_interface_types.Lidort_Fixed_Boolean_ts_do_surface_emission(self, *args)
 
+
     def ts_do_plane_parallel(self, *args):
+        """
+
+        void FullPhysics::Lidort_Fixed_Boolean::ts_do_plane_parallel(const bool &ts_do_plane_parallel_in)
+
+        """
         return _lidort_interface_types.Lidort_Fixed_Boolean_ts_do_plane_parallel(self, *args)
 
+
     def ts_do_brdf_surface(self, *args):
+        """
+
+        void FullPhysics::Lidort_Fixed_Boolean::ts_do_brdf_surface(const bool &ts_do_brdf_surface_in)
+
+        """
         return _lidort_interface_types.Lidort_Fixed_Boolean_ts_do_brdf_surface(self, *args)
 
+
     def ts_do_upwelling(self, *args):
+        """
+
+        void FullPhysics::Lidort_Fixed_Boolean::ts_do_upwelling(const bool &ts_do_upwelling_in)
+
+        """
         return _lidort_interface_types.Lidort_Fixed_Boolean_ts_do_upwelling(self, *args)
 
+
     def ts_do_dnwelling(self, *args):
+        """
+
+        void FullPhysics::Lidort_Fixed_Boolean::ts_do_dnwelling(const bool &ts_do_dnwelling_in)
+
+        """
         return _lidort_interface_types.Lidort_Fixed_Boolean_ts_do_dnwelling(self, *args)
 
+
     def ts_do_surface_leaving(self, *args):
+        """
+
+        void FullPhysics::Lidort_Fixed_Boolean::ts_do_surface_leaving(const bool &ts_do_surface_leaving_in)
+
+        """
         return _lidort_interface_types.Lidort_Fixed_Boolean_ts_do_surface_leaving(self, *args)
 
+
     def ts_do_sl_isotropic(self, *args):
+        """
+
+        void FullPhysics::Lidort_Fixed_Boolean::ts_do_sl_isotropic(const bool &ts_do_sl_isotropic_in)
+
+        """
         return _lidort_interface_types.Lidort_Fixed_Boolean_ts_do_sl_isotropic(self, *args)
 
+
     def print_desc(self, output_stream):
+        """
+
+        virtual void FullPhysics::Lidort_Fixed_Boolean::print(std::ostream &output_stream) const
+
+        """
         return _lidort_interface_types.Lidort_Fixed_Boolean_print_desc(self, output_stream)
+
 Lidort_Fixed_Boolean_swigregister = _lidort_interface_types.Lidort_Fixed_Boolean_swigregister
 Lidort_Fixed_Boolean_swigregister(Lidort_Fixed_Boolean)
 
 class Lidort_Fixed_Control(Lidort_Structure):
+    """
+
+    C++ includes: lidort_interface_types.h
+
+    """
+
     __swig_setmethods__ = {}
     for _s in [Lidort_Structure]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -1535,6 +2907,11 @@ class Lidort_Fixed_Control(Lidort_Structure):
     __repr__ = _swig_repr
 
     def __init__(self, *args):
+        """
+
+        FullPhysics::Lidort_Fixed_Control::Lidort_Fixed_Control(void *allocated_f_type_c)
+
+        """
         this = _lidort_interface_types.new_Lidort_Fixed_Control(*args)
         try:
             self.this.append(this)
@@ -1544,26 +2921,68 @@ class Lidort_Fixed_Control(Lidort_Structure):
     __del__ = lambda self: None
 
     def ts_nstreams(self, *args):
+        """
+
+        void FullPhysics::Lidort_Fixed_Control::ts_nstreams(const int &ts_nstreams_in)
+
+        """
         return _lidort_interface_types.Lidort_Fixed_Control_ts_nstreams(self, *args)
 
+
     def ts_nlayers(self, *args):
+        """
+
+        void FullPhysics::Lidort_Fixed_Control::ts_nlayers(const int &ts_nlayers_in)
+
+        """
         return _lidort_interface_types.Lidort_Fixed_Control_ts_nlayers(self, *args)
 
+
     def ts_nfinelayers(self, *args):
+        """
+
+        void FullPhysics::Lidort_Fixed_Control::ts_nfinelayers(const int &ts_nfinelayers_in)
+
+        """
         return _lidort_interface_types.Lidort_Fixed_Control_ts_nfinelayers(self, *args)
 
+
     def ts_n_thermal_coeffs(self, *args):
+        """
+
+        void FullPhysics::Lidort_Fixed_Control::ts_n_thermal_coeffs(const int &ts_n_thermal_coeffs_in)
+
+        """
         return _lidort_interface_types.Lidort_Fixed_Control_ts_n_thermal_coeffs(self, *args)
 
+
     def ts_lidort_accuracy(self, *args):
+        """
+
+        void FullPhysics::Lidort_Fixed_Control::ts_lidort_accuracy(const double &ts_lidort_accuracy_in)
+
+        """
         return _lidort_interface_types.Lidort_Fixed_Control_ts_lidort_accuracy(self, *args)
 
+
     def print_desc(self, output_stream):
+        """
+
+        virtual void FullPhysics::Lidort_Fixed_Control::print(std::ostream &output_stream) const
+
+        """
         return _lidort_interface_types.Lidort_Fixed_Control_print_desc(self, output_stream)
+
 Lidort_Fixed_Control_swigregister = _lidort_interface_types.Lidort_Fixed_Control_swigregister
 Lidort_Fixed_Control_swigregister(Lidort_Fixed_Control)
 
 class Lidort_Fixed_Sunrays(Lidort_Structure):
+    """
+
+    C++ includes: lidort_interface_types.h
+
+    """
+
     __swig_setmethods__ = {}
     for _s in [Lidort_Structure]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -1575,6 +2994,11 @@ class Lidort_Fixed_Sunrays(Lidort_Structure):
     __repr__ = _swig_repr
 
     def __init__(self, *args):
+        """
+
+        FullPhysics::Lidort_Fixed_Sunrays::Lidort_Fixed_Sunrays(void *allocated_f_type_c)
+
+        """
         this = _lidort_interface_types.new_Lidort_Fixed_Sunrays(*args)
         try:
             self.this.append(this)
@@ -1584,14 +3008,32 @@ class Lidort_Fixed_Sunrays(Lidort_Structure):
     __del__ = lambda self: None
 
     def ts_flux_factor(self, *args):
+        """
+
+        void FullPhysics::Lidort_Fixed_Sunrays::ts_flux_factor(const double &ts_flux_factor_in)
+
+        """
         return _lidort_interface_types.Lidort_Fixed_Sunrays_ts_flux_factor(self, *args)
 
+
     def print_desc(self, output_stream):
+        """
+
+        virtual void FullPhysics::Lidort_Fixed_Sunrays::print(std::ostream &output_stream) const
+
+        """
         return _lidort_interface_types.Lidort_Fixed_Sunrays_print_desc(self, output_stream)
+
 Lidort_Fixed_Sunrays_swigregister = _lidort_interface_types.Lidort_Fixed_Sunrays_swigregister
 Lidort_Fixed_Sunrays_swigregister(Lidort_Fixed_Sunrays)
 
 class Lidort_Fixed_Uservalues(Lidort_Structure):
+    """
+
+    C++ includes: lidort_interface_types.h
+
+    """
+
     __swig_setmethods__ = {}
     for _s in [Lidort_Structure]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -1603,6 +3045,11 @@ class Lidort_Fixed_Uservalues(Lidort_Structure):
     __repr__ = _swig_repr
 
     def __init__(self, *args):
+        """
+
+        FullPhysics::Lidort_Fixed_Uservalues::Lidort_Fixed_Uservalues(void *allocated_f_type_c)
+
+        """
         this = _lidort_interface_types.new_Lidort_Fixed_Uservalues(*args)
         try:
             self.this.append(this)
@@ -1612,17 +3059,41 @@ class Lidort_Fixed_Uservalues(Lidort_Structure):
     __del__ = lambda self: None
 
     def ts_n_user_streams(self, *args):
+        """
+
+        void FullPhysics::Lidort_Fixed_Uservalues::ts_n_user_streams(const int &ts_n_user_streams_in)
+
+        """
         return _lidort_interface_types.Lidort_Fixed_Uservalues_ts_n_user_streams(self, *args)
 
+
     def ts_n_user_levels(self, *args):
+        """
+
+        void FullPhysics::Lidort_Fixed_Uservalues::ts_n_user_levels(const int &ts_n_user_levels_in)
+
+        """
         return _lidort_interface_types.Lidort_Fixed_Uservalues_ts_n_user_levels(self, *args)
 
+
     def print_desc(self, output_stream):
+        """
+
+        virtual void FullPhysics::Lidort_Fixed_Uservalues::print(std::ostream &output_stream) const
+
+        """
         return _lidort_interface_types.Lidort_Fixed_Uservalues_print_desc(self, output_stream)
+
 Lidort_Fixed_Uservalues_swigregister = _lidort_interface_types.Lidort_Fixed_Uservalues_swigregister
 Lidort_Fixed_Uservalues_swigregister(Lidort_Fixed_Uservalues)
 
 class Lidort_Fixed_Chapman(Lidort_Structure):
+    """
+
+    C++ includes: lidort_interface_types.h
+
+    """
+
     __swig_setmethods__ = {}
     for _s in [Lidort_Structure]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -1634,6 +3105,11 @@ class Lidort_Fixed_Chapman(Lidort_Structure):
     __repr__ = _swig_repr
 
     def __init__(self, *args):
+        """
+
+        FullPhysics::Lidort_Fixed_Chapman::Lidort_Fixed_Chapman(void *allocated_f_type_c)
+
+        """
         this = _lidort_interface_types.new_Lidort_Fixed_Chapman(*args)
         try:
             self.this.append(this)
@@ -1643,26 +3119,68 @@ class Lidort_Fixed_Chapman(Lidort_Structure):
     __del__ = lambda self: None
 
     def ts_height_grid(self, *args):
+        """
+
+        void FullPhysics::Lidort_Fixed_Chapman::ts_height_grid(const blitz::Array< double, 1 > &ts_height_grid_in)
+
+        """
         return _lidort_interface_types.Lidort_Fixed_Chapman_ts_height_grid(self, *args)
 
+
     def ts_pressure_grid(self, *args):
+        """
+
+        void FullPhysics::Lidort_Fixed_Chapman::ts_pressure_grid(const blitz::Array< double, 1 > &ts_pressure_grid_in)
+
+        """
         return _lidort_interface_types.Lidort_Fixed_Chapman_ts_pressure_grid(self, *args)
 
+
     def ts_temperature_grid(self, *args):
+        """
+
+        void FullPhysics::Lidort_Fixed_Chapman::ts_temperature_grid(const blitz::Array< double, 1 > &ts_temperature_grid_in)
+
+        """
         return _lidort_interface_types.Lidort_Fixed_Chapman_ts_temperature_grid(self, *args)
 
+
     def ts_finegrid(self, *args):
+        """
+
+        void FullPhysics::Lidort_Fixed_Chapman::ts_finegrid(const blitz::Array< int, 1 > &ts_finegrid_in)
+
+        """
         return _lidort_interface_types.Lidort_Fixed_Chapman_ts_finegrid(self, *args)
 
+
     def ts_rfindex_parameter(self, *args):
+        """
+
+        void FullPhysics::Lidort_Fixed_Chapman::ts_rfindex_parameter(const double &ts_rfindex_parameter_in)
+
+        """
         return _lidort_interface_types.Lidort_Fixed_Chapman_ts_rfindex_parameter(self, *args)
 
+
     def print_desc(self, output_stream):
+        """
+
+        virtual void FullPhysics::Lidort_Fixed_Chapman::print(std::ostream &output_stream) const
+
+        """
         return _lidort_interface_types.Lidort_Fixed_Chapman_print_desc(self, output_stream)
+
 Lidort_Fixed_Chapman_swigregister = _lidort_interface_types.Lidort_Fixed_Chapman_swigregister
 Lidort_Fixed_Chapman_swigregister(Lidort_Fixed_Chapman)
 
 class Lidort_Fixed_Optical(Lidort_Structure):
+    """
+
+    C++ includes: lidort_interface_types.h
+
+    """
+
     __swig_setmethods__ = {}
     for _s in [Lidort_Structure]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -1674,6 +3192,11 @@ class Lidort_Fixed_Optical(Lidort_Structure):
     __repr__ = _swig_repr
 
     def __init__(self, *args):
+        """
+
+        FullPhysics::Lidort_Fixed_Optical::Lidort_Fixed_Optical(void *allocated_f_type_c)
+
+        """
         this = _lidort_interface_types.new_Lidort_Fixed_Optical(*args)
         try:
             self.this.append(this)
@@ -1683,26 +3206,68 @@ class Lidort_Fixed_Optical(Lidort_Structure):
     __del__ = lambda self: None
 
     def ts_deltau_vert_input(self, *args):
+        """
+
+        void FullPhysics::Lidort_Fixed_Optical::ts_deltau_vert_input(const blitz::Array< double, 2 > &ts_deltau_vert_input_in)
+
+        """
         return _lidort_interface_types.Lidort_Fixed_Optical_ts_deltau_vert_input(self, *args)
 
+
     def ts_phasmoms_total_input(self, *args):
+        """
+
+        void FullPhysics::Lidort_Fixed_Optical::ts_phasmoms_total_input(const blitz::Array< double, 3 > &ts_phasmoms_total_input_in)
+
+        """
         return _lidort_interface_types.Lidort_Fixed_Optical_ts_phasmoms_total_input(self, *args)
 
+
     def ts_thermal_bb_input(self, *args):
+        """
+
+        void FullPhysics::Lidort_Fixed_Optical::ts_thermal_bb_input(const blitz::Array< double, 2 > &ts_thermal_bb_input_in)
+
+        """
         return _lidort_interface_types.Lidort_Fixed_Optical_ts_thermal_bb_input(self, *args)
 
+
     def ts_lambertian_albedo(self, *args):
+        """
+
+        void FullPhysics::Lidort_Fixed_Optical::ts_lambertian_albedo(const blitz::Array< double, 1 > &ts_lambertian_albedo_in)
+
+        """
         return _lidort_interface_types.Lidort_Fixed_Optical_ts_lambertian_albedo(self, *args)
 
+
     def ts_surface_bb_input(self, *args):
+        """
+
+        void FullPhysics::Lidort_Fixed_Optical::ts_surface_bb_input(const blitz::Array< double, 1 > &ts_surface_bb_input_in)
+
+        """
         return _lidort_interface_types.Lidort_Fixed_Optical_ts_surface_bb_input(self, *args)
 
+
     def print_desc(self, output_stream):
+        """
+
+        virtual void FullPhysics::Lidort_Fixed_Optical::print(std::ostream &output_stream) const
+
+        """
         return _lidort_interface_types.Lidort_Fixed_Optical_print_desc(self, output_stream)
+
 Lidort_Fixed_Optical_swigregister = _lidort_interface_types.Lidort_Fixed_Optical_swigregister
 Lidort_Fixed_Optical_swigregister(Lidort_Fixed_Optical)
 
 class Lidort_Fixed_Inputs(Lidort_Structure):
+    """
+
+    C++ includes: lidort_interface_types.h
+
+    """
+
     __swig_setmethods__ = {}
     for _s in [Lidort_Structure]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -1714,6 +3279,11 @@ class Lidort_Fixed_Inputs(Lidort_Structure):
     __repr__ = _swig_repr
 
     def __init__(self, *args):
+        """
+
+        FullPhysics::Lidort_Fixed_Inputs::Lidort_Fixed_Inputs(void *allocated_f_type_c)
+
+        """
         this = _lidort_interface_types.new_Lidort_Fixed_Inputs(*args)
         try:
             self.this.append(this)
@@ -1723,29 +3293,77 @@ class Lidort_Fixed_Inputs(Lidort_Structure):
     __del__ = lambda self: None
 
     def f_bool(self, *args):
+        """
+
+        void FullPhysics::Lidort_Fixed_Inputs::f_bool(Lidort_Fixed_Boolean &bool_in)
+
+        """
         return _lidort_interface_types.Lidort_Fixed_Inputs_f_bool(self, *args)
 
+
     def cont(self, *args):
+        """
+
+        void FullPhysics::Lidort_Fixed_Inputs::cont(Lidort_Fixed_Control &cont_in)
+
+        """
         return _lidort_interface_types.Lidort_Fixed_Inputs_cont(self, *args)
 
+
     def sunrays(self, *args):
+        """
+
+        void FullPhysics::Lidort_Fixed_Inputs::sunrays(Lidort_Fixed_Sunrays &sunrays_in)
+
+        """
         return _lidort_interface_types.Lidort_Fixed_Inputs_sunrays(self, *args)
 
+
     def userval(self, *args):
+        """
+
+        void FullPhysics::Lidort_Fixed_Inputs::userval(Lidort_Fixed_Uservalues &userval_in)
+
+        """
         return _lidort_interface_types.Lidort_Fixed_Inputs_userval(self, *args)
 
+
     def chapman(self, *args):
+        """
+
+        void FullPhysics::Lidort_Fixed_Inputs::chapman(Lidort_Fixed_Chapman &chapman_in)
+
+        """
         return _lidort_interface_types.Lidort_Fixed_Inputs_chapman(self, *args)
 
+
     def optical(self, *args):
+        """
+
+        void FullPhysics::Lidort_Fixed_Inputs::optical(Lidort_Fixed_Optical &optical_in)
+
+        """
         return _lidort_interface_types.Lidort_Fixed_Inputs_optical(self, *args)
 
+
     def print_desc(self, output_stream):
+        """
+
+        virtual void FullPhysics::Lidort_Fixed_Inputs::print(std::ostream &output_stream) const
+
+        """
         return _lidort_interface_types.Lidort_Fixed_Inputs_print_desc(self, output_stream)
+
 Lidort_Fixed_Inputs_swigregister = _lidort_interface_types.Lidort_Fixed_Inputs_swigregister
 Lidort_Fixed_Inputs_swigregister(Lidort_Fixed_Inputs)
 
 class Lidort_Modified_Boolean(Lidort_Structure):
+    """
+
+    C++ includes: lidort_interface_types.h
+
+    """
+
     __swig_setmethods__ = {}
     for _s in [Lidort_Structure]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -1757,6 +3375,11 @@ class Lidort_Modified_Boolean(Lidort_Structure):
     __repr__ = _swig_repr
 
     def __init__(self, *args):
+        """
+
+        FullPhysics::Lidort_Modified_Boolean::Lidort_Modified_Boolean(void *allocated_f_type_c)
+
+        """
         this = _lidort_interface_types.new_Lidort_Modified_Boolean(*args)
         try:
             self.this.append(this)
@@ -1766,62 +3389,176 @@ class Lidort_Modified_Boolean(Lidort_Structure):
     __del__ = lambda self: None
 
     def ts_do_sscorr_nadir(self, *args):
+        """
+
+        void FullPhysics::Lidort_Modified_Boolean::ts_do_sscorr_nadir(const bool &ts_do_sscorr_nadir_in)
+
+        """
         return _lidort_interface_types.Lidort_Modified_Boolean_ts_do_sscorr_nadir(self, *args)
 
+
     def ts_do_sscorr_outgoing(self, *args):
+        """
+
+        void FullPhysics::Lidort_Modified_Boolean::ts_do_sscorr_outgoing(const bool &ts_do_sscorr_outgoing_in)
+
+        """
         return _lidort_interface_types.Lidort_Modified_Boolean_ts_do_sscorr_outgoing(self, *args)
 
+
     def ts_do_double_convtest(self, *args):
+        """
+
+        void FullPhysics::Lidort_Modified_Boolean::ts_do_double_convtest(const bool &ts_do_double_convtest_in)
+
+        """
         return _lidort_interface_types.Lidort_Modified_Boolean_ts_do_double_convtest(self, *args)
 
+
     def ts_do_solar_sources(self, *args):
+        """
+
+        void FullPhysics::Lidort_Modified_Boolean::ts_do_solar_sources(const bool &ts_do_solar_sources_in)
+
+        """
         return _lidort_interface_types.Lidort_Modified_Boolean_ts_do_solar_sources(self, *args)
 
+
     def ts_do_refractive_geometry(self, *args):
+        """
+
+        void FullPhysics::Lidort_Modified_Boolean::ts_do_refractive_geometry(const bool &ts_do_refractive_geometry_in)
+
+        """
         return _lidort_interface_types.Lidort_Modified_Boolean_ts_do_refractive_geometry(self, *args)
 
+
     def ts_do_chapman_function(self, *args):
+        """
+
+        void FullPhysics::Lidort_Modified_Boolean::ts_do_chapman_function(const bool &ts_do_chapman_function_in)
+
+        """
         return _lidort_interface_types.Lidort_Modified_Boolean_ts_do_chapman_function(self, *args)
 
+
     def ts_do_rayleigh_only(self, *args):
+        """
+
+        void FullPhysics::Lidort_Modified_Boolean::ts_do_rayleigh_only(const bool &ts_do_rayleigh_only_in)
+
+        """
         return _lidort_interface_types.Lidort_Modified_Boolean_ts_do_rayleigh_only(self, *args)
 
+
     def ts_do_isotropic_only(self, *args):
+        """
+
+        void FullPhysics::Lidort_Modified_Boolean::ts_do_isotropic_only(const bool &ts_do_isotropic_only_in)
+
+        """
         return _lidort_interface_types.Lidort_Modified_Boolean_ts_do_isotropic_only(self, *args)
 
+
     def ts_do_no_azimuth(self, *args):
+        """
+
+        void FullPhysics::Lidort_Modified_Boolean::ts_do_no_azimuth(const bool &ts_do_no_azimuth_in)
+
+        """
         return _lidort_interface_types.Lidort_Modified_Boolean_ts_do_no_azimuth(self, *args)
 
+
     def ts_do_all_fourier(self, *args):
+        """
+
+        void FullPhysics::Lidort_Modified_Boolean::ts_do_all_fourier(const bool &ts_do_all_fourier_in)
+
+        """
         return _lidort_interface_types.Lidort_Modified_Boolean_ts_do_all_fourier(self, *args)
 
+
     def ts_do_deltam_scaling(self, *args):
+        """
+
+        void FullPhysics::Lidort_Modified_Boolean::ts_do_deltam_scaling(const bool &ts_do_deltam_scaling_in)
+
+        """
         return _lidort_interface_types.Lidort_Modified_Boolean_ts_do_deltam_scaling(self, *args)
 
+
     def ts_do_solution_saving(self, *args):
+        """
+
+        void FullPhysics::Lidort_Modified_Boolean::ts_do_solution_saving(const bool &ts_do_solution_saving_in)
+
+        """
         return _lidort_interface_types.Lidort_Modified_Boolean_ts_do_solution_saving(self, *args)
 
+
     def ts_do_bvp_telescoping(self, *args):
+        """
+
+        void FullPhysics::Lidort_Modified_Boolean::ts_do_bvp_telescoping(const bool &ts_do_bvp_telescoping_in)
+
+        """
         return _lidort_interface_types.Lidort_Modified_Boolean_ts_do_bvp_telescoping(self, *args)
 
+
     def ts_do_user_streams(self, *args):
+        """
+
+        void FullPhysics::Lidort_Modified_Boolean::ts_do_user_streams(const bool &ts_do_user_streams_in)
+
+        """
         return _lidort_interface_types.Lidort_Modified_Boolean_ts_do_user_streams(self, *args)
 
+
     def ts_do_additional_mvout(self, *args):
+        """
+
+        void FullPhysics::Lidort_Modified_Boolean::ts_do_additional_mvout(const bool &ts_do_additional_mvout_in)
+
+        """
         return _lidort_interface_types.Lidort_Modified_Boolean_ts_do_additional_mvout(self, *args)
 
+
     def ts_do_mvout_only(self, *args):
+        """
+
+        void FullPhysics::Lidort_Modified_Boolean::ts_do_mvout_only(const bool &ts_do_mvout_only_in)
+
+        """
         return _lidort_interface_types.Lidort_Modified_Boolean_ts_do_mvout_only(self, *args)
 
+
     def ts_do_thermal_transonly(self, *args):
+        """
+
+        void FullPhysics::Lidort_Modified_Boolean::ts_do_thermal_transonly(const bool &ts_do_thermal_transonly_in)
+
+        """
         return _lidort_interface_types.Lidort_Modified_Boolean_ts_do_thermal_transonly(self, *args)
 
+
     def print_desc(self, output_stream):
+        """
+
+        virtual void FullPhysics::Lidort_Modified_Boolean::print(std::ostream &output_stream) const
+
+        """
         return _lidort_interface_types.Lidort_Modified_Boolean_print_desc(self, output_stream)
+
 Lidort_Modified_Boolean_swigregister = _lidort_interface_types.Lidort_Modified_Boolean_swigregister
 Lidort_Modified_Boolean_swigregister(Lidort_Modified_Boolean)
 
 class Lidort_Modified_Control(Lidort_Structure):
+    """
+
+    C++ includes: lidort_interface_types.h
+
+    """
+
     __swig_setmethods__ = {}
     for _s in [Lidort_Structure]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -1833,6 +3570,11 @@ class Lidort_Modified_Control(Lidort_Structure):
     __repr__ = _swig_repr
 
     def __init__(self, *args):
+        """
+
+        FullPhysics::Lidort_Modified_Control::Lidort_Modified_Control(void *allocated_f_type_c)
+
+        """
         this = _lidort_interface_types.new_Lidort_Modified_Control(*args)
         try:
             self.this.append(this)
@@ -1842,14 +3584,32 @@ class Lidort_Modified_Control(Lidort_Structure):
     __del__ = lambda self: None
 
     def ts_nmoments_input(self, *args):
+        """
+
+        void FullPhysics::Lidort_Modified_Control::ts_nmoments_input(const int &ts_nmoments_input_in)
+
+        """
         return _lidort_interface_types.Lidort_Modified_Control_ts_nmoments_input(self, *args)
 
+
     def print_desc(self, output_stream):
+        """
+
+        virtual void FullPhysics::Lidort_Modified_Control::print(std::ostream &output_stream) const
+
+        """
         return _lidort_interface_types.Lidort_Modified_Control_print_desc(self, output_stream)
+
 Lidort_Modified_Control_swigregister = _lidort_interface_types.Lidort_Modified_Control_swigregister
 Lidort_Modified_Control_swigregister(Lidort_Modified_Control)
 
 class Lidort_Modified_Sunrays(Lidort_Structure):
+    """
+
+    C++ includes: lidort_interface_types.h
+
+    """
+
     __swig_setmethods__ = {}
     for _s in [Lidort_Structure]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -1861,6 +3621,11 @@ class Lidort_Modified_Sunrays(Lidort_Structure):
     __repr__ = _swig_repr
 
     def __init__(self, *args):
+        """
+
+        FullPhysics::Lidort_Modified_Sunrays::Lidort_Modified_Sunrays(void *allocated_f_type_c)
+
+        """
         this = _lidort_interface_types.new_Lidort_Modified_Sunrays(*args)
         try:
             self.this.append(this)
@@ -1870,17 +3635,41 @@ class Lidort_Modified_Sunrays(Lidort_Structure):
     __del__ = lambda self: None
 
     def ts_nbeams(self, *args):
+        """
+
+        void FullPhysics::Lidort_Modified_Sunrays::ts_nbeams(const int &ts_nbeams_in)
+
+        """
         return _lidort_interface_types.Lidort_Modified_Sunrays_ts_nbeams(self, *args)
 
+
     def ts_beam_szas(self, *args):
+        """
+
+        void FullPhysics::Lidort_Modified_Sunrays::ts_beam_szas(const blitz::Array< double, 1 > &ts_beam_szas_in)
+
+        """
         return _lidort_interface_types.Lidort_Modified_Sunrays_ts_beam_szas(self, *args)
 
+
     def print_desc(self, output_stream):
+        """
+
+        virtual void FullPhysics::Lidort_Modified_Sunrays::print(std::ostream &output_stream) const
+
+        """
         return _lidort_interface_types.Lidort_Modified_Sunrays_print_desc(self, output_stream)
+
 Lidort_Modified_Sunrays_swigregister = _lidort_interface_types.Lidort_Modified_Sunrays_swigregister
 Lidort_Modified_Sunrays_swigregister(Lidort_Modified_Sunrays)
 
 class Lidort_Modified_Uservalues(Lidort_Structure):
+    """
+
+    C++ includes: lidort_interface_types.h
+
+    """
+
     __swig_setmethods__ = {}
     for _s in [Lidort_Structure]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -1892,6 +3681,11 @@ class Lidort_Modified_Uservalues(Lidort_Structure):
     __repr__ = _swig_repr
 
     def __init__(self, *args):
+        """
+
+        FullPhysics::Lidort_Modified_Uservalues::Lidort_Modified_Uservalues(void *allocated_f_type_c)
+
+        """
         this = _lidort_interface_types.new_Lidort_Modified_Uservalues(*args)
         try:
             self.this.append(this)
@@ -1901,26 +3695,68 @@ class Lidort_Modified_Uservalues(Lidort_Structure):
     __del__ = lambda self: None
 
     def ts_n_user_relazms(self, *args):
+        """
+
+        void FullPhysics::Lidort_Modified_Uservalues::ts_n_user_relazms(const int &ts_n_user_relazms_in)
+
+        """
         return _lidort_interface_types.Lidort_Modified_Uservalues_ts_n_user_relazms(self, *args)
 
+
     def ts_user_relazms(self, *args):
+        """
+
+        void FullPhysics::Lidort_Modified_Uservalues::ts_user_relazms(const blitz::Array< double, 1 > &ts_user_relazms_in)
+
+        """
         return _lidort_interface_types.Lidort_Modified_Uservalues_ts_user_relazms(self, *args)
 
+
     def ts_user_angles_input(self, *args):
+        """
+
+        void FullPhysics::Lidort_Modified_Uservalues::ts_user_angles_input(const blitz::Array< double, 1 > &ts_user_angles_input_in)
+
+        """
         return _lidort_interface_types.Lidort_Modified_Uservalues_ts_user_angles_input(self, *args)
 
+
     def ts_user_levels(self, *args):
+        """
+
+        void FullPhysics::Lidort_Modified_Uservalues::ts_user_levels(const blitz::Array< double, 1 > &ts_user_levels_in)
+
+        """
         return _lidort_interface_types.Lidort_Modified_Uservalues_ts_user_levels(self, *args)
 
+
     def ts_geometry_specheight(self, *args):
+        """
+
+        void FullPhysics::Lidort_Modified_Uservalues::ts_geometry_specheight(const double &ts_geometry_specheight_in)
+
+        """
         return _lidort_interface_types.Lidort_Modified_Uservalues_ts_geometry_specheight(self, *args)
 
+
     def print_desc(self, output_stream):
+        """
+
+        virtual void FullPhysics::Lidort_Modified_Uservalues::print(std::ostream &output_stream) const
+
+        """
         return _lidort_interface_types.Lidort_Modified_Uservalues_print_desc(self, output_stream)
+
 Lidort_Modified_Uservalues_swigregister = _lidort_interface_types.Lidort_Modified_Uservalues_swigregister
 Lidort_Modified_Uservalues_swigregister(Lidort_Modified_Uservalues)
 
 class Lidort_Modified_Chapman(Lidort_Structure):
+    """
+
+    C++ includes: lidort_interface_types.h
+
+    """
+
     __swig_setmethods__ = {}
     for _s in [Lidort_Structure]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -1932,6 +3768,11 @@ class Lidort_Modified_Chapman(Lidort_Structure):
     __repr__ = _swig_repr
 
     def __init__(self, *args):
+        """
+
+        FullPhysics::Lidort_Modified_Chapman::Lidort_Modified_Chapman(void *allocated_f_type_c)
+
+        """
         this = _lidort_interface_types.new_Lidort_Modified_Chapman(*args)
         try:
             self.this.append(this)
@@ -1941,14 +3782,32 @@ class Lidort_Modified_Chapman(Lidort_Structure):
     __del__ = lambda self: None
 
     def ts_earth_radius(self, *args):
+        """
+
+        void FullPhysics::Lidort_Modified_Chapman::ts_earth_radius(const double &ts_earth_radius_in)
+
+        """
         return _lidort_interface_types.Lidort_Modified_Chapman_ts_earth_radius(self, *args)
 
+
     def print_desc(self, output_stream):
+        """
+
+        virtual void FullPhysics::Lidort_Modified_Chapman::print(std::ostream &output_stream) const
+
+        """
         return _lidort_interface_types.Lidort_Modified_Chapman_print_desc(self, output_stream)
+
 Lidort_Modified_Chapman_swigregister = _lidort_interface_types.Lidort_Modified_Chapman_swigregister
 Lidort_Modified_Chapman_swigregister(Lidort_Modified_Chapman)
 
 class Lidort_Modified_Optical(Lidort_Structure):
+    """
+
+    C++ includes: lidort_interface_types.h
+
+    """
+
     __swig_setmethods__ = {}
     for _s in [Lidort_Structure]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -1960,6 +3819,11 @@ class Lidort_Modified_Optical(Lidort_Structure):
     __repr__ = _swig_repr
 
     def __init__(self, *args):
+        """
+
+        FullPhysics::Lidort_Modified_Optical::Lidort_Modified_Optical(void *allocated_f_type_c)
+
+        """
         this = _lidort_interface_types.new_Lidort_Modified_Optical(*args)
         try:
             self.this.append(this)
@@ -1969,14 +3833,32 @@ class Lidort_Modified_Optical(Lidort_Structure):
     __del__ = lambda self: None
 
     def ts_omega_total_input(self, *args):
+        """
+
+        void FullPhysics::Lidort_Modified_Optical::ts_omega_total_input(const blitz::Array< double, 2 > &ts_omega_total_input_in)
+
+        """
         return _lidort_interface_types.Lidort_Modified_Optical_ts_omega_total_input(self, *args)
 
+
     def print_desc(self, output_stream):
+        """
+
+        virtual void FullPhysics::Lidort_Modified_Optical::print(std::ostream &output_stream) const
+
+        """
         return _lidort_interface_types.Lidort_Modified_Optical_print_desc(self, output_stream)
+
 Lidort_Modified_Optical_swigregister = _lidort_interface_types.Lidort_Modified_Optical_swigregister
 Lidort_Modified_Optical_swigregister(Lidort_Modified_Optical)
 
 class Lidort_Modified_Inputs(Lidort_Structure):
+    """
+
+    C++ includes: lidort_interface_types.h
+
+    """
+
     __swig_setmethods__ = {}
     for _s in [Lidort_Structure]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -1988,6 +3870,11 @@ class Lidort_Modified_Inputs(Lidort_Structure):
     __repr__ = _swig_repr
 
     def __init__(self, *args):
+        """
+
+        FullPhysics::Lidort_Modified_Inputs::Lidort_Modified_Inputs(void *allocated_f_type_c)
+
+        """
         this = _lidort_interface_types.new_Lidort_Modified_Inputs(*args)
         try:
             self.this.append(this)
@@ -1997,25 +3884,67 @@ class Lidort_Modified_Inputs(Lidort_Structure):
     __del__ = lambda self: None
 
     def mbool(self, *args):
+        """
+
+        void FullPhysics::Lidort_Modified_Inputs::mbool(Lidort_Modified_Boolean &mbool_in)
+
+        """
         return _lidort_interface_types.Lidort_Modified_Inputs_mbool(self, *args)
 
+
     def mcont(self, *args):
+        """
+
+        void FullPhysics::Lidort_Modified_Inputs::mcont(Lidort_Modified_Control &mcont_in)
+
+        """
         return _lidort_interface_types.Lidort_Modified_Inputs_mcont(self, *args)
 
+
     def msunrays(self, *args):
+        """
+
+        void FullPhysics::Lidort_Modified_Inputs::msunrays(Lidort_Modified_Sunrays &msunrays_in)
+
+        """
         return _lidort_interface_types.Lidort_Modified_Inputs_msunrays(self, *args)
 
+
     def muserval(self, *args):
+        """
+
+        void FullPhysics::Lidort_Modified_Inputs::muserval(Lidort_Modified_Uservalues &muserval_in)
+
+        """
         return _lidort_interface_types.Lidort_Modified_Inputs_muserval(self, *args)
 
+
     def mchapman(self, *args):
+        """
+
+        void FullPhysics::Lidort_Modified_Inputs::mchapman(Lidort_Modified_Chapman &mchapman_in)
+
+        """
         return _lidort_interface_types.Lidort_Modified_Inputs_mchapman(self, *args)
 
+
     def moptical(self, *args):
+        """
+
+        void FullPhysics::Lidort_Modified_Inputs::moptical(Lidort_Modified_Optical &moptical_in)
+
+        """
         return _lidort_interface_types.Lidort_Modified_Inputs_moptical(self, *args)
 
+
     def print_desc(self, output_stream):
+        """
+
+        virtual void FullPhysics::Lidort_Modified_Inputs::print(std::ostream &output_stream) const
+
+        """
         return _lidort_interface_types.Lidort_Modified_Inputs_print_desc(self, output_stream)
+
 Lidort_Modified_Inputs_swigregister = _lidort_interface_types.Lidort_Modified_Inputs_swigregister
 Lidort_Modified_Inputs_swigregister(Lidort_Modified_Inputs)
 

@@ -5142,8 +5142,16 @@ SWIGINTERN PyObject *OcoForwardModelOutput_swigregister(PyObject *SWIGUNUSEDPARM
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"OcoForwardModelOutput_register_output", _wrap_OcoForwardModelOutput_register_output, METH_VARARGS, NULL},
-	 { (char *)"delete_OcoForwardModelOutput", _wrap_delete_OcoForwardModelOutput, METH_VARARGS, NULL},
+	 { (char *)"OcoForwardModelOutput_register_output", _wrap_OcoForwardModelOutput_register_output, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::OcoForwardModelOutput::register_output(const boost::shared_ptr< Output > &out) const\n"
+		"\n"
+		""},
+	 { (char *)"delete_OcoForwardModelOutput", _wrap_delete_OcoForwardModelOutput, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::OcoForwardModelOutput::~OcoForwardModelOutput()\n"
+		"\n"
+		""},
 	 { (char *)"OcoForwardModelOutput_swigregister", OcoForwardModelOutput_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };

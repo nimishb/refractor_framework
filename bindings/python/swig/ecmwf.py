@@ -122,6 +122,18 @@ def _new_from_set(cls, version, *args):
 
 import full_physics_swig.generic_object
 class Ecmwf(full_physics_swig.generic_object.GenericObject):
+    """
+
+    This class is used to read some of the fields from the ECMWF file,
+    which can then be used for things such as the apriori.
+
+    Since resampled ECMWF files can differ between instrument types, the
+    read routines are pure virtual and need to be implemented for the
+    specifics of the instrument specific ECMWF files.
+
+    C++ includes: ecmwf.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.generic_object.GenericObject]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -138,31 +150,94 @@ class Ecmwf(full_physics_swig.generic_object.GenericObject):
     __del__ = lambda self: None
 
     def specific_humidity(self, *args):
+        """
+
+        virtual ArrayAd<double, 1> FullPhysics::Ecmwf::specific_humidity(const ArrayAd< double, 1 > &Pressure_level) const =0
+
+        """
         return _ecmwf.Ecmwf_specific_humidity(self, *args)
 
+
     def h2o_vmr(self, *args):
+        """
+
+        ArrayAd<double, 1> FullPhysics::Ecmwf::h2o_vmr(const ArrayAd< double, 1 > &Pressure_level) const
+
+        """
         return _ecmwf.Ecmwf_h2o_vmr(self, *args)
 
+
     def ozone_mmr(self, *args):
+        """
+
+        virtual ArrayAd<double, 1> FullPhysics::Ecmwf::ozone_mmr(const ArrayAd< double, 1 > &Pressure_level) const
+
+        """
         return _ecmwf.Ecmwf_ozone_mmr(self, *args)
 
+
     def ozone_vmr(self, *args):
+        """
+
+        ArrayAd<double, 1> FullPhysics::Ecmwf::ozone_vmr(const ArrayAd< double, 1 > &Pressure_level) const
+
+        """
         return _ecmwf.Ecmwf_ozone_vmr(self, *args)
 
+
     def temperature_grid(self):
+        """
+
+        virtual void FullPhysics::Ecmwf::temperature_grid(blitz::Array< double, 1 > &Pressure, blitz::Array< double, 1 > &T)
+        const =0
+        Temperature grid on the ECMWF pressure grid.
+
+        The temperature is in Kelvin, and the Pressure is in pascals. 
+        """
         return _ecmwf.Ecmwf_temperature_grid(self)
 
+
     def specific_humidity_grid(self):
+        """
+
+        virtual void FullPhysics::Ecmwf::specific_humidity_grid(blitz::Array< double, 1 > &Pressure, blitz::Array< double, 1 > &H)
+        const =0
+        Humidity on the ECMWF pressure grid.
+
+        Pressure is in pascals. 
+        """
         return _ecmwf.Ecmwf_specific_humidity_grid(self)
 
+
     def ozone_mmr_grid(self):
+        """
+
+        virtual void FullPhysics::Ecmwf::ozone_mmr_grid(blitz::Array< double, 1 > &Pressure, blitz::Array< double, 1 > &H)
+        const
+        Ozone mass mixing ratio on the ECMWF pressure grid.
+
+        Pressure is in pascals. 
+        """
         return _ecmwf.Ecmwf_ozone_mmr_grid(self)
 
+
     def temperature(self, *args):
+        """
+
+        virtual ArrayAd<double, 1> FullPhysics::Ecmwf::temperature(const ArrayAd< double, 1 > &Pressure_level) const =0
+
+        """
         return _ecmwf.Ecmwf_temperature(self, *args)
 
+
     def _v_surface_pressure(self):
+        """
+
+        virtual double FullPhysics::Ecmwf::surface_pressure() const =0
+        Get the surface pressure from the Ecmwf file. 
+        """
         return _ecmwf.Ecmwf__v_surface_pressure(self)
+
 
     @property
     def surface_pressure(self):
@@ -170,7 +245,13 @@ class Ecmwf(full_physics_swig.generic_object.GenericObject):
 
 
     def _v_windspeed(self):
+        """
+
+        virtual double FullPhysics::Ecmwf::windspeed() const
+        Calculate windspeed magnitude from windspeed components. 
+        """
         return _ecmwf.Ecmwf__v_windspeed(self)
+
 
     @property
     def windspeed(self):
@@ -178,7 +259,13 @@ class Ecmwf(full_physics_swig.generic_object.GenericObject):
 
 
     def _v_windspeed_u(self):
+        """
+
+        virtual double FullPhysics::Ecmwf::windspeed_u() const =0
+        The U component windspeed from the Ecmwf file. 
+        """
         return _ecmwf.Ecmwf__v_windspeed_u(self)
+
 
     @property
     def windspeed_u(self):
@@ -186,7 +273,13 @@ class Ecmwf(full_physics_swig.generic_object.GenericObject):
 
 
     def _v_windspeed_v(self):
+        """
+
+        virtual double FullPhysics::Ecmwf::windspeed_v() const =0
+        The V component windspeed from the Ecmwf file. 
+        """
         return _ecmwf.Ecmwf__v_windspeed_v(self)
+
 
     @property
     def windspeed_v(self):

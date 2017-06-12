@@ -9364,11 +9364,40 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"SwigPyIterator___sub__", _wrap_SwigPyIterator___sub__, METH_VARARGS, NULL},
 	 { (char *)"SwigPyIterator_swigregister", SwigPyIterator_swigregister, METH_VARARGS, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"delete_RegisterOutputBase", _wrap_delete_RegisterOutputBase, METH_VARARGS, NULL},
+	 { (char *)"delete_RegisterOutputBase", _wrap_delete_RegisterOutputBase, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::RegisterOutputBase::~RegisterOutputBase()\n"
+		"\n"
+		""},
 	 { (char *)"RegisterOutputBase___str__", _wrap_RegisterOutputBase___str__, METH_VARARGS, NULL},
-	 { (char *)"RegisterOutputBase_desc", _wrap_RegisterOutputBase_desc, METH_VARARGS, NULL},
-	 { (char *)"RegisterOutputBase_register_output", _wrap_RegisterOutputBase_register_output, METH_VARARGS, NULL},
-	 { (char *)"RegisterOutputBase_register_output_apriori", _wrap_RegisterOutputBase_register_output_apriori, METH_VARARGS, NULL},
+	 { (char *)"RegisterOutputBase_desc", _wrap_RegisterOutputBase_desc, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual std::string FullPhysics::RegisterOutputBase::desc() const\n"
+		"Description of object, to be printed to stream.\n"
+		"\n"
+		"This gives a cleaner interface for deriving from python. \n"
+		""},
+	 { (char *)"RegisterOutputBase_register_output", _wrap_RegisterOutputBase_register_output, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::RegisterOutputBase::register_output(const boost::shared_ptr< Output > &out) const =0\n"
+		"Register portions of class that will be written to output.\n"
+		"\n"
+		"This is for the final statevector, for classes where apriori and final\n"
+		"are written out different. \n"
+		""},
+	 { (char *)"RegisterOutputBase_register_output_apriori", _wrap_RegisterOutputBase_register_output_apriori, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::RegisterOutputBase::register_output_apriori(const boost::shared_ptr< Output > &out) const\n"
+		"Register apriori portions of class.\n"
+		"\n"
+		"The default is not to have anything written out, but derived classes\n"
+		"can override this.\n"
+		"\n"
+		"Note that by convention that we \"freeze\" the state of the class when\n"
+		"we register the apriori_output. This allows for things like the\n"
+		"StateVector to be changed after wards without changing the apriori\n"
+		"state. \n"
+		""},
 	 { (char *)"new_RegisterOutputBase", _wrap_new_RegisterOutputBase, METH_VARARGS, NULL},
 	 { (char *)"disown_RegisterOutputBase", _wrap_disown_RegisterOutputBase, METH_VARARGS, NULL},
 	 { (char *)"RegisterOutputBase_swigregister", RegisterOutputBase_swigregister, METH_VARARGS, NULL},

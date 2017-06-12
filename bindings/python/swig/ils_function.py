@@ -122,6 +122,19 @@ def _new_from_set(cls, version, *args):
 
 import full_physics_swig.generic_object
 class IlsFunction(full_physics_swig.generic_object.GenericObject):
+    """
+
+    This class models an Instrument Line Shape (ILS) function.
+
+    This returns the response around a given wave number, for a given set
+    of wavenumbers. This class is use by IlsConvolution.
+
+    It is not guaranteed that the function is normalized, the calling
+    class should normalize this if needed.
+
+    C++ includes: ils_function.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.generic_object.GenericObject]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -141,10 +154,40 @@ class IlsFunction(full_physics_swig.generic_object.GenericObject):
         return _ils_function.IlsFunction___str__(self)
 
     def ils(self, wn_center, wn, OUTPUT):
+        """
+
+        virtual void FullPhysics::IlsFunction::ils(const AutoDerivative< double > &wn_center, const blitz::Array<
+        double, 1 > &wn, ArrayAd< double, 1 > &res) const =0
+        Return response function.
+
+        Note that is function turns out to be a bit of a bottle neck because
+        it is called so many times. Most of the time the results are the same
+        size from one call to the next, so we pass in the results rather than
+        having this be a return value like we normally do. This avoids
+        recreating the array multiple times. We resize the output, so it is
+        fine if it doesn't happen to be the final result size. But much of the
+        time we avoid and extra allocation and destruction.
+
+        Parameters:
+        -----------
+
+        wn_center:  The wave number of the center of the response function
+
+        wn:  The wavenumbers to return response function for.
+
+        res:  Return the response function for each of the wn value. 
+        """
         return _ils_function.IlsFunction_ils(self, wn_center, wn, OUTPUT)
 
+
     def _v_band_name(self):
+        """
+
+        virtual std::string FullPhysics::IlsFunction::band_name() const =0
+        Descriptive name of the band. 
+        """
         return _ils_function.IlsFunction__v_band_name(self)
+
 
     @property
     def band_name(self):
@@ -152,7 +195,20 @@ class IlsFunction(full_physics_swig.generic_object.GenericObject):
 
 
     def _v_hdf_band_name(self):
+        """
+
+        virtual std::string FullPhysics::IlsFunction::hdf_band_name() const
+        In general, the name used in HDF files for a particular band is
+        similar but not identical to the more human readable band_name.
+
+        For example, with GOSAT we use the HDF field name "weak_co2", but
+        the band name is "WC-Band". This gives the HDF name to use.
+
+        The default implementation just returns the same string as the band
+        name. 
+        """
         return _ils_function.IlsFunction__v_hdf_band_name(self)
+
 
     @property
     def hdf_band_name(self):

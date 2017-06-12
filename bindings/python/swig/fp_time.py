@@ -129,6 +129,29 @@ def _new_time(pgs):
   return Time.time_pgs(pgs)
 
 class Time(full_physics_swig.generic_object.GenericObject):
+    """
+
+    This is a simple time class.
+
+    There are a few reasonable choices for expressing time information. We
+    could use TAI, GPS, the PGS toolkit. Each of these time system can be
+    related to the other by a constant, since the only difference is the
+    Epoch that time is measure against.
+
+    For simplicity, we just use the standard unix time in seconds from
+    January 1, 1970.
+
+    This class abstracts out the representation we use for time. We supply
+    conversions to the specific time systems for use in the cases that a
+    specific system is needed (e.g., calling a PGS toolkit routine).
+
+    We also supply methods for converting to and from a string
+    representation of the time. We support the standard CCSDS format
+    (e.g., "1996-07-03T04:13:57.987654Z").
+
+    C++ includes: fp_time.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.generic_object.GenericObject]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -138,15 +161,39 @@ class Time(full_physics_swig.generic_object.GenericObject):
         __swig_getmethods__.update(getattr(_s, '__swig_getmethods__', {}))
     __getattr__ = lambda self, name: _swig_getattr(self, Time, name)
     __repr__ = _swig_repr
-    __swig_getmethods__["time_pgs"] = lambda x: _fp_time.Time_time_pgs
+
+    def time_pgs(pgs):
+        """
+
+        static Time FullPhysics::Time::time_pgs(double pgs)
+        Return time from given PGS toolkit time (epoch of 1993-01-01). 
+        """
+        return _fp_time.Time_time_pgs(pgs)
+
     if _newclass:
-        time_pgs = staticmethod(_fp_time.Time_time_pgs)
-    __swig_getmethods__["time_unix"] = lambda x: _fp_time.Time_time_unix
+        time_pgs = staticmethod(time_pgs)
+    __swig_getmethods__["time_pgs"] = lambda x: time_pgs
+
+    def time_unix(unix_time):
+        """
+
+        static Time FullPhysics::Time::time_unix(double unix_time)
+        Return time from given Unix time (epoch of 1970-01-01). 
+        """
+        return _fp_time.Time_time_unix(unix_time)
+
     if _newclass:
-        time_unix = staticmethod(_fp_time.Time_time_unix)
+        time_unix = staticmethod(time_unix)
+    __swig_getmethods__["time_unix"] = lambda x: time_unix
 
     def _v_unix_time(self):
+        """
+
+        double FullPhysics::Time::unix_time() const
+        Give time in unix time, as a double (epoch 1970-01-01) 
+        """
         return _fp_time.Time__v_unix_time(self)
+
 
     @property
     def unix_time(self):
@@ -154,15 +201,30 @@ class Time(full_physics_swig.generic_object.GenericObject):
 
 
     def _v_pgs_time(self):
+        """
+
+        double FullPhysics::Time::pgs_time() const
+        Give time in PGS toolkit time, as a double (epoch 1993-01-01) 
+        """
         return _fp_time.Time__v_pgs_time(self)
+
 
     @property
     def pgs_time(self):
         return self._v_pgs_time()
 
-    __swig_getmethods__["parse_time"] = lambda x: _fp_time.Time_parse_time
+
+    def parse_time(Time_string):
+        """
+
+        static Time FullPhysics::Time::parse_time(const std::string &Time_string)
+
+        """
+        return _fp_time.Time_parse_time(Time_string)
+
     if _newclass:
-        parse_time = staticmethod(_fp_time.Time_parse_time)
+        parse_time = staticmethod(parse_time)
+    __swig_getmethods__["parse_time"] = lambda x: parse_time
 
     def __str__(self):
         return _fp_time.Time___str__(self)
@@ -185,6 +247,11 @@ class Time(full_physics_swig.generic_object.GenericObject):
 
 
     def __init__(self):
+        """
+
+        FullPhysics::Time::Time(const boost::posix_time::ptime &t)
+
+        """
         this = _fp_time.new_Time()
         try:
             self.this.append(this)
@@ -196,16 +263,28 @@ Time_swigregister = _fp_time.Time_swigregister
 Time_swigregister(Time)
 
 def Time_time_pgs(pgs):
+    """
+
+    static Time FullPhysics::Time::time_pgs(double pgs)
+    Return time from given PGS toolkit time (epoch of 1993-01-01). 
+    """
     return _fp_time.Time_time_pgs(pgs)
-Time_time_pgs = _fp_time.Time_time_pgs
 
 def Time_time_unix(unix_time):
+    """
+
+    static Time FullPhysics::Time::time_unix(double unix_time)
+    Return time from given Unix time (epoch of 1970-01-01). 
+    """
     return _fp_time.Time_time_unix(unix_time)
-Time_time_unix = _fp_time.Time_time_unix
 
 def Time_parse_time(Time_string):
+    """
+
+    static Time FullPhysics::Time::parse_time(const std::string &Time_string)
+
+    """
     return _fp_time.Time_parse_time(Time_string)
-Time_parse_time = _fp_time.Time_parse_time
 
 # This file is compatible with both classic and new-style classes.
 

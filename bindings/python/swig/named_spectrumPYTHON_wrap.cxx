@@ -10796,9 +10796,21 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"ObserverNamedSpectrum_notify_add", _wrap_ObserverNamedSpectrum_notify_add, METH_VARARGS, NULL},
 	 { (char *)"ObserverNamedSpectrum_notify_remove", _wrap_ObserverNamedSpectrum_notify_remove, METH_VARARGS, NULL},
 	 { (char *)"ObserverNamedSpectrum_swigregister", ObserverNamedSpectrum_swigregister, METH_VARARGS, NULL},
-	 { (char *)"new_NamedSpectrum", _wrap_new_NamedSpectrum, METH_VARARGS, NULL},
-	 { (char *)"NamedSpectrum__v_name", _wrap_NamedSpectrum__v_name, METH_VARARGS, NULL},
-	 { (char *)"NamedSpectrum__v_index", _wrap_NamedSpectrum__v_index, METH_VARARGS, NULL},
+	 { (char *)"new_NamedSpectrum", _wrap_new_NamedSpectrum, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::NamedSpectrum::NamedSpectrum()\n"
+		"Default constructor needed for SWIG. \n"
+		""},
+	 { (char *)"NamedSpectrum__v_name", _wrap_NamedSpectrum__v_name, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual const std::string& FullPhysics::NamedSpectrum::name() const\n"
+		"Name that makes this a named spectrum. \n"
+		""},
+	 { (char *)"NamedSpectrum__v_index", _wrap_NamedSpectrum__v_index, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual int FullPhysics::NamedSpectrum::index() const\n"
+		"An reference index for the spectrum, ie a spectrometer index. \n"
+		""},
 	 { (char *)"NamedSpectrum___str__", _wrap_NamedSpectrum___str__, METH_VARARGS, NULL},
 	 { (char *)"delete_NamedSpectrum", _wrap_delete_NamedSpectrum, METH_VARARGS, NULL},
 	 { (char *)"NamedSpectrum_swigregister", NamedSpectrum_swigregister, METH_VARARGS, NULL},

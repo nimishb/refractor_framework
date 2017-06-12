@@ -123,6 +123,14 @@ def _new_from_set(cls, version, *args):
 import full_physics_swig.generic_object
 import full_physics_swig.state_vector
 class TcconApriori(full_physics_swig.generic_object.GenericObject):
+    """
+
+    This class is used to calculate a CO2 apriori using the same method
+    TCCON does.
+
+    C++ includes: tccon_apriori.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.generic_object.GenericObject]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -134,6 +142,18 @@ class TcconApriori(full_physics_swig.generic_object.GenericObject):
     __repr__ = _swig_repr
 
     def __init__(self, *args):
+        """
+
+        FullPhysics::TcconApriori::TcconApriori(const boost::shared_ptr< Level1b > &L1b_file, const
+        boost::shared_ptr< Pressure > &Pressure, const boost::shared_ptr<
+        Temperature > &Temp, double Co2_ref=0.000380, const Time
+        &Ref_time=Time::parse_time("2005-01-01T00:00:00Z"), DoubleWithUnit
+        Rate_increase=DoubleWithUnit(0.005,"year^-1"), DoubleWithUnit
+        Age_air_pbl=DoubleWithUnit(0.2,"year"), DoubleWithUnit
+        Age_air_tropopause=DoubleWithUnit(0.4,"year"), DoubleWithUnit
+        Age_air_upper_stratosphere=DoubleWithUnit(5.5,"year"))
+
+        """
         this = _tccon_apriori.new_TcconApriori(*args)
         try:
             self.this.append(this)
@@ -141,22 +161,58 @@ class TcconApriori(full_physics_swig.generic_object.GenericObject):
             self.this = this
 
     def co2_vmr(self, P):
+        """
+
+        double FullPhysics::TcconApriori::co2_vmr(double P) const
+
+        """
         return _tccon_apriori.TcconApriori_co2_vmr(self, P)
 
+
     def co2_vmr_grid(self, P):
+        """
+
+        blitz::Array<double, 1> FullPhysics::TcconApriori::co2_vmr_grid(const Pressure &P) const
+
+        """
         return _tccon_apriori.TcconApriori_co2_vmr_grid(self, P)
 
+
     def tropopause_pressure(self):
+        """
+
+        double FullPhysics::TcconApriori::tropopause_pressure() const
+
+        """
         return _tccon_apriori.TcconApriori_tropopause_pressure(self)
 
+
     def planetary_boundary_layer_pressure(self):
+        """
+
+        double FullPhysics::TcconApriori::planetary_boundary_layer_pressure() const
+
+        """
         return _tccon_apriori.TcconApriori_planetary_boundary_layer_pressure(self)
 
+
     def fractional_amplitude_seasonal_cycle(self):
+        """
+
+        double FullPhysics::TcconApriori::fractional_amplitude_seasonal_cycle() const
+
+        """
         return _tccon_apriori.TcconApriori_fractional_amplitude_seasonal_cycle(self)
 
+
     def age_air(self, P):
+        """
+
+        DoubleWithUnit FullPhysics::TcconApriori::age_air(double P) const
+
+        """
         return _tccon_apriori.TcconApriori_age_air(self, P)
+
 
     def __str__(self):
         return _tccon_apriori.TcconApriori___str__(self)

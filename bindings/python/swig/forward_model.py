@@ -122,6 +122,16 @@ def _new_from_set(cls, version, *args):
 
 import full_physics_swig.generic_object
 class ForwardModel(full_physics_swig.generic_object.GenericObject):
+    """
+
+    This is the Forward Model.
+
+    Note that the forward model depends on the value of the StateVector.
+    This is set separate from getting the radiance or jacobian values.
+
+    C++ includes: forward_model.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.generic_object.GenericObject]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -141,7 +151,13 @@ class ForwardModel(full_physics_swig.generic_object.GenericObject):
         return _forward_model.ForwardModel___str__(self)
 
     def _v_state_vector(self):
+        """
+
+        virtual boost::shared_ptr<StateVector> FullPhysics::ForwardModel::state_vector() const =0
+        The state vector associated with the forward model. 
+        """
         return _forward_model.ForwardModel__v_state_vector(self)
+
 
     @property
     def state_vector(self):
@@ -149,7 +165,13 @@ class ForwardModel(full_physics_swig.generic_object.GenericObject):
 
 
     def _v_number_spectrometer(self):
+        """
+
+        virtual int FullPhysics::ForwardModel::number_spectrometer() const =0
+        The number of spectral bands associated with forward model. 
+        """
         return _forward_model.ForwardModel__v_number_spectrometer(self)
+
 
     @property
     def number_spectrometer(self):
@@ -157,25 +179,94 @@ class ForwardModel(full_physics_swig.generic_object.GenericObject):
 
 
     def hdf_band_name(self, Spec_index):
+        """
+
+        virtual std::string FullPhysics::ForwardModel::hdf_band_name(int Spec_index) const =0
+        The HDF field name to use for a particular band (e.g., "weak_co2")
+
+        """
         return _forward_model.ForwardModel_hdf_band_name(self, Spec_index)
 
+
     def spectral_domain(self, Spec_index):
+        """
+
+        virtual SpectralDomain FullPhysics::ForwardModel::spectral_domain(int Spec_index) const =0
+        Spectral domain for the given spectral band.
+
+        Note that this may be empty. 
+        """
         return _forward_model.ForwardModel_spectral_domain(self, Spec_index)
 
+
     def radiance(self, Spec_index, Skip_jacobian=False):
+        """
+
+        virtual Spectrum FullPhysics::ForwardModel::radiance(int Spec_index, bool Skip_jacobian=false) const =0
+        Spectrum for the given spectral band.
+
+        Note that this may be empty.
+
+        Parameters:
+        -----------
+
+        Spec_index:  Band to give value for
+
+        Skip_jacobian:  If true, don't do the Jacobian calculation. Often this
+        is significantly faster to calculate.
+
+        The set of radiances, possibly empty. 
+        """
         return _forward_model.ForwardModel_radiance(self, Spec_index, Skip_jacobian)
 
+
     def measured_radiance(self, Spec_index):
+        """
+
+        virtual Spectrum FullPhysics::ForwardModel::measured_radiance(int Spec_index) const =0
+        Measured spectrum for the given spectral band.
+
+        Note that this may be empty.
+
+        Parameters:
+        -----------
+
+        Spec_index:  Band to give value for
+
+        The set of radiances, possibly empty. 
+        """
         return _forward_model.ForwardModel_measured_radiance(self, Spec_index)
 
+
     def setup_grid(self):
+        """
+
+        virtual void FullPhysics::ForwardModel::setup_grid()=0
+        The grid that the forward model runs on may depend on the state
+        vector.
+
+        This notifies the forward model that it should setup the grid 
+        """
         return _forward_model.ForwardModel_setup_grid(self)
 
+
     def radiance_all(self, Skip_jacobian=False):
+        """
+
+        Spectrum FullPhysics::ForwardModel::radiance_all(bool Skip_jacobian=false) const
+
+        """
         return _forward_model.ForwardModel_radiance_all(self, Skip_jacobian)
 
+
     def _v_measured_radiance_all(self):
+        """
+
+        Spectrum FullPhysics::ForwardModel::measured_radiance_all() const
+
+        """
         return _forward_model.ForwardModel__v_measured_radiance_all(self)
+
 
     @property
     def measured_radiance_all(self):
@@ -183,10 +274,22 @@ class ForwardModel(full_physics_swig.generic_object.GenericObject):
 
 
     def pixel_range(self, Spec_index):
+        """
+
+        boost::optional<blitz::Range> FullPhysics::ForwardModel::pixel_range(int Spec_index) const
+
+        """
         return _forward_model.ForwardModel_pixel_range(self, Spec_index)
 
+
     def _v_input_file_description(self, *args):
+        """
+
+        void FullPhysics::ForwardModel::input_file_description(const std::string &V)
+
+        """
         return _forward_model.ForwardModel__v_input_file_description(self, *args)
+
 
     @property
     def input_file_description(self):

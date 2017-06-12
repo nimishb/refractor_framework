@@ -124,6 +124,20 @@ import full_physics_swig.instrument_correction
 import full_physics_swig.state_vector
 import full_physics_swig.generic_object
 class RadianceScaling(full_physics_swig.instrument_correction.InstrumentCorrection):
+    """
+
+    This abstract class provides the generic capabilities for applying a
+    radiance scaling to a Radiance.
+
+    The radiance scaling slope is referenced to a reference
+    wavelength/wavenumber
+
+    This class can support both a scale factor polynomial and a single
+    radiance wide offset.
+
+    C++ includes: radiance_scaling.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.instrument_correction.InstrumentCorrection]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -140,13 +154,31 @@ class RadianceScaling(full_physics_swig.instrument_correction.InstrumentCorrecti
     __del__ = lambda self: None
 
     def print_desc(self, Os):
+        """
+
+        virtual void FullPhysics::RadianceScaling::print(std::ostream &Os) const
+
+        """
         return _radiance_scaling.RadianceScaling_print_desc(self, Os)
 
+
     def apply_scaling(self, Grid, Radiance):
+        """
+
+        virtual void FullPhysics::RadianceScaling::apply_scaling(const SpectralDomain &Grid, SpectralRange &Radiance) const
+        Apply scaling and offset coefficients to Radiance. 
+        """
         return _radiance_scaling.RadianceScaling_apply_scaling(self, Grid, Radiance)
 
+
     def _v_radiance_scaling_coeff(self):
+        """
+
+        virtual blitz::Array<double, 1> FullPhysics::RadianceScaling::radiance_scaling_coeff() const
+        Return radiance scaling coefficients for the output file. 
+        """
         return _radiance_scaling.RadianceScaling__v_radiance_scaling_coeff(self)
+
 
     @property
     def radiance_scaling_coeff(self):
@@ -154,7 +186,14 @@ class RadianceScaling(full_physics_swig.instrument_correction.InstrumentCorrecti
 
 
     def _v_radiance_scaling_coeff_uncertainty(self):
+        """
+
+        virtual blitz::Array<double, 1> FullPhysics::RadianceScaling::radiance_scaling_coeff_uncertainty() const =0
+        Return radiance scaling coefficients uncertainty for the output file.
+
+        """
         return _radiance_scaling.RadianceScaling__v_radiance_scaling_coeff_uncertainty(self)
+
 
     @property
     def radiance_scaling_coeff_uncertainty(self):
@@ -162,7 +201,13 @@ class RadianceScaling(full_physics_swig.instrument_correction.InstrumentCorrecti
 
 
     def _v_radiance_offset(self):
+        """
+
+        virtual double FullPhysics::RadianceScaling::radiance_offset() const
+        Return radiance scaling offset for the output file. 
+        """
         return _radiance_scaling.RadianceScaling__v_radiance_offset(self)
+
 
     @property
     def radiance_offset(self):

@@ -123,6 +123,16 @@ def _new_from_set(cls, version, *args):
 import full_physics_swig.solar_continuum_spectrum
 import full_physics_swig.generic_object
 class SolarContinuumTable(full_physics_swig.solar_continuum_spectrum.SolarContinuumSpectrum):
+    """
+
+    This class calculates the solar continuum spectrum.
+
+    This particular implementation uses a table to calculate the Solar
+    Planck Function, doing a linear interpolation for points in between.
+
+    C++ includes: solar_continuum_table.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.solar_continuum_spectrum.SolarContinuumSpectrum]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -134,6 +144,12 @@ class SolarContinuumTable(full_physics_swig.solar_continuum_spectrum.SolarContin
     __repr__ = _swig_repr
 
     def __init__(self, F, Hdf_group, Convert_from_photon=True):
+        """
+
+        FullPhysics::SolarContinuumTable::SolarContinuumTable(const HdfFile &F, const std::string &Hdf_group, bool
+        Convert_from_photon=true)
+
+        """
         this = _solar_continuum_table.new_SolarContinuumTable(F, Hdf_group, Convert_from_photon)
         try:
             self.this.append(this)
@@ -141,7 +157,13 @@ class SolarContinuumTable(full_physics_swig.solar_continuum_spectrum.SolarContin
             self.this = this
 
     def solar_continuum_spectrum(self, spec_domain):
+        """
+
+        virtual Spectrum FullPhysics::SolarContinuumTable::solar_continuum_spectrum(const SpectralDomain &spec_domain) const
+
+        """
         return _solar_continuum_table.SolarContinuumTable_solar_continuum_spectrum(self, spec_domain)
+
     __swig_destroy__ = _solar_continuum_table.delete_SolarContinuumTable
     __del__ = lambda self: None
 SolarContinuumTable_swigregister = _solar_continuum_table.SolarContinuumTable_swigregister

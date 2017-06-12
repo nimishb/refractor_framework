@@ -122,6 +122,16 @@ def _new_from_set(cls, version, *args):
 
 import full_physics_swig.generic_object
 class InitialGuess(full_physics_swig.generic_object.GenericObject):
+    """
+
+    This gets the initial guess and the apriori state vector values.
+
+    Often but not always the initial guess to use is the same as the a
+    priori.
+
+    C++ includes: initial_guess.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.generic_object.GenericObject]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -141,7 +151,13 @@ class InitialGuess(full_physics_swig.generic_object.GenericObject):
         return _initial_guess.InitialGuess___str__(self)
 
     def _v_initial_guess(self):
+        """
+
+        virtual blitz::Array<double, 1> FullPhysics::InitialGuess::initial_guess() const =0
+        Return the initial state vector to use. 
+        """
         return _initial_guess.InitialGuess__v_initial_guess(self)
+
 
     @property
     def initial_guess(self):
@@ -149,7 +165,13 @@ class InitialGuess(full_physics_swig.generic_object.GenericObject):
 
 
     def _v_apriori(self):
+        """
+
+        virtual blitz::Array<double, 1> FullPhysics::InitialGuess::apriori() const =0
+        Return the apriori state vector to use. 
+        """
         return _initial_guess.InitialGuess__v_apriori(self)
+
 
     @property
     def apriori(self):
@@ -157,7 +179,13 @@ class InitialGuess(full_physics_swig.generic_object.GenericObject):
 
 
     def _v_apriori_covariance(self):
+        """
+
+        virtual blitz::Array<double, 2> FullPhysics::InitialGuess::apriori_covariance() const =0
+        Return the apriori state vector covariance to use. 
+        """
         return _initial_guess.InitialGuess__v_apriori_covariance(self)
+
 
     @property
     def apriori_covariance(self):

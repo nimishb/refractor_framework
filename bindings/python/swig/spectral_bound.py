@@ -122,6 +122,24 @@ def _new_from_set(cls, version, *args):
 
 import full_physics_swig.generic_object
 class SpectralBound(full_physics_swig.generic_object.GenericObject):
+    """
+
+    This gives the upper and lower bounds of the SpectralWindow.
+
+    Lower_bound and upper_bound are just meant to give a rough idea of the
+    band covered by a spectral window, there is no guarantee that
+    lower_bound() + delta or upper_band() - delta will pass the
+    grid_indexes test of the SpectralWindow. But the reverse is
+    guaranteed, any value < lower_bound or >= upper_bound will certainly
+    not pass grid_indexes test.
+
+    Note that there are a few closely related classes, with similar
+    sounding names. See spectrum_doxygen for a description of each of
+    these.
+
+    C++ includes: spectral_bound.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.generic_object.GenericObject]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -133,6 +151,11 @@ class SpectralBound(full_physics_swig.generic_object.GenericObject):
     __repr__ = _swig_repr
 
     def __init__(self, *args):
+        """
+
+        FullPhysics::SpectralBound::SpectralBound(const ArrayWithUnit< double, 2 > &Bound)
+
+        """
         this = _spectral_bound.new_SpectralBound(*args)
         try:
             self.this.append(this)
@@ -143,7 +166,13 @@ class SpectralBound(full_physics_swig.generic_object.GenericObject):
         return _spectral_bound.SpectralBound___str__(self)
 
     def _v_number_spectrometer(self):
+        """
+
+        int FullPhysics::SpectralBound::number_spectrometer() const
+        Number of spectrometers. 
+        """
         return _spectral_bound.SpectralBound__v_number_spectrometer(self)
+
 
     @property
     def number_spectrometer(self):
@@ -151,16 +180,45 @@ class SpectralBound(full_physics_swig.generic_object.GenericObject):
 
 
     def center(self, Spec_index, U):
+        """
+
+        DoubleWithUnit FullPhysics::SpectralBound::center(int Spec_index, const Unit &U) const
+        Center between lower_bound and upper_bound.
+
+        Turns out we need this often enough to be worth wrapping in a
+        function. 
+        """
         return _spectral_bound.SpectralBound_center(self, Spec_index, U)
 
+
     def lower_bound(self, *args):
+        """
+
+        DoubleWithUnit FullPhysics::SpectralBound::lower_bound(int Spec_index, const Unit &U) const
+        Lower bound but with a unit conversion first in case the conversion
+        reverses ordering. 
+        """
         return _spectral_bound.SpectralBound_lower_bound(self, *args)
 
+
     def upper_bound(self, *args):
+        """
+
+        DoubleWithUnit FullPhysics::SpectralBound::upper_bound(int Spec_index, const Unit &U) const
+        Upper bound but with a unit conversion first in case the conversion
+        reverses ordering. 
+        """
         return _spectral_bound.SpectralBound_upper_bound(self, *args)
 
+
     def spectral_index(self, W):
+        """
+
+        int FullPhysics::SpectralBound::spectral_index(const DoubleWithUnit &W) const
+
+        """
         return _spectral_bound.SpectralBound_spectral_index(self, W)
+
     __swig_destroy__ = _spectral_bound.delete_SpectralBound
     __del__ = lambda self: None
 SpectralBound_swigregister = _spectral_bound.SpectralBound_swigregister

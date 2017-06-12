@@ -123,6 +123,16 @@ def _new_from_set(cls, version, *args):
 import full_physics_swig.level_1b
 import full_physics_swig.generic_object
 class Level1bAverage(full_physics_swig.level_1b.Level1b):
+    """
+
+    This reads averages a set of Level1b classes to get the various
+    values.
+
+    This is used for example on Gosat, where we average the S and P data.
+
+    C++ includes: level_1b_average.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.level_1b.Level1b]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -137,37 +147,103 @@ class Level1bAverage(full_physics_swig.level_1b.Level1b):
     __repr__ = _swig_repr
 
     def latitude(self, i):
+        """
+
+        virtual DoubleWithUnit FullPhysics::Level1bAverage::latitude(int i) const
+
+        """
         return _level_1b_average.Level1bAverage_latitude(self, i)
 
+
     def longitude(self, i):
+        """
+
+        virtual DoubleWithUnit FullPhysics::Level1bAverage::longitude(int i) const
+
+        """
         return _level_1b_average.Level1bAverage_longitude(self, i)
 
+
     def sounding_zenith(self, i):
+        """
+
+        virtual DoubleWithUnit FullPhysics::Level1bAverage::sounding_zenith(int i) const
+
+        """
         return _level_1b_average.Level1bAverage_sounding_zenith(self, i)
 
+
     def sounding_azimuth(self, i):
+        """
+
+        virtual DoubleWithUnit FullPhysics::Level1bAverage::sounding_azimuth(int i) const
+
+        """
         return _level_1b_average.Level1bAverage_sounding_azimuth(self, i)
 
+
     def stokes_coefficient(self, i):
+        """
+
+        virtual blitz::Array<double, 1> FullPhysics::Level1bAverage::stokes_coefficient(int i) const
+
+        """
         return _level_1b_average.Level1bAverage_stokes_coefficient(self, i)
 
+
     def solar_zenith(self, i):
+        """
+
+        virtual DoubleWithUnit FullPhysics::Level1bAverage::solar_zenith(int i) const
+
+        """
         return _level_1b_average.Level1bAverage_solar_zenith(self, i)
 
+
     def solar_azimuth(self, i):
+        """
+
+        virtual DoubleWithUnit FullPhysics::Level1bAverage::solar_azimuth(int i) const
+
+        """
         return _level_1b_average.Level1bAverage_solar_azimuth(self, i)
 
+
     def altitude(self, i):
+        """
+
+        virtual DoubleWithUnit FullPhysics::Level1bAverage::altitude(int i) const
+
+        """
         return _level_1b_average.Level1bAverage_altitude(self, i)
 
+
     def relative_velocity(self, i):
+        """
+
+        virtual DoubleWithUnit FullPhysics::Level1bAverage::relative_velocity(int Spec_index) const
+
+        """
         return _level_1b_average.Level1bAverage_relative_velocity(self, i)
 
+
     def time(self, i):
+        """
+
+        virtual Time FullPhysics::Level1bAverage::time(int Spec_index) const
+
+        """
         return _level_1b_average.Level1bAverage_time(self, i)
 
+
     def radiance(self, Spec_index):
+        """
+
+        virtual SpectralRange FullPhysics::Level1bAverage::radiance(int Spec_index) const
+
+        """
         return _level_1b_average.Level1bAverage_radiance(self, Spec_index)
+
     __swig_destroy__ = _level_1b_average.delete_Level1bAverage
     __del__ = lambda self: None
 Level1bAverage_swigregister = _level_1b_average.Level1bAverage_swigregister

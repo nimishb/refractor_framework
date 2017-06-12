@@ -5538,12 +5538,36 @@ SWIGINTERN PyObject *LRadRt_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObjec
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"LRadRt__v_number_stokes", _wrap_LRadRt__v_number_stokes, METH_VARARGS, NULL},
-	 { (char *)"LRadRt__v_number_stream", _wrap_LRadRt__v_number_stream, METH_VARARGS, NULL},
-	 { (char *)"LRadRt__v_surface_type", _wrap_LRadRt__v_surface_type, METH_VARARGS, NULL},
-	 { (char *)"LRadRt_stokes_single_wn", _wrap_LRadRt_stokes_single_wn, METH_VARARGS, NULL},
-	 { (char *)"LRadRt_stokes_and_jacobian_single_wn", _wrap_LRadRt_stokes_and_jacobian_single_wn, METH_VARARGS, NULL},
-	 { (char *)"LRadRt__v_radiative_transfer", _wrap_LRadRt__v_radiative_transfer, METH_VARARGS, NULL},
+	 { (char *)"LRadRt__v_number_stokes", _wrap_LRadRt__v_number_stokes, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual int FullPhysics::LRadRt::number_stokes() const\n"
+		"\n"
+		""},
+	 { (char *)"LRadRt__v_number_stream", _wrap_LRadRt__v_number_stream, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual int FullPhysics::LRadRt::number_stream() const\n"
+		"\n"
+		""},
+	 { (char *)"LRadRt__v_surface_type", _wrap_LRadRt__v_surface_type, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual int FullPhysics::LRadRt::surface_type() const\n"
+		"Returns an integer with l_rad's representation of surface type. \n"
+		""},
+	 { (char *)"LRadRt_stokes_single_wn", _wrap_LRadRt_stokes_single_wn, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual blitz::Array<double, 1> FullPhysics::LRadRt::stokes_single_wn(double Wn, int Spec_index, const ArrayAd< double, 2 > &Iv) const\n"
+		"\n"
+		""},
+	 { (char *)"LRadRt_stokes_and_jacobian_single_wn", _wrap_LRadRt_stokes_and_jacobian_single_wn, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual ArrayAd<double, 1> FullPhysics::LRadRt::stokes_and_jacobian_single_wn(double Wn, int Spec_index, const ArrayAd< double, 2 > &Iv) const\n"
+		"\n"
+		""},
+	 { (char *)"LRadRt__v_radiative_transfer", _wrap_LRadRt__v_radiative_transfer, METH_VARARGS, (char *)"\n"
+		"\n"
+		"const boost::shared_ptr<RadiativeTransferSingleWn>& FullPhysics::LRadRt::radiative_transfer() const\n"
+		"\n"
+		""},
 	 { (char *)"delete_LRadRt", _wrap_delete_LRadRt, METH_VARARGS, NULL},
 	 { (char *)"LRadRt_swigregister", LRadRt_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }

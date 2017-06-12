@@ -187,6 +187,16 @@ def _new_from_set(cls, version, *args):
 import full_physics_swig.state_vector
 import full_physics_swig.generic_object
 class Ils(full_physics_swig.state_vector.StateVectorObserver):
+    """
+
+    This class models an Instrument Line Shape (ILS).
+
+    We convolve with high resolution data to produce a model of what we
+    expect to observe in the Level 1b data.
+
+    C++ includes: ils.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.state_vector.StateVectorObserver]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -206,13 +216,60 @@ class Ils(full_physics_swig.state_vector.StateVectorObserver):
         return _ils.Ils___str__(self)
 
     def apply_ils(self, *args):
+        """
+
+        virtual ArrayAd<double, 1> FullPhysics::Ils::apply_ils(const blitz::Array< double, 1 > &High_resolution_wave_number, const
+        ArrayAd< double, 1 > &High_resolution_radiance, const std::vector< int
+        > &Pixel_list) const =0
+        Apply the ILS.
+
+        This includes propagating the Jacobian from the high resolution data,
+        and adding in any dependence of the ILS on the state vector elements
+        (e.g., dispersion state vector elements).
+
+        Parameters:
+        -----------
+
+        High_resolution_wave_number:  The wave numbers going with the high
+        resolution radiance data. This is in cm^-1, and should be ordered from
+        smallest to largest wavenumber.
+
+        High_resolution_radiance:  The high resolution radiance data and
+        jacobian . This is in w/m^2 / sr / cm^-1
+
+        Pixel_list:  List of instrument pixels to include in the results. The
+        order of the pixels is the same order that we return our results in.
+
+        Radiance with ILS applied, and Jacobian This is in w/m^2 / sr / cm^-1.
+
+        """
         return _ils.Ils_apply_ils(self, *args)
 
+
     def clone(self):
+        """
+
+        virtual boost::shared_ptr<Ils> FullPhysics::Ils::clone() const =0
+        Clone an Ils object.
+
+        Note that the cloned version will not be attached to and StateVector
+        or Observer<Ils>, although you can of course attach them after
+        receiving the cloned object.
+
+        Because this isn't attached to the StateVector, one use of the clone
+        operator is to create a "frozen" Ils object. 
+        """
         return _ils.Ils_clone(self)
 
+
     def _v_band_name(self):
+        """
+
+        virtual std::string FullPhysics::Ils::band_name() const =0
+        Descriptive name of the band. 
+        """
         return _ils.Ils__v_band_name(self)
+
 
     @property
     def band_name(self):
@@ -220,7 +277,20 @@ class Ils(full_physics_swig.state_vector.StateVectorObserver):
 
 
     def _v_hdf_band_name(self):
+        """
+
+        virtual std::string FullPhysics::Ils::hdf_band_name() const
+        In general, the name used in HDF files for a particular band is
+        similar but not identical to the more human readable band_name.
+
+        For example, with GOSAT we use the HDF field name "weak_co2", but
+        the band name is "WC-Band". This gives the HDF name to use.
+
+        The default implementation just returns the same string as the band
+        name. 
+        """
         return _ils.Ils__v_hdf_band_name(self)
+
 
     @property
     def hdf_band_name(self):
@@ -228,7 +298,13 @@ class Ils(full_physics_swig.state_vector.StateVectorObserver):
 
 
     def _v_pixel_grid(self):
+        """
+
+        virtual SpectralDomain FullPhysics::Ils::pixel_grid() const =0
+        This is the pixel grid for each pixel. 
+        """
         return _ils.Ils__v_pixel_grid(self)
+
 
     @property
     def pixel_grid(self):
@@ -236,7 +312,13 @@ class Ils(full_physics_swig.state_vector.StateVectorObserver):
 
 
     def _v_ils_half_width(self, *args):
+        """
+
+        virtual void FullPhysics::Ils::ils_half_width(const DoubleWithUnit &half_width)=0
+        Set the half width of the ILS. 
+        """
         return _ils.Ils__v_ils_half_width(self, *args)
+
 
     @property
     def ils_half_width(self):

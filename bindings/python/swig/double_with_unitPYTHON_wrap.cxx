@@ -6671,13 +6671,25 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
 	 { (char *)"DoubleWithUnit___str__", _wrap_DoubleWithUnit___str__, METH_VARARGS, NULL},
-	 { (char *)"new_DoubleWithUnit", _wrap_new_DoubleWithUnit, METH_VARARGS, NULL},
+	 { (char *)"new_DoubleWithUnit", _wrap_new_DoubleWithUnit, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::DoubleWithUnit::DoubleWithUnit(double V)\n"
+		"\n"
+		""},
 	 { (char *)"DoubleWithUnit___imul__", _wrap_DoubleWithUnit___imul__, METH_VARARGS, NULL},
 	 { (char *)"DoubleWithUnit___idiv__", _wrap_DoubleWithUnit___idiv__, METH_VARARGS, NULL},
 	 { (char *)"DoubleWithUnit___iadd__", _wrap_DoubleWithUnit___iadd__, METH_VARARGS, NULL},
 	 { (char *)"DoubleWithUnit___isub__", _wrap_DoubleWithUnit___isub__, METH_VARARGS, NULL},
-	 { (char *)"DoubleWithUnit_convert", _wrap_DoubleWithUnit_convert, METH_VARARGS, NULL},
-	 { (char *)"DoubleWithUnit_convert_wave", _wrap_DoubleWithUnit_convert_wave, METH_VARARGS, NULL},
+	 { (char *)"DoubleWithUnit_convert", _wrap_DoubleWithUnit_convert, METH_VARARGS, (char *)"\n"
+		"\n"
+		"DoubleWithUnit FullPhysics::DoubleWithUnit::convert(const Unit &R) const\n"
+		"Convert to the given units. \n"
+		""},
+	 { (char *)"DoubleWithUnit_convert_wave", _wrap_DoubleWithUnit_convert_wave, METH_VARARGS, (char *)"\n"
+		"\n"
+		"DoubleWithUnit FullPhysics::DoubleWithUnit::convert_wave(const Unit &R, const SpectralDomain &Pixel_grid) const\n"
+		"\n"
+		""},
 	 { (char *)"DoubleWithUnit__value", _wrap_DoubleWithUnit__value, METH_VARARGS, NULL},
 	 { (char *)"DoubleWithUnit__value_set", _wrap_DoubleWithUnit__value_set, METH_VARARGS, NULL},
 	 { (char *)"DoubleWithUnit__units", _wrap_DoubleWithUnit__units, METH_VARARGS, NULL},

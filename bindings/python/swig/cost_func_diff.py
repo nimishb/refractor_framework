@@ -124,6 +124,24 @@ import full_physics_swig.cost_func
 import full_physics_swig.problem_state
 import full_physics_swig.generic_object
 class CostFuncDiff(full_physics_swig.cost_func.CostFunc):
+    """
+
+    The base class for all problem classes that implement a cost function
+    and its gradient.
+
+    The class CostFuncDiff is the base class for all problem classes that
+    implement a cost function (a scalar real function with a range that
+    never includes negative numbers) and its gradient (first order
+    derivatives).
+
+    A cost function for which we can compute its gradient can be optimized
+    by methods such as the steepest-descent-method and the conjugate-
+    gradient-method as well as other optimization methods that only use
+    the cost function (no derivatives).
+
+    C++ includes: cost_func_diff.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.cost_func.CostFunc]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -140,7 +158,35 @@ class CostFuncDiff(full_physics_swig.cost_func.CostFunc):
     __del__ = lambda self: None
 
     def _v_gradient(self):
+        """
+
+        virtual blitz::Array<double, 1> FullPhysics::CostFuncDiff::gradient()=0
+        The gradient of the cost function.
+
+        This method must be implemented by the classes derived from this
+        class.
+
+        The parameters (the point in the parameter space) must have already
+        been set before calling this method. The parameters are already set if
+        one of the following methods is already called successfully:
+        parameters() (see ProblemState class)
+
+        cost_x() (see CostFunc class)
+
+        gradient_x()
+
+        cost_gradient_x()
+
+        If the parameters are already set, then this method returns the
+        gradient of the cost function at the current set point.
+
+        The size of the gradient vector can be obtained in advance by calling
+        gradient_size().
+
+        The gradient of the cost function 
+        """
         return _cost_func_diff.CostFuncDiff__v_gradient(self)
+
 
     @property
     def gradient(self):
@@ -148,16 +194,90 @@ class CostFuncDiff(full_physics_swig.cost_func.CostFunc):
 
 
     def gradient_x(self, x):
+        """
+
+        virtual blitz::Array<double, 1> FullPhysics::CostFuncDiff::gradient_x(const blitz::Array< double, 1 > &x)
+        The gradient function with parameters.
+
+        This method also evaluates the gradient of the cost function; however,
+        it sets the problem at the input new point and then evaluates the
+        gradient.
+
+        The size of the gradient vector can be obtained in advance by calling
+        gradient_size().
+
+        Parameters:
+        -----------
+
+        x:  New set of parameters
+
+        The gradient of the cost function 
+        """
         return _cost_func_diff.CostFuncDiff_gradient_x(self, x)
 
+
     def cost_gradient(self):
+        """
+
+        virtual void FullPhysics::CostFuncDiff::cost_gradient(double &c, blitz::Array< double, 1 > &g)
+        The cost function and its gradient together.
+
+        This method passes to the caller the evaluated cost function and its
+        gradient at the current set point.
+
+        The parameters (the point in the parameter space) must have already
+        been set before calling this method. The parameters are already set if
+        one of the following methods is already called successfully:
+        parameters() (see ProblemState class)
+
+        cost_x() (see CostFunc class)
+
+        gradient_x()
+
+        cost_gradient_x()
+
+        Parameters:
+        -----------
+
+        c:  The cost function value
+
+        g:  The gradient vector with size gradient_size() 
+        """
         return _cost_func_diff.CostFuncDiff_cost_gradient(self)
 
+
     def cost_gradient_x(self, x):
+        """
+
+        virtual void FullPhysics::CostFuncDiff::cost_gradient_x(const blitz::Array< double, 1 > &x, double &c, blitz::Array< double,
+        1 > &g)
+        The cost function and its gradient with parameters.
+
+        This method passes to the caller the evaluated cost function and its
+        gradient after setting the problem at the input new point.
+
+        Parameters:
+        -----------
+
+        x:  New set of parameters
+
+        c:  The cost function value
+
+        g:  The gradient vector with size gradient_size() 
+        """
         return _cost_func_diff.CostFuncDiff_cost_gradient_x(self, x)
 
+
     def _v_num_der1_evaluations(self):
+        """
+
+        virtual int FullPhysics::CostFuncDiff::num_der1_evaluations() const
+        Returns the number of the times gradient has been evaluated.
+
+        The number of the times gradient has been evaluated. 
+        """
         return _cost_func_diff.CostFuncDiff__v_num_der1_evaluations(self)
+
 
     @property
     def num_der1_evaluations(self):
@@ -165,10 +285,24 @@ class CostFuncDiff(full_physics_swig.cost_func.CostFunc):
 
 
     def zero_num_evaluations(self):
+        """
+
+        virtual void FullPhysics::CostFuncDiff::zero_num_evaluations()
+        Sets cost and gradient evaluation counters to zero. 
+        """
         return _cost_func_diff.CostFuncDiff_zero_num_evaluations(self)
 
+
     def _v_gradient_size(self):
+        """
+
+        virtual int FullPhysics::CostFuncDiff::gradient_size() const
+        Returns the size of the gradient vector.
+
+        The size of the gradient vecotor 
+        """
         return _cost_func_diff.CostFuncDiff__v_gradient_size(self)
+
 
     @property
     def gradient_size(self):

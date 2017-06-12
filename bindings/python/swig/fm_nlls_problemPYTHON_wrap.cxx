@@ -5321,12 +5321,35 @@ SWIGINTERN PyObject *FmNLLSProblem_swigregister(PyObject *SWIGUNUSEDPARM(self), 
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"new_FmNLLSProblem", _wrap_new_FmNLLSProblem, METH_VARARGS, NULL},
-	 { (char *)"delete_FmNLLSProblem", _wrap_delete_FmNLLSProblem, METH_VARARGS, NULL},
-	 { (char *)"FmNLLSProblem__v_residual_size", _wrap_FmNLLSProblem__v_residual_size, METH_VARARGS, NULL},
+	 { (char *)"new_FmNLLSProblem", _wrap_new_FmNLLSProblem, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::FmNLLSProblem::FmNLLSProblem(const boost::shared_ptr< ForwardModel > &Fm, const blitz::Array<\n"
+		"double, 1 > &Rad, const blitz::Array< double, 1 > &Rad_uncer, const\n"
+		"blitz::Array< double, 1 > X_apriori, const blitz::Array< double, 2 >\n"
+		"Apriori_cov)\n"
+		"\n"
+		""},
+	 { (char *)"delete_FmNLLSProblem", _wrap_delete_FmNLLSProblem, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::FmNLLSProblem::~FmNLLSProblem()\n"
+		"\n"
+		""},
+	 { (char *)"FmNLLSProblem__v_residual_size", _wrap_FmNLLSProblem__v_residual_size, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual int FullPhysics::FmNLLSProblem::residual_size() const\n"
+		"\n"
+		""},
 	 { (char *)"FmNLLSProblem__v_parameter_size", _wrap_FmNLLSProblem__v_parameter_size, METH_VARARGS, NULL},
-	 { (char *)"FmNLLSProblem__v_residual", _wrap_FmNLLSProblem__v_residual, METH_VARARGS, NULL},
-	 { (char *)"FmNLLSProblem__v_jacobian", _wrap_FmNLLSProblem__v_jacobian, METH_VARARGS, NULL},
+	 { (char *)"FmNLLSProblem__v_residual", _wrap_FmNLLSProblem__v_residual, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual blitz::Array<double, 1> FullPhysics::FmNLLSProblem::residual()\n"
+		"\n"
+		""},
+	 { (char *)"FmNLLSProblem__v_jacobian", _wrap_FmNLLSProblem__v_jacobian, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual blitz::Array<double, 2> FullPhysics::FmNLLSProblem::jacobian()\n"
+		"\n"
+		""},
 	 { (char *)"FmNLLSProblem_swigregister", FmNLLSProblem_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };

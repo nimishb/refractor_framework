@@ -125,6 +125,17 @@ import full_physics_swig.model_state
 import full_physics_swig.problem_state
 import full_physics_swig.generic_object
 class MaxLikelihood(full_physics_swig.model_measure.ModelMeasure):
+    """
+
+    The base class for maximum likelihood estimation.
+
+    This class is the base class for all classes that use maximum
+    likelihood estimation method to implement the problem of estimating
+    the parameters of a statistical model.
+
+    C++ includes: max_likelihood.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.model_measure.ModelMeasure]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))

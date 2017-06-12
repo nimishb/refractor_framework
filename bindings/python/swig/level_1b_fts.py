@@ -123,6 +123,13 @@ def _new_from_set(cls, version, *args):
 import full_physics_swig.level_1b
 import full_physics_swig.generic_object
 class Level1bFts(full_physics_swig.level_1b.Level1b):
+    """
+
+    This is the Level 1B data for a FTS.
+
+    C++ includes: level_1b_fts.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.level_1b.Level1b]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -134,6 +141,13 @@ class Level1bFts(full_physics_swig.level_1b.Level1b):
     __repr__ = _swig_repr
 
     def __init__(self, *args):
+        """
+
+        FullPhysics::Level1bFts::Level1bFts(const HdfFile &Hfile, const std::vector< std::string > &Band_names,
+        const std::string
+        &Radiance_dataset="/SpectralParameters/modeled_radiance")
+
+        """
         this = _level_1b_fts.new_Level1bFts(*args)
         try:
             self.this.append(this)
@@ -141,40 +155,112 @@ class Level1bFts(full_physics_swig.level_1b.Level1b):
             self.this = this
 
     def latitude(self, i):
+        """
+
+        virtual DoubleWithUnit FullPhysics::Level1bFts::latitude(int i) const
+
+        """
         return _level_1b_fts.Level1bFts_latitude(self, i)
 
+
     def longitude(self, i):
+        """
+
+        virtual DoubleWithUnit FullPhysics::Level1bFts::longitude(int i) const
+
+        """
         return _level_1b_fts.Level1bFts_longitude(self, i)
 
+
     def sounding_zenith(self, i):
+        """
+
+        virtual DoubleWithUnit FullPhysics::Level1bFts::sounding_zenith(int i) const
+
+        """
         return _level_1b_fts.Level1bFts_sounding_zenith(self, i)
 
+
     def sounding_azimuth(self, i):
+        """
+
+        virtual DoubleWithUnit FullPhysics::Level1bFts::sounding_azimuth(int i) const
+
+        """
         return _level_1b_fts.Level1bFts_sounding_azimuth(self, i)
 
+
     def stokes_coefficient(self, i):
+        """
+
+        virtual blitz::Array<double, 1> FullPhysics::Level1bFts::stokes_coefficient(int i) const
+
+        """
         return _level_1b_fts.Level1bFts_stokes_coefficient(self, i)
 
+
     def solar_zenith(self, i):
+        """
+
+        virtual DoubleWithUnit FullPhysics::Level1bFts::solar_zenith(int i) const
+
+        """
         return _level_1b_fts.Level1bFts_solar_zenith(self, i)
 
+
     def solar_azimuth(self, i):
+        """
+
+        virtual DoubleWithUnit FullPhysics::Level1bFts::solar_azimuth(int i) const
+
+        """
         return _level_1b_fts.Level1bFts_solar_azimuth(self, i)
 
+
     def altitude(self, i):
+        """
+
+        virtual DoubleWithUnit FullPhysics::Level1bFts::altitude(int i) const
+
+        """
         return _level_1b_fts.Level1bFts_altitude(self, i)
 
+
     def relative_velocity(self, i):
+        """
+
+        virtual DoubleWithUnit FullPhysics::Level1bFts::relative_velocity(int Spec_index) const
+
+        """
         return _level_1b_fts.Level1bFts_relative_velocity(self, i)
 
+
     def spectral_coefficient(self, Spec_index):
+        """
+
+        virtual ArrayWithUnit<double, 1> FullPhysics::Level1bFts::spectral_coefficient(int Spec_index) const
+
+        """
         return _level_1b_fts.Level1bFts_spectral_coefficient(self, Spec_index)
 
+
     def time(self, Spec_index):
+        """
+
+        virtual Time FullPhysics::Level1bFts::time(int Spec_index) const
+
+        """
         return _level_1b_fts.Level1bFts_time(self, Spec_index)
 
+
     def radiance(self, Spec_index):
+        """
+
+        virtual SpectralRange FullPhysics::Level1bFts::radiance(int Spec_index) const
+
+        """
         return _level_1b_fts.Level1bFts_radiance(self, Spec_index)
+
     __swig_destroy__ = _level_1b_fts.delete_Level1bFts
     __del__ = lambda self: None
 Level1bFts_swigregister = _level_1b_fts.Level1bFts_swigregister

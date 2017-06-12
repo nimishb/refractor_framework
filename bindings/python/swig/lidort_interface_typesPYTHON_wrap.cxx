@@ -39278,375 +39278,1675 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"Lidort_Pars_breonveg_idx_get", _wrap_Lidort_Pars_breonveg_idx_get, METH_VARARGS, NULL},
 	 { (char *)"Lidort_Pars_breonsoil_idx_get", _wrap_Lidort_Pars_breonsoil_idx_get, METH_VARARGS, NULL},
 	 { (char *)"Lidort_Pars_maxbrdf_idx_get", _wrap_Lidort_Pars_maxbrdf_idx_get, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Pars_instance", _wrap_Lidort_Pars_instance, METH_VARARGS, NULL},
+	 { (char *)"Lidort_Pars_instance", _wrap_Lidort_Pars_instance, METH_VARARGS, (char *)"\n"
+		"\n"
+		"static Lidort_Pars& FullPhysics::Lidort_Pars::instance()\n"
+		"\n"
+		""},
 	 { (char *)"delete_Lidort_Pars", _wrap_delete_Lidort_Pars, METH_VARARGS, NULL},
 	 { (char *)"Lidort_Pars_swigregister", Lidort_Pars_swigregister, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Structure_fortran_type_ptr", _wrap_Lidort_Structure_fortran_type_ptr, METH_VARARGS, NULL},
+	 { (char *)"Lidort_Structure_fortran_type_ptr", _wrap_Lidort_Structure_fortran_type_ptr, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void* FullPhysics::Lidort_Structure::fortran_type_ptr()\n"
+		"\n"
+		""},
 	 { (char *)"Lidort_Structure___str__", _wrap_Lidort_Structure___str__, METH_VARARGS, NULL},
 	 { (char *)"delete_Lidort_Structure", _wrap_delete_Lidort_Structure, METH_VARARGS, NULL},
 	 { (char *)"Lidort_Structure_swigregister", Lidort_Structure_swigregister, METH_VARARGS, NULL},
-	 { (char *)"new_Brdf_Linsup_Inputs", _wrap_new_Brdf_Linsup_Inputs, METH_VARARGS, NULL},
-	 { (char *)"delete_Brdf_Linsup_Inputs", _wrap_delete_Brdf_Linsup_Inputs, METH_VARARGS, NULL},
-	 { (char *)"Brdf_Linsup_Inputs_bs_do_kernel_factor_wfs", _wrap_Brdf_Linsup_Inputs_bs_do_kernel_factor_wfs, METH_VARARGS, NULL},
-	 { (char *)"Brdf_Linsup_Inputs_bs_do_kernel_params_wfs", _wrap_Brdf_Linsup_Inputs_bs_do_kernel_params_wfs, METH_VARARGS, NULL},
-	 { (char *)"Brdf_Linsup_Inputs_bs_do_kparams_derivs", _wrap_Brdf_Linsup_Inputs_bs_do_kparams_derivs, METH_VARARGS, NULL},
-	 { (char *)"Brdf_Linsup_Inputs_bs_n_surface_wfs", _wrap_Brdf_Linsup_Inputs_bs_n_surface_wfs, METH_VARARGS, NULL},
-	 { (char *)"Brdf_Linsup_Inputs_bs_n_kernel_factor_wfs", _wrap_Brdf_Linsup_Inputs_bs_n_kernel_factor_wfs, METH_VARARGS, NULL},
-	 { (char *)"Brdf_Linsup_Inputs_bs_n_kernel_params_wfs", _wrap_Brdf_Linsup_Inputs_bs_n_kernel_params_wfs, METH_VARARGS, NULL},
-	 { (char *)"Brdf_Linsup_Inputs_print_desc", _wrap_Brdf_Linsup_Inputs_print_desc, METH_VARARGS, NULL},
+	 { (char *)"new_Brdf_Linsup_Inputs", _wrap_new_Brdf_Linsup_Inputs, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::Brdf_Linsup_Inputs::Brdf_Linsup_Inputs(void *allocated_f_type_c)\n"
+		"\n"
+		""},
+	 { (char *)"delete_Brdf_Linsup_Inputs", _wrap_delete_Brdf_Linsup_Inputs, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::Brdf_Linsup_Inputs::~Brdf_Linsup_Inputs()\n"
+		"\n"
+		""},
+	 { (char *)"Brdf_Linsup_Inputs_bs_do_kernel_factor_wfs", _wrap_Brdf_Linsup_Inputs_bs_do_kernel_factor_wfs, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Brdf_Linsup_Inputs::bs_do_kernel_factor_wfs(const blitz::Array< bool, 1 > &bs_do_kernel_factor_wfs_in)\n"
+		"\n"
+		""},
+	 { (char *)"Brdf_Linsup_Inputs_bs_do_kernel_params_wfs", _wrap_Brdf_Linsup_Inputs_bs_do_kernel_params_wfs, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Brdf_Linsup_Inputs::bs_do_kernel_params_wfs(const blitz::Array< bool, 2 > &bs_do_kernel_params_wfs_in)\n"
+		"\n"
+		""},
+	 { (char *)"Brdf_Linsup_Inputs_bs_do_kparams_derivs", _wrap_Brdf_Linsup_Inputs_bs_do_kparams_derivs, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Brdf_Linsup_Inputs::bs_do_kparams_derivs(const blitz::Array< bool, 1 > &bs_do_kparams_derivs_in)\n"
+		"\n"
+		""},
+	 { (char *)"Brdf_Linsup_Inputs_bs_n_surface_wfs", _wrap_Brdf_Linsup_Inputs_bs_n_surface_wfs, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Brdf_Linsup_Inputs::bs_n_surface_wfs(const int &bs_n_surface_wfs_in)\n"
+		"\n"
+		""},
+	 { (char *)"Brdf_Linsup_Inputs_bs_n_kernel_factor_wfs", _wrap_Brdf_Linsup_Inputs_bs_n_kernel_factor_wfs, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Brdf_Linsup_Inputs::bs_n_kernel_factor_wfs(const int &bs_n_kernel_factor_wfs_in)\n"
+		"\n"
+		""},
+	 { (char *)"Brdf_Linsup_Inputs_bs_n_kernel_params_wfs", _wrap_Brdf_Linsup_Inputs_bs_n_kernel_params_wfs, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Brdf_Linsup_Inputs::bs_n_kernel_params_wfs(const int &bs_n_kernel_params_wfs_in)\n"
+		"\n"
+		""},
+	 { (char *)"Brdf_Linsup_Inputs_print_desc", _wrap_Brdf_Linsup_Inputs_print_desc, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::Brdf_Linsup_Inputs::print(std::ostream &output_stream) const\n"
+		"\n"
+		""},
 	 { (char *)"Brdf_Linsup_Inputs_swigregister", Brdf_Linsup_Inputs_swigregister, METH_VARARGS, NULL},
-	 { (char *)"new_Brdf_Linsup_Outputs", _wrap_new_Brdf_Linsup_Outputs, METH_VARARGS, NULL},
-	 { (char *)"delete_Brdf_Linsup_Outputs", _wrap_delete_Brdf_Linsup_Outputs, METH_VARARGS, NULL},
-	 { (char *)"Brdf_Linsup_Outputs_bs_ls_exactdb_brdfunc", _wrap_Brdf_Linsup_Outputs_bs_ls_exactdb_brdfunc, METH_VARARGS, NULL},
-	 { (char *)"Brdf_Linsup_Outputs_bs_ls_brdf_f_0", _wrap_Brdf_Linsup_Outputs_bs_ls_brdf_f_0, METH_VARARGS, NULL},
-	 { (char *)"Brdf_Linsup_Outputs_bs_ls_brdf_f", _wrap_Brdf_Linsup_Outputs_bs_ls_brdf_f, METH_VARARGS, NULL},
-	 { (char *)"Brdf_Linsup_Outputs_bs_ls_user_brdf_f_0", _wrap_Brdf_Linsup_Outputs_bs_ls_user_brdf_f_0, METH_VARARGS, NULL},
-	 { (char *)"Brdf_Linsup_Outputs_bs_ls_user_brdf_f", _wrap_Brdf_Linsup_Outputs_bs_ls_user_brdf_f, METH_VARARGS, NULL},
-	 { (char *)"Brdf_Linsup_Outputs_bs_ls_emissivity", _wrap_Brdf_Linsup_Outputs_bs_ls_emissivity, METH_VARARGS, NULL},
-	 { (char *)"Brdf_Linsup_Outputs_bs_ls_user_emissivity", _wrap_Brdf_Linsup_Outputs_bs_ls_user_emissivity, METH_VARARGS, NULL},
-	 { (char *)"Brdf_Linsup_Outputs_print_desc", _wrap_Brdf_Linsup_Outputs_print_desc, METH_VARARGS, NULL},
+	 { (char *)"new_Brdf_Linsup_Outputs", _wrap_new_Brdf_Linsup_Outputs, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::Brdf_Linsup_Outputs::Brdf_Linsup_Outputs(void *allocated_f_type_c)\n"
+		"\n"
+		""},
+	 { (char *)"delete_Brdf_Linsup_Outputs", _wrap_delete_Brdf_Linsup_Outputs, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::Brdf_Linsup_Outputs::~Brdf_Linsup_Outputs()\n"
+		"\n"
+		""},
+	 { (char *)"Brdf_Linsup_Outputs_bs_ls_exactdb_brdfunc", _wrap_Brdf_Linsup_Outputs_bs_ls_exactdb_brdfunc, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Brdf_Linsup_Outputs::bs_ls_exactdb_brdfunc(const blitz::Array< double, 4 > &bs_ls_exactdb_brdfunc_in)\n"
+		"\n"
+		""},
+	 { (char *)"Brdf_Linsup_Outputs_bs_ls_brdf_f_0", _wrap_Brdf_Linsup_Outputs_bs_ls_brdf_f_0, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Brdf_Linsup_Outputs::bs_ls_brdf_f_0(const blitz::Array< double, 4 > &bs_ls_brdf_f_0_in)\n"
+		"\n"
+		""},
+	 { (char *)"Brdf_Linsup_Outputs_bs_ls_brdf_f", _wrap_Brdf_Linsup_Outputs_bs_ls_brdf_f, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Brdf_Linsup_Outputs::bs_ls_brdf_f(const blitz::Array< double, 4 > &bs_ls_brdf_f_in)\n"
+		"\n"
+		""},
+	 { (char *)"Brdf_Linsup_Outputs_bs_ls_user_brdf_f_0", _wrap_Brdf_Linsup_Outputs_bs_ls_user_brdf_f_0, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Brdf_Linsup_Outputs::bs_ls_user_brdf_f_0(const blitz::Array< double, 4 > &bs_ls_user_brdf_f_0_in)\n"
+		"\n"
+		""},
+	 { (char *)"Brdf_Linsup_Outputs_bs_ls_user_brdf_f", _wrap_Brdf_Linsup_Outputs_bs_ls_user_brdf_f, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Brdf_Linsup_Outputs::bs_ls_user_brdf_f(const blitz::Array< double, 4 > &bs_ls_user_brdf_f_in)\n"
+		"\n"
+		""},
+	 { (char *)"Brdf_Linsup_Outputs_bs_ls_emissivity", _wrap_Brdf_Linsup_Outputs_bs_ls_emissivity, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Brdf_Linsup_Outputs::bs_ls_emissivity(const blitz::Array< double, 3 > &bs_ls_emissivity_in)\n"
+		"\n"
+		""},
+	 { (char *)"Brdf_Linsup_Outputs_bs_ls_user_emissivity", _wrap_Brdf_Linsup_Outputs_bs_ls_user_emissivity, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Brdf_Linsup_Outputs::bs_ls_user_emissivity(const blitz::Array< double, 3 > &bs_ls_user_emissivity_in)\n"
+		"\n"
+		""},
+	 { (char *)"Brdf_Linsup_Outputs_print_desc", _wrap_Brdf_Linsup_Outputs_print_desc, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::Brdf_Linsup_Outputs::print(std::ostream &output_stream) const\n"
+		"\n"
+		""},
 	 { (char *)"Brdf_Linsup_Outputs_swigregister", Brdf_Linsup_Outputs_swigregister, METH_VARARGS, NULL},
-	 { (char *)"new_Brdf_Sup_Inputs", _wrap_new_Brdf_Sup_Inputs, METH_VARARGS, NULL},
-	 { (char *)"delete_Brdf_Sup_Inputs", _wrap_delete_Brdf_Sup_Inputs, METH_VARARGS, NULL},
-	 { (char *)"Brdf_Sup_Inputs_bs_do_user_streams", _wrap_Brdf_Sup_Inputs_bs_do_user_streams, METH_VARARGS, NULL},
-	 { (char *)"Brdf_Sup_Inputs_bs_do_brdf_surface", _wrap_Brdf_Sup_Inputs_bs_do_brdf_surface, METH_VARARGS, NULL},
-	 { (char *)"Brdf_Sup_Inputs_bs_do_surface_emission", _wrap_Brdf_Sup_Inputs_bs_do_surface_emission, METH_VARARGS, NULL},
-	 { (char *)"Brdf_Sup_Inputs_bs_nstreams", _wrap_Brdf_Sup_Inputs_bs_nstreams, METH_VARARGS, NULL},
-	 { (char *)"Brdf_Sup_Inputs_bs_nbeams", _wrap_Brdf_Sup_Inputs_bs_nbeams, METH_VARARGS, NULL},
-	 { (char *)"Brdf_Sup_Inputs_bs_beam_szas", _wrap_Brdf_Sup_Inputs_bs_beam_szas, METH_VARARGS, NULL},
-	 { (char *)"Brdf_Sup_Inputs_bs_n_user_relazms", _wrap_Brdf_Sup_Inputs_bs_n_user_relazms, METH_VARARGS, NULL},
-	 { (char *)"Brdf_Sup_Inputs_bs_user_relazms", _wrap_Brdf_Sup_Inputs_bs_user_relazms, METH_VARARGS, NULL},
-	 { (char *)"Brdf_Sup_Inputs_bs_n_user_streams", _wrap_Brdf_Sup_Inputs_bs_n_user_streams, METH_VARARGS, NULL},
-	 { (char *)"Brdf_Sup_Inputs_bs_user_angles_input", _wrap_Brdf_Sup_Inputs_bs_user_angles_input, METH_VARARGS, NULL},
-	 { (char *)"Brdf_Sup_Inputs_bs_n_brdf_kernels", _wrap_Brdf_Sup_Inputs_bs_n_brdf_kernels, METH_VARARGS, NULL},
-	 { (char *)"Brdf_Sup_Inputs_bs_brdf_names", _wrap_Brdf_Sup_Inputs_bs_brdf_names, METH_VARARGS, NULL},
-	 { (char *)"Brdf_Sup_Inputs_bs_which_brdf", _wrap_Brdf_Sup_Inputs_bs_which_brdf, METH_VARARGS, NULL},
-	 { (char *)"Brdf_Sup_Inputs_bs_n_brdf_parameters", _wrap_Brdf_Sup_Inputs_bs_n_brdf_parameters, METH_VARARGS, NULL},
-	 { (char *)"Brdf_Sup_Inputs_bs_brdf_parameters", _wrap_Brdf_Sup_Inputs_bs_brdf_parameters, METH_VARARGS, NULL},
-	 { (char *)"Brdf_Sup_Inputs_bs_lambertian_kernel_flag", _wrap_Brdf_Sup_Inputs_bs_lambertian_kernel_flag, METH_VARARGS, NULL},
-	 { (char *)"Brdf_Sup_Inputs_bs_brdf_factors", _wrap_Brdf_Sup_Inputs_bs_brdf_factors, METH_VARARGS, NULL},
-	 { (char *)"Brdf_Sup_Inputs_bs_nstreams_brdf", _wrap_Brdf_Sup_Inputs_bs_nstreams_brdf, METH_VARARGS, NULL},
-	 { (char *)"Brdf_Sup_Inputs_bs_do_shadow_effect", _wrap_Brdf_Sup_Inputs_bs_do_shadow_effect, METH_VARARGS, NULL},
-	 { (char *)"Brdf_Sup_Inputs_bs_do_exactonly", _wrap_Brdf_Sup_Inputs_bs_do_exactonly, METH_VARARGS, NULL},
-	 { (char *)"Brdf_Sup_Inputs_bs_do_glitter_msrcorr", _wrap_Brdf_Sup_Inputs_bs_do_glitter_msrcorr, METH_VARARGS, NULL},
-	 { (char *)"Brdf_Sup_Inputs_bs_do_glitter_msrcorr_exactonly", _wrap_Brdf_Sup_Inputs_bs_do_glitter_msrcorr_exactonly, METH_VARARGS, NULL},
-	 { (char *)"Brdf_Sup_Inputs_bs_glitter_msrcorr_order", _wrap_Brdf_Sup_Inputs_bs_glitter_msrcorr_order, METH_VARARGS, NULL},
-	 { (char *)"Brdf_Sup_Inputs_bs_glitter_msrcorr_nmuquad", _wrap_Brdf_Sup_Inputs_bs_glitter_msrcorr_nmuquad, METH_VARARGS, NULL},
-	 { (char *)"Brdf_Sup_Inputs_bs_glitter_msrcorr_nphiquad", _wrap_Brdf_Sup_Inputs_bs_glitter_msrcorr_nphiquad, METH_VARARGS, NULL},
-	 { (char *)"Brdf_Sup_Inputs_print_desc", _wrap_Brdf_Sup_Inputs_print_desc, METH_VARARGS, NULL},
+	 { (char *)"new_Brdf_Sup_Inputs", _wrap_new_Brdf_Sup_Inputs, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::Brdf_Sup_Inputs::Brdf_Sup_Inputs(void *allocated_f_type_c)\n"
+		"\n"
+		""},
+	 { (char *)"delete_Brdf_Sup_Inputs", _wrap_delete_Brdf_Sup_Inputs, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::Brdf_Sup_Inputs::~Brdf_Sup_Inputs()\n"
+		"\n"
+		""},
+	 { (char *)"Brdf_Sup_Inputs_bs_do_user_streams", _wrap_Brdf_Sup_Inputs_bs_do_user_streams, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Brdf_Sup_Inputs::bs_do_user_streams(const bool &bs_do_user_streams_in)\n"
+		"\n"
+		""},
+	 { (char *)"Brdf_Sup_Inputs_bs_do_brdf_surface", _wrap_Brdf_Sup_Inputs_bs_do_brdf_surface, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Brdf_Sup_Inputs::bs_do_brdf_surface(const bool &bs_do_brdf_surface_in)\n"
+		"\n"
+		""},
+	 { (char *)"Brdf_Sup_Inputs_bs_do_surface_emission", _wrap_Brdf_Sup_Inputs_bs_do_surface_emission, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Brdf_Sup_Inputs::bs_do_surface_emission(const bool &bs_do_surface_emission_in)\n"
+		"\n"
+		""},
+	 { (char *)"Brdf_Sup_Inputs_bs_nstreams", _wrap_Brdf_Sup_Inputs_bs_nstreams, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Brdf_Sup_Inputs::bs_nstreams(const int &bs_nstreams_in)\n"
+		"\n"
+		""},
+	 { (char *)"Brdf_Sup_Inputs_bs_nbeams", _wrap_Brdf_Sup_Inputs_bs_nbeams, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Brdf_Sup_Inputs::bs_nbeams(const int &bs_nbeams_in)\n"
+		"\n"
+		""},
+	 { (char *)"Brdf_Sup_Inputs_bs_beam_szas", _wrap_Brdf_Sup_Inputs_bs_beam_szas, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Brdf_Sup_Inputs::bs_beam_szas(const blitz::Array< double, 1 > &bs_beam_szas_in)\n"
+		"\n"
+		""},
+	 { (char *)"Brdf_Sup_Inputs_bs_n_user_relazms", _wrap_Brdf_Sup_Inputs_bs_n_user_relazms, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Brdf_Sup_Inputs::bs_n_user_relazms(const int &bs_n_user_relazms_in)\n"
+		"\n"
+		""},
+	 { (char *)"Brdf_Sup_Inputs_bs_user_relazms", _wrap_Brdf_Sup_Inputs_bs_user_relazms, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Brdf_Sup_Inputs::bs_user_relazms(const blitz::Array< double, 1 > &bs_user_relazms_in)\n"
+		"\n"
+		""},
+	 { (char *)"Brdf_Sup_Inputs_bs_n_user_streams", _wrap_Brdf_Sup_Inputs_bs_n_user_streams, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Brdf_Sup_Inputs::bs_n_user_streams(const int &bs_n_user_streams_in)\n"
+		"\n"
+		""},
+	 { (char *)"Brdf_Sup_Inputs_bs_user_angles_input", _wrap_Brdf_Sup_Inputs_bs_user_angles_input, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Brdf_Sup_Inputs::bs_user_angles_input(const blitz::Array< double, 1 > &bs_user_angles_input_in)\n"
+		"\n"
+		""},
+	 { (char *)"Brdf_Sup_Inputs_bs_n_brdf_kernels", _wrap_Brdf_Sup_Inputs_bs_n_brdf_kernels, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Brdf_Sup_Inputs::bs_n_brdf_kernels(const int &bs_n_brdf_kernels_in)\n"
+		"\n"
+		""},
+	 { (char *)"Brdf_Sup_Inputs_bs_brdf_names", _wrap_Brdf_Sup_Inputs_bs_brdf_names, METH_VARARGS, (char *)"\n"
+		"\n"
+		"const std::vector< std::string > FullPhysics::Brdf_Sup_Inputs::bs_brdf_names() const\n"
+		"\n"
+		""},
+	 { (char *)"Brdf_Sup_Inputs_bs_which_brdf", _wrap_Brdf_Sup_Inputs_bs_which_brdf, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Brdf_Sup_Inputs::bs_which_brdf(const blitz::Array< int, 1 > &bs_which_brdf_in)\n"
+		"\n"
+		""},
+	 { (char *)"Brdf_Sup_Inputs_bs_n_brdf_parameters", _wrap_Brdf_Sup_Inputs_bs_n_brdf_parameters, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Brdf_Sup_Inputs::bs_n_brdf_parameters(const blitz::Array< int, 1 > &bs_n_brdf_parameters_in)\n"
+		"\n"
+		""},
+	 { (char *)"Brdf_Sup_Inputs_bs_brdf_parameters", _wrap_Brdf_Sup_Inputs_bs_brdf_parameters, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Brdf_Sup_Inputs::bs_brdf_parameters(const blitz::Array< double, 2 > &bs_brdf_parameters_in)\n"
+		"\n"
+		""},
+	 { (char *)"Brdf_Sup_Inputs_bs_lambertian_kernel_flag", _wrap_Brdf_Sup_Inputs_bs_lambertian_kernel_flag, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Brdf_Sup_Inputs::bs_lambertian_kernel_flag(const blitz::Array< bool, 1 > &bs_lambertian_kernel_flag_in)\n"
+		"\n"
+		""},
+	 { (char *)"Brdf_Sup_Inputs_bs_brdf_factors", _wrap_Brdf_Sup_Inputs_bs_brdf_factors, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Brdf_Sup_Inputs::bs_brdf_factors(const blitz::Array< double, 1 > &bs_brdf_factors_in)\n"
+		"\n"
+		""},
+	 { (char *)"Brdf_Sup_Inputs_bs_nstreams_brdf", _wrap_Brdf_Sup_Inputs_bs_nstreams_brdf, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Brdf_Sup_Inputs::bs_nstreams_brdf(const int &bs_nstreams_brdf_in)\n"
+		"\n"
+		""},
+	 { (char *)"Brdf_Sup_Inputs_bs_do_shadow_effect", _wrap_Brdf_Sup_Inputs_bs_do_shadow_effect, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Brdf_Sup_Inputs::bs_do_shadow_effect(const bool &bs_do_shadow_effect_in)\n"
+		"\n"
+		""},
+	 { (char *)"Brdf_Sup_Inputs_bs_do_exactonly", _wrap_Brdf_Sup_Inputs_bs_do_exactonly, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Brdf_Sup_Inputs::bs_do_exactonly(const bool &bs_do_exactonly_in)\n"
+		"\n"
+		""},
+	 { (char *)"Brdf_Sup_Inputs_bs_do_glitter_msrcorr", _wrap_Brdf_Sup_Inputs_bs_do_glitter_msrcorr, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Brdf_Sup_Inputs::bs_do_glitter_msrcorr(const bool &bs_do_glitter_msrcorr_in)\n"
+		"\n"
+		""},
+	 { (char *)"Brdf_Sup_Inputs_bs_do_glitter_msrcorr_exactonly", _wrap_Brdf_Sup_Inputs_bs_do_glitter_msrcorr_exactonly, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Brdf_Sup_Inputs::bs_do_glitter_msrcorr_exactonly(const bool &bs_do_glitter_msrcorr_exactonly_in)\n"
+		"\n"
+		""},
+	 { (char *)"Brdf_Sup_Inputs_bs_glitter_msrcorr_order", _wrap_Brdf_Sup_Inputs_bs_glitter_msrcorr_order, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Brdf_Sup_Inputs::bs_glitter_msrcorr_order(const int &bs_glitter_msrcorr_order_in)\n"
+		"\n"
+		""},
+	 { (char *)"Brdf_Sup_Inputs_bs_glitter_msrcorr_nmuquad", _wrap_Brdf_Sup_Inputs_bs_glitter_msrcorr_nmuquad, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Brdf_Sup_Inputs::bs_glitter_msrcorr_nmuquad(const int &bs_glitter_msrcorr_nmuquad_in)\n"
+		"\n"
+		""},
+	 { (char *)"Brdf_Sup_Inputs_bs_glitter_msrcorr_nphiquad", _wrap_Brdf_Sup_Inputs_bs_glitter_msrcorr_nphiquad, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Brdf_Sup_Inputs::bs_glitter_msrcorr_nphiquad(const int &bs_glitter_msrcorr_nphiquad_in)\n"
+		"\n"
+		""},
+	 { (char *)"Brdf_Sup_Inputs_print_desc", _wrap_Brdf_Sup_Inputs_print_desc, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::Brdf_Sup_Inputs::print(std::ostream &output_stream) const\n"
+		"\n"
+		""},
 	 { (char *)"Brdf_Sup_Inputs_swigregister", Brdf_Sup_Inputs_swigregister, METH_VARARGS, NULL},
-	 { (char *)"new_Brdf_Sup_Outputs", _wrap_new_Brdf_Sup_Outputs, METH_VARARGS, NULL},
-	 { (char *)"delete_Brdf_Sup_Outputs", _wrap_delete_Brdf_Sup_Outputs, METH_VARARGS, NULL},
-	 { (char *)"Brdf_Sup_Outputs_bs_exactdb_brdfunc", _wrap_Brdf_Sup_Outputs_bs_exactdb_brdfunc, METH_VARARGS, NULL},
-	 { (char *)"Brdf_Sup_Outputs_bs_brdf_f_0", _wrap_Brdf_Sup_Outputs_bs_brdf_f_0, METH_VARARGS, NULL},
-	 { (char *)"Brdf_Sup_Outputs_bs_brdf_f", _wrap_Brdf_Sup_Outputs_bs_brdf_f, METH_VARARGS, NULL},
-	 { (char *)"Brdf_Sup_Outputs_bs_user_brdf_f_0", _wrap_Brdf_Sup_Outputs_bs_user_brdf_f_0, METH_VARARGS, NULL},
-	 { (char *)"Brdf_Sup_Outputs_bs_user_brdf_f", _wrap_Brdf_Sup_Outputs_bs_user_brdf_f, METH_VARARGS, NULL},
-	 { (char *)"Brdf_Sup_Outputs_bs_emissivity", _wrap_Brdf_Sup_Outputs_bs_emissivity, METH_VARARGS, NULL},
-	 { (char *)"Brdf_Sup_Outputs_bs_user_emissivity", _wrap_Brdf_Sup_Outputs_bs_user_emissivity, METH_VARARGS, NULL},
-	 { (char *)"Brdf_Sup_Outputs_print_desc", _wrap_Brdf_Sup_Outputs_print_desc, METH_VARARGS, NULL},
+	 { (char *)"new_Brdf_Sup_Outputs", _wrap_new_Brdf_Sup_Outputs, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::Brdf_Sup_Outputs::Brdf_Sup_Outputs(void *allocated_f_type_c)\n"
+		"\n"
+		""},
+	 { (char *)"delete_Brdf_Sup_Outputs", _wrap_delete_Brdf_Sup_Outputs, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::Brdf_Sup_Outputs::~Brdf_Sup_Outputs()\n"
+		"\n"
+		""},
+	 { (char *)"Brdf_Sup_Outputs_bs_exactdb_brdfunc", _wrap_Brdf_Sup_Outputs_bs_exactdb_brdfunc, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Brdf_Sup_Outputs::bs_exactdb_brdfunc(const blitz::Array< double, 3 > &bs_exactdb_brdfunc_in)\n"
+		"\n"
+		""},
+	 { (char *)"Brdf_Sup_Outputs_bs_brdf_f_0", _wrap_Brdf_Sup_Outputs_bs_brdf_f_0, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Brdf_Sup_Outputs::bs_brdf_f_0(const blitz::Array< double, 3 > &bs_brdf_f_0_in)\n"
+		"\n"
+		""},
+	 { (char *)"Brdf_Sup_Outputs_bs_brdf_f", _wrap_Brdf_Sup_Outputs_bs_brdf_f, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Brdf_Sup_Outputs::bs_brdf_f(const blitz::Array< double, 3 > &bs_brdf_f_in)\n"
+		"\n"
+		""},
+	 { (char *)"Brdf_Sup_Outputs_bs_user_brdf_f_0", _wrap_Brdf_Sup_Outputs_bs_user_brdf_f_0, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Brdf_Sup_Outputs::bs_user_brdf_f_0(const blitz::Array< double, 3 > &bs_user_brdf_f_0_in)\n"
+		"\n"
+		""},
+	 { (char *)"Brdf_Sup_Outputs_bs_user_brdf_f", _wrap_Brdf_Sup_Outputs_bs_user_brdf_f, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Brdf_Sup_Outputs::bs_user_brdf_f(const blitz::Array< double, 3 > &bs_user_brdf_f_in)\n"
+		"\n"
+		""},
+	 { (char *)"Brdf_Sup_Outputs_bs_emissivity", _wrap_Brdf_Sup_Outputs_bs_emissivity, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Brdf_Sup_Outputs::bs_emissivity(const blitz::Array< double, 2 > &bs_emissivity_in)\n"
+		"\n"
+		""},
+	 { (char *)"Brdf_Sup_Outputs_bs_user_emissivity", _wrap_Brdf_Sup_Outputs_bs_user_emissivity, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Brdf_Sup_Outputs::bs_user_emissivity(const blitz::Array< double, 2 > &bs_user_emissivity_in)\n"
+		"\n"
+		""},
+	 { (char *)"Brdf_Sup_Outputs_print_desc", _wrap_Brdf_Sup_Outputs_print_desc, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::Brdf_Sup_Outputs::print(std::ostream &output_stream) const\n"
+		"\n"
+		""},
 	 { (char *)"Brdf_Sup_Outputs_swigregister", Brdf_Sup_Outputs_swigregister, METH_VARARGS, NULL},
-	 { (char *)"new_Brdf_Input_Exception_Handling", _wrap_new_Brdf_Input_Exception_Handling, METH_VARARGS, NULL},
-	 { (char *)"delete_Brdf_Input_Exception_Handling", _wrap_delete_Brdf_Input_Exception_Handling, METH_VARARGS, NULL},
-	 { (char *)"Brdf_Input_Exception_Handling_bs_status_inputread", _wrap_Brdf_Input_Exception_Handling_bs_status_inputread, METH_VARARGS, NULL},
-	 { (char *)"Brdf_Input_Exception_Handling_bs_ninputmessages", _wrap_Brdf_Input_Exception_Handling_bs_ninputmessages, METH_VARARGS, NULL},
-	 { (char *)"Brdf_Input_Exception_Handling_bs_inputmessages", _wrap_Brdf_Input_Exception_Handling_bs_inputmessages, METH_VARARGS, NULL},
-	 { (char *)"Brdf_Input_Exception_Handling_bs_inputactions", _wrap_Brdf_Input_Exception_Handling_bs_inputactions, METH_VARARGS, NULL},
-	 { (char *)"Brdf_Input_Exception_Handling_print_desc", _wrap_Brdf_Input_Exception_Handling_print_desc, METH_VARARGS, NULL},
+	 { (char *)"new_Brdf_Input_Exception_Handling", _wrap_new_Brdf_Input_Exception_Handling, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::Brdf_Input_Exception_Handling::Brdf_Input_Exception_Handling(void *allocated_f_type_c)\n"
+		"\n"
+		""},
+	 { (char *)"delete_Brdf_Input_Exception_Handling", _wrap_delete_Brdf_Input_Exception_Handling, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::Brdf_Input_Exception_Handling::~Brdf_Input_Exception_Handling()\n"
+		"\n"
+		""},
+	 { (char *)"Brdf_Input_Exception_Handling_bs_status_inputread", _wrap_Brdf_Input_Exception_Handling_bs_status_inputread, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Brdf_Input_Exception_Handling::bs_status_inputread(const int &bs_status_inputread_in)\n"
+		"\n"
+		""},
+	 { (char *)"Brdf_Input_Exception_Handling_bs_ninputmessages", _wrap_Brdf_Input_Exception_Handling_bs_ninputmessages, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Brdf_Input_Exception_Handling::bs_ninputmessages(const int &bs_ninputmessages_in)\n"
+		"\n"
+		""},
+	 { (char *)"Brdf_Input_Exception_Handling_bs_inputmessages", _wrap_Brdf_Input_Exception_Handling_bs_inputmessages, METH_VARARGS, (char *)"\n"
+		"\n"
+		"const std::vector< std::string > FullPhysics::Brdf_Input_Exception_Handling::bs_inputmessages() const\n"
+		"\n"
+		""},
+	 { (char *)"Brdf_Input_Exception_Handling_bs_inputactions", _wrap_Brdf_Input_Exception_Handling_bs_inputactions, METH_VARARGS, (char *)"\n"
+		"\n"
+		"const std::vector< std::string > FullPhysics::Brdf_Input_Exception_Handling::bs_inputactions() const\n"
+		"\n"
+		""},
+	 { (char *)"Brdf_Input_Exception_Handling_print_desc", _wrap_Brdf_Input_Exception_Handling_print_desc, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::Brdf_Input_Exception_Handling::print(std::ostream &output_stream) const\n"
+		"\n"
+		""},
 	 { (char *)"Brdf_Input_Exception_Handling_swigregister", Brdf_Input_Exception_Handling_swigregister, METH_VARARGS, NULL},
-	 { (char *)"new_Lidort_Fixed_Lincontrol", _wrap_new_Lidort_Fixed_Lincontrol, METH_VARARGS, NULL},
-	 { (char *)"delete_Lidort_Fixed_Lincontrol", _wrap_delete_Lidort_Fixed_Lincontrol, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Fixed_Lincontrol_ts_do_column_linearization", _wrap_Lidort_Fixed_Lincontrol_ts_do_column_linearization, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Fixed_Lincontrol_ts_do_profile_linearization", _wrap_Lidort_Fixed_Lincontrol_ts_do_profile_linearization, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Fixed_Lincontrol_ts_do_surface_linearization", _wrap_Lidort_Fixed_Lincontrol_ts_do_surface_linearization, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Fixed_Lincontrol_ts_do_sleave_wfs", _wrap_Lidort_Fixed_Lincontrol_ts_do_sleave_wfs, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Fixed_Lincontrol_ts_layer_vary_flag", _wrap_Lidort_Fixed_Lincontrol_ts_layer_vary_flag, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Fixed_Lincontrol_ts_layer_vary_number", _wrap_Lidort_Fixed_Lincontrol_ts_layer_vary_number, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Fixed_Lincontrol_ts_n_totalcolumn_wfs", _wrap_Lidort_Fixed_Lincontrol_ts_n_totalcolumn_wfs, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Fixed_Lincontrol_ts_n_surface_wfs", _wrap_Lidort_Fixed_Lincontrol_ts_n_surface_wfs, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Fixed_Lincontrol_ts_n_sleave_wfs", _wrap_Lidort_Fixed_Lincontrol_ts_n_sleave_wfs, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Fixed_Lincontrol_print_desc", _wrap_Lidort_Fixed_Lincontrol_print_desc, METH_VARARGS, NULL},
+	 { (char *)"new_Lidort_Fixed_Lincontrol", _wrap_new_Lidort_Fixed_Lincontrol, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::Lidort_Fixed_Lincontrol::Lidort_Fixed_Lincontrol(void *allocated_f_type_c)\n"
+		"\n"
+		""},
+	 { (char *)"delete_Lidort_Fixed_Lincontrol", _wrap_delete_Lidort_Fixed_Lincontrol, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::Lidort_Fixed_Lincontrol::~Lidort_Fixed_Lincontrol()\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Fixed_Lincontrol_ts_do_column_linearization", _wrap_Lidort_Fixed_Lincontrol_ts_do_column_linearization, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Fixed_Lincontrol::ts_do_column_linearization(const bool &ts_do_column_linearization_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Fixed_Lincontrol_ts_do_profile_linearization", _wrap_Lidort_Fixed_Lincontrol_ts_do_profile_linearization, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Fixed_Lincontrol::ts_do_profile_linearization(const bool &ts_do_profile_linearization_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Fixed_Lincontrol_ts_do_surface_linearization", _wrap_Lidort_Fixed_Lincontrol_ts_do_surface_linearization, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Fixed_Lincontrol::ts_do_surface_linearization(const bool &ts_do_surface_linearization_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Fixed_Lincontrol_ts_do_sleave_wfs", _wrap_Lidort_Fixed_Lincontrol_ts_do_sleave_wfs, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Fixed_Lincontrol::ts_do_sleave_wfs(const bool &ts_do_sleave_wfs_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Fixed_Lincontrol_ts_layer_vary_flag", _wrap_Lidort_Fixed_Lincontrol_ts_layer_vary_flag, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Fixed_Lincontrol::ts_layer_vary_flag(const blitz::Array< bool, 1 > &ts_layer_vary_flag_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Fixed_Lincontrol_ts_layer_vary_number", _wrap_Lidort_Fixed_Lincontrol_ts_layer_vary_number, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Fixed_Lincontrol::ts_layer_vary_number(const blitz::Array< int, 1 > &ts_layer_vary_number_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Fixed_Lincontrol_ts_n_totalcolumn_wfs", _wrap_Lidort_Fixed_Lincontrol_ts_n_totalcolumn_wfs, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Fixed_Lincontrol::ts_n_totalcolumn_wfs(const int &ts_n_totalcolumn_wfs_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Fixed_Lincontrol_ts_n_surface_wfs", _wrap_Lidort_Fixed_Lincontrol_ts_n_surface_wfs, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Fixed_Lincontrol::ts_n_surface_wfs(const int &ts_n_surface_wfs_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Fixed_Lincontrol_ts_n_sleave_wfs", _wrap_Lidort_Fixed_Lincontrol_ts_n_sleave_wfs, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Fixed_Lincontrol::ts_n_sleave_wfs(const int &ts_n_sleave_wfs_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Fixed_Lincontrol_print_desc", _wrap_Lidort_Fixed_Lincontrol_print_desc, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::Lidort_Fixed_Lincontrol::print(std::ostream &output_stream) const\n"
+		"\n"
+		""},
 	 { (char *)"Lidort_Fixed_Lincontrol_swigregister", Lidort_Fixed_Lincontrol_swigregister, METH_VARARGS, NULL},
-	 { (char *)"new_Lidort_Fixed_Linoptical", _wrap_new_Lidort_Fixed_Linoptical, METH_VARARGS, NULL},
-	 { (char *)"delete_Lidort_Fixed_Linoptical", _wrap_delete_Lidort_Fixed_Linoptical, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Fixed_Linoptical_ts_l_deltau_vert_input", _wrap_Lidort_Fixed_Linoptical_ts_l_deltau_vert_input, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Fixed_Linoptical_ts_l_omega_total_input", _wrap_Lidort_Fixed_Linoptical_ts_l_omega_total_input, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Fixed_Linoptical_ts_l_phasmoms_total_input", _wrap_Lidort_Fixed_Linoptical_ts_l_phasmoms_total_input, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Fixed_Linoptical_print_desc", _wrap_Lidort_Fixed_Linoptical_print_desc, METH_VARARGS, NULL},
+	 { (char *)"new_Lidort_Fixed_Linoptical", _wrap_new_Lidort_Fixed_Linoptical, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::Lidort_Fixed_Linoptical::Lidort_Fixed_Linoptical(void *allocated_f_type_c)\n"
+		"\n"
+		""},
+	 { (char *)"delete_Lidort_Fixed_Linoptical", _wrap_delete_Lidort_Fixed_Linoptical, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::Lidort_Fixed_Linoptical::~Lidort_Fixed_Linoptical()\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Fixed_Linoptical_ts_l_deltau_vert_input", _wrap_Lidort_Fixed_Linoptical_ts_l_deltau_vert_input, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Fixed_Linoptical::ts_l_deltau_vert_input(const blitz::Array< double, 3 > &ts_l_deltau_vert_input_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Fixed_Linoptical_ts_l_omega_total_input", _wrap_Lidort_Fixed_Linoptical_ts_l_omega_total_input, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Fixed_Linoptical::ts_l_omega_total_input(const blitz::Array< double, 3 > &ts_l_omega_total_input_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Fixed_Linoptical_ts_l_phasmoms_total_input", _wrap_Lidort_Fixed_Linoptical_ts_l_phasmoms_total_input, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Fixed_Linoptical::ts_l_phasmoms_total_input(const blitz::Array< double, 4 > &ts_l_phasmoms_total_input_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Fixed_Linoptical_print_desc", _wrap_Lidort_Fixed_Linoptical_print_desc, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::Lidort_Fixed_Linoptical::print(std::ostream &output_stream) const\n"
+		"\n"
+		""},
 	 { (char *)"Lidort_Fixed_Linoptical_swigregister", Lidort_Fixed_Linoptical_swigregister, METH_VARARGS, NULL},
-	 { (char *)"new_Lidort_Fixed_Lininputs", _wrap_new_Lidort_Fixed_Lininputs, METH_VARARGS, NULL},
-	 { (char *)"delete_Lidort_Fixed_Lininputs", _wrap_delete_Lidort_Fixed_Lininputs, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Fixed_Lininputs_cont", _wrap_Lidort_Fixed_Lininputs_cont, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Fixed_Lininputs_optical", _wrap_Lidort_Fixed_Lininputs_optical, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Fixed_Lininputs_print_desc", _wrap_Lidort_Fixed_Lininputs_print_desc, METH_VARARGS, NULL},
+	 { (char *)"new_Lidort_Fixed_Lininputs", _wrap_new_Lidort_Fixed_Lininputs, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::Lidort_Fixed_Lininputs::Lidort_Fixed_Lininputs(void *allocated_f_type_c)\n"
+		"\n"
+		""},
+	 { (char *)"delete_Lidort_Fixed_Lininputs", _wrap_delete_Lidort_Fixed_Lininputs, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::Lidort_Fixed_Lininputs::~Lidort_Fixed_Lininputs()\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Fixed_Lininputs_cont", _wrap_Lidort_Fixed_Lininputs_cont, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Fixed_Lininputs::cont(Lidort_Fixed_Lincontrol &cont_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Fixed_Lininputs_optical", _wrap_Lidort_Fixed_Lininputs_optical, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Fixed_Lininputs::optical(Lidort_Fixed_Linoptical &optical_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Fixed_Lininputs_print_desc", _wrap_Lidort_Fixed_Lininputs_print_desc, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::Lidort_Fixed_Lininputs::print(std::ostream &output_stream) const\n"
+		"\n"
+		""},
 	 { (char *)"Lidort_Fixed_Lininputs_swigregister", Lidort_Fixed_Lininputs_swigregister, METH_VARARGS, NULL},
-	 { (char *)"new_Lidort_Modified_Lininputs", _wrap_new_Lidort_Modified_Lininputs, METH_VARARGS, NULL},
-	 { (char *)"delete_Lidort_Modified_Lininputs", _wrap_delete_Lidort_Modified_Lininputs, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Modified_Lininputs_dummy", _wrap_Lidort_Modified_Lininputs_dummy, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Modified_Lininputs_print_desc", _wrap_Lidort_Modified_Lininputs_print_desc, METH_VARARGS, NULL},
+	 { (char *)"new_Lidort_Modified_Lininputs", _wrap_new_Lidort_Modified_Lininputs, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::Lidort_Modified_Lininputs::Lidort_Modified_Lininputs(void *allocated_f_type_c)\n"
+		"\n"
+		""},
+	 { (char *)"delete_Lidort_Modified_Lininputs", _wrap_delete_Lidort_Modified_Lininputs, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::Lidort_Modified_Lininputs::~Lidort_Modified_Lininputs()\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Modified_Lininputs_dummy", _wrap_Lidort_Modified_Lininputs_dummy, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Modified_Lininputs::dummy(const int &dummy_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Modified_Lininputs_print_desc", _wrap_Lidort_Modified_Lininputs_print_desc, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::Lidort_Modified_Lininputs::print(std::ostream &output_stream) const\n"
+		"\n"
+		""},
 	 { (char *)"Lidort_Modified_Lininputs_swigregister", Lidort_Modified_Lininputs_swigregister, METH_VARARGS, NULL},
-	 { (char *)"new_Lidort_Linatmos", _wrap_new_Lidort_Linatmos, METH_VARARGS, NULL},
-	 { (char *)"delete_Lidort_Linatmos", _wrap_delete_Lidort_Linatmos, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Linatmos_ts_columnwf", _wrap_Lidort_Linatmos_ts_columnwf, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Linatmos_ts_mint_columnwf", _wrap_Lidort_Linatmos_ts_mint_columnwf, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Linatmos_ts_flux_columnwf", _wrap_Lidort_Linatmos_ts_flux_columnwf, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Linatmos_ts_profilewf", _wrap_Lidort_Linatmos_ts_profilewf, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Linatmos_ts_mint_profilewf", _wrap_Lidort_Linatmos_ts_mint_profilewf, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Linatmos_ts_flux_profilewf", _wrap_Lidort_Linatmos_ts_flux_profilewf, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Linatmos_print_desc", _wrap_Lidort_Linatmos_print_desc, METH_VARARGS, NULL},
+	 { (char *)"new_Lidort_Linatmos", _wrap_new_Lidort_Linatmos, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::Lidort_Linatmos::Lidort_Linatmos(void *allocated_f_type_c)\n"
+		"\n"
+		""},
+	 { (char *)"delete_Lidort_Linatmos", _wrap_delete_Lidort_Linatmos, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::Lidort_Linatmos::~Lidort_Linatmos()\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Linatmos_ts_columnwf", _wrap_Lidort_Linatmos_ts_columnwf, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Linatmos::ts_columnwf(const blitz::Array< double, 5 > &ts_columnwf_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Linatmos_ts_mint_columnwf", _wrap_Lidort_Linatmos_ts_mint_columnwf, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Linatmos::ts_mint_columnwf(const blitz::Array< double, 5 > &ts_mint_columnwf_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Linatmos_ts_flux_columnwf", _wrap_Lidort_Linatmos_ts_flux_columnwf, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Linatmos::ts_flux_columnwf(const blitz::Array< double, 5 > &ts_flux_columnwf_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Linatmos_ts_profilewf", _wrap_Lidort_Linatmos_ts_profilewf, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Linatmos::ts_profilewf(const blitz::Array< double, 6 > &ts_profilewf_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Linatmos_ts_mint_profilewf", _wrap_Lidort_Linatmos_ts_mint_profilewf, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Linatmos::ts_mint_profilewf(const blitz::Array< double, 6 > &ts_mint_profilewf_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Linatmos_ts_flux_profilewf", _wrap_Lidort_Linatmos_ts_flux_profilewf, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Linatmos::ts_flux_profilewf(const blitz::Array< double, 6 > &ts_flux_profilewf_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Linatmos_print_desc", _wrap_Lidort_Linatmos_print_desc, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::Lidort_Linatmos::print(std::ostream &output_stream) const\n"
+		"\n"
+		""},
 	 { (char *)"Lidort_Linatmos_swigregister", Lidort_Linatmos_swigregister, METH_VARARGS, NULL},
-	 { (char *)"new_Lidort_Linsurf", _wrap_new_Lidort_Linsurf, METH_VARARGS, NULL},
-	 { (char *)"delete_Lidort_Linsurf", _wrap_delete_Lidort_Linsurf, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Linsurf_ts_surfacewf", _wrap_Lidort_Linsurf_ts_surfacewf, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Linsurf_ts_mint_surfacewf", _wrap_Lidort_Linsurf_ts_mint_surfacewf, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Linsurf_ts_flux_surfacewf", _wrap_Lidort_Linsurf_ts_flux_surfacewf, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Linsurf_print_desc", _wrap_Lidort_Linsurf_print_desc, METH_VARARGS, NULL},
+	 { (char *)"new_Lidort_Linsurf", _wrap_new_Lidort_Linsurf, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::Lidort_Linsurf::Lidort_Linsurf(void *allocated_f_type_c)\n"
+		"\n"
+		""},
+	 { (char *)"delete_Lidort_Linsurf", _wrap_delete_Lidort_Linsurf, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::Lidort_Linsurf::~Lidort_Linsurf()\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Linsurf_ts_surfacewf", _wrap_Lidort_Linsurf_ts_surfacewf, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Linsurf::ts_surfacewf(const blitz::Array< double, 5 > &ts_surfacewf_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Linsurf_ts_mint_surfacewf", _wrap_Lidort_Linsurf_ts_mint_surfacewf, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Linsurf::ts_mint_surfacewf(const blitz::Array< double, 5 > &ts_mint_surfacewf_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Linsurf_ts_flux_surfacewf", _wrap_Lidort_Linsurf_ts_flux_surfacewf, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Linsurf::ts_flux_surfacewf(const blitz::Array< double, 5 > &ts_flux_surfacewf_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Linsurf_print_desc", _wrap_Lidort_Linsurf_print_desc, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::Lidort_Linsurf::print(std::ostream &output_stream) const\n"
+		"\n"
+		""},
 	 { (char *)"Lidort_Linsurf_swigregister", Lidort_Linsurf_swigregister, METH_VARARGS, NULL},
-	 { (char *)"new_Lidort_Linoutputs", _wrap_new_Lidort_Linoutputs, METH_VARARGS, NULL},
-	 { (char *)"delete_Lidort_Linoutputs", _wrap_delete_Lidort_Linoutputs, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Linoutputs_atmos", _wrap_Lidort_Linoutputs_atmos, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Linoutputs_surf", _wrap_Lidort_Linoutputs_surf, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Linoutputs_print_desc", _wrap_Lidort_Linoutputs_print_desc, METH_VARARGS, NULL},
+	 { (char *)"new_Lidort_Linoutputs", _wrap_new_Lidort_Linoutputs, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::Lidort_Linoutputs::Lidort_Linoutputs(void *allocated_f_type_c)\n"
+		"\n"
+		""},
+	 { (char *)"delete_Lidort_Linoutputs", _wrap_delete_Lidort_Linoutputs, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::Lidort_Linoutputs::~Lidort_Linoutputs()\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Linoutputs_atmos", _wrap_Lidort_Linoutputs_atmos, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Linoutputs::atmos(Lidort_Linatmos &atmos_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Linoutputs_surf", _wrap_Lidort_Linoutputs_surf, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Linoutputs::surf(Lidort_Linsurf &surf_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Linoutputs_print_desc", _wrap_Lidort_Linoutputs_print_desc, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::Lidort_Linoutputs::print(std::ostream &output_stream) const\n"
+		"\n"
+		""},
 	 { (char *)"Lidort_Linoutputs_swigregister", Lidort_Linoutputs_swigregister, METH_VARARGS, NULL},
-	 { (char *)"new_Lidort_Linsup_Brdf", _wrap_new_Lidort_Linsup_Brdf, METH_VARARGS, NULL},
-	 { (char *)"delete_Lidort_Linsup_Brdf", _wrap_delete_Lidort_Linsup_Brdf, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Linsup_Brdf_ts_ls_exactdb_brdfunc", _wrap_Lidort_Linsup_Brdf_ts_ls_exactdb_brdfunc, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Linsup_Brdf_ts_ls_brdf_f_0", _wrap_Lidort_Linsup_Brdf_ts_ls_brdf_f_0, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Linsup_Brdf_ts_ls_brdf_f", _wrap_Lidort_Linsup_Brdf_ts_ls_brdf_f, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Linsup_Brdf_ts_ls_user_brdf_f_0", _wrap_Lidort_Linsup_Brdf_ts_ls_user_brdf_f_0, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Linsup_Brdf_ts_ls_user_brdf_f", _wrap_Lidort_Linsup_Brdf_ts_ls_user_brdf_f, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Linsup_Brdf_ts_ls_emissivity", _wrap_Lidort_Linsup_Brdf_ts_ls_emissivity, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Linsup_Brdf_ts_ls_user_emissivity", _wrap_Lidort_Linsup_Brdf_ts_ls_user_emissivity, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Linsup_Brdf_print_desc", _wrap_Lidort_Linsup_Brdf_print_desc, METH_VARARGS, NULL},
+	 { (char *)"new_Lidort_Linsup_Brdf", _wrap_new_Lidort_Linsup_Brdf, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::Lidort_Linsup_Brdf::Lidort_Linsup_Brdf(void *allocated_f_type_c)\n"
+		"\n"
+		""},
+	 { (char *)"delete_Lidort_Linsup_Brdf", _wrap_delete_Lidort_Linsup_Brdf, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::Lidort_Linsup_Brdf::~Lidort_Linsup_Brdf()\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Linsup_Brdf_ts_ls_exactdb_brdfunc", _wrap_Lidort_Linsup_Brdf_ts_ls_exactdb_brdfunc, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Linsup_Brdf::ts_ls_exactdb_brdfunc(const blitz::Array< double, 4 > &ts_ls_exactdb_brdfunc_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Linsup_Brdf_ts_ls_brdf_f_0", _wrap_Lidort_Linsup_Brdf_ts_ls_brdf_f_0, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Linsup_Brdf::ts_ls_brdf_f_0(const blitz::Array< double, 4 > &ts_ls_brdf_f_0_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Linsup_Brdf_ts_ls_brdf_f", _wrap_Lidort_Linsup_Brdf_ts_ls_brdf_f, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Linsup_Brdf::ts_ls_brdf_f(const blitz::Array< double, 4 > &ts_ls_brdf_f_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Linsup_Brdf_ts_ls_user_brdf_f_0", _wrap_Lidort_Linsup_Brdf_ts_ls_user_brdf_f_0, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Linsup_Brdf::ts_ls_user_brdf_f_0(const blitz::Array< double, 4 > &ts_ls_user_brdf_f_0_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Linsup_Brdf_ts_ls_user_brdf_f", _wrap_Lidort_Linsup_Brdf_ts_ls_user_brdf_f, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Linsup_Brdf::ts_ls_user_brdf_f(const blitz::Array< double, 4 > &ts_ls_user_brdf_f_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Linsup_Brdf_ts_ls_emissivity", _wrap_Lidort_Linsup_Brdf_ts_ls_emissivity, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Linsup_Brdf::ts_ls_emissivity(const blitz::Array< double, 3 > &ts_ls_emissivity_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Linsup_Brdf_ts_ls_user_emissivity", _wrap_Lidort_Linsup_Brdf_ts_ls_user_emissivity, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Linsup_Brdf::ts_ls_user_emissivity(const blitz::Array< double, 3 > &ts_ls_user_emissivity_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Linsup_Brdf_print_desc", _wrap_Lidort_Linsup_Brdf_print_desc, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::Lidort_Linsup_Brdf::print(std::ostream &output_stream) const\n"
+		"\n"
+		""},
 	 { (char *)"Lidort_Linsup_Brdf_swigregister", Lidort_Linsup_Brdf_swigregister, METH_VARARGS, NULL},
-	 { (char *)"new_Lidort_Linsup_Ss_Atmos", _wrap_new_Lidort_Linsup_Ss_Atmos, METH_VARARGS, NULL},
-	 { (char *)"delete_Lidort_Linsup_Ss_Atmos", _wrap_delete_Lidort_Linsup_Ss_Atmos, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Linsup_Ss_Atmos_ts_columnwf_ss", _wrap_Lidort_Linsup_Ss_Atmos_ts_columnwf_ss, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Linsup_Ss_Atmos_ts_columnwf_db", _wrap_Lidort_Linsup_Ss_Atmos_ts_columnwf_db, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Linsup_Ss_Atmos_ts_profilewf_ss", _wrap_Lidort_Linsup_Ss_Atmos_ts_profilewf_ss, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Linsup_Ss_Atmos_ts_profilewf_db", _wrap_Lidort_Linsup_Ss_Atmos_ts_profilewf_db, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Linsup_Ss_Atmos_print_desc", _wrap_Lidort_Linsup_Ss_Atmos_print_desc, METH_VARARGS, NULL},
+	 { (char *)"new_Lidort_Linsup_Ss_Atmos", _wrap_new_Lidort_Linsup_Ss_Atmos, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::Lidort_Linsup_Ss_Atmos::Lidort_Linsup_Ss_Atmos(void *allocated_f_type_c)\n"
+		"\n"
+		""},
+	 { (char *)"delete_Lidort_Linsup_Ss_Atmos", _wrap_delete_Lidort_Linsup_Ss_Atmos, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::Lidort_Linsup_Ss_Atmos::~Lidort_Linsup_Ss_Atmos()\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Linsup_Ss_Atmos_ts_columnwf_ss", _wrap_Lidort_Linsup_Ss_Atmos_ts_columnwf_ss, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Linsup_Ss_Atmos::ts_columnwf_ss(const blitz::Array< double, 4 > &ts_columnwf_ss_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Linsup_Ss_Atmos_ts_columnwf_db", _wrap_Lidort_Linsup_Ss_Atmos_ts_columnwf_db, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Linsup_Ss_Atmos::ts_columnwf_db(const blitz::Array< double, 3 > &ts_columnwf_db_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Linsup_Ss_Atmos_ts_profilewf_ss", _wrap_Lidort_Linsup_Ss_Atmos_ts_profilewf_ss, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Linsup_Ss_Atmos::ts_profilewf_ss(const blitz::Array< double, 5 > &ts_profilewf_ss_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Linsup_Ss_Atmos_ts_profilewf_db", _wrap_Lidort_Linsup_Ss_Atmos_ts_profilewf_db, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Linsup_Ss_Atmos::ts_profilewf_db(const blitz::Array< double, 4 > &ts_profilewf_db_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Linsup_Ss_Atmos_print_desc", _wrap_Lidort_Linsup_Ss_Atmos_print_desc, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::Lidort_Linsup_Ss_Atmos::print(std::ostream &output_stream) const\n"
+		"\n"
+		""},
 	 { (char *)"Lidort_Linsup_Ss_Atmos_swigregister", Lidort_Linsup_Ss_Atmos_swigregister, METH_VARARGS, NULL},
-	 { (char *)"new_Lidort_Linsup_Ss_Surf", _wrap_new_Lidort_Linsup_Ss_Surf, METH_VARARGS, NULL},
-	 { (char *)"delete_Lidort_Linsup_Ss_Surf", _wrap_delete_Lidort_Linsup_Ss_Surf, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Linsup_Ss_Surf_ts_surfacewf_db", _wrap_Lidort_Linsup_Ss_Surf_ts_surfacewf_db, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Linsup_Ss_Surf_print_desc", _wrap_Lidort_Linsup_Ss_Surf_print_desc, METH_VARARGS, NULL},
+	 { (char *)"new_Lidort_Linsup_Ss_Surf", _wrap_new_Lidort_Linsup_Ss_Surf, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::Lidort_Linsup_Ss_Surf::Lidort_Linsup_Ss_Surf(void *allocated_f_type_c)\n"
+		"\n"
+		""},
+	 { (char *)"delete_Lidort_Linsup_Ss_Surf", _wrap_delete_Lidort_Linsup_Ss_Surf, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::Lidort_Linsup_Ss_Surf::~Lidort_Linsup_Ss_Surf()\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Linsup_Ss_Surf_ts_surfacewf_db", _wrap_Lidort_Linsup_Ss_Surf_ts_surfacewf_db, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Linsup_Ss_Surf::ts_surfacewf_db(const blitz::Array< double, 3 > &ts_surfacewf_db_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Linsup_Ss_Surf_print_desc", _wrap_Lidort_Linsup_Ss_Surf_print_desc, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::Lidort_Linsup_Ss_Surf::print(std::ostream &output_stream) const\n"
+		"\n"
+		""},
 	 { (char *)"Lidort_Linsup_Ss_Surf_swigregister", Lidort_Linsup_Ss_Surf_swigregister, METH_VARARGS, NULL},
-	 { (char *)"new_Lidort_Linsup_Ss", _wrap_new_Lidort_Linsup_Ss, METH_VARARGS, NULL},
-	 { (char *)"delete_Lidort_Linsup_Ss", _wrap_delete_Lidort_Linsup_Ss, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Linsup_Ss_atmos", _wrap_Lidort_Linsup_Ss_atmos, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Linsup_Ss_surf", _wrap_Lidort_Linsup_Ss_surf, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Linsup_Ss_print_desc", _wrap_Lidort_Linsup_Ss_print_desc, METH_VARARGS, NULL},
+	 { (char *)"new_Lidort_Linsup_Ss", _wrap_new_Lidort_Linsup_Ss, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::Lidort_Linsup_Ss::Lidort_Linsup_Ss(void *allocated_f_type_c)\n"
+		"\n"
+		""},
+	 { (char *)"delete_Lidort_Linsup_Ss", _wrap_delete_Lidort_Linsup_Ss, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::Lidort_Linsup_Ss::~Lidort_Linsup_Ss()\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Linsup_Ss_atmos", _wrap_Lidort_Linsup_Ss_atmos, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Linsup_Ss::atmos(Lidort_Linsup_Ss_Atmos &atmos_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Linsup_Ss_surf", _wrap_Lidort_Linsup_Ss_surf, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Linsup_Ss::surf(Lidort_Linsup_Ss_Surf &surf_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Linsup_Ss_print_desc", _wrap_Lidort_Linsup_Ss_print_desc, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::Lidort_Linsup_Ss::print(std::ostream &output_stream) const\n"
+		"\n"
+		""},
 	 { (char *)"Lidort_Linsup_Ss_swigregister", Lidort_Linsup_Ss_swigregister, METH_VARARGS, NULL},
-	 { (char *)"new_Lidort_Linsup_Sleave", _wrap_new_Lidort_Linsup_Sleave, METH_VARARGS, NULL},
-	 { (char *)"delete_Lidort_Linsup_Sleave", _wrap_delete_Lidort_Linsup_Sleave, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Linsup_Sleave_ts_lssl_slterm_isotropic", _wrap_Lidort_Linsup_Sleave_ts_lssl_slterm_isotropic, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Linsup_Sleave_ts_lssl_slterm_userangles", _wrap_Lidort_Linsup_Sleave_ts_lssl_slterm_userangles, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Linsup_Sleave_ts_lssl_slterm_f_0", _wrap_Lidort_Linsup_Sleave_ts_lssl_slterm_f_0, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Linsup_Sleave_ts_lssl_user_slterm_f_0", _wrap_Lidort_Linsup_Sleave_ts_lssl_user_slterm_f_0, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Linsup_Sleave_print_desc", _wrap_Lidort_Linsup_Sleave_print_desc, METH_VARARGS, NULL},
+	 { (char *)"new_Lidort_Linsup_Sleave", _wrap_new_Lidort_Linsup_Sleave, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::Lidort_Linsup_Sleave::Lidort_Linsup_Sleave(void *allocated_f_type_c)\n"
+		"\n"
+		""},
+	 { (char *)"delete_Lidort_Linsup_Sleave", _wrap_delete_Lidort_Linsup_Sleave, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::Lidort_Linsup_Sleave::~Lidort_Linsup_Sleave()\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Linsup_Sleave_ts_lssl_slterm_isotropic", _wrap_Lidort_Linsup_Sleave_ts_lssl_slterm_isotropic, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Linsup_Sleave::ts_lssl_slterm_isotropic(const blitz::Array< double, 2 > &ts_lssl_slterm_isotropic_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Linsup_Sleave_ts_lssl_slterm_userangles", _wrap_Lidort_Linsup_Sleave_ts_lssl_slterm_userangles, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Linsup_Sleave::ts_lssl_slterm_userangles(const blitz::Array< double, 4 > &ts_lssl_slterm_userangles_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Linsup_Sleave_ts_lssl_slterm_f_0", _wrap_Lidort_Linsup_Sleave_ts_lssl_slterm_f_0, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Linsup_Sleave::ts_lssl_slterm_f_0(const blitz::Array< double, 4 > &ts_lssl_slterm_f_0_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Linsup_Sleave_ts_lssl_user_slterm_f_0", _wrap_Lidort_Linsup_Sleave_ts_lssl_user_slterm_f_0, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Linsup_Sleave::ts_lssl_user_slterm_f_0(const blitz::Array< double, 4 > &ts_lssl_user_slterm_f_0_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Linsup_Sleave_print_desc", _wrap_Lidort_Linsup_Sleave_print_desc, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::Lidort_Linsup_Sleave::print(std::ostream &output_stream) const\n"
+		"\n"
+		""},
 	 { (char *)"Lidort_Linsup_Sleave_swigregister", Lidort_Linsup_Sleave_swigregister, METH_VARARGS, NULL},
-	 { (char *)"new_Lidort_Linsup_Inout", _wrap_new_Lidort_Linsup_Inout, METH_VARARGS, NULL},
-	 { (char *)"delete_Lidort_Linsup_Inout", _wrap_delete_Lidort_Linsup_Inout, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Linsup_Inout_brdf", _wrap_Lidort_Linsup_Inout_brdf, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Linsup_Inout_ss", _wrap_Lidort_Linsup_Inout_ss, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Linsup_Inout_sleave", _wrap_Lidort_Linsup_Inout_sleave, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Linsup_Inout_print_desc", _wrap_Lidort_Linsup_Inout_print_desc, METH_VARARGS, NULL},
+	 { (char *)"new_Lidort_Linsup_Inout", _wrap_new_Lidort_Linsup_Inout, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::Lidort_Linsup_Inout::Lidort_Linsup_Inout(void *allocated_f_type_c)\n"
+		"\n"
+		""},
+	 { (char *)"delete_Lidort_Linsup_Inout", _wrap_delete_Lidort_Linsup_Inout, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::Lidort_Linsup_Inout::~Lidort_Linsup_Inout()\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Linsup_Inout_brdf", _wrap_Lidort_Linsup_Inout_brdf, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Linsup_Inout::brdf(Lidort_Linsup_Brdf &brdf_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Linsup_Inout_ss", _wrap_Lidort_Linsup_Inout_ss, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Linsup_Inout::ss(Lidort_Linsup_Ss &ss_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Linsup_Inout_sleave", _wrap_Lidort_Linsup_Inout_sleave, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Linsup_Inout::sleave(Lidort_Linsup_Sleave &sleave_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Linsup_Inout_print_desc", _wrap_Lidort_Linsup_Inout_print_desc, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::Lidort_Linsup_Inout::print(std::ostream &output_stream) const\n"
+		"\n"
+		""},
 	 { (char *)"Lidort_Linsup_Inout_swigregister", Lidort_Linsup_Inout_swigregister, METH_VARARGS, NULL},
-	 { (char *)"new_Lidort_Main_Outputs", _wrap_new_Lidort_Main_Outputs, METH_VARARGS, NULL},
-	 { (char *)"delete_Lidort_Main_Outputs", _wrap_delete_Lidort_Main_Outputs, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Main_Outputs_ts_intensity", _wrap_Lidort_Main_Outputs_ts_intensity, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Main_Outputs_ts_mean_intensity", _wrap_Lidort_Main_Outputs_ts_mean_intensity, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Main_Outputs_ts_flux_integral", _wrap_Lidort_Main_Outputs_ts_flux_integral, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Main_Outputs_ts_dnflux_direct", _wrap_Lidort_Main_Outputs_ts_dnflux_direct, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Main_Outputs_ts_dnmean_direct", _wrap_Lidort_Main_Outputs_ts_dnmean_direct, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Main_Outputs_ts_fourier_saved", _wrap_Lidort_Main_Outputs_ts_fourier_saved, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Main_Outputs_ts_n_geometries", _wrap_Lidort_Main_Outputs_ts_n_geometries, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Main_Outputs_print_desc", _wrap_Lidort_Main_Outputs_print_desc, METH_VARARGS, NULL},
+	 { (char *)"new_Lidort_Main_Outputs", _wrap_new_Lidort_Main_Outputs, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::Lidort_Main_Outputs::Lidort_Main_Outputs(void *allocated_f_type_c)\n"
+		"\n"
+		""},
+	 { (char *)"delete_Lidort_Main_Outputs", _wrap_delete_Lidort_Main_Outputs, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::Lidort_Main_Outputs::~Lidort_Main_Outputs()\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Main_Outputs_ts_intensity", _wrap_Lidort_Main_Outputs_ts_intensity, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Main_Outputs::ts_intensity(const blitz::Array< double, 4 > &ts_intensity_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Main_Outputs_ts_mean_intensity", _wrap_Lidort_Main_Outputs_ts_mean_intensity, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Main_Outputs::ts_mean_intensity(const blitz::Array< double, 4 > &ts_mean_intensity_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Main_Outputs_ts_flux_integral", _wrap_Lidort_Main_Outputs_ts_flux_integral, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Main_Outputs::ts_flux_integral(const blitz::Array< double, 4 > &ts_flux_integral_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Main_Outputs_ts_dnflux_direct", _wrap_Lidort_Main_Outputs_ts_dnflux_direct, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Main_Outputs::ts_dnflux_direct(const blitz::Array< double, 3 > &ts_dnflux_direct_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Main_Outputs_ts_dnmean_direct", _wrap_Lidort_Main_Outputs_ts_dnmean_direct, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Main_Outputs::ts_dnmean_direct(const blitz::Array< double, 3 > &ts_dnmean_direct_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Main_Outputs_ts_fourier_saved", _wrap_Lidort_Main_Outputs_ts_fourier_saved, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Main_Outputs::ts_fourier_saved(const blitz::Array< int, 2 > &ts_fourier_saved_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Main_Outputs_ts_n_geometries", _wrap_Lidort_Main_Outputs_ts_n_geometries, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Main_Outputs::ts_n_geometries(const int &ts_n_geometries_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Main_Outputs_print_desc", _wrap_Lidort_Main_Outputs_print_desc, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::Lidort_Main_Outputs::print(std::ostream &output_stream) const\n"
+		"\n"
+		""},
 	 { (char *)"Lidort_Main_Outputs_swigregister", Lidort_Main_Outputs_swigregister, METH_VARARGS, NULL},
-	 { (char *)"new_Lidort_Exception_Handling", _wrap_new_Lidort_Exception_Handling, METH_VARARGS, NULL},
-	 { (char *)"delete_Lidort_Exception_Handling", _wrap_delete_Lidort_Exception_Handling, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Exception_Handling_ts_status_inputcheck", _wrap_Lidort_Exception_Handling_ts_status_inputcheck, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Exception_Handling_ts_ncheckmessages", _wrap_Lidort_Exception_Handling_ts_ncheckmessages, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Exception_Handling_ts_checkmessages", _wrap_Lidort_Exception_Handling_ts_checkmessages, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Exception_Handling_ts_actions", _wrap_Lidort_Exception_Handling_ts_actions, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Exception_Handling_ts_status_calculation", _wrap_Lidort_Exception_Handling_ts_status_calculation, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Exception_Handling_ts_message", _wrap_Lidort_Exception_Handling_ts_message, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Exception_Handling_ts_trace_1", _wrap_Lidort_Exception_Handling_ts_trace_1, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Exception_Handling_ts_trace_2", _wrap_Lidort_Exception_Handling_ts_trace_2, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Exception_Handling_ts_trace_3", _wrap_Lidort_Exception_Handling_ts_trace_3, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Exception_Handling_print_desc", _wrap_Lidort_Exception_Handling_print_desc, METH_VARARGS, NULL},
+	 { (char *)"new_Lidort_Exception_Handling", _wrap_new_Lidort_Exception_Handling, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::Lidort_Exception_Handling::Lidort_Exception_Handling(void *allocated_f_type_c)\n"
+		"\n"
+		""},
+	 { (char *)"delete_Lidort_Exception_Handling", _wrap_delete_Lidort_Exception_Handling, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::Lidort_Exception_Handling::~Lidort_Exception_Handling()\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Exception_Handling_ts_status_inputcheck", _wrap_Lidort_Exception_Handling_ts_status_inputcheck, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Exception_Handling::ts_status_inputcheck(const int &ts_status_inputcheck_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Exception_Handling_ts_ncheckmessages", _wrap_Lidort_Exception_Handling_ts_ncheckmessages, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Exception_Handling::ts_ncheckmessages(const int &ts_ncheckmessages_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Exception_Handling_ts_checkmessages", _wrap_Lidort_Exception_Handling_ts_checkmessages, METH_VARARGS, (char *)"\n"
+		"\n"
+		"const std::vector< std::string > FullPhysics::Lidort_Exception_Handling::ts_checkmessages() const\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Exception_Handling_ts_actions", _wrap_Lidort_Exception_Handling_ts_actions, METH_VARARGS, (char *)"\n"
+		"\n"
+		"const std::vector< std::string > FullPhysics::Lidort_Exception_Handling::ts_actions() const\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Exception_Handling_ts_status_calculation", _wrap_Lidort_Exception_Handling_ts_status_calculation, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Exception_Handling::ts_status_calculation(const int &ts_status_calculation_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Exception_Handling_ts_message", _wrap_Lidort_Exception_Handling_ts_message, METH_VARARGS, (char *)"\n"
+		"\n"
+		"const std::string FullPhysics::Lidort_Exception_Handling::ts_message() const\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Exception_Handling_ts_trace_1", _wrap_Lidort_Exception_Handling_ts_trace_1, METH_VARARGS, (char *)"\n"
+		"\n"
+		"const std::string FullPhysics::Lidort_Exception_Handling::ts_trace_1() const\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Exception_Handling_ts_trace_2", _wrap_Lidort_Exception_Handling_ts_trace_2, METH_VARARGS, (char *)"\n"
+		"\n"
+		"const std::string FullPhysics::Lidort_Exception_Handling::ts_trace_2() const\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Exception_Handling_ts_trace_3", _wrap_Lidort_Exception_Handling_ts_trace_3, METH_VARARGS, (char *)"\n"
+		"\n"
+		"const std::string FullPhysics::Lidort_Exception_Handling::ts_trace_3() const\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Exception_Handling_print_desc", _wrap_Lidort_Exception_Handling_print_desc, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::Lidort_Exception_Handling::print(std::ostream &output_stream) const\n"
+		"\n"
+		""},
 	 { (char *)"Lidort_Exception_Handling_swigregister", Lidort_Exception_Handling_swigregister, METH_VARARGS, NULL},
-	 { (char *)"new_Lidort_Input_Exception_Handling", _wrap_new_Lidort_Input_Exception_Handling, METH_VARARGS, NULL},
-	 { (char *)"delete_Lidort_Input_Exception_Handling", _wrap_delete_Lidort_Input_Exception_Handling, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Input_Exception_Handling_ts_status_inputread", _wrap_Lidort_Input_Exception_Handling_ts_status_inputread, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Input_Exception_Handling_ts_ninputmessages", _wrap_Lidort_Input_Exception_Handling_ts_ninputmessages, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Input_Exception_Handling_ts_inputmessages", _wrap_Lidort_Input_Exception_Handling_ts_inputmessages, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Input_Exception_Handling_ts_inputactions", _wrap_Lidort_Input_Exception_Handling_ts_inputactions, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Input_Exception_Handling_print_desc", _wrap_Lidort_Input_Exception_Handling_print_desc, METH_VARARGS, NULL},
+	 { (char *)"new_Lidort_Input_Exception_Handling", _wrap_new_Lidort_Input_Exception_Handling, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::Lidort_Input_Exception_Handling::Lidort_Input_Exception_Handling(void *allocated_f_type_c)\n"
+		"\n"
+		""},
+	 { (char *)"delete_Lidort_Input_Exception_Handling", _wrap_delete_Lidort_Input_Exception_Handling, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::Lidort_Input_Exception_Handling::~Lidort_Input_Exception_Handling()\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Input_Exception_Handling_ts_status_inputread", _wrap_Lidort_Input_Exception_Handling_ts_status_inputread, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Input_Exception_Handling::ts_status_inputread(const int &ts_status_inputread_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Input_Exception_Handling_ts_ninputmessages", _wrap_Lidort_Input_Exception_Handling_ts_ninputmessages, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Input_Exception_Handling::ts_ninputmessages(const int &ts_ninputmessages_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Input_Exception_Handling_ts_inputmessages", _wrap_Lidort_Input_Exception_Handling_ts_inputmessages, METH_VARARGS, (char *)"\n"
+		"\n"
+		"const std::vector< std::string > FullPhysics::Lidort_Input_Exception_Handling::ts_inputmessages() const\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Input_Exception_Handling_ts_inputactions", _wrap_Lidort_Input_Exception_Handling_ts_inputactions, METH_VARARGS, (char *)"\n"
+		"\n"
+		"const std::vector< std::string > FullPhysics::Lidort_Input_Exception_Handling::ts_inputactions() const\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Input_Exception_Handling_print_desc", _wrap_Lidort_Input_Exception_Handling_print_desc, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::Lidort_Input_Exception_Handling::print(std::ostream &output_stream) const\n"
+		"\n"
+		""},
 	 { (char *)"Lidort_Input_Exception_Handling_swigregister", Lidort_Input_Exception_Handling_swigregister, METH_VARARGS, NULL},
-	 { (char *)"new_Lidort_Outputs", _wrap_new_Lidort_Outputs, METH_VARARGS, NULL},
-	 { (char *)"delete_Lidort_Outputs", _wrap_delete_Lidort_Outputs, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Outputs_main", _wrap_Lidort_Outputs_main, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Outputs_status", _wrap_Lidort_Outputs_status, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Outputs_print_desc", _wrap_Lidort_Outputs_print_desc, METH_VARARGS, NULL},
+	 { (char *)"new_Lidort_Outputs", _wrap_new_Lidort_Outputs, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::Lidort_Outputs::Lidort_Outputs(void *allocated_f_type_c)\n"
+		"\n"
+		""},
+	 { (char *)"delete_Lidort_Outputs", _wrap_delete_Lidort_Outputs, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::Lidort_Outputs::~Lidort_Outputs()\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Outputs_main", _wrap_Lidort_Outputs_main, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Outputs::main(Lidort_Main_Outputs &main_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Outputs_status", _wrap_Lidort_Outputs_status, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Outputs::status(Lidort_Exception_Handling &status_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Outputs_print_desc", _wrap_Lidort_Outputs_print_desc, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::Lidort_Outputs::print(std::ostream &output_stream) const\n"
+		"\n"
+		""},
 	 { (char *)"Lidort_Outputs_swigregister", Lidort_Outputs_swigregister, METH_VARARGS, NULL},
-	 { (char *)"new_Lidort_Sup_Brdf", _wrap_new_Lidort_Sup_Brdf, METH_VARARGS, NULL},
-	 { (char *)"delete_Lidort_Sup_Brdf", _wrap_delete_Lidort_Sup_Brdf, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Sup_Brdf_ts_exactdb_brdfunc", _wrap_Lidort_Sup_Brdf_ts_exactdb_brdfunc, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Sup_Brdf_ts_brdf_f_0", _wrap_Lidort_Sup_Brdf_ts_brdf_f_0, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Sup_Brdf_ts_brdf_f", _wrap_Lidort_Sup_Brdf_ts_brdf_f, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Sup_Brdf_ts_user_brdf_f_0", _wrap_Lidort_Sup_Brdf_ts_user_brdf_f_0, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Sup_Brdf_ts_user_brdf_f", _wrap_Lidort_Sup_Brdf_ts_user_brdf_f, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Sup_Brdf_ts_emissivity", _wrap_Lidort_Sup_Brdf_ts_emissivity, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Sup_Brdf_ts_user_emissivity", _wrap_Lidort_Sup_Brdf_ts_user_emissivity, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Sup_Brdf_print_desc", _wrap_Lidort_Sup_Brdf_print_desc, METH_VARARGS, NULL},
+	 { (char *)"new_Lidort_Sup_Brdf", _wrap_new_Lidort_Sup_Brdf, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::Lidort_Sup_Brdf::Lidort_Sup_Brdf(void *allocated_f_type_c)\n"
+		"\n"
+		""},
+	 { (char *)"delete_Lidort_Sup_Brdf", _wrap_delete_Lidort_Sup_Brdf, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::Lidort_Sup_Brdf::~Lidort_Sup_Brdf()\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Sup_Brdf_ts_exactdb_brdfunc", _wrap_Lidort_Sup_Brdf_ts_exactdb_brdfunc, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Sup_Brdf::ts_exactdb_brdfunc(const blitz::Array< double, 3 > &ts_exactdb_brdfunc_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Sup_Brdf_ts_brdf_f_0", _wrap_Lidort_Sup_Brdf_ts_brdf_f_0, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Sup_Brdf::ts_brdf_f_0(const blitz::Array< double, 3 > &ts_brdf_f_0_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Sup_Brdf_ts_brdf_f", _wrap_Lidort_Sup_Brdf_ts_brdf_f, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Sup_Brdf::ts_brdf_f(const blitz::Array< double, 3 > &ts_brdf_f_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Sup_Brdf_ts_user_brdf_f_0", _wrap_Lidort_Sup_Brdf_ts_user_brdf_f_0, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Sup_Brdf::ts_user_brdf_f_0(const blitz::Array< double, 3 > &ts_user_brdf_f_0_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Sup_Brdf_ts_user_brdf_f", _wrap_Lidort_Sup_Brdf_ts_user_brdf_f, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Sup_Brdf::ts_user_brdf_f(const blitz::Array< double, 3 > &ts_user_brdf_f_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Sup_Brdf_ts_emissivity", _wrap_Lidort_Sup_Brdf_ts_emissivity, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Sup_Brdf::ts_emissivity(const blitz::Array< double, 2 > &ts_emissivity_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Sup_Brdf_ts_user_emissivity", _wrap_Lidort_Sup_Brdf_ts_user_emissivity, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Sup_Brdf::ts_user_emissivity(const blitz::Array< double, 2 > &ts_user_emissivity_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Sup_Brdf_print_desc", _wrap_Lidort_Sup_Brdf_print_desc, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::Lidort_Sup_Brdf::print(std::ostream &output_stream) const\n"
+		"\n"
+		""},
 	 { (char *)"Lidort_Sup_Brdf_swigregister", Lidort_Sup_Brdf_swigregister, METH_VARARGS, NULL},
-	 { (char *)"new_Lidort_Sup_Sleave", _wrap_new_Lidort_Sup_Sleave, METH_VARARGS, NULL},
-	 { (char *)"delete_Lidort_Sup_Sleave", _wrap_delete_Lidort_Sup_Sleave, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Sup_Sleave_ts_slterm_isotropic", _wrap_Lidort_Sup_Sleave_ts_slterm_isotropic, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Sup_Sleave_ts_slterm_userangles", _wrap_Lidort_Sup_Sleave_ts_slterm_userangles, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Sup_Sleave_ts_slterm_f_0", _wrap_Lidort_Sup_Sleave_ts_slterm_f_0, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Sup_Sleave_ts_user_slterm_f_0", _wrap_Lidort_Sup_Sleave_ts_user_slterm_f_0, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Sup_Sleave_print_desc", _wrap_Lidort_Sup_Sleave_print_desc, METH_VARARGS, NULL},
+	 { (char *)"new_Lidort_Sup_Sleave", _wrap_new_Lidort_Sup_Sleave, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::Lidort_Sup_Sleave::Lidort_Sup_Sleave(void *allocated_f_type_c)\n"
+		"\n"
+		""},
+	 { (char *)"delete_Lidort_Sup_Sleave", _wrap_delete_Lidort_Sup_Sleave, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::Lidort_Sup_Sleave::~Lidort_Sup_Sleave()\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Sup_Sleave_ts_slterm_isotropic", _wrap_Lidort_Sup_Sleave_ts_slterm_isotropic, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Sup_Sleave::ts_slterm_isotropic(const blitz::Array< double, 1 > &ts_slterm_isotropic_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Sup_Sleave_ts_slterm_userangles", _wrap_Lidort_Sup_Sleave_ts_slterm_userangles, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Sup_Sleave::ts_slterm_userangles(const blitz::Array< double, 3 > &ts_slterm_userangles_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Sup_Sleave_ts_slterm_f_0", _wrap_Lidort_Sup_Sleave_ts_slterm_f_0, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Sup_Sleave::ts_slterm_f_0(const blitz::Array< double, 3 > &ts_slterm_f_0_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Sup_Sleave_ts_user_slterm_f_0", _wrap_Lidort_Sup_Sleave_ts_user_slterm_f_0, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Sup_Sleave::ts_user_slterm_f_0(const blitz::Array< double, 3 > &ts_user_slterm_f_0_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Sup_Sleave_print_desc", _wrap_Lidort_Sup_Sleave_print_desc, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::Lidort_Sup_Sleave::print(std::ostream &output_stream) const\n"
+		"\n"
+		""},
 	 { (char *)"Lidort_Sup_Sleave_swigregister", Lidort_Sup_Sleave_swigregister, METH_VARARGS, NULL},
-	 { (char *)"new_Lidort_Sup_Ss", _wrap_new_Lidort_Sup_Ss, METH_VARARGS, NULL},
-	 { (char *)"delete_Lidort_Sup_Ss", _wrap_delete_Lidort_Sup_Ss, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Sup_Ss_ts_intensity_ss", _wrap_Lidort_Sup_Ss_ts_intensity_ss, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Sup_Ss_ts_intensity_db", _wrap_Lidort_Sup_Ss_ts_intensity_db, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Sup_Ss_print_desc", _wrap_Lidort_Sup_Ss_print_desc, METH_VARARGS, NULL},
+	 { (char *)"new_Lidort_Sup_Ss", _wrap_new_Lidort_Sup_Ss, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::Lidort_Sup_Ss::Lidort_Sup_Ss(void *allocated_f_type_c)\n"
+		"\n"
+		""},
+	 { (char *)"delete_Lidort_Sup_Ss", _wrap_delete_Lidort_Sup_Ss, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::Lidort_Sup_Ss::~Lidort_Sup_Ss()\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Sup_Ss_ts_intensity_ss", _wrap_Lidort_Sup_Ss_ts_intensity_ss, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Sup_Ss::ts_intensity_ss(const blitz::Array< double, 3 > &ts_intensity_ss_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Sup_Ss_ts_intensity_db", _wrap_Lidort_Sup_Ss_ts_intensity_db, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Sup_Ss::ts_intensity_db(const blitz::Array< double, 2 > &ts_intensity_db_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Sup_Ss_print_desc", _wrap_Lidort_Sup_Ss_print_desc, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::Lidort_Sup_Ss::print(std::ostream &output_stream) const\n"
+		"\n"
+		""},
 	 { (char *)"Lidort_Sup_Ss_swigregister", Lidort_Sup_Ss_swigregister, METH_VARARGS, NULL},
-	 { (char *)"new_Lidort_Sup_Inout", _wrap_new_Lidort_Sup_Inout, METH_VARARGS, NULL},
-	 { (char *)"delete_Lidort_Sup_Inout", _wrap_delete_Lidort_Sup_Inout, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Sup_Inout_brdf", _wrap_Lidort_Sup_Inout_brdf, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Sup_Inout_ss", _wrap_Lidort_Sup_Inout_ss, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Sup_Inout_sleave", _wrap_Lidort_Sup_Inout_sleave, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Sup_Inout_print_desc", _wrap_Lidort_Sup_Inout_print_desc, METH_VARARGS, NULL},
+	 { (char *)"new_Lidort_Sup_Inout", _wrap_new_Lidort_Sup_Inout, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::Lidort_Sup_Inout::Lidort_Sup_Inout(void *allocated_f_type_c)\n"
+		"\n"
+		""},
+	 { (char *)"delete_Lidort_Sup_Inout", _wrap_delete_Lidort_Sup_Inout, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::Lidort_Sup_Inout::~Lidort_Sup_Inout()\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Sup_Inout_brdf", _wrap_Lidort_Sup_Inout_brdf, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Sup_Inout::brdf(Lidort_Sup_Brdf &brdf_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Sup_Inout_ss", _wrap_Lidort_Sup_Inout_ss, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Sup_Inout::ss(Lidort_Sup_Ss &ss_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Sup_Inout_sleave", _wrap_Lidort_Sup_Inout_sleave, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Sup_Inout::sleave(Lidort_Sup_Sleave &sleave_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Sup_Inout_print_desc", _wrap_Lidort_Sup_Inout_print_desc, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::Lidort_Sup_Inout::print(std::ostream &output_stream) const\n"
+		"\n"
+		""},
 	 { (char *)"Lidort_Sup_Inout_swigregister", Lidort_Sup_Inout_swigregister, METH_VARARGS, NULL},
-	 { (char *)"new_Lidort_Fixed_Boolean", _wrap_new_Lidort_Fixed_Boolean, METH_VARARGS, NULL},
-	 { (char *)"delete_Lidort_Fixed_Boolean", _wrap_delete_Lidort_Fixed_Boolean, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Fixed_Boolean_ts_do_fullrad_mode", _wrap_Lidort_Fixed_Boolean_ts_do_fullrad_mode, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Fixed_Boolean_ts_do_sscorr_truncation", _wrap_Lidort_Fixed_Boolean_ts_do_sscorr_truncation, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Fixed_Boolean_ts_do_ss_external", _wrap_Lidort_Fixed_Boolean_ts_do_ss_external, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Fixed_Boolean_ts_do_ssfull", _wrap_Lidort_Fixed_Boolean_ts_do_ssfull, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Fixed_Boolean_ts_do_thermal_emission", _wrap_Lidort_Fixed_Boolean_ts_do_thermal_emission, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Fixed_Boolean_ts_do_surface_emission", _wrap_Lidort_Fixed_Boolean_ts_do_surface_emission, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Fixed_Boolean_ts_do_plane_parallel", _wrap_Lidort_Fixed_Boolean_ts_do_plane_parallel, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Fixed_Boolean_ts_do_brdf_surface", _wrap_Lidort_Fixed_Boolean_ts_do_brdf_surface, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Fixed_Boolean_ts_do_upwelling", _wrap_Lidort_Fixed_Boolean_ts_do_upwelling, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Fixed_Boolean_ts_do_dnwelling", _wrap_Lidort_Fixed_Boolean_ts_do_dnwelling, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Fixed_Boolean_ts_do_surface_leaving", _wrap_Lidort_Fixed_Boolean_ts_do_surface_leaving, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Fixed_Boolean_ts_do_sl_isotropic", _wrap_Lidort_Fixed_Boolean_ts_do_sl_isotropic, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Fixed_Boolean_print_desc", _wrap_Lidort_Fixed_Boolean_print_desc, METH_VARARGS, NULL},
+	 { (char *)"new_Lidort_Fixed_Boolean", _wrap_new_Lidort_Fixed_Boolean, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::Lidort_Fixed_Boolean::Lidort_Fixed_Boolean(void *allocated_f_type_c)\n"
+		"\n"
+		""},
+	 { (char *)"delete_Lidort_Fixed_Boolean", _wrap_delete_Lidort_Fixed_Boolean, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::Lidort_Fixed_Boolean::~Lidort_Fixed_Boolean()\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Fixed_Boolean_ts_do_fullrad_mode", _wrap_Lidort_Fixed_Boolean_ts_do_fullrad_mode, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Fixed_Boolean::ts_do_fullrad_mode(const bool &ts_do_fullrad_mode_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Fixed_Boolean_ts_do_sscorr_truncation", _wrap_Lidort_Fixed_Boolean_ts_do_sscorr_truncation, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Fixed_Boolean::ts_do_sscorr_truncation(const bool &ts_do_sscorr_truncation_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Fixed_Boolean_ts_do_ss_external", _wrap_Lidort_Fixed_Boolean_ts_do_ss_external, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Fixed_Boolean::ts_do_ss_external(const bool &ts_do_ss_external_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Fixed_Boolean_ts_do_ssfull", _wrap_Lidort_Fixed_Boolean_ts_do_ssfull, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Fixed_Boolean::ts_do_ssfull(const bool &ts_do_ssfull_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Fixed_Boolean_ts_do_thermal_emission", _wrap_Lidort_Fixed_Boolean_ts_do_thermal_emission, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Fixed_Boolean::ts_do_thermal_emission(const bool &ts_do_thermal_emission_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Fixed_Boolean_ts_do_surface_emission", _wrap_Lidort_Fixed_Boolean_ts_do_surface_emission, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Fixed_Boolean::ts_do_surface_emission(const bool &ts_do_surface_emission_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Fixed_Boolean_ts_do_plane_parallel", _wrap_Lidort_Fixed_Boolean_ts_do_plane_parallel, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Fixed_Boolean::ts_do_plane_parallel(const bool &ts_do_plane_parallel_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Fixed_Boolean_ts_do_brdf_surface", _wrap_Lidort_Fixed_Boolean_ts_do_brdf_surface, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Fixed_Boolean::ts_do_brdf_surface(const bool &ts_do_brdf_surface_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Fixed_Boolean_ts_do_upwelling", _wrap_Lidort_Fixed_Boolean_ts_do_upwelling, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Fixed_Boolean::ts_do_upwelling(const bool &ts_do_upwelling_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Fixed_Boolean_ts_do_dnwelling", _wrap_Lidort_Fixed_Boolean_ts_do_dnwelling, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Fixed_Boolean::ts_do_dnwelling(const bool &ts_do_dnwelling_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Fixed_Boolean_ts_do_surface_leaving", _wrap_Lidort_Fixed_Boolean_ts_do_surface_leaving, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Fixed_Boolean::ts_do_surface_leaving(const bool &ts_do_surface_leaving_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Fixed_Boolean_ts_do_sl_isotropic", _wrap_Lidort_Fixed_Boolean_ts_do_sl_isotropic, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Fixed_Boolean::ts_do_sl_isotropic(const bool &ts_do_sl_isotropic_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Fixed_Boolean_print_desc", _wrap_Lidort_Fixed_Boolean_print_desc, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::Lidort_Fixed_Boolean::print(std::ostream &output_stream) const\n"
+		"\n"
+		""},
 	 { (char *)"Lidort_Fixed_Boolean_swigregister", Lidort_Fixed_Boolean_swigregister, METH_VARARGS, NULL},
-	 { (char *)"new_Lidort_Fixed_Control", _wrap_new_Lidort_Fixed_Control, METH_VARARGS, NULL},
-	 { (char *)"delete_Lidort_Fixed_Control", _wrap_delete_Lidort_Fixed_Control, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Fixed_Control_ts_nstreams", _wrap_Lidort_Fixed_Control_ts_nstreams, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Fixed_Control_ts_nlayers", _wrap_Lidort_Fixed_Control_ts_nlayers, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Fixed_Control_ts_nfinelayers", _wrap_Lidort_Fixed_Control_ts_nfinelayers, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Fixed_Control_ts_n_thermal_coeffs", _wrap_Lidort_Fixed_Control_ts_n_thermal_coeffs, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Fixed_Control_ts_lidort_accuracy", _wrap_Lidort_Fixed_Control_ts_lidort_accuracy, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Fixed_Control_print_desc", _wrap_Lidort_Fixed_Control_print_desc, METH_VARARGS, NULL},
+	 { (char *)"new_Lidort_Fixed_Control", _wrap_new_Lidort_Fixed_Control, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::Lidort_Fixed_Control::Lidort_Fixed_Control(void *allocated_f_type_c)\n"
+		"\n"
+		""},
+	 { (char *)"delete_Lidort_Fixed_Control", _wrap_delete_Lidort_Fixed_Control, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::Lidort_Fixed_Control::~Lidort_Fixed_Control()\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Fixed_Control_ts_nstreams", _wrap_Lidort_Fixed_Control_ts_nstreams, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Fixed_Control::ts_nstreams(const int &ts_nstreams_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Fixed_Control_ts_nlayers", _wrap_Lidort_Fixed_Control_ts_nlayers, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Fixed_Control::ts_nlayers(const int &ts_nlayers_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Fixed_Control_ts_nfinelayers", _wrap_Lidort_Fixed_Control_ts_nfinelayers, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Fixed_Control::ts_nfinelayers(const int &ts_nfinelayers_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Fixed_Control_ts_n_thermal_coeffs", _wrap_Lidort_Fixed_Control_ts_n_thermal_coeffs, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Fixed_Control::ts_n_thermal_coeffs(const int &ts_n_thermal_coeffs_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Fixed_Control_ts_lidort_accuracy", _wrap_Lidort_Fixed_Control_ts_lidort_accuracy, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Fixed_Control::ts_lidort_accuracy(const double &ts_lidort_accuracy_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Fixed_Control_print_desc", _wrap_Lidort_Fixed_Control_print_desc, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::Lidort_Fixed_Control::print(std::ostream &output_stream) const\n"
+		"\n"
+		""},
 	 { (char *)"Lidort_Fixed_Control_swigregister", Lidort_Fixed_Control_swigregister, METH_VARARGS, NULL},
-	 { (char *)"new_Lidort_Fixed_Sunrays", _wrap_new_Lidort_Fixed_Sunrays, METH_VARARGS, NULL},
-	 { (char *)"delete_Lidort_Fixed_Sunrays", _wrap_delete_Lidort_Fixed_Sunrays, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Fixed_Sunrays_ts_flux_factor", _wrap_Lidort_Fixed_Sunrays_ts_flux_factor, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Fixed_Sunrays_print_desc", _wrap_Lidort_Fixed_Sunrays_print_desc, METH_VARARGS, NULL},
+	 { (char *)"new_Lidort_Fixed_Sunrays", _wrap_new_Lidort_Fixed_Sunrays, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::Lidort_Fixed_Sunrays::Lidort_Fixed_Sunrays(void *allocated_f_type_c)\n"
+		"\n"
+		""},
+	 { (char *)"delete_Lidort_Fixed_Sunrays", _wrap_delete_Lidort_Fixed_Sunrays, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::Lidort_Fixed_Sunrays::~Lidort_Fixed_Sunrays()\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Fixed_Sunrays_ts_flux_factor", _wrap_Lidort_Fixed_Sunrays_ts_flux_factor, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Fixed_Sunrays::ts_flux_factor(const double &ts_flux_factor_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Fixed_Sunrays_print_desc", _wrap_Lidort_Fixed_Sunrays_print_desc, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::Lidort_Fixed_Sunrays::print(std::ostream &output_stream) const\n"
+		"\n"
+		""},
 	 { (char *)"Lidort_Fixed_Sunrays_swigregister", Lidort_Fixed_Sunrays_swigregister, METH_VARARGS, NULL},
-	 { (char *)"new_Lidort_Fixed_Uservalues", _wrap_new_Lidort_Fixed_Uservalues, METH_VARARGS, NULL},
-	 { (char *)"delete_Lidort_Fixed_Uservalues", _wrap_delete_Lidort_Fixed_Uservalues, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Fixed_Uservalues_ts_n_user_streams", _wrap_Lidort_Fixed_Uservalues_ts_n_user_streams, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Fixed_Uservalues_ts_n_user_levels", _wrap_Lidort_Fixed_Uservalues_ts_n_user_levels, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Fixed_Uservalues_print_desc", _wrap_Lidort_Fixed_Uservalues_print_desc, METH_VARARGS, NULL},
+	 { (char *)"new_Lidort_Fixed_Uservalues", _wrap_new_Lidort_Fixed_Uservalues, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::Lidort_Fixed_Uservalues::Lidort_Fixed_Uservalues(void *allocated_f_type_c)\n"
+		"\n"
+		""},
+	 { (char *)"delete_Lidort_Fixed_Uservalues", _wrap_delete_Lidort_Fixed_Uservalues, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::Lidort_Fixed_Uservalues::~Lidort_Fixed_Uservalues()\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Fixed_Uservalues_ts_n_user_streams", _wrap_Lidort_Fixed_Uservalues_ts_n_user_streams, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Fixed_Uservalues::ts_n_user_streams(const int &ts_n_user_streams_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Fixed_Uservalues_ts_n_user_levels", _wrap_Lidort_Fixed_Uservalues_ts_n_user_levels, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Fixed_Uservalues::ts_n_user_levels(const int &ts_n_user_levels_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Fixed_Uservalues_print_desc", _wrap_Lidort_Fixed_Uservalues_print_desc, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::Lidort_Fixed_Uservalues::print(std::ostream &output_stream) const\n"
+		"\n"
+		""},
 	 { (char *)"Lidort_Fixed_Uservalues_swigregister", Lidort_Fixed_Uservalues_swigregister, METH_VARARGS, NULL},
-	 { (char *)"new_Lidort_Fixed_Chapman", _wrap_new_Lidort_Fixed_Chapman, METH_VARARGS, NULL},
-	 { (char *)"delete_Lidort_Fixed_Chapman", _wrap_delete_Lidort_Fixed_Chapman, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Fixed_Chapman_ts_height_grid", _wrap_Lidort_Fixed_Chapman_ts_height_grid, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Fixed_Chapman_ts_pressure_grid", _wrap_Lidort_Fixed_Chapman_ts_pressure_grid, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Fixed_Chapman_ts_temperature_grid", _wrap_Lidort_Fixed_Chapman_ts_temperature_grid, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Fixed_Chapman_ts_finegrid", _wrap_Lidort_Fixed_Chapman_ts_finegrid, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Fixed_Chapman_ts_rfindex_parameter", _wrap_Lidort_Fixed_Chapman_ts_rfindex_parameter, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Fixed_Chapman_print_desc", _wrap_Lidort_Fixed_Chapman_print_desc, METH_VARARGS, NULL},
+	 { (char *)"new_Lidort_Fixed_Chapman", _wrap_new_Lidort_Fixed_Chapman, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::Lidort_Fixed_Chapman::Lidort_Fixed_Chapman(void *allocated_f_type_c)\n"
+		"\n"
+		""},
+	 { (char *)"delete_Lidort_Fixed_Chapman", _wrap_delete_Lidort_Fixed_Chapman, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::Lidort_Fixed_Chapman::~Lidort_Fixed_Chapman()\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Fixed_Chapman_ts_height_grid", _wrap_Lidort_Fixed_Chapman_ts_height_grid, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Fixed_Chapman::ts_height_grid(const blitz::Array< double, 1 > &ts_height_grid_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Fixed_Chapman_ts_pressure_grid", _wrap_Lidort_Fixed_Chapman_ts_pressure_grid, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Fixed_Chapman::ts_pressure_grid(const blitz::Array< double, 1 > &ts_pressure_grid_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Fixed_Chapman_ts_temperature_grid", _wrap_Lidort_Fixed_Chapman_ts_temperature_grid, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Fixed_Chapman::ts_temperature_grid(const blitz::Array< double, 1 > &ts_temperature_grid_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Fixed_Chapman_ts_finegrid", _wrap_Lidort_Fixed_Chapman_ts_finegrid, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Fixed_Chapman::ts_finegrid(const blitz::Array< int, 1 > &ts_finegrid_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Fixed_Chapman_ts_rfindex_parameter", _wrap_Lidort_Fixed_Chapman_ts_rfindex_parameter, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Fixed_Chapman::ts_rfindex_parameter(const double &ts_rfindex_parameter_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Fixed_Chapman_print_desc", _wrap_Lidort_Fixed_Chapman_print_desc, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::Lidort_Fixed_Chapman::print(std::ostream &output_stream) const\n"
+		"\n"
+		""},
 	 { (char *)"Lidort_Fixed_Chapman_swigregister", Lidort_Fixed_Chapman_swigregister, METH_VARARGS, NULL},
-	 { (char *)"new_Lidort_Fixed_Optical", _wrap_new_Lidort_Fixed_Optical, METH_VARARGS, NULL},
-	 { (char *)"delete_Lidort_Fixed_Optical", _wrap_delete_Lidort_Fixed_Optical, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Fixed_Optical_ts_deltau_vert_input", _wrap_Lidort_Fixed_Optical_ts_deltau_vert_input, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Fixed_Optical_ts_phasmoms_total_input", _wrap_Lidort_Fixed_Optical_ts_phasmoms_total_input, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Fixed_Optical_ts_thermal_bb_input", _wrap_Lidort_Fixed_Optical_ts_thermal_bb_input, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Fixed_Optical_ts_lambertian_albedo", _wrap_Lidort_Fixed_Optical_ts_lambertian_albedo, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Fixed_Optical_ts_surface_bb_input", _wrap_Lidort_Fixed_Optical_ts_surface_bb_input, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Fixed_Optical_print_desc", _wrap_Lidort_Fixed_Optical_print_desc, METH_VARARGS, NULL},
+	 { (char *)"new_Lidort_Fixed_Optical", _wrap_new_Lidort_Fixed_Optical, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::Lidort_Fixed_Optical::Lidort_Fixed_Optical(void *allocated_f_type_c)\n"
+		"\n"
+		""},
+	 { (char *)"delete_Lidort_Fixed_Optical", _wrap_delete_Lidort_Fixed_Optical, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::Lidort_Fixed_Optical::~Lidort_Fixed_Optical()\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Fixed_Optical_ts_deltau_vert_input", _wrap_Lidort_Fixed_Optical_ts_deltau_vert_input, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Fixed_Optical::ts_deltau_vert_input(const blitz::Array< double, 2 > &ts_deltau_vert_input_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Fixed_Optical_ts_phasmoms_total_input", _wrap_Lidort_Fixed_Optical_ts_phasmoms_total_input, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Fixed_Optical::ts_phasmoms_total_input(const blitz::Array< double, 3 > &ts_phasmoms_total_input_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Fixed_Optical_ts_thermal_bb_input", _wrap_Lidort_Fixed_Optical_ts_thermal_bb_input, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Fixed_Optical::ts_thermal_bb_input(const blitz::Array< double, 2 > &ts_thermal_bb_input_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Fixed_Optical_ts_lambertian_albedo", _wrap_Lidort_Fixed_Optical_ts_lambertian_albedo, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Fixed_Optical::ts_lambertian_albedo(const blitz::Array< double, 1 > &ts_lambertian_albedo_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Fixed_Optical_ts_surface_bb_input", _wrap_Lidort_Fixed_Optical_ts_surface_bb_input, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Fixed_Optical::ts_surface_bb_input(const blitz::Array< double, 1 > &ts_surface_bb_input_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Fixed_Optical_print_desc", _wrap_Lidort_Fixed_Optical_print_desc, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::Lidort_Fixed_Optical::print(std::ostream &output_stream) const\n"
+		"\n"
+		""},
 	 { (char *)"Lidort_Fixed_Optical_swigregister", Lidort_Fixed_Optical_swigregister, METH_VARARGS, NULL},
-	 { (char *)"new_Lidort_Fixed_Inputs", _wrap_new_Lidort_Fixed_Inputs, METH_VARARGS, NULL},
-	 { (char *)"delete_Lidort_Fixed_Inputs", _wrap_delete_Lidort_Fixed_Inputs, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Fixed_Inputs_f_bool", _wrap_Lidort_Fixed_Inputs_f_bool, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Fixed_Inputs_cont", _wrap_Lidort_Fixed_Inputs_cont, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Fixed_Inputs_sunrays", _wrap_Lidort_Fixed_Inputs_sunrays, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Fixed_Inputs_userval", _wrap_Lidort_Fixed_Inputs_userval, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Fixed_Inputs_chapman", _wrap_Lidort_Fixed_Inputs_chapman, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Fixed_Inputs_optical", _wrap_Lidort_Fixed_Inputs_optical, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Fixed_Inputs_print_desc", _wrap_Lidort_Fixed_Inputs_print_desc, METH_VARARGS, NULL},
+	 { (char *)"new_Lidort_Fixed_Inputs", _wrap_new_Lidort_Fixed_Inputs, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::Lidort_Fixed_Inputs::Lidort_Fixed_Inputs(void *allocated_f_type_c)\n"
+		"\n"
+		""},
+	 { (char *)"delete_Lidort_Fixed_Inputs", _wrap_delete_Lidort_Fixed_Inputs, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::Lidort_Fixed_Inputs::~Lidort_Fixed_Inputs()\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Fixed_Inputs_f_bool", _wrap_Lidort_Fixed_Inputs_f_bool, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Fixed_Inputs::f_bool(Lidort_Fixed_Boolean &bool_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Fixed_Inputs_cont", _wrap_Lidort_Fixed_Inputs_cont, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Fixed_Inputs::cont(Lidort_Fixed_Control &cont_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Fixed_Inputs_sunrays", _wrap_Lidort_Fixed_Inputs_sunrays, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Fixed_Inputs::sunrays(Lidort_Fixed_Sunrays &sunrays_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Fixed_Inputs_userval", _wrap_Lidort_Fixed_Inputs_userval, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Fixed_Inputs::userval(Lidort_Fixed_Uservalues &userval_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Fixed_Inputs_chapman", _wrap_Lidort_Fixed_Inputs_chapman, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Fixed_Inputs::chapman(Lidort_Fixed_Chapman &chapman_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Fixed_Inputs_optical", _wrap_Lidort_Fixed_Inputs_optical, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Fixed_Inputs::optical(Lidort_Fixed_Optical &optical_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Fixed_Inputs_print_desc", _wrap_Lidort_Fixed_Inputs_print_desc, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::Lidort_Fixed_Inputs::print(std::ostream &output_stream) const\n"
+		"\n"
+		""},
 	 { (char *)"Lidort_Fixed_Inputs_swigregister", Lidort_Fixed_Inputs_swigregister, METH_VARARGS, NULL},
-	 { (char *)"new_Lidort_Modified_Boolean", _wrap_new_Lidort_Modified_Boolean, METH_VARARGS, NULL},
-	 { (char *)"delete_Lidort_Modified_Boolean", _wrap_delete_Lidort_Modified_Boolean, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Modified_Boolean_ts_do_sscorr_nadir", _wrap_Lidort_Modified_Boolean_ts_do_sscorr_nadir, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Modified_Boolean_ts_do_sscorr_outgoing", _wrap_Lidort_Modified_Boolean_ts_do_sscorr_outgoing, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Modified_Boolean_ts_do_double_convtest", _wrap_Lidort_Modified_Boolean_ts_do_double_convtest, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Modified_Boolean_ts_do_solar_sources", _wrap_Lidort_Modified_Boolean_ts_do_solar_sources, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Modified_Boolean_ts_do_refractive_geometry", _wrap_Lidort_Modified_Boolean_ts_do_refractive_geometry, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Modified_Boolean_ts_do_chapman_function", _wrap_Lidort_Modified_Boolean_ts_do_chapman_function, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Modified_Boolean_ts_do_rayleigh_only", _wrap_Lidort_Modified_Boolean_ts_do_rayleigh_only, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Modified_Boolean_ts_do_isotropic_only", _wrap_Lidort_Modified_Boolean_ts_do_isotropic_only, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Modified_Boolean_ts_do_no_azimuth", _wrap_Lidort_Modified_Boolean_ts_do_no_azimuth, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Modified_Boolean_ts_do_all_fourier", _wrap_Lidort_Modified_Boolean_ts_do_all_fourier, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Modified_Boolean_ts_do_deltam_scaling", _wrap_Lidort_Modified_Boolean_ts_do_deltam_scaling, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Modified_Boolean_ts_do_solution_saving", _wrap_Lidort_Modified_Boolean_ts_do_solution_saving, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Modified_Boolean_ts_do_bvp_telescoping", _wrap_Lidort_Modified_Boolean_ts_do_bvp_telescoping, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Modified_Boolean_ts_do_user_streams", _wrap_Lidort_Modified_Boolean_ts_do_user_streams, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Modified_Boolean_ts_do_additional_mvout", _wrap_Lidort_Modified_Boolean_ts_do_additional_mvout, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Modified_Boolean_ts_do_mvout_only", _wrap_Lidort_Modified_Boolean_ts_do_mvout_only, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Modified_Boolean_ts_do_thermal_transonly", _wrap_Lidort_Modified_Boolean_ts_do_thermal_transonly, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Modified_Boolean_print_desc", _wrap_Lidort_Modified_Boolean_print_desc, METH_VARARGS, NULL},
+	 { (char *)"new_Lidort_Modified_Boolean", _wrap_new_Lidort_Modified_Boolean, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::Lidort_Modified_Boolean::Lidort_Modified_Boolean(void *allocated_f_type_c)\n"
+		"\n"
+		""},
+	 { (char *)"delete_Lidort_Modified_Boolean", _wrap_delete_Lidort_Modified_Boolean, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::Lidort_Modified_Boolean::~Lidort_Modified_Boolean()\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Modified_Boolean_ts_do_sscorr_nadir", _wrap_Lidort_Modified_Boolean_ts_do_sscorr_nadir, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Modified_Boolean::ts_do_sscorr_nadir(const bool &ts_do_sscorr_nadir_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Modified_Boolean_ts_do_sscorr_outgoing", _wrap_Lidort_Modified_Boolean_ts_do_sscorr_outgoing, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Modified_Boolean::ts_do_sscorr_outgoing(const bool &ts_do_sscorr_outgoing_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Modified_Boolean_ts_do_double_convtest", _wrap_Lidort_Modified_Boolean_ts_do_double_convtest, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Modified_Boolean::ts_do_double_convtest(const bool &ts_do_double_convtest_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Modified_Boolean_ts_do_solar_sources", _wrap_Lidort_Modified_Boolean_ts_do_solar_sources, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Modified_Boolean::ts_do_solar_sources(const bool &ts_do_solar_sources_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Modified_Boolean_ts_do_refractive_geometry", _wrap_Lidort_Modified_Boolean_ts_do_refractive_geometry, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Modified_Boolean::ts_do_refractive_geometry(const bool &ts_do_refractive_geometry_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Modified_Boolean_ts_do_chapman_function", _wrap_Lidort_Modified_Boolean_ts_do_chapman_function, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Modified_Boolean::ts_do_chapman_function(const bool &ts_do_chapman_function_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Modified_Boolean_ts_do_rayleigh_only", _wrap_Lidort_Modified_Boolean_ts_do_rayleigh_only, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Modified_Boolean::ts_do_rayleigh_only(const bool &ts_do_rayleigh_only_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Modified_Boolean_ts_do_isotropic_only", _wrap_Lidort_Modified_Boolean_ts_do_isotropic_only, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Modified_Boolean::ts_do_isotropic_only(const bool &ts_do_isotropic_only_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Modified_Boolean_ts_do_no_azimuth", _wrap_Lidort_Modified_Boolean_ts_do_no_azimuth, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Modified_Boolean::ts_do_no_azimuth(const bool &ts_do_no_azimuth_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Modified_Boolean_ts_do_all_fourier", _wrap_Lidort_Modified_Boolean_ts_do_all_fourier, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Modified_Boolean::ts_do_all_fourier(const bool &ts_do_all_fourier_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Modified_Boolean_ts_do_deltam_scaling", _wrap_Lidort_Modified_Boolean_ts_do_deltam_scaling, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Modified_Boolean::ts_do_deltam_scaling(const bool &ts_do_deltam_scaling_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Modified_Boolean_ts_do_solution_saving", _wrap_Lidort_Modified_Boolean_ts_do_solution_saving, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Modified_Boolean::ts_do_solution_saving(const bool &ts_do_solution_saving_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Modified_Boolean_ts_do_bvp_telescoping", _wrap_Lidort_Modified_Boolean_ts_do_bvp_telescoping, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Modified_Boolean::ts_do_bvp_telescoping(const bool &ts_do_bvp_telescoping_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Modified_Boolean_ts_do_user_streams", _wrap_Lidort_Modified_Boolean_ts_do_user_streams, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Modified_Boolean::ts_do_user_streams(const bool &ts_do_user_streams_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Modified_Boolean_ts_do_additional_mvout", _wrap_Lidort_Modified_Boolean_ts_do_additional_mvout, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Modified_Boolean::ts_do_additional_mvout(const bool &ts_do_additional_mvout_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Modified_Boolean_ts_do_mvout_only", _wrap_Lidort_Modified_Boolean_ts_do_mvout_only, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Modified_Boolean::ts_do_mvout_only(const bool &ts_do_mvout_only_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Modified_Boolean_ts_do_thermal_transonly", _wrap_Lidort_Modified_Boolean_ts_do_thermal_transonly, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Modified_Boolean::ts_do_thermal_transonly(const bool &ts_do_thermal_transonly_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Modified_Boolean_print_desc", _wrap_Lidort_Modified_Boolean_print_desc, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::Lidort_Modified_Boolean::print(std::ostream &output_stream) const\n"
+		"\n"
+		""},
 	 { (char *)"Lidort_Modified_Boolean_swigregister", Lidort_Modified_Boolean_swigregister, METH_VARARGS, NULL},
-	 { (char *)"new_Lidort_Modified_Control", _wrap_new_Lidort_Modified_Control, METH_VARARGS, NULL},
-	 { (char *)"delete_Lidort_Modified_Control", _wrap_delete_Lidort_Modified_Control, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Modified_Control_ts_nmoments_input", _wrap_Lidort_Modified_Control_ts_nmoments_input, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Modified_Control_print_desc", _wrap_Lidort_Modified_Control_print_desc, METH_VARARGS, NULL},
+	 { (char *)"new_Lidort_Modified_Control", _wrap_new_Lidort_Modified_Control, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::Lidort_Modified_Control::Lidort_Modified_Control(void *allocated_f_type_c)\n"
+		"\n"
+		""},
+	 { (char *)"delete_Lidort_Modified_Control", _wrap_delete_Lidort_Modified_Control, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::Lidort_Modified_Control::~Lidort_Modified_Control()\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Modified_Control_ts_nmoments_input", _wrap_Lidort_Modified_Control_ts_nmoments_input, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Modified_Control::ts_nmoments_input(const int &ts_nmoments_input_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Modified_Control_print_desc", _wrap_Lidort_Modified_Control_print_desc, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::Lidort_Modified_Control::print(std::ostream &output_stream) const\n"
+		"\n"
+		""},
 	 { (char *)"Lidort_Modified_Control_swigregister", Lidort_Modified_Control_swigregister, METH_VARARGS, NULL},
-	 { (char *)"new_Lidort_Modified_Sunrays", _wrap_new_Lidort_Modified_Sunrays, METH_VARARGS, NULL},
-	 { (char *)"delete_Lidort_Modified_Sunrays", _wrap_delete_Lidort_Modified_Sunrays, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Modified_Sunrays_ts_nbeams", _wrap_Lidort_Modified_Sunrays_ts_nbeams, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Modified_Sunrays_ts_beam_szas", _wrap_Lidort_Modified_Sunrays_ts_beam_szas, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Modified_Sunrays_print_desc", _wrap_Lidort_Modified_Sunrays_print_desc, METH_VARARGS, NULL},
+	 { (char *)"new_Lidort_Modified_Sunrays", _wrap_new_Lidort_Modified_Sunrays, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::Lidort_Modified_Sunrays::Lidort_Modified_Sunrays(void *allocated_f_type_c)\n"
+		"\n"
+		""},
+	 { (char *)"delete_Lidort_Modified_Sunrays", _wrap_delete_Lidort_Modified_Sunrays, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::Lidort_Modified_Sunrays::~Lidort_Modified_Sunrays()\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Modified_Sunrays_ts_nbeams", _wrap_Lidort_Modified_Sunrays_ts_nbeams, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Modified_Sunrays::ts_nbeams(const int &ts_nbeams_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Modified_Sunrays_ts_beam_szas", _wrap_Lidort_Modified_Sunrays_ts_beam_szas, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Modified_Sunrays::ts_beam_szas(const blitz::Array< double, 1 > &ts_beam_szas_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Modified_Sunrays_print_desc", _wrap_Lidort_Modified_Sunrays_print_desc, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::Lidort_Modified_Sunrays::print(std::ostream &output_stream) const\n"
+		"\n"
+		""},
 	 { (char *)"Lidort_Modified_Sunrays_swigregister", Lidort_Modified_Sunrays_swigregister, METH_VARARGS, NULL},
-	 { (char *)"new_Lidort_Modified_Uservalues", _wrap_new_Lidort_Modified_Uservalues, METH_VARARGS, NULL},
-	 { (char *)"delete_Lidort_Modified_Uservalues", _wrap_delete_Lidort_Modified_Uservalues, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Modified_Uservalues_ts_n_user_relazms", _wrap_Lidort_Modified_Uservalues_ts_n_user_relazms, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Modified_Uservalues_ts_user_relazms", _wrap_Lidort_Modified_Uservalues_ts_user_relazms, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Modified_Uservalues_ts_user_angles_input", _wrap_Lidort_Modified_Uservalues_ts_user_angles_input, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Modified_Uservalues_ts_user_levels", _wrap_Lidort_Modified_Uservalues_ts_user_levels, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Modified_Uservalues_ts_geometry_specheight", _wrap_Lidort_Modified_Uservalues_ts_geometry_specheight, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Modified_Uservalues_print_desc", _wrap_Lidort_Modified_Uservalues_print_desc, METH_VARARGS, NULL},
+	 { (char *)"new_Lidort_Modified_Uservalues", _wrap_new_Lidort_Modified_Uservalues, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::Lidort_Modified_Uservalues::Lidort_Modified_Uservalues(void *allocated_f_type_c)\n"
+		"\n"
+		""},
+	 { (char *)"delete_Lidort_Modified_Uservalues", _wrap_delete_Lidort_Modified_Uservalues, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::Lidort_Modified_Uservalues::~Lidort_Modified_Uservalues()\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Modified_Uservalues_ts_n_user_relazms", _wrap_Lidort_Modified_Uservalues_ts_n_user_relazms, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Modified_Uservalues::ts_n_user_relazms(const int &ts_n_user_relazms_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Modified_Uservalues_ts_user_relazms", _wrap_Lidort_Modified_Uservalues_ts_user_relazms, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Modified_Uservalues::ts_user_relazms(const blitz::Array< double, 1 > &ts_user_relazms_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Modified_Uservalues_ts_user_angles_input", _wrap_Lidort_Modified_Uservalues_ts_user_angles_input, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Modified_Uservalues::ts_user_angles_input(const blitz::Array< double, 1 > &ts_user_angles_input_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Modified_Uservalues_ts_user_levels", _wrap_Lidort_Modified_Uservalues_ts_user_levels, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Modified_Uservalues::ts_user_levels(const blitz::Array< double, 1 > &ts_user_levels_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Modified_Uservalues_ts_geometry_specheight", _wrap_Lidort_Modified_Uservalues_ts_geometry_specheight, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Modified_Uservalues::ts_geometry_specheight(const double &ts_geometry_specheight_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Modified_Uservalues_print_desc", _wrap_Lidort_Modified_Uservalues_print_desc, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::Lidort_Modified_Uservalues::print(std::ostream &output_stream) const\n"
+		"\n"
+		""},
 	 { (char *)"Lidort_Modified_Uservalues_swigregister", Lidort_Modified_Uservalues_swigregister, METH_VARARGS, NULL},
-	 { (char *)"new_Lidort_Modified_Chapman", _wrap_new_Lidort_Modified_Chapman, METH_VARARGS, NULL},
-	 { (char *)"delete_Lidort_Modified_Chapman", _wrap_delete_Lidort_Modified_Chapman, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Modified_Chapman_ts_earth_radius", _wrap_Lidort_Modified_Chapman_ts_earth_radius, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Modified_Chapman_print_desc", _wrap_Lidort_Modified_Chapman_print_desc, METH_VARARGS, NULL},
+	 { (char *)"new_Lidort_Modified_Chapman", _wrap_new_Lidort_Modified_Chapman, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::Lidort_Modified_Chapman::Lidort_Modified_Chapman(void *allocated_f_type_c)\n"
+		"\n"
+		""},
+	 { (char *)"delete_Lidort_Modified_Chapman", _wrap_delete_Lidort_Modified_Chapman, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::Lidort_Modified_Chapman::~Lidort_Modified_Chapman()\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Modified_Chapman_ts_earth_radius", _wrap_Lidort_Modified_Chapman_ts_earth_radius, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Modified_Chapman::ts_earth_radius(const double &ts_earth_radius_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Modified_Chapman_print_desc", _wrap_Lidort_Modified_Chapman_print_desc, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::Lidort_Modified_Chapman::print(std::ostream &output_stream) const\n"
+		"\n"
+		""},
 	 { (char *)"Lidort_Modified_Chapman_swigregister", Lidort_Modified_Chapman_swigregister, METH_VARARGS, NULL},
-	 { (char *)"new_Lidort_Modified_Optical", _wrap_new_Lidort_Modified_Optical, METH_VARARGS, NULL},
-	 { (char *)"delete_Lidort_Modified_Optical", _wrap_delete_Lidort_Modified_Optical, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Modified_Optical_ts_omega_total_input", _wrap_Lidort_Modified_Optical_ts_omega_total_input, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Modified_Optical_print_desc", _wrap_Lidort_Modified_Optical_print_desc, METH_VARARGS, NULL},
+	 { (char *)"new_Lidort_Modified_Optical", _wrap_new_Lidort_Modified_Optical, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::Lidort_Modified_Optical::Lidort_Modified_Optical(void *allocated_f_type_c)\n"
+		"\n"
+		""},
+	 { (char *)"delete_Lidort_Modified_Optical", _wrap_delete_Lidort_Modified_Optical, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::Lidort_Modified_Optical::~Lidort_Modified_Optical()\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Modified_Optical_ts_omega_total_input", _wrap_Lidort_Modified_Optical_ts_omega_total_input, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Modified_Optical::ts_omega_total_input(const blitz::Array< double, 2 > &ts_omega_total_input_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Modified_Optical_print_desc", _wrap_Lidort_Modified_Optical_print_desc, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::Lidort_Modified_Optical::print(std::ostream &output_stream) const\n"
+		"\n"
+		""},
 	 { (char *)"Lidort_Modified_Optical_swigregister", Lidort_Modified_Optical_swigregister, METH_VARARGS, NULL},
-	 { (char *)"new_Lidort_Modified_Inputs", _wrap_new_Lidort_Modified_Inputs, METH_VARARGS, NULL},
-	 { (char *)"delete_Lidort_Modified_Inputs", _wrap_delete_Lidort_Modified_Inputs, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Modified_Inputs_mbool", _wrap_Lidort_Modified_Inputs_mbool, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Modified_Inputs_mcont", _wrap_Lidort_Modified_Inputs_mcont, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Modified_Inputs_msunrays", _wrap_Lidort_Modified_Inputs_msunrays, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Modified_Inputs_muserval", _wrap_Lidort_Modified_Inputs_muserval, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Modified_Inputs_mchapman", _wrap_Lidort_Modified_Inputs_mchapman, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Modified_Inputs_moptical", _wrap_Lidort_Modified_Inputs_moptical, METH_VARARGS, NULL},
-	 { (char *)"Lidort_Modified_Inputs_print_desc", _wrap_Lidort_Modified_Inputs_print_desc, METH_VARARGS, NULL},
+	 { (char *)"new_Lidort_Modified_Inputs", _wrap_new_Lidort_Modified_Inputs, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::Lidort_Modified_Inputs::Lidort_Modified_Inputs(void *allocated_f_type_c)\n"
+		"\n"
+		""},
+	 { (char *)"delete_Lidort_Modified_Inputs", _wrap_delete_Lidort_Modified_Inputs, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::Lidort_Modified_Inputs::~Lidort_Modified_Inputs()\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Modified_Inputs_mbool", _wrap_Lidort_Modified_Inputs_mbool, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Modified_Inputs::mbool(Lidort_Modified_Boolean &mbool_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Modified_Inputs_mcont", _wrap_Lidort_Modified_Inputs_mcont, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Modified_Inputs::mcont(Lidort_Modified_Control &mcont_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Modified_Inputs_msunrays", _wrap_Lidort_Modified_Inputs_msunrays, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Modified_Inputs::msunrays(Lidort_Modified_Sunrays &msunrays_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Modified_Inputs_muserval", _wrap_Lidort_Modified_Inputs_muserval, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Modified_Inputs::muserval(Lidort_Modified_Uservalues &muserval_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Modified_Inputs_mchapman", _wrap_Lidort_Modified_Inputs_mchapman, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Modified_Inputs::mchapman(Lidort_Modified_Chapman &mchapman_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Modified_Inputs_moptical", _wrap_Lidort_Modified_Inputs_moptical, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Lidort_Modified_Inputs::moptical(Lidort_Modified_Optical &moptical_in)\n"
+		"\n"
+		""},
+	 { (char *)"Lidort_Modified_Inputs_print_desc", _wrap_Lidort_Modified_Inputs_print_desc, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::Lidort_Modified_Inputs::print(std::ostream &output_stream) const\n"
+		"\n"
+		""},
 	 { (char *)"Lidort_Modified_Inputs_swigregister", Lidort_Modified_Inputs_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };

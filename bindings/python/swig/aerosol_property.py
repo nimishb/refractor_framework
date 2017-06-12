@@ -246,6 +246,27 @@ ObserverAerosolProperty_swigregister = _aerosol_property.ObserverAerosolProperty
 ObserverAerosolProperty_swigregister(ObserverAerosolProperty)
 
 class AerosolProperty(full_physics_swig.state_vector.StateVectorObserver, ObservableAerosolProperty):
+    """
+
+    This gives the Aerosol properties for an Aerosol.
+
+    Our current AerosolProperty - AerosolPropertyHdf - doesn't make any
+    use of our StateVector, we don't have aerosol properties in it. But we
+    may want to have this in the future, so we've made this class a
+    StateVectorObserver.
+
+    Other objects may depend on the AerosolProperty, and should be updated
+    when the AerosolProperty is updated. To facilitate that, this class in
+    an Oberverable, and objects can add themselves as Observers to be
+    notified when the AerosolProperty is updated.
+
+    When implementing a new class, you almost always will want to derive
+    from AerosolPropertyImpBase rather than from this class. See that
+    class for a description.
+
+    C++ includes: aerosol_property.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.state_vector.StateVectorObserver, ObservableAerosolProperty]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -262,22 +283,93 @@ class AerosolProperty(full_physics_swig.state_vector.StateVectorObserver, Observ
     __del__ = lambda self: None
 
     def add_observer(self, Obs):
+        """
+
+        virtual void FullPhysics::AerosolProperty::add_observer(Observer< AerosolProperty > &Obs)
+
+        """
         return _aerosol_property.AerosolProperty_add_observer(self, Obs)
 
+
     def remove_observer(self, Obs):
+        """
+
+        virtual void FullPhysics::AerosolProperty::remove_observer(Observer< AerosolProperty > &Obs)
+
+        """
         return _aerosol_property.AerosolProperty_remove_observer(self, Obs)
 
+
     def clone(self, *args):
+        """
+
+        virtual boost::shared_ptr<AerosolProperty> FullPhysics::AerosolProperty::clone(const boost::shared_ptr< Pressure > &Press, const boost::shared_ptr<
+        RelativeHumidity > &Rh) const =0
+        This version of clone takes a pressure to use.
+
+        The intent is that the pressure has been cloned from the original
+        pressure (although this class has no way to verify this). This allows
+        sets of objects to be cloned using a common Pressure clone, e.g.
+        Atmosphere. 
+        """
         return _aerosol_property.AerosolProperty_clone(self, *args)
 
+
     def extinction_coefficient_each_layer(self, wn):
+        """
+
+        virtual ArrayAd<double, 1> FullPhysics::AerosolProperty::extinction_coefficient_each_layer(double wn) const =0
+        Return extinction coefficient for the given wave number, for each
+        layer.
+
+        Parameters:
+        -----------
+
+        wn:  - Wavenumber 
+        """
         return _aerosol_property.AerosolProperty_extinction_coefficient_each_layer(self, wn)
 
+
     def scattering_coefficient_each_layer(self, wn):
+        """
+
+        virtual ArrayAd<double, 1> FullPhysics::AerosolProperty::scattering_coefficient_each_layer(double wn) const =0
+        Return scattering coefficient for the given wave number for each
+        layer.
+
+        Parameters:
+        -----------
+
+        wn:  - Wavenumber 
+        """
         return _aerosol_property.AerosolProperty_scattering_coefficient_each_layer(self, wn)
 
+
     def phase_function_moment_each_layer(self, wn, nmom=-1, nscatt=-1):
+        """
+
+        virtual ArrayAd<double, 3> FullPhysics::AerosolProperty::phase_function_moment_each_layer(double wn, int nmom=-1, int nscatt=-1) const =0
+        Return phase function moments for the given wave number for each
+        layer.
+
+        Note that we use the de Rooij convention for the scattering matrix
+        moments.
+
+        Parameters:
+        -----------
+
+        wn:  Wavenumber
+
+        nmom:  Optional number of moments to return. Default is all moments.
+
+        nscatt:  Optional number of scattering elements to return. Default is
+        all of them.
+
+        Phase function moment. This is nmom + 1 x nlayer x number scattering
+        elements. 
+        """
         return _aerosol_property.AerosolProperty_phase_function_moment_each_layer(self, wn, nmom, nscatt)
+
 
     def __str__(self):
         return _aerosol_property.AerosolProperty___str__(self)

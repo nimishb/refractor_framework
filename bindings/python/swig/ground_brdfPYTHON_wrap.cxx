@@ -9832,50 +9832,230 @@ SWIGINTERN PyObject *GroundBrdfSoil_swigregister(PyObject *SWIGUNUSEDPARM(self),
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"new_GroundBrdfVeg", _wrap_new_GroundBrdfVeg, METH_VARARGS, NULL},
-	 { (char *)"GroundBrdfVeg_surface_parameter", _wrap_GroundBrdfVeg_surface_parameter, METH_VARARGS, NULL},
-	 { (char *)"GroundBrdfVeg_number_spectrometer", _wrap_GroundBrdfVeg_number_spectrometer, METH_VARARGS, NULL},
-	 { (char *)"GroundBrdfVeg_weight", _wrap_GroundBrdfVeg_weight, METH_VARARGS, NULL},
-	 { (char *)"GroundBrdfVeg_weight_intercept", _wrap_GroundBrdfVeg_weight_intercept, METH_VARARGS, NULL},
-	 { (char *)"GroundBrdfVeg_weight_slope", _wrap_GroundBrdfVeg_weight_slope, METH_VARARGS, NULL},
-	 { (char *)"GroundBrdfVeg_rahman_factor", _wrap_GroundBrdfVeg_rahman_factor, METH_VARARGS, NULL},
-	 { (char *)"GroundBrdfVeg_overall_amplitude", _wrap_GroundBrdfVeg_overall_amplitude, METH_VARARGS, NULL},
-	 { (char *)"GroundBrdfVeg_asymmetry_parameter", _wrap_GroundBrdfVeg_asymmetry_parameter, METH_VARARGS, NULL},
-	 { (char *)"GroundBrdfVeg_geometric_factor", _wrap_GroundBrdfVeg_geometric_factor, METH_VARARGS, NULL},
-	 { (char *)"GroundBrdfVeg_breon_factor", _wrap_GroundBrdfVeg_breon_factor, METH_VARARGS, NULL},
-	 { (char *)"GroundBrdfVeg_brdf_covariance", _wrap_GroundBrdfVeg_brdf_covariance, METH_VARARGS, NULL},
-	 { (char *)"GroundBrdfVeg_refractive_index", _wrap_GroundBrdfVeg_refractive_index, METH_VARARGS, NULL},
-	 { (char *)"GroundBrdfVeg_black_sky_albedo", _wrap_GroundBrdfVeg_black_sky_albedo, METH_VARARGS, NULL},
-	 { (char *)"GroundBrdfVeg_albedo", _wrap_GroundBrdfVeg_albedo, METH_VARARGS, NULL},
-	 { (char *)"GroundBrdfVeg_breon_type", _wrap_GroundBrdfVeg_breon_type, METH_VARARGS, NULL},
-	 { (char *)"GroundBrdfVeg_reference_point", _wrap_GroundBrdfVeg_reference_point, METH_VARARGS, NULL},
-	 { (char *)"GroundBrdfVeg_clone", _wrap_GroundBrdfVeg_clone, METH_VARARGS, NULL},
-	 { (char *)"GroundBrdfVeg_state_vector_name_i", _wrap_GroundBrdfVeg_state_vector_name_i, METH_VARARGS, NULL},
-	 { (char *)"GroundBrdfVeg_print_desc", _wrap_GroundBrdfVeg_print_desc, METH_VARARGS, NULL},
-	 { (char *)"GroundBrdfVeg_desc", _wrap_GroundBrdfVeg_desc, METH_VARARGS, NULL},
+	 { (char *)"new_GroundBrdfVeg", _wrap_new_GroundBrdfVeg, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::GroundBrdfVeg::GroundBrdfVeg(const blitz::Array< double, 2 > &Coeffs, const blitz::Array< bool, 2\n"
+		"> &Flag, const ArrayWithUnit< double, 1 > &Ref_points, const\n"
+		"std::vector< std::string > &Desc_band_names)\n"
+		"\n"
+		""},
+	 { (char *)"GroundBrdfVeg_surface_parameter", _wrap_GroundBrdfVeg_surface_parameter, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual ArrayAd<double, 1> FullPhysics::GroundBrdf::surface_parameter(const double wn, const int spec_index) const\n"
+		"\n"
+		""},
+	 { (char *)"GroundBrdfVeg_number_spectrometer", _wrap_GroundBrdfVeg_number_spectrometer, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual const int FullPhysics::GroundBrdf::number_spectrometer() const\n"
+		"\n"
+		""},
+	 { (char *)"GroundBrdfVeg_weight", _wrap_GroundBrdfVeg_weight, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual const AutoDerivative<double> FullPhysics::GroundBrdf::weight(const double wn, const int spec_index) const\n"
+		"\n"
+		""},
+	 { (char *)"GroundBrdfVeg_weight_intercept", _wrap_GroundBrdfVeg_weight_intercept, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::GroundBrdf::weight_intercept(const int spec_index, const AutoDerivative< double > &val)\n"
+		"\n"
+		""},
+	 { (char *)"GroundBrdfVeg_weight_slope", _wrap_GroundBrdfVeg_weight_slope, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::GroundBrdf::weight_slope(const int spec_index, const AutoDerivative< double > &val)\n"
+		"\n"
+		""},
+	 { (char *)"GroundBrdfVeg_rahman_factor", _wrap_GroundBrdfVeg_rahman_factor, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::GroundBrdf::rahman_factor(const int spec_index, const AutoDerivative< double > &val)\n"
+		"\n"
+		""},
+	 { (char *)"GroundBrdfVeg_overall_amplitude", _wrap_GroundBrdfVeg_overall_amplitude, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::GroundBrdf::overall_amplitude(const int spec_index, const AutoDerivative< double > &val)\n"
+		"\n"
+		""},
+	 { (char *)"GroundBrdfVeg_asymmetry_parameter", _wrap_GroundBrdfVeg_asymmetry_parameter, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::GroundBrdf::asymmetry_parameter(const int spec_index, const AutoDerivative< double > &val)\n"
+		"\n"
+		""},
+	 { (char *)"GroundBrdfVeg_geometric_factor", _wrap_GroundBrdfVeg_geometric_factor, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::GroundBrdf::geometric_factor(const int spec_index, const AutoDerivative< double > &val)\n"
+		"\n"
+		""},
+	 { (char *)"GroundBrdfVeg_breon_factor", _wrap_GroundBrdfVeg_breon_factor, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::GroundBrdf::breon_factor(const int spec_index, const AutoDerivative< double > &val)\n"
+		"\n"
+		""},
+	 { (char *)"GroundBrdfVeg_brdf_covariance", _wrap_GroundBrdfVeg_brdf_covariance, METH_VARARGS, (char *)"\n"
+		"\n"
+		"const blitz::Array<double, 2> FullPhysics::GroundBrdf::brdf_covariance(const int spec_index) const\n"
+		"\n"
+		""},
+	 { (char *)"GroundBrdfVeg_refractive_index", _wrap_GroundBrdfVeg_refractive_index, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual const double FullPhysics::GroundBrdf::refractive_index(const int Spec_idx) const\n"
+		"Returns hard coded value of 1.5 since that is the value hardcoded into\n"
+		"LIDORT. \n"
+		""},
+	 { (char *)"GroundBrdfVeg_black_sky_albedo", _wrap_GroundBrdfVeg_black_sky_albedo, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual const double FullPhysics::GroundBrdfVeg::black_sky_albedo(const int Spec_index, const double Sza)\n"
+		"\n"
+		""},
+	 { (char *)"GroundBrdfVeg_albedo", _wrap_GroundBrdfVeg_albedo, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual const double FullPhysics::GroundBrdfVeg::albedo(const int Spec_index, const double Sza, const double Vza, const\n"
+		"double Azm, const blitz::Array< double, 1 > &Stokes_coef)\n"
+		"\n"
+		""},
+	 { (char *)"GroundBrdfVeg_breon_type", _wrap_GroundBrdfVeg_breon_type, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual const std::string FullPhysics::GroundBrdfVeg::breon_type() const\n"
+		"String describing which type of Breon surface type, also makes this\n"
+		"class abstract. \n"
+		""},
+	 { (char *)"GroundBrdfVeg_reference_point", _wrap_GroundBrdfVeg_reference_point, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual const DoubleWithUnit FullPhysics::GroundBrdf::reference_point(const int spec_index) const\n"
+		"Center wavelength that spectrally dependent parameter is referenced\n"
+		"to. \n"
+		""},
+	 { (char *)"GroundBrdfVeg_clone", _wrap_GroundBrdfVeg_clone, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual boost::shared_ptr<Ground> FullPhysics::GroundBrdfVeg::clone() const\n"
+		"\n"
+		""},
+	 { (char *)"GroundBrdfVeg_state_vector_name_i", _wrap_GroundBrdfVeg_state_vector_name_i, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual std::string FullPhysics::GroundBrdf::state_vector_name_i(int i) const\n"
+		"\n"
+		""},
+	 { (char *)"GroundBrdfVeg_print_desc", _wrap_GroundBrdfVeg_print_desc, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::GroundBrdf::print(std::ostream &Os) const\n"
+		"\n"
+		""},
+	 { (char *)"GroundBrdfVeg_desc", _wrap_GroundBrdfVeg_desc, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual std::string FullPhysics::GroundBrdf::desc() const\n"
+		"\n"
+		""},
 	 { (char *)"delete_GroundBrdfVeg", _wrap_delete_GroundBrdfVeg, METH_VARARGS, NULL},
 	 { (char *)"GroundBrdfVeg_swigregister", GroundBrdfVeg_swigregister, METH_VARARGS, NULL},
-	 { (char *)"new_GroundBrdfSoil", _wrap_new_GroundBrdfSoil, METH_VARARGS, NULL},
-	 { (char *)"GroundBrdfSoil_surface_parameter", _wrap_GroundBrdfSoil_surface_parameter, METH_VARARGS, NULL},
-	 { (char *)"GroundBrdfSoil_number_spectrometer", _wrap_GroundBrdfSoil_number_spectrometer, METH_VARARGS, NULL},
-	 { (char *)"GroundBrdfSoil_weight", _wrap_GroundBrdfSoil_weight, METH_VARARGS, NULL},
-	 { (char *)"GroundBrdfSoil_weight_intercept", _wrap_GroundBrdfSoil_weight_intercept, METH_VARARGS, NULL},
-	 { (char *)"GroundBrdfSoil_weight_slope", _wrap_GroundBrdfSoil_weight_slope, METH_VARARGS, NULL},
-	 { (char *)"GroundBrdfSoil_rahman_factor", _wrap_GroundBrdfSoil_rahman_factor, METH_VARARGS, NULL},
-	 { (char *)"GroundBrdfSoil_overall_amplitude", _wrap_GroundBrdfSoil_overall_amplitude, METH_VARARGS, NULL},
-	 { (char *)"GroundBrdfSoil_asymmetry_parameter", _wrap_GroundBrdfSoil_asymmetry_parameter, METH_VARARGS, NULL},
-	 { (char *)"GroundBrdfSoil_geometric_factor", _wrap_GroundBrdfSoil_geometric_factor, METH_VARARGS, NULL},
-	 { (char *)"GroundBrdfSoil_breon_factor", _wrap_GroundBrdfSoil_breon_factor, METH_VARARGS, NULL},
-	 { (char *)"GroundBrdfSoil_brdf_covariance", _wrap_GroundBrdfSoil_brdf_covariance, METH_VARARGS, NULL},
-	 { (char *)"GroundBrdfSoil_refractive_index", _wrap_GroundBrdfSoil_refractive_index, METH_VARARGS, NULL},
-	 { (char *)"GroundBrdfSoil_black_sky_albedo", _wrap_GroundBrdfSoil_black_sky_albedo, METH_VARARGS, NULL},
-	 { (char *)"GroundBrdfSoil_albedo", _wrap_GroundBrdfSoil_albedo, METH_VARARGS, NULL},
-	 { (char *)"GroundBrdfSoil_breon_type", _wrap_GroundBrdfSoil_breon_type, METH_VARARGS, NULL},
-	 { (char *)"GroundBrdfSoil_reference_point", _wrap_GroundBrdfSoil_reference_point, METH_VARARGS, NULL},
-	 { (char *)"GroundBrdfSoil_clone", _wrap_GroundBrdfSoil_clone, METH_VARARGS, NULL},
-	 { (char *)"GroundBrdfSoil_state_vector_name_i", _wrap_GroundBrdfSoil_state_vector_name_i, METH_VARARGS, NULL},
-	 { (char *)"GroundBrdfSoil_print_desc", _wrap_GroundBrdfSoil_print_desc, METH_VARARGS, NULL},
-	 { (char *)"GroundBrdfSoil_desc", _wrap_GroundBrdfSoil_desc, METH_VARARGS, NULL},
+	 { (char *)"new_GroundBrdfSoil", _wrap_new_GroundBrdfSoil, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::GroundBrdfSoil::GroundBrdfSoil(const blitz::Array< double, 2 > &Coeffs, const blitz::Array< bool, 2\n"
+		"> &Flag, const ArrayWithUnit< double, 1 > &Ref_points, const\n"
+		"std::vector< std::string > &Desc_band_names)\n"
+		"\n"
+		""},
+	 { (char *)"GroundBrdfSoil_surface_parameter", _wrap_GroundBrdfSoil_surface_parameter, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual ArrayAd<double, 1> FullPhysics::GroundBrdf::surface_parameter(const double wn, const int spec_index) const\n"
+		"\n"
+		""},
+	 { (char *)"GroundBrdfSoil_number_spectrometer", _wrap_GroundBrdfSoil_number_spectrometer, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual const int FullPhysics::GroundBrdf::number_spectrometer() const\n"
+		"\n"
+		""},
+	 { (char *)"GroundBrdfSoil_weight", _wrap_GroundBrdfSoil_weight, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual const AutoDerivative<double> FullPhysics::GroundBrdf::weight(const double wn, const int spec_index) const\n"
+		"\n"
+		""},
+	 { (char *)"GroundBrdfSoil_weight_intercept", _wrap_GroundBrdfSoil_weight_intercept, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::GroundBrdf::weight_intercept(const int spec_index, const AutoDerivative< double > &val)\n"
+		"\n"
+		""},
+	 { (char *)"GroundBrdfSoil_weight_slope", _wrap_GroundBrdfSoil_weight_slope, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::GroundBrdf::weight_slope(const int spec_index, const AutoDerivative< double > &val)\n"
+		"\n"
+		""},
+	 { (char *)"GroundBrdfSoil_rahman_factor", _wrap_GroundBrdfSoil_rahman_factor, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::GroundBrdf::rahman_factor(const int spec_index, const AutoDerivative< double > &val)\n"
+		"\n"
+		""},
+	 { (char *)"GroundBrdfSoil_overall_amplitude", _wrap_GroundBrdfSoil_overall_amplitude, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::GroundBrdf::overall_amplitude(const int spec_index, const AutoDerivative< double > &val)\n"
+		"\n"
+		""},
+	 { (char *)"GroundBrdfSoil_asymmetry_parameter", _wrap_GroundBrdfSoil_asymmetry_parameter, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::GroundBrdf::asymmetry_parameter(const int spec_index, const AutoDerivative< double > &val)\n"
+		"\n"
+		""},
+	 { (char *)"GroundBrdfSoil_geometric_factor", _wrap_GroundBrdfSoil_geometric_factor, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::GroundBrdf::geometric_factor(const int spec_index, const AutoDerivative< double > &val)\n"
+		"\n"
+		""},
+	 { (char *)"GroundBrdfSoil_breon_factor", _wrap_GroundBrdfSoil_breon_factor, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::GroundBrdf::breon_factor(const int spec_index, const AutoDerivative< double > &val)\n"
+		"\n"
+		""},
+	 { (char *)"GroundBrdfSoil_brdf_covariance", _wrap_GroundBrdfSoil_brdf_covariance, METH_VARARGS, (char *)"\n"
+		"\n"
+		"const blitz::Array<double, 2> FullPhysics::GroundBrdf::brdf_covariance(const int spec_index) const\n"
+		"\n"
+		""},
+	 { (char *)"GroundBrdfSoil_refractive_index", _wrap_GroundBrdfSoil_refractive_index, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual const double FullPhysics::GroundBrdf::refractive_index(const int Spec_idx) const\n"
+		"Returns hard coded value of 1.5 since that is the value hardcoded into\n"
+		"LIDORT. \n"
+		""},
+	 { (char *)"GroundBrdfSoil_black_sky_albedo", _wrap_GroundBrdfSoil_black_sky_albedo, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual const double FullPhysics::GroundBrdfSoil::black_sky_albedo(const int Spec_index, const double Sza)\n"
+		"\n"
+		""},
+	 { (char *)"GroundBrdfSoil_albedo", _wrap_GroundBrdfSoil_albedo, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual const double FullPhysics::GroundBrdfSoil::albedo(const int Spec_index, const double Sza, const double Vza, const\n"
+		"double Azm, const blitz::Array< double, 1 > &Stokes_coef)\n"
+		"\n"
+		""},
+	 { (char *)"GroundBrdfSoil_breon_type", _wrap_GroundBrdfSoil_breon_type, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual const std::string FullPhysics::GroundBrdfSoil::breon_type() const\n"
+		"String describing which type of Breon surface type, also makes this\n"
+		"class abstract. \n"
+		""},
+	 { (char *)"GroundBrdfSoil_reference_point", _wrap_GroundBrdfSoil_reference_point, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual const DoubleWithUnit FullPhysics::GroundBrdf::reference_point(const int spec_index) const\n"
+		"Center wavelength that spectrally dependent parameter is referenced\n"
+		"to. \n"
+		""},
+	 { (char *)"GroundBrdfSoil_clone", _wrap_GroundBrdfSoil_clone, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual boost::shared_ptr<Ground> FullPhysics::GroundBrdfSoil::clone() const\n"
+		"\n"
+		""},
+	 { (char *)"GroundBrdfSoil_state_vector_name_i", _wrap_GroundBrdfSoil_state_vector_name_i, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual std::string FullPhysics::GroundBrdf::state_vector_name_i(int i) const\n"
+		"\n"
+		""},
+	 { (char *)"GroundBrdfSoil_print_desc", _wrap_GroundBrdfSoil_print_desc, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::GroundBrdf::print(std::ostream &Os) const\n"
+		"\n"
+		""},
+	 { (char *)"GroundBrdfSoil_desc", _wrap_GroundBrdfSoil_desc, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual std::string FullPhysics::GroundBrdf::desc() const\n"
+		"\n"
+		""},
 	 { (char *)"delete_GroundBrdfSoil", _wrap_delete_GroundBrdfSoil, METH_VARARGS, NULL},
 	 { (char *)"GroundBrdfSoil_swigregister", GroundBrdfSoil_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }

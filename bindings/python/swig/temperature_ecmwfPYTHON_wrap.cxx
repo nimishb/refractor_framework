@@ -5761,14 +5761,37 @@ SWIGINTERN PyObject *TemperatureEcmwf_swigregister(PyObject *SWIGUNUSEDPARM(self
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"new_TemperatureEcmwf", _wrap_new_TemperatureEcmwf, METH_VARARGS, NULL},
-	 { (char *)"TemperatureEcmwf_clone", _wrap_TemperatureEcmwf_clone, METH_VARARGS, NULL},
+	 { (char *)"new_TemperatureEcmwf", _wrap_new_TemperatureEcmwf, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::TemperatureEcmwf::TemperatureEcmwf(const boost::shared_ptr< Ecmwf > &Ecmwf_file, const\n"
+		"boost::shared_ptr< Pressure > &Press, double Temp_offset, bool\n"
+		"Temp_flag)\n"
+		"\n"
+		""},
+	 { (char *)"TemperatureEcmwf_clone", _wrap_TemperatureEcmwf_clone, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual boost::shared_ptr<Temperature> FullPhysics::TemperatureEcmwf::clone(const boost::shared_ptr< Pressure > &Press) const\n"
+		"\n"
+		""},
 	 { (char *)"TemperatureEcmwf_state_vector_name_i", _wrap_TemperatureEcmwf_state_vector_name_i, METH_VARARGS, NULL},
 	 { (char *)"TemperatureEcmwf__v_temperature_offset", _wrap_TemperatureEcmwf__v_temperature_offset, METH_VARARGS, NULL},
 	 { (char *)"TemperatureEcmwf__v_temperature_offset_uncertainty", _wrap_TemperatureEcmwf__v_temperature_offset_uncertainty, METH_VARARGS, NULL},
-	 { (char *)"TemperatureEcmwf__v_temperature_profile", _wrap_TemperatureEcmwf__v_temperature_profile, METH_VARARGS, NULL},
-	 { (char *)"TemperatureEcmwf__v_pressure_profile", _wrap_TemperatureEcmwf__v_pressure_profile, METH_VARARGS, NULL},
-	 { (char *)"delete_TemperatureEcmwf", _wrap_delete_TemperatureEcmwf, METH_VARARGS, NULL},
+	 { (char *)"TemperatureEcmwf__v_temperature_profile", _wrap_TemperatureEcmwf__v_temperature_profile, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual blitz::Array<double, 1> FullPhysics::TemperatureEcmwf::temperature_profile() const\n"
+		"Temperature from ECMWF, used to write to output file. \n"
+		""},
+	 { (char *)"TemperatureEcmwf__v_pressure_profile", _wrap_TemperatureEcmwf__v_pressure_profile, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual blitz::Array<double, 1> FullPhysics::TemperatureEcmwf::pressure_profile() const\n"
+		"Pressure levels that temperature is on from ECMWF, used to write to\n"
+		"output file. \n"
+		""},
+	 { (char *)"delete_TemperatureEcmwf", _wrap_delete_TemperatureEcmwf, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::TemperatureEcmwf::~TemperatureEcmwf()\n"
+		"\n"
+		""},
 	 { (char *)"TemperatureEcmwf_swigregister", TemperatureEcmwf_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };

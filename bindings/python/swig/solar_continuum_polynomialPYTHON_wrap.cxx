@@ -5383,9 +5383,22 @@ SWIGINTERN PyObject *SolarContinuumPolynomial_swigregister(PyObject *SWIGUNUSEDP
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"new_SolarContinuumPolynomial", _wrap_new_SolarContinuumPolynomial, METH_VARARGS, NULL},
-	 { (char *)"SolarContinuumPolynomial_solar_continuum_spectrum", _wrap_SolarContinuumPolynomial_solar_continuum_spectrum, METH_VARARGS, NULL},
-	 { (char *)"delete_SolarContinuumPolynomial", _wrap_delete_SolarContinuumPolynomial, METH_VARARGS, NULL},
+	 { (char *)"new_SolarContinuumPolynomial", _wrap_new_SolarContinuumPolynomial, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::SolarContinuumPolynomial::SolarContinuumPolynomial(const ArrayWithUnit< double, 1 > &Param, bool\n"
+		"Convert_from_photon=true)\n"
+		"\n"
+		""},
+	 { (char *)"SolarContinuumPolynomial_solar_continuum_spectrum", _wrap_SolarContinuumPolynomial_solar_continuum_spectrum, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual Spectrum FullPhysics::SolarContinuumPolynomial::solar_continuum_spectrum(const SpectralDomain &spec_domain) const\n"
+		"\n"
+		""},
+	 { (char *)"delete_SolarContinuumPolynomial", _wrap_delete_SolarContinuumPolynomial, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::SolarContinuumPolynomial::~SolarContinuumPolynomial()\n"
+		"\n"
+		""},
 	 { (char *)"SolarContinuumPolynomial_swigregister", SolarContinuumPolynomial_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };

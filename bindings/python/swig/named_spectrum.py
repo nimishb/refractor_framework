@@ -272,6 +272,19 @@ ObserverNamedSpectrum_swigregister = _named_spectrum.ObserverNamedSpectrum_swigr
 ObserverNamedSpectrum_swigregister(ObserverNamedSpectrum)
 
 class NamedSpectrum(full_physics_swig.spectrum.Spectrum):
+    """
+
+    Adds name and spec index fields to a Spectrum.
+
+    Useful for sending Spectrum files to output files.
+
+    Note that there are a few closely related classes, with similar
+    sounding names. See spectrum_doxygen for a description of each of
+    these.
+
+    C++ includes: named_spectrum.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.spectrum.Spectrum]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -283,6 +296,11 @@ class NamedSpectrum(full_physics_swig.spectrum.Spectrum):
     __repr__ = _swig_repr
 
     def __init__(self, *args):
+        """
+
+        FullPhysics::NamedSpectrum::NamedSpectrum()
+        Default constructor needed for SWIG. 
+        """
         this = _named_spectrum.new_NamedSpectrum(*args)
         try:
             self.this.append(this)
@@ -290,7 +308,13 @@ class NamedSpectrum(full_physics_swig.spectrum.Spectrum):
             self.this = this
 
     def _v_name(self):
+        """
+
+        virtual const std::string& FullPhysics::NamedSpectrum::name() const
+        Name that makes this a named spectrum. 
+        """
         return _named_spectrum.NamedSpectrum__v_name(self)
+
 
     @property
     def name(self):
@@ -298,7 +322,13 @@ class NamedSpectrum(full_physics_swig.spectrum.Spectrum):
 
 
     def _v_index(self):
+        """
+
+        virtual int FullPhysics::NamedSpectrum::index() const
+        An reference index for the spectrum, ie a spectrometer index. 
+        """
         return _named_spectrum.NamedSpectrum__v_index(self)
+
 
     @property
     def index(self):

@@ -124,6 +124,20 @@ import full_physics_swig.absco
 import full_physics_swig.gas_absorption
 import full_physics_swig.generic_object
 class AbscoHdf(full_physics_swig.absco.Absco):
+    """
+
+    This class is used to read the absco tables.
+
+    This reads the HDF version of the files.
+
+    Note that performance reasons we cache the data as we read it. The
+    default cache is about 50 MB, which is a bit large but not too large.
+    This can be adjusted if needed, either up for better performance or
+    down for less memory.
+
+    C++ includes: absco_hdf.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.absco.Absco]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -138,22 +152,59 @@ class AbscoHdf(full_physics_swig.absco.Absco):
     __repr__ = _swig_repr
 
     def load_file(self, *args):
+        """
+
+        void FullPhysics::AbscoHdf::load_file(const std::string &Fname, const SpectralBound &Spectral_bound, const
+        std::vector< double > &Table_scale, int Cache_nline=5000)
+
+        """
         return _absco_hdf.AbscoHdf_load_file(self, *args)
 
+
     def _v_broadener_name(self):
+        """
+
+        virtual std::string FullPhysics::AbscoHdf::broadener_name() const
+
+        """
         return _absco_hdf.AbscoHdf__v_broadener_name(self)
 
+
     def _v_broadener_vmr_grid(self):
+        """
+
+        virtual blitz::Array<double, 1> FullPhysics::AbscoHdf::broadener_vmr_grid() const
+
+        """
         return _absco_hdf.AbscoHdf__v_broadener_vmr_grid(self)
 
+
     def _v_pressure_grid(self):
+        """
+
+        virtual blitz::Array<double, 1> FullPhysics::AbscoHdf::pressure_grid() const
+
+        """
         return _absco_hdf.AbscoHdf__v_pressure_grid(self)
 
+
     def _v_temperature_grid(self):
+        """
+
+        virtual blitz::Array<double, 2> FullPhysics::AbscoHdf::temperature_grid() const
+
+        """
         return _absco_hdf.AbscoHdf__v_temperature_grid(self)
 
+
     def _v_file_name(self):
+        """
+
+        virtual std::string FullPhysics::AbscoHdf::file_name() const
+
+        """
         return _absco_hdf.AbscoHdf__v_file_name(self)
+
 
     @property
     def file_name(self):
@@ -161,7 +212,13 @@ class AbscoHdf(full_physics_swig.absco.Absco):
 
 
     def have_data(self, wn):
+        """
+
+        virtual bool FullPhysics::AbscoHdf::have_data(double wn) const
+
+        """
         return _absco_hdf.AbscoHdf_have_data(self, wn)
+
     __swig_destroy__ = _absco_hdf.delete_AbscoHdf
     __del__ = lambda self: None
 AbscoHdf_swigregister = _absco_hdf.AbscoHdf_swigregister

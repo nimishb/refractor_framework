@@ -5093,8 +5093,16 @@ SWIGINTERN PyObject *ConnorConvergenceOutput_swigregister(PyObject *SWIGUNUSEDPA
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"ConnorConvergenceOutput_register_output", _wrap_ConnorConvergenceOutput_register_output, METH_VARARGS, NULL},
-	 { (char *)"delete_ConnorConvergenceOutput", _wrap_delete_ConnorConvergenceOutput, METH_VARARGS, NULL},
+	 { (char *)"ConnorConvergenceOutput_register_output", _wrap_ConnorConvergenceOutput_register_output, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::ConnorConvergenceOutput::register_output(const boost::shared_ptr< Output > &out) const\n"
+		"\n"
+		""},
+	 { (char *)"delete_ConnorConvergenceOutput", _wrap_delete_ConnorConvergenceOutput, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::ConnorConvergenceOutput::~ConnorConvergenceOutput()\n"
+		"\n"
+		""},
 	 { (char *)"ConnorConvergenceOutput_swigregister", ConnorConvergenceOutput_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };

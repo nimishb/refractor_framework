@@ -5626,13 +5626,78 @@ SWIGINTERN PyObject *RadiativeTransferSingleWn_swigregister(PyObject *SWIGUNUSED
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"RadiativeTransferSingleWn__v_number_stream", _wrap_RadiativeTransferSingleWn__v_number_stream, METH_VARARGS, NULL},
-	 { (char *)"RadiativeTransferSingleWn__v_atmosphere", _wrap_RadiativeTransferSingleWn__v_atmosphere, METH_VARARGS, NULL},
-	 { (char *)"RadiativeTransferSingleWn_stokes", _wrap_RadiativeTransferSingleWn_stokes, METH_VARARGS, NULL},
-	 { (char *)"RadiativeTransferSingleWn_stokes_and_jacobian", _wrap_RadiativeTransferSingleWn_stokes_and_jacobian, METH_VARARGS, NULL},
-	 { (char *)"RadiativeTransferSingleWn_stokes_single_wn", _wrap_RadiativeTransferSingleWn_stokes_single_wn, METH_VARARGS, NULL},
-	 { (char *)"RadiativeTransferSingleWn_stokes_and_jacobian_single_wn", _wrap_RadiativeTransferSingleWn_stokes_and_jacobian_single_wn, METH_VARARGS, NULL},
-	 { (char *)"delete_RadiativeTransferSingleWn", _wrap_delete_RadiativeTransferSingleWn, METH_VARARGS, NULL},
+	 { (char *)"RadiativeTransferSingleWn__v_number_stream", _wrap_RadiativeTransferSingleWn__v_number_stream, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual int FullPhysics::RadiativeTransferSingleWn::number_stream() const =0\n"
+		"Number of streams to use in processing.\n"
+		"\n"
+		"Note that Lidort 3.0 used a less common \"full streams\" that was\n"
+		"twice the more commonly used \"half streams\". This function returns\n"
+		"the later. This is the same as what is used in Lidort 3.5 and LRad.\n"
+		"The \"full streams\" used in Lidort 3.0 would be twice this. \n"
+		""},
+	 { (char *)"RadiativeTransferSingleWn__v_atmosphere", _wrap_RadiativeTransferSingleWn__v_atmosphere, METH_VARARGS, (char *)"\n"
+		"\n"
+		"const boost::shared_ptr<RtAtmosphere>& FullPhysics::RadiativeTransferSingleWn::atmosphere() const\n"
+		"\n"
+		""},
+	 { (char *)"RadiativeTransferSingleWn_stokes", _wrap_RadiativeTransferSingleWn_stokes, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual blitz::Array<double, 2> FullPhysics::RadiativeTransferSingleWn::stokes(const SpectralDomain &Spec_domain, int Spec_index) const\n"
+		"\n"
+		""},
+	 { (char *)"RadiativeTransferSingleWn_stokes_and_jacobian", _wrap_RadiativeTransferSingleWn_stokes_and_jacobian, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual ArrayAd<double, 2> FullPhysics::RadiativeTransferSingleWn::stokes_and_jacobian(const SpectralDomain &Spec_domain, int Spec_index) const\n"
+		"\n"
+		""},
+	 { (char *)"RadiativeTransferSingleWn_stokes_single_wn", _wrap_RadiativeTransferSingleWn_stokes_single_wn, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual blitz::Array<double, 1> FullPhysics::RadiativeTransferSingleWn::stokes_single_wn(double Wn, int Spec_index, const ArrayAd< double, 2 > &Iv=ArrayAd<\n"
+		"double, 2 >()) const =0\n"
+		"Calculate stokes vector for the given wavenumber.\n"
+		"\n"
+		"You can optionally supply a set of intermediate atmosphere variables\n"
+		"(e.g., taug, taur, taua_i) to use instead of with atmosphere_ptr() to\n"
+		"calculate this.\n"
+		"\n"
+		"Parameters:\n"
+		"-----------\n"
+		"\n"
+		"Wn:  Wavenumber to calculate for. This should be in cm^-1\n"
+		"\n"
+		"Spec_index:  The Spectral index\n"
+		"\n"
+		"Iv:  Optional intermediate variables to use, rather than calculating.\n"
+		"\n"
+		"The set of stokes coefficients. This is number_stokes() in size. \n"
+		""},
+	 { (char *)"RadiativeTransferSingleWn_stokes_and_jacobian_single_wn", _wrap_RadiativeTransferSingleWn_stokes_and_jacobian_single_wn, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual ArrayAd<double, 1> FullPhysics::RadiativeTransferSingleWn::stokes_and_jacobian_single_wn(double Wn, int Spec_index, const ArrayAd< double, 2 > &Iv=ArrayAd<\n"
+		"double, 2 >()) const =0\n"
+		"Calculate stokes vector and Jacobian for the given wavenumber.\n"
+		"\n"
+		"You can optionally supply a set of intermediate atmosphere variables\n"
+		"(e.g., taug, taur, taua_i) to use instead of with atmosphere_ptr() to\n"
+		"calculate this.\n"
+		"\n"
+		"Parameters:\n"
+		"-----------\n"
+		"\n"
+		"Wn:  Wavenumber to calculate for. This should be in cm^-1\n"
+		"\n"
+		"Spec_index:  The Spectral index\n"
+		"\n"
+		"Iv:  Optional intermediate variables to use, rather than calculating.\n"
+		"\n"
+		"The set of stokes coefficients. This is number_stokes() in size. \n"
+		""},
+	 { (char *)"delete_RadiativeTransferSingleWn", _wrap_delete_RadiativeTransferSingleWn, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::RadiativeTransferSingleWn::~RadiativeTransferSingleWn()\n"
+		"\n"
+		""},
 	 { (char *)"RadiativeTransferSingleWn_swigregister", RadiativeTransferSingleWn_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };

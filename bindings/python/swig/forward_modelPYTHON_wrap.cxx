@@ -6225,19 +6225,94 @@ SWIGINTERN PyObject *ForwardModel_swigregister(PyObject *SWIGUNUSEDPARM(self), P
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"delete_ForwardModel", _wrap_delete_ForwardModel, METH_VARARGS, NULL},
+	 { (char *)"delete_ForwardModel", _wrap_delete_ForwardModel, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::ForwardModel::~ForwardModel()\n"
+		"\n"
+		""},
 	 { (char *)"ForwardModel___str__", _wrap_ForwardModel___str__, METH_VARARGS, NULL},
-	 { (char *)"ForwardModel__v_state_vector", _wrap_ForwardModel__v_state_vector, METH_VARARGS, NULL},
-	 { (char *)"ForwardModel__v_number_spectrometer", _wrap_ForwardModel__v_number_spectrometer, METH_VARARGS, NULL},
-	 { (char *)"ForwardModel_hdf_band_name", _wrap_ForwardModel_hdf_band_name, METH_VARARGS, NULL},
-	 { (char *)"ForwardModel_spectral_domain", _wrap_ForwardModel_spectral_domain, METH_VARARGS, NULL},
-	 { (char *)"ForwardModel_radiance", _wrap_ForwardModel_radiance, METH_VARARGS, NULL},
-	 { (char *)"ForwardModel_measured_radiance", _wrap_ForwardModel_measured_radiance, METH_VARARGS, NULL},
-	 { (char *)"ForwardModel_setup_grid", _wrap_ForwardModel_setup_grid, METH_VARARGS, NULL},
-	 { (char *)"ForwardModel_radiance_all", _wrap_ForwardModel_radiance_all, METH_VARARGS, NULL},
-	 { (char *)"ForwardModel__v_measured_radiance_all", _wrap_ForwardModel__v_measured_radiance_all, METH_VARARGS, NULL},
-	 { (char *)"ForwardModel_pixel_range", _wrap_ForwardModel_pixel_range, METH_VARARGS, NULL},
-	 { (char *)"ForwardModel__v_input_file_description", _wrap_ForwardModel__v_input_file_description, METH_VARARGS, NULL},
+	 { (char *)"ForwardModel__v_state_vector", _wrap_ForwardModel__v_state_vector, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual boost::shared_ptr<StateVector> FullPhysics::ForwardModel::state_vector() const =0\n"
+		"The state vector associated with the forward model. \n"
+		""},
+	 { (char *)"ForwardModel__v_number_spectrometer", _wrap_ForwardModel__v_number_spectrometer, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual int FullPhysics::ForwardModel::number_spectrometer() const =0\n"
+		"The number of spectral bands associated with forward model. \n"
+		""},
+	 { (char *)"ForwardModel_hdf_band_name", _wrap_ForwardModel_hdf_band_name, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual std::string FullPhysics::ForwardModel::hdf_band_name(int Spec_index) const =0\n"
+		"The HDF field name to use for a particular band (e.g., \"weak_co2\")\n"
+		"\n"
+		""},
+	 { (char *)"ForwardModel_spectral_domain", _wrap_ForwardModel_spectral_domain, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual SpectralDomain FullPhysics::ForwardModel::spectral_domain(int Spec_index) const =0\n"
+		"Spectral domain for the given spectral band.\n"
+		"\n"
+		"Note that this may be empty. \n"
+		""},
+	 { (char *)"ForwardModel_radiance", _wrap_ForwardModel_radiance, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual Spectrum FullPhysics::ForwardModel::radiance(int Spec_index, bool Skip_jacobian=false) const =0\n"
+		"Spectrum for the given spectral band.\n"
+		"\n"
+		"Note that this may be empty.\n"
+		"\n"
+		"Parameters:\n"
+		"-----------\n"
+		"\n"
+		"Spec_index:  Band to give value for\n"
+		"\n"
+		"Skip_jacobian:  If true, don't do the Jacobian calculation. Often this\n"
+		"is significantly faster to calculate.\n"
+		"\n"
+		"The set of radiances, possibly empty. \n"
+		""},
+	 { (char *)"ForwardModel_measured_radiance", _wrap_ForwardModel_measured_radiance, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual Spectrum FullPhysics::ForwardModel::measured_radiance(int Spec_index) const =0\n"
+		"Measured spectrum for the given spectral band.\n"
+		"\n"
+		"Note that this may be empty.\n"
+		"\n"
+		"Parameters:\n"
+		"-----------\n"
+		"\n"
+		"Spec_index:  Band to give value for\n"
+		"\n"
+		"The set of radiances, possibly empty. \n"
+		""},
+	 { (char *)"ForwardModel_setup_grid", _wrap_ForwardModel_setup_grid, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::ForwardModel::setup_grid()=0\n"
+		"The grid that the forward model runs on may depend on the state\n"
+		"vector.\n"
+		"\n"
+		"This notifies the forward model that it should setup the grid \n"
+		""},
+	 { (char *)"ForwardModel_radiance_all", _wrap_ForwardModel_radiance_all, METH_VARARGS, (char *)"\n"
+		"\n"
+		"Spectrum FullPhysics::ForwardModel::radiance_all(bool Skip_jacobian=false) const\n"
+		"\n"
+		""},
+	 { (char *)"ForwardModel__v_measured_radiance_all", _wrap_ForwardModel__v_measured_radiance_all, METH_VARARGS, (char *)"\n"
+		"\n"
+		"Spectrum FullPhysics::ForwardModel::measured_radiance_all() const\n"
+		"\n"
+		""},
+	 { (char *)"ForwardModel_pixel_range", _wrap_ForwardModel_pixel_range, METH_VARARGS, (char *)"\n"
+		"\n"
+		"boost::optional<blitz::Range> FullPhysics::ForwardModel::pixel_range(int Spec_index) const\n"
+		"\n"
+		""},
+	 { (char *)"ForwardModel__v_input_file_description", _wrap_ForwardModel__v_input_file_description, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::ForwardModel::input_file_description(const std::string &V)\n"
+		"\n"
+		""},
 	 { (char *)"ForwardModel_swigregister", ForwardModel_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };

@@ -6434,16 +6434,63 @@ SWIGINTERN PyObject *ConnorSolverMAP_swigregister(PyObject *SWIGUNUSEDPARM(self)
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"new_ConnorSolverMAP", _wrap_new_ConnorSolverMAP, METH_VARARGS, NULL},
-	 { (char *)"delete_ConnorSolverMAP", _wrap_delete_ConnorSolverMAP, METH_VARARGS, NULL},
-	 { (char *)"ConnorSolverMAP_solve", _wrap_ConnorSolverMAP_solve, METH_VARARGS, NULL},
-	 { (char *)"ConnorSolverMAP__v_convergence_check", _wrap_ConnorSolverMAP__v_convergence_check, METH_VARARGS, NULL},
-	 { (char *)"ConnorSolverMAP__v_gamma_last_step", _wrap_ConnorSolverMAP__v_gamma_last_step, METH_VARARGS, NULL},
-	 { (char *)"ConnorSolverMAP__v_number_iteration", _wrap_ConnorSolverMAP__v_number_iteration, METH_VARARGS, NULL},
-	 { (char *)"ConnorSolverMAP__v_number_divergent", _wrap_ConnorSolverMAP__v_number_divergent, METH_VARARGS, NULL},
-	 { (char *)"ConnorSolverMAP__v_outcome_flag", _wrap_ConnorSolverMAP__v_outcome_flag, METH_VARARGS, NULL},
-	 { (char *)"ConnorSolverMAP__v_x_update", _wrap_ConnorSolverMAP__v_x_update, METH_VARARGS, NULL},
-	 { (char *)"ConnorSolverMAP__v_fit_statistic", _wrap_ConnorSolverMAP__v_fit_statistic, METH_VARARGS, NULL},
+	 { (char *)"new_ConnorSolverMAP", _wrap_new_ConnorSolverMAP, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::ConnorSolverMAP::ConnorSolverMAP(int max_cost_function_calls, double dx_tol_abs, double dx_tol_rel,\n"
+		"double g_tol_abs, const boost::shared_ptr< NLLSMaxAPosteriori >\n"
+		"&NLLS_MAP, const boost::shared_ptr< ConvergenceCheck >\n"
+		"&Convergence_check, bool vrbs=false, double Gamma_initial=0.0, const\n"
+		"std::string &Fname_test_data=\"\")\n"
+		"and optionally an initial value for gamma.\n"
+		"\n"
+		"See the comments above this class for the \"save_test_data\" argument.\n"
+		"\n"
+		""},
+	 { (char *)"delete_ConnorSolverMAP", _wrap_delete_ConnorSolverMAP, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::ConnorSolverMAP::~ConnorSolverMAP()\n"
+		"\n"
+		""},
+	 { (char *)"ConnorSolverMAP_solve", _wrap_ConnorSolverMAP_solve, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::ConnorSolverMAP::solve()\n"
+		"\n"
+		""},
+	 { (char *)"ConnorSolverMAP__v_convergence_check", _wrap_ConnorSolverMAP__v_convergence_check, METH_VARARGS, (char *)"\n"
+		"\n"
+		"boost::shared_ptr<ConvergenceCheck> FullPhysics::ConnorSolverMAP::convergence_check() const\n"
+		"The convergence check object. \n"
+		""},
+	 { (char *)"ConnorSolverMAP__v_gamma_last_step", _wrap_ConnorSolverMAP__v_gamma_last_step, METH_VARARGS, (char *)"\n"
+		"\n"
+		"double FullPhysics::ConnorSolverMAP::gamma_last_step() const\n"
+		"Levenberg-Marquardt parameter for last step we processed. \n"
+		""},
+	 { (char *)"ConnorSolverMAP__v_number_iteration", _wrap_ConnorSolverMAP__v_number_iteration, METH_VARARGS, (char *)"\n"
+		"\n"
+		"int FullPhysics::ConnorSolverMAP::number_iteration() const\n"
+		"Number of iterations for the last problem solved. \n"
+		""},
+	 { (char *)"ConnorSolverMAP__v_number_divergent", _wrap_ConnorSolverMAP__v_number_divergent, METH_VARARGS, (char *)"\n"
+		"\n"
+		"int FullPhysics::ConnorSolverMAP::number_divergent() const\n"
+		"Number of divergent steps for the last problem solved. \n"
+		""},
+	 { (char *)"ConnorSolverMAP__v_outcome_flag", _wrap_ConnorSolverMAP__v_outcome_flag, METH_VARARGS, (char *)"\n"
+		"\n"
+		"int FullPhysics::ConnorSolverMAP::outcome_flag() const\n"
+		"Outcome flag. This is an integer version of FitStatistic::OUTCOME. \n"
+		""},
+	 { (char *)"ConnorSolverMAP__v_x_update", _wrap_ConnorSolverMAP__v_x_update, METH_VARARGS, (char *)"\n"
+		"\n"
+		"blitz::Array<double, 1> FullPhysics::ConnorSolverMAP::x_update() const\n"
+		"Return the a priori of the last problem solved. \n"
+		""},
+	 { (char *)"ConnorSolverMAP__v_fit_statistic", _wrap_ConnorSolverMAP__v_fit_statistic, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FitStatistic FullPhysics::ConnorSolverMAP::fit_statistic() const\n"
+		"Return fit results for solution to last problem solved. \n"
+		""},
 	 { (char *)"ConnorSolverMAP_swigregister", ConnorSolverMAP_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };

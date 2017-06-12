@@ -6307,14 +6307,47 @@ SWIGINTERN PyObject *AbscoHdf_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObj
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"AbscoHdf_load_file", _wrap_AbscoHdf_load_file, METH_VARARGS, NULL},
-	 { (char *)"AbscoHdf__v_broadener_name", _wrap_AbscoHdf__v_broadener_name, METH_VARARGS, NULL},
-	 { (char *)"AbscoHdf__v_broadener_vmr_grid", _wrap_AbscoHdf__v_broadener_vmr_grid, METH_VARARGS, NULL},
-	 { (char *)"AbscoHdf__v_pressure_grid", _wrap_AbscoHdf__v_pressure_grid, METH_VARARGS, NULL},
-	 { (char *)"AbscoHdf__v_temperature_grid", _wrap_AbscoHdf__v_temperature_grid, METH_VARARGS, NULL},
-	 { (char *)"AbscoHdf__v_file_name", _wrap_AbscoHdf__v_file_name, METH_VARARGS, NULL},
-	 { (char *)"AbscoHdf_have_data", _wrap_AbscoHdf_have_data, METH_VARARGS, NULL},
-	 { (char *)"delete_AbscoHdf", _wrap_delete_AbscoHdf, METH_VARARGS, NULL},
+	 { (char *)"AbscoHdf_load_file", _wrap_AbscoHdf_load_file, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::AbscoHdf::load_file(const std::string &Fname, const SpectralBound &Spectral_bound, const\n"
+		"std::vector< double > &Table_scale, int Cache_nline=5000)\n"
+		"\n"
+		""},
+	 { (char *)"AbscoHdf__v_broadener_name", _wrap_AbscoHdf__v_broadener_name, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual std::string FullPhysics::AbscoHdf::broadener_name() const\n"
+		"\n"
+		""},
+	 { (char *)"AbscoHdf__v_broadener_vmr_grid", _wrap_AbscoHdf__v_broadener_vmr_grid, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual blitz::Array<double, 1> FullPhysics::AbscoHdf::broadener_vmr_grid() const\n"
+		"\n"
+		""},
+	 { (char *)"AbscoHdf__v_pressure_grid", _wrap_AbscoHdf__v_pressure_grid, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual blitz::Array<double, 1> FullPhysics::AbscoHdf::pressure_grid() const\n"
+		"\n"
+		""},
+	 { (char *)"AbscoHdf__v_temperature_grid", _wrap_AbscoHdf__v_temperature_grid, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual blitz::Array<double, 2> FullPhysics::AbscoHdf::temperature_grid() const\n"
+		"\n"
+		""},
+	 { (char *)"AbscoHdf__v_file_name", _wrap_AbscoHdf__v_file_name, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual std::string FullPhysics::AbscoHdf::file_name() const\n"
+		"\n"
+		""},
+	 { (char *)"AbscoHdf_have_data", _wrap_AbscoHdf_have_data, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual bool FullPhysics::AbscoHdf::have_data(double wn) const\n"
+		"\n"
+		""},
+	 { (char *)"delete_AbscoHdf", _wrap_delete_AbscoHdf, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::AbscoHdf::~AbscoHdf()\n"
+		"\n"
+		""},
 	 { (char *)"AbscoHdf_swigregister", AbscoHdf_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };

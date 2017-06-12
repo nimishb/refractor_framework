@@ -123,6 +123,13 @@ def _new_from_set(cls, version, *args):
 import full_physics_swig.level_1b
 import full_physics_swig.generic_object
 class Level1bHeritage(full_physics_swig.level_1b.Level1b):
+    """
+
+    This reads a Level 1B file that is in the heritage text format.
+
+    C++ includes: level_1b_heritage.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.level_1b.Level1b]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -134,6 +141,12 @@ class Level1bHeritage(full_physics_swig.level_1b.Level1b):
     __repr__ = _swig_repr
 
     def __init__(self, Sounding_info_file, Spectrum_file, Nm):
+        """
+
+        FullPhysics::Level1bHeritage::Level1bHeritage(const std::string &Sounding_info_file, const std::string
+        &Spectrum_file, const boost::shared_ptr< NoiseModel > &Nm)
+
+        """
         this = _level_1b_heritage.new_Level1bHeritage(Sounding_info_file, Spectrum_file, Nm)
         try:
             self.this.append(this)
@@ -141,40 +154,112 @@ class Level1bHeritage(full_physics_swig.level_1b.Level1b):
             self.this = this
 
     def latitude(self, i):
+        """
+
+        virtual DoubleWithUnit FullPhysics::Level1bHeritage::latitude(int i) const
+
+        """
         return _level_1b_heritage.Level1bHeritage_latitude(self, i)
 
+
     def longitude(self, i):
+        """
+
+        virtual DoubleWithUnit FullPhysics::Level1bHeritage::longitude(int i) const
+
+        """
         return _level_1b_heritage.Level1bHeritage_longitude(self, i)
 
+
     def sounding_zenith(self, i):
+        """
+
+        virtual DoubleWithUnit FullPhysics::Level1bHeritage::sounding_zenith(int i) const
+
+        """
         return _level_1b_heritage.Level1bHeritage_sounding_zenith(self, i)
 
+
     def sounding_azimuth(self, i):
+        """
+
+        virtual DoubleWithUnit FullPhysics::Level1bHeritage::sounding_azimuth(int i) const
+
+        """
         return _level_1b_heritage.Level1bHeritage_sounding_azimuth(self, i)
 
+
     def solar_zenith(self, i):
+        """
+
+        virtual DoubleWithUnit FullPhysics::Level1bHeritage::solar_zenith(int i) const
+
+        """
         return _level_1b_heritage.Level1bHeritage_solar_zenith(self, i)
 
+
     def solar_azimuth(self, i):
+        """
+
+        virtual DoubleWithUnit FullPhysics::Level1bHeritage::solar_azimuth(int i) const
+
+        """
         return _level_1b_heritage.Level1bHeritage_solar_azimuth(self, i)
 
+
     def stokes_coefficient(self, i):
+        """
+
+        virtual blitz::Array<double, 1> FullPhysics::Level1bHeritage::stokes_coefficient(int i) const
+
+        """
         return _level_1b_heritage.Level1bHeritage_stokes_coefficient(self, i)
 
+
     def altitude(self, i):
+        """
+
+        virtual DoubleWithUnit FullPhysics::Level1bHeritage::altitude(int i) const
+
+        """
         return _level_1b_heritage.Level1bHeritage_altitude(self, i)
 
+
     def relative_velocity(self, i):
+        """
+
+        virtual DoubleWithUnit FullPhysics::Level1bHeritage::relative_velocity(int Spec_index) const
+
+        """
         return _level_1b_heritage.Level1bHeritage_relative_velocity(self, i)
 
+
     def spectral_coefficient(self, Spec_index):
+        """
+
+        virtual ArrayWithUnit<double, 1> FullPhysics::Level1bHeritage::spectral_coefficient(int Spec_index) const
+
+        """
         return _level_1b_heritage.Level1bHeritage_spectral_coefficient(self, Spec_index)
 
+
     def time(self, Spec_index):
+        """
+
+        virtual Time FullPhysics::Level1bHeritage::time(int Spec_index) const
+
+        """
         return _level_1b_heritage.Level1bHeritage_time(self, Spec_index)
 
+
     def radiance(self, Spec_index):
+        """
+
+        virtual SpectralRange FullPhysics::Level1bHeritage::radiance(int Spec_index) const
+
+        """
         return _level_1b_heritage.Level1bHeritage_radiance(self, Spec_index)
+
     __swig_destroy__ = _level_1b_heritage.delete_Level1bHeritage
     __del__ = lambda self: None
 Level1bHeritage_swigregister = _level_1b_heritage.Level1bHeritage_swigregister

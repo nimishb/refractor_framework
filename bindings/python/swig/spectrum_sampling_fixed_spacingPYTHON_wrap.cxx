@@ -5329,9 +5329,22 @@ SWIGINTERN PyObject *SpectrumSamplingFixedSpacing_swigregister(PyObject *SWIGUNU
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"new_SpectrumSamplingFixedSpacing", _wrap_new_SpectrumSamplingFixedSpacing, METH_VARARGS, NULL},
-	 { (char *)"SpectrumSamplingFixedSpacing_spectral_domain", _wrap_SpectrumSamplingFixedSpacing_spectral_domain, METH_VARARGS, NULL},
-	 { (char *)"delete_SpectrumSamplingFixedSpacing", _wrap_delete_SpectrumSamplingFixedSpacing, METH_VARARGS, NULL},
+	 { (char *)"new_SpectrumSamplingFixedSpacing", _wrap_new_SpectrumSamplingFixedSpacing, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::SpectrumSamplingFixedSpacing::SpectrumSamplingFixedSpacing(const ArrayWithUnit< double, 1 > &Spec_spacing)\n"
+		"\n"
+		""},
+	 { (char *)"SpectrumSamplingFixedSpacing_spectral_domain", _wrap_SpectrumSamplingFixedSpacing_spectral_domain, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual SpectralDomain FullPhysics::SpectrumSamplingFixedSpacing::spectral_domain(int spec_index, const SpectralDomain &Lowres_grid, const\n"
+		"DoubleWithUnit &Ils_half_width) const\n"
+		"\n"
+		""},
+	 { (char *)"delete_SpectrumSamplingFixedSpacing", _wrap_delete_SpectrumSamplingFixedSpacing, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::SpectrumSamplingFixedSpacing::~SpectrumSamplingFixedSpacing()\n"
+		"\n"
+		""},
 	 { (char *)"SpectrumSamplingFixedSpacing_swigregister", SpectrumSamplingFixedSpacing_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };

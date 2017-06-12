@@ -9247,16 +9247,55 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"SubStateVectorArrayAbsorberVmr__v_statevector_covariance", _wrap_SubStateVectorArrayAbsorberVmr__v_statevector_covariance, METH_VARARGS, NULL},
 	 { (char *)"SubStateVectorArrayAbsorberVmr__v_pressure", _wrap_SubStateVectorArrayAbsorberVmr__v_pressure, METH_VARARGS, NULL},
 	 { (char *)"SubStateVectorArrayAbsorberVmr_swigregister", SubStateVectorArrayAbsorberVmr_swigregister, METH_VARARGS, NULL},
-	 { (char *)"delete_AbsorberVmrImpBase", _wrap_delete_AbsorberVmrImpBase, METH_VARARGS, NULL},
-	 { (char *)"AbsorberVmrImpBase_clone", _wrap_AbsorberVmrImpBase_clone, METH_VARARGS, NULL},
-	 { (char *)"AbsorberVmrImpBase__v_gas_name", _wrap_AbsorberVmrImpBase__v_gas_name, METH_VARARGS, NULL},
-	 { (char *)"AbsorberVmrImpBase_volume_mixing_ratio", _wrap_AbsorberVmrImpBase_volume_mixing_ratio, METH_VARARGS, NULL},
-	 { (char *)"AbsorberVmrImpBase__v_state_used", _wrap_AbsorberVmrImpBase__v_state_used, METH_VARARGS, NULL},
+	 { (char *)"delete_AbsorberVmrImpBase", _wrap_delete_AbsorberVmrImpBase, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::AbsorberVmrImpBase::~AbsorberVmrImpBase()\n"
+		"\n"
+		""},
+	 { (char *)"AbsorberVmrImpBase_clone", _wrap_AbsorberVmrImpBase_clone, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual boost::shared_ptr<AbsorberVmr> FullPhysics::AbsorberVmrImpBase::clone(const boost::shared_ptr< Pressure > &Press) const =0\n"
+		"\n"
+		""},
+	 { (char *)"AbsorberVmrImpBase__v_gas_name", _wrap_AbsorberVmrImpBase__v_gas_name, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual std::string FullPhysics::AbsorberVmrImpBase::gas_name() const\n"
+		"\n"
+		""},
+	 { (char *)"AbsorberVmrImpBase_volume_mixing_ratio", _wrap_AbsorberVmrImpBase_volume_mixing_ratio, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual AutoDerivative<double> FullPhysics::AbsorberVmrImpBase::volume_mixing_ratio(const AutoDerivative< double > &P) const\n"
+		"\n"
+		""},
+	 { (char *)"AbsorberVmrImpBase__v_state_used", _wrap_AbsorberVmrImpBase__v_state_used, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual blitz::Array<bool, 1> FullPhysics::AbsorberVmrImpBase::state_used() const\n"
+		"\n"
+		""},
 	 { (char *)"AbsorberVmrImpBase_add_observer", _wrap_AbsorberVmrImpBase_add_observer, METH_VARARGS, NULL},
 	 { (char *)"AbsorberVmrImpBase_remove_observer", _wrap_AbsorberVmrImpBase_remove_observer, METH_VARARGS, NULL},
-	 { (char *)"AbsorberVmrImpBase_update_sub_state_hook", _wrap_AbsorberVmrImpBase_update_sub_state_hook, METH_VARARGS, NULL},
-	 { (char *)"AbsorberVmrImpBase_print_desc", _wrap_AbsorberVmrImpBase_print_desc, METH_VARARGS, NULL},
-	 { (char *)"AbsorberVmrImpBase__v_desc", _wrap_AbsorberVmrImpBase__v_desc, METH_VARARGS, NULL},
+	 { (char *)"AbsorberVmrImpBase_update_sub_state_hook", _wrap_AbsorberVmrImpBase_update_sub_state_hook, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::AbsorberVmrImpBase::update_sub_state_hook()\n"
+		"\n"
+		""},
+	 { (char *)"AbsorberVmrImpBase_print_desc", _wrap_AbsorberVmrImpBase_print_desc, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::AbsorberVmrImpBase::print(std::ostream &Os) const\n"
+		"Print to stream.\n"
+		"\n"
+		"The default calls the function \"desc\" that returns a string. This\n"
+		"gives cleaner interface for deriving from this class in python, but\n"
+		"most C++ classes will want to override this function rather than using\n"
+		"desc. \n"
+		""},
+	 { (char *)"AbsorberVmrImpBase__v_desc", _wrap_AbsorberVmrImpBase__v_desc, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual std::string FullPhysics::AbsorberVmrImpBase::desc() const\n"
+		"Description of object, to be printed to stream.\n"
+		"\n"
+		"This gives a cleaner interface for deriving from python. \n"
+		""},
 	 { (char *)"AbsorberVmrImpBase_mark_used", _wrap_AbsorberVmrImpBase_mark_used, METH_VARARGS, NULL},
 	 { (char *)"AbsorberVmrImpBase_state_vector_name", _wrap_AbsorberVmrImpBase_state_vector_name, METH_VARARGS, NULL},
 	 { (char *)"AbsorberVmrImpBase_notify_update", _wrap_AbsorberVmrImpBase_notify_update, METH_VARARGS, NULL},

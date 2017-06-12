@@ -127,6 +127,16 @@ import full_physics_swig.state_vector
 import full_physics_swig.generic_object
 import full_physics_swig.sub_state_vector_array
 class TemperatureLevelOffset(full_physics_swig.temperature_offset.TemperatureOffset):
+    """
+
+    This class maintains the temperature portion of the state.
+
+    This particular implementation uses the temperature from LEVEL file
+    (interpolated to the current pressure grid), along with an offset.
+
+    C++ includes: temperature_level_offset.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.temperature_offset.TemperatureOffset]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -138,6 +148,12 @@ class TemperatureLevelOffset(full_physics_swig.temperature_offset.TemperatureOff
     __repr__ = _swig_repr
 
     def __init__(self, Press, Temp_levels, Temp_offset, Temp_flag):
+        """
+
+        FullPhysics::TemperatureLevelOffset::TemperatureLevelOffset(const boost::shared_ptr< Pressure > &Press, const blitz::Array<
+        double, 1 > &Temp_levels, double Temp_offset, bool Temp_flag)
+
+        """
         this = _temperature_level_offset.new_TemperatureLevelOffset(Press, Temp_levels, Temp_offset, Temp_flag)
         try:
             self.this.append(this)
@@ -145,7 +161,13 @@ class TemperatureLevelOffset(full_physics_swig.temperature_offset.TemperatureOff
             self.this = this
 
     def clone(self, *args):
+        """
+
+        virtual boost::shared_ptr<Temperature> FullPhysics::TemperatureLevelOffset::clone(const boost::shared_ptr< Pressure > &Press) const
+
+        """
         return _temperature_level_offset.TemperatureLevelOffset_clone(self, *args)
+
 
     def state_vector_name_i(self, i):
         return _temperature_level_offset.TemperatureLevelOffset_state_vector_name_i(self, i)

@@ -123,6 +123,54 @@ def _new_from_set(cls, version, *args):
 import full_physics_swig.l2_fp_configuration
 import full_physics_swig.generic_object
 class L2FpConfigurationLua(full_physics_swig.l2_fp_configuration.L2FpConfiguration):
+    """
+
+    This is an implementation of L2FpConfiguration that uses Lua.
+
+    Note that this class is very specific to the L2 Full Physics main,
+    with a minimal interface. A more general class LuaFile may be of more
+    interest to you unless you are specifically working with L2 main.
+
+    The interface is purposely minimal, there are a handleful of global
+    variables that the Lua file need to define. It can do this in any way
+    it wishes.
+
+    In practice, our runs tend to be similiar. There is a file
+    config_common.lua and base_config.lua that sets up a "standard" run,
+    you can then create a configuration file that uses these two other
+    files and just specifies what is different from this. But this is
+    merely meant for convience, there is no requirement at all that you
+    use these files. You can do anything you like as long as in the end
+    you produce the set of global variables.
+
+    The require variables are:
+
+    logger - A LogImp
+
+    forward_model - A ForwardModel
+
+    solver - A ConnorSolver
+
+    initial_guess - A InitialGuess
+
+    number_pressure_level - Integer giving the number of pressure levels.
+    This is used to size the output file, so it should be the maximim
+    pressure
+
+    number_aerosol - Integer giving number of Aerosol particles. Can be 0.
+    This is used to size the output file.
+
+    iteration_output - Boolean. True if we should write out iteration
+    output
+
+    register_output - A std::vector<boost::shared_ptr<RegisterOutputBase>
+    > giving the list of output that should be generated. This list can
+    empty if no output is desired. The Lua type for this is called
+    VectorRegisterOutput (since Lua doesn't have templates).
+
+    C++ includes: l2_fp_configuration_lua.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.l2_fp_configuration.L2FpConfiguration]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -134,6 +182,12 @@ class L2FpConfigurationLua(full_physics_swig.l2_fp_configuration.L2FpConfigurati
     __repr__ = _swig_repr
 
     def __init__(self, *args):
+        """
+
+        FullPhysics::L2FpConfigurationLua::L2FpConfigurationLua(int Argc, char **Argv)
+        Parse the arguments passed to the executable to set up configuration.
+
+        """
         this = _l2_fp_configuration_lua.new_L2FpConfigurationLua(*args)
         try:
             self.this.append(this)
@@ -141,7 +195,13 @@ class L2FpConfigurationLua(full_physics_swig.l2_fp_configuration.L2FpConfigurati
             self.this = this
 
     def _v_lua_state(self):
+        """
+
+        LuaState& FullPhysics::L2FpConfigurationLua::lua_state()
+
+        """
         return _l2_fp_configuration_lua.L2FpConfigurationLua__v_lua_state(self)
+
 
     @property
     def lua_state(self):
@@ -149,7 +209,13 @@ class L2FpConfigurationLua(full_physics_swig.l2_fp_configuration.L2FpConfigurati
 
 
     def _v_output_name(self, *args):
+        """
+
+        void FullPhysics::L2FpConfigurationLua::output_name(const std::string &F)
+
+        """
         return _l2_fp_configuration_lua.L2FpConfigurationLua__v_output_name(self, *args)
+
 
     @property
     def output_name(self):
@@ -161,7 +227,14 @@ class L2FpConfigurationLua(full_physics_swig.l2_fp_configuration.L2FpConfigurati
 
 
     def output(self):
+        """
+
+        virtual void FullPhysics::L2FpConfigurationLua::output(boost::shared_ptr< Output > &Regular_output, boost::shared_ptr<
+        Output > &Error_output) const
+
+        """
         return _l2_fp_configuration_lua.L2FpConfigurationLua_output(self)
+
     __swig_destroy__ = _l2_fp_configuration_lua.delete_L2FpConfigurationLua
     __del__ = lambda self: None
 L2FpConfigurationLua_swigregister = _l2_fp_configuration_lua.L2FpConfigurationLua_swigregister

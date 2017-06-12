@@ -5071,8 +5071,16 @@ SWIGINTERN PyObject *ConnorSolverOutput_swigregister(PyObject *SWIGUNUSEDPARM(se
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"ConnorSolverOutput_register_output", _wrap_ConnorSolverOutput_register_output, METH_VARARGS, NULL},
-	 { (char *)"delete_ConnorSolverOutput", _wrap_delete_ConnorSolverOutput, METH_VARARGS, NULL},
+	 { (char *)"ConnorSolverOutput_register_output", _wrap_ConnorSolverOutput_register_output, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::ConnorSolverOutput::register_output(const boost::shared_ptr< Output > &out) const\n"
+		"\n"
+		""},
+	 { (char *)"delete_ConnorSolverOutput", _wrap_delete_ConnorSolverOutput, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::ConnorSolverOutput::~ConnorSolverOutput()\n"
+		"\n"
+		""},
 	 { (char *)"ConnorSolverOutput_swigregister", ConnorSolverOutput_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };

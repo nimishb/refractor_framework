@@ -122,6 +122,18 @@ def _new_from_set(cls, version, *args):
 
 import full_physics_swig.generic_object
 class SpectrumSampling(full_physics_swig.generic_object.GenericObject):
+    """
+
+    This determines the sampling of the spectrum that should be used for
+    each of the spectrum indexes.
+
+    Note that there are a few closely related classes, with similar
+    sounding names. See spectrum_doxygen for a description of each of
+    these.
+
+    C++ includes: spectrum_sampling.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.generic_object.GenericObject]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -141,7 +153,13 @@ class SpectrumSampling(full_physics_swig.generic_object.GenericObject):
         return _spectrum_sampling.SpectrumSampling___str__(self)
 
     def _v_number_spectrometer(self):
+        """
+
+        int FullPhysics::SpectrumSampling::number_spectrometer() const
+        Number of spectrometers we have. 
+        """
         return _spectrum_sampling.SpectrumSampling__v_number_spectrometer(self)
+
 
     @property
     def number_spectrometer(self):
@@ -149,13 +167,42 @@ class SpectrumSampling(full_physics_swig.generic_object.GenericObject):
 
 
     def spectral_domain(self, spec_index, Lowres_grid, Ils_half_width):
+        """
+
+        virtual SpectralDomain FullPhysics::SpectrumSampling::spectral_domain(int spec_index, const SpectralDomain &Lowres_grid, const
+        DoubleWithUnit &Ils_half_width) const =0
+        Wavenumbers/Wavelengths to use for the given spectrometer.
+
+        We pass in the low resolution grid that we are going to generate after
+        the ILS convolution, along with the ILS half width so we can generate
+        the high resolution points needed to supply the ILS. 
+        """
         return _spectrum_sampling.SpectrumSampling_spectral_domain(self, spec_index, Lowres_grid, Ils_half_width)
 
+
     def spectral_domain_interpolated(self, Spec_index, Lowres_grid, Ils_half_width):
+        """
+
+        virtual SpectralDomain FullPhysics::SpectrumSampling::spectral_domain_interpolated(int Spec_index, const SpectralDomain &Lowres_grid, const
+        DoubleWithUnit &Ils_half_width) const
+        The interpolated spectral domain.
+
+        The default is that this is just the same as spectral_domain, but
+        derived classes can supply a different implementation if it is doing
+        nonuniform sampling. 
+        """
         return _spectrum_sampling.SpectrumSampling_spectral_domain_interpolated(self, Spec_index, Lowres_grid, Ils_half_width)
 
+
     def need_interpolation(self, Spec_index):
+        """
+
+        virtual bool FullPhysics::SpectrumSampling::need_interpolation(int Spec_index) const
+        Indicate if spectral_domain and spectral_domain_interpolated are
+        different at all. 
+        """
         return _spectrum_sampling.SpectrumSampling_need_interpolation(self, Spec_index)
+
 SpectrumSampling_swigregister = _spectrum_sampling.SpectrumSampling_swigregister
 SpectrumSampling_swigregister(SpectrumSampling)
 

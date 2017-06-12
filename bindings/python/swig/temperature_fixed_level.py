@@ -126,6 +126,16 @@ import full_physics_swig.state_vector
 import full_physics_swig.generic_object
 import full_physics_swig.sub_state_vector_array
 class TemperatureFixedLevel(full_physics_swig.temperature_imp_base.TemperatureImpBase):
+    """
+
+    This class maintains the temperature portion of the state.
+
+    This particular implementation has a fixed set of pressure levels,
+    with only the surface pressure changing.
+
+    C++ includes: temperature_fixed_level.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.temperature_imp_base.TemperatureImpBase]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -137,6 +147,14 @@ class TemperatureFixedLevel(full_physics_swig.temperature_imp_base.TemperatureIm
     __repr__ = _swig_repr
 
     def __init__(self, Flag_temp, Flag_offset, Temp, T_offset, Press, Press_level):
+        """
+
+        FullPhysics::TemperatureFixedLevel::TemperatureFixedLevel(const blitz::Array< bool, 1 > &Flag_temp, bool Flag_offset, const
+        blitz::Array< double, 1 > &Temp, double T_offset, const
+        boost::shared_ptr< Pressure > &Press, const boost::shared_ptr<
+        PressureLevelInput > &Press_level)
+
+        """
         this = _temperature_fixed_level.new_TemperatureFixedLevel(Flag_temp, Flag_offset, Temp, T_offset, Press, Press_level)
         try:
             self.this.append(this)
@@ -146,7 +164,13 @@ class TemperatureFixedLevel(full_physics_swig.temperature_imp_base.TemperatureIm
     __del__ = lambda self: None
 
     def _v_temperature_levels(self):
+        """
+
+        ArrayAd<double, 1> FullPhysics::TemperatureFixedLevel::temperature_levels() const
+
+        """
         return _temperature_fixed_level.TemperatureFixedLevel__v_temperature_levels(self)
+
 
     @property
     def temperature_levels(self):
@@ -154,13 +178,31 @@ class TemperatureFixedLevel(full_physics_swig.temperature_imp_base.TemperatureIm
 
 
     def clone(self, *args):
+        """
+
+        virtual boost::shared_ptr<Temperature> FullPhysics::TemperatureFixedLevel::clone(const boost::shared_ptr< Pressure > &Press) const
+
+        """
         return _temperature_fixed_level.TemperatureFixedLevel_clone(self, *args)
 
+
     def state_vector_name_i(self, i):
+        """
+
+        virtual std::string FullPhysics::TemperatureFixedLevel::state_vector_name_i(int i) const
+
+        """
         return _temperature_fixed_level.TemperatureFixedLevel_state_vector_name_i(self, i)
 
+
     def _v_temperature_offset(self):
+        """
+
+        double FullPhysics::TemperatureFixedLevel::temperature_offset() const
+        Temperature offset. 
+        """
         return _temperature_fixed_level.TemperatureFixedLevel__v_temperature_offset(self)
+
 
     @property
     def temperature_offset(self):
@@ -168,7 +210,13 @@ class TemperatureFixedLevel(full_physics_swig.temperature_imp_base.TemperatureIm
 
 
     def _v_temperature_offset_uncertainty(self):
+        """
+
+        double FullPhysics::TemperatureFixedLevel::temperature_offset_uncertainty() const
+
+        """
         return _temperature_fixed_level.TemperatureFixedLevel__v_temperature_offset_uncertainty(self)
+
 
     @property
     def temperature_offset_uncertainty(self):

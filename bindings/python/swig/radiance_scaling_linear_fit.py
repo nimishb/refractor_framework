@@ -125,6 +125,15 @@ import full_physics_swig.instrument_correction
 import full_physics_swig.state_vector
 import full_physics_swig.generic_object
 class RadianceScalingLinearFit(full_physics_swig.radiance_scaling.RadianceScaling):
+    """
+
+    Implements a fitted radiance scaling correction where the correction
+    is determined by a linear fit of the measured spectra to the radiance
+    input instead of using the state vector for fitting.
+
+    C++ includes: radiance_scaling_linear_fit.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.radiance_scaling.RadianceScaling]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -141,16 +150,41 @@ class RadianceScalingLinearFit(full_physics_swig.radiance_scaling.RadianceScalin
     __del__ = lambda self: None
 
     def clone(self):
+        """
+
+        virtual boost::shared_ptr<InstrumentCorrection> FullPhysics::RadianceScalingLinearFit::clone() const
+
+        """
         return _radiance_scaling_linear_fit.RadianceScalingLinearFit_clone(self)
 
+
     def apply_correction(self, Pixel_grid, Pixel_list, Radiance):
+        """
+
+        virtual void FullPhysics::RadianceScalingLinearFit::apply_correction(const SpectralDomain &Pixel_grid, const std::vector< int >
+        &Pixel_list, SpectralRange &Radiance) const
+
+        """
         return _radiance_scaling_linear_fit.RadianceScalingLinearFit_apply_correction(self, Pixel_grid, Pixel_list, Radiance)
 
+
     def print_desc(self, Os):
+        """
+
+        virtual void FullPhysics::RadianceScalingLinearFit::print(std::ostream &Os) const
+
+        """
         return _radiance_scaling_linear_fit.RadianceScalingLinearFit_print_desc(self, Os)
 
+
     def _v_radiance_scaling_coeff_uncertainty(self):
+        """
+
+        blitz::Array<double, 1> FullPhysics::RadianceScalingLinearFit::radiance_scaling_coeff_uncertainty() const
+
+        """
         return _radiance_scaling_linear_fit.RadianceScalingLinearFit__v_radiance_scaling_coeff_uncertainty(self)
+
 
     @property
     def radiance_scaling_coeff_uncertainty(self):

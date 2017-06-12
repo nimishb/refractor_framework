@@ -5610,12 +5610,33 @@ SWIGINTERN PyObject *SpectralWindow_swigregister(PyObject *SWIGUNUSEDPARM(self),
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"delete_SpectralWindow", _wrap_delete_SpectralWindow, METH_VARARGS, NULL},
+	 { (char *)"delete_SpectralWindow", _wrap_delete_SpectralWindow, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::SpectralWindow::~SpectralWindow()\n"
+		"\n"
+		""},
 	 { (char *)"SpectralWindow___str__", _wrap_SpectralWindow___str__, METH_VARARGS, NULL},
-	 { (char *)"SpectralWindow_apply", _wrap_SpectralWindow_apply, METH_VARARGS, NULL},
-	 { (char *)"SpectralWindow_grid_indexes", _wrap_SpectralWindow_grid_indexes, METH_VARARGS, NULL},
-	 { (char *)"SpectralWindow__v_number_spectrometer", _wrap_SpectralWindow__v_number_spectrometer, METH_VARARGS, NULL},
-	 { (char *)"SpectralWindow__v_spectral_bound", _wrap_SpectralWindow__v_spectral_bound, METH_VARARGS, NULL},
+	 { (char *)"SpectralWindow_apply", _wrap_SpectralWindow_apply, METH_VARARGS, (char *)"\n"
+		"\n"
+		"Spectrum FullPhysics::SpectralWindow::apply(const Spectrum &Spec, int Spec_index) const\n"
+		"\n"
+		""},
+	 { (char *)"SpectralWindow_grid_indexes", _wrap_SpectralWindow_grid_indexes, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual std::vector<int> FullPhysics::SpectralWindow::grid_indexes(const SpectralDomain &Grid, int Spec_index) const =0\n"
+		"Given a list of wavenumbers, this returns the indices that fall within\n"
+		"the window. \n"
+		""},
+	 { (char *)"SpectralWindow__v_number_spectrometer", _wrap_SpectralWindow__v_number_spectrometer, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual int FullPhysics::SpectralWindow::number_spectrometer() const =0\n"
+		"Number of spectrometers. \n"
+		""},
+	 { (char *)"SpectralWindow__v_spectral_bound", _wrap_SpectralWindow__v_spectral_bound, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual SpectralBound FullPhysics::SpectralWindow::spectral_bound() const =0\n"
+		"Bounds of spectral window. \n"
+		""},
 	 { (char *)"SpectralWindow_swigregister", SpectralWindow_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };

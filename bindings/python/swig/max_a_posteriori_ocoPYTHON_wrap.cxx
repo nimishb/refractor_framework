@@ -5101,8 +5101,18 @@ SWIGINTERN PyObject *MaxAPosterioriOCO_swigregister(PyObject *SWIGUNUSEDPARM(sel
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"new_MaxAPosterioriOCO", _wrap_new_MaxAPosterioriOCO, METH_VARARGS, NULL},
-	 { (char *)"delete_MaxAPosterioriOCO", _wrap_delete_MaxAPosterioriOCO, METH_VARARGS, NULL},
+	 { (char *)"new_MaxAPosterioriOCO", _wrap_new_MaxAPosterioriOCO, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::MaxAPosterioriOCO::MaxAPosterioriOCO(const boost::shared_ptr< ForwardModel > &fm, const blitz::Array<\n"
+		"double, 1 > a_priori_params, const blitz::Array< double, 2 >\n"
+		"a_priori_cov)\n"
+		"Constructor. \n"
+		""},
+	 { (char *)"delete_MaxAPosterioriOCO", _wrap_delete_MaxAPosterioriOCO, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::MaxAPosterioriOCO::~MaxAPosterioriOCO()\n"
+		"\n"
+		""},
 	 { (char *)"MaxAPosterioriOCO_swigregister", MaxAPosterioriOCO_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };

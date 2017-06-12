@@ -123,6 +123,14 @@ def _new_from_set(cls, version, *args):
 import full_physics_swig.noise_model
 import full_physics_swig.generic_object
 class PrecomputedNoiseModel(full_physics_swig.noise_model.NoiseModel):
+    """
+
+    This class creates a noise model which simply passes back values read
+    from a file.
+
+    C++ includes: precomputed_noise_model.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.noise_model.NoiseModel]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -134,6 +142,11 @@ class PrecomputedNoiseModel(full_physics_swig.noise_model.NoiseModel):
     __repr__ = _swig_repr
 
     def __init__(self, Noise_file):
+        """
+
+        FullPhysics::PrecomputedNoiseModel::PrecomputedNoiseModel(const HeritageFile &Noise_file)
+
+        """
         this = _precomputed_noise_model.new_PrecomputedNoiseModel(Noise_file)
         try:
             self.this.append(this)
@@ -141,7 +154,13 @@ class PrecomputedNoiseModel(full_physics_swig.noise_model.NoiseModel):
             self.this = this
 
     def uncertainty(self, Spec_index, Radiance):
+        """
+
+        virtual blitz::Array<double, 1> FullPhysics::PrecomputedNoiseModel::uncertainty(int Spec_index, const blitz::Array< double, 1 > &Radiance) const
+
+        """
         return _precomputed_noise_model.PrecomputedNoiseModel_uncertainty(self, Spec_index, Radiance)
+
     __swig_destroy__ = _precomputed_noise_model.delete_PrecomputedNoiseModel
     __del__ = lambda self: None
 PrecomputedNoiseModel_swigregister = _precomputed_noise_model.PrecomputedNoiseModel_swigregister

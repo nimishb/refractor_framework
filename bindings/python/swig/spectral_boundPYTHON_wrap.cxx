@@ -5963,14 +5963,47 @@ SWIGINTERN PyObject *SpectralBound_swigregister(PyObject *SWIGUNUSEDPARM(self), 
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"new_SpectralBound", _wrap_new_SpectralBound, METH_VARARGS, NULL},
+	 { (char *)"new_SpectralBound", _wrap_new_SpectralBound, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::SpectralBound::SpectralBound(const ArrayWithUnit< double, 2 > &Bound)\n"
+		"\n"
+		""},
 	 { (char *)"SpectralBound___str__", _wrap_SpectralBound___str__, METH_VARARGS, NULL},
-	 { (char *)"SpectralBound__v_number_spectrometer", _wrap_SpectralBound__v_number_spectrometer, METH_VARARGS, NULL},
-	 { (char *)"SpectralBound_center", _wrap_SpectralBound_center, METH_VARARGS, NULL},
-	 { (char *)"SpectralBound_lower_bound", _wrap_SpectralBound_lower_bound, METH_VARARGS, NULL},
-	 { (char *)"SpectralBound_upper_bound", _wrap_SpectralBound_upper_bound, METH_VARARGS, NULL},
-	 { (char *)"SpectralBound_spectral_index", _wrap_SpectralBound_spectral_index, METH_VARARGS, NULL},
-	 { (char *)"delete_SpectralBound", _wrap_delete_SpectralBound, METH_VARARGS, NULL},
+	 { (char *)"SpectralBound__v_number_spectrometer", _wrap_SpectralBound__v_number_spectrometer, METH_VARARGS, (char *)"\n"
+		"\n"
+		"int FullPhysics::SpectralBound::number_spectrometer() const\n"
+		"Number of spectrometers. \n"
+		""},
+	 { (char *)"SpectralBound_center", _wrap_SpectralBound_center, METH_VARARGS, (char *)"\n"
+		"\n"
+		"DoubleWithUnit FullPhysics::SpectralBound::center(int Spec_index, const Unit &U) const\n"
+		"Center between lower_bound and upper_bound.\n"
+		"\n"
+		"Turns out we need this often enough to be worth wrapping in a\n"
+		"function. \n"
+		""},
+	 { (char *)"SpectralBound_lower_bound", _wrap_SpectralBound_lower_bound, METH_VARARGS, (char *)"\n"
+		"\n"
+		"DoubleWithUnit FullPhysics::SpectralBound::lower_bound(int Spec_index, const Unit &U) const\n"
+		"Lower bound but with a unit conversion first in case the conversion\n"
+		"reverses ordering. \n"
+		""},
+	 { (char *)"SpectralBound_upper_bound", _wrap_SpectralBound_upper_bound, METH_VARARGS, (char *)"\n"
+		"\n"
+		"DoubleWithUnit FullPhysics::SpectralBound::upper_bound(int Spec_index, const Unit &U) const\n"
+		"Upper bound but with a unit conversion first in case the conversion\n"
+		"reverses ordering. \n"
+		""},
+	 { (char *)"SpectralBound_spectral_index", _wrap_SpectralBound_spectral_index, METH_VARARGS, (char *)"\n"
+		"\n"
+		"int FullPhysics::SpectralBound::spectral_index(const DoubleWithUnit &W) const\n"
+		"\n"
+		""},
+	 { (char *)"delete_SpectralBound", _wrap_delete_SpectralBound, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::SpectralBound::~SpectralBound()\n"
+		"\n"
+		""},
 	 { (char *)"SpectralBound_swigregister", SpectralBound_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };

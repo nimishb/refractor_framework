@@ -125,6 +125,13 @@ import full_physics_swig.observer
 import full_physics_swig.generic_object
 import full_physics_swig.state_vector
 class GroundLambertian(full_physics_swig.ground.SubStateVectorArrayGround):
+    """
+
+    This class implements a Lambertian albedo as a ground type.
+
+    C++ includes: ground_lambertian.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.ground.SubStateVectorArrayGround]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -136,6 +143,13 @@ class GroundLambertian(full_physics_swig.ground.SubStateVectorArrayGround):
     __repr__ = _swig_repr
 
     def __init__(self, Spec_coeffs, Flag, Ref_points, Desc_band_names):
+        """
+
+        FullPhysics::GroundLambertian::GroundLambertian(const blitz::Array< double, 2 > &Spec_coeffs, const blitz::Array<
+        bool, 2 > &Flag, const ArrayWithUnit< double, 1 > &Ref_points, const
+        std::vector< std::string > &Desc_band_names)
+
+        """
         this = _ground_lambertian.new_GroundLambertian(Spec_coeffs, Flag, Ref_points, Desc_band_names)
         try:
             self.this.append(this)
@@ -143,37 +157,104 @@ class GroundLambertian(full_physics_swig.ground.SubStateVectorArrayGround):
             self.this = this
 
     def surface_parameter(self, wn, spec_index):
+        """
+
+        virtual ArrayAd<double, 1> FullPhysics::GroundLambertian::surface_parameter(const double wn, const int spec_index) const
+
+        """
         return _ground_lambertian.GroundLambertian_surface_parameter(self, wn, spec_index)
 
+
     def albedo(self, wave_point, spec_index):
+        """
+
+        virtual const AutoDerivative<double> FullPhysics::GroundLambertian::albedo(const DoubleWithUnit wave_point, const int spec_index) const
+
+        """
         return _ground_lambertian.GroundLambertian_albedo(self, wave_point, spec_index)
 
+
     def number_spectrometer(self):
+        """
+
+        virtual const int FullPhysics::GroundLambertian::number_spectrometer() const
+
+        """
         return _ground_lambertian.GroundLambertian_number_spectrometer(self)
 
+
     def number_params(self):
+        """
+
+        virtual const int FullPhysics::GroundLambertian::number_params() const
+
+        """
         return _ground_lambertian.GroundLambertian_number_params(self)
 
+
     def albedo_coefficients(self, spec_index):
+        """
+
+        virtual const ArrayAd<double, 1> FullPhysics::GroundLambertian::albedo_coefficients(const int spec_index) const
+
+        """
         return _ground_lambertian.GroundLambertian_albedo_coefficients(self, spec_index)
 
+
     def albedo_covariance(self, spec_index):
+        """
+
+        virtual const blitz::Array<double, 2> FullPhysics::GroundLambertian::albedo_covariance(const int spec_index) const
+
+        """
         return _ground_lambertian.GroundLambertian_albedo_covariance(self, spec_index)
 
+
     def reference_point(self, spec_index):
+        """
+
+        virtual const DoubleWithUnit FullPhysics::GroundLambertian::reference_point(const int spec_index) const
+        Center wavelength that spectrally dependent parameter is referenced
+        to. 
+        """
         return _ground_lambertian.GroundLambertian_reference_point(self, spec_index)
 
+
     def clone(self):
+        """
+
+        virtual boost::shared_ptr<Ground> FullPhysics::GroundLambertian::clone() const
+
+        """
         return _ground_lambertian.GroundLambertian_clone(self)
 
+
     def state_vector_name_i(self, i):
+        """
+
+        virtual std::string FullPhysics::GroundLambertian::state_vector_name_i(int i) const
+
+        """
         return _ground_lambertian.GroundLambertian_state_vector_name_i(self, i)
 
+
     def print_desc(self, Os):
+        """
+
+        virtual void FullPhysics::GroundLambertian::print(std::ostream &Os) const
+
+        """
         return _ground_lambertian.GroundLambertian_print_desc(self, Os)
 
+
     def desc(self):
+        """
+
+        virtual std::string FullPhysics::GroundLambertian::desc() const
+
+        """
         return _ground_lambertian.GroundLambertian_desc(self)
+
     __swig_destroy__ = _ground_lambertian.delete_GroundLambertian
     __del__ = lambda self: None
 GroundLambertian_swigregister = _ground_lambertian.GroundLambertian_swigregister

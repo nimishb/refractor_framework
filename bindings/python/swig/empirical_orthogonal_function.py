@@ -124,6 +124,21 @@ import full_physics_swig.sub_state_vector_array
 import full_physics_swig.generic_object
 import full_physics_swig.instrument_correction
 class EmpiricalOrthogonalFunction(full_physics_swig.instrument_correction.SubStateVectorArrayInstrumentCorrection):
+    """
+
+    This class applies a empirical orthogonal function (EOF) correction to
+    instrument data.
+
+    We use a supplied waveform, multiple by a single scale factor given by
+    the state vector, and add this to the radiance calculated in
+    InstrumentIls.
+
+    Note that other than what we call this and there various metadata
+    fields, this is the same thing as the ZeroOffsetWaveform.
+
+    C++ includes: empirical_orthogonal_function.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.instrument_correction.SubStateVectorArrayInstrumentCorrection]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -138,13 +153,33 @@ class EmpiricalOrthogonalFunction(full_physics_swig.instrument_correction.SubSta
     __repr__ = _swig_repr
 
     def state_vector_name_i(self, i):
+        """
+
+        virtual std::string FullPhysics::EmpiricalOrthogonalFunction::state_vector_name_i(int i) const
+
+        """
         return _empirical_orthogonal_function.EmpiricalOrthogonalFunction_state_vector_name_i(self, i)
 
+
     def apply_correction(self, Pixel_grid, Pixel_list, Radiance):
+        """
+
+        virtual void FullPhysics::EmpiricalOrthogonalFunction::apply_correction(const SpectralDomain &Pixel_grid, const std::vector< int >
+        &Pixel_list, SpectralRange &Radiance) const
+
+        """
         return _empirical_orthogonal_function.EmpiricalOrthogonalFunction_apply_correction(self, Pixel_grid, Pixel_list, Radiance)
 
+
     def _v_eof(self):
+        """
+
+        ArrayWithUnit<double, 1> FullPhysics::EmpiricalOrthogonalFunction::eof() const
+        Current value of empirical orthogonal function, for each pixel number.
+
+        """
         return _empirical_orthogonal_function.EmpiricalOrthogonalFunction__v_eof(self)
+
 
     @property
     def eof(self):
@@ -152,7 +187,14 @@ class EmpiricalOrthogonalFunction(full_physics_swig.instrument_correction.SubSta
 
 
     def _v_order(self):
+        """
+
+        int FullPhysics::EmpiricalOrthogonalFunction::order() const
+        Order of the empirical orthogonal function (e.g., first order, second
+        order, etc.) 
+        """
         return _empirical_orthogonal_function.EmpiricalOrthogonalFunction__v_order(self)
+
 
     @property
     def order(self):

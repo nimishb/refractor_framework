@@ -5162,11 +5162,55 @@ SWIGINTERN PyObject *CostFunc_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObj
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"delete_CostFunc", _wrap_delete_CostFunc, METH_VARARGS, NULL},
-	 { (char *)"CostFunc_cost", _wrap_CostFunc_cost, METH_VARARGS, NULL},
-	 { (char *)"CostFunc_cost_x", _wrap_CostFunc_cost_x, METH_VARARGS, NULL},
-	 { (char *)"CostFunc__v_num_cost_evaluations", _wrap_CostFunc__v_num_cost_evaluations, METH_VARARGS, NULL},
-	 { (char *)"CostFunc_zero_num_evaluations", _wrap_CostFunc_zero_num_evaluations, METH_VARARGS, NULL},
+	 { (char *)"delete_CostFunc", _wrap_delete_CostFunc, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::CostFunc::~CostFunc()\n"
+		"\n"
+		""},
+	 { (char *)"CostFunc_cost", _wrap_CostFunc_cost, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual double FullPhysics::CostFunc::cost()=0\n"
+		"The cost function.\n"
+		"\n"
+		"This method must be implemented by the classes derived from this\n"
+		"class.\n"
+		"\n"
+		"The parameters (the point in the parameter space) must have already\n"
+		"been set before calling this method. The parameters are already set if\n"
+		"parameters() method (see ProblemState class) or cost_x() method are\n"
+		"already called successfully. If the parameters are already set, then\n"
+		"this method returns the value of the cost function at the current set\n"
+		"point.\n"
+		"\n"
+		"Cost function value \n"
+		""},
+	 { (char *)"CostFunc_cost_x", _wrap_CostFunc_cost_x, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual double FullPhysics::CostFunc::cost_x(const blitz::Array< double, 1 > &x)\n"
+		"The cost function with parameters.\n"
+		"\n"
+		"This method also evaluates the cost function; however, it sets the\n"
+		"problem at the input new point and then evaluates the cost function.\n"
+		"\n"
+		"Parameters:\n"
+		"-----------\n"
+		"\n"
+		"x:  New set of parameters\n"
+		"\n"
+		"Cost function value \n"
+		""},
+	 { (char *)"CostFunc__v_num_cost_evaluations", _wrap_CostFunc__v_num_cost_evaluations, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual int FullPhysics::CostFunc::num_cost_evaluations() const\n"
+		"Returns the number of the times cost has been evaluated.\n"
+		"\n"
+		"The number of the times cost has been evaluated. \n"
+		""},
+	 { (char *)"CostFunc_zero_num_evaluations", _wrap_CostFunc_zero_num_evaluations, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::CostFunc::zero_num_evaluations()\n"
+		"Sets cost evaluation counter to zero. \n"
+		""},
 	 { (char *)"CostFunc_swigregister", CostFunc_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };

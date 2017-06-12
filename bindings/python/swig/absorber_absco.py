@@ -128,6 +128,16 @@ import full_physics_swig.absorber_vmr
 import full_physics_swig.altitude
 import full_physics_swig.absorber
 class AbsorberAbsco(full_physics_swig.absorber.Absorber, full_physics_swig.absorber_vmr.ObserverAbsorberVmr, full_physics_swig.pressure.ObserverPressure, full_physics_swig.temperature.ObserverTemperature, full_physics_swig.altitude.ObserverAltitude):
+    """
+
+    This class maintains the absorber portion of the state.
+
+    This particular implementation uses the GasAbsorption classes for
+    calculating the gas absorption (e.g, the Absco tables).
+
+    C++ includes: absorber_absco.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.absorber.Absorber, full_physics_swig.absorber_vmr.ObserverAbsorberVmr, full_physics_swig.pressure.ObserverPressure, full_physics_swig.temperature.ObserverTemperature, full_physics_swig.altitude.ObserverAltitude]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -139,6 +149,15 @@ class AbsorberAbsco(full_physics_swig.absorber.Absorber, full_physics_swig.absor
     __repr__ = _swig_repr
 
     def __init__(self, Vmr, Press, Temp, Alt, Gas_absorption, C, Nsub=10):
+        """
+
+        FullPhysics::AbsorberAbsco::AbsorberAbsco(const std::vector< boost::shared_ptr< AbsorberVmr > > Vmr, const
+        boost::shared_ptr< Pressure > &Press, const boost::shared_ptr<
+        Temperature > &Temp, const std::vector< boost::shared_ptr< Altitude >
+        > &Alt, const std::vector< boost::shared_ptr< GasAbsorption > >
+        &Gas_absorption, const boost::shared_ptr< Constant > &C, int Nsub=10)
+
+        """
         this = _absorber_absco.new_AbsorberAbsco(Vmr, Press, Temp, Alt, Gas_absorption, C, Nsub)
         try:
             self.this.append(this)
@@ -146,40 +165,113 @@ class AbsorberAbsco(full_physics_swig.absorber.Absorber, full_physics_swig.absor
             self.this = this
 
     def integrand_independent_wn(self, Spec_index, Species_index, P):
+        """
+
+        AutoDerivativeWithUnit<double> FullPhysics::AbsorberAbsco::integrand_independent_wn(int Spec_index, int Species_index, const DoubleWithUnit &P) const
+
+        """
         return _absorber_absco.AbsorberAbsco_integrand_independent_wn(self, Spec_index, Species_index, P)
 
+
     def integrand(self, wn, p, Spec_index, Species_index):
+        """
+
+        double FullPhysics::AbsorberAbsco::integrand(double wn, double p, int Spec_index, int Species_index) const
+
+        """
         return _absorber_absco.AbsorberAbsco_integrand(self, wn, p, Spec_index, Species_index)
 
+
     def optical_depth_each_layer_direct_integrate(self, *args):
+        """
+
+        blitz::Array<double, 2> FullPhysics::AbsorberAbsco::optical_depth_each_layer_direct_integrate(double wn, int Spec_index, double eps_abs=0, double eps_rel=1e-3)
+        const
+
+        """
         return _absorber_absco.AbsorberAbsco_optical_depth_each_layer_direct_integrate(self, *args)
 
+
     def notify_add(self, Sv):
+        """
+
+        virtual void FullPhysics::AbsorberAbsco::notify_add(StateVector &Sv)
+
+        """
         return _absorber_absco.AbsorberAbsco_notify_add(self, Sv)
 
+
     def notify_remove(self, Sv):
+        """
+
+        virtual void FullPhysics::AbsorberAbsco::notify_remove(StateVector &Sv)
+
+        """
         return _absorber_absco.AbsorberAbsco_notify_remove(self, Sv)
 
+
     def _v_number_species(self):
+        """
+
+        virtual int FullPhysics::AbsorberAbsco::number_species() const
+
+        """
         return _absorber_absco.AbsorberAbsco__v_number_species(self)
 
+
     def _v_number_spectrometer(self):
+        """
+
+        virtual int FullPhysics::AbsorberAbsco::number_spectrometer() const
+
+        """
         return _absorber_absco.AbsorberAbsco__v_number_spectrometer(self)
 
+
     def _v_number_layer(self):
+        """
+
+        virtual int FullPhysics::AbsorberAbsco::number_layer() const
+
+        """
         return _absorber_absco.AbsorberAbsco__v_number_layer(self)
 
+
     def gas_name(self, Species_index):
+        """
+
+        virtual std::string FullPhysics::AbsorberAbsco::gas_name(int Species_index) const
+
+        """
         return _absorber_absco.AbsorberAbsco_gas_name(self, Species_index)
 
+
     def notify_update(self, *args):
+        """
+
+        virtual void FullPhysics::AbsorberAbsco::notify_update(const AbsorberVmr &A)
+
+        """
         return _absorber_absco.AbsorberAbsco_notify_update(self, *args)
 
+
     def optical_depth_each_layer(self, wn, spec_index):
+        """
+
+        virtual ArrayAd<double, 2> FullPhysics::AbsorberAbsco::optical_depth_each_layer(double wn, int spec_index) const
+
+        """
         return _absorber_absco.AbsorberAbsco_optical_depth_each_layer(self, wn, spec_index)
 
+
     def _v_specific_humidity_layer(self):
+        """
+
+        ArrayAdWithUnit<double, 1> FullPhysics::AbsorberAbsco::specific_humidity_layer() const
+
+        """
         return _absorber_absco.AbsorberAbsco__v_specific_humidity_layer(self)
+
 
     @property
     def specific_humidity_layer(self):
@@ -187,7 +279,13 @@ class AbsorberAbsco(full_physics_swig.absorber.Absorber, full_physics_swig.absor
 
 
     def _v_dry_air_molecular_density_layer(self):
+        """
+
+        ArrayAdWithUnit<double, 1> FullPhysics::AbsorberAbsco::dry_air_molecular_density_layer() const
+
+        """
         return _absorber_absco.AbsorberAbsco__v_dry_air_molecular_density_layer(self)
+
 
     @property
     def dry_air_molecular_density_layer(self):
@@ -195,7 +293,13 @@ class AbsorberAbsco(full_physics_swig.absorber.Absorber, full_physics_swig.absor
 
 
     def _v_dry_air_column_thickness_layer(self):
+        """
+
+        ArrayAdWithUnit<double, 1> FullPhysics::AbsorberAbsco::dry_air_column_thickness_layer() const
+
+        """
         return _absorber_absco.AbsorberAbsco__v_dry_air_column_thickness_layer(self)
+
 
     @property
     def dry_air_column_thickness_layer(self):
@@ -203,7 +307,13 @@ class AbsorberAbsco(full_physics_swig.absorber.Absorber, full_physics_swig.absor
 
 
     def _v_wet_air_column_thickness_layer(self):
+        """
+
+        ArrayAdWithUnit<double, 1> FullPhysics::AbsorberAbsco::wet_air_column_thickness_layer() const
+
+        """
         return _absorber_absco.AbsorberAbsco__v_wet_air_column_thickness_layer(self)
+
 
     @property
     def wet_air_column_thickness_layer(self):
@@ -211,7 +321,13 @@ class AbsorberAbsco(full_physics_swig.absorber.Absorber, full_physics_swig.absor
 
 
     def _v_pressure_weighting_function_layer(self):
+        """
+
+        ArrayAd<double, 1> FullPhysics::AbsorberAbsco::pressure_weighting_function_layer() const
+
+        """
         return _absorber_absco.AbsorberAbsco__v_pressure_weighting_function_layer(self)
+
 
     @property
     def pressure_weighting_function_layer(self):
@@ -219,7 +335,13 @@ class AbsorberAbsco(full_physics_swig.absorber.Absorber, full_physics_swig.absor
 
 
     def _v_pressure_weighting_function_grid(self):
+        """
+
+        ArrayAd<double, 1> FullPhysics::AbsorberAbsco::pressure_weighting_function_grid() const
+
+        """
         return _absorber_absco.AbsorberAbsco__v_pressure_weighting_function_grid(self)
+
 
     @property
     def pressure_weighting_function_grid(self):
@@ -227,28 +349,80 @@ class AbsorberAbsco(full_physics_swig.absorber.Absorber, full_physics_swig.absor
 
 
     def gas_column_thickness_layer(self, Gas_name):
+        """
+
+        ArrayAdWithUnit<double, 1> FullPhysics::AbsorberAbsco::gas_column_thickness_layer(const std::string &Gas_name) const
+
+        """
         return _absorber_absco.AbsorberAbsco_gas_column_thickness_layer(self, Gas_name)
 
+
     def gas_total_column_thickness(self, Gas_name):
+        """
+
+        AutoDerivativeWithUnit<double> FullPhysics::AbsorberAbsco::gas_total_column_thickness(const std::string &Gas_name) const
+
+        """
         return _absorber_absco.AbsorberAbsco_gas_total_column_thickness(self, Gas_name)
 
+
     def xgas(self, Gas_name):
+        """
+
+        virtual AutoDerivative<double> FullPhysics::AbsorberAbsco::xgas(const std::string &Gas_name) const
+
+        """
         return _absorber_absco.AbsorberAbsco_xgas(self, Gas_name)
 
+
     def average_vmr(self, Gas_name):
+        """
+
+        AutoDerivative<double> FullPhysics::AbsorberAbsco::average_vmr(const std::string &Gas_name) const
+
+        """
         return _absorber_absco.AbsorberAbsco_average_vmr(self, Gas_name)
 
+
     def clone(self, *args):
+        """
+
+        virtual boost::shared_ptr<Absorber> FullPhysics::AbsorberAbsco::clone(const boost::shared_ptr< Pressure > &Press, const boost::shared_ptr<
+        Temperature > &Temp, const std::vector< boost::shared_ptr< Altitude >
+        > &Alt) const
+
+        """
         return _absorber_absco.AbsorberAbsco_clone(self, *args)
 
+
     def absorber_vmr(self, gas_name):
+        """
+
+        virtual boost::shared_ptr<AbsorberVmr> FullPhysics::AbsorberAbsco::absorber_vmr(const std::string &Gas_name) const
+
+        """
         return _absorber_absco.AbsorberAbsco_absorber_vmr(self, gas_name)
 
+
     def gas_absorption(self, Gas_name):
+        """
+
+        boost::shared_ptr<GasAbsorption> FullPhysics::AbsorberAbsco::gas_absorption_ptr(const std::string &Gas_name) const
+
+        """
         return _absorber_absco.AbsorberAbsco_gas_absorption(self, Gas_name)
 
+
     def _v_pressure_sublayer(self):
+        """
+
+        ArrayWithUnit<double, 1> FullPhysics::AbsorberAbsco::pressure_sublayer() const
+        Return the pressure we use for each sublayer.
+
+        This is meant for diagnostic purposes. 
+        """
         return _absorber_absco.AbsorberAbsco__v_pressure_sublayer(self)
+
 
     @property
     def pressure_sublayer(self):
@@ -256,7 +430,13 @@ class AbsorberAbsco(full_physics_swig.absorber.Absorber, full_physics_swig.absor
 
 
     def _v_temperature_sublayer(self):
+        """
+
+        ArrayAdWithUnit<double, 1> FullPhysics::AbsorberAbsco::temperature_sublayer() const
+
+        """
         return _absorber_absco.AbsorberAbsco__v_temperature_sublayer(self)
+
 
     @property
     def temperature_sublayer(self):
@@ -264,7 +444,13 @@ class AbsorberAbsco(full_physics_swig.absorber.Absorber, full_physics_swig.absor
 
 
     def _v_h2o_vmr_sublayer(self):
+        """
+
+        ArrayAdWithUnit<double, 1> FullPhysics::AbsorberAbsco::h2o_vmr_sublayer() const
+
+        """
         return _absorber_absco.AbsorberAbsco__v_h2o_vmr_sublayer(self)
+
 
     @property
     def h2o_vmr_sublayer(self):
@@ -272,10 +458,22 @@ class AbsorberAbsco(full_physics_swig.absorber.Absorber, full_physics_swig.absor
 
 
     def vmr_sublayer(self, Gas_name):
+        """
+
+        ArrayAdWithUnit<double, 1> FullPhysics::AbsorberAbsco::vmr_sublayer(const std::string &Gas_name) const
+
+        """
         return _absorber_absco.AbsorberAbsco_vmr_sublayer(self, Gas_name)
 
+
     def gravity_sublayer(self, Spec_index):
+        """
+
+        ArrayAdWithUnit<double, 1> FullPhysics::AbsorberAbsco::gravity_sublayer(int Spec_index) const
+
+        """
         return _absorber_absco.AbsorberAbsco_gravity_sublayer(self, Spec_index)
+
     __swig_destroy__ = _absorber_absco.delete_AbsorberAbsco
     __del__ = lambda self: None
 AbsorberAbsco_swigregister = _absorber_absco.AbsorberAbsco_swigregister

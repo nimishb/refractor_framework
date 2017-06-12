@@ -5262,8 +5262,17 @@ SWIGINTERN PyObject *UniformSpectrumSampling_swigregister(PyObject *SWIGUNUSEDPA
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"UniformSpectrumSampling_spectral_domain", _wrap_UniformSpectrumSampling_spectral_domain, METH_VARARGS, NULL},
-	 { (char *)"delete_UniformSpectrumSampling", _wrap_delete_UniformSpectrumSampling, METH_VARARGS, NULL},
+	 { (char *)"UniformSpectrumSampling_spectral_domain", _wrap_UniformSpectrumSampling_spectral_domain, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual SpectralDomain FullPhysics::UniformSpectrumSampling::spectral_domain(int spec_index, const SpectralDomain &Lowres_grid, const\n"
+		"DoubleWithUnit &Ils_half_width) const\n"
+		"Wave numbers to use for the given spectrometer. \n"
+		""},
+	 { (char *)"delete_UniformSpectrumSampling", _wrap_delete_UniformSpectrumSampling, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::UniformSpectrumSampling::~UniformSpectrumSampling()\n"
+		"\n"
+		""},
 	 { (char *)"UniformSpectrumSampling_swigregister", UniformSpectrumSampling_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };

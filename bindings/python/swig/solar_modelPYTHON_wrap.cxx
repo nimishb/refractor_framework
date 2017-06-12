@@ -9048,10 +9048,38 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"SwigPyIterator___sub__", _wrap_SwigPyIterator___sub__, METH_VARARGS, NULL},
 	 { (char *)"SwigPyIterator_swigregister", SwigPyIterator_swigregister, METH_VARARGS, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"delete_SolarModel", _wrap_delete_SolarModel, METH_VARARGS, NULL},
-	 { (char *)"SolarModel_apply_solar_model", _wrap_SolarModel_apply_solar_model, METH_VARARGS, NULL},
-	 { (char *)"SolarModel_solar_spectrum", _wrap_SolarModel_solar_spectrum, METH_VARARGS, NULL},
-	 { (char *)"SolarModel_apply_effect", _wrap_SolarModel_apply_effect, METH_VARARGS, NULL},
+	 { (char *)"delete_SolarModel", _wrap_delete_SolarModel, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::SolarModel::~SolarModel()\n"
+		"\n"
+		""},
+	 { (char *)"SolarModel_apply_solar_model", _wrap_SolarModel_apply_solar_model, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual Spectrum FullPhysics::SolarModel::apply_solar_model(const Spectrum &Spec) const\n"
+		"\n"
+		""},
+	 { (char *)"SolarModel_solar_spectrum", _wrap_SolarModel_solar_spectrum, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual Spectrum FullPhysics::SolarModel::solar_spectrum(const SpectralDomain &Spec_domain) const =0\n"
+		"Calculate solar spectrum.\n"
+		"\n"
+		"Parameters:\n"
+		"-----------\n"
+		"\n"
+		"Spec_domain:  Wavenumber/Wavelength reflectance is given\n"
+		"\n"
+		"Solar spectrum. This should have units commensurate with something\n"
+		"like W / m^2 / cm^-1.  Note that the wavenumber/frequency are in the\n"
+		"earth rest frame. The solar model may need to work in the solar rest\n"
+		"frame, bu the conversion to this is internal. The input and output\n"
+		"from this function should be in the earth rest frame. \n"
+		""},
+	 { (char *)"SolarModel_apply_effect", _wrap_SolarModel_apply_effect, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::SolarModel::apply_effect(Spectrum &Spec, const ForwardModelSpectralGrid &Forward_model_grid)\n"
+		"const\n"
+		"\n"
+		""},
 	 { (char *)"SolarModel_swigregister", SolarModel_swigregister, METH_VARARGS, NULL},
 	 { (char *)"vector_solar_model_iterator", _wrap_vector_solar_model_iterator, METH_VARARGS, NULL},
 	 { (char *)"vector_solar_model___nonzero__", _wrap_vector_solar_model___nonzero__, METH_VARARGS, NULL},

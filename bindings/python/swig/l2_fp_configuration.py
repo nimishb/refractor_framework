@@ -122,6 +122,18 @@ def _new_from_set(cls, version, *args):
 
 import full_physics_swig.generic_object
 class L2FpConfiguration(full_physics_swig.generic_object.GenericObject):
+    """
+
+    Before running L2 full physics, we need to create the solver that we
+    will be using, along with registering whatever output we will be
+    generating.
+
+    This class gives the minimum interface needed for the configuration,
+    so we can use different methods of actually doing this.
+
+    C++ includes: l2_fp_configuration.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.generic_object.GenericObject]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -138,7 +150,13 @@ class L2FpConfiguration(full_physics_swig.generic_object.GenericObject):
     __del__ = lambda self: None
 
     def _v_logger(self):
+        """
+
+        virtual boost::shared_ptr<LogImp> FullPhysics::L2FpConfiguration::logger() const =0
+        Logger to use. 
+        """
         return _l2_fp_configuration.L2FpConfiguration__v_logger(self)
+
 
     @property
     def logger(self):
@@ -146,7 +164,14 @@ class L2FpConfiguration(full_physics_swig.generic_object.GenericObject):
 
 
     def _v_forward_model(self):
+        """
+
+        virtual boost::shared_ptr<ForwardModel> FullPhysics::L2FpConfiguration::forward_model() const =0
+        Forward model. Everything should be initialized to the initial guess.
+
+        """
         return _l2_fp_configuration.L2FpConfiguration__v_forward_model(self)
+
 
     @property
     def forward_model(self):
@@ -154,7 +179,13 @@ class L2FpConfiguration(full_physics_swig.generic_object.GenericObject):
 
 
     def _v_solver(self):
+        """
+
+        virtual boost::shared_ptr<ConnorSolver> FullPhysics::L2FpConfiguration::solver() const =0
+        Solver. 
+        """
         return _l2_fp_configuration.L2FpConfiguration__v_solver(self)
+
 
     @property
     def solver(self):
@@ -162,7 +193,13 @@ class L2FpConfiguration(full_physics_swig.generic_object.GenericObject):
 
 
     def _v_initial_guess(self):
+        """
+
+        virtual boost::shared_ptr<InitialGuess> FullPhysics::L2FpConfiguration::initial_guess() const =0
+        Initial guess. 
+        """
         return _l2_fp_configuration.L2FpConfiguration__v_initial_guess(self)
+
 
     @property
     def initial_guess(self):
@@ -170,7 +207,18 @@ class L2FpConfiguration(full_physics_swig.generic_object.GenericObject):
 
 
     def output(self):
+        """
+
+        virtual void FullPhysics::L2FpConfiguration::output(boost::shared_ptr< Output > &Regular_output, boost::shared_ptr<
+        Output > &Error_output) const =0
+        Create output, for both a normal run and for an error run (either or
+        both can be null if we don't want output).
+
+        This should have all the RegisterOutputBase applied to it that the
+        configuration says should be. 
+        """
         return _l2_fp_configuration.L2FpConfiguration_output(self)
+
 
     def __str__(self):
         return _l2_fp_configuration.L2FpConfiguration___str__(self)

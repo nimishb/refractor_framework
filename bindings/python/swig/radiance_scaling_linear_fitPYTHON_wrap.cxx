@@ -5572,11 +5572,32 @@ SWIGINTERN PyObject *RadianceScalingLinearFit_swigregister(PyObject *SWIGUNUSEDP
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"delete_RadianceScalingLinearFit", _wrap_delete_RadianceScalingLinearFit, METH_VARARGS, NULL},
-	 { (char *)"RadianceScalingLinearFit_clone", _wrap_RadianceScalingLinearFit_clone, METH_VARARGS, NULL},
-	 { (char *)"RadianceScalingLinearFit_apply_correction", _wrap_RadianceScalingLinearFit_apply_correction, METH_VARARGS, NULL},
-	 { (char *)"RadianceScalingLinearFit_print_desc", _wrap_RadianceScalingLinearFit_print_desc, METH_VARARGS, NULL},
-	 { (char *)"RadianceScalingLinearFit__v_radiance_scaling_coeff_uncertainty", _wrap_RadianceScalingLinearFit__v_radiance_scaling_coeff_uncertainty, METH_VARARGS, NULL},
+	 { (char *)"delete_RadianceScalingLinearFit", _wrap_delete_RadianceScalingLinearFit, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::RadianceScalingLinearFit::~RadianceScalingLinearFit()\n"
+		"\n"
+		""},
+	 { (char *)"RadianceScalingLinearFit_clone", _wrap_RadianceScalingLinearFit_clone, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual boost::shared_ptr<InstrumentCorrection> FullPhysics::RadianceScalingLinearFit::clone() const\n"
+		"\n"
+		""},
+	 { (char *)"RadianceScalingLinearFit_apply_correction", _wrap_RadianceScalingLinearFit_apply_correction, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::RadianceScalingLinearFit::apply_correction(const SpectralDomain &Pixel_grid, const std::vector< int >\n"
+		"&Pixel_list, SpectralRange &Radiance) const\n"
+		"\n"
+		""},
+	 { (char *)"RadianceScalingLinearFit_print_desc", _wrap_RadianceScalingLinearFit_print_desc, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::RadianceScalingLinearFit::print(std::ostream &Os) const\n"
+		"\n"
+		""},
+	 { (char *)"RadianceScalingLinearFit__v_radiance_scaling_coeff_uncertainty", _wrap_RadianceScalingLinearFit__v_radiance_scaling_coeff_uncertainty, METH_VARARGS, (char *)"\n"
+		"\n"
+		"blitz::Array<double, 1> FullPhysics::RadianceScalingLinearFit::radiance_scaling_coeff_uncertainty() const\n"
+		"\n"
+		""},
 	 { (char *)"RadianceScalingLinearFit_swigregister", RadianceScalingLinearFit_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };

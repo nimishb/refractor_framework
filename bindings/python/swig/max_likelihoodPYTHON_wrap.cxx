@@ -4981,7 +4981,11 @@ SWIGINTERN PyObject *MaxLikelihood_swigregister(PyObject *SWIGUNUSEDPARM(self), 
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"delete_MaxLikelihood", _wrap_delete_MaxLikelihood, METH_VARARGS, NULL},
+	 { (char *)"delete_MaxLikelihood", _wrap_delete_MaxLikelihood, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::MaxLikelihood::~MaxLikelihood()\n"
+		"\n"
+		""},
 	 { (char *)"MaxLikelihood_swigregister", MaxLikelihood_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };

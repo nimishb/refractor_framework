@@ -122,6 +122,14 @@ def _new_from_set(cls, version, *args):
 
 import full_physics_swig.generic_object
 class FmNLLSProblem(_object):
+    """
+
+    This is the forward model cost function, rewritten to match the
+    standard format used in nonlinear least squares solvers.
+
+    C++ includes: fm_nlls_problem.h 
+    """
+
     __swig_setmethods__ = {}
     __setattr__ = lambda self, name, value: _swig_setattr(self, FmNLLSProblem, name, value)
     __swig_getmethods__ = {}
@@ -129,6 +137,14 @@ class FmNLLSProblem(_object):
     __repr__ = _swig_repr
 
     def __init__(self, Fm, Rad, Rad_uncer, X_apriori, Apriori_cov):
+        """
+
+        FullPhysics::FmNLLSProblem::FmNLLSProblem(const boost::shared_ptr< ForwardModel > &Fm, const blitz::Array<
+        double, 1 > &Rad, const blitz::Array< double, 1 > &Rad_uncer, const
+        blitz::Array< double, 1 > X_apriori, const blitz::Array< double, 2 >
+        Apriori_cov)
+
+        """
         this = _fm_nlls_problem.new_FmNLLSProblem(Fm, Rad, Rad_uncer, X_apriori, Apriori_cov)
         try:
             self.this.append(this)
@@ -138,7 +154,13 @@ class FmNLLSProblem(_object):
     __del__ = lambda self: None
 
     def _v_residual_size(self):
+        """
+
+        virtual int FullPhysics::FmNLLSProblem::residual_size() const
+
+        """
         return _fm_nlls_problem.FmNLLSProblem__v_residual_size(self)
+
 
     @property
     def residual_size(self):
@@ -154,7 +176,13 @@ class FmNLLSProblem(_object):
 
 
     def _v_residual(self):
+        """
+
+        virtual blitz::Array<double, 1> FullPhysics::FmNLLSProblem::residual()
+
+        """
         return _fm_nlls_problem.FmNLLSProblem__v_residual(self)
+
 
     @property
     def residual(self):
@@ -162,7 +190,13 @@ class FmNLLSProblem(_object):
 
 
     def _v_jacobian(self):
+        """
+
+        virtual blitz::Array<double, 2> FullPhysics::FmNLLSProblem::jacobian()
+
+        """
         return _fm_nlls_problem.FmNLLSProblem__v_jacobian(self)
+
 
     @property
     def jacobian(self):

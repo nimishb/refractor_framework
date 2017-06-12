@@ -122,6 +122,23 @@ def _new_from_set(cls, version, *args):
 
 import full_physics_swig.generic_object
 class DispersionFit(full_physics_swig.generic_object.GenericObject):
+    """
+
+    Given a single frame of data, estimate the spectral shift in band 1P.
+
+    This is accomplished by using the strong solar line at 12985.163
+    wavenumbers. This is in the a-band continuum and is really the only
+    local feature there.
+
+    Note: This routine fits for a global shift, which INCLUDES the
+    instrument doppler shift. If this is not desired, the user must
+    subtract off the instrument doppler shift.
+
+    Original Author: Chris Odell Converted from IDL
+
+    C++ includes: dispersion_fit.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.generic_object.GenericObject]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -133,6 +150,11 @@ class DispersionFit(full_physics_swig.generic_object.GenericObject):
     __repr__ = _swig_repr
 
     def __init__(self, Level1b):
+        """
+
+        FullPhysics::DispersionFit::DispersionFit(const boost::shared_ptr< Level1b > &Level1b)
+
+        """
         this = _dispersion_fit.new_DispersionFit(Level1b)
         try:
             self.this.append(this)
@@ -140,7 +162,17 @@ class DispersionFit(full_physics_swig.generic_object.GenericObject):
             self.this = this
 
     def fit(self, disp_initial, aband_solar_line_location, aband_solar_line_width, aband_search_width, aband_ils_offset, offset_scaling):
+        """
+
+        blitz::Array<double, 2> FullPhysics::DispersionFit::fit(const blitz::Array< double, 2 > disp_initial, const DoubleWithUnit
+        &aband_solar_line_location, const DoubleWithUnit
+        &aband_solar_line_width, const DoubleWithUnit &aband_search_width,
+        const DoubleWithUnit &aband_ils_offset, const ArrayWithUnit< double, 1
+        > &offset_scaling) const
+
+        """
         return _dispersion_fit.DispersionFit_fit(self, disp_initial, aband_solar_line_location, aband_solar_line_width, aband_search_width, aband_ils_offset, offset_scaling)
+
     __swig_destroy__ = _dispersion_fit.delete_DispersionFit
     __del__ = lambda self: None
 DispersionFit_swigregister = _dispersion_fit.DispersionFit_swigregister

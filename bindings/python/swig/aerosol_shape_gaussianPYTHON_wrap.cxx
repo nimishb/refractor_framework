@@ -5417,9 +5417,21 @@ SWIGINTERN PyObject *AerosolShapeGaussian_swigregister(PyObject *SWIGUNUSEDPARM(
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"AerosolShapeGaussian_clone", _wrap_AerosolShapeGaussian_clone, METH_VARARGS, NULL},
-	 { (char *)"AerosolShapeGaussian_state_vector_name_i", _wrap_AerosolShapeGaussian_state_vector_name_i, METH_VARARGS, NULL},
-	 { (char *)"delete_AerosolShapeGaussian", _wrap_delete_AerosolShapeGaussian, METH_VARARGS, NULL},
+	 { (char *)"AerosolShapeGaussian_clone", _wrap_AerosolShapeGaussian_clone, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual boost::shared_ptr<AerosolExtinction> FullPhysics::AerosolShapeGaussian::clone(const boost::shared_ptr< Pressure > &P) const\n"
+		"\n"
+		""},
+	 { (char *)"AerosolShapeGaussian_state_vector_name_i", _wrap_AerosolShapeGaussian_state_vector_name_i, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual std::string FullPhysics::AerosolShapeGaussian::state_vector_name_i(int i) const\n"
+		"\n"
+		""},
+	 { (char *)"delete_AerosolShapeGaussian", _wrap_delete_AerosolShapeGaussian, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::AerosolShapeGaussian::~AerosolShapeGaussian()\n"
+		"\n"
+		""},
 	 { (char *)"AerosolShapeGaussian_swigregister", AerosolShapeGaussian_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };

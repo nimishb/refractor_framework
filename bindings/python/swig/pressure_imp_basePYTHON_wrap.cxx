@@ -8494,14 +8494,45 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"SubStateVectorArrayPressure__v_statevector_covariance", _wrap_SubStateVectorArrayPressure__v_statevector_covariance, METH_VARARGS, NULL},
 	 { (char *)"SubStateVectorArrayPressure__v_pressure", _wrap_SubStateVectorArrayPressure__v_pressure, METH_VARARGS, NULL},
 	 { (char *)"SubStateVectorArrayPressure_swigregister", SubStateVectorArrayPressure_swigregister, METH_VARARGS, NULL},
-	 { (char *)"delete_PressureImpBase", _wrap_delete_PressureImpBase, METH_VARARGS, NULL},
-	 { (char *)"PressureImpBase_clone", _wrap_PressureImpBase_clone, METH_VARARGS, NULL},
-	 { (char *)"PressureImpBase__v_pressure_grid", _wrap_PressureImpBase__v_pressure_grid, METH_VARARGS, NULL},
+	 { (char *)"delete_PressureImpBase", _wrap_delete_PressureImpBase, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::PressureImpBase::~PressureImpBase()\n"
+		"\n"
+		""},
+	 { (char *)"PressureImpBase_clone", _wrap_PressureImpBase_clone, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual boost::shared_ptr<Pressure> FullPhysics::PressureImpBase::clone() const =0\n"
+		"\n"
+		""},
+	 { (char *)"PressureImpBase__v_pressure_grid", _wrap_PressureImpBase__v_pressure_grid, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual ArrayAdWithUnit<double, 1> FullPhysics::PressureImpBase::pressure_grid() const\n"
+		"\n"
+		""},
 	 { (char *)"PressureImpBase_add_observer", _wrap_PressureImpBase_add_observer, METH_VARARGS, NULL},
 	 { (char *)"PressureImpBase_remove_observer", _wrap_PressureImpBase_remove_observer, METH_VARARGS, NULL},
-	 { (char *)"PressureImpBase_update_sub_state_hook", _wrap_PressureImpBase_update_sub_state_hook, METH_VARARGS, NULL},
-	 { (char *)"PressureImpBase_print_desc", _wrap_PressureImpBase_print_desc, METH_VARARGS, NULL},
-	 { (char *)"PressureImpBase__v_desc", _wrap_PressureImpBase__v_desc, METH_VARARGS, NULL},
+	 { (char *)"PressureImpBase_update_sub_state_hook", _wrap_PressureImpBase_update_sub_state_hook, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::PressureImpBase::update_sub_state_hook()\n"
+		"\n"
+		""},
+	 { (char *)"PressureImpBase_print_desc", _wrap_PressureImpBase_print_desc, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::PressureImpBase::print(std::ostream &Os) const\n"
+		"Print to stream.\n"
+		"\n"
+		"The default calls the function \"desc\" that returns a string. This\n"
+		"gives cleaner interface for deriving from this class in python, but\n"
+		"most C++ classes will want to override this function rather than using\n"
+		"desc. \n"
+		""},
+	 { (char *)"PressureImpBase__v_desc", _wrap_PressureImpBase__v_desc, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual std::string FullPhysics::PressureImpBase::desc() const\n"
+		"Description of object, to be printed to stream.\n"
+		"\n"
+		"This gives a cleaner interface for deriving from python. \n"
+		""},
 	 { (char *)"PressureImpBase_mark_used", _wrap_PressureImpBase_mark_used, METH_VARARGS, NULL},
 	 { (char *)"PressureImpBase_state_vector_name", _wrap_PressureImpBase_state_vector_name, METH_VARARGS, NULL},
 	 { (char *)"PressureImpBase_notify_update", _wrap_PressureImpBase_notify_update, METH_VARARGS, NULL},

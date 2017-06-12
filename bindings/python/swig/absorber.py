@@ -181,6 +181,23 @@ ObserverAbsorber_swigregister = _absorber.ObserverAbsorber_swigregister
 ObserverAbsorber_swigregister(ObserverAbsorber)
 
 class Absorber(full_physics_swig.state_vector.StateVectorObserver, ObservableAbsorber):
+    """
+
+    This class maintains the absorber portion of the state.
+
+    Other objects may depend on the absorber, and should be updated when
+    the absorber is updated. To facilitate that, this class in an
+    Oberverable, and objects can add themselves as Observers to be
+    notified when the absorber is updated.
+
+    Because the absorber calculation tends to be a bottle neck, we keep a
+    timer in this class. This class keeps track of the time used in the
+    optical_depth_each_layer function. Other classes can make use of this
+    information for logging if desired.
+
+    C++ includes: absorber.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.state_vector.StateVectorObserver, ObservableAbsorber]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -194,16 +211,34 @@ class Absorber(full_physics_swig.state_vector.StateVectorObserver, ObservableAbs
     __del__ = lambda self: None
 
     def add_observer(self, Obs):
+        """
+
+        virtual void FullPhysics::Absorber::add_observer(Observer< Absorber > &Obs)
+
+        """
         return _absorber.Absorber_add_observer(self, Obs)
 
+
     def remove_observer(self, Obs):
+        """
+
+        virtual void FullPhysics::Absorber::remove_observer(Observer< Absorber > &Obs)
+
+        """
         return _absorber.Absorber_remove_observer(self, Obs)
+
 
     def __str__(self):
         return _absorber.Absorber___str__(self)
 
     def _v_number_species(self):
+        """
+
+        virtual int FullPhysics::Absorber::number_species() const
+        Number of species. 
+        """
         return _absorber.Absorber__v_number_species(self)
+
 
     @property
     def number_species(self):
@@ -211,22 +246,81 @@ class Absorber(full_physics_swig.state_vector.StateVectorObserver, ObservableAbs
 
 
     def gas_name(self, Species_index):
+        """
+
+        virtual std::string FullPhysics::Absorber::gas_name(int Species_index) const =0
+        Name of gases, in the order that optical_depth_each_layer returns
+        them. 
+        """
         return _absorber.Absorber_gas_name(self, Species_index)
 
+
     def gas_index(self, Name):
+        """
+
+        virtual int FullPhysics::Absorber::gas_index(const std::string &Name) const
+
+        """
         return _absorber.Absorber_gas_index(self, Name)
 
+
     def optical_depth_each_layer(self, wn, spec_index):
+        """
+
+        virtual ArrayAd<double, 2> FullPhysics::Absorber::optical_depth_each_layer(double wn, int spec_index) const =0
+        This gives the optical depth for each layer, for the given wave
+        number.
+
+        Note this only includes the Absorbers portion of this, Atmosphere
+        class combines this with Rayleigh and Aerosol scattering.
+
+        This has size of pres->number_active_layer() x number_species()
+
+        We include the derivative of this with respect to the state vector. 
+        """
         return _absorber.Absorber_optical_depth_each_layer(self, wn, spec_index)
 
+
     def xgas(self, Gas_name):
+        """
+
+        virtual AutoDerivative<double> FullPhysics::Absorber::xgas(const std::string &Gas_name) const =0
+        This calculates the gas column, e.g., XCO2.
+
+        This is the dry air mole fraction of the gas, see section 3.5.4 of the
+        ATB
+
+        We include the derivative of this with respect to the state vector. 
+        """
         return _absorber.Absorber_xgas(self, Gas_name)
 
+
     def absorber_vmr(self, gas_name):
+        """
+
+        virtual boost::shared_ptr<AbsorberVmr> FullPhysics::Absorber::absorber_vmr(const std::string &gas_name) const =0
+        Returns the AbsorberVmr object for a given species index. 
+        """
         return _absorber.Absorber_absorber_vmr(self, gas_name)
 
+
     def clone(self, *args):
+        """
+
+        virtual boost::shared_ptr<Absorber> FullPhysics::Absorber::clone(const boost::shared_ptr< Pressure > &Press, const boost::shared_ptr<
+        Temperature > &Temp, const std::vector< boost::shared_ptr< Altitude >
+        > &Alt) const =0
+        This version of clone takes a Pressure, Altitude and Temperature to
+        use.
+
+        The intent is that the Pressure, Altitude and Temperature has been
+        cloned from the original Pressure, Altitude and Temperature (although
+        this class has no way to verify this). This allows sets of objects to
+        be cloned using a common Pressure, Altitude and Temperature clones,
+        e.g. Atmosphere. 
+        """
         return _absorber.Absorber_clone(self, *args)
+
 
     def print_desc(self, Os):
         return _absorber.Absorber_print_desc(self, Os)
@@ -286,28 +380,88 @@ class SubStateVectorAbsorber(Absorber, full_physics_swig.state_vector.SubStateVe
             self.this = this
 
     def _v_number_species(self):
+        """
+
+        virtual int FullPhysics::Absorber::number_species() const
+        Number of species. 
+        """
         return _absorber.SubStateVectorAbsorber__v_number_species(self)
 
+
     def gas_name(self, Species_index):
+        """
+
+        virtual std::string FullPhysics::Absorber::gas_name(int Species_index) const =0
+        Name of gases, in the order that optical_depth_each_layer returns
+        them. 
+        """
         return _absorber.SubStateVectorAbsorber_gas_name(self, Species_index)
 
+
     def gas_index(self, Name):
+        """
+
+        virtual int FullPhysics::Absorber::gas_index(const std::string &Name) const
+
+        """
         return _absorber.SubStateVectorAbsorber_gas_index(self, Name)
 
+
     def optical_depth_each_layer(self, wn, spec_index):
+        """
+
+        virtual ArrayAd<double, 2> FullPhysics::Absorber::optical_depth_each_layer(double wn, int spec_index) const =0
+        This gives the optical depth for each layer, for the given wave
+        number.
+
+        Note this only includes the Absorbers portion of this, Atmosphere
+        class combines this with Rayleigh and Aerosol scattering.
+
+        This has size of pres->number_active_layer() x number_species()
+
+        We include the derivative of this with respect to the state vector. 
+        """
         return _absorber.SubStateVectorAbsorber_optical_depth_each_layer(self, wn, spec_index)
+
 
     def print_desc(self, Os):
         return _absorber.SubStateVectorAbsorber_print_desc(self, Os)
 
     def add_observer(self, Obs):
+        """
+
+        virtual void FullPhysics::Absorber::add_observer(Observer< Absorber > &Obs)
+
+        """
         return _absorber.SubStateVectorAbsorber_add_observer(self, Obs)
 
+
     def remove_observer(self, Obs):
+        """
+
+        virtual void FullPhysics::Absorber::remove_observer(Observer< Absorber > &Obs)
+
+        """
         return _absorber.SubStateVectorAbsorber_remove_observer(self, Obs)
 
+
     def clone(self, *args):
+        """
+
+        virtual boost::shared_ptr<Absorber> FullPhysics::Absorber::clone(const boost::shared_ptr< Pressure > &Press, const boost::shared_ptr<
+        Temperature > &Temp, const std::vector< boost::shared_ptr< Altitude >
+        > &Alt) const =0
+        This version of clone takes a Pressure, Altitude and Temperature to
+        use.
+
+        The intent is that the Pressure, Altitude and Temperature has been
+        cloned from the original Pressure, Altitude and Temperature (although
+        this class has no way to verify this). This allows sets of objects to
+        be cloned using a common Pressure, Altitude and Temperature clones,
+        e.g. Atmosphere. 
+        """
         return _absorber.SubStateVectorAbsorber_clone(self, *args)
+
 
     def notify_update(self, Sv):
         return _absorber.SubStateVectorAbsorber_notify_update(self, Sv)

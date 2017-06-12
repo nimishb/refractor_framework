@@ -122,6 +122,25 @@ def _new_from_set(cls, version, *args):
 
 import full_physics_swig.generic_object
 class SpectralWindow(full_physics_swig.generic_object.GenericObject):
+    """
+
+    This class represents a the spectral window.
+
+    The definition of a spectral window is purposely fuzzy, we want to
+    support things like excluding certain wavenumbers. So the interface
+    simple takes a list of potential wavenumbers (e.g., the wavenumbers
+    measured to the GOSAT oxygen A spectrometer) and returns the list of
+    values that fall within the window. For example, if the window is just
+    a wavenumber range, then all the wavenumbers that fall within that
+    range are returned.
+
+    Note that there are a few closely related classes, with similar
+    sounding names. See spectrum_doxygen for a description of each of
+    these.
+
+    C++ includes: spectral_window.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.generic_object.GenericObject]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -141,13 +160,32 @@ class SpectralWindow(full_physics_swig.generic_object.GenericObject):
         return _spectral_window.SpectralWindow___str__(self)
 
     def apply(self, Grid, Spec_index):
+        """
+
+        Spectrum FullPhysics::SpectralWindow::apply(const Spectrum &Spec, int Spec_index) const
+
+        """
         return _spectral_window.SpectralWindow_apply(self, Grid, Spec_index)
 
+
     def grid_indexes(self, Grid, Spec_index):
+        """
+
+        virtual std::vector<int> FullPhysics::SpectralWindow::grid_indexes(const SpectralDomain &Grid, int Spec_index) const =0
+        Given a list of wavenumbers, this returns the indices that fall within
+        the window. 
+        """
         return _spectral_window.SpectralWindow_grid_indexes(self, Grid, Spec_index)
 
+
     def _v_number_spectrometer(self):
+        """
+
+        virtual int FullPhysics::SpectralWindow::number_spectrometer() const =0
+        Number of spectrometers. 
+        """
         return _spectral_window.SpectralWindow__v_number_spectrometer(self)
+
 
     @property
     def number_spectrometer(self):
@@ -155,7 +193,13 @@ class SpectralWindow(full_physics_swig.generic_object.GenericObject):
 
 
     def _v_spectral_bound(self):
+        """
+
+        virtual SpectralBound FullPhysics::SpectralWindow::spectral_bound() const =0
+        Bounds of spectral window. 
+        """
         return _spectral_window.SpectralWindow__v_spectral_bound(self)
+
 
     @property
     def spectral_bound(self):

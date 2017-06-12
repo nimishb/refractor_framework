@@ -5304,12 +5304,41 @@ SWIGINTERN PyObject *ModelMeasureOCO_swigregister(PyObject *SWIGUNUSEDPARM(self)
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"delete_ModelMeasureOCO", _wrap_delete_ModelMeasureOCO, METH_VARARGS, NULL},
-	 { (char *)"ModelMeasureOCO_model_eval", _wrap_ModelMeasureOCO_model_eval, METH_VARARGS, NULL},
-	 { (char *)"ModelMeasureOCO_jacobian_eval", _wrap_ModelMeasureOCO_jacobian_eval, METH_VARARGS, NULL},
-	 { (char *)"ModelMeasureOCO_model_jacobian_eval", _wrap_ModelMeasureOCO_model_jacobian_eval, METH_VARARGS, NULL},
-	 { (char *)"ModelMeasureOCO__v_expected_parameter_size", _wrap_ModelMeasureOCO__v_expected_parameter_size, METH_VARARGS, NULL},
-	 { (char *)"ModelMeasureOCO__v_parameters", _wrap_ModelMeasureOCO__v_parameters, METH_VARARGS, NULL},
+	 { (char *)"delete_ModelMeasureOCO", _wrap_delete_ModelMeasureOCO, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::ModelMeasureOCO::~ModelMeasureOCO()\n"
+		"\n"
+		""},
+	 { (char *)"ModelMeasureOCO_model_eval", _wrap_ModelMeasureOCO_model_eval, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::ModelMeasureOCO::model_eval()\n"
+		"\n"
+		""},
+	 { (char *)"ModelMeasureOCO_jacobian_eval", _wrap_ModelMeasureOCO_jacobian_eval, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::ModelMeasureOCO::jacobian_eval()\n"
+		"\n"
+		""},
+	 { (char *)"ModelMeasureOCO_model_jacobian_eval", _wrap_ModelMeasureOCO_model_jacobian_eval, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::ModelMeasureOCO::model_jacobian_eval()\n"
+		"\n"
+		""},
+	 { (char *)"ModelMeasureOCO__v_expected_parameter_size", _wrap_ModelMeasureOCO__v_expected_parameter_size, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual int FullPhysics::ModelMeasureOCO::expected_parameter_size() const\n"
+		"\n"
+		""},
+	 { (char *)"ModelMeasureOCO__v_parameters", _wrap_ModelMeasureOCO__v_parameters, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual blitz::Array<double, 1> FullPhysics::ModelMeasureOCO::parameters() const\n"
+		"Just returns the current values of parameters.\n"
+		"\n"
+		"This method is redefined here (see the root base class) because of a\n"
+		"compiler bug; otherwise, there should be no need for its redefinition.\n"
+		"\n"
+		"Current parameter values \n"
+		""},
 	 { (char *)"ModelMeasureOCO_swigregister", ModelMeasureOCO_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };

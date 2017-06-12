@@ -123,6 +123,31 @@ def _new_from_set(cls, version, *args):
 import full_physics_swig.spectrum_sampling
 import full_physics_swig.generic_object
 class NonuniformSpectrumSampling(full_physics_swig.spectrum_sampling.SpectrumSampling):
+    """
+
+    This is a simple SpectrumSampling that is just a nonuniform sampling.
+
+    We have an underlying Interpolated_sampling that we will interpolate
+    (by interpolate_spectrum).
+
+    The input Grid might not overlap the Interpolated_sampling grid. It
+    might cover a larger area, or it might not exactly line up with the
+    Interpolated_sampling. To reduce interpolation errors and also to
+    avoid doing unnecessary calculations (e.g., the Grid is larger than
+    Interpolated_sampling), we have spectrum_domain return only a subset
+    of the Interpolated_sampling. We take each Grid point and find the
+    closest Interpolated_sampling and return that. Note that more than one
+    Grid point might be closest to a single Interpolated_sampling, which
+    means that we may return a spectral domain smaller than the
+    Interpolated_sampling.
+
+    Note that there are a few closely related classes, with similar
+    sounding names. See spectrum_doxygen for a description of each of
+    these.
+
+    C++ includes: nonuniform_spectrum_sampling.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.spectrum_sampling.SpectrumSampling]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -137,7 +162,14 @@ class NonuniformSpectrumSampling(full_physics_swig.spectrum_sampling.SpectrumSam
     __repr__ = _swig_repr
 
     def spectral_domain(self, spec_index, Lowres_grid, Ils_half_width):
+        """
+
+        virtual SpectralDomain FullPhysics::NonuniformSpectrumSampling::spectral_domain(int spec_index, const SpectralDomain &Lowres_grid, const
+        DoubleWithUnit &Ils_half_width) const
+
+        """
         return _nonuniform_spectrum_sampling.NonuniformSpectrumSampling_spectral_domain(self, spec_index, Lowres_grid, Ils_half_width)
+
     __swig_destroy__ = _nonuniform_spectrum_sampling.delete_NonuniformSpectrumSampling
     __del__ = lambda self: None
 NonuniformSpectrumSampling_swigregister = _nonuniform_spectrum_sampling.NonuniformSpectrumSampling_swigregister

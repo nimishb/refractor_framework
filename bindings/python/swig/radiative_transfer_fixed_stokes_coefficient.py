@@ -190,6 +190,16 @@ import full_physics_swig.observer
 import full_physics_swig.named_spectrum
 import full_physics_swig.state_vector
 class RadiativeTransferFixedStokesCoefficient(full_physics_swig.radiative_transfer.RadiativeTransfer, full_physics_swig.named_spectrum.ObservableStokesUpdate):
+    """
+
+    For GOSAT and OCO, we have a set of stokes coefficients to go from
+    Stokes vector to radiation.
+
+    This class captures that common behavior.
+
+    C++ includes: radiative_transfer_fixed_stokes_coefficient.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.radiative_transfer.RadiativeTransfer, full_physics_swig.named_spectrum.ObservableStokesUpdate]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -206,7 +216,14 @@ class RadiativeTransferFixedStokesCoefficient(full_physics_swig.radiative_transf
     __del__ = lambda self: None
 
     def _v_stokes_coefficient(self):
+        """
+
+        const boost::shared_ptr<StokesCoefficient>& FullPhysics::RadiativeTransferFixedStokesCoefficient::stokes_coefficient() const
+        Stokes coefficients used to go from Stokes vector to scalar
+        reflectance. 
+        """
         return _radiative_transfer_fixed_stokes_coefficient.RadiativeTransferFixedStokesCoefficient__v_stokes_coefficient(self)
+
 
     @property
     def stokes_coefficient(self):
@@ -214,7 +231,13 @@ class RadiativeTransferFixedStokesCoefficient(full_physics_swig.radiative_transf
 
 
     def _v_number_spectrometer(self):
+        """
+
+        virtual int FullPhysics::RadiativeTransferFixedStokesCoefficient::number_spectrometer() const
+        Number of spectrometer we have. 
+        """
         return _radiative_transfer_fixed_stokes_coefficient.RadiativeTransferFixedStokesCoefficient__v_number_spectrometer(self)
+
 
     @property
     def number_spectrometer(self):
@@ -222,13 +245,32 @@ class RadiativeTransferFixedStokesCoefficient(full_physics_swig.radiative_transf
 
 
     def reflectance(self, Spec_domain, Spec_index, Skip_jacobian=False):
+        """
+
+        virtual Spectrum FullPhysics::RadiativeTransferFixedStokesCoefficient::reflectance(const SpectralDomain &Spec_domain, int Spec_index, bool
+        Skip_jacobian=false) const
+
+        """
         return _radiative_transfer_fixed_stokes_coefficient.RadiativeTransferFixedStokesCoefficient_reflectance(self, Spec_domain, Spec_index, Skip_jacobian)
 
+
     def add_observer(self, Obs):
+        """
+
+        virtual void FullPhysics::RadiativeTransferFixedStokesCoefficient::add_observer(Observer< std::vector< boost::shared_ptr< NamedSpectrum > > > &Obs)
+        Required observable functions. 
+        """
         return _radiative_transfer_fixed_stokes_coefficient.RadiativeTransferFixedStokesCoefficient_add_observer(self, Obs)
 
+
     def remove_observer(self, Obs):
+        """
+
+        virtual void FullPhysics::RadiativeTransferFixedStokesCoefficient::remove_observer(Observer< std::vector< boost::shared_ptr< NamedSpectrum > > > &Obs)
+
+        """
         return _radiative_transfer_fixed_stokes_coefficient.RadiativeTransferFixedStokesCoefficient_remove_observer(self, Obs)
+
 RadiativeTransferFixedStokesCoefficient_swigregister = _radiative_transfer_fixed_stokes_coefficient.RadiativeTransferFixedStokesCoefficient_swigregister
 RadiativeTransferFixedStokesCoefficient_swigregister(RadiativeTransferFixedStokesCoefficient)
 

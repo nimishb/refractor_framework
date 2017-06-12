@@ -6013,16 +6013,58 @@ SWIGINTERN PyObject *InitialGuessValue_swigregister(PyObject *SWIGUNUSEDPARM(sel
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"delete_InitialGuessValue", _wrap_delete_InitialGuessValue, METH_VARARGS, NULL},
-	 { (char *)"InitialGuessValue__v_number_element", _wrap_InitialGuessValue__v_number_element, METH_VARARGS, NULL},
-	 { (char *)"InitialGuessValue_build_initial_value", _wrap_InitialGuessValue_build_initial_value, METH_VARARGS, NULL},
-	 { (char *)"InitialGuessValue_build_apriori", _wrap_InitialGuessValue_build_apriori, METH_VARARGS, NULL},
-	 { (char *)"InitialGuessValue_build_apriori_covariance", _wrap_InitialGuessValue_build_apriori_covariance, METH_VARARGS, NULL},
-	 { (char *)"InitialGuessValue__v_apriori", _wrap_InitialGuessValue__v_apriori, METH_VARARGS, NULL},
-	 { (char *)"InitialGuessValue__v_apriori_covariance", _wrap_InitialGuessValue__v_apriori_covariance, METH_VARARGS, NULL},
-	 { (char *)"InitialGuessValue_apriori_subset", _wrap_InitialGuessValue_apriori_subset, METH_VARARGS, NULL},
-	 { (char *)"InitialGuessValue_apriori_covariance_subset", _wrap_InitialGuessValue_apriori_covariance_subset, METH_VARARGS, NULL},
-	 { (char *)"InitialGuessValue__v_initial_guess", _wrap_InitialGuessValue__v_initial_guess, METH_VARARGS, NULL},
+	 { (char *)"delete_InitialGuessValue", _wrap_delete_InitialGuessValue, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::InitialGuessValue::~InitialGuessValue()\n"
+		"\n"
+		""},
+	 { (char *)"InitialGuessValue__v_number_element", _wrap_InitialGuessValue__v_number_element, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual int FullPhysics::InitialGuessValue::number_element() const\n"
+		"\n"
+		""},
+	 { (char *)"InitialGuessValue_build_initial_value", _wrap_InitialGuessValue_build_initial_value, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::InitialGuessValue::build_initial_value(blitz::Array< double, 1 > &v, int index) const\n"
+		"\n"
+		""},
+	 { (char *)"InitialGuessValue_build_apriori", _wrap_InitialGuessValue_build_apriori, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::InitialGuessValue::build_apriori(blitz::Array< double, 1 > &v, int index) const\n"
+		"\n"
+		""},
+	 { (char *)"InitialGuessValue_build_apriori_covariance", _wrap_InitialGuessValue_build_apriori_covariance, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::InitialGuessValue::build_apriori_covariance(blitz::Array< double, 2 > &m, int index) const\n"
+		"\n"
+		""},
+	 { (char *)"InitialGuessValue__v_apriori", _wrap_InitialGuessValue__v_apriori, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::InitialGuessValue::apriori(const blitz::Array< double, 1 > &v)\n"
+		"Set apriori value. \n"
+		""},
+	 { (char *)"InitialGuessValue__v_apriori_covariance", _wrap_InitialGuessValue__v_apriori_covariance, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::InitialGuessValue::apriori_covariance(const blitz::Array< double, 2 > &m)\n"
+		"Set apriori covariance value. \n"
+		""},
+	 { (char *)"InitialGuessValue_apriori_subset", _wrap_InitialGuessValue_apriori_subset, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::InitialGuessValue::apriori_subset(const blitz::Array< bool, 1 > &Flag, const blitz::Array< double, 1 >\n"
+		"&V)\n"
+		"\n"
+		""},
+	 { (char *)"InitialGuessValue_apriori_covariance_subset", _wrap_InitialGuessValue_apriori_covariance_subset, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::InitialGuessValue::apriori_covariance_subset(const blitz::Array< bool, 1 > &Flag, const blitz::Array< double, 2 >\n"
+		"&V)\n"
+		"\n"
+		""},
+	 { (char *)"InitialGuessValue__v_initial_guess", _wrap_InitialGuessValue__v_initial_guess, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::InitialGuessValue::initial_guess(const blitz::Array< double, 1 > &v)\n"
+		"Set first guess value. \n"
+		""},
 	 { (char *)"new_InitialGuessValue", _wrap_new_InitialGuessValue, METH_VARARGS, NULL},
 	 { (char *)"InitialGuessValue_swigregister", InitialGuessValue_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }

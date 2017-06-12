@@ -127,6 +127,24 @@ import full_physics_swig.observer
 import full_physics_swig.named_spectrum
 import full_physics_swig.state_vector
 class LsiRt(full_physics_swig.radiative_transfer_fixed_stokes_coefficient.RadiativeTransferFixedStokesCoefficient):
+    """
+
+    This does a Low Stream Interpolator correction to another
+    RadiativeTransfer object.
+
+    There is a paper in the doc directory "LSI Paper.pdf" which
+    describes this algorithm. Note that the paper describes an improved
+    version, the code here is for an older implementation (we will update
+    the papers version eventually).
+
+    There is a configuration file that gives the optical depth boundaries
+    to use in the LSI binning. This can either be read from an HDF file
+    (the preferred way), or for backwards compatibility from an ASCII
+    file.
+
+    C++ includes: lsi_rt.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.radiative_transfer_fixed_stokes_coefficient.RadiativeTransferFixedStokesCoefficient]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -141,7 +159,13 @@ class LsiRt(full_physics_swig.radiative_transfer_fixed_stokes_coefficient.Radiat
     __repr__ = _swig_repr
 
     def _v_number_stokes(self):
+        """
+
+        virtual int FullPhysics::LsiRt::number_stokes() const
+
+        """
         return _lsi_rt.LsiRt__v_number_stokes(self)
+
 
     @property
     def number_stokes(self):
@@ -149,16 +173,40 @@ class LsiRt(full_physics_swig.radiative_transfer_fixed_stokes_coefficient.Radiat
 
 
     def stokes(self, Spec_domain, Spec_index):
+        """
+
+        virtual blitz::Array<double, 2> FullPhysics::LsiRt::stokes(const SpectralDomain &Spec_domain, int Spec_index) const
+
+        """
         return _lsi_rt.LsiRt_stokes(self, Spec_domain, Spec_index)
 
+
     def stokes_and_jacobian(self, Spec_domain, Spec_index):
+        """
+
+        virtual ArrayAd<double, 2> FullPhysics::LsiRt::stokes_and_jacobian(const SpectralDomain &Spec_domain, int Spec_index) const
+
+        """
         return _lsi_rt.LsiRt_stokes_and_jacobian(self, Spec_domain, Spec_index)
 
+
     def correction_only(self, Spec_domain, Spec_index):
+        """
+
+        virtual ArrayAd<double, 2> FullPhysics::LsiRt::correction_only(const SpectralDomain &Spec_domain, int Spec_index) const
+
+        """
         return _lsi_rt.LsiRt_correction_only(self, Spec_domain, Spec_index)
 
+
     def _v_low_stream_radiative_transfer(self):
+        """
+
+        boost::shared_ptr<RadiativeTransfer> FullPhysics::LsiRt::low_stream_radiative_transfer() const
+
+        """
         return _lsi_rt.LsiRt__v_low_stream_radiative_transfer(self)
+
 
     @property
     def low_stream_radiative_transfer(self):
@@ -166,7 +214,13 @@ class LsiRt(full_physics_swig.radiative_transfer_fixed_stokes_coefficient.Radiat
 
 
     def _v_high_stream_radiative_transfer(self):
+        """
+
+        boost::shared_ptr<RadiativeTransfer> FullPhysics::LsiRt::high_stream_radiative_transfer() const
+
+        """
         return _lsi_rt.LsiRt__v_high_stream_radiative_transfer(self)
+
 
     @property
     def high_stream_radiative_transfer(self):

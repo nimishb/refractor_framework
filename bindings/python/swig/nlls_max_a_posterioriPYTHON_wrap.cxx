@@ -5708,14 +5708,56 @@ SWIGINTERN PyObject *NLLSMaxAPosteriori_swigregister(PyObject *SWIGUNUSEDPARM(se
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"new_NLLSMaxAPosteriori", _wrap_new_NLLSMaxAPosteriori, METH_VARARGS, NULL},
-	 { (char *)"delete_NLLSMaxAPosteriori", _wrap_delete_NLLSMaxAPosteriori, METH_VARARGS, NULL},
-	 { (char *)"NLLSMaxAPosteriori__v_residual", _wrap_NLLSMaxAPosteriori__v_residual, METH_VARARGS, NULL},
-	 { (char *)"NLLSMaxAPosteriori__v_jacobian", _wrap_NLLSMaxAPosteriori__v_jacobian, METH_VARARGS, NULL},
-	 { (char *)"NLLSMaxAPosteriori__v_residual_size", _wrap_NLLSMaxAPosteriori__v_residual_size, METH_VARARGS, NULL},
-	 { (char *)"NLLSMaxAPosteriori__v_expected_parameter_size", _wrap_NLLSMaxAPosteriori__v_expected_parameter_size, METH_VARARGS, NULL},
-	 { (char *)"NLLSMaxAPosteriori__v_parameters", _wrap_NLLSMaxAPosteriori__v_parameters, METH_VARARGS, NULL},
-	 { (char *)"NLLSMaxAPosteriori__v_max_a_posteriori", _wrap_NLLSMaxAPosteriori__v_max_a_posteriori, METH_VARARGS, NULL},
+	 { (char *)"new_NLLSMaxAPosteriori", _wrap_new_NLLSMaxAPosteriori, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::NLLSMaxAPosteriori::NLLSMaxAPosteriori(const boost::shared_ptr< MaxAPosteriori > &map, bool together=false)\n"
+		"Constructor. \n"
+		""},
+	 { (char *)"delete_NLLSMaxAPosteriori", _wrap_delete_NLLSMaxAPosteriori, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::NLLSMaxAPosteriori::~NLLSMaxAPosteriori()\n"
+		"\n"
+		""},
+	 { (char *)"NLLSMaxAPosteriori__v_residual", _wrap_NLLSMaxAPosteriori__v_residual, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual blitz::Array<double, 1> FullPhysics::NLLSMaxAPosteriori::residual()\n"
+		"Return the residual of the NLLS problem at the current set point.\n"
+		"\n"
+		"Residual \n"
+		""},
+	 { (char *)"NLLSMaxAPosteriori__v_jacobian", _wrap_NLLSMaxAPosteriori__v_jacobian, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual blitz::Array<double, 2> FullPhysics::NLLSMaxAPosteriori::jacobian()\n"
+		"Return the Jacobian of the residual of the NLLS problem at the current\n"
+		"set point.\n"
+		"\n"
+		"The Jacobian of the cost function. \n"
+		""},
+	 { (char *)"NLLSMaxAPosteriori__v_residual_size", _wrap_NLLSMaxAPosteriori__v_residual_size, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual int FullPhysics::NLLSMaxAPosteriori::residual_size() const\n"
+		"Return the size of the residual that will be returned by residual() \n"
+		""},
+	 { (char *)"NLLSMaxAPosteriori__v_expected_parameter_size", _wrap_NLLSMaxAPosteriori__v_expected_parameter_size, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual int FullPhysics::NLLSMaxAPosteriori::expected_parameter_size() const\n"
+		"Return the expected size of the parameter X. \n"
+		""},
+	 { (char *)"NLLSMaxAPosteriori__v_parameters", _wrap_NLLSMaxAPosteriori__v_parameters, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual blitz::Array<double, 1> FullPhysics::NLLSMaxAPosteriori::parameters() const\n"
+		"Just returns the current values of parameters.\n"
+		"\n"
+		"This method is redefined here (see the root base class) because of a\n"
+		"compiler bug; otherwise, there should be no need for its redefinition.\n"
+		"\n"
+		"Current parameter values \n"
+		""},
+	 { (char *)"NLLSMaxAPosteriori__v_max_a_posteriori", _wrap_NLLSMaxAPosteriori__v_max_a_posteriori, METH_VARARGS, (char *)"\n"
+		"\n"
+		"boost::shared_ptr<MaxAPosteriori> FullPhysics::NLLSMaxAPosteriori::max_a_posteriori()\n"
+		"\n"
+		""},
 	 { (char *)"NLLSMaxAPosteriori_swigregister", NLLSMaxAPosteriori_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };

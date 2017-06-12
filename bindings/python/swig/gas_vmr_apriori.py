@@ -123,6 +123,20 @@ def _new_from_set(cls, version, *args):
 import full_physics_swig.generic_object
 import full_physics_swig.state_vector
 class GasVmrApriori(full_physics_swig.generic_object.GenericObject):
+    """
+
+    Adapts the ReferenceVmrApriori class into a form that is easier to
+    work with in the context of how this framework works.
+
+    This class deals keys off of pressure levels like the rest of the
+    framework. It also uses the increasing pressure levels convention.
+
+    The VMR returned will be in the order of levels expected elsewhere in
+    the framework.
+
+    C++ includes: gas_vmr_apriori.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.generic_object.GenericObject]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -134,6 +148,14 @@ class GasVmrApriori(full_physics_swig.generic_object.GenericObject):
     __repr__ = _swig_repr
 
     def __init__(self, Ecmwf_file, L1b_file, Alt, Hdf_static_input, Hdf_group, Gas_name, temp_avg_window):
+        """
+
+        FullPhysics::GasVmrApriori::GasVmrApriori(const boost::shared_ptr< Ecmwf > &Ecmwf_file, const
+        boost::shared_ptr< Level1b > &L1b_file, const boost::shared_ptr<
+        Altitude > &Alt, const HdfFile &Hdf_static_input, const std::string
+        &Hdf_group, const std::string &Gas_name, const int temp_avg_window=11)
+
+        """
         this = _gas_vmr_apriori.new_GasVmrApriori(Ecmwf_file, L1b_file, Alt, Hdf_static_input, Hdf_group, Gas_name, temp_avg_window)
         try:
             self.this.append(this)
@@ -146,10 +168,22 @@ class GasVmrApriori(full_physics_swig.generic_object.GenericObject):
 
 
     def _v_apriori_vmr(self, *args):
+        """
+
+        const blitz::Array<double, 1> FullPhysics::GasVmrApriori::apriori_vmr(const Pressure &pressure) const
+
+        """
         return _gas_vmr_apriori.GasVmrApriori__v_apriori_vmr(self, *args)
 
+
     def _v_reference(self):
+        """
+
+        const boost::shared_ptr<ReferenceVmrApriori> FullPhysics::GasVmrApriori::reference() const
+
+        """
         return _gas_vmr_apriori.GasVmrApriori__v_reference(self)
+
 
     @property
     def reference(self):
@@ -157,7 +191,13 @@ class GasVmrApriori(full_physics_swig.generic_object.GenericObject):
 
 
     def _v_tropopause_altitude(self):
+        """
+
+        const double FullPhysics::GasVmrApriori::tropopause_altitude() const
+
+        """
         return _gas_vmr_apriori.GasVmrApriori__v_tropopause_altitude(self)
+
 
     @property
     def tropopause_altitude(self):
@@ -165,7 +205,13 @@ class GasVmrApriori(full_physics_swig.generic_object.GenericObject):
 
 
     def _v_tropopause_pressure(self):
+        """
+
+        const double FullPhysics::GasVmrApriori::tropopause_pressure() const
+
+        """
         return _gas_vmr_apriori.GasVmrApriori__v_tropopause_pressure(self)
+
 
     @property
     def tropopause_pressure(self):

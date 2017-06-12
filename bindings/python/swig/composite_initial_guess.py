@@ -123,6 +123,18 @@ def _new_from_set(cls, version, *args):
 import full_physics_swig.generic_object
 import full_physics_swig.initial_guess
 class InitialGuessBuilder(full_physics_swig.generic_object.GenericObject):
+    """
+
+    Class that builds a portion of the state vector.
+
+    We use a std::vector here rather than a blitz::Array just because it
+    is easier to add something to the end of std::vector than
+    blitz::Array. CompositeInitialGuess converts this to a blitz::Array
+    before finishing the construction of the initial guess.
+
+    C++ includes: composite_initial_guess.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.generic_object.GenericObject]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -139,7 +151,15 @@ class InitialGuessBuilder(full_physics_swig.generic_object.GenericObject):
     __del__ = lambda self: None
 
     def _v_number_element(self):
+        """
+
+        virtual int FullPhysics::InitialGuessBuilder::number_element() const =0
+        Number of elements we will be adding to the state vector.
+
+        0 is a legal value, if we are changing elements but not adding any. 
+        """
         return _composite_initial_guess.InitialGuessBuilder__v_number_element(self)
+
 
     @property
     def number_element(self):
@@ -147,13 +167,61 @@ class InitialGuessBuilder(full_physics_swig.generic_object.GenericObject):
 
 
     def build_initial_value(self, v, index):
+        """
+
+        virtual void FullPhysics::InitialGuessBuilder::build_initial_value(blitz::Array< double, 1 > &v, int index) const =0
+        Called when we need this class to do its part in setting up the
+        initial state vector.
+
+        Parameters:
+        -----------
+
+        v:  State vector that should be updated in place.
+
+        index:  Since we are often adding to the end of the state vector,
+        index is passed in. This is the sum of the number_elements() of all
+        the InitialGuessBuilder that appear before this object in the list. 
+        """
         return _composite_initial_guess.InitialGuessBuilder_build_initial_value(self, v, index)
 
+
     def build_apriori(self, v, index):
+        """
+
+        virtual void FullPhysics::InitialGuessBuilder::build_apriori(blitz::Array< double, 1 > &v, int index) const =0
+        Called when we need this class to do its part in setting up the
+        apriori state vector.
+
+        Parameters:
+        -----------
+
+        v:  State vector that should be updated in place.
+
+        index:  Since we are often adding to the end of the state vector,
+        index is passed in. This is the sum of the number_elements() of all
+        the InitialGuessBuilder that appear before this object in the list. 
+        """
         return _composite_initial_guess.InitialGuessBuilder_build_apriori(self, v, index)
 
+
     def build_apriori_covariance(self, m, index):
+        """
+
+        virtual void FullPhysics::InitialGuessBuilder::build_apriori_covariance(blitz::Array< double, 2 > &m, int index) const =0
+        Called when we need this class to do its part in setting up the
+        covariance matrix for the a priori state vector.
+
+        Parameters:
+        -----------
+
+        m:  State vector that should be updated in place.
+
+        index:  Since we are often adding to the end of the state vector,
+        index is passed in. This is the sum of the number_elements() of all
+        the InitialGuessBuilder that appear before this object in the list. 
+        """
         return _composite_initial_guess.InitialGuessBuilder_build_apriori_covariance(self, m, index)
+
 
     def __str__(self):
         return _composite_initial_guess.InitialGuessBuilder___str__(self)
@@ -161,6 +229,30 @@ InitialGuessBuilder_swigregister = _composite_initial_guess.InitialGuessBuilder_
 InitialGuessBuilder_swigregister(InitialGuessBuilder)
 
 class CompositeInitialGuess(full_physics_swig.initial_guess.InitialGuess, InitialGuessBuilder):
+    """
+
+    A common way to create an initial guess is to have other classes
+    responsible for portions of the state vector (e.g., an Atmosphere
+    class creates the portion of the initial guess that handles the
+    description of the atmosphere layers).
+
+    This class implements this division.
+
+    This is an example of the "Builder" design pattern. This class is
+    what is commonly called the "Director", and the InitialGuessBuilder
+    classes are the "Builder" classes.
+
+    Note that the InitialGuessBuilder objects are called in the order they
+    are added to the CompositeInitialGuess object. A common
+    InitialGuessBuilder adds additional values to the end state vector, so
+    the order is important.
+
+    A CompositeInitialGuess is also a InitialGuessBuilder, so you can use
+    this to nest initial guess builders.
+
+    C++ includes: composite_initial_guess.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.initial_guess.InitialGuess, InitialGuessBuilder]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -172,16 +264,70 @@ class CompositeInitialGuess(full_physics_swig.initial_guess.InitialGuess, Initia
     __repr__ = _swig_repr
 
     def build_initial_value(self, v, index):
+        """
+
+        virtual void FullPhysics::CompositeInitialGuess::build_initial_value(blitz::Array< double, 1 > &v, int index) const
+        Called when we need this class to do its part in setting up the
+        initial state vector.
+
+        Parameters:
+        -----------
+
+        v:  State vector that should be updated in place.
+
+        index:  Since we are often adding to the end of the state vector,
+        index is passed in. This is the sum of the number_elements() of all
+        the InitialGuessBuilder that appear before this object in the list. 
+        """
         return _composite_initial_guess.CompositeInitialGuess_build_initial_value(self, v, index)
 
+
     def build_apriori(self, v, index):
+        """
+
+        virtual void FullPhysics::CompositeInitialGuess::build_apriori(blitz::Array< double, 1 > &v, int index) const
+        Called when we need this class to do its part in setting up the
+        apriori state vector.
+
+        Parameters:
+        -----------
+
+        v:  State vector that should be updated in place.
+
+        index:  Since we are often adding to the end of the state vector,
+        index is passed in. This is the sum of the number_elements() of all
+        the InitialGuessBuilder that appear before this object in the list. 
+        """
         return _composite_initial_guess.CompositeInitialGuess_build_apriori(self, v, index)
 
+
     def build_apriori_covariance(self, m, index):
+        """
+
+        virtual void FullPhysics::CompositeInitialGuess::build_apriori_covariance(blitz::Array< double, 2 > &m, int index) const
+        Called when we need this class to do its part in setting up the
+        covariance matrix for the a priori state vector.
+
+        Parameters:
+        -----------
+
+        m:  State vector that should be updated in place.
+
+        index:  Since we are often adding to the end of the state vector,
+        index is passed in. This is the sum of the number_elements() of all
+        the InitialGuessBuilder that appear before this object in the list. 
+        """
         return _composite_initial_guess.CompositeInitialGuess_build_apriori_covariance(self, m, index)
 
+
     def _v_initial_guess(self):
+        """
+
+        virtual blitz::Array<double, 1> FullPhysics::CompositeInitialGuess::initial_guess() const
+
+        """
         return _composite_initial_guess.CompositeInitialGuess__v_initial_guess(self)
+
 
     @property
     def initial_guess(self):
@@ -189,10 +335,22 @@ class CompositeInitialGuess(full_physics_swig.initial_guess.InitialGuess, Initia
 
 
     def add_builder(self, B):
+        """
+
+        void FullPhysics::CompositeInitialGuess::add_builder(const boost::shared_ptr< InitialGuessBuilder > &B)
+        Add a builder to the build list. 
+        """
         return _composite_initial_guess.CompositeInitialGuess_add_builder(self, B)
 
+
     def remove_builder(self, B):
+        """
+
+        void FullPhysics::CompositeInitialGuess::remove_builder(const boost::shared_ptr< InitialGuessBuilder > &B)
+        Remove a builder to the build list. 
+        """
         return _composite_initial_guess.CompositeInitialGuess_remove_builder(self, B)
+
 
     def __init__(self):
         this = _composite_initial_guess.new_CompositeInitialGuess()

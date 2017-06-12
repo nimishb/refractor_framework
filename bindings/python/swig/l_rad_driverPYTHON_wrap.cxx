@@ -6493,22 +6493,98 @@ SWIGINTERN PyObject *LRadDriver_swigregister(PyObject *SWIGUNUSEDPARM(self), PyO
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"new_LRadDriver", _wrap_new_LRadDriver, METH_VARARGS, NULL},
-	 { (char *)"LRadDriver__v_number_stokes", _wrap_LRadDriver__v_number_stokes, METH_VARARGS, NULL},
-	 { (char *)"LRadDriver__v_number_stream", _wrap_LRadDriver__v_number_stream, METH_VARARGS, NULL},
-	 { (char *)"LRadDriver_z_matrix", _wrap_LRadDriver_z_matrix, METH_VARARGS, NULL},
-	 { (char *)"LRadDriver_setup_geometry", _wrap_LRadDriver_setup_geometry, METH_VARARGS, NULL},
-	 { (char *)"LRadDriver_setup_surface_params", _wrap_LRadDriver_setup_surface_params, METH_VARARGS, NULL},
-	 { (char *)"LRadDriver_setup_optical_inputs", _wrap_LRadDriver_setup_optical_inputs, METH_VARARGS, NULL},
-	 { (char *)"LRadDriver_clear_linear_inputs", _wrap_LRadDriver_clear_linear_inputs, METH_VARARGS, NULL},
-	 { (char *)"LRadDriver_setup_linear_inputs", _wrap_LRadDriver_setup_linear_inputs, METH_VARARGS, NULL},
-	 { (char *)"LRadDriver_calculate_first_order", _wrap_LRadDriver_calculate_first_order, METH_VARARGS, NULL},
-	 { (char *)"LRadDriver_calculate_second_order", _wrap_LRadDriver_calculate_second_order, METH_VARARGS, NULL},
-	 { (char *)"LRadDriver_stokes", _wrap_LRadDriver_stokes, METH_VARARGS, NULL},
-	 { (char *)"LRadDriver_atmospheric_jacobian", _wrap_LRadDriver_atmospheric_jacobian, METH_VARARGS, NULL},
-	 { (char *)"LRadDriver_surface_jacobian", _wrap_LRadDriver_surface_jacobian, METH_VARARGS, NULL},
-	 { (char *)"LRadDriver_print_desc", _wrap_LRadDriver_print_desc, METH_VARARGS, NULL},
-	 { (char *)"delete_LRadDriver", _wrap_delete_LRadDriver, METH_VARARGS, NULL},
+	 { (char *)"new_LRadDriver", _wrap_new_LRadDriver, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::LRadDriver::LRadDriver(int Number_stream, int Number_stokes, int surface_type, bool\n"
+		"Tms_Correction=false, bool Pure_nadir=false, const PsMode\n"
+		"ps_mode=DETECT)\n"
+		"\n"
+		""},
+	 { (char *)"LRadDriver__v_number_stokes", _wrap_LRadDriver__v_number_stokes, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual int FullPhysics::LRadDriver::number_stokes() const\n"
+		"\n"
+		""},
+	 { (char *)"LRadDriver__v_number_stream", _wrap_LRadDriver__v_number_stream, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual int FullPhysics::LRadDriver::number_stream() const\n"
+		"\n"
+		""},
+	 { (char *)"LRadDriver_z_matrix", _wrap_LRadDriver_z_matrix, METH_VARARGS, (char *)"\n"
+		"\n"
+		"ArrayAd<double, 2> FullPhysics::LRadDriver::z_matrix(const ArrayAd< double, 3 > &pf) const\n"
+		"\n"
+		""},
+	 { (char *)"LRadDriver_setup_geometry", _wrap_LRadDriver_setup_geometry, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::LRadDriver::setup_geometry(blitz::Array< double, 1 > alt, double sza, double zen, double azm)\n"
+		"const\n"
+		"Setup viewing geometry, should only be called once per instance or if\n"
+		"the viewing geometry changes. \n"
+		""},
+	 { (char *)"LRadDriver_setup_surface_params", _wrap_LRadDriver_setup_surface_params, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::LRadDriver::setup_surface_params(const blitz::Array< double, 1 > &surface_param)\n"
+		"Set up surface parameters for spectral point. \n"
+		""},
+	 { (char *)"LRadDriver_setup_optical_inputs", _wrap_LRadDriver_setup_optical_inputs, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::LRadDriver::setup_optical_inputs(const blitz::Array< double, 1 > &od, const blitz::Array< double, 1 >\n"
+		"&ssa, const blitz::Array< double, 3 > &pf, const blitz::Array< double,\n"
+		"2 > &zmat)\n"
+		"Set up optical depth, single scattering albedo and scattering matrix\n"
+		"Should be called per spectral point. \n"
+		""},
+	 { (char *)"LRadDriver_clear_linear_inputs", _wrap_LRadDriver_clear_linear_inputs, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::LRadDriver::clear_linear_inputs()\n"
+		"Mark that we are not retrieving weighting functions. \n"
+		""},
+	 { (char *)"LRadDriver_setup_linear_inputs", _wrap_LRadDriver_setup_linear_inputs, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::LRadDriver::setup_linear_inputs(const ArrayAd< double, 1 > &od, const ArrayAd< double, 1 > &ssa,\n"
+		"const ArrayAd< double, 3 > &pf, const ArrayAd< double, 2 > &zmat)\n"
+		"Set up linearization, weighting functions. \n"
+		""},
+	 { (char *)"LRadDriver_calculate_first_order", _wrap_LRadDriver_calculate_first_order, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::LRadDriver::calculate_first_order()\n"
+		"Perform radiative transfer calculation with the values setup by\n"
+		"setup_optical_inputs and setup_linear_inputs for the first order of\n"
+		"scattering. \n"
+		""},
+	 { (char *)"LRadDriver_calculate_second_order", _wrap_LRadDriver_calculate_second_order, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::LRadDriver::calculate_second_order()\n"
+		"Perform radiative transfer calculation with the values setup by\n"
+		"setup_optical_inputs and setup_linear_inputs for the second order of\n"
+		"scattering. \n"
+		""},
+	 { (char *)"LRadDriver_stokes", _wrap_LRadDriver_stokes, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual blitz::Array<double, 1> FullPhysics::LRadDriver::stokes() const\n"
+		"Retrieve the stokes values calculated. \n"
+		""},
+	 { (char *)"LRadDriver_atmospheric_jacobian", _wrap_LRadDriver_atmospheric_jacobian, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual blitz::Array<double, 3> FullPhysics::LRadDriver::atmospheric_jacobian() const\n"
+		"Atmospheric jacobian from last calculation. \n"
+		""},
+	 { (char *)"LRadDriver_surface_jacobian", _wrap_LRadDriver_surface_jacobian, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual blitz::Array<double, 2> FullPhysics::LRadDriver::surface_jacobian() const\n"
+		"Surface jacobian. \n"
+		""},
+	 { (char *)"LRadDriver_print_desc", _wrap_LRadDriver_print_desc, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::LRadDriver::print(std::ostream &Os, bool Short_form=false) const\n"
+		"\n"
+		""},
+	 { (char *)"delete_LRadDriver", _wrap_delete_LRadDriver, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::LRadDriver::~LRadDriver()\n"
+		"\n"
+		""},
 	 { (char *)"LRadDriver_swigregister", LRadDriver_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };

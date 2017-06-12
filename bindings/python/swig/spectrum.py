@@ -186,6 +186,22 @@ def _new_from_set(cls, version, *args):
 
 import full_physics_swig.generic_object
 class Spectrum(full_physics_swig.generic_object.GenericObject):
+    """
+
+    This is a full spectrum, which contains a SpectralRange and
+    SpectralDomain.
+
+    The SpectralRange has a value, possibly with associated Jacobian
+    and/or uncertainty, and units. The SpectralDomain has the
+    wavenumber/wavelength of the spectrum.
+
+    Note that there are a few closely related classes, with similar
+    sounding names. See spectrum_doxygen for a description of each of
+    these.
+
+    C++ includes: spectrum.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.generic_object.GenericObject]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -200,6 +216,11 @@ class Spectrum(full_physics_swig.generic_object.GenericObject):
         return _spectrum.Spectrum___str__(self)
 
     def __init__(self, Spec_domain, Spec_range):
+        """
+
+        FullPhysics::Spectrum::Spectrum()
+        Default constructor needed for SWIG. 
+        """
         this = _spectrum.new_Spectrum(Spec_domain, Spec_range)
         try:
             self.this.append(this)
@@ -207,7 +228,13 @@ class Spectrum(full_physics_swig.generic_object.GenericObject):
             self.this = this
 
     def _v_spectral_domain(self):
+        """
+
+        SpectralDomain& FullPhysics::Spectrum::spectral_domain()
+
+        """
         return _spectrum.Spectrum__v_spectral_domain(self)
+
 
     @property
     def spectral_domain(self):
@@ -215,7 +242,13 @@ class Spectrum(full_physics_swig.generic_object.GenericObject):
 
 
     def _v_spectral_range(self):
+        """
+
+        SpectralRange& FullPhysics::Spectrum::spectral_range()
+
+        """
         return _spectrum.Spectrum__v_spectral_range(self)
+
 
     @property
     def spectral_range(self):

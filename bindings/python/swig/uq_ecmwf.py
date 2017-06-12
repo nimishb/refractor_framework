@@ -123,6 +123,14 @@ def _new_from_set(cls, version, *args):
 import full_physics_swig.ecmwf
 import full_physics_swig.generic_object
 class UqEcmwf(full_physics_swig.ecmwf.Ecmwf):
+    """
+
+    This class implements the Uncertainty Quantification specific ECMWF
+    reading functionality.
+
+    C++ includes: uq_ecmwf.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.ecmwf.Ecmwf]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -136,6 +144,11 @@ class UqEcmwf(full_physics_swig.ecmwf.Ecmwf):
     __del__ = lambda self: None
 
     def __init__(self, Fname):
+        """
+
+        FullPhysics::UqEcmwf::UqEcmwf(const std::string &Fname)
+
+        """
         this = _uq_ecmwf.new_UqEcmwf(Fname)
         try:
             self.this.append(this)

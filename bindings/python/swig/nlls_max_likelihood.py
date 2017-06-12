@@ -129,6 +129,12 @@ import full_physics_swig.nlls_problem_state
 import full_physics_swig.model_measure
 import full_physics_swig.model_state
 class NLLSMaxLikelihood(full_physics_swig.nlls_problem.NLLSProblem, full_physics_swig.nlls_problem_state.NLLSProblemState):
+    """
+
+    C++ includes: nlls_max_likelihood.h
+
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.nlls_problem.NLLSProblem, full_physics_swig.nlls_problem_state.NLLSProblemState]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -140,6 +146,11 @@ class NLLSMaxLikelihood(full_physics_swig.nlls_problem.NLLSProblem, full_physics
     __repr__ = _swig_repr
 
     def __init__(self, ml, together=False):
+        """
+
+        FullPhysics::NLLSMaxLikelihood::NLLSMaxLikelihood(const boost::shared_ptr< MaxLikelihood > &ml, bool together=false)
+        Constructor. 
+        """
         this = _nlls_max_likelihood.new_NLLSMaxLikelihood(ml, together)
         try:
             self.this.append(this)
@@ -149,7 +160,15 @@ class NLLSMaxLikelihood(full_physics_swig.nlls_problem.NLLSProblem, full_physics
     __del__ = lambda self: None
 
     def _v_residual(self):
+        """
+
+        virtual blitz::Array<double, 1> FullPhysics::NLLSMaxLikelihood::residual()
+        Return the residual of the NLLS problem at the current set point.
+
+        Residual 
+        """
         return _nlls_max_likelihood.NLLSMaxLikelihood__v_residual(self)
+
 
     @property
     def residual(self):
@@ -157,7 +176,16 @@ class NLLSMaxLikelihood(full_physics_swig.nlls_problem.NLLSProblem, full_physics
 
 
     def _v_jacobian(self):
+        """
+
+        virtual blitz::Array<double, 2> FullPhysics::NLLSMaxLikelihood::jacobian()
+        Return the Jacobian of the residual of the NLLS problem at the current
+        set point.
+
+        The Jacobian of the cost function. 
+        """
         return _nlls_max_likelihood.NLLSMaxLikelihood__v_jacobian(self)
+
 
     @property
     def jacobian(self):
@@ -165,7 +193,13 @@ class NLLSMaxLikelihood(full_physics_swig.nlls_problem.NLLSProblem, full_physics
 
 
     def _v_residual_size(self):
+        """
+
+        virtual int FullPhysics::NLLSMaxLikelihood::residual_size() const
+        Return the size of the residual that will be returned by residual() 
+        """
         return _nlls_max_likelihood.NLLSMaxLikelihood__v_residual_size(self)
+
 
     @property
     def residual_size(self):
@@ -173,7 +207,13 @@ class NLLSMaxLikelihood(full_physics_swig.nlls_problem.NLLSProblem, full_physics
 
 
     def _v_expected_parameter_size(self):
+        """
+
+        virtual int FullPhysics::NLLSMaxLikelihood::expected_parameter_size() const
+        Return the size of the parameter X. 
+        """
         return _nlls_max_likelihood.NLLSMaxLikelihood__v_expected_parameter_size(self)
+
 
     @property
     def expected_parameter_size(self):
@@ -181,7 +221,18 @@ class NLLSMaxLikelihood(full_physics_swig.nlls_problem.NLLSProblem, full_physics
 
 
     def _v_parameters(self, *args):
+        """
+
+        virtual blitz::Array<double, 1> FullPhysics::NLLSMaxLikelihood::parameters() const
+        Just returns the current values of parameters.
+
+        This method is redefined here (see the root base class) because of a
+        compiler bug; otherwise, there should be no need for its redefinition.
+
+        Current parameter values 
+        """
         return _nlls_max_likelihood.NLLSMaxLikelihood__v_parameters(self, *args)
+
 
     @property
     def parameters(self):
@@ -193,7 +244,13 @@ class NLLSMaxLikelihood(full_physics_swig.nlls_problem.NLLSProblem, full_physics
 
 
     def _v_max_likelihood(self):
+        """
+
+        boost::shared_ptr<MaxLikelihood> FullPhysics::NLLSMaxLikelihood::max_likelihood()
+
+        """
         return _nlls_max_likelihood.NLLSMaxLikelihood__v_max_likelihood(self)
+
 
     @property
     def max_likelihood(self):

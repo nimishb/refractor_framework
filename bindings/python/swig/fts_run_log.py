@@ -122,6 +122,13 @@ def _new_from_set(cls, version, *args):
 
 import full_physics_swig.generic_object
 class FtsRunLogRecord(full_physics_swig.generic_object.GenericObject):
+    """
+
+    This is a single FTS run log record.
+
+    C++ includes: fts_run_log.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.generic_object.GenericObject]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -273,6 +280,11 @@ class FtsRunLogRecord(full_physics_swig.generic_object.GenericObject):
         spectrum_index = _swig_property(_fts_run_log.FtsRunLogRecord_spectrum_index_get, _fts_run_log.FtsRunLogRecord_spectrum_index_set)
 
     def __init__(self):
+        """
+
+        FullPhysics::FtsRunLogRecord::FtsRunLogRecord()
+        Initializes all the records to a sane default. 
+        """
         this = _fts_run_log.new_FtsRunLogRecord()
         try:
             self.this.append(this)
@@ -284,6 +296,24 @@ FtsRunLogRecord_swigregister = _fts_run_log.FtsRunLogRecord_swigregister
 FtsRunLogRecord_swigregister(FtsRunLogRecord)
 
 class FtsRunLog(full_physics_swig.generic_object.GenericObject):
+    """
+
+    This reads a FTS run log file.
+
+    This is just a simple text file, this class handles reading this data.
+
+    There are two different types of run logs, either space delimited or
+    tab delimited. We currently only support the space delimited (support
+    for tab delimited would really just require adding unit test data, it
+    isn't all that different from the space delimited).
+
+    There are also several formats for the space delimited files, which
+    vary depending on the size of the a line. We only read the latest
+    "New GDS-format", which has a line length of 300.
+
+    C++ includes: fts_run_log.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.generic_object.GenericObject]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -295,6 +325,12 @@ class FtsRunLog(full_physics_swig.generic_object.GenericObject):
     __repr__ = _swig_repr
 
     def __init__(self, *args):
+        """
+
+        FullPhysics::FtsRunLog::FtsRunLog(const HdfFile &Hfile, const std::string &Group_name, const
+        std::vector< std::string > &Band_names)
+
+        """
         this = _fts_run_log.new_FtsRunLog(*args)
         try:
             self.this.append(this)
@@ -302,7 +338,13 @@ class FtsRunLog(full_physics_swig.generic_object.GenericObject):
             self.this = this
 
     def read(self, spectrum_name):
+        """
+
+        const FtsRunLogRecord& FullPhysics::FtsRunLog::read(const std::string &spectrum_name) const
+
+        """
         return _fts_run_log.FtsRunLog_read(self, spectrum_name)
+
     __swig_destroy__ = _fts_run_log.delete_FtsRunLog
     __del__ = lambda self: None
 FtsRunLog_swigregister = _fts_run_log.FtsRunLog_swigregister

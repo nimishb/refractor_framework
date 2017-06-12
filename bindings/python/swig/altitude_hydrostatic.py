@@ -124,6 +124,17 @@ import full_physics_swig.altitude
 import full_physics_swig.generic_object
 import full_physics_swig.state_vector
 class AltitudeHydrostatic(full_physics_swig.altitude.Altitude):
+    """
+
+    This class handles the calculation of the altitude an gravity
+    constants, automatically updating with the surface pressure or
+    temperature profile is updated.
+
+    We do this by solving the hydrostatic equations.
+
+    C++ includes: altitude_hydrostatic.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.altitude.Altitude]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -135,6 +146,13 @@ class AltitudeHydrostatic(full_physics_swig.altitude.Altitude):
     __repr__ = _swig_repr
 
     def __init__(self, P, T, Latitude, Surface_height):
+        """
+
+        FullPhysics::AltitudeHydrostatic::AltitudeHydrostatic(const boost::shared_ptr< Pressure > &P, const boost::shared_ptr<
+        Temperature > &T, const DoubleWithUnit &Latitude, const DoubleWithUnit
+        &Surface_height, const int Num_sublayer=10)
+
+        """
         this = _altitude_hydrostatic.new_AltitudeHydrostatic(P, T, Latitude, Surface_height)
         try:
             self.this.append(this)
@@ -142,16 +160,44 @@ class AltitudeHydrostatic(full_physics_swig.altitude.Altitude):
             self.this = this
 
     def altitude(self, P):
+        """
+
+        virtual AutoDerivativeWithUnit<double> FullPhysics::AltitudeHydrostatic::altitude(const AutoDerivativeWithUnit< double > &P) const
+
+        """
         return _altitude_hydrostatic.AltitudeHydrostatic_altitude(self, P)
 
+
     def gravity(self, P):
+        """
+
+        virtual AutoDerivativeWithUnit<double> FullPhysics::AltitudeHydrostatic::gravity(const AutoDerivativeWithUnit< double > &P) const
+
+        """
         return _altitude_hydrostatic.AltitudeHydrostatic_gravity(self, P)
 
+
     def notify_update(self, *args):
+        """
+
+        virtual void FullPhysics::AltitudeHydrostatic::notify_update(const Temperature &T)
+        For performance, we cache some data as we calculate it.
+
+        This becomes stale when the temperature is changed, so we observe
+        temperature and mark the cache when it changes. 
+        """
         return _altitude_hydrostatic.AltitudeHydrostatic_notify_update(self, *args)
 
+
     def clone(self, *args):
+        """
+
+        virtual boost::shared_ptr<Altitude> FullPhysics::AltitudeHydrostatic::clone(const boost::shared_ptr< Pressure > &Press, const boost::shared_ptr<
+        Temperature > &Temp) const
+
+        """
         return _altitude_hydrostatic.AltitudeHydrostatic_clone(self, *args)
+
     __swig_destroy__ = _altitude_hydrostatic.delete_AltitudeHydrostatic
     __del__ = lambda self: None
 AltitudeHydrostatic_swigregister = _altitude_hydrostatic.AltitudeHydrostatic_swigregister

@@ -9284,11 +9284,49 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"SwigPyIterator___sub__", _wrap_SwigPyIterator___sub__, METH_VARARGS, NULL},
 	 { (char *)"SwigPyIterator_swigregister", SwigPyIterator_swigregister, METH_VARARGS, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"delete_GasAbsorption", _wrap_delete_GasAbsorption, METH_VARARGS, NULL},
+	 { (char *)"delete_GasAbsorption", _wrap_delete_GasAbsorption, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::GasAbsorption::~GasAbsorption()\n"
+		"\n"
+		""},
 	 { (char *)"GasAbsorption___str__", _wrap_GasAbsorption___str__, METH_VARARGS, NULL},
-	 { (char *)"GasAbsorption_have_data", _wrap_GasAbsorption_have_data, METH_VARARGS, NULL},
-	 { (char *)"GasAbsorption__v_broadener_name", _wrap_GasAbsorption__v_broadener_name, METH_VARARGS, NULL},
-	 { (char *)"GasAbsorption_absorption_cross_section", _wrap_GasAbsorption_absorption_cross_section, METH_VARARGS, NULL},
+	 { (char *)"GasAbsorption_have_data", _wrap_GasAbsorption_have_data, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual bool FullPhysics::GasAbsorption::have_data(double wn) const =0\n"
+		"Return true if we have data for the given wave number.\n"
+		"\n"
+		"A particular gas might not have absorption coefficients for all\n"
+		"spectral bands, e.g., ABSCO tables. \n"
+		""},
+	 { (char *)"GasAbsorption__v_broadener_name", _wrap_GasAbsorption__v_broadener_name, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual std::string FullPhysics::GasAbsorption::broadener_name() const =0\n"
+		"For some tables, we might have a broadener (e.g., \"h2o\").\n"
+		"\n"
+		"This returns the name of the broadener, if any. \n"
+		""},
+	 { (char *)"GasAbsorption_absorption_cross_section", _wrap_GasAbsorption_absorption_cross_section, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual AutoDerivativeWithUnit<double> FullPhysics::GasAbsorption::absorption_cross_section(double Wn, const DoubleWithUnit &Press, const AutoDerivativeWithUnit<\n"
+		"double > &Temp, const AutoDerivativeWithUnit< double > &Broadener_vmr)\n"
+		"const =0\n"
+		"This interpolates the ABSCO data to give absorption cross section for\n"
+		"a given pressure, temperature, and broadener VMR.\n"
+		"\n"
+		"Parameters:\n"
+		"-----------\n"
+		"\n"
+		"Wn:  wave number\n"
+		"\n"
+		"Press:  Pressure\n"
+		"\n"
+		"Temp:  Temperature\n"
+		"\n"
+		"Broadener_vmr:  Broadner VMR (e.g., H2O VMR). Not all tables will make\n"
+		"use of this information.\n"
+		"\n"
+		"Absorption cross section in cm^2 / molecule \n"
+		""},
 	 { (char *)"GasAbsorption_swigregister", GasAbsorption_swigregister, METH_VARARGS, NULL},
 	 { (char *)"vector_gas_absorption_iterator", _wrap_vector_gas_absorption_iterator, METH_VARARGS, NULL},
 	 { (char *)"vector_gas_absorption___nonzero__", _wrap_vector_gas_absorption___nonzero__, METH_VARARGS, NULL},

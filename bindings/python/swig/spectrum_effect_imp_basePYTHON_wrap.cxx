@@ -7255,14 +7255,37 @@ SWIGINTERN PyObject *SpectrumEffectImpBase_swigregister(PyObject *SWIGUNUSEDPARM
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"delete_SpectrumEffectImpBase", _wrap_delete_SpectrumEffectImpBase, METH_VARARGS, NULL},
-	 { (char *)"SpectrumEffectImpBase_clone", _wrap_SpectrumEffectImpBase_clone, METH_VARARGS, NULL},
+	 { (char *)"delete_SpectrumEffectImpBase", _wrap_delete_SpectrumEffectImpBase, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::SpectrumEffectImpBase::~SpectrumEffectImpBase()\n"
+		"\n"
+		""},
+	 { (char *)"SpectrumEffectImpBase_clone", _wrap_SpectrumEffectImpBase_clone, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual boost::shared_ptr<SpectrumEffect> FullPhysics::SpectrumEffectImpBase::clone() const =0\n"
+		"\n"
+		""},
 	 { (char *)"SpectrumEffectImpBase_apply_effect", _wrap_SpectrumEffectImpBase_apply_effect, METH_VARARGS, NULL},
 	 { (char *)"SpectrumEffectImpBase_add_observer", _wrap_SpectrumEffectImpBase_add_observer, METH_VARARGS, NULL},
 	 { (char *)"SpectrumEffectImpBase_remove_observer", _wrap_SpectrumEffectImpBase_remove_observer, METH_VARARGS, NULL},
 	 { (char *)"SpectrumEffectImpBase_update_sub_state_hook", _wrap_SpectrumEffectImpBase_update_sub_state_hook, METH_VARARGS, NULL},
-	 { (char *)"SpectrumEffectImpBase_print_desc", _wrap_SpectrumEffectImpBase_print_desc, METH_VARARGS, NULL},
-	 { (char *)"SpectrumEffectImpBase__v_desc", _wrap_SpectrumEffectImpBase__v_desc, METH_VARARGS, NULL},
+	 { (char *)"SpectrumEffectImpBase_print_desc", _wrap_SpectrumEffectImpBase_print_desc, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::SpectrumEffectImpBase::print(std::ostream &Os, bool Short_form=false) const\n"
+		"Print to stream.\n"
+		"\n"
+		"The default calls the function \"desc\" that returns a string. This\n"
+		"gives cleaner interface for deriving from this class in python, but\n"
+		"most C++ classes will want to override this function rather than using\n"
+		"desc. \n"
+		""},
+	 { (char *)"SpectrumEffectImpBase__v_desc", _wrap_SpectrumEffectImpBase__v_desc, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual std::string FullPhysics::SpectrumEffectImpBase::desc() const\n"
+		"Description of object, to be printed to stream.\n"
+		"\n"
+		"This gives a cleaner interface for deriving from python. \n"
+		""},
 	 { (char *)"SpectrumEffectImpBase_mark_used", _wrap_SpectrumEffectImpBase_mark_used, METH_VARARGS, NULL},
 	 { (char *)"SpectrumEffectImpBase_state_vector_name", _wrap_SpectrumEffectImpBase_state_vector_name, METH_VARARGS, NULL},
 	 { (char *)"SpectrumEffectImpBase_notify_update", _wrap_SpectrumEffectImpBase_notify_update, METH_VARARGS, NULL},

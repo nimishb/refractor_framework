@@ -123,6 +123,43 @@ def _new_from_set(cls, version, *args):
 import full_physics_swig.problem_state
 import full_physics_swig.generic_object
 class NLLSProblemState(full_physics_swig.problem_state.ProblemState):
+    """
+
+    The state for a NLLS problem with implemented residual function and
+    its Jacobian.
+
+    NLLSProblemState is used for the Non-Linear Least Squares problem that
+    its residual function and Jacobian are implemented. With this class
+    one can store the current point in the parameter space (the state),
+    the value of the residual vector function at that point, and the
+    Jacobian matrix function at the same point.
+
+    Design related question(s): Why is NLLSProblemState not derived from
+    CostFuncDiffState?
+
+    Why not first implement a problem state class that only adds residual
+    to the state and then derive this class (with residual and Jacobian)
+    from that class (similar to CostFuncState and CostFuncDiffState)?
+
+    Answers to the above question(s): Keep in mind that the purpose of the
+    classes in the class hierarchy rooted at ProblemState is to maintain
+    computationally expensive components of the cost function. If the
+    residual and the Jacobian of a NLLS problem are computed, then the
+    cost function and its gradient can be computed very fast. If f(x) and
+    J(x) are the residual and the Jacobian of the NLLS problem
+    respectively evaluated at x, then the cost function and its gradient
+    respectively are \\[ \\frac{1}{2}\\parallel f(x) \\parallel^2
+    \\] and \\[ J(x)^T f(x) \\]
+
+    If the Jacobian of a residual function is not available, then the only
+    methods that can solve the optimization problem use the cost function.
+    In other words, in this case the problem is solved in a form that is
+    presented by CostFunc class. For the problem in CostFunc form,
+    CostFuncState state class is sufficient.
+
+    C++ includes: nlls_problem_state.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.problem_state.ProblemState]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -139,10 +176,34 @@ class NLLSProblemState(full_physics_swig.problem_state.ProblemState):
     __del__ = lambda self: None
 
     def set(self, s):
+        """
+
+        virtual void FullPhysics::NLLSProblemState::set(const NLLSProblemState &s)
+        Makes self a copy of the input state.
+
+        This method makes the object, for which it is called, a copy of the
+        input state.
+
+        Parameters:
+        -----------
+
+        s:  another NLLSProblemState 
+        """
         return _nlls_problem_state.NLLSProblemState_set(self, s)
 
+
     def clear(self):
+        """
+
+        virtual void FullPhysics::NLLSProblemState::clear()
+        Deletes data contents.
+
+        This method deletes state. If needed, it must be reimplemented by
+        other classes derived from this class to delete other saved components
+        associated with the state as well. 
+        """
         return _nlls_problem_state.NLLSProblemState_clear(self)
+
 NLLSProblemState_swigregister = _nlls_problem_state.NLLSProblemState_swigregister
 NLLSProblemState_swigregister(NLLSProblemState)
 

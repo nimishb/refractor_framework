@@ -123,6 +123,71 @@ def _new_from_set(cls, version, *args):
 import full_physics_swig.solar_absorption_spectrum
 import full_physics_swig.generic_object
 class SolarAbsorptionOcoFile(full_physics_swig.solar_absorption_spectrum.SolarAbsorptionSpectrum):
+    """
+
+    This class calculates the solar absorption spectrum.
+
+    This particular implementation reads the OCO format absorption line
+    list file. This is a fixed record file format that gives the
+    absorption line list data.
+
+    From the Fortran code:
+
+    Calculates the solar optical thickness spectrum (SOT) at any
+    wavelengths.
+
+    Taking the exponential of SOT produces the solar spectrum as it would
+    be observed at infinite spectral resolution.
+
+    All solar lines are assumed to have a shape of the form
+
+    \\[SOT = s \\exp\\left(-\\frac{x^2}{\\sqrt{d^4+x^2
+    y^2}}\\right)\\] wheres is the line-center optical thickness
+    (dimensionless) x is the frequency from line center (cm-1) y is the
+    1/e folding width (cm-1) d is the Doppler width (cm-1)
+
+    In the doppler limit, i.e. $ d^2 \\gg x.y $ \\[SOT = s
+    \\exp\\left(-{\\frac{x}{d}}^2\\right)\\]
+
+    In the far line wing limit, i.e. $x y \\gg d^2$, \\[SOT = s
+    \\exp\\left(- \\left|\\frac{x}{y}\\right|\\right)\\]
+
+    So near the line center, the lineshape is Doppler, but in the line
+    wings it decays exponentially (if y>0).
+
+    This choice of lineshape has no physical basis. It just seems to give
+    a reasonable representation is nearly all cases. The only cases in
+    which this lineshape does not give an adequate representation of the
+    absorption are the extremely broad lines of light atmos such as H
+    (atomic hydrogen) or Mg. However, by representing the H absorptions as
+    superpositions of two lines, one narrow and the other broad, adequate
+    results were obtained.
+
+    Molecular absorptions (e.g. CO, OH, NH, CN) tend to have narrow,
+    Doppler lineshapes because they are confined to a relatively narrow
+    layer in the cooler, upper, part of the solar atmosphere. In the
+    hotter depths they are dissociated.
+
+    Atomic transitions, on the other hand, are formed over a much wider
+    range of solar altitudes, and hence temperatures. This gives rise to
+    line shapes whose wings decay in an approximately exponential manner
+    with the distance from line center. The line shape of equation (1)
+    does a reasonable job in both cases.
+
+    This subroutine also makes allowances for the effect of the finite FOV
+    of the observing instrument, which gives rise to:
+
+    broadening of the solar lines due to the linear variation of the
+    Doppler shift from solar rotation across the solar disk.
+
+    deepening of the solar lines due to limb darkening. It assumes that an
+    instrument which observes the entire solar disk will observe lines
+    which are, on average, twice the strength of an instrument just
+    observing the center of the disk.
+
+    C++ includes: solar_absorption_oco_file.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.solar_absorption_spectrum.SolarAbsorptionSpectrum]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -134,6 +199,12 @@ class SolarAbsorptionOcoFile(full_physics_swig.solar_absorption_spectrum.SolarAb
     __repr__ = _swig_repr
 
     def __init__(self, Hdf_static_input, Hdf_group, Fraction_solar_diameter):
+        """
+
+        FullPhysics::SolarAbsorptionOcoFile::SolarAbsorptionOcoFile(const HdfFile &Hdf_static_input, const std::string &Hdf_group, double
+        Fraction_solar_diameter=1.0)
+
+        """
         this = _solar_absorption_oco_file.new_SolarAbsorptionOcoFile(Hdf_static_input, Hdf_group, Fraction_solar_diameter)
         try:
             self.this.append(this)
@@ -141,10 +212,22 @@ class SolarAbsorptionOcoFile(full_physics_swig.solar_absorption_spectrum.SolarAb
             self.this = this
 
     def solar_absorption_spectrum(self, spec_domain):
+        """
+
+        virtual Spectrum FullPhysics::SolarAbsorptionOcoFile::solar_absorption_spectrum(const SpectralDomain &spec_domain) const
+
+        """
         return _solar_absorption_oco_file.SolarAbsorptionOcoFile_solar_absorption_spectrum(self, spec_domain)
 
+
     def _v_number_line(self):
+        """
+
+        int FullPhysics::SolarAbsorptionOcoFile::number_line() const
+        Number of lines in the solar line list file. 
+        """
         return _solar_absorption_oco_file.SolarAbsorptionOcoFile__v_number_line(self)
+
 
     @property
     def number_line(self):
@@ -152,7 +235,13 @@ class SolarAbsorptionOcoFile(full_physics_swig.solar_absorption_spectrum.SolarAb
 
 
     def _v_fraction_solar_diameter(self):
+        """
+
+        double FullPhysics::SolarAbsorptionOcoFile::fraction_solar_diameter() const
+        Fraction of solar diameter that we view. 
+        """
         return _solar_absorption_oco_file.SolarAbsorptionOcoFile__v_fraction_solar_diameter(self)
+
 
     @property
     def fraction_solar_diameter(self):

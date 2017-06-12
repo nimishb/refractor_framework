@@ -5298,9 +5298,21 @@ SWIGINTERN PyObject *SolarAbsorptionTable_swigregister(PyObject *SWIGUNUSEDPARM(
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"new_SolarAbsorptionTable", _wrap_new_SolarAbsorptionTable, METH_VARARGS, NULL},
-	 { (char *)"SolarAbsorptionTable_solar_absorption_spectrum", _wrap_SolarAbsorptionTable_solar_absorption_spectrum, METH_VARARGS, NULL},
-	 { (char *)"delete_SolarAbsorptionTable", _wrap_delete_SolarAbsorptionTable, METH_VARARGS, NULL},
+	 { (char *)"new_SolarAbsorptionTable", _wrap_new_SolarAbsorptionTable, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::SolarAbsorptionTable::SolarAbsorptionTable(const HdfFile &Hdf_static_input, const std::string &Hdf_group)\n"
+		"\n"
+		""},
+	 { (char *)"SolarAbsorptionTable_solar_absorption_spectrum", _wrap_SolarAbsorptionTable_solar_absorption_spectrum, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual Spectrum FullPhysics::SolarAbsorptionTable::solar_absorption_spectrum(const SpectralDomain &spec_domain) const\n"
+		"\n"
+		""},
+	 { (char *)"delete_SolarAbsorptionTable", _wrap_delete_SolarAbsorptionTable, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::SolarAbsorptionTable::~SolarAbsorptionTable()\n"
+		"\n"
+		""},
 	 { (char *)"SolarAbsorptionTable_swigregister", SolarAbsorptionTable_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };

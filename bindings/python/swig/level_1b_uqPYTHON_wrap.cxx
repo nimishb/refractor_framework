@@ -5336,8 +5336,17 @@ SWIGINTERN PyObject *Level1bUq_swigregister(PyObject *SWIGUNUSEDPARM(self), PyOb
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"new_Level1bUq", _wrap_new_Level1bUq, METH_VARARGS, NULL},
-	 { (char *)"Level1bUq_set_radiance", _wrap_Level1bUq_set_radiance, METH_VARARGS, NULL},
+	 { (char *)"new_Level1bUq", _wrap_new_Level1bUq, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::Level1bUq::Level1bUq(const boost::shared_ptr< HdfFile > &Hfile, const boost::shared_ptr<\n"
+		"HdfSoundingId > &Sounding_id)\n"
+		"\n"
+		""},
+	 { (char *)"Level1bUq_set_radiance", _wrap_Level1bUq_set_radiance, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::Level1bUq::set_radiance(int Spec_index, boost::shared_ptr< SpectralRange > &Rad)\n"
+		"\n"
+		""},
 	 { (char *)"delete_Level1bUq", _wrap_delete_Level1bUq, METH_VARARGS, NULL},
 	 { (char *)"Level1bUq_swigregister", Level1bUq_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }

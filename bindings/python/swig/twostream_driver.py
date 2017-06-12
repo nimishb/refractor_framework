@@ -122,6 +122,13 @@ def _new_from_set(cls, version, *args):
 
 import full_physics_swig.generic_object
 class TwostreamBrdfDriver(_object):
+    """
+
+    TwoStream specific BRDF driver implementation.
+
+    C++ includes: twostream_driver.h 
+    """
+
     __swig_setmethods__ = {}
     __setattr__ = lambda self, name, value: _swig_setattr(self, TwostreamBrdfDriver, name, value)
     __swig_getmethods__ = {}
@@ -129,6 +136,11 @@ class TwostreamBrdfDriver(_object):
     __repr__ = _swig_repr
 
     def __init__(self, surface_type):
+        """
+
+        FullPhysics::TwostreamBrdfDriver::TwostreamBrdfDriver(int surface_type)
+
+        """
         this = _twostream_driver.new_TwostreamBrdfDriver(surface_type)
         try:
             self.this.append(this)
@@ -138,10 +150,22 @@ class TwostreamBrdfDriver(_object):
     __del__ = lambda self: None
 
     def setup_geometry(self, sza, azm, zen):
+        """
+
+        virtual void FullPhysics::TwostreamBrdfDriver::setup_geometry(double sza, double azm, double zen) const
+
+        """
         return _twostream_driver.TwostreamBrdfDriver_setup_geometry(self, sza, azm, zen)
 
+
     def _v_n_brdf_kernels(self):
+        """
+
+        virtual int FullPhysics::TwostreamBrdfDriver::n_brdf_kernels() const
+
+        """
         return _twostream_driver.TwostreamBrdfDriver__v_n_brdf_kernels(self)
+
 
     @property
     def n_brdf_kernels(self):
@@ -149,7 +173,13 @@ class TwostreamBrdfDriver(_object):
 
 
     def _v_n_kernel_factor_wfs(self):
+        """
+
+        virtual int FullPhysics::TwostreamBrdfDriver::n_kernel_factor_wfs() const
+
+        """
         return _twostream_driver.TwostreamBrdfDriver__v_n_kernel_factor_wfs(self)
+
 
     @property
     def n_kernel_factor_wfs(self):
@@ -157,7 +187,13 @@ class TwostreamBrdfDriver(_object):
 
 
     def _v_n_kernel_params_wfs(self):
+        """
+
+        virtual int FullPhysics::TwostreamBrdfDriver::n_kernel_params_wfs() const
+
+        """
         return _twostream_driver.TwostreamBrdfDriver__v_n_kernel_params_wfs(self)
+
 
     @property
     def n_kernel_params_wfs(self):
@@ -165,7 +201,13 @@ class TwostreamBrdfDriver(_object):
 
 
     def _v_n_surface_wfs(self):
+        """
+
+        virtual int FullPhysics::TwostreamBrdfDriver::n_surface_wfs() const
+
+        """
         return _twostream_driver.TwostreamBrdfDriver__v_n_surface_wfs(self)
+
 
     @property
     def n_surface_wfs(self):
@@ -173,7 +215,13 @@ class TwostreamBrdfDriver(_object):
 
 
     def _v_do_shadow_effect(self):
+        """
+
+        virtual bool FullPhysics::TwostreamBrdfDriver::do_shadow_effect() const
+
+        """
         return _twostream_driver.TwostreamBrdfDriver__v_do_shadow_effect(self)
+
 
     @property
     def do_shadow_effect(self):
@@ -181,7 +229,13 @@ class TwostreamBrdfDriver(_object):
 
 
     def _v_brdf_interface(self):
+        """
+
+        boost::shared_ptr<Twostream_Ls_Brdf_Supplement> FullPhysics::TwostreamBrdfDriver::brdf_interface() const
+
+        """
         return _twostream_driver.TwostreamBrdfDriver__v_brdf_interface(self)
+
 
     @property
     def brdf_interface(self):
@@ -189,11 +243,24 @@ class TwostreamBrdfDriver(_object):
 
 
     def do_kparams_derivs(self, kernel_index):
+        """
+
+        virtual bool FullPhysics::TwostreamBrdfDriver::do_kparams_derivs(const int kernel_index) const
+
+        """
         return _twostream_driver.TwostreamBrdfDriver_do_kparams_derivs(self, kernel_index)
+
 TwostreamBrdfDriver_swigregister = _twostream_driver.TwostreamBrdfDriver_swigregister
 TwostreamBrdfDriver_swigregister(TwostreamBrdfDriver)
 
 class TwostreamRtDriver(_object):
+    """
+
+    TwoStream specific Radiative transfer driver implementation.
+
+    C++ includes: twostream_driver.h 
+    """
+
     __swig_setmethods__ = {}
     __setattr__ = lambda self, name, value: _swig_setattr(self, TwostreamRtDriver, name, value)
     __swig_getmethods__ = {}
@@ -201,6 +268,12 @@ class TwostreamRtDriver(_object):
     __repr__ = _swig_repr
 
     def __init__(self, nlayers, npars, surface_type, do_fullquadrature=True):
+        """
+
+        FullPhysics::TwostreamRtDriver::TwostreamRtDriver(int nlayers, int npars, int surface_type, bool
+        do_fullquadrature=true, bool pure_nadir=false)
+
+        """
         this = _twostream_driver.new_TwostreamRtDriver(nlayers, npars, surface_type, do_fullquadrature)
         try:
             self.this.append(this)
@@ -208,31 +281,88 @@ class TwostreamRtDriver(_object):
             self.this = this
 
     def setup_height_grid(self, height_grid):
+        """
+
+        void FullPhysics::TwostreamRtDriver::setup_height_grid(const blitz::Array< double, 1 > &height_grid) const
+
+        """
         return _twostream_driver.TwostreamRtDriver_setup_height_grid(self, height_grid)
 
+
     def setup_geometry(self, sza, azm, zen):
+        """
+
+        void FullPhysics::TwostreamRtDriver::setup_geometry(double sza, double azm, double zen) const
+
+        """
         return _twostream_driver.TwostreamRtDriver_setup_geometry(self, sza, azm, zen)
 
+
     def setup_optical_inputs(self, od, ssa, pf):
+        """
+
+        void FullPhysics::TwostreamRtDriver::setup_optical_inputs(const blitz::Array< double, 1 > &od, const blitz::Array< double, 1 >
+        &ssa, const blitz::Array< double, 2 > &pf) const
+
+        """
         return _twostream_driver.TwostreamRtDriver_setup_optical_inputs(self, od, ssa, pf)
 
+
     def clear_linear_inputs(self):
+        """
+
+        void FullPhysics::TwostreamRtDriver::clear_linear_inputs() const
+
+        """
         return _twostream_driver.TwostreamRtDriver_clear_linear_inputs(self)
 
+
     def setup_linear_inputs(self, od, ssa, pf, do_surface_linearization):
+        """
+
+        void FullPhysics::TwostreamRtDriver::setup_linear_inputs(const ArrayAd< double, 1 > &od, const ArrayAd< double, 1 > &ssa,
+        const ArrayAd< double, 2 > &pf, bool do_surface_linearization) const
+
+        """
         return _twostream_driver.TwostreamRtDriver_setup_linear_inputs(self, od, ssa, pf, do_surface_linearization)
 
+
     def calculate_rt(self):
+        """
+
+        void FullPhysics::TwostreamRtDriver::calculate_rt() const
+
+        """
         return _twostream_driver.TwostreamRtDriver_calculate_rt(self)
 
+
     def get_intensity(self):
+        """
+
+        double FullPhysics::TwostreamRtDriver::get_intensity() const
+
+        """
         return _twostream_driver.TwostreamRtDriver_get_intensity(self)
 
+
     def copy_jacobians(self, jac_atm, jac_surf):
+        """
+
+        void FullPhysics::TwostreamRtDriver::copy_jacobians(blitz::Array< double, 2 > &jac_atm, blitz::Array< double, 1 >
+        &jac_surf) const
+
+        """
         return _twostream_driver.TwostreamRtDriver_copy_jacobians(self, jac_atm, jac_surf)
 
+
     def _v_twostream_brdf_driver(self):
+        """
+
+        boost::shared_ptr<TwostreamBrdfDriver> FullPhysics::TwostreamRtDriver::twostream_brdf_driver() const
+
+        """
         return _twostream_driver.TwostreamRtDriver__v_twostream_brdf_driver(self)
+
 
     @property
     def twostream_brdf_driver(self):
@@ -240,7 +370,13 @@ class TwostreamRtDriver(_object):
 
 
     def _v_brdf_interface(self):
+        """
+
+        boost::shared_ptr<Twostream_Ls_Brdf_Supplement> FullPhysics::TwostreamRtDriver::brdf_interface() const
+
+        """
         return _twostream_driver.TwostreamRtDriver__v_brdf_interface(self)
+
 
     @property
     def brdf_interface(self):
@@ -248,7 +384,13 @@ class TwostreamRtDriver(_object):
 
 
     def _v_twostream_interface(self):
+        """
+
+        boost::shared_ptr<Twostream_L_Master> FullPhysics::TwostreamRtDriver::twostream_interface() const
+
+        """
         return _twostream_driver.TwostreamRtDriver__v_twostream_interface(self)
+
 
     @property
     def twostream_interface(self):
@@ -256,7 +398,13 @@ class TwostreamRtDriver(_object):
 
 
     def _v_do_full_quadrature(self):
+        """
+
+        bool FullPhysics::TwostreamRtDriver::do_full_quadrature() const
+
+        """
         return _twostream_driver.TwostreamRtDriver__v_do_full_quadrature(self)
+
 
     @property
     def do_full_quadrature(self):
@@ -264,7 +412,13 @@ class TwostreamRtDriver(_object):
 
 
     def _v_pure_nadir(self):
+        """
+
+        bool FullPhysics::TwostreamRtDriver::pure_nadir() const
+
+        """
         return _twostream_driver.TwostreamRtDriver__v_pure_nadir(self)
+
 
     @property
     def pure_nadir(self):

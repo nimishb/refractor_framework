@@ -5749,13 +5749,75 @@ SWIGINTERN PyObject *RadiativeTransfer_swigregister(PyObject *SWIGUNUSEDPARM(sel
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"delete_RadiativeTransfer", _wrap_delete_RadiativeTransfer, METH_VARARGS, NULL},
+	 { (char *)"delete_RadiativeTransfer", _wrap_delete_RadiativeTransfer, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::RadiativeTransfer::~RadiativeTransfer()\n"
+		"\n"
+		""},
 	 { (char *)"RadiativeTransfer___str__", _wrap_RadiativeTransfer___str__, METH_VARARGS, NULL},
-	 { (char *)"RadiativeTransfer__v_number_stokes", _wrap_RadiativeTransfer__v_number_stokes, METH_VARARGS, NULL},
-	 { (char *)"RadiativeTransfer__v_number_spectrometer", _wrap_RadiativeTransfer__v_number_spectrometer, METH_VARARGS, NULL},
-	 { (char *)"RadiativeTransfer_reflectance", _wrap_RadiativeTransfer_reflectance, METH_VARARGS, NULL},
-	 { (char *)"RadiativeTransfer_stokes", _wrap_RadiativeTransfer_stokes, METH_VARARGS, NULL},
-	 { (char *)"RadiativeTransfer_stokes_and_jacobian", _wrap_RadiativeTransfer_stokes_and_jacobian, METH_VARARGS, NULL},
+	 { (char *)"RadiativeTransfer__v_number_stokes", _wrap_RadiativeTransfer__v_number_stokes, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual int FullPhysics::RadiativeTransfer::number_stokes() const =0\n"
+		"Number of stokes parameters we will return in stokes and\n"
+		"stokes_and_jacobian. \n"
+		""},
+	 { (char *)"RadiativeTransfer__v_number_spectrometer", _wrap_RadiativeTransfer__v_number_spectrometer, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual int FullPhysics::RadiativeTransfer::number_spectrometer() const =0\n"
+		"Number of spectrometer we have. \n"
+		""},
+	 { (char *)"RadiativeTransfer_reflectance", _wrap_RadiativeTransfer_reflectance, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual Spectrum FullPhysics::RadiativeTransfer::reflectance(const SpectralDomain &Spec_domain, int Spec_index, bool\n"
+		"Skip_jacobian=false) const =0\n"
+		"Calculate reflectance for the given set of wavenumbers/wavelengths.\n"
+		"\n"
+		"Parameters:\n"
+		"-----------\n"
+		"\n"
+		"Spec_domain:  List of wavenumber/wavelength to calculate for.\n"
+		"\n"
+		"Spec_index:  The Spectral index\n"
+		"\n"
+		"Skip_jacobian:  If true, don't do the Jacobian calculation. Often this\n"
+		"is significantly faster to calculate.\n"
+		"\n"
+		"The set of reflectance values. \n"
+		""},
+	 { (char *)"RadiativeTransfer_stokes", _wrap_RadiativeTransfer_stokes, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual blitz::Array<double, 2> FullPhysics::RadiativeTransfer::stokes(const SpectralDomain &Spec_domain, int Spec_index) const =0\n"
+		"Calculate stokes vector for the given set of wavenumbers/wavelengths.\n"
+		"\n"
+		"Parameters:\n"
+		"-----------\n"
+		"\n"
+		"Spec_domain:  List of wavenumber/wavelength to calculate for.\n"
+		"\n"
+		"Spec_index:  The Spectral index\n"
+		"\n"
+		"The set of stokes coefficients. This is Spec_domain.data().rows() x\n"
+		"number_stokes() in size. \n"
+		""},
+	 { (char *)"RadiativeTransfer_stokes_and_jacobian", _wrap_RadiativeTransfer_stokes_and_jacobian, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual ArrayAd<double, 2> FullPhysics::RadiativeTransfer::stokes_and_jacobian(const SpectralDomain &Spec_domain, int Spec_index) const =0\n"
+		"Calculate stokes vector for the given set of wavenumbers/wavelengths.\n"
+		"\n"
+		"This also calculates the Jacobian of the stokes with respect to the\n"
+		"state vector elements.\n"
+		"\n"
+		"Parameters:\n"
+		"-----------\n"
+		"\n"
+		"Spec_domain:  List of wavenumber/wavelength to calculate for.\n"
+		"\n"
+		"Spec_index:  The Spectral index\n"
+		"\n"
+		"The set of stokes coefficients, along with derivatives with respect to\n"
+		"the state vector elements. This is Spec_domain.data().rows() x\n"
+		"number_stokes() in size. \n"
+		""},
 	 { (char *)"RadiativeTransfer_swigregister", RadiativeTransfer_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };

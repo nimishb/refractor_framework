@@ -126,6 +126,20 @@ import full_physics_swig.generic_object
 import full_physics_swig.state_vector
 import full_physics_swig.sub_state_vector_array
 class RadiativeTransferImpBase(full_physics_swig.radiative_transfer_retrievable.SubStateVectorArrayRadiativeTransfer):
+    """
+
+    As a design principle, we have each base class with the absolutely
+    minimum interface needed for use from the rest of the system.
+
+    This allows us to support any future code that supports this minimum
+    interface.
+
+    However, almost always you will want to derive from this class
+    instead. See PressureImpBase for a more complete discussion of this.
+
+    C++ includes: radiative_transfer_imp_base.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.radiative_transfer_retrievable.SubStateVectorArrayRadiativeTransfer]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -139,7 +153,13 @@ class RadiativeTransferImpBase(full_physics_swig.radiative_transfer_retrievable.
     __del__ = lambda self: None
 
     def clone(self):
+        """
+
+        virtual boost::shared_ptr<RadiativeTransferRetrievable> FullPhysics::RadiativeTransferImpBase::clone() const =0
+
+        """
         return _radiative_transfer_imp_base.RadiativeTransferImpBase_clone(self)
+
 
     def _v_number_stokes(self):
         return _radiative_transfer_imp_base.RadiativeTransferImpBase__v_number_stokes(self)
@@ -158,7 +178,19 @@ class RadiativeTransferImpBase(full_physics_swig.radiative_transfer_retrievable.
 
 
     def reflectance(self, Spec_domain, Spec_index, Skip_jacobian=False):
+        """
+
+        virtual boost::shared_ptr<Spectrum> FullPhysics::RadiativeTransferImpBase::reflectance_ptr(const SpectralDomain &Spec_domain, int Spec_index, bool
+        Skip_jacobian=false) const =0
+        For the sake of being able to return a Spectrum class from Python The
+        reflectance_ptr method here serves the purpose that the radiance
+        method normally would.
+
+        The reflectance method in this implementation simply calls the
+        reflectance_ptr method for doing the actual work. 
+        """
         return _radiative_transfer_imp_base.RadiativeTransferImpBase_reflectance(self, Spec_domain, Spec_index, Skip_jacobian)
+
 
     def stokes(self, Spec_domain, Spec_index):
         return _radiative_transfer_imp_base.RadiativeTransferImpBase_stokes(self, Spec_domain, Spec_index)
@@ -176,10 +208,29 @@ class RadiativeTransferImpBase(full_physics_swig.radiative_transfer_retrievable.
         return _radiative_transfer_imp_base.RadiativeTransferImpBase_update_sub_state_hook(self)
 
     def print_desc(self, Os):
+        """
+
+        virtual void FullPhysics::RadiativeTransferImpBase::print(std::ostream &Os, bool Short_form=false) const
+        Print to stream.
+
+        The default calls the function "desc" that returns a string. This
+        gives cleaner interface for deriving from this class in python, but
+        most C++ classes will want to override this function rather than using
+        desc. 
+        """
         return _radiative_transfer_imp_base.RadiativeTransferImpBase_print_desc(self, Os)
 
+
     def _v_desc(self):
+        """
+
+        virtual std::string FullPhysics::RadiativeTransferImpBase::desc() const
+        Description of object, to be printed to stream.
+
+        This gives a cleaner interface for deriving from python. 
+        """
         return _radiative_transfer_imp_base.RadiativeTransferImpBase__v_desc(self)
+
 
     @property
     def desc(self):

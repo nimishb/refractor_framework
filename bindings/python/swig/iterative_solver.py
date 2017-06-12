@@ -122,6 +122,34 @@ def _new_from_set(cls, version, *args):
 
 import full_physics_swig.generic_object
 class IterativeSolver(full_physics_swig.generic_object.GenericObject):
+    """
+
+    The base class for all iterative optimizers.
+
+    This class is the base class for iterative optimizers. No derivatives
+    of any order appear in the class implementation because not all
+    optimization problem solvers require derivatives.
+
+    An iterative solver, during the process of minimizing a cost function,
+    moves from one point to the next in the parameter space. After
+    computing a step, some optimization algorithms use some criteria to
+    decide whether or not to take the step and to move to the next point.
+    In the context of the class hierarchy rooted at this class, a step
+    that is taken is called an accepted step, and a step that is not taken
+    is called a rejected step. All the classes of the hierarchy that
+    implement the solve() method must correctly record all the points and
+    their associated cost function values after taking accepted steps
+    only. The initial starting point and its cost value must also be
+    recorded.
+
+    This class is not associated with any problem (from the problem class
+    hierarchy). Problems may appear in different formats (even if
+    equivalent): residual/Jacobian, cost-function/gradient, cost-function
+    only ...
+
+    C++ includes: iterative_solver.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.generic_object.GenericObject]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -142,7 +170,15 @@ class IterativeSolver(full_physics_swig.generic_object.GenericObject):
     __del__ = lambda self: None
 
     def _v_num_accepted_steps(self):
+        """
+
+        virtual int FullPhysics::IterativeSolver::num_accepted_steps() const
+        Returns the number of the accepted steps.
+
+        Number of the accepted steps 
+        """
         return _iterative_solver.IterativeSolver__v_num_accepted_steps(self)
+
 
     @property
     def num_accepted_steps(self):
@@ -150,7 +186,44 @@ class IterativeSolver(full_physics_swig.generic_object.GenericObject):
 
 
     def _v_accepted_points(self):
+        """
+
+        virtual std::vector< blitz::Array<double, 1> > FullPhysics::IterativeSolver::accepted_points() const
+        Returns a vector (std) of accepted points.
+
+        This method returns a std vector of accepted points in the parameter
+        space. The initial starting point is always an accepted point. Then
+        the second accepted point is the point obtained after taking the first
+        accepted step from the initial (first) point. The third accepted point
+        is the point obtained after taking the second accepted step from the
+        second accepted point and so on.
+
+        In other words, if the initial point and all the accepted points after
+        taking the accepted steps are recorded correctly, then
+        accepted_points()[0] is the initial starting point,
+
+        accepted_points()[1] is the point obtained after taking the first
+        accepted step from the initial point,
+
+        accepted_points()[2] is the point obtained after taking the second
+        accepted step from accepted_points()[1] point,
+
+        ...
+
+        accepted_points()[ num_accepted_steps()] is the last accepted point
+        obtained after the last accepted step.
+
+        Therefore, if the recording of the accepted points is done correctly,
+        and num_accepted_steps() returns 2, then  accepted_points()[1] -
+        accepted_points()[0] is the first accepted step, and
+
+        accepted_points()[2] - accepted_points()[1] is the second accepted
+        step
+
+        A vector of accepted points 
+        """
         return _iterative_solver.IterativeSolver__v_accepted_points(self)
+
 
     @property
     def accepted_points(self):
@@ -158,7 +231,29 @@ class IterativeSolver(full_physics_swig.generic_object.GenericObject):
 
 
     def _v_cost_at_accepted_points(self):
+        """
+
+        virtual std::vector<double> FullPhysics::IterativeSolver::cost_at_accepted_points() const
+        Returns a vector (std) of cost function values at accepted points.
+
+        This method returns a std vector of cost function values computed at
+        the accepted points. In other words, if the accepted points and the
+        cost function values at these points are recorded correctly, then
+        cost_at_accepted_points()[0] is the value of the cost function at
+        accepted_points()[0]
+
+        cost_at_accepted_points()[1] is the value of the cost function at
+        accepted_points()[1]
+
+        ...
+
+        and finally cost_at_accepted_points()[ num_accepted_steps()] is the
+        value of the cost function at accepted_points()[ num_accepted_steps()]
+
+        A vector of cost function values at accepted points 
+        """
         return _iterative_solver.IterativeSolver__v_cost_at_accepted_points(self)
+
 
     @property
     def cost_at_accepted_points(self):
@@ -166,10 +261,39 @@ class IterativeSolver(full_physics_swig.generic_object.GenericObject):
 
 
     def solve(self):
+        """
+
+        virtual void FullPhysics::IterativeSolver::solve()=0
+        The method that solves the optimization problem.
+
+        The algorithms that solve the optimization problem are implemented in
+        this method by the leaf classes of the solver class hierarchy. 
+        """
         return _iterative_solver.IterativeSolver_solve(self)
 
+
     def _v_status(self):
+        """
+
+        virtual status_t FullPhysics::IterativeSolver::status() const
+        Returns a value of IterativeSolver::status_t type.
+
+        This method returns the status of the solver. The status of the solver
+        is initialized to IterativeSolver::UNTRIED, then it must be set to one
+        of the following values by the implemented version of solve() method:
+        IterativeSolver::SUCCESS
+
+        IterativeSolver::CONTINUE
+
+        IterativeSolver::ERROR
+
+        Please, read the comments on IterativeSolver::status_t type and its
+        possible values.
+
+        Solver status 
+        """
         return _iterative_solver.IterativeSolver__v_status(self)
+
 
     @property
     def status(self):
@@ -177,7 +301,33 @@ class IterativeSolver(full_physics_swig.generic_object.GenericObject):
 
 
     def _v_status_str(self):
+        """
+
+        virtual const char* const FullPhysics::IterativeSolver::status_str() const
+        Returns the string version of the solver status.
+
+        If the method status() returns  IterativeSolver::UNTRIED,
+
+        IterativeSolver::SUCCESS,
+
+        IterativeSolver::CONTINUE, or
+
+        IterativeSolver::ERROR
+
+        then status_str() will return "UNTRIED",
+
+        "SUCCESS",
+
+        "CONTINUE", or
+
+        "ERROR"
+
+        respectively.
+
+        Solver status in string form 
+        """
         return _iterative_solver.IterativeSolver__v_status_str(self)
+
 
     @property
     def status_str(self):
@@ -185,10 +335,44 @@ class IterativeSolver(full_physics_swig.generic_object.GenericObject):
 
 
     def record_accepted_point(self, point):
+        """
+
+        void FullPhysics::IterativeSolver::record_accepted_point(const blitz::Array< double, 1 > &point)
+        Called to record an accepted point.
+
+        This method is called to record an accepted point. It is the
+        responsibility of the implementer of the solve() method to record the
+        accepted points. The accepted points must be recorded in the same
+        order that they are achieved.
+
+        Parameters:
+        -----------
+
+        point:  an accepted point in the parameter space 
+        """
         return _iterative_solver.IterativeSolver_record_accepted_point(self, point)
 
+
     def record_cost_at_accepted_point(self, cost):
+        """
+
+        void FullPhysics::IterativeSolver::record_cost_at_accepted_point(double cost)
+        Called to record the cost function value at an accepted point.
+
+        This method is called to record the cost function value at an accepted
+        point. It is the responsibility of the implementer of the solve()
+        method to record the cost function values at the accepted points. The
+        cost values must be recorded in the same order that they are
+        evaluated.
+
+        Parameters:
+        -----------
+
+        cost:  cost funciotn value at an accepted point in the parameter space
+
+        """
         return _iterative_solver.IterativeSolver_record_cost_at_accepted_point(self, cost)
+
 
     def __str__(self):
         return _iterative_solver.IterativeSolver___str__(self)

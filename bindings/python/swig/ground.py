@@ -182,6 +182,24 @@ ObserverGround_swigregister = _ground.ObserverGround_swigregister
 ObserverGround_swigregister(ObserverGround)
 
 class Ground(ObservableGround):
+    """
+
+    This class maintains the ground portion of the state.
+
+    Other objects may depend on the ground, and should be updated when the
+    ground is updated. To facilitate that, this class in an Oberverable,
+    and objects can add themselves as Observers to be notified when the
+    ground is updated.
+
+    This class is unfortunately a bit hard coded. The surface types are
+    one of a set of enumerations. The surface parameters depend on exactly
+    what the surface type is. These types and parameters map to types and
+    parameters found in the LIDORT and LRAD code, so the hard coding is
+    intrinsic.
+
+    C++ includes: ground.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [ObservableGround]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -198,19 +216,53 @@ class Ground(ObservableGround):
     __del__ = lambda self: None
 
     def add_observer(self, Obs):
+        """
+
+        virtual void FullPhysics::Ground::add_observer(Observer< Ground > &Obs)
+
+        """
         return _ground.Ground_add_observer(self, Obs)
 
+
     def remove_observer(self, Obs):
+        """
+
+        virtual void FullPhysics::Ground::remove_observer(Observer< Ground > &Obs)
+
+        """
         return _ground.Ground_remove_observer(self, Obs)
+
 
     def __str__(self):
         return _ground.Ground___str__(self)
 
     def surface_parameter(self, wn, spec_index):
+        """
+
+        virtual ArrayAd<double, 1> FullPhysics::Ground::surface_parameter(const double wn, const int spec_index) const =0
+        Surface parmeters.
+
+        What exactly these parameters mean is determined by the surface type,
+        see the discussion in the comments before the Ground class. 
+        """
         return _ground.Ground_surface_parameter(self, wn, spec_index)
 
+
     def clone(self):
+        """
+
+        virtual boost::shared_ptr<Ground> FullPhysics::Ground::clone() const =0
+        Clone a Ground object.
+
+        Note that the cloned version will not be attached to a StateVector,
+        although you can of course attach them after receiving the cloned
+        object.
+
+        Because this isn't attached to the StateVector, one use of the clone
+        operator is to create a "frozen" Ground object. 
+        """
         return _ground.Ground_clone(self)
+
 
     def print_desc(self, Os):
         return _ground.Ground_print_desc(self, Os)

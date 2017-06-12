@@ -122,6 +122,30 @@ def _new_from_set(cls, version, *args):
 
 import full_physics_swig.generic_object
 class ReferenceVmrApriori(full_physics_swig.generic_object.GenericObject):
+    """
+
+    Creates a VMR profile for a gas using a set of dated reference VMRs
+    with a known latitude.
+
+    These VMRs are then modified as so: Resampled to effective altitudes
+
+    Latitude gradient applied
+
+    Secular trends applied
+
+    Season cycle applied
+
+    This class is based on the TCCON 2014 release of gsetup. As per those
+    techniques, values are interpolated based on altitudes.
+
+    NOTE: Inputs are expected to be in increasing altitude decreasing
+    pressure order.
+
+    Make sure gas names are capatilized.
+
+    C++ includes: reference_vmr_apriori.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.generic_object.GenericObject]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -133,6 +157,16 @@ class ReferenceVmrApriori(full_physics_swig.generic_object.GenericObject):
     __repr__ = _swig_repr
 
     def __init__(self, Model_pressure, Model_altitude, Model_temperature, Ref_altitude, Ref_latitude, Ref_time, Ref_tropopause_altitude, Obs_latitude, Obs_time):
+        """
+
+        FullPhysics::ReferenceVmrApriori::ReferenceVmrApriori(const blitz::Array< double, 1 > &Model_pressure, const blitz::Array<
+        double, 1 > &Model_altitude, const blitz::Array< double, 1 >
+        &Model_temperature, const blitz::Array< double, 1 > &Ref_altitude,
+        const double Ref_latitude, const Time &Ref_time, const double
+        Ref_tropopause_altitude, const double Obs_latitude, const Time
+        &Obs_time)
+
+        """
         this = _reference_vmr_apriori.new_ReferenceVmrApriori(Model_pressure, Model_altitude, Model_temperature, Ref_altitude, Ref_latitude, Ref_time, Ref_tropopause_altitude, Obs_latitude, Obs_time)
         try:
             self.this.append(this)
@@ -140,28 +174,80 @@ class ReferenceVmrApriori(full_physics_swig.generic_object.GenericObject):
             self.this = this
 
     def model_tropopause_altitude(self):
+        """
+
+        double FullPhysics::ReferenceVmrApriori::model_tropopause_altitude() const
+
+        """
         return _reference_vmr_apriori.ReferenceVmrApriori_model_tropopause_altitude(self)
 
+
     def effective_altitude(self):
+        """
+
+        const blitz::Array<double, 1> FullPhysics::ReferenceVmrApriori::effective_altitude() const
+
+        """
         return _reference_vmr_apriori.ReferenceVmrApriori_effective_altitude(self)
 
+
     def age_of_air(self, altitude):
+        """
+
+        const double FullPhysics::ReferenceVmrApriori::age_of_air(const double altitude) const
+
+        """
         return _reference_vmr_apriori.ReferenceVmrApriori_age_of_air(self, altitude)
 
+
     def resample_to_model_grid(self, vmr):
+        """
+
+        const blitz::Array<double, 1> FullPhysics::ReferenceVmrApriori::resample_to_model_grid(const blitz::Array< double, 1 > &vmr) const
+
+        """
         return _reference_vmr_apriori.ReferenceVmrApriori_resample_to_model_grid(self, vmr)
 
+
     def apply_latitude_gradient(self, vmr, gas_name):
+        """
+
+        const blitz::Array<double, 1> FullPhysics::ReferenceVmrApriori::apply_latitude_gradient(const blitz::Array< double, 1 > &vmr, const std::string &gas_name)
+        const
+
+        """
         return _reference_vmr_apriori.ReferenceVmrApriori_apply_latitude_gradient(self, vmr, gas_name)
 
+
     def apply_secular_trend(self, vmr, gas_name):
+        """
+
+        const blitz::Array<double, 1> FullPhysics::ReferenceVmrApriori::apply_secular_trend(const blitz::Array< double, 1 > &vmr, const std::string &gas_name)
+        const
+
+        """
         return _reference_vmr_apriori.ReferenceVmrApriori_apply_secular_trend(self, vmr, gas_name)
 
+
     def apply_seasonal_cycle(self, vmr, gas_name):
+        """
+
+        const blitz::Array<double, 1> FullPhysics::ReferenceVmrApriori::apply_seasonal_cycle(const blitz::Array< double, 1 > &vmr, const std::string &gas_name)
+        const
+
+        """
         return _reference_vmr_apriori.ReferenceVmrApriori_apply_seasonal_cycle(self, vmr, gas_name)
 
+
     def apriori_vmr(self, vmr, gas_name):
+        """
+
+        const blitz::Array<double, 1> FullPhysics::ReferenceVmrApriori::apriori_vmr(const blitz::Array< double, 1 > &vmr, const std::string &gas_name)
+        const
+
+        """
         return _reference_vmr_apriori.ReferenceVmrApriori_apriori_vmr(self, vmr, gas_name)
+
 
     def __str__(self):
         return _reference_vmr_apriori.ReferenceVmrApriori___str__(self)

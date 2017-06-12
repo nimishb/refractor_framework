@@ -126,6 +126,13 @@ import full_physics_swig.generic_object
 import full_physics_swig.state_vector
 import full_physics_swig.sub_state_vector_proxy
 class GroundCoxmunkPlusLambertian(full_physics_swig.ground.Ground, full_physics_swig.sub_state_vector_proxy.SubStateVectorProxy):
+    """
+
+    This class implements a Coxmunk plus Lambertian ground type.
+
+    C++ includes: ground_coxmunk_plus_lambertian.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.ground.Ground, full_physics_swig.sub_state_vector_proxy.SubStateVectorProxy]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -137,6 +144,12 @@ class GroundCoxmunkPlusLambertian(full_physics_swig.ground.Ground, full_physics_
     __repr__ = _swig_repr
 
     def __init__(self, Coxmunk, Lambertian):
+        """
+
+        FullPhysics::GroundCoxmunkPlusLambertian::GroundCoxmunkPlusLambertian(const boost::shared_ptr< GroundCoxmunk > &Coxmunk, const
+        boost::shared_ptr< GroundLambertian > &Lambertian)
+
+        """
         this = _ground_coxmunk_plus_lambertian.new_GroundCoxmunkPlusLambertian(Coxmunk, Lambertian)
         try:
             self.this.append(this)
@@ -144,10 +157,22 @@ class GroundCoxmunkPlusLambertian(full_physics_swig.ground.Ground, full_physics_
             self.this = this
 
     def surface_parameter(self, wn, spec_index):
+        """
+
+        virtual ArrayAd<double, 1> FullPhysics::GroundCoxmunkPlusLambertian::surface_parameter(const double wn, const int spec_index) const
+
+        """
         return _ground_coxmunk_plus_lambertian.GroundCoxmunkPlusLambertian_surface_parameter(self, wn, spec_index)
 
+
     def _v_coxmunk(self):
+        """
+
+        virtual const boost::shared_ptr<GroundCoxmunk> FullPhysics::GroundCoxmunkPlusLambertian::coxmunk() const
+
+        """
         return _ground_coxmunk_plus_lambertian.GroundCoxmunkPlusLambertian__v_coxmunk(self)
+
 
     @property
     def coxmunk(self):
@@ -155,7 +180,13 @@ class GroundCoxmunkPlusLambertian(full_physics_swig.ground.Ground, full_physics_
 
 
     def _v_lambertian(self):
+        """
+
+        virtual const boost::shared_ptr<GroundLambertian> FullPhysics::GroundCoxmunkPlusLambertian::lambertian() const
+
+        """
         return _ground_coxmunk_plus_lambertian.GroundCoxmunkPlusLambertian__v_lambertian(self)
+
 
     @property
     def lambertian(self):
@@ -163,13 +194,31 @@ class GroundCoxmunkPlusLambertian(full_physics_swig.ground.Ground, full_physics_
 
 
     def clone(self):
+        """
+
+        virtual boost::shared_ptr<Ground> FullPhysics::GroundCoxmunkPlusLambertian::clone() const
+
+        """
         return _ground_coxmunk_plus_lambertian.GroundCoxmunkPlusLambertian_clone(self)
 
+
     def print_desc(self, Os):
+        """
+
+        virtual void FullPhysics::GroundCoxmunkPlusLambertian::print(std::ostream &Os) const
+
+        """
         return _ground_coxmunk_plus_lambertian.GroundCoxmunkPlusLambertian_print_desc(self, Os)
 
+
     def desc(self):
+        """
+
+        virtual std::string FullPhysics::GroundCoxmunkPlusLambertian::desc() const
+
+        """
         return _ground_coxmunk_plus_lambertian.GroundCoxmunkPlusLambertian_desc(self)
+
     __swig_destroy__ = _ground_coxmunk_plus_lambertian.delete_GroundCoxmunkPlusLambertian
     __del__ = lambda self: None
 GroundCoxmunkPlusLambertian_swigregister = _ground_coxmunk_plus_lambertian.GroundCoxmunkPlusLambertian_swigregister

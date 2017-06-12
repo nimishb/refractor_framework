@@ -11081,17 +11081,80 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"ObserverAbsorber_notify_add", _wrap_ObserverAbsorber_notify_add, METH_VARARGS, NULL},
 	 { (char *)"ObserverAbsorber_notify_remove", _wrap_ObserverAbsorber_notify_remove, METH_VARARGS, NULL},
 	 { (char *)"ObserverAbsorber_swigregister", ObserverAbsorber_swigregister, METH_VARARGS, NULL},
-	 { (char *)"delete_Absorber", _wrap_delete_Absorber, METH_VARARGS, NULL},
-	 { (char *)"Absorber_add_observer", _wrap_Absorber_add_observer, METH_VARARGS, NULL},
-	 { (char *)"Absorber_remove_observer", _wrap_Absorber_remove_observer, METH_VARARGS, NULL},
+	 { (char *)"delete_Absorber", _wrap_delete_Absorber, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::Absorber::~Absorber()\n"
+		"\n"
+		""},
+	 { (char *)"Absorber_add_observer", _wrap_Absorber_add_observer, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::Absorber::add_observer(Observer< Absorber > &Obs)\n"
+		"\n"
+		""},
+	 { (char *)"Absorber_remove_observer", _wrap_Absorber_remove_observer, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::Absorber::remove_observer(Observer< Absorber > &Obs)\n"
+		"\n"
+		""},
 	 { (char *)"Absorber___str__", _wrap_Absorber___str__, METH_VARARGS, NULL},
-	 { (char *)"Absorber__v_number_species", _wrap_Absorber__v_number_species, METH_VARARGS, NULL},
-	 { (char *)"Absorber_gas_name", _wrap_Absorber_gas_name, METH_VARARGS, NULL},
-	 { (char *)"Absorber_gas_index", _wrap_Absorber_gas_index, METH_VARARGS, NULL},
-	 { (char *)"Absorber_optical_depth_each_layer", _wrap_Absorber_optical_depth_each_layer, METH_VARARGS, NULL},
-	 { (char *)"Absorber_xgas", _wrap_Absorber_xgas, METH_VARARGS, NULL},
-	 { (char *)"Absorber_absorber_vmr", _wrap_Absorber_absorber_vmr, METH_VARARGS, NULL},
-	 { (char *)"Absorber_clone", _wrap_Absorber_clone, METH_VARARGS, NULL},
+	 { (char *)"Absorber__v_number_species", _wrap_Absorber__v_number_species, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual int FullPhysics::Absorber::number_species() const\n"
+		"Number of species. \n"
+		""},
+	 { (char *)"Absorber_gas_name", _wrap_Absorber_gas_name, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual std::string FullPhysics::Absorber::gas_name(int Species_index) const =0\n"
+		"Name of gases, in the order that optical_depth_each_layer returns\n"
+		"them. \n"
+		""},
+	 { (char *)"Absorber_gas_index", _wrap_Absorber_gas_index, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual int FullPhysics::Absorber::gas_index(const std::string &Name) const\n"
+		"\n"
+		""},
+	 { (char *)"Absorber_optical_depth_each_layer", _wrap_Absorber_optical_depth_each_layer, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual ArrayAd<double, 2> FullPhysics::Absorber::optical_depth_each_layer(double wn, int spec_index) const =0\n"
+		"This gives the optical depth for each layer, for the given wave\n"
+		"number.\n"
+		"\n"
+		"Note this only includes the Absorbers portion of this, Atmosphere\n"
+		"class combines this with Rayleigh and Aerosol scattering.\n"
+		"\n"
+		"This has size of pres->number_active_layer() x number_species()\n"
+		"\n"
+		"We include the derivative of this with respect to the state vector. \n"
+		""},
+	 { (char *)"Absorber_xgas", _wrap_Absorber_xgas, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual AutoDerivative<double> FullPhysics::Absorber::xgas(const std::string &Gas_name) const =0\n"
+		"This calculates the gas column, e.g., XCO2.\n"
+		"\n"
+		"This is the dry air mole fraction of the gas, see section 3.5.4 of the\n"
+		"ATB\n"
+		"\n"
+		"We include the derivative of this with respect to the state vector. \n"
+		""},
+	 { (char *)"Absorber_absorber_vmr", _wrap_Absorber_absorber_vmr, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual boost::shared_ptr<AbsorberVmr> FullPhysics::Absorber::absorber_vmr(const std::string &gas_name) const =0\n"
+		"Returns the AbsorberVmr object for a given species index. \n"
+		""},
+	 { (char *)"Absorber_clone", _wrap_Absorber_clone, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual boost::shared_ptr<Absorber> FullPhysics::Absorber::clone(const boost::shared_ptr< Pressure > &Press, const boost::shared_ptr<\n"
+		"Temperature > &Temp, const std::vector< boost::shared_ptr< Altitude >\n"
+		"> &Alt) const =0\n"
+		"This version of clone takes a Pressure, Altitude and Temperature to\n"
+		"use.\n"
+		"\n"
+		"The intent is that the Pressure, Altitude and Temperature has been\n"
+		"cloned from the original Pressure, Altitude and Temperature (although\n"
+		"this class has no way to verify this). This allows sets of objects to\n"
+		"be cloned using a common Pressure, Altitude and Temperature clones,\n"
+		"e.g. Atmosphere. \n"
+		""},
 	 { (char *)"Absorber_print_desc", _wrap_Absorber_print_desc, METH_VARARGS, NULL},
 	 { (char *)"Absorber_notify_update", _wrap_Absorber_notify_update, METH_VARARGS, NULL},
 	 { (char *)"Absorber_mark_used", _wrap_Absorber_mark_used, METH_VARARGS, NULL},
@@ -11102,14 +11165,60 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"disown_Absorber", _wrap_disown_Absorber, METH_VARARGS, NULL},
 	 { (char *)"Absorber_swigregister", Absorber_swigregister, METH_VARARGS, NULL},
 	 { (char *)"new_SubStateVectorAbsorber", _wrap_new_SubStateVectorAbsorber, METH_VARARGS, NULL},
-	 { (char *)"SubStateVectorAbsorber__v_number_species", _wrap_SubStateVectorAbsorber__v_number_species, METH_VARARGS, NULL},
-	 { (char *)"SubStateVectorAbsorber_gas_name", _wrap_SubStateVectorAbsorber_gas_name, METH_VARARGS, NULL},
-	 { (char *)"SubStateVectorAbsorber_gas_index", _wrap_SubStateVectorAbsorber_gas_index, METH_VARARGS, NULL},
-	 { (char *)"SubStateVectorAbsorber_optical_depth_each_layer", _wrap_SubStateVectorAbsorber_optical_depth_each_layer, METH_VARARGS, NULL},
+	 { (char *)"SubStateVectorAbsorber__v_number_species", _wrap_SubStateVectorAbsorber__v_number_species, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual int FullPhysics::Absorber::number_species() const\n"
+		"Number of species. \n"
+		""},
+	 { (char *)"SubStateVectorAbsorber_gas_name", _wrap_SubStateVectorAbsorber_gas_name, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual std::string FullPhysics::Absorber::gas_name(int Species_index) const =0\n"
+		"Name of gases, in the order that optical_depth_each_layer returns\n"
+		"them. \n"
+		""},
+	 { (char *)"SubStateVectorAbsorber_gas_index", _wrap_SubStateVectorAbsorber_gas_index, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual int FullPhysics::Absorber::gas_index(const std::string &Name) const\n"
+		"\n"
+		""},
+	 { (char *)"SubStateVectorAbsorber_optical_depth_each_layer", _wrap_SubStateVectorAbsorber_optical_depth_each_layer, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual ArrayAd<double, 2> FullPhysics::Absorber::optical_depth_each_layer(double wn, int spec_index) const =0\n"
+		"This gives the optical depth for each layer, for the given wave\n"
+		"number.\n"
+		"\n"
+		"Note this only includes the Absorbers portion of this, Atmosphere\n"
+		"class combines this with Rayleigh and Aerosol scattering.\n"
+		"\n"
+		"This has size of pres->number_active_layer() x number_species()\n"
+		"\n"
+		"We include the derivative of this with respect to the state vector. \n"
+		""},
 	 { (char *)"SubStateVectorAbsorber_print_desc", _wrap_SubStateVectorAbsorber_print_desc, METH_VARARGS, NULL},
-	 { (char *)"SubStateVectorAbsorber_add_observer", _wrap_SubStateVectorAbsorber_add_observer, METH_VARARGS, NULL},
-	 { (char *)"SubStateVectorAbsorber_remove_observer", _wrap_SubStateVectorAbsorber_remove_observer, METH_VARARGS, NULL},
-	 { (char *)"SubStateVectorAbsorber_clone", _wrap_SubStateVectorAbsorber_clone, METH_VARARGS, NULL},
+	 { (char *)"SubStateVectorAbsorber_add_observer", _wrap_SubStateVectorAbsorber_add_observer, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::Absorber::add_observer(Observer< Absorber > &Obs)\n"
+		"\n"
+		""},
+	 { (char *)"SubStateVectorAbsorber_remove_observer", _wrap_SubStateVectorAbsorber_remove_observer, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::Absorber::remove_observer(Observer< Absorber > &Obs)\n"
+		"\n"
+		""},
+	 { (char *)"SubStateVectorAbsorber_clone", _wrap_SubStateVectorAbsorber_clone, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual boost::shared_ptr<Absorber> FullPhysics::Absorber::clone(const boost::shared_ptr< Pressure > &Press, const boost::shared_ptr<\n"
+		"Temperature > &Temp, const std::vector< boost::shared_ptr< Altitude >\n"
+		"> &Alt) const =0\n"
+		"This version of clone takes a Pressure, Altitude and Temperature to\n"
+		"use.\n"
+		"\n"
+		"The intent is that the Pressure, Altitude and Temperature has been\n"
+		"cloned from the original Pressure, Altitude and Temperature (although\n"
+		"this class has no way to verify this). This allows sets of objects to\n"
+		"be cloned using a common Pressure, Altitude and Temperature clones,\n"
+		"e.g. Atmosphere. \n"
+		""},
 	 { (char *)"SubStateVectorAbsorber_notify_update", _wrap_SubStateVectorAbsorber_notify_update, METH_VARARGS, NULL},
 	 { (char *)"SubStateVectorAbsorber_mark_used", _wrap_SubStateVectorAbsorber_mark_used, METH_VARARGS, NULL},
 	 { (char *)"SubStateVectorAbsorber_state_vector_name", _wrap_SubStateVectorAbsorber_state_vector_name, METH_VARARGS, NULL},

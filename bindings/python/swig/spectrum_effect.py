@@ -245,6 +245,15 @@ ObserverSpectrumEffect_swigregister = _spectrum_effect.ObserverSpectrumEffect_sw
 ObserverSpectrumEffect_swigregister(ObserverSpectrumEffect)
 
 class SpectrumEffect(full_physics_swig.state_vector.StateVectorObserver, ObservableSpectrumEffect):
+    """
+
+    This class models models any effects that need to be applied to high
+    resolution spectra after the radiative transfer model has finished its
+    work.
+
+    C++ includes: spectrum_effect.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.state_vector.StateVectorObserver, ObservableSpectrumEffect]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -264,13 +273,42 @@ class SpectrumEffect(full_physics_swig.state_vector.StateVectorObserver, Observa
         return _spectrum_effect.SpectrumEffect___str__(self)
 
     def apply_effect(self, Spec, Forward_model_grid):
+        """
+
+        virtual void FullPhysics::SpectrumEffect::apply_effect(Spectrum &Spec, const ForwardModelSpectralGrid &Forward_model_grid)
+        const =0
+        Apply correction to spectrum in place.
+
+        We pass in the forward model grids used. A class can use this to
+        optimize its calculation, see for example FluorescenceEffect. 
+        """
         return _spectrum_effect.SpectrumEffect_apply_effect(self, Spec, Forward_model_grid)
 
+
     def clone(self):
+        """
+
+        virtual boost::shared_ptr<SpectrumEffect> FullPhysics::SpectrumEffect::clone() const =0
+        Clone a SpectrumEffect object.
+
+        Note that the cloned version will not be attached to and StateVector
+        or Observer<SpectrumEffect>, although you can of course attach them
+        after receiving the cloned object.
+
+        Because this isn't attached to the StateVector, one use of the clone
+        operator is to create a "frozen" SpectrumEffect object. 
+        """
         return _spectrum_effect.SpectrumEffect_clone(self)
 
+
     def _v_name(self):
+        """
+
+        virtual std::string FullPhysics::SpectrumEffect::name() const =0
+        Name of spectrum effect, for use when outputting effects of effect. 
+        """
         return _spectrum_effect.SpectrumEffect__v_name(self)
+
 
     @property
     def name(self):
@@ -278,10 +316,22 @@ class SpectrumEffect(full_physics_swig.state_vector.StateVectorObserver, Observa
 
 
     def add_observer(self, Obs):
+        """
+
+        virtual void FullPhysics::SpectrumEffect::add_observer(Observer< SpectrumEffect > &Obs)
+
+        """
         return _spectrum_effect.SpectrumEffect_add_observer(self, Obs)
 
+
     def remove_observer(self, Obs):
+        """
+
+        virtual void FullPhysics::SpectrumEffect::remove_observer(Observer< SpectrumEffect > &Obs)
+
+        """
         return _spectrum_effect.SpectrumEffect_remove_observer(self, Obs)
+
 SpectrumEffect_swigregister = _spectrum_effect.SpectrumEffect_swigregister
 SpectrumEffect_swigregister(SpectrumEffect)
 

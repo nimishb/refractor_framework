@@ -123,6 +123,21 @@ def _new_from_set(cls, version, *args):
 import full_physics_swig.spectrum_sampling
 import full_physics_swig.generic_object
 class SpectrumSamplingFixedSpacing(full_physics_swig.spectrum_sampling.SpectrumSampling):
+    """
+
+    This generates a spectrum sampling that covers all the high resolution
+    points needed to create the spectral domain covered by the given
+    Instrument, subject to the given low resolution grid.
+
+    For each range in the spectrum, we produce equally spaced points.
+
+    Note that there are a few closely related classes, with similar
+    sounding names. See spectrum_doxygen for a description of each of
+    these.
+
+    C++ includes: spectrum_sampling_fixed_spacing.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.spectrum_sampling.SpectrumSampling]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -134,6 +149,11 @@ class SpectrumSamplingFixedSpacing(full_physics_swig.spectrum_sampling.SpectrumS
     __repr__ = _swig_repr
 
     def __init__(self, Spec_spacing):
+        """
+
+        FullPhysics::SpectrumSamplingFixedSpacing::SpectrumSamplingFixedSpacing(const ArrayWithUnit< double, 1 > &Spec_spacing)
+
+        """
         this = _spectrum_sampling_fixed_spacing.new_SpectrumSamplingFixedSpacing(Spec_spacing)
         try:
             self.this.append(this)
@@ -141,7 +161,14 @@ class SpectrumSamplingFixedSpacing(full_physics_swig.spectrum_sampling.SpectrumS
             self.this = this
 
     def spectral_domain(self, spec_index, Lowres_grid, Ils_half_width):
+        """
+
+        virtual SpectralDomain FullPhysics::SpectrumSamplingFixedSpacing::spectral_domain(int spec_index, const SpectralDomain &Lowres_grid, const
+        DoubleWithUnit &Ils_half_width) const
+
+        """
         return _spectrum_sampling_fixed_spacing.SpectrumSamplingFixedSpacing_spectral_domain(self, spec_index, Lowres_grid, Ils_half_width)
+
     __swig_destroy__ = _spectrum_sampling_fixed_spacing.delete_SpectrumSamplingFixedSpacing
     __del__ = lambda self: None
 SpectrumSamplingFixedSpacing_swigregister = _spectrum_sampling_fixed_spacing.SpectrumSamplingFixedSpacing_swigregister

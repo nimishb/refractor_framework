@@ -7458,21 +7458,88 @@ SWIGINTERN PyObject *OcoForwardModel_swigregister(PyObject *SWIGUNUSEDPARM(self)
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"new_OcoForwardModel", _wrap_new_OcoForwardModel, METH_VARARGS, NULL},
-	 { (char *)"delete_OcoForwardModel", _wrap_delete_OcoForwardModel, METH_VARARGS, NULL},
-	 { (char *)"OcoForwardModel__v_state_vector", _wrap_OcoForwardModel__v_state_vector, METH_VARARGS, NULL},
-	 { (char *)"OcoForwardModel_radiance", _wrap_OcoForwardModel_radiance, METH_VARARGS, NULL},
-	 { (char *)"OcoForwardModel_measured_radiance", _wrap_OcoForwardModel_measured_radiance, METH_VARARGS, NULL},
-	 { (char *)"OcoForwardModel__v_instrument", _wrap_OcoForwardModel__v_instrument, METH_VARARGS, NULL},
-	 { (char *)"OcoForwardModel__v_spectral_window", _wrap_OcoForwardModel__v_spectral_window, METH_VARARGS, NULL},
-	 { (char *)"OcoForwardModel__v_level_1b", _wrap_OcoForwardModel__v_level_1b, METH_VARARGS, NULL},
-	 { (char *)"OcoForwardModel__v_radiative_transfer", _wrap_OcoForwardModel__v_radiative_transfer, METH_VARARGS, NULL},
-	 { (char *)"OcoForwardModel__v_spectrum_sampling", _wrap_OcoForwardModel__v_spectrum_sampling, METH_VARARGS, NULL},
-	 { (char *)"OcoForwardModel__v_spectral_grid", _wrap_OcoForwardModel__v_spectral_grid, METH_VARARGS, NULL},
-	 { (char *)"OcoForwardModel_apply_spectrum_corrections", _wrap_OcoForwardModel_apply_spectrum_corrections, METH_VARARGS, NULL},
-	 { (char *)"OcoForwardModel_add_observer", _wrap_OcoForwardModel_add_observer, METH_VARARGS, NULL},
-	 { (char *)"OcoForwardModel_remove_observer", _wrap_OcoForwardModel_remove_observer, METH_VARARGS, NULL},
-	 { (char *)"OcoForwardModel_notify_spectrum_update", _wrap_OcoForwardModel_notify_spectrum_update, METH_VARARGS, NULL},
+	 { (char *)"new_OcoForwardModel", _wrap_new_OcoForwardModel, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::OcoForwardModel::OcoForwardModel(const boost::shared_ptr< Instrument > &Inst, const boost::shared_ptr<\n"
+		"SpectralWindow > &Spectral_window, const boost::shared_ptr< Level1b >\n"
+		"&Level_1b, const boost::shared_ptr< RadiativeTransfer > &Rt, const\n"
+		"boost::shared_ptr< SpectrumSampling > &Spectrum_sampling, const\n"
+		"boost::shared_ptr< StateVector > &Sv, const std::vector< std::vector<\n"
+		"boost::shared_ptr< SpectrumEffect > > > &Spectrum_effect=std::vector<\n"
+		"std::vector< boost::shared_ptr< SpectrumEffect > > >())\n"
+		"\n"
+		""},
+	 { (char *)"delete_OcoForwardModel", _wrap_delete_OcoForwardModel, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::OcoForwardModel::~OcoForwardModel()\n"
+		"\n"
+		""},
+	 { (char *)"OcoForwardModel__v_state_vector", _wrap_OcoForwardModel__v_state_vector, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual boost::shared_ptr<StateVector> FullPhysics::OcoForwardModel::state_vector() const\n"
+		"\n"
+		""},
+	 { (char *)"OcoForwardModel_radiance", _wrap_OcoForwardModel_radiance, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual Spectrum FullPhysics::OcoForwardModel::radiance(int Spec_index, bool Skip_jacobian=false) const\n"
+		"\n"
+		""},
+	 { (char *)"OcoForwardModel_measured_radiance", _wrap_OcoForwardModel_measured_radiance, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual Spectrum FullPhysics::OcoForwardModel::measured_radiance(int Spec_index) const\n"
+		"\n"
+		""},
+	 { (char *)"OcoForwardModel__v_instrument", _wrap_OcoForwardModel__v_instrument, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::OcoForwardModel::instrument(const boost::shared_ptr< Instrument > &V)\n"
+		"\n"
+		""},
+	 { (char *)"OcoForwardModel__v_spectral_window", _wrap_OcoForwardModel__v_spectral_window, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::OcoForwardModel::spectral_window(const boost::shared_ptr< SpectralWindow > &V)\n"
+		"\n"
+		""},
+	 { (char *)"OcoForwardModel__v_level_1b", _wrap_OcoForwardModel__v_level_1b, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::OcoForwardModel::level_1b(const boost::shared_ptr< Level1b > &V)\n"
+		"\n"
+		""},
+	 { (char *)"OcoForwardModel__v_radiative_transfer", _wrap_OcoForwardModel__v_radiative_transfer, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::OcoForwardModel::radiative_transfer(const boost::shared_ptr< RadiativeTransfer > &V)\n"
+		"\n"
+		""},
+	 { (char *)"OcoForwardModel__v_spectrum_sampling", _wrap_OcoForwardModel__v_spectrum_sampling, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::OcoForwardModel::spectrum_sampling(const boost::shared_ptr< SpectrumSampling > &V)\n"
+		"\n"
+		""},
+	 { (char *)"OcoForwardModel__v_spectral_grid", _wrap_OcoForwardModel__v_spectral_grid, METH_VARARGS, (char *)"\n"
+		"\n"
+		"const boost::shared_ptr<ForwardModelSpectralGrid>& FullPhysics::OcoForwardModel::spectral_grid() const\n"
+		"\n"
+		""},
+	 { (char *)"OcoForwardModel_apply_spectrum_corrections", _wrap_OcoForwardModel_apply_spectrum_corrections, METH_VARARGS, (char *)"\n"
+		"\n"
+		"Spectrum FullPhysics::OcoForwardModel::apply_spectrum_corrections(const Spectrum &highres_spec, int Spec_index) const\n"
+		"\n"
+		""},
+	 { (char *)"OcoForwardModel_add_observer", _wrap_OcoForwardModel_add_observer, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::OcoForwardModel::add_observer(Observer< boost::shared_ptr< NamedSpectrum > > &Obs)\n"
+		"Required observable functions. \n"
+		""},
+	 { (char *)"OcoForwardModel_remove_observer", _wrap_OcoForwardModel_remove_observer, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::OcoForwardModel::remove_observer(Observer< boost::shared_ptr< NamedSpectrum > > &Obs)\n"
+		"\n"
+		""},
+	 { (char *)"OcoForwardModel_notify_spectrum_update", _wrap_OcoForwardModel_notify_spectrum_update, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::OcoForwardModel::notify_spectrum_update(const Spectrum &updated_spec, const std::string &spec_name, int\n"
+		"Spec_index) const\n"
+		"\n"
+		""},
 	 { (char *)"OcoForwardModel__speceff_size", _wrap_OcoForwardModel__speceff_size, METH_VARARGS, NULL},
 	 { (char *)"OcoForwardModel_speceff_size2", _wrap_OcoForwardModel_speceff_size2, METH_VARARGS, NULL},
 	 { (char *)"OcoForwardModel_speceff_val", _wrap_OcoForwardModel_speceff_val, METH_VARARGS, NULL},

@@ -124,6 +124,14 @@ import full_physics_swig.instrument
 import full_physics_swig.generic_object
 import full_physics_swig.state_vector
 class IlsInstrument(full_physics_swig.instrument.Instrument):
+    """
+
+    This is a instrument that uses a Ils object for each spectrometer to
+    model the instrument.
+
+    C++ includes: ils_instrument.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.instrument.Instrument]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -138,31 +146,86 @@ class IlsInstrument(full_physics_swig.instrument.Instrument):
     __repr__ = _swig_repr
 
     def apply_instrument_model(self, High_resolution_spectrum, Pixel_list, Spec_index):
+        """
+
+        virtual Spectrum FullPhysics::IlsInstrument::apply_instrument_model(const Spectrum &High_resolution_spectrum, const std::vector< int >
+        &Pixel_list, int Spec_index) const
+
+        """
         return _ils_instrument.IlsInstrument_apply_instrument_model(self, High_resolution_spectrum, Pixel_list, Spec_index)
 
+
     def band_name(self, Spec_index):
+        """
+
+        virtual std::string FullPhysics::IlsInstrument::band_name(int Spec_index) const
+
+        """
         return _ils_instrument.IlsInstrument_band_name(self, Spec_index)
 
+
     def hdf_band_name(self, Spec_index):
+        """
+
+        virtual std::string FullPhysics::IlsInstrument::hdf_band_name(int Spec_index) const
+
+        """
         return _ils_instrument.IlsInstrument_hdf_band_name(self, Spec_index)
 
+
     def notify_add(self, Sv):
+        """
+
+        virtual void FullPhysics::IlsInstrument::notify_add(StateVector &Sv)
+
+        """
         return _ils_instrument.IlsInstrument_notify_add(self, Sv)
 
+
     def notify_remove(self, Sv):
+        """
+
+        virtual void FullPhysics::IlsInstrument::notify_remove(StateVector &Sv)
+
+        """
         return _ils_instrument.IlsInstrument_notify_remove(self, Sv)
 
+
     def notify_update(self, *args):
+        """
+
+        virtual void FullPhysics::IlsInstrument::notify_update(const InstrumentCorrection &C)
+
+        """
         return _ils_instrument.IlsInstrument_notify_update(self, *args)
 
+
     def clone(self):
+        """
+
+        virtual boost::shared_ptr<Instrument> FullPhysics::IlsInstrument::clone() const
+
+        """
         return _ils_instrument.IlsInstrument_clone(self)
 
+
     def ils(self, Spec_index):
+        """
+
+        boost::shared_ptr<Ils> FullPhysics::IlsInstrument::ils(int Spec_index) const
+        Underlying Ils. 
+        """
         return _ils_instrument.IlsInstrument_ils(self, Spec_index)
 
+
     def instrument_correction(self, Spec_index):
+        """
+
+        const std::vector<boost::shared_ptr<InstrumentCorrection> >& FullPhysics::IlsInstrument::instrument_correction(int Spec_index) const
+        Underlying InstrumentCorrection. 
+        """
         return _ils_instrument.IlsInstrument_instrument_correction(self, Spec_index)
+
     __swig_destroy__ = _ils_instrument.delete_IlsInstrument
     __del__ = lambda self: None
 IlsInstrument_swigregister = _ils_instrument.IlsInstrument_swigregister

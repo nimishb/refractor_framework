@@ -128,6 +128,18 @@ import full_physics_swig.observer
 import full_physics_swig.named_spectrum
 import full_physics_swig.state_vector
 class LRadRt(full_physics_swig.radiative_transfer_single_wn.RadiativeTransferSingleWn):
+    """
+
+    This class drives the LRAD code, which gives a polarization correction
+    to scalar intensity and jacobians.
+
+    This can also be used on its own to provide a single scatter
+    approximation to the RadiativeTransfer (i.e., without also running
+    LIDORT).
+
+    C++ includes: l_rad_rt.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.radiative_transfer_single_wn.RadiativeTransferSingleWn]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -142,7 +154,13 @@ class LRadRt(full_physics_swig.radiative_transfer_single_wn.RadiativeTransferSin
     __repr__ = _swig_repr
 
     def _v_number_stokes(self):
+        """
+
+        virtual int FullPhysics::LRadRt::number_stokes() const
+
+        """
         return _l_rad_rt.LRadRt__v_number_stokes(self)
+
 
     @property
     def number_stokes(self):
@@ -150,7 +168,13 @@ class LRadRt(full_physics_swig.radiative_transfer_single_wn.RadiativeTransferSin
 
 
     def _v_number_stream(self):
+        """
+
+        virtual int FullPhysics::LRadRt::number_stream() const
+
+        """
         return _l_rad_rt.LRadRt__v_number_stream(self)
+
 
     @property
     def number_stream(self):
@@ -158,7 +182,13 @@ class LRadRt(full_physics_swig.radiative_transfer_single_wn.RadiativeTransferSin
 
 
     def _v_surface_type(self):
+        """
+
+        virtual int FullPhysics::LRadRt::surface_type() const
+        Returns an integer with l_rad's representation of surface type. 
+        """
         return _l_rad_rt.LRadRt__v_surface_type(self)
+
 
     @property
     def surface_type(self):
@@ -166,13 +196,31 @@ class LRadRt(full_physics_swig.radiative_transfer_single_wn.RadiativeTransferSin
 
 
     def stokes_single_wn(self, Wn, Spec_index, Iv):
+        """
+
+        virtual blitz::Array<double, 1> FullPhysics::LRadRt::stokes_single_wn(double Wn, int Spec_index, const ArrayAd< double, 2 > &Iv) const
+
+        """
         return _l_rad_rt.LRadRt_stokes_single_wn(self, Wn, Spec_index, Iv)
 
+
     def stokes_and_jacobian_single_wn(self, Wn, Spec_index, Iv):
+        """
+
+        virtual ArrayAd<double, 1> FullPhysics::LRadRt::stokes_and_jacobian_single_wn(double Wn, int Spec_index, const ArrayAd< double, 2 > &Iv) const
+
+        """
         return _l_rad_rt.LRadRt_stokes_and_jacobian_single_wn(self, Wn, Spec_index, Iv)
 
+
     def _v_radiative_transfer(self):
+        """
+
+        const boost::shared_ptr<RadiativeTransferSingleWn>& FullPhysics::LRadRt::radiative_transfer() const
+
+        """
         return _l_rad_rt.LRadRt__v_radiative_transfer(self)
+
 
     @property
     def radiative_transfer(self):

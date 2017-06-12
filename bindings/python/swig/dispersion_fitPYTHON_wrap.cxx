@@ -5280,8 +5280,20 @@ SWIGINTERN PyObject *DispersionFit_swigregister(PyObject *SWIGUNUSEDPARM(self), 
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"new_DispersionFit", _wrap_new_DispersionFit, METH_VARARGS, NULL},
-	 { (char *)"DispersionFit_fit", _wrap_DispersionFit_fit, METH_VARARGS, NULL},
+	 { (char *)"new_DispersionFit", _wrap_new_DispersionFit, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::DispersionFit::DispersionFit(const boost::shared_ptr< Level1b > &Level1b)\n"
+		"\n"
+		""},
+	 { (char *)"DispersionFit_fit", _wrap_DispersionFit_fit, METH_VARARGS, (char *)"\n"
+		"\n"
+		"blitz::Array<double, 2> FullPhysics::DispersionFit::fit(const blitz::Array< double, 2 > disp_initial, const DoubleWithUnit\n"
+		"&aband_solar_line_location, const DoubleWithUnit\n"
+		"&aband_solar_line_width, const DoubleWithUnit &aband_search_width,\n"
+		"const DoubleWithUnit &aband_ils_offset, const ArrayWithUnit< double, 1\n"
+		"> &offset_scaling) const\n"
+		"\n"
+		""},
 	 { (char *)"delete_DispersionFit", _wrap_delete_DispersionFit, METH_VARARGS, NULL},
 	 { (char *)"DispersionFit_swigregister", DispersionFit_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }

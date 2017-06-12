@@ -7991,11 +7991,38 @@ SWIGINTERN PyObject *MerraAerosol_swigregister(PyObject *SWIGUNUSEDPARM(self), P
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"new_MerraAerosol", _wrap_new_MerraAerosol, METH_VARARGS, NULL},
-	 { (char *)"MerraAerosol__v_aerosol", _wrap_MerraAerosol__v_aerosol, METH_VARARGS, NULL},
-	 { (char *)"MerraAerosol__v_initial_guess", _wrap_MerraAerosol__v_initial_guess, METH_VARARGS, NULL},
-	 { (char *)"MerraAerosol__v_number_merra_particle", _wrap_MerraAerosol__v_number_merra_particle, METH_VARARGS, NULL},
-	 { (char *)"delete_MerraAerosol", _wrap_delete_MerraAerosol, METH_VARARGS, NULL},
+	 { (char *)"new_MerraAerosol", _wrap_new_MerraAerosol, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::MerraAerosol::MerraAerosol(const HdfFile &Merra_climatology, const HdfFile &Aerosol_property,\n"
+		"DoubleWithUnit Latitude, DoubleWithUnit Longitude, const\n"
+		"boost::shared_ptr< Pressure > &Press, const boost::shared_ptr<\n"
+		"RelativeHumidity > &Rh, const blitz::Array< double, 2 > &Aerosol_cov,\n"
+		"double Max_aod=0.2, double Exp_aod=0.8, int Min_types=2, int\n"
+		"Max_types=4, bool Linear_aod=false, bool\n"
+		"Relative_humidity_aerosol=false, double Max_residual=0.005, double\n"
+		"Reference_wn=1e4/0.755)\n"
+		"\n"
+		""},
+	 { (char *)"MerraAerosol__v_aerosol", _wrap_MerraAerosol__v_aerosol, METH_VARARGS, (char *)"\n"
+		"\n"
+		"boost::shared_ptr<Aerosol> FullPhysics::MerraAerosol::aerosol() const\n"
+		"\n"
+		""},
+	 { (char *)"MerraAerosol__v_initial_guess", _wrap_MerraAerosol__v_initial_guess, METH_VARARGS, (char *)"\n"
+		"\n"
+		"boost::shared_ptr<InitialGuessBuilder> FullPhysics::MerraAerosol::initial_guess() const\n"
+		"Return IntitialGuessBuilder for the Aerosol. \n"
+		""},
+	 { (char *)"MerraAerosol__v_number_merra_particle", _wrap_MerraAerosol__v_number_merra_particle, METH_VARARGS, (char *)"\n"
+		"\n"
+		"int FullPhysics::MerraAerosol::number_merra_particle() const\n"
+		"Number of merra particles. \n"
+		""},
+	 { (char *)"delete_MerraAerosol", _wrap_delete_MerraAerosol, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::MerraAerosol::~MerraAerosol()\n"
+		"\n"
+		""},
 	 { (char *)"MerraAerosol_swigregister", MerraAerosol_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };

@@ -5605,11 +5605,34 @@ SWIGINTERN PyObject *EmpiricalOrthogonalFunction_swigregister(PyObject *SWIGUNUS
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"EmpiricalOrthogonalFunction_state_vector_name_i", _wrap_EmpiricalOrthogonalFunction_state_vector_name_i, METH_VARARGS, NULL},
-	 { (char *)"EmpiricalOrthogonalFunction_apply_correction", _wrap_EmpiricalOrthogonalFunction_apply_correction, METH_VARARGS, NULL},
-	 { (char *)"EmpiricalOrthogonalFunction__v_eof", _wrap_EmpiricalOrthogonalFunction__v_eof, METH_VARARGS, NULL},
-	 { (char *)"EmpiricalOrthogonalFunction__v_order", _wrap_EmpiricalOrthogonalFunction__v_order, METH_VARARGS, NULL},
-	 { (char *)"delete_EmpiricalOrthogonalFunction", _wrap_delete_EmpiricalOrthogonalFunction, METH_VARARGS, NULL},
+	 { (char *)"EmpiricalOrthogonalFunction_state_vector_name_i", _wrap_EmpiricalOrthogonalFunction_state_vector_name_i, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual std::string FullPhysics::EmpiricalOrthogonalFunction::state_vector_name_i(int i) const\n"
+		"\n"
+		""},
+	 { (char *)"EmpiricalOrthogonalFunction_apply_correction", _wrap_EmpiricalOrthogonalFunction_apply_correction, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::EmpiricalOrthogonalFunction::apply_correction(const SpectralDomain &Pixel_grid, const std::vector< int >\n"
+		"&Pixel_list, SpectralRange &Radiance) const\n"
+		"\n"
+		""},
+	 { (char *)"EmpiricalOrthogonalFunction__v_eof", _wrap_EmpiricalOrthogonalFunction__v_eof, METH_VARARGS, (char *)"\n"
+		"\n"
+		"ArrayWithUnit<double, 1> FullPhysics::EmpiricalOrthogonalFunction::eof() const\n"
+		"Current value of empirical orthogonal function, for each pixel number.\n"
+		"\n"
+		""},
+	 { (char *)"EmpiricalOrthogonalFunction__v_order", _wrap_EmpiricalOrthogonalFunction__v_order, METH_VARARGS, (char *)"\n"
+		"\n"
+		"int FullPhysics::EmpiricalOrthogonalFunction::order() const\n"
+		"Order of the empirical orthogonal function (e.g., first order, second\n"
+		"order, etc.) \n"
+		""},
+	 { (char *)"delete_EmpiricalOrthogonalFunction", _wrap_delete_EmpiricalOrthogonalFunction, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::EmpiricalOrthogonalFunction::~EmpiricalOrthogonalFunction()\n"
+		"\n"
+		""},
 	 { (char *)"EmpiricalOrthogonalFunction_swigregister", EmpiricalOrthogonalFunction_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };

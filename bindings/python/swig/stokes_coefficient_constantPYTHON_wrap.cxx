@@ -5103,9 +5103,21 @@ SWIGINTERN PyObject *StokesCoefficientConstant_swigregister(PyObject *SWIGUNUSED
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"StokesCoefficientConstant_clone", _wrap_StokesCoefficientConstant_clone, METH_VARARGS, NULL},
-	 { (char *)"StokesCoefficientConstant_set_stokes_coefficient", _wrap_StokesCoefficientConstant_set_stokes_coefficient, METH_VARARGS, NULL},
-	 { (char *)"delete_StokesCoefficientConstant", _wrap_delete_StokesCoefficientConstant, METH_VARARGS, NULL},
+	 { (char *)"StokesCoefficientConstant_clone", _wrap_StokesCoefficientConstant_clone, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual boost::shared_ptr<StokesCoefficient> FullPhysics::StokesCoefficientConstant::clone() const\n"
+		"\n"
+		""},
+	 { (char *)"StokesCoefficientConstant_set_stokes_coefficient", _wrap_StokesCoefficientConstant_set_stokes_coefficient, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::StokesCoefficientConstant::set_stokes_coefficient(const blitz::Array< double, 2 > Stokes_coeff)\n"
+		"\n"
+		""},
+	 { (char *)"delete_StokesCoefficientConstant", _wrap_delete_StokesCoefficientConstant, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::StokesCoefficientConstant::~StokesCoefficientConstant()\n"
+		"\n"
+		""},
 	 { (char *)"StokesCoefficientConstant_swigregister", StokesCoefficientConstant_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };

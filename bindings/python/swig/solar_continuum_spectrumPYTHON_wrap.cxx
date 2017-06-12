@@ -5155,9 +5155,31 @@ SWIGINTERN PyObject *SolarContinuumSpectrum_swigregister(PyObject *SWIGUNUSEDPAR
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"delete_SolarContinuumSpectrum", _wrap_delete_SolarContinuumSpectrum, METH_VARARGS, NULL},
+	 { (char *)"delete_SolarContinuumSpectrum", _wrap_delete_SolarContinuumSpectrum, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::SolarContinuumSpectrum::~SolarContinuumSpectrum()\n"
+		"\n"
+		""},
 	 { (char *)"SolarContinuumSpectrum___str__", _wrap_SolarContinuumSpectrum___str__, METH_VARARGS, NULL},
-	 { (char *)"SolarContinuumSpectrum_solar_continuum_spectrum", _wrap_SolarContinuumSpectrum_solar_continuum_spectrum, METH_VARARGS, NULL},
+	 { (char *)"SolarContinuumSpectrum_solar_continuum_spectrum", _wrap_SolarContinuumSpectrum_solar_continuum_spectrum, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual Spectrum FullPhysics::SolarContinuumSpectrum::solar_continuum_spectrum(const SpectralDomain &Spec_domain) const =0\n"
+		"This calculate the solar continuum spectrum.\n"
+		"\n"
+		"This calculates this at an Earth-Sun distance of 1 AU, this needs to\n"
+		"be scaled by the square of the actual distance.\n"
+		"\n"
+		"Parameters:\n"
+		"-----------\n"
+		"\n"
+		"Spec_domain:  Wavenumber/Wavelength to return solar continuum spectrum\n"
+		"for.\n"
+		"\n"
+		"The solar continuum spectrum at 1 AU.  Note that the spectral domain\n"
+		"here is in the solar rest frame, not the earth rest frame used in most\n"
+		"other places. The class SolarAbsorptionAndContinuum handles this\n"
+		"conversion internally. \n"
+		""},
 	 { (char *)"SolarContinuumSpectrum_swigregister", SolarContinuumSpectrum_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };

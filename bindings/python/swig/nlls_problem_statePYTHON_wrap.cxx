@@ -5089,9 +5089,33 @@ SWIGINTERN PyObject *NLLSProblemState_swigregister(PyObject *SWIGUNUSEDPARM(self
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"delete_NLLSProblemState", _wrap_delete_NLLSProblemState, METH_VARARGS, NULL},
-	 { (char *)"NLLSProblemState_set", _wrap_NLLSProblemState_set, METH_VARARGS, NULL},
-	 { (char *)"NLLSProblemState_clear", _wrap_NLLSProblemState_clear, METH_VARARGS, NULL},
+	 { (char *)"delete_NLLSProblemState", _wrap_delete_NLLSProblemState, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::NLLSProblemState::~NLLSProblemState()\n"
+		"\n"
+		""},
+	 { (char *)"NLLSProblemState_set", _wrap_NLLSProblemState_set, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::NLLSProblemState::set(const NLLSProblemState &s)\n"
+		"Makes self a copy of the input state.\n"
+		"\n"
+		"This method makes the object, for which it is called, a copy of the\n"
+		"input state.\n"
+		"\n"
+		"Parameters:\n"
+		"-----------\n"
+		"\n"
+		"s:  another NLLSProblemState \n"
+		""},
+	 { (char *)"NLLSProblemState_clear", _wrap_NLLSProblemState_clear, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::NLLSProblemState::clear()\n"
+		"Deletes data contents.\n"
+		"\n"
+		"This method deletes state. If needed, it must be reimplemented by\n"
+		"other classes derived from this class to delete other saved components\n"
+		"associated with the state as well. \n"
+		""},
 	 { (char *)"NLLSProblemState_swigregister", NLLSProblemState_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };

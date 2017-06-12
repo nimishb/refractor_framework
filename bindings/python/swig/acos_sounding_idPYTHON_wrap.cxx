@@ -5441,9 +5441,22 @@ SWIGINTERN PyObject *AcosSoundingId_swigregister(PyObject *SWIGUNUSEDPARM(self),
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"delete_AcosSoundingId", _wrap_delete_AcosSoundingId, METH_VARARGS, NULL},
-	 { (char *)"new_AcosSoundingId", _wrap_new_AcosSoundingId, METH_VARARGS, NULL},
-	 { (char *)"AcosSoundingId_create", _wrap_AcosSoundingId_create, METH_VARARGS, NULL},
+	 { (char *)"delete_AcosSoundingId", _wrap_delete_AcosSoundingId, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::AcosSoundingId::~AcosSoundingId()\n"
+		"\n"
+		""},
+	 { (char *)"new_AcosSoundingId", _wrap_new_AcosSoundingId, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::AcosSoundingId::AcosSoundingId(const HdfFile &File, const std::string &Sounding_id, SoundingType\n"
+		"Sounding_type)\n"
+		"\n"
+		""},
+	 { (char *)"AcosSoundingId_create", _wrap_AcosSoundingId_create, METH_VARARGS, (char *)"\n"
+		"\n"
+		"static std::vector<boost::shared_ptr<HdfSoundingId> > FullPhysics::AcosSoundingId::create(const HdfFile &File, const std::string &Sounding_id)\n"
+		"\n"
+		""},
 	 { (char *)"AcosSoundingId_swigregister", AcosSoundingId_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };

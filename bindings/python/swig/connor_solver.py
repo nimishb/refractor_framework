@@ -150,6 +150,12 @@ ObservableConnor_swigregister = _connor_solver.ObservableConnor_swigregister
 ObservableConnor_swigregister(ObservableConnor)
 
 class ConnorSolver(ObservableConnor):
+    """
+
+    C++ includes: connor_solver.h
+
+    """
+
     __swig_setmethods__ = {}
     for _s in [ObservableConnor]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -161,6 +167,19 @@ class ConnorSolver(ObservableConnor):
     __repr__ = _swig_repr
 
     def __init__(self, *args):
+        """
+
+        FullPhysics::ConnorSolver::ConnorSolver(const boost::shared_ptr< CostFunction > &Cf, const boost::shared_ptr<
+        ConvergenceCheck > &Conv, double Gamma_initial=0.0, const std::string
+        &Save_test_data="")
+        Constructor.
+
+        This takes a CostFunction that we will minimize, a ConvergenceCheck to
+        check for convergence, and optionally the initial value for gamma.
+
+        See the comments above this class for the "save_test_data" argument.
+
+        """
         this = _connor_solver.new_ConnorSolver(*args)
         try:
             self.this.append(this)
@@ -168,22 +187,60 @@ class ConnorSolver(ObservableConnor):
             self.this = this
 
     def add_observer(self, Obs):
+        """
+
+        virtual void FullPhysics::ConnorSolver::add_observer(Observer< ConnorSolver > &Obs)
+
+        """
         return _connor_solver.ConnorSolver_add_observer(self, Obs)
 
+
     def remove_observer(self, Obs):
+        """
+
+        virtual void FullPhysics::ConnorSolver::remove_observer(Observer< ConnorSolver > &Obs)
+
+        """
         return _connor_solver.ConnorSolver_remove_observer(self, Obs)
 
+
     def save_test_data(self, Fname):
+        """
+
+        void FullPhysics::ConnorSolver::save_test_data(const std::string &Fname)
+        Set save_test_data argument, see explanation before class for this. 
+        """
         return _connor_solver.ConnorSolver_save_test_data(self, Fname)
 
+
     def test_do_inversion(self, Fname, Dx, Kt_se_m1_k):
+        """
+
+        void FullPhysics::ConnorSolver::test_do_inversion(const std::string &Fname, blitz::Array< double, 1 > &Dx,
+        blitz::Array< double, 2 > &Kt_se_m1_k)
+
+        """
         return _connor_solver.ConnorSolver_test_do_inversion(self, Fname, Dx, Kt_se_m1_k)
 
+
     def solve(self, Initial_guess, Apriori, Apriori_cov):
+        """
+
+        virtual bool FullPhysics::ConnorSolver::solve(const blitz::Array< double, 1 > &Initial_guess, const blitz::Array<
+        double, 1 > &Apriori, const blitz::Array< double, 2 > &Apriori_cov)
+
+        """
         return _connor_solver.ConnorSolver_solve(self, Initial_guess, Apriori, Apriori_cov)
 
+
     def _v_state(self, *args):
+        """
+
+        void FullPhysics::ConnorSolver::state(const ConnorSolverState &S)
+
+        """
         return _connor_solver.ConnorSolver__v_state(self, *args)
+
 
     @property
     def state(self):
@@ -195,7 +252,13 @@ class ConnorSolver(ObservableConnor):
 
 
     def _v_aposteriori_covariance_scaled(self):
+        """
+
+        virtual blitz::Array<double, 2> FullPhysics::ConnorSolver::aposteriori_covariance_scaled() const
+
+        """
         return _connor_solver.ConnorSolver__v_aposteriori_covariance_scaled(self)
+
 
     @property
     def aposteriori_covariance_scaled(self):
@@ -203,7 +266,13 @@ class ConnorSolver(ObservableConnor):
 
 
     def _v_aposteriori_covariance(self):
+        """
+
+        virtual blitz::Array<double, 2> FullPhysics::ConnorSolver::aposteriori_covariance() const
+
+        """
         return _connor_solver.ConnorSolver__v_aposteriori_covariance(self)
+
 
     @property
     def aposteriori_covariance(self):
@@ -211,7 +280,13 @@ class ConnorSolver(ObservableConnor):
 
 
     def _v_x_solution_uncertainty(self):
+        """
+
+        blitz::Array<double, 1> FullPhysics::ConnorSolver::x_solution_uncertainty() const
+
+        """
         return _connor_solver.ConnorSolver__v_x_solution_uncertainty(self)
+
 
     @property
     def x_solution_uncertainty(self):
@@ -219,7 +294,13 @@ class ConnorSolver(ObservableConnor):
 
 
     def _v_averaging_kernel(self):
+        """
+
+        virtual blitz::Array<double, 2> FullPhysics::ConnorSolver::averaging_kernel() const
+
+        """
         return _connor_solver.ConnorSolver__v_averaging_kernel(self)
+
 
     @property
     def averaging_kernel(self):
@@ -227,7 +308,13 @@ class ConnorSolver(ObservableConnor):
 
 
     def _v_gamma_last_step(self):
+        """
+
+        double FullPhysics::ConnorSolver::gamma_last_step() const
+        Levenberg-Marquardt parameter for last step we processed. 
+        """
         return _connor_solver.ConnorSolver__v_gamma_last_step(self)
+
 
     @property
     def gamma_last_step(self):
@@ -235,7 +322,13 @@ class ConnorSolver(ObservableConnor):
 
 
     def _v_number_iteration(self):
+        """
+
+        int FullPhysics::ConnorSolver::number_iteration() const
+        Number of iterations for the last problem solved. 
+        """
         return _connor_solver.ConnorSolver__v_number_iteration(self)
+
 
     @property
     def number_iteration(self):
@@ -243,7 +336,13 @@ class ConnorSolver(ObservableConnor):
 
 
     def _v_number_divergent(self):
+        """
+
+        int FullPhysics::ConnorSolver::number_divergent() const
+        Number of divergent steps for the last problem solved. 
+        """
         return _connor_solver.ConnorSolver__v_number_divergent(self)
+
 
     @property
     def number_divergent(self):
@@ -251,7 +350,13 @@ class ConnorSolver(ObservableConnor):
 
 
     def _v_outcome_flag(self):
+        """
+
+        int FullPhysics::ConnorSolver::outcome_flag() const
+        Outcome flag. This is an integer version of FitStatistic::OUTCOME. 
+        """
         return _connor_solver.ConnorSolver__v_outcome_flag(self)
+
 
     @property
     def outcome_flag(self):
@@ -259,7 +364,13 @@ class ConnorSolver(ObservableConnor):
 
 
     def _v_x_apriori(self):
+        """
+
+        blitz::Array<double, 1> FullPhysics::ConnorSolver::x_apriori() const
+        Return the a priori of the last problem solved. 
+        """
         return _connor_solver.ConnorSolver__v_x_apriori(self)
+
 
     @property
     def x_apriori(self):
@@ -267,7 +378,15 @@ class ConnorSolver(ObservableConnor):
 
 
     def _v_x_apriori_uncertainty(self):
+        """
+
+        blitz::Array<double, 1> FullPhysics::ConnorSolver::x_apriori_uncertainty() const
+        Return the uncertainty of the apriori of the last problem solved.
+
+        This is the sqrt of the diagonal of the a priori covariance matrix. 
+        """
         return _connor_solver.ConnorSolver__v_x_apriori_uncertainty(self)
+
 
     @property
     def x_apriori_uncertainty(self):
@@ -275,7 +394,13 @@ class ConnorSolver(ObservableConnor):
 
 
     def _v_x_solution(self):
+        """
+
+        virtual blitz::Array<double, 1> FullPhysics::ConnorSolver::x_solution() const
+
+        """
         return _connor_solver.ConnorSolver__v_x_solution(self)
+
 
     @property
     def x_solution(self):
@@ -283,7 +408,13 @@ class ConnorSolver(ObservableConnor):
 
 
     def _v_x_solution_zero_unused(self):
+        """
+
+        blitz::Array<double, 1> FullPhysics::ConnorSolver::x_solution_zero_unused() const
+
+        """
         return _connor_solver.ConnorSolver__v_x_solution_zero_unused(self)
+
 
     @property
     def x_solution_zero_unused(self):
@@ -291,7 +422,13 @@ class ConnorSolver(ObservableConnor):
 
 
     def _v_apriori_covariance(self):
+        """
+
+        blitz::Array<double, 2> FullPhysics::ConnorSolver::apriori_covariance() const
+
+        """
         return _connor_solver.ConnorSolver__v_apriori_covariance(self)
+
 
     @property
     def apriori_covariance(self):
@@ -299,7 +436,21 @@ class ConnorSolver(ObservableConnor):
 
 
     def _v_jacobian(self):
+        """
+
+        virtual blitz::Array<double, 2> FullPhysics::ConnorSolver::jacobian() const
+        Return the last jacobian calculated.
+
+        Note that this is not the jacobian calculated at the final solution
+        x_sol, but rather is the for the iteration right before x_sol. Never
+        the less this can be used as an approximation to the final Jacobian.
+
+        We currently don't calculate the final Jacobian because each iteration
+        of the CostFunction can be rather expensive to calculate. We can
+        revisit this if necessary in the future. 
+        """
         return _connor_solver.ConnorSolver__v_jacobian(self)
+
 
     @property
     def jacobian(self):
@@ -307,7 +458,13 @@ class ConnorSolver(ObservableConnor):
 
 
     def _v_fit_statistic(self):
+        """
+
+        virtual FitStatistic FullPhysics::ConnorSolver::fit_statistic() const
+        Return fit results for solution to last problem solved. 
+        """
         return _connor_solver.ConnorSolver__v_fit_statistic(self)
+
 
     @property
     def fit_statistic(self):
@@ -315,7 +472,13 @@ class ConnorSolver(ObservableConnor):
 
 
     def _v_residual(self):
+        """
+
+        virtual blitz::Array<double, 1> FullPhysics::ConnorSolver::residual() const
+        Return residual for solution to last problem solved. 
+        """
         return _connor_solver.ConnorSolver__v_residual(self)
+
 
     @property
     def residual(self):
@@ -323,7 +486,14 @@ class ConnorSolver(ObservableConnor):
 
 
     def _v_residual_covariance_diagonal(self):
+        """
+
+        virtual blitz::Array<double, 1> FullPhysics::ConnorSolver::residual_covariance_diagonal() const
+        Return diagonal of covariance matrix of residual for solution to last
+        problem solved. 
+        """
         return _connor_solver.ConnorSolver__v_residual_covariance_diagonal(self)
+
 
     @property
     def residual_covariance_diagonal(self):
@@ -331,7 +501,13 @@ class ConnorSolver(ObservableConnor):
 
 
     def _v_apriori_covariance_inv_norm(self):
+        """
+
+        virtual blitz::Array<double, 2> FullPhysics::ConnorSolver::apriori_covariance_inv_norm() const
+        Return normalized apriori covariance inverse matrix. 
+        """
         return _connor_solver.ConnorSolver__v_apriori_covariance_inv_norm(self)
+
 
     @property
     def apriori_covariance_inv_norm(self):
@@ -339,7 +515,13 @@ class ConnorSolver(ObservableConnor):
 
 
     def _v_cost_function(self):
+        """
+
+        boost::shared_ptr<CostFunction> FullPhysics::ConnorSolver::cost_function() const
+        Cost function. 
+        """
         return _connor_solver.ConnorSolver__v_cost_function(self)
+
 
     @property
     def cost_function(self):
@@ -347,7 +529,13 @@ class ConnorSolver(ObservableConnor):
 
 
     def _v_convergence_check(self):
+        """
+
+        boost::shared_ptr<ConvergenceCheck> FullPhysics::ConnorSolver::convergence_check() const
+        The convergence check object. 
+        """
         return _connor_solver.ConnorSolver__v_convergence_check(self)
+
 
     @property
     def convergence_check(self):
@@ -365,6 +553,13 @@ ConnorSolver_swigregister = _connor_solver.ConnorSolver_swigregister
 ConnorSolver_swigregister(ConnorSolver)
 
 class ConnorSolverState(full_physics_swig.generic_object.GenericObject):
+    """
+
+    Class that saves the state of a ConnorSolver.
+
+    C++ includes: connor_solver.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.generic_object.GenericObject]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -376,6 +571,18 @@ class ConnorSolverState(full_physics_swig.generic_object.GenericObject):
     __repr__ = _swig_repr
 
     def __init__(self, X_i, X_a, Apriori_cov_scaled, Sa_m1_scaled, Sigma_ap, Gamma, Gamma_last_step, Gamma_intial, Residual, Se, K, Kt_se_m1_k, Dx, Fstat):
+        """
+
+        FullPhysics::ConnorSolverState::ConnorSolverState(const blitz::Array< double, 1 > &X_i, const blitz::Array< double, 1 >
+        &X_a, const blitz::Array< double, 2 > &Apriori_cov_scaled, const
+        blitz::Array< double, 2 > &Sa_m1_scaled, const blitz::Array< double, 1
+        > &Sigma_ap, double Gamma, double Gamma_last_step, double
+        Gamma_intial, const blitz::Array< double, 1 > &Residual, const
+        blitz::Array< double, 1 > &Se, const blitz::Array< double, 2 > &K,
+        const blitz::Array< double, 2 > &Kt_se_m1_k, const blitz::Array<
+        double, 1 > &Dx, const FitStatistic &Fstat)
+
+        """
         this = _connor_solver.new_ConnorSolverState(X_i, X_a, Apriori_cov_scaled, Sa_m1_scaled, Sigma_ap, Gamma, Gamma_last_step, Gamma_intial, Residual, Se, K, Kt_se_m1_k, Dx, Fstat)
         try:
             self.this.append(this)
@@ -386,7 +593,13 @@ class ConnorSolverState(full_physics_swig.generic_object.GenericObject):
         return _connor_solver.ConnorSolverState___str__(self)
 
     def _v_x_i(self):
+        """
+
+        const blitz::Array<double, 1>& FullPhysics::ConnorSolverState::x_i() const
+
+        """
         return _connor_solver.ConnorSolverState__v_x_i(self)
+
 
     @property
     def x_i(self):
@@ -394,7 +607,13 @@ class ConnorSolverState(full_physics_swig.generic_object.GenericObject):
 
 
     def _v_x_a(self):
+        """
+
+        const blitz::Array<double, 1>& FullPhysics::ConnorSolverState::x_a() const
+
+        """
         return _connor_solver.ConnorSolverState__v_x_a(self)
+
 
     @property
     def x_a(self):
@@ -402,7 +621,13 @@ class ConnorSolverState(full_physics_swig.generic_object.GenericObject):
 
 
     def _v_apriori_cov_scaled(self):
+        """
+
+        const blitz::Array<double, 2>& FullPhysics::ConnorSolverState::apriori_cov_scaled() const
+
+        """
         return _connor_solver.ConnorSolverState__v_apriori_cov_scaled(self)
+
 
     @property
     def apriori_cov_scaled(self):
@@ -410,7 +635,13 @@ class ConnorSolverState(full_physics_swig.generic_object.GenericObject):
 
 
     def _v_sa_m1_scaled(self):
+        """
+
+        const blitz::Array<double, 2>& FullPhysics::ConnorSolverState::sa_m1_scaled() const
+
+        """
         return _connor_solver.ConnorSolverState__v_sa_m1_scaled(self)
+
 
     @property
     def sa_m1_scaled(self):
@@ -418,7 +649,13 @@ class ConnorSolverState(full_physics_swig.generic_object.GenericObject):
 
 
     def _v_sigma_ap(self):
+        """
+
+        const blitz::Array<double, 1>& FullPhysics::ConnorSolverState::sigma_ap() const
+
+        """
         return _connor_solver.ConnorSolverState__v_sigma_ap(self)
+
 
     @property
     def sigma_ap(self):
@@ -426,7 +663,13 @@ class ConnorSolverState(full_physics_swig.generic_object.GenericObject):
 
 
     def _v_gamma(self):
+        """
+
+        double FullPhysics::ConnorSolverState::gamma() const
+
+        """
         return _connor_solver.ConnorSolverState__v_gamma(self)
+
 
     @property
     def gamma(self):
@@ -434,7 +677,13 @@ class ConnorSolverState(full_physics_swig.generic_object.GenericObject):
 
 
     def _v_gamma_last_step(self):
+        """
+
+        double FullPhysics::ConnorSolverState::gamma_last_step() const
+
+        """
         return _connor_solver.ConnorSolverState__v_gamma_last_step(self)
+
 
     @property
     def gamma_last_step(self):
@@ -442,7 +691,13 @@ class ConnorSolverState(full_physics_swig.generic_object.GenericObject):
 
 
     def _v_gamma_initial(self):
+        """
+
+        double FullPhysics::ConnorSolverState::gamma_initial() const
+
+        """
         return _connor_solver.ConnorSolverState__v_gamma_initial(self)
+
 
     @property
     def gamma_initial(self):
@@ -450,7 +705,13 @@ class ConnorSolverState(full_physics_swig.generic_object.GenericObject):
 
 
     def _v_residual(self):
+        """
+
+        const blitz::Array<double, 1>& FullPhysics::ConnorSolverState::residual() const
+
+        """
         return _connor_solver.ConnorSolverState__v_residual(self)
+
 
     @property
     def residual(self):
@@ -458,7 +719,13 @@ class ConnorSolverState(full_physics_swig.generic_object.GenericObject):
 
 
     def _v_k(self):
+        """
+
+        const blitz::Array<double, 2>& FullPhysics::ConnorSolverState::k() const
+
+        """
         return _connor_solver.ConnorSolverState__v_k(self)
+
 
     @property
     def k(self):
@@ -466,7 +733,13 @@ class ConnorSolverState(full_physics_swig.generic_object.GenericObject):
 
 
     def _v_kt_se_m1_k(self):
+        """
+
+        const blitz::Array<double, 2>& FullPhysics::ConnorSolverState::kt_se_m1_k() const
+
+        """
         return _connor_solver.ConnorSolverState__v_kt_se_m1_k(self)
+
 
     @property
     def kt_se_m1_k(self):
@@ -474,7 +747,13 @@ class ConnorSolverState(full_physics_swig.generic_object.GenericObject):
 
 
     def _v_se(self):
+        """
+
+        const blitz::Array<double, 1>& FullPhysics::ConnorSolverState::se() const
+
+        """
         return _connor_solver.ConnorSolverState__v_se(self)
+
 
     @property
     def se(self):
@@ -482,7 +761,13 @@ class ConnorSolverState(full_physics_swig.generic_object.GenericObject):
 
 
     def _v_dx(self):
+        """
+
+        const blitz::Array<double, 1>& FullPhysics::ConnorSolverState::dx() const
+
+        """
         return _connor_solver.ConnorSolverState__v_dx(self)
+
 
     @property
     def dx(self):
@@ -490,7 +775,13 @@ class ConnorSolverState(full_physics_swig.generic_object.GenericObject):
 
 
     def _v_fstat(self):
+        """
+
+        const FitStatistic& FullPhysics::ConnorSolverState::fstat() const
+
+        """
         return _connor_solver.ConnorSolverState__v_fstat(self)
+
 
     @property
     def fstat(self):

@@ -123,6 +123,14 @@ def _new_from_set(cls, version, *args):
 import full_physics_swig.level_1b
 import full_physics_swig.generic_object
 class Level1bScaleRadiance(full_physics_swig.level_1b.Level1b):
+    """
+
+    Scales the measured radiance of another Level1b class for each
+    spectral band.
+
+    C++ includes: level_1b_scale_radiance.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.level_1b.Level1b]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -137,37 +145,103 @@ class Level1bScaleRadiance(full_physics_swig.level_1b.Level1b):
     __repr__ = _swig_repr
 
     def latitude(self, i):
+        """
+
+        virtual DoubleWithUnit FullPhysics::Level1bScaleRadiance::latitude(int i) const
+
+        """
         return _level_1b_scale_radiance.Level1bScaleRadiance_latitude(self, i)
 
+
     def longitude(self, i):
+        """
+
+        virtual DoubleWithUnit FullPhysics::Level1bScaleRadiance::longitude(int i) const
+
+        """
         return _level_1b_scale_radiance.Level1bScaleRadiance_longitude(self, i)
 
+
     def sounding_zenith(self, i):
+        """
+
+        virtual DoubleWithUnit FullPhysics::Level1bScaleRadiance::sounding_zenith(int i) const
+
+        """
         return _level_1b_scale_radiance.Level1bScaleRadiance_sounding_zenith(self, i)
 
+
     def sounding_azimuth(self, i):
+        """
+
+        virtual DoubleWithUnit FullPhysics::Level1bScaleRadiance::sounding_azimuth(int i) const
+
+        """
         return _level_1b_scale_radiance.Level1bScaleRadiance_sounding_azimuth(self, i)
 
+
     def stokes_coefficient(self, i):
+        """
+
+        virtual blitz::Array<double, 1> FullPhysics::Level1bScaleRadiance::stokes_coefficient(int i) const
+
+        """
         return _level_1b_scale_radiance.Level1bScaleRadiance_stokes_coefficient(self, i)
 
+
     def solar_zenith(self, i):
+        """
+
+        virtual DoubleWithUnit FullPhysics::Level1bScaleRadiance::solar_zenith(int i) const
+
+        """
         return _level_1b_scale_radiance.Level1bScaleRadiance_solar_zenith(self, i)
 
+
     def solar_azimuth(self, i):
+        """
+
+        virtual DoubleWithUnit FullPhysics::Level1bScaleRadiance::solar_azimuth(int i) const
+
+        """
         return _level_1b_scale_radiance.Level1bScaleRadiance_solar_azimuth(self, i)
 
+
     def altitude(self, i):
+        """
+
+        virtual DoubleWithUnit FullPhysics::Level1bScaleRadiance::altitude(int i) const
+
+        """
         return _level_1b_scale_radiance.Level1bScaleRadiance_altitude(self, i)
 
+
     def relative_velocity(self, i):
+        """
+
+        virtual DoubleWithUnit FullPhysics::Level1bScaleRadiance::relative_velocity(int Spec_index) const
+
+        """
         return _level_1b_scale_radiance.Level1bScaleRadiance_relative_velocity(self, i)
 
+
     def time(self, i):
+        """
+
+        virtual Time FullPhysics::Level1bScaleRadiance::time(int Spec_index) const
+
+        """
         return _level_1b_scale_radiance.Level1bScaleRadiance_time(self, i)
 
+
     def radiance(self, Spec_index):
+        """
+
+        virtual SpectralRange FullPhysics::Level1bScaleRadiance::radiance(int Spec_index) const
+
+        """
         return _level_1b_scale_radiance.Level1bScaleRadiance_radiance(self, Spec_index)
+
     __swig_destroy__ = _level_1b_scale_radiance.delete_Level1bScaleRadiance
     __del__ = lambda self: None
 Level1bScaleRadiance_swigregister = _level_1b_scale_radiance.Level1bScaleRadiance_swigregister

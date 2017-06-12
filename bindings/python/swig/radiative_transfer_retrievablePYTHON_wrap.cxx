@@ -6999,9 +6999,21 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"ObserverRadiativeTransferRetrievable_notify_add", _wrap_ObserverRadiativeTransferRetrievable_notify_add, METH_VARARGS, NULL},
 	 { (char *)"ObserverRadiativeTransferRetrievable_notify_remove", _wrap_ObserverRadiativeTransferRetrievable_notify_remove, METH_VARARGS, NULL},
 	 { (char *)"ObserverRadiativeTransferRetrievable_swigregister", ObserverRadiativeTransferRetrievable_swigregister, METH_VARARGS, NULL},
-	 { (char *)"delete_RadiativeTransferRetrievable", _wrap_delete_RadiativeTransferRetrievable, METH_VARARGS, NULL},
-	 { (char *)"RadiativeTransferRetrievable_add_observer", _wrap_RadiativeTransferRetrievable_add_observer, METH_VARARGS, NULL},
-	 { (char *)"RadiativeTransferRetrievable_remove_observer", _wrap_RadiativeTransferRetrievable_remove_observer, METH_VARARGS, NULL},
+	 { (char *)"delete_RadiativeTransferRetrievable", _wrap_delete_RadiativeTransferRetrievable, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::RadiativeTransferRetrievable::~RadiativeTransferRetrievable()\n"
+		"\n"
+		""},
+	 { (char *)"RadiativeTransferRetrievable_add_observer", _wrap_RadiativeTransferRetrievable_add_observer, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::RadiativeTransferRetrievable::add_observer(Observer< RadiativeTransferRetrievable > &Obs)\n"
+		"\n"
+		""},
+	 { (char *)"RadiativeTransferRetrievable_remove_observer", _wrap_RadiativeTransferRetrievable_remove_observer, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::RadiativeTransferRetrievable::remove_observer(Observer< RadiativeTransferRetrievable > &Obs)\n"
+		"\n"
+		""},
 	 { (char *)"RadiativeTransferRetrievable_swigregister", RadiativeTransferRetrievable_swigregister, METH_VARARGS, NULL},
 	 { (char *)"SubStateVectorArrayRadiativeTransfer_init", _wrap_SubStateVectorArrayRadiativeTransfer_init, METH_VARARGS, NULL},
 	 { (char *)"delete_SubStateVectorArrayRadiativeTransfer", _wrap_delete_SubStateVectorArrayRadiativeTransfer, METH_VARARGS, NULL},

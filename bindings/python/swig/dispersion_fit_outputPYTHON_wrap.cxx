@@ -5151,9 +5151,21 @@ SWIGINTERN PyObject *DispersionFitOutput_swigregister(PyObject *SWIGUNUSEDPARM(s
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"DispersionFitOutput_register_output", _wrap_DispersionFitOutput_register_output, METH_VARARGS, NULL},
-	 { (char *)"DispersionFitOutput_register_output_apriori", _wrap_DispersionFitOutput_register_output_apriori, METH_VARARGS, NULL},
-	 { (char *)"delete_DispersionFitOutput", _wrap_delete_DispersionFitOutput, METH_VARARGS, NULL},
+	 { (char *)"DispersionFitOutput_register_output", _wrap_DispersionFitOutput_register_output, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::DispersionFitOutput::register_output(const boost::shared_ptr< Output > &out) const\n"
+		"\n"
+		""},
+	 { (char *)"DispersionFitOutput_register_output_apriori", _wrap_DispersionFitOutput_register_output_apriori, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::DispersionFitOutput::register_output_apriori(const boost::shared_ptr< Output > &out) const\n"
+		"\n"
+		""},
+	 { (char *)"delete_DispersionFitOutput", _wrap_delete_DispersionFitOutput, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::DispersionFitOutput::~DispersionFitOutput()\n"
+		"\n"
+		""},
 	 { (char *)"DispersionFitOutput_swigregister", DispersionFitOutput_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };

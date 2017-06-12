@@ -240,6 +240,13 @@ SpurrRtDriver_swigregister = _lidort_driver.SpurrRtDriver_swigregister
 SpurrRtDriver_swigregister(SpurrRtDriver)
 
 class LidortBrdfDriver(SpurrBrdfDriver):
+    """
+
+    LIDORT specific BRDF driver implementation.
+
+    C++ includes: lidort_driver.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [SpurrBrdfDriver]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -251,6 +258,11 @@ class LidortBrdfDriver(SpurrBrdfDriver):
     __repr__ = _swig_repr
 
     def __init__(self, nstream, nmoment):
+        """
+
+        FullPhysics::LidortBrdfDriver::LidortBrdfDriver(int nstream, int nmoment)
+
+        """
         this = _lidort_driver.new_LidortBrdfDriver(nstream, nmoment)
         try:
             self.this.append(this)
@@ -260,7 +272,14 @@ class LidortBrdfDriver(SpurrBrdfDriver):
     __del__ = lambda self: None
 
     def _v_brdf_interface(self):
+        """
+
+        const boost::shared_ptr<Brdf_Linsup_Masters> FullPhysics::LidortBrdfDriver::brdf_interface() const
+        Interface to BRDF interface to allow changing configuration to values.
+
+        """
         return _lidort_driver.LidortBrdfDriver__v_brdf_interface(self)
+
 
     @property
     def brdf_interface(self):
@@ -268,10 +287,22 @@ class LidortBrdfDriver(SpurrBrdfDriver):
 
 
     def setup_geometry(self, sza, azm, zen):
+        """
+
+        virtual void FullPhysics::LidortBrdfDriver::setup_geometry(double sza, double azm, double zen) const
+
+        """
         return _lidort_driver.LidortBrdfDriver_setup_geometry(self, sza, azm, zen)
 
+
     def _v_n_brdf_kernels(self):
+        """
+
+        virtual int FullPhysics::LidortBrdfDriver::n_brdf_kernels() const
+
+        """
         return _lidort_driver.LidortBrdfDriver__v_n_brdf_kernels(self)
+
 
     @property
     def n_brdf_kernels(self):
@@ -279,7 +310,13 @@ class LidortBrdfDriver(SpurrBrdfDriver):
 
 
     def _v_n_kernel_factor_wfs(self):
+        """
+
+        virtual int FullPhysics::LidortBrdfDriver::n_kernel_factor_wfs() const
+
+        """
         return _lidort_driver.LidortBrdfDriver__v_n_kernel_factor_wfs(self)
+
 
     @property
     def n_kernel_factor_wfs(self):
@@ -287,7 +324,13 @@ class LidortBrdfDriver(SpurrBrdfDriver):
 
 
     def _v_n_kernel_params_wfs(self):
+        """
+
+        virtual int FullPhysics::LidortBrdfDriver::n_kernel_params_wfs() const
+
+        """
         return _lidort_driver.LidortBrdfDriver__v_n_kernel_params_wfs(self)
+
 
     @property
     def n_kernel_params_wfs(self):
@@ -295,7 +338,13 @@ class LidortBrdfDriver(SpurrBrdfDriver):
 
 
     def _v_n_surface_wfs(self):
+        """
+
+        virtual int FullPhysics::LidortBrdfDriver::n_surface_wfs() const
+
+        """
         return _lidort_driver.LidortBrdfDriver__v_n_surface_wfs(self)
+
 
     @property
     def n_surface_wfs(self):
@@ -303,7 +352,13 @@ class LidortBrdfDriver(SpurrBrdfDriver):
 
 
     def _v_do_shadow_effect(self):
+        """
+
+        virtual bool FullPhysics::LidortBrdfDriver::do_shadow_effect() const
+
+        """
         return _lidort_driver.LidortBrdfDriver__v_do_shadow_effect(self)
+
 
     @property
     def do_shadow_effect(self):
@@ -311,11 +366,24 @@ class LidortBrdfDriver(SpurrBrdfDriver):
 
 
     def do_kparams_derivs(self, kernel_index):
+        """
+
+        virtual bool FullPhysics::LidortBrdfDriver::do_kparams_derivs(const int kernel_index) const
+
+        """
         return _lidort_driver.LidortBrdfDriver_do_kparams_derivs(self, kernel_index)
+
 LidortBrdfDriver_swigregister = _lidort_driver.LidortBrdfDriver_swigregister
 LidortBrdfDriver_swigregister(LidortBrdfDriver)
 
 class LidortRtDriver(SpurrRtDriver):
+    """
+
+    LIDORT specific Radiative transfer interface implementation.
+
+    C++ includes: lidort_driver.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [SpurrRtDriver]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -327,6 +395,12 @@ class LidortRtDriver(SpurrRtDriver):
     __repr__ = _swig_repr
 
     def __init__(self, nstream, nmoment, do_multi_scatt_only, surface_type, zen, pure_nadir):
+        """
+
+        FullPhysics::LidortRtDriver::LidortRtDriver(int nstream, int nmoment, bool do_multi_scatt_only, int surface_type,
+        const blitz::Array< double, 1 > &zen, bool pure_nadir)
+
+        """
         this = _lidort_driver.new_LidortRtDriver(nstream, nmoment, do_multi_scatt_only, surface_type, zen, pure_nadir)
         try:
             self.this.append(this)
@@ -334,7 +408,13 @@ class LidortRtDriver(SpurrRtDriver):
             self.this = this
 
     def _v_number_moment(self):
+        """
+
+        int FullPhysics::LidortRtDriver::number_moment() const
+
+        """
         return _lidort_driver.LidortRtDriver__v_number_moment(self)
+
 
     @property
     def number_moment(self):
@@ -342,7 +422,13 @@ class LidortRtDriver(SpurrRtDriver):
 
 
     def _v_number_stream(self):
+        """
+
+        int FullPhysics::LidortRtDriver::number_stream() const
+
+        """
         return _lidort_driver.LidortRtDriver__v_number_stream(self)
+
 
     @property
     def number_stream(self):
@@ -350,22 +436,58 @@ class LidortRtDriver(SpurrRtDriver):
 
 
     def setup_sphericity(self, zen):
+        """
+
+        void FullPhysics::LidortRtDriver::setup_sphericity(double zen) const
+
+        """
         return _lidort_driver.LidortRtDriver_setup_sphericity(self, zen)
 
+
     def set_plane_parallel(self):
+        """
+
+        void FullPhysics::LidortRtDriver::set_plane_parallel() const
+
+        """
         return _lidort_driver.LidortRtDriver_set_plane_parallel(self)
 
+
     def set_pseudo_spherical(self):
+        """
+
+        void FullPhysics::LidortRtDriver::set_pseudo_spherical() const
+
+        """
         return _lidort_driver.LidortRtDriver_set_pseudo_spherical(self)
 
+
     def set_plane_parallel_plus_ss_correction(self):
+        """
+
+        void FullPhysics::LidortRtDriver::set_plane_parallel_plus_ss_correction() const
+
+        """
         return _lidort_driver.LidortRtDriver_set_plane_parallel_plus_ss_correction(self)
 
+
     def set_line_of_sight(self):
+        """
+
+        void FullPhysics::LidortRtDriver::set_line_of_sight() const
+
+        """
         return _lidort_driver.LidortRtDriver_set_line_of_sight(self)
 
+
     def _v_do_multi_scatt_only(self):
+        """
+
+        bool FullPhysics::LidortRtDriver::do_multi_scatt_only() const
+
+        """
         return _lidort_driver.LidortRtDriver__v_do_multi_scatt_only(self)
+
 
     @property
     def do_multi_scatt_only(self):
@@ -373,7 +495,13 @@ class LidortRtDriver(SpurrRtDriver):
 
 
     def _v_pure_nadir(self):
+        """
+
+        bool FullPhysics::LidortRtDriver::pure_nadir() const
+
+        """
         return _lidort_driver.LidortRtDriver__v_pure_nadir(self)
+
 
     @property
     def pure_nadir(self):
@@ -381,7 +509,13 @@ class LidortRtDriver(SpurrRtDriver):
 
 
     def _v_lidort_brdf_driver(self):
+        """
+
+        const boost::shared_ptr<LidortBrdfDriver> FullPhysics::LidortRtDriver::lidort_brdf_driver() const
+        Access to BRDF driver. 
+        """
         return _lidort_driver.LidortRtDriver__v_lidort_brdf_driver(self)
+
 
     @property
     def lidort_brdf_driver(self):
@@ -389,7 +523,13 @@ class LidortRtDriver(SpurrRtDriver):
 
 
     def _v_brdf_interface(self):
+        """
+
+        const boost::shared_ptr<Brdf_Linsup_Masters> FullPhysics::LidortRtDriver::brdf_interface() const
+
+        """
         return _lidort_driver.LidortRtDriver__v_brdf_interface(self)
+
 
     @property
     def brdf_interface(self):
@@ -397,7 +537,14 @@ class LidortRtDriver(SpurrRtDriver):
 
 
     def _v_lidort_interface(self):
+        """
+
+        const boost::shared_ptr<Lidort_Lps_Masters> FullPhysics::LidortRtDriver::lidort_interface() const
+        Interface to LIDORT RT software inputs to allow changing LIDORT
+        configuration to values other than default. 
+        """
         return _lidort_driver.LidortRtDriver__v_lidort_interface(self)
+
 
     @property
     def lidort_interface(self):
@@ -405,28 +552,79 @@ class LidortRtDriver(SpurrRtDriver):
 
 
     def setup_height_grid(self, height_grid):
+        """
+
+        void FullPhysics::LidortRtDriver::setup_height_grid(const blitz::Array< double, 1 > &height_grid) const
+
+        """
         return _lidort_driver.LidortRtDriver_setup_height_grid(self, height_grid)
 
+
     def setup_geometry(self, sza, azm, zen):
+        """
+
+        void FullPhysics::LidortRtDriver::setup_geometry(double sza, double azm, double zen) const
+
+        """
         return _lidort_driver.LidortRtDriver_setup_geometry(self, sza, azm, zen)
 
+
     def setup_optical_inputs(self, od, ssa, pf):
+        """
+
+        void FullPhysics::LidortRtDriver::setup_optical_inputs(const blitz::Array< double, 1 > &od, const blitz::Array< double, 1 >
+        &ssa, const blitz::Array< double, 2 > &pf) const
+
+        """
         return _lidort_driver.LidortRtDriver_setup_optical_inputs(self, od, ssa, pf)
 
+
     def clear_linear_inputs(self):
+        """
+
+        void FullPhysics::LidortRtDriver::clear_linear_inputs() const
+
+        """
         return _lidort_driver.LidortRtDriver_clear_linear_inputs(self)
 
+
     def setup_linear_inputs(self, od, ssa, pf, do_surface_linearization):
+        """
+
+        void FullPhysics::LidortRtDriver::setup_linear_inputs(const ArrayAd< double, 1 > &od, const ArrayAd< double, 1 > &ssa,
+        const ArrayAd< double, 2 > &pf, bool do_surface_linearization) const
+
+        """
         return _lidort_driver.LidortRtDriver_setup_linear_inputs(self, od, ssa, pf, do_surface_linearization)
 
+
     def calculate_rt(self):
+        """
+
+        void FullPhysics::LidortRtDriver::calculate_rt() const
+
+        """
         return _lidort_driver.LidortRtDriver_calculate_rt(self)
 
+
     def get_intensity(self):
+        """
+
+        double FullPhysics::LidortRtDriver::get_intensity() const
+
+        """
         return _lidort_driver.LidortRtDriver_get_intensity(self)
 
+
     def copy_jacobians(self, jac_atm, jac_surf):
+        """
+
+        void FullPhysics::LidortRtDriver::copy_jacobians(blitz::Array< double, 2 > &jac_atm, blitz::Array< double, 1 >
+        &jac_surf) const
+
+        """
         return _lidort_driver.LidortRtDriver_copy_jacobians(self, jac_atm, jac_surf)
+
     __swig_destroy__ = _lidort_driver.delete_LidortRtDriver
     __del__ = lambda self: None
 LidortRtDriver_swigregister = _lidort_driver.LidortRtDriver_swigregister

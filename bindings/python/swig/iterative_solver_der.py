@@ -123,6 +123,21 @@ def _new_from_set(cls, version, *args):
 import full_physics_swig.iterative_solver
 import full_physics_swig.generic_object
 class IterativeSolverDer(full_physics_swig.iterative_solver.IterativeSolver):
+    """
+
+    The base class for all iterative optimizers that use first order
+    derivatives.
+
+    This class is the base class for iterative optimizers that use first
+    order derivatives.
+
+    Similar to its base class IterativeSolver, IterativeSolverDer is also
+    not associated with any problem for the same reason mentioned in the
+    comment section of IterativeSolver class.
+
+    C++ includes: iterative_solver_der.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.iterative_solver.IterativeSolver]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -139,7 +154,28 @@ class IterativeSolverDer(full_physics_swig.iterative_solver.IterativeSolver):
     __del__ = lambda self: None
 
     def _v_gradient_at_accepted_points(self):
+        """
+
+        virtual std::vector< blitz::Array<double, 1> > FullPhysics::IterativeSolverDer::gradient_at_accepted_points() const
+        Returns a vector (std) of gradients evaluated at accepted points.
+
+        This method returns a std vector of gradients computed at the accepted
+        points. In other words, if the accepted points and the computed
+        gradients at these points are recorded correctly, then
+        gradient_at_accepted_points()[0] is the gradient of the cost function
+        evaluated at accepted_points()[0]
+
+        gradient_at_accepted_points()[1] is the gradient of the cost function
+        evaluated at accepted_points()[1]
+
+        ...
+
+        and finally gradient_at_accepted_points()[num_accepted_steps()] is the
+        gradient of the cost function evaluated at
+        accepted_points()[num_accepted_steps()] 
+        """
         return _iterative_solver_der.IterativeSolverDer__v_gradient_at_accepted_points(self)
+
 
     @property
     def gradient_at_accepted_points(self):
@@ -147,7 +183,26 @@ class IterativeSolverDer(full_physics_swig.iterative_solver.IterativeSolver):
 
 
     def record_gradient_at_accepted_point(self, gradient):
+        """
+
+        void FullPhysics::IterativeSolverDer::record_gradient_at_accepted_point(const blitz::Array< double, 1 > &gradient)
+        For recording the gradient of the cost function evaluated at an
+        accepted point.
+
+        This method is called to record the gradient of the cost function
+        evaluated at an accepted point. It is the responsibility of the
+        implementer of the solve() method to record the gradients evaluated at
+        the accepted points. The gradients must be recorded in the same order
+        that they are evaluated.
+
+        Parameters:
+        -----------
+
+        gradient:  gradient of the cost function evaluated at an accepted
+        point in the parameter space 
+        """
         return _iterative_solver_der.IterativeSolverDer_record_gradient_at_accepted_point(self, gradient)
+
 IterativeSolverDer_swigregister = _iterative_solver_der.IterativeSolverDer_swigregister
 IterativeSolverDer_swigregister(IterativeSolverDer)
 

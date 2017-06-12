@@ -5739,13 +5739,42 @@ SWIGINTERN PyObject *RadianceScalingSvFit_swigregister(PyObject *SWIGUNUSEDPARM(
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"delete_RadianceScalingSvFit", _wrap_delete_RadianceScalingSvFit, METH_VARARGS, NULL},
-	 { (char *)"RadianceScalingSvFit_state_vector_name_i", _wrap_RadianceScalingSvFit_state_vector_name_i, METH_VARARGS, NULL},
-	 { (char *)"RadianceScalingSvFit_clone", _wrap_RadianceScalingSvFit_clone, METH_VARARGS, NULL},
-	 { (char *)"RadianceScalingSvFit_apply_correction", _wrap_RadianceScalingSvFit_apply_correction, METH_VARARGS, NULL},
-	 { (char *)"RadianceScalingSvFit_print_desc", _wrap_RadianceScalingSvFit_print_desc, METH_VARARGS, NULL},
-	 { (char *)"RadianceScalingSvFit_notify_update", _wrap_RadianceScalingSvFit_notify_update, METH_VARARGS, NULL},
-	 { (char *)"RadianceScalingSvFit__v_radiance_scaling_coeff_uncertainty", _wrap_RadianceScalingSvFit__v_radiance_scaling_coeff_uncertainty, METH_VARARGS, NULL},
+	 { (char *)"delete_RadianceScalingSvFit", _wrap_delete_RadianceScalingSvFit, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::RadianceScalingSvFit::~RadianceScalingSvFit()\n"
+		"\n"
+		""},
+	 { (char *)"RadianceScalingSvFit_state_vector_name_i", _wrap_RadianceScalingSvFit_state_vector_name_i, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual std::string FullPhysics::RadianceScalingSvFit::state_vector_name_i(int i) const\n"
+		"\n"
+		""},
+	 { (char *)"RadianceScalingSvFit_clone", _wrap_RadianceScalingSvFit_clone, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual boost::shared_ptr<InstrumentCorrection> FullPhysics::RadianceScalingSvFit::clone() const\n"
+		"\n"
+		""},
+	 { (char *)"RadianceScalingSvFit_apply_correction", _wrap_RadianceScalingSvFit_apply_correction, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::RadianceScalingSvFit::apply_correction(const SpectralDomain &Pixel_grid, const std::vector< int >\n"
+		"&Pixel_list, SpectralRange &Radiance) const\n"
+		"\n"
+		""},
+	 { (char *)"RadianceScalingSvFit_print_desc", _wrap_RadianceScalingSvFit_print_desc, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::RadianceScalingSvFit::print(std::ostream &Os) const\n"
+		"\n"
+		""},
+	 { (char *)"RadianceScalingSvFit_notify_update", _wrap_RadianceScalingSvFit_notify_update, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::RadianceScalingSvFit::notify_update(const StateVector &Sv)\n"
+		"\n"
+		""},
+	 { (char *)"RadianceScalingSvFit__v_radiance_scaling_coeff_uncertainty", _wrap_RadianceScalingSvFit__v_radiance_scaling_coeff_uncertainty, METH_VARARGS, (char *)"\n"
+		"\n"
+		"blitz::Array<double, 1> FullPhysics::RadianceScalingSvFit::radiance_scaling_coeff_uncertainty() const\n"
+		"Assumed uncertainty of radiance scaling coefficients. \n"
+		""},
 	 { (char *)"RadianceScalingSvFit_swigregister", RadianceScalingSvFit_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };

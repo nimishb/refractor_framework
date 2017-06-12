@@ -5825,17 +5825,41 @@ SWIGINTERN PyObject *Time_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject 
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"Time_time_pgs", _wrap_Time_time_pgs, METH_VARARGS, NULL},
-	 { (char *)"Time_time_unix", _wrap_Time_time_unix, METH_VARARGS, NULL},
-	 { (char *)"Time__v_unix_time", _wrap_Time__v_unix_time, METH_VARARGS, NULL},
-	 { (char *)"Time__v_pgs_time", _wrap_Time__v_pgs_time, METH_VARARGS, NULL},
-	 { (char *)"Time_parse_time", _wrap_Time_parse_time, METH_VARARGS, NULL},
+	 { (char *)"Time_time_pgs", _wrap_Time_time_pgs, METH_VARARGS, (char *)"\n"
+		"\n"
+		"static Time FullPhysics::Time::time_pgs(double pgs)\n"
+		"Return time from given PGS toolkit time (epoch of 1993-01-01). \n"
+		""},
+	 { (char *)"Time_time_unix", _wrap_Time_time_unix, METH_VARARGS, (char *)"\n"
+		"\n"
+		"static Time FullPhysics::Time::time_unix(double unix_time)\n"
+		"Return time from given Unix time (epoch of 1970-01-01). \n"
+		""},
+	 { (char *)"Time__v_unix_time", _wrap_Time__v_unix_time, METH_VARARGS, (char *)"\n"
+		"\n"
+		"double FullPhysics::Time::unix_time() const\n"
+		"Give time in unix time, as a double (epoch 1970-01-01) \n"
+		""},
+	 { (char *)"Time__v_pgs_time", _wrap_Time__v_pgs_time, METH_VARARGS, (char *)"\n"
+		"\n"
+		"double FullPhysics::Time::pgs_time() const\n"
+		"Give time in PGS toolkit time, as a double (epoch 1993-01-01) \n"
+		""},
+	 { (char *)"Time_parse_time", _wrap_Time_parse_time, METH_VARARGS, (char *)"\n"
+		"\n"
+		"static Time FullPhysics::Time::parse_time(const std::string &Time_string)\n"
+		"\n"
+		""},
 	 { (char *)"Time___str__", _wrap_Time___str__, METH_VARARGS, NULL},
 	 { (char *)"Time___cmp__", _wrap_Time___cmp__, METH_VARARGS, NULL},
 	 { (char *)"Time___add__", _wrap_Time___add__, METH_VARARGS, NULL},
 	 { (char *)"Time___radd__", _wrap_Time___radd__, METH_VARARGS, NULL},
 	 { (char *)"Time___sub__", _wrap_Time___sub__, METH_VARARGS, NULL},
-	 { (char *)"new_Time", _wrap_new_Time, METH_VARARGS, NULL},
+	 { (char *)"new_Time", _wrap_new_Time, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::Time::Time(const boost::posix_time::ptime &t)\n"
+		"\n"
+		""},
 	 { (char *)"delete_Time", _wrap_delete_Time, METH_VARARGS, NULL},
 	 { (char *)"Time_swigregister", Time_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }

@@ -6052,20 +6052,77 @@ SWIGINTERN PyObject *Level1bHeritage_swigregister(PyObject *SWIGUNUSEDPARM(self)
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"new_Level1bHeritage", _wrap_new_Level1bHeritage, METH_VARARGS, NULL},
-	 { (char *)"Level1bHeritage_latitude", _wrap_Level1bHeritage_latitude, METH_VARARGS, NULL},
-	 { (char *)"Level1bHeritage_longitude", _wrap_Level1bHeritage_longitude, METH_VARARGS, NULL},
-	 { (char *)"Level1bHeritage_sounding_zenith", _wrap_Level1bHeritage_sounding_zenith, METH_VARARGS, NULL},
-	 { (char *)"Level1bHeritage_sounding_azimuth", _wrap_Level1bHeritage_sounding_azimuth, METH_VARARGS, NULL},
-	 { (char *)"Level1bHeritage_solar_zenith", _wrap_Level1bHeritage_solar_zenith, METH_VARARGS, NULL},
-	 { (char *)"Level1bHeritage_solar_azimuth", _wrap_Level1bHeritage_solar_azimuth, METH_VARARGS, NULL},
-	 { (char *)"Level1bHeritage_stokes_coefficient", _wrap_Level1bHeritage_stokes_coefficient, METH_VARARGS, NULL},
-	 { (char *)"Level1bHeritage_altitude", _wrap_Level1bHeritage_altitude, METH_VARARGS, NULL},
-	 { (char *)"Level1bHeritage_relative_velocity", _wrap_Level1bHeritage_relative_velocity, METH_VARARGS, NULL},
-	 { (char *)"Level1bHeritage_spectral_coefficient", _wrap_Level1bHeritage_spectral_coefficient, METH_VARARGS, NULL},
-	 { (char *)"Level1bHeritage_time", _wrap_Level1bHeritage_time, METH_VARARGS, NULL},
-	 { (char *)"Level1bHeritage_radiance", _wrap_Level1bHeritage_radiance, METH_VARARGS, NULL},
-	 { (char *)"delete_Level1bHeritage", _wrap_delete_Level1bHeritage, METH_VARARGS, NULL},
+	 { (char *)"new_Level1bHeritage", _wrap_new_Level1bHeritage, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::Level1bHeritage::Level1bHeritage(const std::string &Sounding_info_file, const std::string\n"
+		"&Spectrum_file, const boost::shared_ptr< NoiseModel > &Nm)\n"
+		"\n"
+		""},
+	 { (char *)"Level1bHeritage_latitude", _wrap_Level1bHeritage_latitude, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual DoubleWithUnit FullPhysics::Level1bHeritage::latitude(int i) const\n"
+		"\n"
+		""},
+	 { (char *)"Level1bHeritage_longitude", _wrap_Level1bHeritage_longitude, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual DoubleWithUnit FullPhysics::Level1bHeritage::longitude(int i) const\n"
+		"\n"
+		""},
+	 { (char *)"Level1bHeritage_sounding_zenith", _wrap_Level1bHeritage_sounding_zenith, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual DoubleWithUnit FullPhysics::Level1bHeritage::sounding_zenith(int i) const\n"
+		"\n"
+		""},
+	 { (char *)"Level1bHeritage_sounding_azimuth", _wrap_Level1bHeritage_sounding_azimuth, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual DoubleWithUnit FullPhysics::Level1bHeritage::sounding_azimuth(int i) const\n"
+		"\n"
+		""},
+	 { (char *)"Level1bHeritage_solar_zenith", _wrap_Level1bHeritage_solar_zenith, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual DoubleWithUnit FullPhysics::Level1bHeritage::solar_zenith(int i) const\n"
+		"\n"
+		""},
+	 { (char *)"Level1bHeritage_solar_azimuth", _wrap_Level1bHeritage_solar_azimuth, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual DoubleWithUnit FullPhysics::Level1bHeritage::solar_azimuth(int i) const\n"
+		"\n"
+		""},
+	 { (char *)"Level1bHeritage_stokes_coefficient", _wrap_Level1bHeritage_stokes_coefficient, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual blitz::Array<double, 1> FullPhysics::Level1bHeritage::stokes_coefficient(int i) const\n"
+		"\n"
+		""},
+	 { (char *)"Level1bHeritage_altitude", _wrap_Level1bHeritage_altitude, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual DoubleWithUnit FullPhysics::Level1bHeritage::altitude(int i) const\n"
+		"\n"
+		""},
+	 { (char *)"Level1bHeritage_relative_velocity", _wrap_Level1bHeritage_relative_velocity, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual DoubleWithUnit FullPhysics::Level1bHeritage::relative_velocity(int Spec_index) const\n"
+		"\n"
+		""},
+	 { (char *)"Level1bHeritage_spectral_coefficient", _wrap_Level1bHeritage_spectral_coefficient, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual ArrayWithUnit<double, 1> FullPhysics::Level1bHeritage::spectral_coefficient(int Spec_index) const\n"
+		"\n"
+		""},
+	 { (char *)"Level1bHeritage_time", _wrap_Level1bHeritage_time, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual Time FullPhysics::Level1bHeritage::time(int Spec_index) const\n"
+		"\n"
+		""},
+	 { (char *)"Level1bHeritage_radiance", _wrap_Level1bHeritage_radiance, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual SpectralRange FullPhysics::Level1bHeritage::radiance(int Spec_index) const\n"
+		"\n"
+		""},
+	 { (char *)"delete_Level1bHeritage", _wrap_delete_Level1bHeritage, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::Level1bHeritage::~Level1bHeritage()\n"
+		"\n"
+		""},
 	 { (char *)"Level1bHeritage_swigregister", Level1bHeritage_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };

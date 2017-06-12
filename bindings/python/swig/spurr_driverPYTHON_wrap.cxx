@@ -6512,28 +6512,126 @@ SWIGINTERN PyObject *SpurrRtDriver_swigregister(PyObject *SWIGUNUSEDPARM(self), 
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"SpurrBrdfDriver_initialize_brdf_inputs", _wrap_SpurrBrdfDriver_initialize_brdf_inputs, METH_VARARGS, NULL},
-	 { (char *)"SpurrBrdfDriver_setup_geometry", _wrap_SpurrBrdfDriver_setup_geometry, METH_VARARGS, NULL},
-	 { (char *)"SpurrBrdfDriver_setup_brdf_inputs", _wrap_SpurrBrdfDriver_setup_brdf_inputs, METH_VARARGS, NULL},
-	 { (char *)"SpurrBrdfDriver_set_lambertian_albedo", _wrap_SpurrBrdfDriver_set_lambertian_albedo, METH_VARARGS, NULL},
-	 { (char *)"SpurrBrdfDriver__v_n_brdf_kernels", _wrap_SpurrBrdfDriver__v_n_brdf_kernels, METH_VARARGS, NULL},
-	 { (char *)"SpurrBrdfDriver__v_n_kernel_factor_wfs", _wrap_SpurrBrdfDriver__v_n_kernel_factor_wfs, METH_VARARGS, NULL},
-	 { (char *)"SpurrBrdfDriver__v_n_kernel_params_wfs", _wrap_SpurrBrdfDriver__v_n_kernel_params_wfs, METH_VARARGS, NULL},
-	 { (char *)"SpurrBrdfDriver__v_n_surface_wfs", _wrap_SpurrBrdfDriver__v_n_surface_wfs, METH_VARARGS, NULL},
-	 { (char *)"SpurrBrdfDriver__v_do_shadow_effect", _wrap_SpurrBrdfDriver__v_do_shadow_effect, METH_VARARGS, NULL},
+	 { (char *)"SpurrBrdfDriver_initialize_brdf_inputs", _wrap_SpurrBrdfDriver_initialize_brdf_inputs, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::SpurrBrdfDriver::initialize_brdf_inputs(int surface_type)\n"
+		"\n"
+		""},
+	 { (char *)"SpurrBrdfDriver_setup_geometry", _wrap_SpurrBrdfDriver_setup_geometry, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::SpurrBrdfDriver::setup_geometry(double sza, double azm, double zen) const =0\n"
+		"\n"
+		""},
+	 { (char *)"SpurrBrdfDriver_setup_brdf_inputs", _wrap_SpurrBrdfDriver_setup_brdf_inputs, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual ArrayAd<double, 1> FullPhysics::SpurrBrdfDriver::setup_brdf_inputs(int surface_type, const ArrayAd< double, 1 > &surface_parameters)\n"
+		"const\n"
+		"\n"
+		""},
+	 { (char *)"SpurrBrdfDriver_set_lambertian_albedo", _wrap_SpurrBrdfDriver_set_lambertian_albedo, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::SpurrBrdfDriver::set_lambertian_albedo(const blitz::Array< double, 1 > &albedo_array)\n"
+		"Initialize lambertian albedo from array that might be external to the\n"
+		"BrdfDriver. \n"
+		""},
+	 { (char *)"SpurrBrdfDriver__v_n_brdf_kernels", _wrap_SpurrBrdfDriver__v_n_brdf_kernels, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual int FullPhysics::SpurrBrdfDriver::n_brdf_kernels() const =0\n"
+		"\n"
+		""},
+	 { (char *)"SpurrBrdfDriver__v_n_kernel_factor_wfs", _wrap_SpurrBrdfDriver__v_n_kernel_factor_wfs, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual int FullPhysics::SpurrBrdfDriver::n_kernel_factor_wfs() const =0\n"
+		"\n"
+		""},
+	 { (char *)"SpurrBrdfDriver__v_n_kernel_params_wfs", _wrap_SpurrBrdfDriver__v_n_kernel_params_wfs, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual int FullPhysics::SpurrBrdfDriver::n_kernel_params_wfs() const =0\n"
+		"\n"
+		""},
+	 { (char *)"SpurrBrdfDriver__v_n_surface_wfs", _wrap_SpurrBrdfDriver__v_n_surface_wfs, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual int FullPhysics::SpurrBrdfDriver::n_surface_wfs() const =0\n"
+		"\n"
+		""},
+	 { (char *)"SpurrBrdfDriver__v_do_shadow_effect", _wrap_SpurrBrdfDriver__v_do_shadow_effect, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual bool FullPhysics::SpurrBrdfDriver::do_shadow_effect() const =0\n"
+		"\n"
+		""},
 	 { (char *)"delete_SpurrBrdfDriver", _wrap_delete_SpurrBrdfDriver, METH_VARARGS, NULL},
 	 { (char *)"SpurrBrdfDriver_swigregister", SpurrBrdfDriver_swigregister, METH_VARARGS, NULL},
-	 { (char *)"SpurrRtDriver_reflectance_calculate", _wrap_SpurrRtDriver_reflectance_calculate, METH_VARARGS, NULL},
-	 { (char *)"SpurrRtDriver_reflectance_and_jacobian_calculate", _wrap_SpurrRtDriver_reflectance_and_jacobian_calculate, METH_VARARGS, NULL},
-	 { (char *)"SpurrRtDriver__v_brdf_driver", _wrap_SpurrRtDriver__v_brdf_driver, METH_VARARGS, NULL},
-	 { (char *)"SpurrRtDriver_setup_height_grid", _wrap_SpurrRtDriver_setup_height_grid, METH_VARARGS, NULL},
-	 { (char *)"SpurrRtDriver_setup_geometry", _wrap_SpurrRtDriver_setup_geometry, METH_VARARGS, NULL},
-	 { (char *)"SpurrRtDriver_setup_optical_inputs", _wrap_SpurrRtDriver_setup_optical_inputs, METH_VARARGS, NULL},
-	 { (char *)"SpurrRtDriver_clear_linear_inputs", _wrap_SpurrRtDriver_clear_linear_inputs, METH_VARARGS, NULL},
-	 { (char *)"SpurrRtDriver_setup_linear_inputs", _wrap_SpurrRtDriver_setup_linear_inputs, METH_VARARGS, NULL},
-	 { (char *)"SpurrRtDriver_calculate_rt", _wrap_SpurrRtDriver_calculate_rt, METH_VARARGS, NULL},
-	 { (char *)"SpurrRtDriver_get_intensity", _wrap_SpurrRtDriver_get_intensity, METH_VARARGS, NULL},
-	 { (char *)"SpurrRtDriver_copy_jacobians", _wrap_SpurrRtDriver_copy_jacobians, METH_VARARGS, NULL},
+	 { (char *)"SpurrRtDriver_reflectance_calculate", _wrap_SpurrRtDriver_reflectance_calculate, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual double FullPhysics::SpurrRtDriver::reflectance_calculate(const blitz::Array< double, 1 > &height_grid, double sza, double azm,\n"
+		"double zen, int surface_type, const blitz::Array< double, 1 >\n"
+		"&surface_parameters, const blitz::Array< double, 1 > &od, const\n"
+		"blitz::Array< double, 1 > &ssa, const blitz::Array< double, 2 > &pf)\n"
+		"Computes reflectance without jacobians. \n"
+		""},
+	 { (char *)"SpurrRtDriver_reflectance_and_jacobian_calculate", _wrap_SpurrRtDriver_reflectance_and_jacobian_calculate, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::SpurrRtDriver::reflectance_and_jacobian_calculate(const blitz::Array< double, 1 > &height_grid, double sza, double azm,\n"
+		"double zen, int surface_type, ArrayAd< double, 1 >\n"
+		"&surface_parameters, const ArrayAd< double, 1 > &od, const ArrayAd<\n"
+		"double, 1 > &ssa, const ArrayAd< double, 2 > &pf, double &reflectance,\n"
+		"blitz::Array< double, 2 > &jac_atm, blitz::Array< double, 1 >\n"
+		"&jac_surf)\n"
+		"\n"
+		""},
+	 { (char *)"SpurrRtDriver__v_brdf_driver", _wrap_SpurrRtDriver__v_brdf_driver, METH_VARARGS, (char *)"\n"
+		"\n"
+		"const boost::shared_ptr<SpurrBrdfDriver> FullPhysics::SpurrRtDriver::brdf_driver() const\n"
+		"Access to BRDF driver. \n"
+		""},
+	 { (char *)"SpurrRtDriver_setup_height_grid", _wrap_SpurrRtDriver_setup_height_grid, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::SpurrRtDriver::setup_height_grid(const blitz::Array< double, 1 > &height_grid) const =0\n"
+		"Setup height grid, should only be called once per instance or if the\n"
+		"height grid changes. \n"
+		""},
+	 { (char *)"SpurrRtDriver_setup_geometry", _wrap_SpurrRtDriver_setup_geometry, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::SpurrRtDriver::setup_geometry(double sza, double azm, double zen) const =0\n"
+		"Setup viewing geometry, should only be called once per instance or if\n"
+		"the viewing geometry changes. \n"
+		""},
+	 { (char *)"SpurrRtDriver_setup_optical_inputs", _wrap_SpurrRtDriver_setup_optical_inputs, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::SpurrRtDriver::setup_optical_inputs(const blitz::Array< double, 1 > &od, const blitz::Array< double, 1 >\n"
+		"&ssa, const blitz::Array< double, 2 > &pf) const =0\n"
+		"Set up optical depth, single scattering albedo and phase function\n"
+		"Should be called per spectral point. \n"
+		""},
+	 { (char *)"SpurrRtDriver_clear_linear_inputs", _wrap_SpurrRtDriver_clear_linear_inputs, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::SpurrRtDriver::clear_linear_inputs() const =0\n"
+		"Mark that we are not retrieving weighting functions. \n"
+		""},
+	 { (char *)"SpurrRtDriver_setup_linear_inputs", _wrap_SpurrRtDriver_setup_linear_inputs, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::SpurrRtDriver::setup_linear_inputs(const ArrayAd< double, 1 > &od, const ArrayAd< double, 1 > &ssa,\n"
+		"const ArrayAd< double, 2 > &pf, bool do_surface_linearization) const\n"
+		"=0\n"
+		"Set up linearization, weighting functions. \n"
+		""},
+	 { (char *)"SpurrRtDriver_calculate_rt", _wrap_SpurrRtDriver_calculate_rt, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::SpurrRtDriver::calculate_rt() const =0\n"
+		"Perform radiative transfer calculation with the values setup by\n"
+		"setup_optical_inputs and setup_linear_inputs. \n"
+		""},
+	 { (char *)"SpurrRtDriver_get_intensity", _wrap_SpurrRtDriver_get_intensity, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual double FullPhysics::SpurrRtDriver::get_intensity() const =0\n"
+		"Retrieve the intensity value calculated. \n"
+		""},
+	 { (char *)"SpurrRtDriver_copy_jacobians", _wrap_SpurrRtDriver_copy_jacobians, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::SpurrRtDriver::copy_jacobians(blitz::Array< double, 2 > &jac_atm, blitz::Array< double, 1 >\n"
+		"&jac_surf) const =0\n"
+		"Copy jacobians out of internal xdata structures. \n"
+		""},
 	 { (char *)"delete_SpurrRtDriver", _wrap_delete_SpurrRtDriver, METH_VARARGS, NULL},
 	 { (char *)"SpurrRtDriver_swigregister", SpurrRtDriver_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }

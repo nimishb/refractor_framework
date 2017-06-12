@@ -122,6 +122,14 @@ def _new_from_set(cls, version, *args):
 
 import full_physics_swig.generic_object
 class SolarDopplerShift(full_physics_swig.generic_object.GenericObject):
+    """
+
+    This class handles the solar Doppler stretch to calculate the shift of
+    the solar lines with respect to the telluric lines.
+
+    C++ includes: solar_doppler_shift.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.generic_object.GenericObject]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -141,7 +149,15 @@ class SolarDopplerShift(full_physics_swig.generic_object.GenericObject):
         return _solar_doppler_shift.SolarDopplerShift___str__(self)
 
     def _v_solar_distance(self):
+        """
+
+        virtual DoubleWithUnit FullPhysics::SolarDopplerShift::solar_distance() const =0
+        Return Earth-Sun distance.
+
+        Earth-Sun distance. 
+        """
         return _solar_doppler_shift.SolarDopplerShift__v_solar_distance(self)
+
 
     @property
     def solar_distance(self):
@@ -149,7 +165,20 @@ class SolarDopplerShift(full_physics_swig.generic_object.GenericObject):
 
 
     def doppler_stretch(self, Spec_domain):
+        """
+
+        virtual SpectralDomain FullPhysics::SolarDopplerShift::doppler_stretch(const SpectralDomain &Spec_domain) const =0
+        Shift wavenumbers to account for doppler stretch.
+
+        Parameters:
+        -----------
+
+        Spec_domain:  wavenumber/wavelength
+
+        Wavenumber/wavelength with Doppler stretch. 
+        """
         return _solar_doppler_shift.SolarDopplerShift_doppler_stretch(self, Spec_domain)
+
 SolarDopplerShift_swigregister = _solar_doppler_shift.SolarDopplerShift_swigregister
 SolarDopplerShift_swigregister(SolarDopplerShift)
 

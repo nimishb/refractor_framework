@@ -181,6 +181,17 @@ ObserverInstrumentCorrection_swigregister = _instrument_correction.ObserverInstr
 ObserverInstrumentCorrection_swigregister(ObserverInstrumentCorrection)
 
 class InstrumentCorrection(full_physics_swig.state_vector.StateVectorObserver, ObservableInstrumentCorrection):
+    """
+
+    This class models an Instrument correction.
+
+    This is used by IlsConvolution, and it applies zero or more
+    corrections that allow the radiance results to be modified. Examples
+    are a zero level offset correction, and a continuum correction.
+
+    C++ includes: instrument_correction.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.state_vector.StateVectorObserver, ObservableInstrumentCorrection]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -200,10 +211,45 @@ class InstrumentCorrection(full_physics_swig.state_vector.StateVectorObserver, O
         return _instrument_correction.InstrumentCorrection___str__(self)
 
     def apply_correction(self, Pixel_grid, Pixel_list, Radiance):
+        """
+
+        virtual void FullPhysics::InstrumentCorrection::apply_correction(const SpectralDomain &Pixel_grid, const std::vector< int >
+        &Pixel_list, SpectralRange &Radiance) const =0
+        Apply correction to radiance values, in place.
+
+        If Radiance includes a Jacobian, then we include the Jacobian
+        calculation. Otherwise we don't include the Jacobian in the
+        calculation.
+
+        Parameters:
+        -----------
+
+        Pixel_grid:  - The grid point of each pixel. We only use a subset of
+        these points, but the full list is passed in for use by the class.
+
+        Pixel_list:  - List of pixels that actually appear in Radiance, in the
+        order that they appear.
+
+        Radiance:  - Radiance values, that will be corrected in place. 
+        """
         return _instrument_correction.InstrumentCorrection_apply_correction(self, Pixel_grid, Pixel_list, Radiance)
 
+
     def clone(self):
+        """
+
+        virtual boost::shared_ptr<InstrumentCorrection> FullPhysics::InstrumentCorrection::clone() const =0
+        Clone an InstrumentCorrection object.
+
+        Note that the cloned version will not be attached to and StateVector
+        or Observer<InstrumentCorrection>, although you can of course attach
+        them after receiving the cloned object.
+
+        Because this isn't attached to the StateVector, one use of the clone
+        operator is to create a "frozen" InstrumentCorrection object. 
+        """
         return _instrument_correction.InstrumentCorrection_clone(self)
+
 InstrumentCorrection_swigregister = _instrument_correction.InstrumentCorrection_swigregister
 InstrumentCorrection_swigregister(InstrumentCorrection)
 

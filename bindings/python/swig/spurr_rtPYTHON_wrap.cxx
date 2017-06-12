@@ -5626,12 +5626,30 @@ SWIGINTERN PyObject *SpurrRt_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObje
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"SpurrRt__v_number_stokes", _wrap_SpurrRt__v_number_stokes, METH_VARARGS, NULL},
-	 { (char *)"SpurrRt__v_surface_type", _wrap_SpurrRt__v_surface_type, METH_VARARGS, NULL},
+	 { (char *)"SpurrRt__v_number_stokes", _wrap_SpurrRt__v_number_stokes, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual int FullPhysics::SpurrRt::number_stokes() const\n"
+		"Number of stokes in returned stokes values Note that LIDORT will only\n"
+		"ever calculate the first stoke index for I,. \n"
+		""},
+	 { (char *)"SpurrRt__v_surface_type", _wrap_SpurrRt__v_surface_type, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual int FullPhysics::SpurrRt::surface_type() const\n"
+		"Integer representing the surface type using the LIDORT indexing\n"
+		"nomenclature. \n"
+		""},
 	 { (char *)"SpurrRt_stokes", _wrap_SpurrRt_stokes, METH_VARARGS, NULL},
 	 { (char *)"SpurrRt_stokes_and_jacobian", _wrap_SpurrRt_stokes_and_jacobian, METH_VARARGS, NULL},
-	 { (char *)"SpurrRt_stokes_single_wn", _wrap_SpurrRt_stokes_single_wn, METH_VARARGS, NULL},
-	 { (char *)"SpurrRt_stokes_and_jacobian_single_wn", _wrap_SpurrRt_stokes_and_jacobian_single_wn, METH_VARARGS, NULL},
+	 { (char *)"SpurrRt_stokes_single_wn", _wrap_SpurrRt_stokes_single_wn, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual blitz::Array<double, 1> FullPhysics::SpurrRt::stokes_single_wn(double Wn, int Spec_index, const ArrayAd< double, 2 > &Iv) const\n"
+		"\n"
+		""},
+	 { (char *)"SpurrRt_stokes_and_jacobian_single_wn", _wrap_SpurrRt_stokes_and_jacobian_single_wn, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual ArrayAd<double, 1> FullPhysics::SpurrRt::stokes_and_jacobian_single_wn(double Wn, int Spec_index, const ArrayAd< double, 2 > &Iv) const\n"
+		"\n"
+		""},
 	 { (char *)"delete_SpurrRt", _wrap_delete_SpurrRt, METH_VARARGS, NULL},
 	 { (char *)"SpurrRt_swigregister", SpurrRt_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }

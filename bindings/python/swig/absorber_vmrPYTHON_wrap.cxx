@@ -9969,14 +9969,57 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"ObserverAbsorberVmr_notify_add", _wrap_ObserverAbsorberVmr_notify_add, METH_VARARGS, NULL},
 	 { (char *)"ObserverAbsorberVmr_notify_remove", _wrap_ObserverAbsorberVmr_notify_remove, METH_VARARGS, NULL},
 	 { (char *)"ObserverAbsorberVmr_swigregister", ObserverAbsorberVmr_swigregister, METH_VARARGS, NULL},
-	 { (char *)"delete_AbsorberVmr", _wrap_delete_AbsorberVmr, METH_VARARGS, NULL},
-	 { (char *)"AbsorberVmr_add_observer", _wrap_AbsorberVmr_add_observer, METH_VARARGS, NULL},
-	 { (char *)"AbsorberVmr_remove_observer", _wrap_AbsorberVmr_remove_observer, METH_VARARGS, NULL},
-	 { (char *)"AbsorberVmr_clone", _wrap_AbsorberVmr_clone, METH_VARARGS, NULL},
-	 { (char *)"AbsorberVmr__v_gas_name", _wrap_AbsorberVmr__v_gas_name, METH_VARARGS, NULL},
-	 { (char *)"AbsorberVmr_volume_mixing_ratio", _wrap_AbsorberVmr_volume_mixing_ratio, METH_VARARGS, NULL},
-	 { (char *)"AbsorberVmr_vmr_grid", _wrap_AbsorberVmr_vmr_grid, METH_VARARGS, NULL},
-	 { (char *)"AbsorberVmr__v_state_used", _wrap_AbsorberVmr__v_state_used, METH_VARARGS, NULL},
+	 { (char *)"delete_AbsorberVmr", _wrap_delete_AbsorberVmr, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::AbsorberVmr::~AbsorberVmr()\n"
+		"\n"
+		""},
+	 { (char *)"AbsorberVmr_add_observer", _wrap_AbsorberVmr_add_observer, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::AbsorberVmr::add_observer(Observer< AbsorberVmr > &Obs)\n"
+		"\n"
+		""},
+	 { (char *)"AbsorberVmr_remove_observer", _wrap_AbsorberVmr_remove_observer, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::AbsorberVmr::remove_observer(Observer< AbsorberVmr > &Obs)\n"
+		"\n"
+		""},
+	 { (char *)"AbsorberVmr_clone", _wrap_AbsorberVmr_clone, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual boost::shared_ptr<AbsorberVmr> FullPhysics::AbsorberVmr::clone(const boost::shared_ptr< Pressure > &Press) const =0\n"
+		"This version of clone takes a pressure to use.\n"
+		"\n"
+		"The intent is that the pressure has been cloned from the original\n"
+		"pressure (although this class has no way to verify this). This allows\n"
+		"sets of objects to be cloned using a common Pressure clone, e.g.\n"
+		"Atmosphere. \n"
+		""},
+	 { (char *)"AbsorberVmr__v_gas_name", _wrap_AbsorberVmr__v_gas_name, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual std::string FullPhysics::AbsorberVmr::gas_name() const =0\n"
+		"This indicates the name of this particular Absorber.\n"
+		"\n"
+		"The naming convention is free form but recommended to use the short\n"
+		"form often used by HITRAN \n"
+		""},
+	 { (char *)"AbsorberVmr_volume_mixing_ratio", _wrap_AbsorberVmr_volume_mixing_ratio, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual AutoDerivative<double> FullPhysics::AbsorberVmr::volume_mixing_ratio(const AutoDerivative< double > &P) const =0\n"
+		"This returns the volume mixing ratio at the given pressure level.\n"
+		"\n"
+		"This is dimensionless, and the pressure is in Pascals \n"
+		""},
+	 { (char *)"AbsorberVmr_vmr_grid", _wrap_AbsorberVmr_vmr_grid, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual ArrayAd<double, 1> FullPhysics::AbsorberVmr::vmr_grid(const Pressure &P) const\n"
+		"\n"
+		""},
+	 { (char *)"AbsorberVmr__v_state_used", _wrap_AbsorberVmr__v_state_used, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual blitz::Array<bool, 1> FullPhysics::AbsorberVmr::state_used() const =0\n"
+		"Indicate what portion of the state vector is used to calculate the\n"
+		"VMR. \n"
+		""},
 	 { (char *)"AbsorberVmr___str__", _wrap_AbsorberVmr___str__, METH_VARARGS, NULL},
 	 { (char *)"AbsorberVmr_swigregister", AbsorberVmr_swigregister, METH_VARARGS, NULL},
 	 { (char *)"vector_absorber_vmr_iterator", _wrap_vector_absorber_vmr_iterator, METH_VARARGS, NULL},

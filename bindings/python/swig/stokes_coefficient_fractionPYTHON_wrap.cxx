@@ -5053,8 +5053,16 @@ SWIGINTERN PyObject *StokesCoefficientFraction_swigregister(PyObject *SWIGUNUSED
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"StokesCoefficientFraction_clone", _wrap_StokesCoefficientFraction_clone, METH_VARARGS, NULL},
-	 { (char *)"delete_StokesCoefficientFraction", _wrap_delete_StokesCoefficientFraction, METH_VARARGS, NULL},
+	 { (char *)"StokesCoefficientFraction_clone", _wrap_StokesCoefficientFraction_clone, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual boost::shared_ptr<StokesCoefficient> FullPhysics::StokesCoefficientFraction::clone() const\n"
+		"\n"
+		""},
+	 { (char *)"delete_StokesCoefficientFraction", _wrap_delete_StokesCoefficientFraction, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::StokesCoefficientFraction::~StokesCoefficientFraction()\n"
+		"\n"
+		""},
 	 { (char *)"StokesCoefficientFraction_swigregister", StokesCoefficientFraction_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };

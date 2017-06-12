@@ -123,6 +123,21 @@ def _new_from_set(cls, version, *args):
 import full_physics_swig.level_1b
 import full_physics_swig.generic_object
 class Level1bHdf(full_physics_swig.level_1b.Level1b):
+    """
+
+    This is an abstract interface class which mainly serves to reduce the
+    amount of code needed for HDF related Level 1B classes by containing
+    the common values needed.
+
+    With the HDF files, we typically generate the uncertainty through a
+    NoiseModel. Because it is convenient, we include this functionality in
+    this class. This is separate from the handling of common values, so if
+    needed we can pull this out as a separate mixin. But for now, there
+    doesn't seem to be any point to do this.
+
+    C++ includes: level_1b_hdf.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.level_1b.Level1b]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -139,40 +154,112 @@ class Level1bHdf(full_physics_swig.level_1b.Level1b):
     __del__ = lambda self: None
 
     def latitude(self, i):
+        """
+
+        virtual DoubleWithUnit FullPhysics::Level1bHdf::latitude(int i) const
+
+        """
         return _level_1b_hdf.Level1bHdf_latitude(self, i)
 
+
     def longitude(self, i):
+        """
+
+        virtual DoubleWithUnit FullPhysics::Level1bHdf::longitude(int i) const
+
+        """
         return _level_1b_hdf.Level1bHdf_longitude(self, i)
 
+
     def sounding_zenith(self, i):
+        """
+
+        virtual DoubleWithUnit FullPhysics::Level1bHdf::sounding_zenith(int i) const
+
+        """
         return _level_1b_hdf.Level1bHdf_sounding_zenith(self, i)
 
+
     def sounding_azimuth(self, i):
+        """
+
+        virtual DoubleWithUnit FullPhysics::Level1bHdf::sounding_azimuth(int i) const
+
+        """
         return _level_1b_hdf.Level1bHdf_sounding_azimuth(self, i)
 
+
     def stokes_coefficient(self, i):
+        """
+
+        virtual blitz::Array<double, 1> FullPhysics::Level1bHdf::stokes_coefficient(int i) const
+
+        """
         return _level_1b_hdf.Level1bHdf_stokes_coefficient(self, i)
 
+
     def solar_zenith(self, i):
+        """
+
+        virtual DoubleWithUnit FullPhysics::Level1bHdf::solar_zenith(int i) const
+
+        """
         return _level_1b_hdf.Level1bHdf_solar_zenith(self, i)
 
+
     def solar_azimuth(self, i):
+        """
+
+        virtual DoubleWithUnit FullPhysics::Level1bHdf::solar_azimuth(int i) const
+
+        """
         return _level_1b_hdf.Level1bHdf_solar_azimuth(self, i)
 
+
     def altitude(self, i):
+        """
+
+        virtual DoubleWithUnit FullPhysics::Level1bHdf::altitude(int i) const
+
+        """
         return _level_1b_hdf.Level1bHdf_altitude(self, i)
 
+
     def relative_velocity(self, i):
+        """
+
+        virtual DoubleWithUnit FullPhysics::Level1bHdf::relative_velocity(int i) const
+
+        """
         return _level_1b_hdf.Level1bHdf_relative_velocity(self, i)
 
+
     def spectral_coefficient(self, i):
+        """
+
+        virtual ArrayWithUnit<double, 1> FullPhysics::Level1bHdf::spectral_coefficient(int Spec_index) const
+
+        """
         return _level_1b_hdf.Level1bHdf_spectral_coefficient(self, i)
 
+
     def time(self, i):
+        """
+
+        virtual Time FullPhysics::Level1bHdf::time(int Spec_index) const
+
+        """
         return _level_1b_hdf.Level1bHdf_time(self, i)
 
+
     def _v_noise_model(self, *args):
+        """
+
+        void FullPhysics::Level1bHdf::noise_model(const boost::shared_ptr< NoiseModel > &Noise_model)
+        Set the noise model. 
+        """
         return _level_1b_hdf.Level1bHdf__v_noise_model(self, *args)
+
 
     @property
     def noise_model(self):

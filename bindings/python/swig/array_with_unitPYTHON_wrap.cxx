@@ -9066,42 +9066,132 @@ SWIGINTERN PyObject *ArrayWithUnit_double_3_swigregister(PyObject *SWIGUNUSEDPAR
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"new_ArrayWithUnit_double_1", _wrap_new_ArrayWithUnit_double_1, METH_VARARGS, NULL},
+	 { (char *)"new_ArrayWithUnit_double_1", _wrap_new_ArrayWithUnit_double_1, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::ArrayWithUnit< T, D >::ArrayWithUnit(const blitz::Array< T, D > &Value, const std::string\n"
+		"&Value_units_name)\n"
+		"\n"
+		""},
 	 { (char *)"ArrayWithUnit_double_1__value", _wrap_ArrayWithUnit_double_1__value, METH_VARARGS, NULL},
 	 { (char *)"ArrayWithUnit_double_1__units", _wrap_ArrayWithUnit_double_1__units, METH_VARARGS, NULL},
 	 { (char *)"ArrayWithUnit_double_1___imul__", _wrap_ArrayWithUnit_double_1___imul__, METH_VARARGS, NULL},
 	 { (char *)"ArrayWithUnit_double_1___idiv__", _wrap_ArrayWithUnit_double_1___idiv__, METH_VARARGS, NULL},
-	 { (char *)"ArrayWithUnit_double_1_convert", _wrap_ArrayWithUnit_double_1_convert, METH_VARARGS, NULL},
-	 { (char *)"ArrayWithUnit_double_1_convert_wave", _wrap_ArrayWithUnit_double_1_convert_wave, METH_VARARGS, NULL},
-	 { (char *)"ArrayWithUnit_double_1__v_rows", _wrap_ArrayWithUnit_double_1__v_rows, METH_VARARGS, NULL},
-	 { (char *)"ArrayWithUnit_double_1__v_cols", _wrap_ArrayWithUnit_double_1__v_cols, METH_VARARGS, NULL},
-	 { (char *)"ArrayWithUnit_double_1__v_depth", _wrap_ArrayWithUnit_double_1__v_depth, METH_VARARGS, NULL},
+	 { (char *)"ArrayWithUnit_double_1_convert", _wrap_ArrayWithUnit_double_1_convert, METH_VARARGS, (char *)"\n"
+		"\n"
+		"ArrayWithUnit<T, D> FullPhysics::ArrayWithUnit< T, D >::convert(const Unit &R) const\n"
+		"Convert to the given units. \n"
+		""},
+	 { (char *)"ArrayWithUnit_double_1_convert_wave", _wrap_ArrayWithUnit_double_1_convert_wave, METH_VARARGS, (char *)"\n"
+		"\n"
+		"ArrayWithUnit<T,D> FullPhysics::ArrayWithUnit< T, D >::convert_wave(const Unit &R) const\n"
+		"We often need to handle conversion from wavenumber to/from wavelength.\n"
+		"\n"
+		"This is either a normal conversion of the units before and after match\n"
+		"in the power of length (so cm^-1 to m^-1), or do an inversion. Since\n"
+		"we do this often enough, it is worth having a function that handles\n"
+		"this logic. \n"
+		""},
+	 { (char *)"ArrayWithUnit_double_1__v_rows", _wrap_ArrayWithUnit_double_1__v_rows, METH_VARARGS, (char *)"\n"
+		"\n"
+		"int FullPhysics::ArrayWithUnit< T, D >::rows() const\n"
+		"\n"
+		""},
+	 { (char *)"ArrayWithUnit_double_1__v_cols", _wrap_ArrayWithUnit_double_1__v_cols, METH_VARARGS, (char *)"\n"
+		"\n"
+		"int FullPhysics::ArrayWithUnit< T, D >::cols() const\n"
+		"\n"
+		""},
+	 { (char *)"ArrayWithUnit_double_1__v_depth", _wrap_ArrayWithUnit_double_1__v_depth, METH_VARARGS, (char *)"\n"
+		"\n"
+		"int FullPhysics::ArrayWithUnit< T, D >::depth() const\n"
+		"\n"
+		""},
 	 { (char *)"ArrayWithUnit_double_1___str__", _wrap_ArrayWithUnit_double_1___str__, METH_VARARGS, NULL},
 	 { (char *)"delete_ArrayWithUnit_double_1", _wrap_delete_ArrayWithUnit_double_1, METH_VARARGS, NULL},
 	 { (char *)"ArrayWithUnit_double_1_swigregister", ArrayWithUnit_double_1_swigregister, METH_VARARGS, NULL},
-	 { (char *)"new_ArrayWithUnit_double_2", _wrap_new_ArrayWithUnit_double_2, METH_VARARGS, NULL},
+	 { (char *)"new_ArrayWithUnit_double_2", _wrap_new_ArrayWithUnit_double_2, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::ArrayWithUnit< T, D >::ArrayWithUnit(const blitz::Array< T, D > &Value, const std::string\n"
+		"&Value_units_name)\n"
+		"\n"
+		""},
 	 { (char *)"ArrayWithUnit_double_2__value", _wrap_ArrayWithUnit_double_2__value, METH_VARARGS, NULL},
 	 { (char *)"ArrayWithUnit_double_2__units", _wrap_ArrayWithUnit_double_2__units, METH_VARARGS, NULL},
 	 { (char *)"ArrayWithUnit_double_2___imul__", _wrap_ArrayWithUnit_double_2___imul__, METH_VARARGS, NULL},
 	 { (char *)"ArrayWithUnit_double_2___idiv__", _wrap_ArrayWithUnit_double_2___idiv__, METH_VARARGS, NULL},
-	 { (char *)"ArrayWithUnit_double_2_convert", _wrap_ArrayWithUnit_double_2_convert, METH_VARARGS, NULL},
-	 { (char *)"ArrayWithUnit_double_2_convert_wave", _wrap_ArrayWithUnit_double_2_convert_wave, METH_VARARGS, NULL},
-	 { (char *)"ArrayWithUnit_double_2__v_rows", _wrap_ArrayWithUnit_double_2__v_rows, METH_VARARGS, NULL},
-	 { (char *)"ArrayWithUnit_double_2__v_cols", _wrap_ArrayWithUnit_double_2__v_cols, METH_VARARGS, NULL},
-	 { (char *)"ArrayWithUnit_double_2__v_depth", _wrap_ArrayWithUnit_double_2__v_depth, METH_VARARGS, NULL},
+	 { (char *)"ArrayWithUnit_double_2_convert", _wrap_ArrayWithUnit_double_2_convert, METH_VARARGS, (char *)"\n"
+		"\n"
+		"ArrayWithUnit<T, D> FullPhysics::ArrayWithUnit< T, D >::convert(const Unit &R) const\n"
+		"Convert to the given units. \n"
+		""},
+	 { (char *)"ArrayWithUnit_double_2_convert_wave", _wrap_ArrayWithUnit_double_2_convert_wave, METH_VARARGS, (char *)"\n"
+		"\n"
+		"ArrayWithUnit<T,D> FullPhysics::ArrayWithUnit< T, D >::convert_wave(const Unit &R) const\n"
+		"We often need to handle conversion from wavenumber to/from wavelength.\n"
+		"\n"
+		"This is either a normal conversion of the units before and after match\n"
+		"in the power of length (so cm^-1 to m^-1), or do an inversion. Since\n"
+		"we do this often enough, it is worth having a function that handles\n"
+		"this logic. \n"
+		""},
+	 { (char *)"ArrayWithUnit_double_2__v_rows", _wrap_ArrayWithUnit_double_2__v_rows, METH_VARARGS, (char *)"\n"
+		"\n"
+		"int FullPhysics::ArrayWithUnit< T, D >::rows() const\n"
+		"\n"
+		""},
+	 { (char *)"ArrayWithUnit_double_2__v_cols", _wrap_ArrayWithUnit_double_2__v_cols, METH_VARARGS, (char *)"\n"
+		"\n"
+		"int FullPhysics::ArrayWithUnit< T, D >::cols() const\n"
+		"\n"
+		""},
+	 { (char *)"ArrayWithUnit_double_2__v_depth", _wrap_ArrayWithUnit_double_2__v_depth, METH_VARARGS, (char *)"\n"
+		"\n"
+		"int FullPhysics::ArrayWithUnit< T, D >::depth() const\n"
+		"\n"
+		""},
 	 { (char *)"ArrayWithUnit_double_2___str__", _wrap_ArrayWithUnit_double_2___str__, METH_VARARGS, NULL},
 	 { (char *)"delete_ArrayWithUnit_double_2", _wrap_delete_ArrayWithUnit_double_2, METH_VARARGS, NULL},
 	 { (char *)"ArrayWithUnit_double_2_swigregister", ArrayWithUnit_double_2_swigregister, METH_VARARGS, NULL},
-	 { (char *)"new_ArrayWithUnit_double_3", _wrap_new_ArrayWithUnit_double_3, METH_VARARGS, NULL},
+	 { (char *)"new_ArrayWithUnit_double_3", _wrap_new_ArrayWithUnit_double_3, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::ArrayWithUnit< T, D >::ArrayWithUnit(const blitz::Array< T, D > &Value, const std::string\n"
+		"&Value_units_name)\n"
+		"\n"
+		""},
 	 { (char *)"ArrayWithUnit_double_3__value", _wrap_ArrayWithUnit_double_3__value, METH_VARARGS, NULL},
 	 { (char *)"ArrayWithUnit_double_3__units", _wrap_ArrayWithUnit_double_3__units, METH_VARARGS, NULL},
 	 { (char *)"ArrayWithUnit_double_3___imul__", _wrap_ArrayWithUnit_double_3___imul__, METH_VARARGS, NULL},
 	 { (char *)"ArrayWithUnit_double_3___idiv__", _wrap_ArrayWithUnit_double_3___idiv__, METH_VARARGS, NULL},
-	 { (char *)"ArrayWithUnit_double_3_convert", _wrap_ArrayWithUnit_double_3_convert, METH_VARARGS, NULL},
-	 { (char *)"ArrayWithUnit_double_3_convert_wave", _wrap_ArrayWithUnit_double_3_convert_wave, METH_VARARGS, NULL},
-	 { (char *)"ArrayWithUnit_double_3__v_rows", _wrap_ArrayWithUnit_double_3__v_rows, METH_VARARGS, NULL},
-	 { (char *)"ArrayWithUnit_double_3__v_cols", _wrap_ArrayWithUnit_double_3__v_cols, METH_VARARGS, NULL},
-	 { (char *)"ArrayWithUnit_double_3__v_depth", _wrap_ArrayWithUnit_double_3__v_depth, METH_VARARGS, NULL},
+	 { (char *)"ArrayWithUnit_double_3_convert", _wrap_ArrayWithUnit_double_3_convert, METH_VARARGS, (char *)"\n"
+		"\n"
+		"ArrayWithUnit<T, D> FullPhysics::ArrayWithUnit< T, D >::convert(const Unit &R) const\n"
+		"Convert to the given units. \n"
+		""},
+	 { (char *)"ArrayWithUnit_double_3_convert_wave", _wrap_ArrayWithUnit_double_3_convert_wave, METH_VARARGS, (char *)"\n"
+		"\n"
+		"ArrayWithUnit<T,D> FullPhysics::ArrayWithUnit< T, D >::convert_wave(const Unit &R) const\n"
+		"We often need to handle conversion from wavenumber to/from wavelength.\n"
+		"\n"
+		"This is either a normal conversion of the units before and after match\n"
+		"in the power of length (so cm^-1 to m^-1), or do an inversion. Since\n"
+		"we do this often enough, it is worth having a function that handles\n"
+		"this logic. \n"
+		""},
+	 { (char *)"ArrayWithUnit_double_3__v_rows", _wrap_ArrayWithUnit_double_3__v_rows, METH_VARARGS, (char *)"\n"
+		"\n"
+		"int FullPhysics::ArrayWithUnit< T, D >::rows() const\n"
+		"\n"
+		""},
+	 { (char *)"ArrayWithUnit_double_3__v_cols", _wrap_ArrayWithUnit_double_3__v_cols, METH_VARARGS, (char *)"\n"
+		"\n"
+		"int FullPhysics::ArrayWithUnit< T, D >::cols() const\n"
+		"\n"
+		""},
+	 { (char *)"ArrayWithUnit_double_3__v_depth", _wrap_ArrayWithUnit_double_3__v_depth, METH_VARARGS, (char *)"\n"
+		"\n"
+		"int FullPhysics::ArrayWithUnit< T, D >::depth() const\n"
+		"\n"
+		""},
 	 { (char *)"ArrayWithUnit_double_3___str__", _wrap_ArrayWithUnit_double_3___str__, METH_VARARGS, NULL},
 	 { (char *)"delete_ArrayWithUnit_double_3", _wrap_delete_ArrayWithUnit_double_3, METH_VARARGS, NULL},
 	 { (char *)"ArrayWithUnit_double_3_swigregister", ArrayWithUnit_double_3_swigregister, METH_VARARGS, NULL},

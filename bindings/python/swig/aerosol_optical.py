@@ -127,6 +127,16 @@ import full_physics_swig.aerosol_extinction
 import full_physics_swig.aerosol_property
 import full_physics_swig.aerosol
 class AerosolOptical(full_physics_swig.aerosol.Aerosol, full_physics_swig.pressure.ObserverPressure, full_physics_swig.aerosol_extinction.ObserverAerosolExtinction, full_physics_swig.aerosol_property.ObserverAerosolProperty):
+    """
+
+    Implementation of Aerosol.
+
+    This particular implementation does the aerosol calculation by using
+    the aerosol optical properties.
+
+    C++ includes: aerosol_optical.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.aerosol.Aerosol, full_physics_swig.pressure.ObserverPressure, full_physics_swig.aerosol_extinction.ObserverAerosolExtinction, full_physics_swig.aerosol_property.ObserverAerosolProperty]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -138,6 +148,15 @@ class AerosolOptical(full_physics_swig.aerosol.Aerosol, full_physics_swig.pressu
     __repr__ = _swig_repr
 
     def __init__(self, Aext, Aerosol_prop, Press, Rh, Reference_wn=1):
+        """
+
+        FullPhysics::AerosolOptical::AerosolOptical(const std::vector< boost::shared_ptr< AerosolExtinction > > &Aext,
+        const std::vector< boost::shared_ptr< AerosolProperty > >
+        &Aerosol_prop, const boost::shared_ptr< Pressure > &Press, const
+        boost::shared_ptr< RelativeHumidity > &Rh, double
+        Reference_wn=1e4/0.755)
+
+        """
         this = _aerosol_optical.new_AerosolOptical(Aext, Aerosol_prop, Press, Rh, Reference_wn)
         try:
             self.this.append(this)
@@ -145,19 +164,50 @@ class AerosolOptical(full_physics_swig.aerosol.Aerosol, full_physics_swig.pressu
             self.this = this
 
     def optical_depth_each_layer(self, wn):
+        """
+
+        virtual ArrayAd<double, 2> FullPhysics::AerosolOptical::optical_depth_each_layer(double wn) const
+
+        """
         return _aerosol_optical.AerosolOptical_optical_depth_each_layer(self, wn)
 
+
     def ssa_each_layer(self, *args):
+        """
+
+        virtual ArrayAd<double, 1> FullPhysics::AerosolOptical::ssa_each_layer(double wn) const
+
+        """
         return _aerosol_optical.AerosolOptical_ssa_each_layer(self, *args)
 
+
     def notify_update(self, *args):
+        """
+
+        virtual void FullPhysics::AerosolOptical::notify_update(const AerosolProperty &A)
+
+        """
         return _aerosol_optical.AerosolOptical_notify_update(self, *args)
 
+
     def pf_mom(self, *args):
+        """
+
+        virtual ArrayAd<double, 3> FullPhysics::AerosolOptical::pf_mom(double wn, const ArrayAd< double, 2 > &frac_aer, int nummom=-1, int
+        numscat=-1) const
+
+        """
         return _aerosol_optical.AerosolOptical_pf_mom(self, *args)
 
+
     def _v_number_particle(self):
+        """
+
+        virtual int FullPhysics::AerosolOptical::number_particle() const
+
+        """
         return _aerosol_optical.AerosolOptical__v_number_particle(self)
+
 
     @property
     def number_particle(self):
@@ -165,16 +215,43 @@ class AerosolOptical(full_physics_swig.aerosol.Aerosol, full_physics_swig.pressu
 
 
     def aerosol_optical_depth(self, *args):
+        """
+
+        double FullPhysics::AerosolOptical::aerosol_optical_depth(int aer_idx, double pmin=std::numeric_limits< double >::min(), double
+        pmax=std::numeric_limits< double >::max()) const
+
+        """
         return _aerosol_optical.AerosolOptical_aerosol_optical_depth(self, *args)
 
+
     def aerosol_optical_depth_total(self, *args):
+        """
+
+        double FullPhysics::AerosolOptical::aerosol_optical_depth_total(double pmin=std::numeric_limits< double >::min(), double
+        pmax=std::numeric_limits< double >::max()) const
+
+        """
         return _aerosol_optical.AerosolOptical_aerosol_optical_depth_total(self, *args)
 
+
     def clone(self, *args):
+        """
+
+        virtual boost::shared_ptr<Aerosol> FullPhysics::AerosolOptical::clone(const boost::shared_ptr< Pressure > &Press, const boost::shared_ptr<
+        RelativeHumidity > &Rh) const
+
+        """
         return _aerosol_optical.AerosolOptical_clone(self, *args)
 
+
     def _v_aerosol_name(self):
+        """
+
+        std::vector<std::string> FullPhysics::AerosolOptical::aerosol_name() const
+
+        """
         return _aerosol_optical.AerosolOptical__v_aerosol_name(self)
+
 
     @property
     def aerosol_name(self):
@@ -182,7 +259,13 @@ class AerosolOptical(full_physics_swig.aerosol.Aerosol, full_physics_swig.pressu
 
 
     def _v_aerosol_name_arr(self):
+        """
+
+        blitz::Array<std::string, 1> FullPhysics::AerosolOptical::aerosol_name_arr() const
+
+        """
         return _aerosol_optical.AerosolOptical__v_aerosol_name_arr(self)
+
 
     @property
     def aerosol_name_arr(self):
@@ -190,7 +273,13 @@ class AerosolOptical(full_physics_swig.aerosol.Aerosol, full_physics_swig.pressu
 
 
     def _v_pressure(self):
+        """
+
+        const boost::shared_ptr<Pressure>& FullPhysics::AerosolOptical::pressure() const
+        Return pressure. 
+        """
         return _aerosol_optical.AerosolOptical__v_pressure(self)
+
 
     @property
     def pressure(self):
@@ -198,10 +287,22 @@ class AerosolOptical(full_physics_swig.aerosol.Aerosol, full_physics_swig.pressu
 
 
     def aerosol_extinction(self, *args):
+        """
+
+        void FullPhysics::AerosolOptical::aerosol_extinction(int i, const boost::shared_ptr< AerosolExtinction > &V)
+        Set AerosolExtinction. 
+        """
         return _aerosol_optical.AerosolOptical_aerosol_extinction(self, *args)
 
+
     def aerosol_property(self, *args):
+        """
+
+        void FullPhysics::AerosolOptical::aerosol_property(int i, const boost::shared_ptr< AerosolProperty > &V)
+        Set AerosolProperty. 
+        """
         return _aerosol_optical.AerosolOptical_aerosol_property(self, *args)
+
     __swig_destroy__ = _aerosol_optical.delete_AerosolOptical
     __del__ = lambda self: None
 AerosolOptical_swigregister = _aerosol_optical.AerosolOptical_swigregister

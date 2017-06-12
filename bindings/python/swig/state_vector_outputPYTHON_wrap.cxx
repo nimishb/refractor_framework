@@ -5071,8 +5071,16 @@ SWIGINTERN PyObject *StateVectorOutput_swigregister(PyObject *SWIGUNUSEDPARM(sel
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"StateVectorOutput_register_output", _wrap_StateVectorOutput_register_output, METH_VARARGS, NULL},
-	 { (char *)"delete_StateVectorOutput", _wrap_delete_StateVectorOutput, METH_VARARGS, NULL},
+	 { (char *)"StateVectorOutput_register_output", _wrap_StateVectorOutput_register_output, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::StateVectorOutput::register_output(const boost::shared_ptr< Output > &out) const\n"
+		"\n"
+		""},
+	 { (char *)"delete_StateVectorOutput", _wrap_delete_StateVectorOutput, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::StateVectorOutput::~StateVectorOutput()\n"
+		"\n"
+		""},
 	 { (char *)"StateVectorOutput_swigregister", StateVectorOutput_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };

@@ -9490,14 +9490,78 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"SwigPyIterator___sub__", _wrap_SwigPyIterator___sub__, METH_VARARGS, NULL},
 	 { (char *)"SwigPyIterator_swigregister", SwigPyIterator_swigregister, METH_VARARGS, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"delete_Ils", _wrap_delete_Ils, METH_VARARGS, NULL},
+	 { (char *)"delete_Ils", _wrap_delete_Ils, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::Ils::~Ils()\n"
+		"\n"
+		""},
 	 { (char *)"Ils___str__", _wrap_Ils___str__, METH_VARARGS, NULL},
-	 { (char *)"Ils_apply_ils", _wrap_Ils_apply_ils, METH_VARARGS, NULL},
-	 { (char *)"Ils_clone", _wrap_Ils_clone, METH_VARARGS, NULL},
-	 { (char *)"Ils__v_band_name", _wrap_Ils__v_band_name, METH_VARARGS, NULL},
-	 { (char *)"Ils__v_hdf_band_name", _wrap_Ils__v_hdf_band_name, METH_VARARGS, NULL},
-	 { (char *)"Ils__v_pixel_grid", _wrap_Ils__v_pixel_grid, METH_VARARGS, NULL},
-	 { (char *)"Ils__v_ils_half_width", _wrap_Ils__v_ils_half_width, METH_VARARGS, NULL},
+	 { (char *)"Ils_apply_ils", _wrap_Ils_apply_ils, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual ArrayAd<double, 1> FullPhysics::Ils::apply_ils(const blitz::Array< double, 1 > &High_resolution_wave_number, const\n"
+		"ArrayAd< double, 1 > &High_resolution_radiance, const std::vector< int\n"
+		"> &Pixel_list) const =0\n"
+		"Apply the ILS.\n"
+		"\n"
+		"This includes propagating the Jacobian from the high resolution data,\n"
+		"and adding in any dependence of the ILS on the state vector elements\n"
+		"(e.g., dispersion state vector elements).\n"
+		"\n"
+		"Parameters:\n"
+		"-----------\n"
+		"\n"
+		"High_resolution_wave_number:  The wave numbers going with the high\n"
+		"resolution radiance data. This is in cm^-1, and should be ordered from\n"
+		"smallest to largest wavenumber.\n"
+		"\n"
+		"High_resolution_radiance:  The high resolution radiance data and\n"
+		"jacobian . This is in w/m^2 / sr / cm^-1\n"
+		"\n"
+		"Pixel_list:  List of instrument pixels to include in the results. The\n"
+		"order of the pixels is the same order that we return our results in.\n"
+		"\n"
+		"Radiance with ILS applied, and Jacobian This is in w/m^2 / sr / cm^-1.\n"
+		"\n"
+		""},
+	 { (char *)"Ils_clone", _wrap_Ils_clone, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual boost::shared_ptr<Ils> FullPhysics::Ils::clone() const =0\n"
+		"Clone an Ils object.\n"
+		"\n"
+		"Note that the cloned version will not be attached to and StateVector\n"
+		"or Observer<Ils>, although you can of course attach them after\n"
+		"receiving the cloned object.\n"
+		"\n"
+		"Because this isn't attached to the StateVector, one use of the clone\n"
+		"operator is to create a \"frozen\" Ils object. \n"
+		""},
+	 { (char *)"Ils__v_band_name", _wrap_Ils__v_band_name, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual std::string FullPhysics::Ils::band_name() const =0\n"
+		"Descriptive name of the band. \n"
+		""},
+	 { (char *)"Ils__v_hdf_band_name", _wrap_Ils__v_hdf_band_name, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual std::string FullPhysics::Ils::hdf_band_name() const\n"
+		"In general, the name used in HDF files for a particular band is\n"
+		"similar but not identical to the more human readable band_name.\n"
+		"\n"
+		"For example, with GOSAT we use the HDF field name \"weak_co2\", but\n"
+		"the band name is \"WC-Band\". This gives the HDF name to use.\n"
+		"\n"
+		"The default implementation just returns the same string as the band\n"
+		"name. \n"
+		""},
+	 { (char *)"Ils__v_pixel_grid", _wrap_Ils__v_pixel_grid, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual SpectralDomain FullPhysics::Ils::pixel_grid() const =0\n"
+		"This is the pixel grid for each pixel. \n"
+		""},
+	 { (char *)"Ils__v_ils_half_width", _wrap_Ils__v_ils_half_width, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::Ils::ils_half_width(const DoubleWithUnit &half_width)=0\n"
+		"Set the half width of the ILS. \n"
+		""},
 	 { (char *)"Ils_swigregister", Ils_swigregister, METH_VARARGS, NULL},
 	 { (char *)"vector_ils_iterator", _wrap_vector_ils_iterator, METH_VARARGS, NULL},
 	 { (char *)"vector_ils___nonzero__", _wrap_vector_ils___nonzero__, METH_VARARGS, NULL},

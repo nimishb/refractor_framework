@@ -9202,17 +9202,59 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"SubStateVectorArrayAerosolProperty__v_statevector_covariance", _wrap_SubStateVectorArrayAerosolProperty__v_statevector_covariance, METH_VARARGS, NULL},
 	 { (char *)"SubStateVectorArrayAerosolProperty__v_pressure", _wrap_SubStateVectorArrayAerosolProperty__v_pressure, METH_VARARGS, NULL},
 	 { (char *)"SubStateVectorArrayAerosolProperty_swigregister", SubStateVectorArrayAerosolProperty_swigregister, METH_VARARGS, NULL},
-	 { (char *)"delete_AerosolPropertyImpBase", _wrap_delete_AerosolPropertyImpBase, METH_VARARGS, NULL},
-	 { (char *)"AerosolPropertyImpBase_clone", _wrap_AerosolPropertyImpBase_clone, METH_VARARGS, NULL},
-	 { (char *)"AerosolPropertyImpBase_extinction_coefficient_each_layer", _wrap_AerosolPropertyImpBase_extinction_coefficient_each_layer, METH_VARARGS, NULL},
-	 { (char *)"AerosolPropertyImpBase_scattering_coefficient_each_layer", _wrap_AerosolPropertyImpBase_scattering_coefficient_each_layer, METH_VARARGS, NULL},
-	 { (char *)"AerosolPropertyImpBase_phase_function_moment_each_layer", _wrap_AerosolPropertyImpBase_phase_function_moment_each_layer, METH_VARARGS, NULL},
-	 { (char *)"AerosolPropertyImpBase_desc", _wrap_AerosolPropertyImpBase_desc, METH_VARARGS, NULL},
+	 { (char *)"delete_AerosolPropertyImpBase", _wrap_delete_AerosolPropertyImpBase, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::AerosolPropertyImpBase::~AerosolPropertyImpBase()\n"
+		"\n"
+		""},
+	 { (char *)"AerosolPropertyImpBase_clone", _wrap_AerosolPropertyImpBase_clone, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual boost::shared_ptr<AerosolProperty> FullPhysics::AerosolPropertyImpBase::clone(const boost::shared_ptr< Pressure > &Press, const boost::shared_ptr<\n"
+		"RelativeHumidity > &Rh) const =0\n"
+		"\n"
+		""},
+	 { (char *)"AerosolPropertyImpBase_extinction_coefficient_each_layer", _wrap_AerosolPropertyImpBase_extinction_coefficient_each_layer, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual ArrayAd<double,1> FullPhysics::AerosolPropertyImpBase::extinction_coefficient_each_layer(double wn) const =0\n"
+		"\n"
+		""},
+	 { (char *)"AerosolPropertyImpBase_scattering_coefficient_each_layer", _wrap_AerosolPropertyImpBase_scattering_coefficient_each_layer, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual ArrayAd<double, 1> FullPhysics::AerosolPropertyImpBase::scattering_coefficient_each_layer(double wn) const =0\n"
+		"\n"
+		""},
+	 { (char *)"AerosolPropertyImpBase_phase_function_moment_each_layer", _wrap_AerosolPropertyImpBase_phase_function_moment_each_layer, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual ArrayAd<double, 3> FullPhysics::AerosolPropertyImpBase::phase_function_moment_each_layer(double wn, int nmom=-1, int nscatt=-1) const =0\n"
+		"\n"
+		""},
+	 { (char *)"AerosolPropertyImpBase_desc", _wrap_AerosolPropertyImpBase_desc, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual std::string FullPhysics::AerosolPropertyImpBase::desc() const\n"
+		"Description of object, to be printed to stream.\n"
+		"\n"
+		"This gives a cleaner interface for deriving from python. \n"
+		""},
 	 { (char *)"AerosolPropertyImpBase_add_observer", _wrap_AerosolPropertyImpBase_add_observer, METH_VARARGS, NULL},
 	 { (char *)"AerosolPropertyImpBase_remove_observer", _wrap_AerosolPropertyImpBase_remove_observer, METH_VARARGS, NULL},
 	 { (char *)"AerosolPropertyImpBase_update_sub_state_hook", _wrap_AerosolPropertyImpBase_update_sub_state_hook, METH_VARARGS, NULL},
-	 { (char *)"AerosolPropertyImpBase_print_desc", _wrap_AerosolPropertyImpBase_print_desc, METH_VARARGS, NULL},
-	 { (char *)"AerosolPropertyImpBase__v_desc", _wrap_AerosolPropertyImpBase__v_desc, METH_VARARGS, NULL},
+	 { (char *)"AerosolPropertyImpBase_print_desc", _wrap_AerosolPropertyImpBase_print_desc, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::AerosolPropertyImpBase::print(std::ostream &Os) const\n"
+		"Print to stream.\n"
+		"\n"
+		"The default calls the function \"desc\" that returns a string. This\n"
+		"gives cleaner interface for deriving from this class in python, but\n"
+		"most C++ classes will want to override this function rather than using\n"
+		"desc. \n"
+		""},
+	 { (char *)"AerosolPropertyImpBase__v_desc", _wrap_AerosolPropertyImpBase__v_desc, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual std::string FullPhysics::AerosolPropertyImpBase::desc() const\n"
+		"Description of object, to be printed to stream.\n"
+		"\n"
+		"This gives a cleaner interface for deriving from python. \n"
+		""},
 	 { (char *)"AerosolPropertyImpBase_mark_used", _wrap_AerosolPropertyImpBase_mark_used, METH_VARARGS, NULL},
 	 { (char *)"AerosolPropertyImpBase_state_vector_name", _wrap_AerosolPropertyImpBase_state_vector_name, METH_VARARGS, NULL},
 	 { (char *)"AerosolPropertyImpBase_notify_update", _wrap_AerosolPropertyImpBase_notify_update, METH_VARARGS, NULL},
@@ -9221,8 +9263,17 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"AerosolPropertyImpBase_update_sub_state", _wrap_AerosolPropertyImpBase_update_sub_state, METH_VARARGS, NULL},
 	 { (char *)"AerosolPropertyImpBase_state_vector_name_i", _wrap_AerosolPropertyImpBase_state_vector_name_i, METH_VARARGS, NULL},
 	 { (char *)"AerosolPropertyImpBase_state_vector_name_sub", _wrap_AerosolPropertyImpBase_state_vector_name_sub, METH_VARARGS, NULL},
-	 { (char *)"AerosolPropertyImpBase__v_aerosol_parameter", _wrap_AerosolPropertyImpBase__v_aerosol_parameter, METH_VARARGS, NULL},
-	 { (char *)"AerosolPropertyImpBase__v_aerosol_parameter_uncertainty", _wrap_AerosolPropertyImpBase__v_aerosol_parameter_uncertainty, METH_VARARGS, NULL},
+	 { (char *)"AerosolPropertyImpBase__v_aerosol_parameter", _wrap_AerosolPropertyImpBase__v_aerosol_parameter, METH_VARARGS, (char *)"\n"
+		"\n"
+		"blitz::Array<double, 1> FullPhysics::AerosolPropertyImpBase::aerosol_parameter() const\n"
+		"Returns the value of the coefficients used to generate the aerosol\n"
+		"property. \n"
+		""},
+	 { (char *)"AerosolPropertyImpBase__v_aerosol_parameter_uncertainty", _wrap_AerosolPropertyImpBase__v_aerosol_parameter_uncertainty, METH_VARARGS, (char *)"\n"
+		"\n"
+		"blitz::Array<double, 1> FullPhysics::AerosolPropertyImpBase::aerosol_parameter_uncertainty() const\n"
+		"Returns the uncertainty of the aerosol type coefficients. \n"
+		""},
 	 { (char *)"AerosolPropertyImpBase_init", _wrap_AerosolPropertyImpBase_init, METH_VARARGS, NULL},
 	 { (char *)"new_AerosolPropertyImpBase", _wrap_new_AerosolPropertyImpBase, METH_VARARGS, NULL},
 	 { (char *)"disown_AerosolPropertyImpBase", _wrap_disown_AerosolPropertyImpBase, METH_VARARGS, NULL},

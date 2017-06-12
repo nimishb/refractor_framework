@@ -124,6 +124,14 @@ import full_physics_swig.generic_object
 import full_physics_swig.state_vector
 import full_physics_swig.initial_guess
 class MerraAerosol(full_physics_swig.generic_object.GenericObject):
+    """
+
+    This class is used to create the Aerosol from a Merra climatology
+    file.
+
+    C++ includes: merra_aerosol.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.generic_object.GenericObject]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -135,6 +143,18 @@ class MerraAerosol(full_physics_swig.generic_object.GenericObject):
     __repr__ = _swig_repr
 
     def __init__(self, Merra_climatology, Aerosol_property, Latitude, Longitude, Press, Rh, Aerosol_cov, Max_aod=0.2, Exp_aod=0.8, Min_types=2, Max_types=4, Linear_aod=False, Relative_humidity_aerosol=False, Max_residual=0.005, Reference_wn=1):
+        """
+
+        FullPhysics::MerraAerosol::MerraAerosol(const HdfFile &Merra_climatology, const HdfFile &Aerosol_property,
+        DoubleWithUnit Latitude, DoubleWithUnit Longitude, const
+        boost::shared_ptr< Pressure > &Press, const boost::shared_ptr<
+        RelativeHumidity > &Rh, const blitz::Array< double, 2 > &Aerosol_cov,
+        double Max_aod=0.2, double Exp_aod=0.8, int Min_types=2, int
+        Max_types=4, bool Linear_aod=false, bool
+        Relative_humidity_aerosol=false, double Max_residual=0.005, double
+        Reference_wn=1e4/0.755)
+
+        """
         this = _merra_aerosol.new_MerraAerosol(Merra_climatology, Aerosol_property, Latitude, Longitude, Press, Rh, Aerosol_cov, Max_aod, Exp_aod, Min_types, Max_types, Linear_aod, Relative_humidity_aerosol, Max_residual, Reference_wn)
         try:
             self.this.append(this)
@@ -142,7 +162,13 @@ class MerraAerosol(full_physics_swig.generic_object.GenericObject):
             self.this = this
 
     def _v_aerosol(self):
+        """
+
+        boost::shared_ptr<Aerosol> FullPhysics::MerraAerosol::aerosol() const
+
+        """
         return _merra_aerosol.MerraAerosol__v_aerosol(self)
+
 
     @property
     def aerosol(self):
@@ -150,7 +176,13 @@ class MerraAerosol(full_physics_swig.generic_object.GenericObject):
 
 
     def _v_initial_guess(self):
+        """
+
+        boost::shared_ptr<InitialGuessBuilder> FullPhysics::MerraAerosol::initial_guess() const
+        Return IntitialGuessBuilder for the Aerosol. 
+        """
         return _merra_aerosol.MerraAerosol__v_initial_guess(self)
+
 
     @property
     def initial_guess(self):
@@ -158,7 +190,13 @@ class MerraAerosol(full_physics_swig.generic_object.GenericObject):
 
 
     def _v_number_merra_particle(self):
+        """
+
+        int FullPhysics::MerraAerosol::number_merra_particle() const
+        Number of merra particles. 
+        """
         return _merra_aerosol.MerraAerosol__v_number_merra_particle(self)
+
 
     @property
     def number_merra_particle(self):

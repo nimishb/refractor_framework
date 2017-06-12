@@ -8016,24 +8016,156 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"ObserverRtAtmosphere_notify_add", _wrap_ObserverRtAtmosphere_notify_add, METH_VARARGS, NULL},
 	 { (char *)"ObserverRtAtmosphere_notify_remove", _wrap_ObserverRtAtmosphere_notify_remove, METH_VARARGS, NULL},
 	 { (char *)"ObserverRtAtmosphere_swigregister", ObserverRtAtmosphere_swigregister, METH_VARARGS, NULL},
-	 { (char *)"delete_RtAtmosphere", _wrap_delete_RtAtmosphere, METH_VARARGS, NULL},
-	 { (char *)"RtAtmosphere_add_observer", _wrap_RtAtmosphere_add_observer, METH_VARARGS, NULL},
-	 { (char *)"RtAtmosphere_remove_observer", _wrap_RtAtmosphere_remove_observer, METH_VARARGS, NULL},
-	 { (char *)"RtAtmosphere__v_timer_info", _wrap_RtAtmosphere__v_timer_info, METH_VARARGS, NULL},
-	 { (char *)"RtAtmosphere__v_number_layer", _wrap_RtAtmosphere__v_number_layer, METH_VARARGS, NULL},
-	 { (char *)"RtAtmosphere__v_number_spectrometer", _wrap_RtAtmosphere__v_number_spectrometer, METH_VARARGS, NULL},
-	 { (char *)"RtAtmosphere_altitude", _wrap_RtAtmosphere_altitude, METH_VARARGS, NULL},
-	 { (char *)"RtAtmosphere_column_optical_depth", _wrap_RtAtmosphere_column_optical_depth, METH_VARARGS, NULL},
-	 { (char *)"RtAtmosphere_optical_depth_wrt_iv", _wrap_RtAtmosphere_optical_depth_wrt_iv, METH_VARARGS, NULL},
-	 { (char *)"RtAtmosphere_single_scattering_albedo_wrt_iv", _wrap_RtAtmosphere_single_scattering_albedo_wrt_iv, METH_VARARGS, NULL},
-	 { (char *)"RtAtmosphere_scattering_moment_wrt_iv", _wrap_RtAtmosphere_scattering_moment_wrt_iv, METH_VARARGS, NULL},
-	 { (char *)"RtAtmosphere_optical_depth_wrt_state_vector", _wrap_RtAtmosphere_optical_depth_wrt_state_vector, METH_VARARGS, NULL},
-	 { (char *)"RtAtmosphere_single_scattering_albedo_wrt_state_vector", _wrap_RtAtmosphere_single_scattering_albedo_wrt_state_vector, METH_VARARGS, NULL},
-	 { (char *)"RtAtmosphere_scattering_moment_wrt_state_vector", _wrap_RtAtmosphere_scattering_moment_wrt_state_vector, METH_VARARGS, NULL},
-	 { (char *)"RtAtmosphere_intermediate_variable", _wrap_RtAtmosphere_intermediate_variable, METH_VARARGS, NULL},
-	 { (char *)"RtAtmosphere__v_ground", _wrap_RtAtmosphere__v_ground, METH_VARARGS, NULL},
-	 { (char *)"RtAtmosphere__v_uplooking", _wrap_RtAtmosphere__v_uplooking, METH_VARARGS, NULL},
-	 { (char *)"RtAtmosphere_reset_timer", _wrap_RtAtmosphere_reset_timer, METH_VARARGS, NULL},
+	 { (char *)"delete_RtAtmosphere", _wrap_delete_RtAtmosphere, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::RtAtmosphere::~RtAtmosphere()\n"
+		"\n"
+		""},
+	 { (char *)"RtAtmosphere_add_observer", _wrap_RtAtmosphere_add_observer, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::RtAtmosphere::add_observer(Observer< RtAtmosphere > &Obs)\n"
+		"\n"
+		""},
+	 { (char *)"RtAtmosphere_remove_observer", _wrap_RtAtmosphere_remove_observer, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::RtAtmosphere::remove_observer(Observer< RtAtmosphere > &Obs)\n"
+		"\n"
+		""},
+	 { (char *)"RtAtmosphere__v_timer_info", _wrap_RtAtmosphere__v_timer_info, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual std::string FullPhysics::RtAtmosphere::timer_info() const\n"
+		"\n"
+		""},
+	 { (char *)"RtAtmosphere__v_number_layer", _wrap_RtAtmosphere__v_number_layer, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual int FullPhysics::RtAtmosphere::number_layer() const =0\n"
+		"Number of layers we currently have. \n"
+		""},
+	 { (char *)"RtAtmosphere__v_number_spectrometer", _wrap_RtAtmosphere__v_number_spectrometer, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual int FullPhysics::RtAtmosphere::number_spectrometer() const =0\n"
+		"Number of spectrometers we have. \n"
+		""},
+	 { (char *)"RtAtmosphere_altitude", _wrap_RtAtmosphere_altitude, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual ArrayAdWithUnit<double, 1> FullPhysics::RtAtmosphere::altitude(int spec_index) const =0\n"
+		"Altitude grid for current pressure grid. \n"
+		""},
+	 { (char *)"RtAtmosphere_column_optical_depth", _wrap_RtAtmosphere_column_optical_depth, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual AutoDerivative<double> FullPhysics::RtAtmosphere::column_optical_depth(double wn, int spec_index, const std::string &Gas_name) const =0\n"
+		"Total column optical depth for the given gas.\n"
+		"\n"
+		"This is 0 if the band isn't one that sees that gas. \n"
+		""},
+	 { (char *)"RtAtmosphere_optical_depth_wrt_iv", _wrap_RtAtmosphere_optical_depth_wrt_iv, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual ArrayAd<double, 1> FullPhysics::RtAtmosphere::optical_depth_wrt_iv(double wn, int spec_index, const ArrayAd< double, 2 > &iv) const =0\n"
+		"This is a variation of optical_depth that takes the supplied value for\n"
+		"the intermediate variables rather than calculating it own value.\n"
+		"\n"
+		"This is used by the LSI to get \"average optical properties\".\n"
+		"\n"
+		"Parameters:\n"
+		"-----------\n"
+		"\n"
+		"wn:  The wave number to calculate parameters for.\n"
+		"\n"
+		"spec_index:  The spectrometer index\n"
+		"\n"
+		"iv:  Intermediate variable values to use.\n"
+		"\n"
+		"Optical depth for each layer. This is number_layer() in size \n"
+		""},
+	 { (char *)"RtAtmosphere_single_scattering_albedo_wrt_iv", _wrap_RtAtmosphere_single_scattering_albedo_wrt_iv, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual ArrayAd<double, 1> FullPhysics::RtAtmosphere::single_scattering_albedo_wrt_iv(double wn, int spec_index, const ArrayAd< double, 2 > &iv) const =0\n"
+		"This is a variation of single_scattering_albedo that takes the\n"
+		"supplied value for the intermediate variables rather than calculating\n"
+		"it own value.\n"
+		"\n"
+		"This is used by the LSI to get \"average optical properties\".\n"
+		"\n"
+		"Parameters:\n"
+		"-----------\n"
+		"\n"
+		"wn:  The wave number to calculate parameters for.\n"
+		"\n"
+		"spec_index:  The spectrometer index\n"
+		"\n"
+		"iv:  Intermediate variable values to use.\n"
+		"\n"
+		"Single scattering albedo for each layer. This is number_layer() in\n"
+		"size \n"
+		""},
+	 { (char *)"RtAtmosphere_scattering_moment_wrt_iv", _wrap_RtAtmosphere_scattering_moment_wrt_iv, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual ArrayAd<double, 3> FullPhysics::RtAtmosphere::scattering_moment_wrt_iv(double wn, int spec_index, const ArrayAd< double, 2 > &iv, int\n"
+		"nummom=-1, int numscat=-1) const =0\n"
+		"This is a variation of scattering_moment that takes the supplied value\n"
+		"for the intermediate variables rather than calculating it own value.\n"
+		"\n"
+		"This is used by the LSI to get \"average optical properties\".\n"
+		"\n"
+		"Parameters:\n"
+		"-----------\n"
+		"\n"
+		"wn:  The wave number to calculate parameters for.\n"
+		"\n"
+		"spec_index:  The spectrometer index\n"
+		"\n"
+		"iv:  Intermediate variable values to use.\n"
+		"\n"
+		"nummom:  Number of moments to include in scatt_mom_each_layer, the\n"
+		"default it to include all of them.\n"
+		"\n"
+		"numscat:  Number of scattering matrix elements to include in\n"
+		"scatt_mom_each_layer, the default it to include all of them.\n"
+		"\n"
+		"Scattering moments for each layer. This is number_moment + 1 x\n"
+		"number_layer() x number scattering matrix elements \n"
+		""},
+	 { (char *)"RtAtmosphere_optical_depth_wrt_state_vector", _wrap_RtAtmosphere_optical_depth_wrt_state_vector, METH_VARARGS, (char *)"\n"
+		"\n"
+		"ArrayAd<double, 1> FullPhysics::RtAtmosphere::optical_depth_wrt_state_vector(double wn, int spec_index) const\n"
+		"\n"
+		""},
+	 { (char *)"RtAtmosphere_single_scattering_albedo_wrt_state_vector", _wrap_RtAtmosphere_single_scattering_albedo_wrt_state_vector, METH_VARARGS, (char *)"\n"
+		"\n"
+		"ArrayAd<double, 1> FullPhysics::RtAtmosphere::single_scattering_albedo_wrt_state_vector(double wn, int spec_index) const\n"
+		"\n"
+		""},
+	 { (char *)"RtAtmosphere_scattering_moment_wrt_state_vector", _wrap_RtAtmosphere_scattering_moment_wrt_state_vector, METH_VARARGS, (char *)"\n"
+		"\n"
+		"ArrayAd<double, 3> FullPhysics::RtAtmosphere::scattering_moment_wrt_state_vector(double wn, int spec_index, int nummom=-1, int numscat=-1) const\n"
+		"\n"
+		""},
+	 { (char *)"RtAtmosphere_intermediate_variable", _wrap_RtAtmosphere_intermediate_variable, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual ArrayAd<double, 2> FullPhysics::RtAtmosphere::intermediate_variable(double wn, int spec_index) const =0\n"
+		"This gives the values of the intermediate variables and the Jacobian\n"
+		"with respect to the state vector.\n"
+		"\n"
+		"This is number_layer() x number variables \n"
+		""},
+	 { (char *)"RtAtmosphere__v_ground", _wrap_RtAtmosphere__v_ground, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual const boost::shared_ptr<Ground> FullPhysics::RtAtmosphere::ground() const =0\n"
+		"Object that represents the ground surface.\n"
+		"\n"
+		"If null then there is no surface for this atmosphere. \n"
+		""},
+	 { (char *)"RtAtmosphere__v_uplooking", _wrap_RtAtmosphere__v_uplooking, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual bool FullPhysics::RtAtmosphere::uplooking() const =0\n"
+		"Return true if we have an atmosphere for uplooking mode, i.e., we\n"
+		"don't have a ground defined. \n"
+		""},
+	 { (char *)"RtAtmosphere_reset_timer", _wrap_RtAtmosphere_reset_timer, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::RtAtmosphere::reset_timer()\n"
+		"Reset timer. \n"
+		""},
 	 { (char *)"RtAtmosphere___str__", _wrap_RtAtmosphere___str__, METH_VARARGS, NULL},
 	 { (char *)"RtAtmosphere_swigregister", RtAtmosphere_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }

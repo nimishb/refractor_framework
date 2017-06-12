@@ -6241,12 +6241,43 @@ SWIGINTERN PyObject *IlsFts_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObjec
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"new_IlsFts", _wrap_new_IlsFts, METH_VARARGS, NULL},
-	 { (char *)"IlsFts_notify_add", _wrap_IlsFts_notify_add, METH_VARARGS, NULL},
-	 { (char *)"IlsFts_notify_remove", _wrap_IlsFts_notify_remove, METH_VARARGS, NULL},
-	 { (char *)"IlsFts_notify_update", _wrap_IlsFts_notify_update, METH_VARARGS, NULL},
-	 { (char *)"IlsFts_apply_ils", _wrap_IlsFts_apply_ils, METH_VARARGS, NULL},
-	 { (char *)"IlsFts_clone", _wrap_IlsFts_clone, METH_VARARGS, NULL},
+	 { (char *)"new_IlsFts", _wrap_new_IlsFts, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::IlsFts::IlsFts(const boost::shared_ptr< DispersionPolynomial > &Disp, const\n"
+		"blitz::Array< double, 2 > &Dispersion_perturb, const\n"
+		"boost::shared_ptr< Level1bFts > &Level_1b, int Spec_index, const\n"
+		"std::string &Band_name, const std::string &Hdf_band_name, const\n"
+		"DoubleWithUnit &Ils_half_width=DoubleWithUnit((2000+1)*1e-2,\n"
+		"units::inv_cm))\n"
+		"\n"
+		""},
+	 { (char *)"IlsFts_notify_add", _wrap_IlsFts_notify_add, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::IlsFts::notify_add(StateVector &Sv)\n"
+		"\n"
+		""},
+	 { (char *)"IlsFts_notify_remove", _wrap_IlsFts_notify_remove, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::IlsFts::notify_remove(StateVector &Sv)\n"
+		"\n"
+		""},
+	 { (char *)"IlsFts_notify_update", _wrap_IlsFts_notify_update, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::IlsFts::notify_update(const Dispersion &D)\n"
+		"\n"
+		""},
+	 { (char *)"IlsFts_apply_ils", _wrap_IlsFts_apply_ils, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual ArrayAd<double, 1> FullPhysics::IlsFts::apply_ils(const blitz::Array< double, 1 > &High_resolution_wave_number, const\n"
+		"ArrayAd< double, 1 > &High_resolution_radiance, const std::vector< int\n"
+		"> &Pixel_list) const\n"
+		"\n"
+		""},
+	 { (char *)"IlsFts_clone", _wrap_IlsFts_clone, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual boost::shared_ptr<Ils> FullPhysics::IlsFts::clone() const\n"
+		"\n"
+		""},
 	 { (char *)"delete_IlsFts", _wrap_delete_IlsFts, METH_VARARGS, NULL},
 	 { (char *)"IlsFts_swigregister", IlsFts_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }

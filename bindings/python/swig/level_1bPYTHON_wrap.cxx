@@ -6019,23 +6019,153 @@ SWIGINTERN PyObject *Level1b_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObje
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"delete_Level1b", _wrap_delete_Level1b, METH_VARARGS, NULL},
+	 { (char *)"delete_Level1b", _wrap_delete_Level1b, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::Level1b::~Level1b()\n"
+		"\n"
+		""},
 	 { (char *)"Level1b___str__", _wrap_Level1b___str__, METH_VARARGS, NULL},
-	 { (char *)"Level1b__v_number_spectrometer", _wrap_Level1b__v_number_spectrometer, METH_VARARGS, NULL},
-	 { (char *)"Level1b_latitude", _wrap_Level1b_latitude, METH_VARARGS, NULL},
-	 { (char *)"Level1b_longitude", _wrap_Level1b_longitude, METH_VARARGS, NULL},
-	 { (char *)"Level1b_sounding_zenith", _wrap_Level1b_sounding_zenith, METH_VARARGS, NULL},
-	 { (char *)"Level1b_sounding_azimuth", _wrap_Level1b_sounding_azimuth, METH_VARARGS, NULL},
-	 { (char *)"Level1b_stokes_coefficient", _wrap_Level1b_stokes_coefficient, METH_VARARGS, NULL},
-	 { (char *)"Level1b_solar_zenith", _wrap_Level1b_solar_zenith, METH_VARARGS, NULL},
-	 { (char *)"Level1b_solar_azimuth", _wrap_Level1b_solar_azimuth, METH_VARARGS, NULL},
-	 { (char *)"Level1b_altitude", _wrap_Level1b_altitude, METH_VARARGS, NULL},
-	 { (char *)"Level1b_relative_velocity", _wrap_Level1b_relative_velocity, METH_VARARGS, NULL},
-	 { (char *)"Level1b_spectral_coefficient", _wrap_Level1b_spectral_coefficient, METH_VARARGS, NULL},
-	 { (char *)"Level1b_time", _wrap_Level1b_time, METH_VARARGS, NULL},
-	 { (char *)"Level1b__v_sounding_id", _wrap_Level1b__v_sounding_id, METH_VARARGS, NULL},
-	 { (char *)"Level1b__v_exposure_index", _wrap_Level1b__v_exposure_index, METH_VARARGS, NULL},
-	 { (char *)"Level1b_radiance", _wrap_Level1b_radiance, METH_VARARGS, NULL},
+	 { (char *)"Level1b__v_number_spectrometer", _wrap_Level1b__v_number_spectrometer, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual int FullPhysics::Level1b::number_spectrometer() const =0\n"
+		"Number of spectrometers. \n"
+		""},
+	 { (char *)"Level1b_latitude", _wrap_Level1b_latitude, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual DoubleWithUnit FullPhysics::Level1b::latitude(int i) const =0\n"
+		"Latitude.\n"
+		"\n"
+		"Parameters:\n"
+		"-----------\n"
+		"\n"
+		"i:  Spectrometer index (between 0 and number_spectrometer() - 1)\n"
+		"\n"
+		"Latitude. \n"
+		""},
+	 { (char *)"Level1b_longitude", _wrap_Level1b_longitude, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual DoubleWithUnit FullPhysics::Level1b::longitude(int i) const =0\n"
+		"Longitude.\n"
+		"\n"
+		"Parameters:\n"
+		"-----------\n"
+		"\n"
+		"i:  Spectrometer index (between 0 and number_spectrometer() - 1)\n"
+		"\n"
+		"Longitude \n"
+		""},
+	 { (char *)"Level1b_sounding_zenith", _wrap_Level1b_sounding_zenith, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual DoubleWithUnit FullPhysics::Level1b::sounding_zenith(int i) const =0\n"
+		"Sounding zenith.\n"
+		"\n"
+		"Parameters:\n"
+		"-----------\n"
+		"\n"
+		"i:  Spectrometer index (between 0 and number_spectrometer() - 1)\n"
+		"\n"
+		"Sounding zenith \n"
+		""},
+	 { (char *)"Level1b_sounding_azimuth", _wrap_Level1b_sounding_azimuth, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual DoubleWithUnit FullPhysics::Level1b::sounding_azimuth(int i) const =0\n"
+		"Sounding azimuth.\n"
+		"\n"
+		"Parameters:\n"
+		"-----------\n"
+		"\n"
+		"i:  Spectrometer index (between 0 and number_spectrometer() - 1)\n"
+		"\n"
+		"Sounding azimuth \n"
+		""},
+	 { (char *)"Level1b_stokes_coefficient", _wrap_Level1b_stokes_coefficient, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual blitz::Array<double, 1> FullPhysics::Level1b::stokes_coefficient(int i) const =0\n"
+		"Return stokes coefficients.\n"
+		"\n"
+		"Parameters:\n"
+		"-----------\n"
+		"\n"
+		"i:  Spectrometer index (between 0 and number_spectrometer() - 1)\n"
+		"\n"
+		"Stokes coefficients, with size 4. \n"
+		""},
+	 { (char *)"Level1b_solar_zenith", _wrap_Level1b_solar_zenith, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual DoubleWithUnit FullPhysics::Level1b::solar_zenith(int i) const =0\n"
+		"Solar zenith.\n"
+		"\n"
+		"Parameters:\n"
+		"-----------\n"
+		"\n"
+		"i:  Spectrometer index (between 0 and number_spectrometer() - 1)\n"
+		"\n"
+		"Solar zenith angle \n"
+		""},
+	 { (char *)"Level1b_solar_azimuth", _wrap_Level1b_solar_azimuth, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual DoubleWithUnit FullPhysics::Level1b::solar_azimuth(int i) const =0\n"
+		"Solar azimuth.\n"
+		"\n"
+		"Parameters:\n"
+		"-----------\n"
+		"\n"
+		"i:  Spectrometer index (between 0 and number_spectrometer() - 1)\n"
+		"\n"
+		"Solar azimuth angle \n"
+		""},
+	 { (char *)"Level1b_altitude", _wrap_Level1b_altitude, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual DoubleWithUnit FullPhysics::Level1b::altitude(int i) const =0\n"
+		"Altitude.\n"
+		"\n"
+		"Parameters:\n"
+		"-----------\n"
+		"\n"
+		"i:  Spectrometer index (between 0 and number_spectrometer() - 1)\n"
+		"\n"
+		"Altitude \n"
+		""},
+	 { (char *)"Level1b_relative_velocity", _wrap_Level1b_relative_velocity, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual DoubleWithUnit FullPhysics::Level1b::relative_velocity(int Spec_index) const =0\n"
+		"Relative velocity.\n"
+		"\n"
+		"Relative velocity \n"
+		""},
+	 { (char *)"Level1b_spectral_coefficient", _wrap_Level1b_spectral_coefficient, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual ArrayWithUnit<double, 1> FullPhysics::Level1b::spectral_coefficient(int Spec_index) const =0\n"
+		"Returns coefficients for an equation describing the special domain\n"
+		"used to translate radiance value indexes to their corresponding\n"
+		"spectral grid.\n"
+		"\n"
+		"(ie wavenumber, wavelength, etc) The meaning of these coefficients\n"
+		"will be specific to the instrument that measured the data. \n"
+		""},
+	 { (char *)"Level1b_time", _wrap_Level1b_time, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual Time FullPhysics::Level1b::time(int Spec_index) const =0\n"
+		"Time of sounding. \n"
+		""},
+	 { (char *)"Level1b__v_sounding_id", _wrap_Level1b__v_sounding_id, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual int64_t FullPhysics::Level1b::sounding_id() const =0\n"
+		"Sounding ID. By convention this is a 64 bit integer. \n"
+		""},
+	 { (char *)"Level1b__v_exposure_index", _wrap_Level1b__v_exposure_index, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual int FullPhysics::Level1b::exposure_index() const =0\n"
+		"Exposure index. By convention this is 1 based. \n"
+		""},
+	 { (char *)"Level1b_radiance", _wrap_Level1b_radiance, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual SpectralRange FullPhysics::Level1b::radiance(int Spec_index) const =0\n"
+		"Radiance, for given spectral band.\n"
+		"\n"
+		"This returns the radiance with associated units. It may or may not\n"
+		"have a uncertainity with the radiance. \n"
+		""},
 	 { (char *)"Level1b_swigregister", Level1b_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };

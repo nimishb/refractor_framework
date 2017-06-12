@@ -5918,21 +5918,131 @@ SWIGINTERN PyObject *CompositeInitialGuess_swigregister(PyObject *SWIGUNUSEDPARM
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"delete_InitialGuessBuilder", _wrap_delete_InitialGuessBuilder, METH_VARARGS, NULL},
-	 { (char *)"InitialGuessBuilder__v_number_element", _wrap_InitialGuessBuilder__v_number_element, METH_VARARGS, NULL},
-	 { (char *)"InitialGuessBuilder_build_initial_value", _wrap_InitialGuessBuilder_build_initial_value, METH_VARARGS, NULL},
-	 { (char *)"InitialGuessBuilder_build_apriori", _wrap_InitialGuessBuilder_build_apriori, METH_VARARGS, NULL},
-	 { (char *)"InitialGuessBuilder_build_apriori_covariance", _wrap_InitialGuessBuilder_build_apriori_covariance, METH_VARARGS, NULL},
+	 { (char *)"delete_InitialGuessBuilder", _wrap_delete_InitialGuessBuilder, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::InitialGuessBuilder::~InitialGuessBuilder()\n"
+		"\n"
+		""},
+	 { (char *)"InitialGuessBuilder__v_number_element", _wrap_InitialGuessBuilder__v_number_element, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual int FullPhysics::InitialGuessBuilder::number_element() const =0\n"
+		"Number of elements we will be adding to the state vector.\n"
+		"\n"
+		"0 is a legal value, if we are changing elements but not adding any. \n"
+		""},
+	 { (char *)"InitialGuessBuilder_build_initial_value", _wrap_InitialGuessBuilder_build_initial_value, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::InitialGuessBuilder::build_initial_value(blitz::Array< double, 1 > &v, int index) const =0\n"
+		"Called when we need this class to do its part in setting up the\n"
+		"initial state vector.\n"
+		"\n"
+		"Parameters:\n"
+		"-----------\n"
+		"\n"
+		"v:  State vector that should be updated in place.\n"
+		"\n"
+		"index:  Since we are often adding to the end of the state vector,\n"
+		"index is passed in. This is the sum of the number_elements() of all\n"
+		"the InitialGuessBuilder that appear before this object in the list. \n"
+		""},
+	 { (char *)"InitialGuessBuilder_build_apriori", _wrap_InitialGuessBuilder_build_apriori, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::InitialGuessBuilder::build_apriori(blitz::Array< double, 1 > &v, int index) const =0\n"
+		"Called when we need this class to do its part in setting up the\n"
+		"apriori state vector.\n"
+		"\n"
+		"Parameters:\n"
+		"-----------\n"
+		"\n"
+		"v:  State vector that should be updated in place.\n"
+		"\n"
+		"index:  Since we are often adding to the end of the state vector,\n"
+		"index is passed in. This is the sum of the number_elements() of all\n"
+		"the InitialGuessBuilder that appear before this object in the list. \n"
+		""},
+	 { (char *)"InitialGuessBuilder_build_apriori_covariance", _wrap_InitialGuessBuilder_build_apriori_covariance, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::InitialGuessBuilder::build_apriori_covariance(blitz::Array< double, 2 > &m, int index) const =0\n"
+		"Called when we need this class to do its part in setting up the\n"
+		"covariance matrix for the a priori state vector.\n"
+		"\n"
+		"Parameters:\n"
+		"-----------\n"
+		"\n"
+		"m:  State vector that should be updated in place.\n"
+		"\n"
+		"index:  Since we are often adding to the end of the state vector,\n"
+		"index is passed in. This is the sum of the number_elements() of all\n"
+		"the InitialGuessBuilder that appear before this object in the list. \n"
+		""},
 	 { (char *)"InitialGuessBuilder___str__", _wrap_InitialGuessBuilder___str__, METH_VARARGS, NULL},
 	 { (char *)"InitialGuessBuilder_swigregister", InitialGuessBuilder_swigregister, METH_VARARGS, NULL},
-	 { (char *)"CompositeInitialGuess_build_initial_value", _wrap_CompositeInitialGuess_build_initial_value, METH_VARARGS, NULL},
-	 { (char *)"CompositeInitialGuess_build_apriori", _wrap_CompositeInitialGuess_build_apriori, METH_VARARGS, NULL},
-	 { (char *)"CompositeInitialGuess_build_apriori_covariance", _wrap_CompositeInitialGuess_build_apriori_covariance, METH_VARARGS, NULL},
-	 { (char *)"CompositeInitialGuess__v_initial_guess", _wrap_CompositeInitialGuess__v_initial_guess, METH_VARARGS, NULL},
-	 { (char *)"CompositeInitialGuess_add_builder", _wrap_CompositeInitialGuess_add_builder, METH_VARARGS, NULL},
-	 { (char *)"CompositeInitialGuess_remove_builder", _wrap_CompositeInitialGuess_remove_builder, METH_VARARGS, NULL},
+	 { (char *)"CompositeInitialGuess_build_initial_value", _wrap_CompositeInitialGuess_build_initial_value, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::CompositeInitialGuess::build_initial_value(blitz::Array< double, 1 > &v, int index) const\n"
+		"Called when we need this class to do its part in setting up the\n"
+		"initial state vector.\n"
+		"\n"
+		"Parameters:\n"
+		"-----------\n"
+		"\n"
+		"v:  State vector that should be updated in place.\n"
+		"\n"
+		"index:  Since we are often adding to the end of the state vector,\n"
+		"index is passed in. This is the sum of the number_elements() of all\n"
+		"the InitialGuessBuilder that appear before this object in the list. \n"
+		""},
+	 { (char *)"CompositeInitialGuess_build_apriori", _wrap_CompositeInitialGuess_build_apriori, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::CompositeInitialGuess::build_apriori(blitz::Array< double, 1 > &v, int index) const\n"
+		"Called when we need this class to do its part in setting up the\n"
+		"apriori state vector.\n"
+		"\n"
+		"Parameters:\n"
+		"-----------\n"
+		"\n"
+		"v:  State vector that should be updated in place.\n"
+		"\n"
+		"index:  Since we are often adding to the end of the state vector,\n"
+		"index is passed in. This is the sum of the number_elements() of all\n"
+		"the InitialGuessBuilder that appear before this object in the list. \n"
+		""},
+	 { (char *)"CompositeInitialGuess_build_apriori_covariance", _wrap_CompositeInitialGuess_build_apriori_covariance, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::CompositeInitialGuess::build_apriori_covariance(blitz::Array< double, 2 > &m, int index) const\n"
+		"Called when we need this class to do its part in setting up the\n"
+		"covariance matrix for the a priori state vector.\n"
+		"\n"
+		"Parameters:\n"
+		"-----------\n"
+		"\n"
+		"m:  State vector that should be updated in place.\n"
+		"\n"
+		"index:  Since we are often adding to the end of the state vector,\n"
+		"index is passed in. This is the sum of the number_elements() of all\n"
+		"the InitialGuessBuilder that appear before this object in the list. \n"
+		""},
+	 { (char *)"CompositeInitialGuess__v_initial_guess", _wrap_CompositeInitialGuess__v_initial_guess, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual blitz::Array<double, 1> FullPhysics::CompositeInitialGuess::initial_guess() const\n"
+		"\n"
+		""},
+	 { (char *)"CompositeInitialGuess_add_builder", _wrap_CompositeInitialGuess_add_builder, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::CompositeInitialGuess::add_builder(const boost::shared_ptr< InitialGuessBuilder > &B)\n"
+		"Add a builder to the build list. \n"
+		""},
+	 { (char *)"CompositeInitialGuess_remove_builder", _wrap_CompositeInitialGuess_remove_builder, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::CompositeInitialGuess::remove_builder(const boost::shared_ptr< InitialGuessBuilder > &B)\n"
+		"Remove a builder to the build list. \n"
+		""},
 	 { (char *)"new_CompositeInitialGuess", _wrap_new_CompositeInitialGuess, METH_VARARGS, NULL},
-	 { (char *)"delete_CompositeInitialGuess", _wrap_delete_CompositeInitialGuess, METH_VARARGS, NULL},
+	 { (char *)"delete_CompositeInitialGuess", _wrap_delete_CompositeInitialGuess, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::CompositeInitialGuess::~CompositeInitialGuess()\n"
+		"\n"
+		""},
 	 { (char *)"CompositeInitialGuess_swigregister", CompositeInitialGuess_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };

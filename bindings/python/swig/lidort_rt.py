@@ -130,6 +130,14 @@ import full_physics_swig.radiative_transfer_fixed_stokes_coefficient
 import full_physics_swig.radiative_transfer
 import full_physics_swig.named_spectrum
 class LidortRt(full_physics_swig.spurr_rt.SpurrRt):
+    """
+
+    Uses the Spurr interfaces to construct a radiative transfer class
+    connecting L2 FP and LIDORT 3.5.
+
+    C++ includes: lidort_rt.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.spurr_rt.SpurrRt]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -144,7 +152,13 @@ class LidortRt(full_physics_swig.spurr_rt.SpurrRt):
     __repr__ = _swig_repr
 
     def _v_number_stream(self):
+        """
+
+        virtual int FullPhysics::LidortRt::number_stream() const
+        Number of quadtature streams in the cosine half space. 
+        """
         return _lidort_rt.LidortRt__v_number_stream(self)
+
 
     @property
     def number_stream(self):
@@ -152,7 +166,13 @@ class LidortRt(full_physics_swig.spurr_rt.SpurrRt):
 
 
     def _v_number_moment(self):
+        """
+
+        int FullPhysics::LidortRt::number_moment() const
+        Number of moments for scattering matrix. 
+        """
         return _lidort_rt.LidortRt__v_number_moment(self)
+
 
     @property
     def number_moment(self):
@@ -160,7 +180,13 @@ class LidortRt(full_physics_swig.spurr_rt.SpurrRt):
 
 
     def _v_brdf_driver(self):
+        """
+
+        const boost::shared_ptr<LidortBrdfDriver> FullPhysics::LidortRt::brdf_driver() const
+        Convenience routine to get brdf driver object. 
+        """
         return _lidort_rt.LidortRt__v_brdf_driver(self)
+
 
     @property
     def brdf_driver(self):
@@ -168,7 +194,13 @@ class LidortRt(full_physics_swig.spurr_rt.SpurrRt):
 
 
     def _v_rt_driver(self):
+        """
+
+        const boost::shared_ptr<LidortRtDriver> FullPhysics::LidortRt::rt_driver() const
+        Convenience routine to get rt driver object. 
+        """
         return _lidort_rt.LidortRt__v_rt_driver(self)
+
 
     @property
     def rt_driver(self):
@@ -176,7 +208,13 @@ class LidortRt(full_physics_swig.spurr_rt.SpurrRt):
 
 
     def print_desc(self, Os, Short_form=False):
+        """
+
+        virtual void FullPhysics::LidortRt::print(std::ostream &Os, bool Short_form=false) const
+
+        """
         return _lidort_rt.LidortRt_print_desc(self, Os, Short_form)
+
     __swig_destroy__ = _lidort_rt.delete_LidortRt
     __del__ = lambda self: None
 LidortRt_swigregister = _lidort_rt.LidortRt_swigregister

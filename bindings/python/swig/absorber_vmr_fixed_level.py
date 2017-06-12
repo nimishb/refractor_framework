@@ -126,6 +126,16 @@ import full_physics_swig.generic_object
 import full_physics_swig.sub_state_vector_array
 import full_physics_swig.absorber_vmr
 class AbsorberVmrFixedLevel(full_physics_swig.absorber_vmr_imp_base.AbsorberVmrImpBase):
+    """
+
+    This class maps the state vector to the absorber VMR on each level.
+
+    This implementation just gets the VMR from each level from the state
+    vector.
+
+    C++ includes: absorber_vmr_fixed_level.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.absorber_vmr_imp_base.AbsorberVmrImpBase]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -137,6 +147,14 @@ class AbsorberVmrFixedLevel(full_physics_swig.absorber_vmr_imp_base.AbsorberVmrI
     __repr__ = _swig_repr
 
     def __init__(self, Press, Press_level, Flag, Vmr, Gas_name):
+        """
+
+        FullPhysics::AbsorberVmrFixedLevel::AbsorberVmrFixedLevel(const boost::shared_ptr< Pressure > &Press, const boost::shared_ptr<
+        PressureLevelInput > &Press_level, const blitz::Array< bool, 1 >
+        &Used_flag, const blitz::Array< double, 1 > &Vmr, const std::string
+        &Gas_name)
+
+        """
         this = _absorber_vmr_fixed_level.new_AbsorberVmrFixedLevel(Press, Press_level, Flag, Vmr, Gas_name)
         try:
             self.this.append(this)
@@ -144,13 +162,31 @@ class AbsorberVmrFixedLevel(full_physics_swig.absorber_vmr_imp_base.AbsorberVmrI
             self.this = this
 
     def clone(self, *args):
+        """
+
+        virtual boost::shared_ptr<AbsorberVmr> FullPhysics::AbsorberVmrFixedLevel::clone(const boost::shared_ptr< Pressure > &Press) const
+
+        """
         return _absorber_vmr_fixed_level.AbsorberVmrFixedLevel_clone(self, *args)
 
+
     def state_vector_name_i(self, i):
+        """
+
+        virtual std::string FullPhysics::AbsorberVmrFixedLevel::state_vector_name_i(int i) const
+
+        """
         return _absorber_vmr_fixed_level.AbsorberVmrFixedLevel_state_vector_name_i(self, i)
 
+
     def _v_volume_mixing_ratio_level(self):
+        """
+
+        blitz::Array<double, 1> FullPhysics::AbsorberVmrFixedLevel::volume_mixing_ratio_level() const
+        Volume mixing ratio on the fixed pressure levels. 
+        """
         return _absorber_vmr_fixed_level.AbsorberVmrFixedLevel__v_volume_mixing_ratio_level(self)
+
 
     @property
     def volume_mixing_ratio_level(self):
@@ -158,7 +194,14 @@ class AbsorberVmrFixedLevel(full_physics_swig.absorber_vmr_imp_base.AbsorberVmrI
 
 
     def _v_volume_mixing_ratio_active_level(self):
+        """
+
+        blitz::Array<double, 1> FullPhysics::AbsorberVmrFixedLevel::volume_mixing_ratio_active_level() const
+        Volume mixing ratio on the fixed pressure levels, restricted to the
+        active levels. 
+        """
         return _absorber_vmr_fixed_level.AbsorberVmrFixedLevel__v_volume_mixing_ratio_active_level(self)
+
 
     @property
     def volume_mixing_ratio_active_level(self):

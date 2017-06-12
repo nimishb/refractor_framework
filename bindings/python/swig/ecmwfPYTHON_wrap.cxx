@@ -6374,19 +6374,80 @@ SWIGINTERN PyObject *Ecmwf_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"delete_Ecmwf", _wrap_delete_Ecmwf, METH_VARARGS, NULL},
-	 { (char *)"Ecmwf_specific_humidity", _wrap_Ecmwf_specific_humidity, METH_VARARGS, NULL},
-	 { (char *)"Ecmwf_h2o_vmr", _wrap_Ecmwf_h2o_vmr, METH_VARARGS, NULL},
-	 { (char *)"Ecmwf_ozone_mmr", _wrap_Ecmwf_ozone_mmr, METH_VARARGS, NULL},
-	 { (char *)"Ecmwf_ozone_vmr", _wrap_Ecmwf_ozone_vmr, METH_VARARGS, NULL},
-	 { (char *)"Ecmwf_temperature_grid", _wrap_Ecmwf_temperature_grid, METH_VARARGS, NULL},
-	 { (char *)"Ecmwf_specific_humidity_grid", _wrap_Ecmwf_specific_humidity_grid, METH_VARARGS, NULL},
-	 { (char *)"Ecmwf_ozone_mmr_grid", _wrap_Ecmwf_ozone_mmr_grid, METH_VARARGS, NULL},
-	 { (char *)"Ecmwf_temperature", _wrap_Ecmwf_temperature, METH_VARARGS, NULL},
-	 { (char *)"Ecmwf__v_surface_pressure", _wrap_Ecmwf__v_surface_pressure, METH_VARARGS, NULL},
-	 { (char *)"Ecmwf__v_windspeed", _wrap_Ecmwf__v_windspeed, METH_VARARGS, NULL},
-	 { (char *)"Ecmwf__v_windspeed_u", _wrap_Ecmwf__v_windspeed_u, METH_VARARGS, NULL},
-	 { (char *)"Ecmwf__v_windspeed_v", _wrap_Ecmwf__v_windspeed_v, METH_VARARGS, NULL},
+	 { (char *)"delete_Ecmwf", _wrap_delete_Ecmwf, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::Ecmwf::~Ecmwf()\n"
+		"\n"
+		""},
+	 { (char *)"Ecmwf_specific_humidity", _wrap_Ecmwf_specific_humidity, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual ArrayAd<double, 1> FullPhysics::Ecmwf::specific_humidity(const ArrayAd< double, 1 > &Pressure_level) const =0\n"
+		"\n"
+		""},
+	 { (char *)"Ecmwf_h2o_vmr", _wrap_Ecmwf_h2o_vmr, METH_VARARGS, (char *)"\n"
+		"\n"
+		"ArrayAd<double, 1> FullPhysics::Ecmwf::h2o_vmr(const ArrayAd< double, 1 > &Pressure_level) const\n"
+		"\n"
+		""},
+	 { (char *)"Ecmwf_ozone_mmr", _wrap_Ecmwf_ozone_mmr, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual ArrayAd<double, 1> FullPhysics::Ecmwf::ozone_mmr(const ArrayAd< double, 1 > &Pressure_level) const\n"
+		"\n"
+		""},
+	 { (char *)"Ecmwf_ozone_vmr", _wrap_Ecmwf_ozone_vmr, METH_VARARGS, (char *)"\n"
+		"\n"
+		"ArrayAd<double, 1> FullPhysics::Ecmwf::ozone_vmr(const ArrayAd< double, 1 > &Pressure_level) const\n"
+		"\n"
+		""},
+	 { (char *)"Ecmwf_temperature_grid", _wrap_Ecmwf_temperature_grid, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::Ecmwf::temperature_grid(blitz::Array< double, 1 > &Pressure, blitz::Array< double, 1 > &T)\n"
+		"const =0\n"
+		"Temperature grid on the ECMWF pressure grid.\n"
+		"\n"
+		"The temperature is in Kelvin, and the Pressure is in pascals. \n"
+		""},
+	 { (char *)"Ecmwf_specific_humidity_grid", _wrap_Ecmwf_specific_humidity_grid, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::Ecmwf::specific_humidity_grid(blitz::Array< double, 1 > &Pressure, blitz::Array< double, 1 > &H)\n"
+		"const =0\n"
+		"Humidity on the ECMWF pressure grid.\n"
+		"\n"
+		"Pressure is in pascals. \n"
+		""},
+	 { (char *)"Ecmwf_ozone_mmr_grid", _wrap_Ecmwf_ozone_mmr_grid, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual void FullPhysics::Ecmwf::ozone_mmr_grid(blitz::Array< double, 1 > &Pressure, blitz::Array< double, 1 > &H)\n"
+		"const\n"
+		"Ozone mass mixing ratio on the ECMWF pressure grid.\n"
+		"\n"
+		"Pressure is in pascals. \n"
+		""},
+	 { (char *)"Ecmwf_temperature", _wrap_Ecmwf_temperature, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual ArrayAd<double, 1> FullPhysics::Ecmwf::temperature(const ArrayAd< double, 1 > &Pressure_level) const =0\n"
+		"\n"
+		""},
+	 { (char *)"Ecmwf__v_surface_pressure", _wrap_Ecmwf__v_surface_pressure, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual double FullPhysics::Ecmwf::surface_pressure() const =0\n"
+		"Get the surface pressure from the Ecmwf file. \n"
+		""},
+	 { (char *)"Ecmwf__v_windspeed", _wrap_Ecmwf__v_windspeed, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual double FullPhysics::Ecmwf::windspeed() const\n"
+		"Calculate windspeed magnitude from windspeed components. \n"
+		""},
+	 { (char *)"Ecmwf__v_windspeed_u", _wrap_Ecmwf__v_windspeed_u, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual double FullPhysics::Ecmwf::windspeed_u() const =0\n"
+		"The U component windspeed from the Ecmwf file. \n"
+		""},
+	 { (char *)"Ecmwf__v_windspeed_v", _wrap_Ecmwf__v_windspeed_v, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual double FullPhysics::Ecmwf::windspeed_v() const =0\n"
+		"The V component windspeed from the Ecmwf file. \n"
+		""},
 	 { (char *)"Ecmwf___str__", _wrap_Ecmwf___str__, METH_VARARGS, NULL},
 	 { (char *)"Ecmwf_swigregister", Ecmwf_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }

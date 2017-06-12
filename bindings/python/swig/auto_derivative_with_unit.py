@@ -122,6 +122,15 @@ def _new_from_set(cls, version, *args):
 
 import full_physics_swig.generic_object
 class AutoDerivativeWithUnitDouble(full_physics_swig.generic_object.GenericObject):
+    """
+
+    This is a AutoDerivative that also has units associated with it.
+
+    This is a simple structure that just keeps these two things together.
+
+    C++ includes: auto_derivative_with_unit.h 
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.generic_object.GenericObject]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -133,6 +142,11 @@ class AutoDerivativeWithUnitDouble(full_physics_swig.generic_object.GenericObjec
     __repr__ = _swig_repr
 
     def __init__(self, *args):
+        """
+
+        FullPhysics::AutoDerivativeWithUnit< T >::AutoDerivativeWithUnit(const DoubleWithUnit &V)
+
+        """
         this = _auto_derivative_with_unit.new_AutoDerivativeWithUnitDouble(*args)
         try:
             self.this.append(this)
@@ -140,7 +154,13 @@ class AutoDerivativeWithUnitDouble(full_physics_swig.generic_object.GenericObjec
             self.this = this
 
     def convert(self, *args):
+        """
+
+        AutoDerivativeWithUnit<T> FullPhysics::AutoDerivativeWithUnit< T >::convert(const Unit &R) const
+        Convert to the given units. 
+        """
         return _auto_derivative_with_unit.AutoDerivativeWithUnitDouble_convert(self, *args)
+
 
     def __str__(self):
         return _auto_derivative_with_unit.AutoDerivativeWithUnitDouble___str__(self)

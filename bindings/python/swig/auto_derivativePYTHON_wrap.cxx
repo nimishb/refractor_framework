@@ -14142,9 +14142,21 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"SwigPyIterator___sub__", _wrap_SwigPyIterator___sub__, METH_VARARGS, NULL},
 	 { (char *)"SwigPyIterator_swigregister", SwigPyIterator_swigregister, METH_VARARGS, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"new_AutoDerivativeDouble", _wrap_new_AutoDerivativeDouble, METH_VARARGS, NULL},
-	 { (char *)"AutoDerivativeDouble__v_number_variable", _wrap_AutoDerivativeDouble__v_number_variable, METH_VARARGS, NULL},
-	 { (char *)"AutoDerivativeDouble__v_is_constant", _wrap_AutoDerivativeDouble__v_is_constant, METH_VARARGS, NULL},
+	 { (char *)"new_AutoDerivativeDouble", _wrap_new_AutoDerivativeDouble, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::AutoDerivative< T >::AutoDerivative(const AutoDerivative< T > &D)\n"
+		"Copy constructor. This does a deep copy. \n"
+		""},
+	 { (char *)"AutoDerivativeDouble__v_number_variable", _wrap_AutoDerivativeDouble__v_number_variable, METH_VARARGS, (char *)"\n"
+		"\n"
+		"int FullPhysics::AutoDerivative< T >::number_variable() const\n"
+		"Number of variables in gradient. \n"
+		""},
+	 { (char *)"AutoDerivativeDouble__v_is_constant", _wrap_AutoDerivativeDouble__v_is_constant, METH_VARARGS, (char *)"\n"
+		"\n"
+		"bool FullPhysics::AutoDerivative< T >::is_constant() const\n"
+		"Is this object a constant (with a gradient() all zeros)? \n"
+		""},
 	 { (char *)"AutoDerivativeDouble___lt__", _wrap_AutoDerivativeDouble___lt__, METH_VARARGS, NULL},
 	 { (char *)"AutoDerivativeDouble___gt__", _wrap_AutoDerivativeDouble___gt__, METH_VARARGS, NULL},
 	 { (char *)"AutoDerivativeDouble___eq__", _wrap_AutoDerivativeDouble___eq__, METH_VARARGS, NULL},
@@ -14169,9 +14181,21 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"AutoDerivativeDouble___rpow__", _wrap_AutoDerivativeDouble___rpow__, METH_VARARGS, NULL},
 	 { (char *)"delete_AutoDerivativeDouble", _wrap_delete_AutoDerivativeDouble, METH_VARARGS, NULL},
 	 { (char *)"AutoDerivativeDouble_swigregister", AutoDerivativeDouble_swigregister, METH_VARARGS, NULL},
-	 { (char *)"new_AutoDerivativeRefDouble", _wrap_new_AutoDerivativeRefDouble, METH_VARARGS, NULL},
-	 { (char *)"AutoDerivativeRefDouble__v_value", _wrap_AutoDerivativeRefDouble__v_value, METH_VARARGS, NULL},
-	 { (char *)"AutoDerivativeRefDouble__v_gradient", _wrap_AutoDerivativeRefDouble__v_gradient, METH_VARARGS, NULL},
+	 { (char *)"new_AutoDerivativeRefDouble", _wrap_new_AutoDerivativeRefDouble, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::AutoDerivativeRef< T >::AutoDerivativeRef(T &V)\n"
+		"\n"
+		""},
+	 { (char *)"AutoDerivativeRefDouble__v_value", _wrap_AutoDerivativeRefDouble__v_value, METH_VARARGS, (char *)"\n"
+		"\n"
+		"T FullPhysics::AutoDerivativeRef< T >::value() const\n"
+		"\n"
+		""},
+	 { (char *)"AutoDerivativeRefDouble__v_gradient", _wrap_AutoDerivativeRefDouble__v_gradient, METH_VARARGS, (char *)"\n"
+		"\n"
+		"const blitz::Array<T, 1>& FullPhysics::AutoDerivativeRef< T >::gradient() const\n"
+		"\n"
+		""},
 	 { (char *)"AutoDerivativeRefDouble___str__", _wrap_AutoDerivativeRefDouble___str__, METH_VARARGS, NULL},
 	 { (char *)"delete_AutoDerivativeRefDouble", _wrap_delete_AutoDerivativeRefDouble, METH_VARARGS, NULL},
 	 { (char *)"AutoDerivativeRefDouble_swigregister", AutoDerivativeRefDouble_swigregister, METH_VARARGS, NULL},
@@ -14187,16 +14211,56 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"ArrayAutoDerivative_double_1_shape3", _wrap_ArrayAutoDerivative_double_1_shape3, METH_VARARGS, NULL},
 	 { (char *)"delete_ArrayAutoDerivative_double_1", _wrap_delete_ArrayAutoDerivative_double_1, METH_VARARGS, NULL},
 	 { (char *)"ArrayAutoDerivative_double_1_swigregister", ArrayAutoDerivative_double_1_swigregister, METH_VARARGS, NULL},
-	 { (char *)"sqrt", _wrap_sqrt, METH_VARARGS, NULL},
-	 { (char *)"log", _wrap_log, METH_VARARGS, NULL},
-	 { (char *)"log10", _wrap_log10, METH_VARARGS, NULL},
-	 { (char *)"exp", _wrap_exp, METH_VARARGS, NULL},
-	 { (char *)"sin", _wrap_sin, METH_VARARGS, NULL},
-	 { (char *)"asin", _wrap_asin, METH_VARARGS, NULL},
-	 { (char *)"cos", _wrap_cos, METH_VARARGS, NULL},
-	 { (char *)"acos", _wrap_acos, METH_VARARGS, NULL},
-	 { (char *)"tan", _wrap_tan, METH_VARARGS, NULL},
-	 { (char *)"atan", _wrap_atan, METH_VARARGS, NULL},
+	 { (char *)"sqrt", _wrap_sqrt, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::AutoDerivative< double > std::sqrt(const FullPhysics::AutoDerivative< double > &x)\n"
+		"\n"
+		""},
+	 { (char *)"log", _wrap_log, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::AutoDerivative< double > std::log(const FullPhysics::AutoDerivative< double > &x)\n"
+		"\n"
+		""},
+	 { (char *)"log10", _wrap_log10, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::AutoDerivative< double > std::log10(const FullPhysics::AutoDerivative< double > &x)\n"
+		"\n"
+		""},
+	 { (char *)"exp", _wrap_exp, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::AutoDerivative< double > std::exp(const FullPhysics::AutoDerivative< double > &x)\n"
+		"\n"
+		""},
+	 { (char *)"sin", _wrap_sin, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::AutoDerivative< double > std::sin(const FullPhysics::AutoDerivative< double > &x)\n"
+		"\n"
+		""},
+	 { (char *)"asin", _wrap_asin, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::AutoDerivative< double > std::asin(const FullPhysics::AutoDerivative< double > &x)\n"
+		"\n"
+		""},
+	 { (char *)"cos", _wrap_cos, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::AutoDerivative< double > std::cos(const FullPhysics::AutoDerivative< double > &x)\n"
+		"\n"
+		""},
+	 { (char *)"acos", _wrap_acos, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::AutoDerivative< double > std::acos(const FullPhysics::AutoDerivative< double > &x)\n"
+		"\n"
+		""},
+	 { (char *)"tan", _wrap_tan, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::AutoDerivative< double > std::tan(const FullPhysics::AutoDerivative< double > &x)\n"
+		"\n"
+		""},
+	 { (char *)"atan", _wrap_atan, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::AutoDerivative< double > std::atan(const FullPhysics::AutoDerivative< double > &x)\n"
+		"\n"
+		""},
 	 { (char *)"vector_auto_derivative_iterator", _wrap_vector_auto_derivative_iterator, METH_VARARGS, NULL},
 	 { (char *)"vector_auto_derivative___nonzero__", _wrap_vector_auto_derivative___nonzero__, METH_VARARGS, NULL},
 	 { (char *)"vector_auto_derivative___bool__", _wrap_vector_auto_derivative___bool__, METH_VARARGS, NULL},

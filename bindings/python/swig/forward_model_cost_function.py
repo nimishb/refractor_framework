@@ -123,6 +123,12 @@ def _new_from_set(cls, version, *args):
 import full_physics_swig.cost_function
 import full_physics_swig.generic_object
 class ForwardModelCostFunction(full_physics_swig.cost_function.CostFunction):
+    """
+
+    C++ includes: forward_model_cost_function.h
+
+    """
+
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.cost_function.CostFunction]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -134,6 +140,11 @@ class ForwardModelCostFunction(full_physics_swig.cost_function.CostFunction):
     __repr__ = _swig_repr
 
     def __init__(self, fm):
+        """
+
+        FullPhysics::ForwardModelCostFunction::ForwardModelCostFunction(const boost::shared_ptr< ForwardModel > &fm)
+
+        """
         this = _forward_model_cost_function.new_ForwardModelCostFunction(fm)
         try:
             self.this.append(this)
@@ -141,7 +152,15 @@ class ForwardModelCostFunction(full_physics_swig.cost_function.CostFunction):
             self.this = this
 
     def cost_function(self, X):
+        """
+
+        virtual void FullPhysics::ForwardModelCostFunction::cost_function(const blitz::Array< double, 1 > &X, blitz::Array< double, 1 >
+        &Residual, blitz::Array< double, 1 > &Se, blitz::Array< double, 2 >
+        &Jacobian) const
+
+        """
         return _forward_model_cost_function.ForwardModelCostFunction_cost_function(self, X)
+
     __swig_destroy__ = _forward_model_cost_function.delete_ForwardModelCostFunction
     __del__ = lambda self: None
 ForwardModelCostFunction_swigregister = _forward_model_cost_function.ForwardModelCostFunction_swigregister

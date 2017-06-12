@@ -5781,12 +5781,37 @@ SWIGINTERN PyObject *SpectralWindowRange_swigregister(PyObject *SWIGUNUSEDPARM(s
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"new_SpectralWindowRange", _wrap_new_SpectralWindowRange, METH_VARARGS, NULL},
-	 { (char *)"SpectralWindowRange_grid_indexes", _wrap_SpectralWindowRange_grid_indexes, METH_VARARGS, NULL},
-	 { (char *)"SpectralWindowRange__v_number_spectrometer", _wrap_SpectralWindowRange__v_number_spectrometer, METH_VARARGS, NULL},
-	 { (char *)"SpectralWindowRange__v_range_array", _wrap_SpectralWindowRange__v_range_array, METH_VARARGS, NULL},
-	 { (char *)"SpectralWindowRange__v_bad_sample_mask", _wrap_SpectralWindowRange__v_bad_sample_mask, METH_VARARGS, NULL},
-	 { (char *)"delete_SpectralWindowRange", _wrap_delete_SpectralWindowRange, METH_VARARGS, NULL},
+	 { (char *)"new_SpectralWindowRange", _wrap_new_SpectralWindowRange, METH_VARARGS, (char *)"\n"
+		"\n"
+		"FullPhysics::SpectralWindowRange::SpectralWindowRange(const ArrayWithUnit< double, 3 > &Microwindow_ranges, const\n"
+		"blitz::Array< T, 2 > &Bad_sample_mask)\n"
+		"\n"
+		""},
+	 { (char *)"SpectralWindowRange_grid_indexes", _wrap_SpectralWindowRange_grid_indexes, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual std::vector<int> FullPhysics::SpectralWindowRange::grid_indexes(const SpectralDomain &Grid, int Spec_index) const\n"
+		"\n"
+		""},
+	 { (char *)"SpectralWindowRange__v_number_spectrometer", _wrap_SpectralWindowRange__v_number_spectrometer, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual int FullPhysics::SpectralWindowRange::number_spectrometer() const\n"
+		"\n"
+		""},
+	 { (char *)"SpectralWindowRange__v_range_array", _wrap_SpectralWindowRange__v_range_array, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::SpectralWindowRange::range_array(const ArrayWithUnit< double, 3 > &Ran)\n"
+		"\n"
+		""},
+	 { (char *)"SpectralWindowRange__v_bad_sample_mask", _wrap_SpectralWindowRange__v_bad_sample_mask, METH_VARARGS, (char *)"\n"
+		"\n"
+		"void FullPhysics::SpectralWindowRange::bad_sample_mask(const blitz::Array< bool, 2 > &M)\n"
+		"\n"
+		""},
+	 { (char *)"delete_SpectralWindowRange", _wrap_delete_SpectralWindowRange, METH_VARARGS, (char *)"\n"
+		"\n"
+		"virtual FullPhysics::SpectralWindowRange::~SpectralWindowRange()\n"
+		"\n"
+		""},
 	 { (char *)"SpectralWindowRange_swigregister", SpectralWindowRange_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };
