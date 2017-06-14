@@ -211,13 +211,13 @@ class GroundBrdfVeg(full_physics_swig.ground.Ground):
         return _ground_brdf.GroundBrdfVeg_rahman_factor(self, *args)
 
 
-    def overall_amplitude(self, *args):
+    def hotspot_parameter(self, *args):
         """
 
-        virtual void FullPhysics::GroundBrdf::overall_amplitude(const int spec_index, const AutoDerivative< double > &val)
+        virtual void FullPhysics::GroundBrdf::hotspot_parameter(const int spec_index, const AutoDerivative< double > &val)
 
         """
-        return _ground_brdf.GroundBrdfVeg_overall_amplitude(self, *args)
+        return _ground_brdf.GroundBrdfVeg_hotspot_parameter(self, *args)
 
 
     def asymmetry_parameter(self, *args):
@@ -229,13 +229,13 @@ class GroundBrdfVeg(full_physics_swig.ground.Ground):
         return _ground_brdf.GroundBrdfVeg_asymmetry_parameter(self, *args)
 
 
-    def geometric_factor(self, *args):
+    def anisotropy_parameter(self, *args):
         """
 
-        virtual void FullPhysics::GroundBrdf::geometric_factor(const int spec_index, const AutoDerivative< double > &val)
+        virtual void FullPhysics::GroundBrdf::anisotropy_parameter(const int spec_index, const AutoDerivative< double > &val)
 
         """
-        return _ground_brdf.GroundBrdfVeg_geometric_factor(self, *args)
+        return _ground_brdf.GroundBrdfVeg_anisotropy_parameter(self, *args)
 
 
     def breon_factor(self, *args):
@@ -275,14 +275,14 @@ class GroundBrdfVeg(full_physics_swig.ground.Ground):
         return _ground_brdf.GroundBrdfVeg_black_sky_albedo(self, Spec_index, Sza)
 
 
-    def albedo(self, Spec_index, Sza, Vza, Azm, Stokes_coef):
+    def kernel_value(self, Spec_index, Sza, Vza, Azm):
         """
 
-        virtual const double FullPhysics::GroundBrdfVeg::albedo(const int Spec_index, const double Sza, const double Vza, const
-        double Azm, const blitz::Array< double, 1 > &Stokes_coef)
+        virtual const double FullPhysics::GroundBrdfVeg::kernel_value(const int Spec_index, const double Sza, const double Vza, const
+        double Azm)
 
         """
-        return _ground_brdf.GroundBrdfVeg_albedo(self, Spec_index, Sza, Vza, Azm, Stokes_coef)
+        return _ground_brdf.GroundBrdfVeg_kernel_value(self, Spec_index, Sza, Vza, Azm)
 
 
     def breon_type(self):
@@ -430,13 +430,13 @@ class GroundBrdfSoil(full_physics_swig.ground.Ground):
         return _ground_brdf.GroundBrdfSoil_rahman_factor(self, *args)
 
 
-    def overall_amplitude(self, *args):
+    def hotspot_parameter(self, *args):
         """
 
-        virtual void FullPhysics::GroundBrdf::overall_amplitude(const int spec_index, const AutoDerivative< double > &val)
+        virtual void FullPhysics::GroundBrdf::hotspot_parameter(const int spec_index, const AutoDerivative< double > &val)
 
         """
-        return _ground_brdf.GroundBrdfSoil_overall_amplitude(self, *args)
+        return _ground_brdf.GroundBrdfSoil_hotspot_parameter(self, *args)
 
 
     def asymmetry_parameter(self, *args):
@@ -448,13 +448,13 @@ class GroundBrdfSoil(full_physics_swig.ground.Ground):
         return _ground_brdf.GroundBrdfSoil_asymmetry_parameter(self, *args)
 
 
-    def geometric_factor(self, *args):
+    def anisotropy_parameter(self, *args):
         """
 
-        virtual void FullPhysics::GroundBrdf::geometric_factor(const int spec_index, const AutoDerivative< double > &val)
+        virtual void FullPhysics::GroundBrdf::anisotropy_parameter(const int spec_index, const AutoDerivative< double > &val)
 
         """
-        return _ground_brdf.GroundBrdfSoil_geometric_factor(self, *args)
+        return _ground_brdf.GroundBrdfSoil_anisotropy_parameter(self, *args)
 
 
     def breon_factor(self, *args):
@@ -494,14 +494,14 @@ class GroundBrdfSoil(full_physics_swig.ground.Ground):
         return _ground_brdf.GroundBrdfSoil_black_sky_albedo(self, Spec_index, Sza)
 
 
-    def albedo(self, Spec_index, Sza, Vza, Azm, Stokes_coef):
+    def kernel_value(self, Spec_index, Sza, Vza, Azm):
         """
 
-        virtual const double FullPhysics::GroundBrdfSoil::albedo(const int Spec_index, const double Sza, const double Vza, const
-        double Azm, const blitz::Array< double, 1 > &Stokes_coef)
+        virtual const double FullPhysics::GroundBrdfSoil::kernel_value(const int Spec_index, const double Sza, const double Vza, const
+        double Azm)
 
         """
-        return _ground_brdf.GroundBrdfSoil_albedo(self, Spec_index, Sza, Vza, Azm, Stokes_coef)
+        return _ground_brdf.GroundBrdfSoil_kernel_value(self, Spec_index, Sza, Vza, Azm)
 
 
     def breon_type(self):

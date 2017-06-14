@@ -140,20 +140,10 @@ class Level1bUq(full_physics_swig.level_1b_oco.Level1bOco):
     for _s in [full_physics_swig.level_1b_oco.Level1bOco]:
         __swig_getmethods__.update(getattr(_s, '__swig_getmethods__', {}))
     __getattr__ = lambda self, name: _swig_getattr(self, Level1bUq, name)
+
+    def __init__(self, *args, **kwargs):
+        raise AttributeError("No constructor defined - class is abstract")
     __repr__ = _swig_repr
-
-    def __init__(self, Hfile, Sounding_id):
-        """
-
-        FullPhysics::Level1bUq::Level1bUq(const boost::shared_ptr< HdfFile > &Hfile, const boost::shared_ptr<
-        HdfSoundingId > &Sounding_id)
-
-        """
-        this = _level_1b_uq.new_Level1bUq(Hfile, Sounding_id)
-        try:
-            self.this.append(this)
-        except Exception:
-            self.this = this
 
     def set_radiance(self, Spec_index, Rad):
         """

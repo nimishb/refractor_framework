@@ -139,20 +139,10 @@ class Level1bAcos(full_physics_swig.level_1b_hdf.Level1bHdf):
     for _s in [full_physics_swig.level_1b_hdf.Level1bHdf]:
         __swig_getmethods__.update(getattr(_s, '__swig_getmethods__', {}))
     __getattr__ = lambda self, name: _swig_getattr(self, Level1bAcos, name)
+
+    def __init__(self, *args, **kwargs):
+        raise AttributeError("No constructor defined - class is abstract")
     __repr__ = _swig_repr
-
-    def __init__(self, *args):
-        """
-
-        FullPhysics::Level1bAcos::Level1bAcos(const boost::shared_ptr< HdfFile > &Hfile, const boost::shared_ptr<
-        HdfSoundingId > &Sounding_id)
-
-        """
-        this = _level_1b_acos.new_Level1bAcos(*args)
-        try:
-            self.this.append(this)
-        except Exception:
-            self.this = this
 
     def radiance(self, Spec_index):
         return _level_1b_acos.Level1bAcos_radiance(self, Spec_index)

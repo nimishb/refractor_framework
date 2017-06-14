@@ -147,16 +147,16 @@ class GasVmrApriori(full_physics_swig.generic_object.GenericObject):
     __getattr__ = lambda self, name: _swig_getattr(self, GasVmrApriori, name)
     __repr__ = _swig_repr
 
-    def __init__(self, Ecmwf_file, L1b_file, Alt, Hdf_static_input, Hdf_group, Gas_name, temp_avg_window):
+    def __init__(self, Met_file, L1b_file, Alt, Hdf_static_input, Hdf_group, Gas_name, temp_avg_window):
         """
 
-        FullPhysics::GasVmrApriori::GasVmrApriori(const boost::shared_ptr< Ecmwf > &Ecmwf_file, const
+        FullPhysics::GasVmrApriori::GasVmrApriori(const boost::shared_ptr< Meteorology > &Met_file, const
         boost::shared_ptr< Level1b > &L1b_file, const boost::shared_ptr<
         Altitude > &Alt, const HdfFile &Hdf_static_input, const std::string
         &Hdf_group, const std::string &Gas_name, const int temp_avg_window=11)
 
         """
-        this = _gas_vmr_apriori.new_GasVmrApriori(Ecmwf_file, L1b_file, Alt, Hdf_static_input, Hdf_group, Gas_name, temp_avg_window)
+        this = _gas_vmr_apriori.new_GasVmrApriori(Met_file, L1b_file, Alt, Hdf_static_input, Hdf_group, Gas_name, temp_avg_window)
         try:
             self.this.append(this)
         except Exception:
@@ -193,7 +193,7 @@ class GasVmrApriori(full_physics_swig.generic_object.GenericObject):
     def _v_tropopause_altitude(self):
         """
 
-        const double FullPhysics::GasVmrApriori::tropopause_altitude() const
+        const DoubleWithUnit FullPhysics::GasVmrApriori::tropopause_altitude() const
 
         """
         return _gas_vmr_apriori.GasVmrApriori__v_tropopause_altitude(self)

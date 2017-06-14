@@ -138,20 +138,10 @@ class Level1bHeritage(full_physics_swig.level_1b.Level1b):
     for _s in [full_physics_swig.level_1b.Level1b]:
         __swig_getmethods__.update(getattr(_s, '__swig_getmethods__', {}))
     __getattr__ = lambda self, name: _swig_getattr(self, Level1bHeritage, name)
+
+    def __init__(self, *args, **kwargs):
+        raise AttributeError("No constructor defined - class is abstract")
     __repr__ = _swig_repr
-
-    def __init__(self, Sounding_info_file, Spectrum_file, Nm):
-        """
-
-        FullPhysics::Level1bHeritage::Level1bHeritage(const std::string &Sounding_info_file, const std::string
-        &Spectrum_file, const boost::shared_ptr< NoiseModel > &Nm)
-
-        """
-        this = _level_1b_heritage.new_Level1bHeritage(Sounding_info_file, Spectrum_file, Nm)
-        try:
-            self.this.append(this)
-        except Exception:
-            self.this = this
 
     def latitude(self, i):
         """

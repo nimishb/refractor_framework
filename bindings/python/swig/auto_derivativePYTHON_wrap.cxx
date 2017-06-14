@@ -5253,6 +5253,8 @@ SWIGINTERN FullPhysics::AutoDerivative< double > FullPhysics_AutoDerivative_Sl_d
 SWIGINTERN FullPhysics::AutoDerivative< double > FullPhysics_AutoDerivative_Sl_double_Sg____rmul__(FullPhysics::AutoDerivative< double > *self,double const &X){ return X * *self;}
 SWIGINTERN FullPhysics::AutoDerivative< double > FullPhysics_AutoDerivative_Sl_double_Sg____div____SWIG_0(FullPhysics::AutoDerivative< double > *self,FullPhysics::AutoDerivative< double > const &Y){ return *self / Y; }
 SWIGINTERN FullPhysics::AutoDerivative< double > FullPhysics_AutoDerivative_Sl_double_Sg____div____SWIG_1(FullPhysics::AutoDerivative< double > *self,double const &Y){ return *self / Y; }
+SWIGINTERN FullPhysics::AutoDerivative< double > FullPhysics_AutoDerivative_Sl_double_Sg____truediv____SWIG_0(FullPhysics::AutoDerivative< double > *self,FullPhysics::AutoDerivative< double > const &Y){ return *self / Y; }
+SWIGINTERN FullPhysics::AutoDerivative< double > FullPhysics_AutoDerivative_Sl_double_Sg____truediv____SWIG_1(FullPhysics::AutoDerivative< double > *self,double const &Y){ return *self / Y; }
 SWIGINTERN FullPhysics::AutoDerivative< double > FullPhysics_AutoDerivative_Sl_double_Sg____rdiv__(FullPhysics::AutoDerivative< double > *self,double const &X){ return X / *self;}
 SWIGINTERN FullPhysics::AutoDerivative< double > FullPhysics_AutoDerivative_Sl_double_Sg____pow__(FullPhysics::AutoDerivative< double > *self,double const &X){ return std::pow(*self,  X);}
 SWIGINTERN FullPhysics::AutoDerivative< double > FullPhysics_AutoDerivative_Sl_double_Sg____rpow__(FullPhysics::AutoDerivative< double > *self,double const &X){ return std::pow(X, *self);}
@@ -9149,6 +9151,185 @@ SWIGINTERN PyObject *_wrap_AutoDerivativeDouble___div__(PyObject *self, PyObject
 fail:
   Py_INCREF(Py_NotImplemented);
   return Py_NotImplemented;
+}
+
+
+SWIGINTERN PyObject *_wrap_AutoDerivativeDouble___truediv____SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  FullPhysics::AutoDerivative< double > *arg1 = (FullPhysics::AutoDerivative< double > *) 0 ;
+  FullPhysics::AutoDerivative< double > *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  boost::shared_ptr< FullPhysics::AutoDerivative< double > > tempshared1 ;
+  boost::shared_ptr< FullPhysics::AutoDerivative< double > > *smartarg1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  boost::shared_ptr< FullPhysics::AutoDerivative< double > const > tempshared2 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  FullPhysics::AutoDerivative< double > result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:AutoDerivativeDouble___truediv__",&obj0,&obj1)) SWIG_fail;
+  {
+    int newmem = 0;
+    res1 = SWIG_ConvertPtrAndOwn(obj0, &argp1, SWIGTYPE_p_boost__shared_ptrT_FullPhysics__AutoDerivativeT_double_t_t, 0 |  0 , &newmem);
+    if (!SWIG_IsOK(res1)) {
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "AutoDerivativeDouble___truediv__" "', argument " "1"" of type '" "FullPhysics::AutoDerivative< double > *""'"); 
+    }
+    if (newmem & SWIG_CAST_NEW_MEMORY) {
+      tempshared1 = *reinterpret_cast< boost::shared_ptr<  FullPhysics::AutoDerivative<double> > * >(argp1);
+      delete reinterpret_cast< boost::shared_ptr<  FullPhysics::AutoDerivative<double> > * >(argp1);
+      arg1 = const_cast< FullPhysics::AutoDerivative< double > * >(tempshared1.get());
+    } else {
+      smartarg1 = reinterpret_cast< boost::shared_ptr<  FullPhysics::AutoDerivative<double> > * >(argp1);
+      arg1 = const_cast< FullPhysics::AutoDerivative< double > * >((smartarg1 ? smartarg1->get() : 0));
+    }
+  }
+  {
+    int newmem = 0;
+    // Added mms
+    // First check to see if all ready pointer type
+    FullPhysics::AutoDerivative<double> *ptr;
+    res2 = SWIG_ConvertPtrAndOwn(obj1, (void**)(&ptr), SWIGTYPE_p_FullPhysics__AutoDerivativeT_double_t,  0 , &newmem);
+    if (SWIG_IsOK(res2)) {
+      arg2 = ptr;
+    } else {
+      res2 = SWIG_ConvertPtrAndOwn(obj1, &argp2, SWIGTYPE_p_boost__shared_ptrT_FullPhysics__AutoDerivativeT_double_t_t,  0 , &newmem);
+      if (!SWIG_IsOK(res2)) {
+        SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "AutoDerivativeDouble___truediv__" "', argument " "2"" of type '" "FullPhysics::AutoDerivative< double > const &""'"); 
+      }
+      if (!argp2) {
+        SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "AutoDerivativeDouble___truediv__" "', argument " "2"" of type '" "FullPhysics::AutoDerivative< double > const &""'"); 
+      }
+      if (newmem & SWIG_CAST_NEW_MEMORY) {
+        tempshared2 = *reinterpret_cast< boost::shared_ptr< const FullPhysics::AutoDerivative<double> > * >(argp2);
+        delete reinterpret_cast< boost::shared_ptr< const FullPhysics::AutoDerivative<double> > * >(argp2);
+        arg2 = const_cast< FullPhysics::AutoDerivative< double > * >(tempshared2.get());
+      } else {
+        arg2 = const_cast< FullPhysics::AutoDerivative< double > * >(reinterpret_cast< boost::shared_ptr< const FullPhysics::AutoDerivative<double> > * >(argp2)->get());
+      }
+    }
+  }
+  {
+    try {
+      result = FullPhysics_AutoDerivative_Sl_double_Sg____truediv____SWIG_0(arg1,(FullPhysics::AutoDerivative< double > const &)*arg2);
+    } catch (Swig::DirectorException &e) {
+      SWIG_fail; 
+    } catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  {
+    boost::shared_ptr<  FullPhysics::AutoDerivative<double> > *smartresult = new boost::shared_ptr<  FullPhysics::AutoDerivative<double> >(new FullPhysics::AutoDerivative< double >((FullPhysics::AutoDerivative< double > &)result));
+    resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(smartresult), SWIGTYPE_p_boost__shared_ptrT_FullPhysics__AutoDerivativeT_double_t_t, SWIG_POINTER_OWN);
+  }
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_AutoDerivativeDouble___truediv____SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  FullPhysics::AutoDerivative< double > *arg1 = (FullPhysics::AutoDerivative< double > *) 0 ;
+  double *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  boost::shared_ptr< FullPhysics::AutoDerivative< double > > tempshared1 ;
+  boost::shared_ptr< FullPhysics::AutoDerivative< double > > *smartarg1 = 0 ;
+  double temp2 ;
+  double val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  FullPhysics::AutoDerivative< double > result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:AutoDerivativeDouble___truediv__",&obj0,&obj1)) SWIG_fail;
+  {
+    int newmem = 0;
+    res1 = SWIG_ConvertPtrAndOwn(obj0, &argp1, SWIGTYPE_p_boost__shared_ptrT_FullPhysics__AutoDerivativeT_double_t_t, 0 |  0 , &newmem);
+    if (!SWIG_IsOK(res1)) {
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "AutoDerivativeDouble___truediv__" "', argument " "1"" of type '" "FullPhysics::AutoDerivative< double > *""'"); 
+    }
+    if (newmem & SWIG_CAST_NEW_MEMORY) {
+      tempshared1 = *reinterpret_cast< boost::shared_ptr<  FullPhysics::AutoDerivative<double> > * >(argp1);
+      delete reinterpret_cast< boost::shared_ptr<  FullPhysics::AutoDerivative<double> > * >(argp1);
+      arg1 = const_cast< FullPhysics::AutoDerivative< double > * >(tempshared1.get());
+    } else {
+      smartarg1 = reinterpret_cast< boost::shared_ptr<  FullPhysics::AutoDerivative<double> > * >(argp1);
+      arg1 = const_cast< FullPhysics::AutoDerivative< double > * >((smartarg1 ? smartarg1->get() : 0));
+    }
+  }
+  ecode2 = SWIG_AsVal_double(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "AutoDerivativeDouble___truediv__" "', argument " "2"" of type '" "double""'");
+  } 
+  temp2 = static_cast< double >(val2);
+  arg2 = &temp2;
+  {
+    try {
+      result = FullPhysics_AutoDerivative_Sl_double_Sg____truediv____SWIG_1(arg1,(double const &)*arg2);
+    } catch (Swig::DirectorException &e) {
+      SWIG_fail; 
+    } catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  {
+    boost::shared_ptr<  FullPhysics::AutoDerivative<double> > *smartresult = new boost::shared_ptr<  FullPhysics::AutoDerivative<double> >(new FullPhysics::AutoDerivative< double >((FullPhysics::AutoDerivative< double > &)result));
+    resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(smartresult), SWIGTYPE_p_boost__shared_ptrT_FullPhysics__AutoDerivativeT_double_t_t, SWIG_POINTER_OWN);
+  }
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_AutoDerivativeDouble___truediv__(PyObject *self, PyObject *args) {
+  Py_ssize_t argc;
+  PyObject *argv[3] = {
+    0
+  };
+  Py_ssize_t ii;
+  
+  if (!PyTuple_Check(args)) SWIG_fail;
+  argc = args ? PyObject_Length(args) : 0;
+  for (ii = 0; (ii < 2) && (ii < argc); ii++) {
+    argv[ii] = PyTuple_GET_ITEM(args,ii);
+  }
+  if (argc == 2) {
+    int _v;
+    int res = SWIG_ConvertPtr(argv[0], 0, SWIGTYPE_p_boost__shared_ptrT_FullPhysics__AutoDerivativeT_double_t_t, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      int res = SWIG_ConvertPtr(argv[1], 0, SWIGTYPE_p_boost__shared_ptrT_FullPhysics__AutoDerivativeT_double_t_t, 0);
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        return _wrap_AutoDerivativeDouble___truediv____SWIG_0(self, args);
+      }
+    }
+  }
+  if (argc == 2) {
+    int _v;
+    int res = SWIG_ConvertPtr(argv[0], 0, SWIGTYPE_p_boost__shared_ptrT_FullPhysics__AutoDerivativeT_double_t_t, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      {
+        int res = SWIG_AsVal_double(argv[1], NULL);
+        _v = SWIG_CheckState(res);
+      }
+      if (_v) {
+        return _wrap_AutoDerivativeDouble___truediv____SWIG_1(self, args);
+      }
+    }
+  }
+  
+fail:
+  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'AutoDerivativeDouble___truediv__'.\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    FullPhysics::AutoDerivative< double >::__truediv__(FullPhysics::AutoDerivative< double > const &)\n"
+    "    FullPhysics::AutoDerivative< double >::__truediv__(double const &)\n");
+  return 0;
 }
 
 
@@ -14176,6 +14357,7 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"AutoDerivativeDouble___mul__", _wrap_AutoDerivativeDouble___mul__, METH_VARARGS, NULL},
 	 { (char *)"AutoDerivativeDouble___rmul__", _wrap_AutoDerivativeDouble___rmul__, METH_VARARGS, NULL},
 	 { (char *)"AutoDerivativeDouble___div__", _wrap_AutoDerivativeDouble___div__, METH_VARARGS, NULL},
+	 { (char *)"AutoDerivativeDouble___truediv__", _wrap_AutoDerivativeDouble___truediv__, METH_VARARGS, NULL},
 	 { (char *)"AutoDerivativeDouble___rdiv__", _wrap_AutoDerivativeDouble___rdiv__, METH_VARARGS, NULL},
 	 { (char *)"AutoDerivativeDouble___pow__", _wrap_AutoDerivativeDouble___pow__, METH_VARARGS, NULL},
 	 { (char *)"AutoDerivativeDouble___rpow__", _wrap_AutoDerivativeDouble___rpow__, METH_VARARGS, NULL},

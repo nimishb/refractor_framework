@@ -120,9 +120,9 @@ def _new_from_set(cls, version, *args):
     inst.set(*args)
     return inst
 
-import full_physics_swig.ecmwf
+import full_physics_swig.meteorology
 import full_physics_swig.generic_object
-class AcosEcmwf(full_physics_swig.ecmwf.Ecmwf):
+class AcosEcmwf(full_physics_swig.meteorology.Meteorology):
     """
 
     This class implements the ACOS specific ECMWF reading functionality.
@@ -131,11 +131,11 @@ class AcosEcmwf(full_physics_swig.ecmwf.Ecmwf):
     """
 
     __swig_setmethods__ = {}
-    for _s in [full_physics_swig.ecmwf.Ecmwf]:
+    for _s in [full_physics_swig.meteorology.Meteorology]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
     __setattr__ = lambda self, name, value: _swig_setattr(self, AcosEcmwf, name, value)
     __swig_getmethods__ = {}
-    for _s in [full_physics_swig.ecmwf.Ecmwf]:
+    for _s in [full_physics_swig.meteorology.Meteorology]:
         __swig_getmethods__.update(getattr(_s, '__swig_getmethods__', {}))
     __getattr__ = lambda self, name: _swig_getattr(self, AcosEcmwf, name)
     __repr__ = _swig_repr

@@ -242,6 +242,9 @@ class Unit(full_physics_swig.generic_object.GenericObject):
     def __div__(self, Y):
         return _unit.Unit___div__(self, Y)
 
+    def __truediv__(self, Y):
+        return _unit.Unit___truediv__(self, Y)
+
     def __rdiv__(self, X):
         return _unit.Unit___rdiv__(self, X)
 

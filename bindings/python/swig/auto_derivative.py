@@ -329,6 +329,9 @@ class AutoDerivativeDouble(full_physics_swig.generic_object.GenericObject):
     def __div__(self, *args):
         return _auto_derivative.AutoDerivativeDouble___div__(self, *args)
 
+    def __truediv__(self, *args):
+        return _auto_derivative.AutoDerivativeDouble___truediv__(self, *args)
+
     def __rdiv__(self, X):
         return _auto_derivative.AutoDerivativeDouble___rdiv__(self, X)
 

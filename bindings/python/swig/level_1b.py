@@ -273,6 +273,22 @@ class Level1b(full_physics_swig.generic_object.GenericObject):
         return _level_1b.Level1b_solar_azimuth(self, i)
 
 
+    def relative_azimuth(self, i):
+        """
+
+        virtual DoubleWithUnit FullPhysics::Level1b::relative_azimuth(int i) const
+        Realtive azimuth.
+
+        Parameters:
+        -----------
+
+        i:  Spectrometer index (between 0 and number_spectrometer() - 1)
+
+        Relative azimuth angle between solar and sounding azimuth 
+        """
+        return _level_1b.Level1b_relative_azimuth(self, i)
+
+
     def altitude(self, i):
         """
 

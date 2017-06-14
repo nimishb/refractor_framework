@@ -191,6 +191,24 @@ class HdfFile(full_physics_swig.generic_object.GenericObject):
         return _hdf_file.HdfFile_close(self)
 
 
+    def has_object(self, Objname):
+        """
+
+        bool FullPhysics::HdfFile::has_object(const std::string &Objname) const
+        Check to see if an object (such as a Dataset) is in the file. 
+        """
+        return _hdf_file.HdfFile_has_object(self, Objname)
+
+
+    def has_attribute(self, Aname):
+        """
+
+        bool FullPhysics::HdfFile::has_attribute(const std::string &Aname) const
+        Check to see if a attribute is in the file. 
+        """
+        return _hdf_file.HdfFile_has_attribute(self, Aname)
+
+
     def _v_file_name(self):
         """
 

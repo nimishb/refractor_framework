@@ -142,19 +142,10 @@ class Level1bCache(full_physics_swig.level_1b.Level1b):
     for _s in [full_physics_swig.level_1b.Level1b]:
         __swig_getmethods__.update(getattr(_s, '__swig_getmethods__', {}))
     __getattr__ = lambda self, name: _swig_getattr(self, Level1bCache, name)
+
+    def __init__(self, *args, **kwargs):
+        raise AttributeError("No constructor defined - class is abstract")
     __repr__ = _swig_repr
-
-    def __init__(self, L1_in):
-        """
-
-        FullPhysics::Level1bCache::Level1bCache(const Level1b &L1_in)
-
-        """
-        this = _level_1b_cache.new_Level1bCache(L1_in)
-        try:
-            self.this.append(this)
-        except Exception:
-            self.this = this
 
     def latitude(self, i):
         """

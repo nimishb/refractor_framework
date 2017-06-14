@@ -176,7 +176,7 @@ class ReferenceVmrApriori(full_physics_swig.generic_object.GenericObject):
     def model_tropopause_altitude(self):
         """
 
-        double FullPhysics::ReferenceVmrApriori::model_tropopause_altitude() const
+        DoubleWithUnit FullPhysics::ReferenceVmrApriori::model_tropopause_altitude() const
 
         """
         return _reference_vmr_apriori.ReferenceVmrApriori_model_tropopause_altitude(self)

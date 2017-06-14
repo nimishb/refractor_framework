@@ -90,15 +90,14 @@ extern "C" {
   SWIG_INIT_TYPE SWIG_INIT_FUNC(composite_perturbation)(void);
   SWIG_INIT_TYPE SWIG_INIT_FUNC(radiance_scaling)(void);
   SWIG_INIT_TYPE SWIG_INIT_FUNC(stokes_coefficient_fraction)(void);
+  SWIG_INIT_TYPE SWIG_INIT_FUNC(absorber_vmr_met)(void);
   SWIG_INIT_TYPE SWIG_INIT_FUNC(gosat_noise_model)(void);
   SWIG_INIT_TYPE SWIG_INIT_FUNC(chisq_convergence)(void);
   SWIG_INIT_TYPE SWIG_INIT_FUNC(lidort_rt)(void);
-  SWIG_INIT_TYPE SWIG_INIT_FUNC(absorber_vmr_ecmwf)(void);
   SWIG_INIT_TYPE SWIG_INIT_FUNC(absorber_vmr_level_scaled)(void);
   SWIG_INIT_TYPE SWIG_INIT_FUNC(output_hdf)(void);
   SWIG_INIT_TYPE SWIG_INIT_FUNC(max_likelihood_oco)(void);
   SWIG_INIT_TYPE SWIG_INIT_FUNC(ground_coxmunk_plus_lambertian)(void);
-  SWIG_INIT_TYPE SWIG_INIT_FUNC(temperature_ecmwf)(void);
   SWIG_INIT_TYPE SWIG_INIT_FUNC(absorber_vmr_level)(void);
   SWIG_INIT_TYPE SWIG_INIT_FUNC(forward_model_cost_function)(void);
   SWIG_INIT_TYPE SWIG_INIT_FUNC(connor_solver_map)(void);
@@ -134,6 +133,7 @@ extern "C" {
   SWIG_INIT_TYPE SWIG_INIT_FUNC(level_1b_oco)(void);
   SWIG_INIT_TYPE SWIG_INIT_FUNC(initial_guess_value)(void);
   SWIG_INIT_TYPE SWIG_INIT_FUNC(ground_lambertian)(void);
+  SWIG_INIT_TYPE SWIG_INIT_FUNC(temperature_met)(void);
   SWIG_INIT_TYPE SWIG_INIT_FUNC(ils_instrument)(void);
   SWIG_INIT_TYPE SWIG_INIT_FUNC(lidort_driver)(void);
   SWIG_INIT_TYPE SWIG_INIT_FUNC(temperature)(void);
@@ -199,6 +199,7 @@ extern "C" {
   SWIG_INIT_TYPE SWIG_INIT_FUNC(spectrum_effect_imp_base)(void);
   SWIG_INIT_TYPE SWIG_INIT_FUNC(noise_model)(void);
   SWIG_INIT_TYPE SWIG_INIT_FUNC(radiative_transfer_fixed_stokes_coefficient)(void);
+  SWIG_INIT_TYPE SWIG_INIT_FUNC(meteorology)(void);
   SWIG_INIT_TYPE SWIG_INIT_FUNC(pressure_imp_base)(void);
   SWIG_INIT_TYPE SWIG_INIT_FUNC(nlls_problem)(void);
   SWIG_INIT_TYPE SWIG_INIT_FUNC(ils_function)(void);
@@ -226,7 +227,6 @@ extern "C" {
   SWIG_INIT_TYPE SWIG_INIT_FUNC(spectral_bound)(void);
   SWIG_INIT_TYPE SWIG_INIT_FUNC(oco_sounding_id)(void);
   SWIG_INIT_TYPE SWIG_INIT_FUNC(state_vector)(void);
-  SWIG_INIT_TYPE SWIG_INIT_FUNC(ecmwf)(void);
   SWIG_INIT_TYPE SWIG_INIT_FUNC(rayleigh_greek_moment)(void);
   SWIG_INIT_TYPE SWIG_INIT_FUNC(acos_ecmwf)(void);
   SWIG_INIT_TYPE SWIG_INIT_FUNC(hdf_sounding_id)(void);
@@ -241,7 +241,7 @@ extern "C" {
   SWIG_INIT_TYPE SWIG_INIT_FUNC(auto_derivative_with_unit)(void);
   SWIG_INIT_TYPE SWIG_INIT_FUNC(spectral_domain)(void);
   SWIG_INIT_TYPE SWIG_INIT_FUNC(fp_exception)(void);
-  SWIG_INIT_TYPE SWIG_INIT_FUNC(oco_ecmwf)(void);
+  SWIG_INIT_TYPE SWIG_INIT_FUNC(oco_met_file)(void);
   SWIG_INIT_TYPE SWIG_INIT_FUNC(array_with_unit)(void);
   SWIG_INIT_TYPE SWIG_INIT_FUNC(closest_point)(void);
   SWIG_INIT_TYPE SWIG_INIT_FUNC(oco_sim_met_ecmwf)(void);
@@ -484,15 +484,14 @@ init_swig_wrap(void)
   SWIG_INIT_MODULE(package, "_composite_perturbation", SWIG_INIT_FUNC(composite_perturbation));
   SWIG_INIT_MODULE(package, "_radiance_scaling", SWIG_INIT_FUNC(radiance_scaling));
   SWIG_INIT_MODULE(package, "_stokes_coefficient_fraction", SWIG_INIT_FUNC(stokes_coefficient_fraction));
+  SWIG_INIT_MODULE(package, "_absorber_vmr_met", SWIG_INIT_FUNC(absorber_vmr_met));
   SWIG_INIT_MODULE(package, "_gosat_noise_model", SWIG_INIT_FUNC(gosat_noise_model));
   SWIG_INIT_MODULE(package, "_chisq_convergence", SWIG_INIT_FUNC(chisq_convergence));
   SWIG_INIT_MODULE(package, "_lidort_rt", SWIG_INIT_FUNC(lidort_rt));
-  SWIG_INIT_MODULE(package, "_absorber_vmr_ecmwf", SWIG_INIT_FUNC(absorber_vmr_ecmwf));
   SWIG_INIT_MODULE(package, "_absorber_vmr_level_scaled", SWIG_INIT_FUNC(absorber_vmr_level_scaled));
   SWIG_INIT_MODULE(package, "_output_hdf", SWIG_INIT_FUNC(output_hdf));
   SWIG_INIT_MODULE(package, "_max_likelihood_oco", SWIG_INIT_FUNC(max_likelihood_oco));
   SWIG_INIT_MODULE(package, "_ground_coxmunk_plus_lambertian", SWIG_INIT_FUNC(ground_coxmunk_plus_lambertian));
-  SWIG_INIT_MODULE(package, "_temperature_ecmwf", SWIG_INIT_FUNC(temperature_ecmwf));
   SWIG_INIT_MODULE(package, "_absorber_vmr_level", SWIG_INIT_FUNC(absorber_vmr_level));
   SWIG_INIT_MODULE(package, "_forward_model_cost_function", SWIG_INIT_FUNC(forward_model_cost_function));
   SWIG_INIT_MODULE(package, "_connor_solver_map", SWIG_INIT_FUNC(connor_solver_map));
@@ -528,6 +527,7 @@ init_swig_wrap(void)
   SWIG_INIT_MODULE(package, "_level_1b_oco", SWIG_INIT_FUNC(level_1b_oco));
   SWIG_INIT_MODULE(package, "_initial_guess_value", SWIG_INIT_FUNC(initial_guess_value));
   SWIG_INIT_MODULE(package, "_ground_lambertian", SWIG_INIT_FUNC(ground_lambertian));
+  SWIG_INIT_MODULE(package, "_temperature_met", SWIG_INIT_FUNC(temperature_met));
   SWIG_INIT_MODULE(package, "_ils_instrument", SWIG_INIT_FUNC(ils_instrument));
   SWIG_INIT_MODULE(package, "_lidort_driver", SWIG_INIT_FUNC(lidort_driver));
   SWIG_INIT_MODULE(package, "_temperature", SWIG_INIT_FUNC(temperature));
@@ -593,6 +593,7 @@ init_swig_wrap(void)
   SWIG_INIT_MODULE(package, "_spectrum_effect_imp_base", SWIG_INIT_FUNC(spectrum_effect_imp_base));
   SWIG_INIT_MODULE(package, "_noise_model", SWIG_INIT_FUNC(noise_model));
   SWIG_INIT_MODULE(package, "_radiative_transfer_fixed_stokes_coefficient", SWIG_INIT_FUNC(radiative_transfer_fixed_stokes_coefficient));
+  SWIG_INIT_MODULE(package, "_meteorology", SWIG_INIT_FUNC(meteorology));
   SWIG_INIT_MODULE(package, "_pressure_imp_base", SWIG_INIT_FUNC(pressure_imp_base));
   SWIG_INIT_MODULE(package, "_nlls_problem", SWIG_INIT_FUNC(nlls_problem));
   SWIG_INIT_MODULE(package, "_ils_function", SWIG_INIT_FUNC(ils_function));
@@ -620,7 +621,6 @@ init_swig_wrap(void)
   SWIG_INIT_MODULE(package, "_spectral_bound", SWIG_INIT_FUNC(spectral_bound));
   SWIG_INIT_MODULE(package, "_oco_sounding_id", SWIG_INIT_FUNC(oco_sounding_id));
   SWIG_INIT_MODULE(package, "_state_vector", SWIG_INIT_FUNC(state_vector));
-  SWIG_INIT_MODULE(package, "_ecmwf", SWIG_INIT_FUNC(ecmwf));
   SWIG_INIT_MODULE(package, "_rayleigh_greek_moment", SWIG_INIT_FUNC(rayleigh_greek_moment));
   SWIG_INIT_MODULE(package, "_acos_ecmwf", SWIG_INIT_FUNC(acos_ecmwf));
   SWIG_INIT_MODULE(package, "_hdf_sounding_id", SWIG_INIT_FUNC(hdf_sounding_id));
@@ -635,7 +635,7 @@ init_swig_wrap(void)
   SWIG_INIT_MODULE(package, "_auto_derivative_with_unit", SWIG_INIT_FUNC(auto_derivative_with_unit));
   SWIG_INIT_MODULE(package, "_spectral_domain", SWIG_INIT_FUNC(spectral_domain));
   SWIG_INIT_MODULE(package, "_fp_exception", SWIG_INIT_FUNC(fp_exception));
-  SWIG_INIT_MODULE(package, "_oco_ecmwf", SWIG_INIT_FUNC(oco_ecmwf));
+  SWIG_INIT_MODULE(package, "_oco_met_file", SWIG_INIT_FUNC(oco_met_file));
   SWIG_INIT_MODULE(package, "_array_with_unit", SWIG_INIT_FUNC(array_with_unit));
   SWIG_INIT_MODULE(package, "_closest_point", SWIG_INIT_FUNC(closest_point));
   SWIG_INIT_MODULE(package, "_oco_sim_met_ecmwf", SWIG_INIT_FUNC(oco_sim_met_ecmwf));

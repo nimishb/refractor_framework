@@ -204,6 +204,9 @@ class DoubleWithUnit(full_physics_swig.generic_object.GenericObject):
     def __div__(self, Y):
         return _double_with_unit.DoubleWithUnit___div__(self, Y)
 
+    def __truediv__(self, Y):
+        return _double_with_unit.DoubleWithUnit___truediv__(self, Y)
+
     def __add__(self, Y):
         return _double_with_unit.DoubleWithUnit___add__(self, Y)
 

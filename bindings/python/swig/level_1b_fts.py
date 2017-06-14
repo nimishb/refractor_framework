@@ -138,21 +138,10 @@ class Level1bFts(full_physics_swig.level_1b.Level1b):
     for _s in [full_physics_swig.level_1b.Level1b]:
         __swig_getmethods__.update(getattr(_s, '__swig_getmethods__', {}))
     __getattr__ = lambda self, name: _swig_getattr(self, Level1bFts, name)
+
+    def __init__(self, *args, **kwargs):
+        raise AttributeError("No constructor defined - class is abstract")
     __repr__ = _swig_repr
-
-    def __init__(self, *args):
-        """
-
-        FullPhysics::Level1bFts::Level1bFts(const HdfFile &Hfile, const std::vector< std::string > &Band_names,
-        const std::string
-        &Radiance_dataset="/SpectralParameters/modeled_radiance")
-
-        """
-        this = _level_1b_fts.new_Level1bFts(*args)
-        try:
-            self.this.append(this)
-        except Exception:
-            self.this = this
 
     def latitude(self, i):
         """
