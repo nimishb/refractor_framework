@@ -121,7 +121,7 @@ def _new_from_set(cls, version, *args):
     return inst
 
 import full_physics_swig.generic_object
-class Exception(full_physics_swig.generic_object.GenericObject):
+class FpException(full_physics_swig.generic_object.GenericObject):
     """
 
     This is the base of the exception hierarchy for Full Physics code.
@@ -135,11 +135,11 @@ class Exception(full_physics_swig.generic_object.GenericObject):
     __swig_setmethods__ = {}
     for _s in [full_physics_swig.generic_object.GenericObject]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
-    __setattr__ = lambda self, name, value: _swig_setattr(self, Exception, name, value)
+    __setattr__ = lambda self, name, value: _swig_setattr(self, FpException, name, value)
     __swig_getmethods__ = {}
     for _s in [full_physics_swig.generic_object.GenericObject]:
         __swig_getmethods__.update(getattr(_s, '__swig_getmethods__', {}))
-    __getattr__ = lambda self, name: _swig_getattr(self, Exception, name)
+    __getattr__ = lambda self, name: _swig_getattr(self, FpException, name)
     __repr__ = _swig_repr
 
     def __init__(self, W):
@@ -148,14 +148,14 @@ class Exception(full_physics_swig.generic_object.GenericObject):
         FullPhysics::Exception::Exception(const Exception &E)
         Copy constructor. 
         """
-        this = _fp_exception.new_Exception(W)
+        this = _fp_exception.new_FpException(W)
         try:
             self.this.append(this)
         except Exception:
             self.this = this
 
     def __str__(self):
-        return _fp_exception.Exception___str__(self)
+        return _fp_exception.FpException___str__(self)
 
     def what(self):
         """
@@ -165,12 +165,12 @@ class Exception(full_physics_swig.generic_object.GenericObject):
         Description of what the error is.
 
         """
-        return _fp_exception.Exception_what(self)
+        return _fp_exception.FpException_what(self)
 
-    __swig_destroy__ = _fp_exception.delete_Exception
+    __swig_destroy__ = _fp_exception.delete_FpException
     __del__ = lambda self: None
-Exception_swigregister = _fp_exception.Exception_swigregister
-Exception_swigregister(Exception)
+FpException_swigregister = _fp_exception.FpException_swigregister
+FpException_swigregister(FpException)
 
 
 def no_gsl_abort():

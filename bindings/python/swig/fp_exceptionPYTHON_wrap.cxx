@@ -5119,22 +5119,22 @@ SWIGINTERN PyObject *SHARED_PTR_DISOWN_swigconstant(PyObject *SWIGUNUSEDPARM(sel
 }
 
 
-SWIGINTERN PyObject *_wrap_new_Exception(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_new_FpException(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   std::string *arg1 = 0 ;
   int res1 = SWIG_OLDOBJ ;
   PyObject * obj0 = 0 ;
   FullPhysics::Exception *result = 0 ;
   
-  if (!PyArg_ParseTuple(args,(char *)"O:new_Exception",&obj0)) SWIG_fail;
+  if (!PyArg_ParseTuple(args,(char *)"O:new_FpException",&obj0)) SWIG_fail;
   {
     std::string *ptr = (std::string *)0;
     res1 = SWIG_AsPtr_std_string(obj0, &ptr);
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "new_Exception" "', argument " "1"" of type '" "std::string const &""'"); 
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "new_FpException" "', argument " "1"" of type '" "std::string const &""'"); 
     }
     if (!ptr) {
-      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_Exception" "', argument " "1"" of type '" "std::string const &""'"); 
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_FpException" "', argument " "1"" of type '" "std::string const &""'"); 
     }
     arg1 = ptr;
   }
@@ -5159,7 +5159,7 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_Exception___str__(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_FpException___str__(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   FullPhysics::Exception *arg1 = (FullPhysics::Exception *) 0 ;
   void *argp1 = 0 ;
@@ -5169,12 +5169,12 @@ SWIGINTERN PyObject *_wrap_Exception___str__(PyObject *SWIGUNUSEDPARM(self), PyO
   PyObject * obj0 = 0 ;
   std::string result;
   
-  if (!PyArg_ParseTuple(args,(char *)"O:Exception___str__",&obj0)) SWIG_fail;
+  if (!PyArg_ParseTuple(args,(char *)"O:FpException___str__",&obj0)) SWIG_fail;
   {
     int newmem = 0;
     res1 = SWIG_ConvertPtrAndOwn(obj0, &argp1, SWIGTYPE_p_boost__shared_ptrT_FullPhysics__Exception_t, 0 |  0 , &newmem);
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Exception___str__" "', argument " "1"" of type '" "FullPhysics::Exception const *""'"); 
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FpException___str__" "', argument " "1"" of type '" "FullPhysics::Exception const *""'"); 
     }
     if (newmem & SWIG_CAST_NEW_MEMORY) {
       tempshared1 = *reinterpret_cast< boost::shared_ptr< const FullPhysics::Exception > * >(argp1);
@@ -5201,7 +5201,7 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_Exception_what(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_FpException_what(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   FullPhysics::Exception *arg1 = (FullPhysics::Exception *) 0 ;
   void *argp1 = 0 ;
@@ -5211,12 +5211,12 @@ SWIGINTERN PyObject *_wrap_Exception_what(PyObject *SWIGUNUSEDPARM(self), PyObje
   PyObject * obj0 = 0 ;
   char *result = 0 ;
   
-  if (!PyArg_ParseTuple(args,(char *)"O:Exception_what",&obj0)) SWIG_fail;
+  if (!PyArg_ParseTuple(args,(char *)"O:FpException_what",&obj0)) SWIG_fail;
   {
     int newmem = 0;
     res1 = SWIG_ConvertPtrAndOwn(obj0, &argp1, SWIGTYPE_p_boost__shared_ptrT_FullPhysics__Exception_t, 0 |  0 , &newmem);
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Exception_what" "', argument " "1"" of type '" "FullPhysics::Exception *""'"); 
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FpException_what" "', argument " "1"" of type '" "FullPhysics::Exception *""'"); 
     }
     if (newmem & SWIG_CAST_NEW_MEMORY) {
       tempshared1 = *reinterpret_cast< boost::shared_ptr<  FullPhysics::Exception > * >(argp1);
@@ -5243,7 +5243,7 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_delete_Exception(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_delete_FpException(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   FullPhysics::Exception *arg1 = (FullPhysics::Exception *) 0 ;
   void *argp1 = 0 ;
@@ -5252,12 +5252,12 @@ SWIGINTERN PyObject *_wrap_delete_Exception(PyObject *SWIGUNUSEDPARM(self), PyOb
   boost::shared_ptr< FullPhysics::Exception > *smartarg1 = 0 ;
   PyObject * obj0 = 0 ;
   
-  if (!PyArg_ParseTuple(args,(char *)"O:delete_Exception",&obj0)) SWIG_fail;
+  if (!PyArg_ParseTuple(args,(char *)"O:delete_FpException",&obj0)) SWIG_fail;
   {
     int newmem = 0;
     res1 = SWIG_ConvertPtrAndOwn(obj0, &argp1, SWIGTYPE_p_boost__shared_ptrT_FullPhysics__Exception_t, 0 |  0 , &newmem);
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "delete_Exception" "', argument " "1"" of type '" "FullPhysics::Exception *""'"); 
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "delete_FpException" "', argument " "1"" of type '" "FullPhysics::Exception *""'"); 
     }
     if (newmem & SWIG_CAST_NEW_MEMORY) {
       tempshared1 = *reinterpret_cast< boost::shared_ptr<  FullPhysics::Exception > * >(argp1);
@@ -5284,7 +5284,7 @@ fail:
 }
 
 
-SWIGINTERN PyObject *Exception_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *FpException_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *obj;
   if (!PyArg_ParseTuple(args,(char*)"O:swigregister", &obj)) return NULL;
   SWIG_TypeNewClientData(SWIGTYPE_p_boost__shared_ptrT_FullPhysics__Exception_t, SWIG_NewClientData(obj));
@@ -5314,27 +5314,27 @@ fail:
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"SHARED_PTR_DISOWN_swigconstant", SHARED_PTR_DISOWN_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"new_Exception", _wrap_new_Exception, METH_VARARGS, (char *)"\n"
+	 { (char *)"new_FpException", _wrap_new_FpException, METH_VARARGS, (char *)"\n"
 		"\n"
 		"FullPhysics::Exception::Exception(const Exception &E)\n"
 		"Copy constructor. \n"
 		""},
-	 { (char *)"Exception___str__", _wrap_Exception___str__, METH_VARARGS, NULL},
-	 { (char *)"Exception_what", _wrap_Exception_what, METH_VARARGS, (char *)"\n"
+	 { (char *)"FpException___str__", _wrap_FpException___str__, METH_VARARGS, NULL},
+	 { (char *)"FpException_what", _wrap_FpException_what, METH_VARARGS, (char *)"\n"
 		"\n"
 		"virtual const char* FullPhysics::Exception::what() const\n"
 		" throw ()\n"
 		"Description of what the error is.\n"
 		"\n"
 		""},
-	 { (char *)"delete_Exception", _wrap_delete_Exception, METH_VARARGS, (char *)"\n"
+	 { (char *)"delete_FpException", _wrap_delete_FpException, METH_VARARGS, (char *)"\n"
 		"\n"
 		"virtual FullPhysics::Exception::~Exception()\n"
 		" throw ()\n"
 		"Destructor.\n"
 		"\n"
 		""},
-	 { (char *)"Exception_swigregister", Exception_swigregister, METH_VARARGS, NULL},
+	 { (char *)"FpException_swigregister", FpException_swigregister, METH_VARARGS, NULL},
 	 { (char *)"no_gsl_abort", _wrap_no_gsl_abort, METH_VARARGS, (char *)"\n"
 		"\n"
 		"void FullPhysics::no_gsl_abort()\n"
